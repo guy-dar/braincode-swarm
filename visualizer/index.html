@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BrainCode visualizer</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e2e2e2;
+    --sidebar-bg: #f7f7f7;
+    --active-bg: #e6e6e6;
+    --code-bg: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1e1e;
+      --fg: #e6e6e6;
+      --muted: #9aa0a6;
+      --border: #3a3a3a;
+      --sidebar-bg: #171717;
+      --active-bg: #2a2a2a;
+      --code-bg: #181818;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; }
+  header .path { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  button {
+    font: inherit;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--sidebar-bg);
+    color: var(--fg);
+    cursor: pointer;
+  }
+  button:hover { background: var(--active-bg); }
+  main {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+  }
+  #sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+  }
+  #sidebar .empty {
+    padding: 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .trajectory { border-bottom: 1px solid var(--border); }
+  .trajectory-name {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .trajectory-name:hover { background: var(--active-bg); }
+  .file-list { padding: 0 0 6px 0; }
+  .file-item {
+    padding: 4px 12px 4px 24px;
+    font-size: 12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    cursor: pointer;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .file-item:hover { background: var(--active-bg); }
+  .file-item.active { background: var(--active-bg); color: var(--fg); font-weight: 600; }
+  .file-item.bc { color: var(--fg); }
+  #content {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+  }
+  #content .placeholder {
+    padding: 24px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  #content .file-header {
+    position: sticky;
+    top: 0;
+    padding: 8px 16px;
+    font-size: 12.5px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--muted);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  pre {
+    margin: 0;
+    padding: 16px;
+    background: var(--code-bg);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .tok-comment { color: #6b8a5a; font-style: italic; }
+  .tok-string  { color: #b0703c; }
+  .tok-tag     { color: #b13a7a; font-weight: 600; }
+  .tok-number  { color: #3a7ab1; }
+  .tok-keyword { color: #7a4fb1; font-weight: 600; }
+  .tok-func    { color: #2a8f7a; }
+  @media (prefers-color-scheme: dark) {
+    .tok-comment { color: #8fbf7a; }
+    .tok-string  { color: #e0a862; }
+    .tok-tag     { color: #f06bb0; }
+    .tok-number  { color: #6bb0f0; }
+    .tok-keyword { color: #b98cf0; }
+    .tok-func    { color: #5fd0b5; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BrainCode visualizer</h1>
+  <button id="pick">Choose output folder…</button>
+  <span class="path" id="path"></span>
+</header>
+
+<main>
+  <div id="sidebar"><div class="empty">Pick a folder to browse its trajectories.</div></div>
+  <div id="content"><div class="placeholder">Nothing selected yet.</div></div>
+</main>
+
+<input type="file" id="folder-input" webkitdirectory style="display:none">
+
+<script>
+// --- Highlighting -----------------------------------------------------
+// Deliberately generic: BrainCode's canonized vocabulary isn't fixed yet
+// (see swarm/DESIGN_DOC.md), so this only recognizes structure that's true
+// of the language regardless of which constructs exist — turn tags, and
+// the Python-inspired base grammar (strings, comments, numbers, generic
+// keywords, function-call shape). No construct/package names are assumed.
+const KEYWORDS = [
+  "import", "from", "as", "def", "class", "return", "if", "elif", "else",
+  "for", "while", "in", "not", "and", "or", "is", "None", "True", "False",
+  "lambda", "with", "try", "except", "finally", "raise", "yield", "pass",
+  "break", "continue", "global", "nonlocal", "assert", "del", "async", "await"
+];
+
+const TOKEN_RE = new RegExp([
+  String.raw`(?<comment>#[^\n]*)`,
+  String.raw`(?<string>'''[\s\S]*?'''|"""[\s\S]*?"""|'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*")`,
+  String.raw`(?<tag><\|[^\n>]*?\|>)`,
+  String.raw`(?<number>\b\d+\.?\d*\b)`,
+  String.raw`(?<keyword>\b(?:${KEYWORDS.join("|")})\b)`,
+  String.raw`(?<func>[A-Za-z_][A-Za-z0-9_]*(?=\s*\())`,
+].join("|"), "g");
+
+function escapeHtml(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function highlightBC(code) {
+  let out = "", last = 0, m;
+  TOKEN_RE.lastIndex = 0;
+  while ((m = TOKEN_RE.exec(code))) {
+    if (m.index > last) out += escapeHtml(code.slice(last, m.index));
+    const g = m.groups;
+    const cls = g.comment ? "tok-comment"
+      : g.string ? "tok-string"
+      : g.tag ? "tok-tag"
+      : g.number ? "tok-number"
+      : g.keyword ? "tok-keyword"
+      : "tok-func";
+    out += `<span class="${cls}">${escapeHtml(m[0])}</span>`;
+    last = m.index + m[0].length;
+  }
+  out += escapeHtml(code.slice(last));
+  return out;
+}
+
+// --- Folder loading -----------------------------------------------------
+// Groups files by their immediate parent subfolder (one per trajectory),
+// generic across whatever a task actually wrote — nothing here assumes
+// the discovery task's specific filenames.
+function groupByTrajectory(fileList) {
+  const groups = new Map();
+  for (const file of fileList) {
+    const parts = file.webkitRelativePath.split("/");
+    if (parts.length < 3) continue; // expects root/<trajectory>/<file>
+    const trajectoryId = parts[1];
+    const relPath = parts.slice(2).join("/");
+    if (!groups.has(trajectoryId)) groups.set(trajectoryId, []);
+    groups.get(trajectoryId).push({ name: relPath, file });
+  }
+  for (const files of groups.values()) files.sort((a, b) => a.name.localeCompare(b.name));
+  return new Map([...groups.entries()].sort((a, b) => a[0].localeCompare(b[0])));
+}
+
+function render(groups, rootName) {
+  document.getElementById("path").textContent = rootName;
+  const sidebar = document.getElementById("sidebar");
+  sidebar.innerHTML = "";
+  if (groups.size === 0) {
+    sidebar.innerHTML = '<div class="empty">No subfolders found in this directory.</div>';
+    return;
+  }
+  for (const [trajectoryId, files] of groups) {
+    const el = document.createElement("div");
+    el.className = "trajectory";
+    const nameEl = document.createElement("div");
+    nameEl.className = "trajectory-name";
+    nameEl.textContent = trajectoryId;
+    const listEl = document.createElement("div");
+    listEl.className = "file-list";
+    listEl.style.display = "none";
+    for (const entry of files) {
+      const itemEl = document.createElement("div");
+      itemEl.className = "file-item" + (entry.name.endsWith(".bc") ? " bc" : "");
+      itemEl.textContent = entry.name;
+      itemEl.onclick = () => showFile(trajectoryId, entry, itemEl);
+      listEl.appendChild(itemEl);
+    }
+    nameEl.onclick = () => { listEl.style.display = listEl.style.display === "none" ? "block" : "none"; };
+    el.appendChild(nameEl);
+    el.appendChild(listEl);
+    sidebar.appendChild(el);
+  }
+  // Open the first trajectory by default.
+  const firstList = sidebar.querySelector(".file-list");
+  if (firstList) firstList.style.display = "block";
+}
+
+async function showFile(trajectoryId, entry, itemEl) {
+  document.querySelectorAll(".file-item.active").forEach(el => el.classList.remove("active"));
+  itemEl.classList.add("active");
+
+  const content = document.getElementById("content");
+  const text = await entry.file.text();
+  const isBc = entry.name.endsWith(".bc");
+  const isJson = entry.name.endsWith(".json");
+
+  let body;
+  if (isBc) {
+    body = highlightBC(text);
+  } else if (isJson) {
+    try { body = escapeHtml(JSON.stringify(JSON.parse(text), null, 2)); }
+    catch { body = escapeHtml(text); }
+  } else {
+    body = escapeHtml(text);
+  }
+
+  content.innerHTML = `
+    <div class="file-header">${escapeHtml(trajectoryId)}/${escapeHtml(entry.name)}</div>
+    <pre>${body}</pre>
+  `;
+}
+
+document.getElementById("pick").onclick = () => document.getElementById("folder-input").click();
+document.getElementById("folder-input").addEventListener("change", (e) => {
+  const files = Array.from(e.target.files);
+  if (files.length === 0) return;
+  const rootName = files[0].webkitRelativePath.split("/")[0];
+  render(groupByTrajectory(files), rootName);
+  document.getElementById("content").innerHTML = '<div class="placeholder">Pick a file on the left.</div>';
+});
+</script>
+
+</body>
+</html>
