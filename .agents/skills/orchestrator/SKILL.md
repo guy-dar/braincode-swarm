@@ -8,7 +8,7 @@ description: Run or configure the swarm pipeline (spawn_batch.py) in this repo �
 This repo's pipeline for running one task against many trajectories, isolated per
 record. Entry point: `swarm/spawn_batch.py`. For the architecture behind any of
 this — why the task/harness split exists, the security posture, known failure
-modes — read `swarm/README.md` before re-deriving it from the code.
+modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
 
 ## Concepts
 

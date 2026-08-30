@@ -18,9 +18,9 @@ import re
 import pytest
 
 import utils
-from spawn_batch import SELF_DIR, load_dotenv
+from spawn_batch import SELF_DIR
 
-load_dotenv(SELF_DIR / ".env")
+utils.load_dotenv(SELF_DIR / ".env")
 
 API_KEY = os.environ.get("PROXY_API_KEY")
 BASE_URL = os.environ.get("PROXY_BASE_URL", "https://vertex-proxy-v26q.onrender.com/v1")
