@@ -26,7 +26,9 @@ on.
 
 `output/<hash6>-<slug>/`:
 
-- `source.json` — the input record, copied verbatim.
+- `source.json` — the input record, copied verbatim. Note this is the full
+  record; what the container itself sees at `/trajectory.txt` is just the
+  decoded `content` (see "Adding a harness" below).
 - `metadata.json` — written only on success:
   `{"harness", "task", "model", "hash", "timestamp", "experiment"}`. `hash` is
   the full sha256 (the folder name only has the first 6 chars); `timestamp` is
@@ -37,8 +39,13 @@ on.
   `uncertainties.md`, `keywords.md`.
 - On failure (no `metadata.json`): `stdout.log`, `stderr.log`.
 
-A folder with none of the above (killed mid-run before anything was written) is
-a crash orphan — removed automatically at the start of the next run.
+**Every folder without a `metadata.json` is removed at the start of the next
+run** — recorded failures and crash orphans alike. So read a failure's logs
+before re-running that batch, or they're gone. This isn't housekeeping for its
+own sake: a retry can't reuse the failed folder's name, because the slug half
+is LLM-generated per attempt and comes out different for the same record, so
+keeping them meant each re-run of a failing batch left another near-duplicate
+folder behind. Folders with a `metadata.json` are never touched.
 
 ## Adding a task
 
@@ -50,7 +57,7 @@ subagent — no other file to touch. Run with `SWARM_TASK=<name>`.
 Add `harnesses/<name>/` with:
 
 - `Dockerfile` — `FROM` an existing image, or build one from scratch.
-- `entrypoint.sh` — reads `/prompt.md` and `/trajectory.json`, uses
+- `entrypoint.sh` — reads `/prompt.md` and `/trajectory.txt`, uses
   `$SWARM_MODEL`/`$PROXY_API_KEY`/`$PROXY_BASE_URL`, writes results to
   `/output`.
 - Whatever config file the CLI itself needs.
@@ -58,10 +65,16 @@ Add `harnesses/<name>/` with:
 Every container gets, always:
 
 ```
-read-only: /reference/DESIGN_DOC.md, /trajectory.json, /prompt.md
+read-only: /reference/DESIGN_DOC.md, /trajectory.txt, /prompt.md
 writable:  /output
 env:       PROXY_API_KEY, PROXY_BASE_URL, SWARM_MODEL, HOME=/tmp
 ```
+
+`/trajectory.txt` is the record's decoded `content` — the turns as plain text,
+not the raw JSONL line. It's deliberately not JSON: handed the raw record,
+agents spent turns shelling out to `python3`/`node`/`jq`/`perl` to pretty-print
+the escaped newlines, none of which exist in these images. A harness should
+pass the file to its CLI as-is and not parse it.
 
 Run with `SWARM_HARNESS=<name>`. The two existing harnesses, for reference:
 

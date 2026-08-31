@@ -1,7 +1,7 @@
 #!/bin/sh
 # This harness's entire CLI invocation lives here, not on the host — mounts are
 # fixed by convention (see ../../spawn_batch.py): /reference/DESIGN_DOC.md,
-# /trajectory.json, /prompt.md read-only; /output writable. SWARM_MODEL,
+# /trajectory.txt, /prompt.md read-only; /output writable. SWARM_MODEL,
 # PROXY_API_KEY, PROXY_BASE_URL come in as env vars.
 set -e
 
@@ -16,4 +16,4 @@ export PI_CODING_AGENT_DIR="$HOME/pi-config"
 
 PROMPT="$(cat /prompt.md)"
 exec pi --print --no-session --no-context-files --approve \
-  --model "$SWARM_MODEL" "@/trajectory.json" "$PROMPT"
+  --model "$SWARM_MODEL" "@/trajectory.txt" "$PROMPT"

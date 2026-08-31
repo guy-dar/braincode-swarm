@@ -7,7 +7,9 @@ this one trajectory.
 
 Read `/reference/DESIGN_DOC.md` first — it defines the language: what a BrainCode
 document has to look like, its grammar, and its fidelity rules. Then read
-`/trajectory.json` — it's already attached to this message; don't search for it.
+`/trajectory.txt` — the trajectory's turns as plain text, already attached to this
+message; don't search for it, and don't reformat or preprocess it, it is already
+readable as-is.
 
 Naming a construct, in order — stop at the first gate that fails:
 

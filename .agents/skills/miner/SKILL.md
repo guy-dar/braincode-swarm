@@ -75,3 +75,31 @@ keep it under `swarm/data/<source-name>/` (one folder per source, created only
 once there's something to put in it) rather than dropping it loose in `swarm/`.
 This repo doesn't assume one static dataset — sourced material accumulating from
 several places over time is the expected shape, not an edge case.
+
+## Where this job ends
+
+Mining ends at producing staged, normalized data under `swarm/data/<source-name>/`
+— content-only JSONL records, ready for batching. Splitting that into
+`swarm/batches/batch-NN.jsonl` files and actually calling `spawn_batch.py`
+(which spins up Docker containers against the model API — a real, costed
+action) is `.claude/skills/orchestrator`'s job, not this one. After staging
+data, propose running it through the orchestrator rather than doing it
+yourself.
+
+## Preserve evidenced reasoning, don't discard it
+
+When a source carries a field that's genuine evidenced reasoning distinct from
+the final response (e.g. a `thinking`/`reasoning` column separate from the
+reply text), fold it into the trajectory rather than dropping it — per
+`swarm/DESIGN_DOC.md`'s fidelity contract, reasoning is never invented, but
+reasoning that *was* recorded by the source is exactly what discovery needs and
+should be kept, not thrown away for being inconvenient to format.
+
+## Flag size before pulling
+
+Before downloading a candidate source, check its size (dataset card, API
+metadata, a HEAD request — whatever's available before committing to the
+pull). Flag it to the user before proceeding if the total is more than a few
+gigabytes (as a rule of thumb, >4GB) or if it looks large relative to
+available disk space — sourcing at dataset scale can mean multi-gigabyte pulls
+without warning, and that's a cost worth surfacing rather than a surprise.

@@ -101,11 +101,17 @@ def load_batch(batch_path: Path, done_hashes: set) -> tuple:
 
 
 def prune_incomplete_folders(out_dir: Path) -> list:
-    """Remove folders left behind by a process killed before it could write
-    anything usable — no metadata.json (done) and no stdout.log/stderr.log (a
-    harness failure recorded on purpose, for debugging, not to be deleted).
-    Anything with neither is a crash orphan: dead weight that would otherwise
-    just sit there forcing every retry of that hash onto a `-2` suffix.
+    """Remove every folder without a metadata.json — both crash orphans and
+    folders holding a recorded harness failure (stdout.log/stderr.log).
+
+    Failure logs are kept only until the next run starts, not indefinitely:
+    a retry can't reuse the failed folder's name, because the slug half is
+    LLM-generated per attempt and comes out different for the same record
+    (`352a9d-uncensored-russian-llm-huggingface-recommendation` and
+    `352a9d-uncensored-russian-llms-huggingface` are one record, twice), so
+    keeping them meant every re-run of a failing batch left another
+    near-duplicate behind and the count grew without bound. Read the logs
+    before re-running; a successful record's folder is never touched.
     Returns the names removed, for the caller to log.
     """
     removed = []
@@ -115,8 +121,6 @@ def prune_incomplete_folders(out_dir: Path) -> list:
         if not entry.is_dir():
             continue
         if (entry / "metadata.json").exists():
-            continue
-        if (entry / "stdout.log").exists() or (entry / "stderr.log").exists():
             continue
         shutil.rmtree(entry)
         removed.append(entry.name)
@@ -148,6 +152,34 @@ def scan_existing_output(out_dir: Path):
         if meta.get("hash") and meta.get("timestamp"):
             done_hashes.add(meta["hash"])
     return done_hashes, names
+
+
+def trajectory_text(record_line: str) -> str:
+    """The record's `content` as readable text, for mounting into the container.
+
+    A batch record is one JSON object per line, so handed over raw the
+    trajectory arrives as a single line with its newlines escaped to `\\n` and
+    its turns buried under `id`/`platform`/`timestamp` fields the task never
+    asks about. Agents given that spend turns shelling out to
+    python3/node/jq/perl to pretty-print it — none of which exist in the
+    harness images — so they reach the trajectory several wasted model calls
+    later, or not at all. Handing over the decoded content leaves nothing to
+    parse. The raw record is still kept, as each output folder's source.json.
+
+    Falls back to the raw line for anything that isn't a JSON object with a
+    non-empty string `content`: an unexpected record shape should still reach
+    the agent rather than fail the run outright.
+    """
+    try:
+        record = json.loads(record_line)
+    except (TypeError, ValueError):
+        return record_line
+    if not isinstance(record, dict):
+        return record_line
+    content = record.get("content")
+    if not isinstance(content, str) or not content.strip():
+        return record_line
+    return content
 
 
 def content_hash(record_line: str) -> str:
@@ -237,7 +269,7 @@ def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
         "-e", "PROXY_API_KEY", "-e", "PROXY_BASE_URL",
         "-e", f"SWARM_MODEL={model}",
         "-v", f"{design_doc}:/reference/DESIGN_DOC.md:ro",
-        "-v", f"{traj_path}:/trajectory.json:ro",
+        "-v", f"{traj_path}:/trajectory.txt:ro",
         "-v", f"{prompt_file}:/prompt.md:ro",
         "-v", f"{scratch}:/output",
         image,

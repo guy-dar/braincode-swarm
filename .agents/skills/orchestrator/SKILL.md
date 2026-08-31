@@ -21,12 +21,19 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
   `swarm/harnesses/` (`Dockerfile` + `entrypoint.sh` + config). Adding a harness
   means adding a folder there; `spawn_batch.py` never branches on which one runs.
 - **Model** (`SWARM_MODEL`) — passed straight through to the harness's entrypoint
-  as an env var. Currently one is actually wired up: `vertex-proxy/gemini-flash`
-  (Gemini 3.7 Flash, via the vertex-proxy backend — see
-  `vertex-proxy/OPENCODE_SETUP.md`). More get added by extending a harness's own
-  config (`swarm/harnesses/opencode/config.jsonc`'s `models` block,
-  `swarm/harnesses/pi/models.template.json`'s `models` array) — check those files
-  for what's actually live before assuming a model string will resolve.
+  as an env var. Three are wired up, all via the vertex-proxy backend (see
+  `vertex-proxy/OPENCODE_SETUP.md`): `vertex-proxy/gemini-flash` (Gemini 3.7
+  Flash, medium reasoning effort — the default), `vertex-proxy/gemini-flash-high`
+  (same model, high effort), and `vertex-proxy/gemini-3.5-flash`. Reaching a
+  model takes two things — the proxy has to serve the alias *and* the harness has
+  to declare it (`swarm/harnesses/opencode/config.jsonc`'s `models` block,
+  `swarm/harnesses/pi/models.template.json`'s `models` array); a string the
+  harness doesn't declare won't resolve no matter what the proxy serves, so check
+  both before assuming.
+
+  Worth knowing when choosing: 3.7 Flash does no implicit prompt caching, while
+  3.5 Flash caches a growing conversation's prefix automatically. Over a long run
+  that's a real cost difference, not a detail.
 
 ## Running a batch
 
@@ -54,7 +61,8 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
    the marker a later run checks: re-running against refreshed or additional data
    only reprocesses records whose content hash isn't already recorded. A folder
    with no `metadata.json` (only `stdout.log`/`stderr.log`) failed — check its
-   logs.
+   logs *before* re-running that batch, because the next run deletes every
+   folder without a `metadata.json` (see `swarm/ADVANCED.md` for why).
 
 Data doesn't have to be one static source, and this isn't a one-time run: mixed
 sources and data that grows over time are the normal case, not an edge case — call

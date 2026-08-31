@@ -33,13 +33,16 @@ def process_record(record_line: str, full_hash: str, image: str,
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "source.json").write_text(record_line)
 
+    # The container gets the decoded turns as text, not the raw JSON record —
+    # see utils.trajectory_text. source.json above keeps the full record.
+    #
     # write_text() flushes before docker mounts the file; a handle left open
     # across subprocess.run() below once caused the container to see an
     # empty trajectory.
-    traj_fd, traj_name = tempfile.mkstemp(suffix=".json")
+    traj_fd, traj_name = tempfile.mkstemp(suffix=".txt")
     os.close(traj_fd)
     traj_path = Path(traj_name)
-    traj_path.write_text(record_line)
+    traj_path.write_text(utils.trajectory_text(record_line))
 
     uid, gid = os.getuid(), os.getgid()
     with tempfile.TemporaryDirectory() as scratch:
@@ -100,7 +103,8 @@ def main():
 
     pruned = utils.prune_incomplete_folders(out_dir)
     if pruned:
-        print(f"spawn_batch: pruned {len(pruned)} incomplete folder(s) from a previous crash",
+        print(f"spawn_batch: pruned {len(pruned)} folder(s) without metadata.json "
+              f"(previous failures and crash orphans)",
               file=sys.stderr)
 
     done_hashes, names = utils.scan_existing_output(out_dir)

@@ -134,6 +134,52 @@ class TestBuildFolderName:
         assert len(name.split("-", 1)[0]) == 6
 
 
+class TestTrajectoryText:
+    """What the container actually gets mounted. The fallbacks matter more than
+    the happy path: a record shape nobody anticipated should still reach the
+    agent as *something*, since returning the raw line degrades to the old
+    behaviour, while raising would fail an otherwise-fine record outright.
+    """
+
+    def test_returns_decoded_content_with_real_newlines(self):
+        line = json.dumps({"id": "x", "content": "<|user|>hi\nthere<|assistant|>yo"})
+        result = utils.trajectory_text(line)
+        assert result == "<|user|>hi\nthere<|assistant|>yo"
+        assert "\\n" not in result
+
+    def test_drops_the_wrapper_fields_the_task_never_asks_about(self):
+        line = json.dumps({"id": "u", "platform": "chatgpt", "timestamp": "t", "content": "turns"})
+        result = utils.trajectory_text(line)
+        assert result == "turns"
+        for wrapper in ("platform", "chatgpt", "timestamp"):
+            assert wrapper not in result
+
+    def test_non_json_falls_back_to_raw_line(self):
+        assert utils.trajectory_text("not json at all") == "not json at all"
+
+    def test_json_that_is_not_an_object_falls_back(self):
+        assert utils.trajectory_text("[1, 2, 3]") == "[1, 2, 3]"
+
+    def test_missing_content_key_falls_back(self):
+        line = json.dumps({"id": "x", "platform": "chatgpt"})
+        assert utils.trajectory_text(line) == line
+
+    def test_blank_content_falls_back(self):
+        line = json.dumps({"id": "x", "content": "   "})
+        assert utils.trajectory_text(line) == line
+
+    def test_non_string_content_falls_back(self):
+        line = json.dumps({"id": "x", "content": {"nested": 1}})
+        assert utils.trajectory_text(line) == line
+
+    def test_does_not_affect_the_record_identity(self):
+        # The hash is taken from the raw line, so changing what gets mounted
+        # must not change which records a rerun considers already done.
+        line = json.dumps({"id": "x", "content": "turns"})
+        assert utils.content_hash(line) == utils.content_hash(line)
+        assert utils.trajectory_text(line) != line
+
+
 class TestPruneIncompleteFolders:
     def test_empty_directory(self, tmp_path):
         assert utils.prune_incomplete_folders(tmp_path) == []
@@ -149,23 +195,26 @@ class TestPruneIncompleteFolders:
         assert removed == []
         assert folder.exists()
 
-    def test_folder_with_stderr_log_is_kept(self, tmp_path):
-        # A recorded harness failure, not a crash — deliberately preserved
-        # for debugging, must never be pruned.
+    def test_folder_with_stderr_log_is_pruned(self, tmp_path):
+        # A recorded harness failure is pruned too, not just crash orphans: a
+        # retry can't reuse the name (the slug half is regenerated per attempt
+        # and comes out different), so keeping these meant every re-run of a
+        # failing batch left another near-duplicate folder behind. The logs
+        # survive until the next run starts, no longer.
         folder = tmp_path / "abc123-failed"
         folder.mkdir()
         (folder / "stderr.log").write_text("boom")
         removed = utils.prune_incomplete_folders(tmp_path)
-        assert removed == []
-        assert folder.exists()
+        assert removed == ["abc123-failed"]
+        assert not folder.exists()
 
-    def test_folder_with_stdout_log_is_kept(self, tmp_path):
+    def test_folder_with_stdout_log_is_pruned(self, tmp_path):
         folder = tmp_path / "abc123-failed"
         folder.mkdir()
         (folder / "stdout.log").write_text("")
         removed = utils.prune_incomplete_folders(tmp_path)
-        assert removed == []
-        assert folder.exists()
+        assert removed == ["abc123-failed"]
+        assert not folder.exists()
 
     def test_folder_with_neither_is_pruned(self, tmp_path):
         # The actual crash-orphan shape: process killed mid-run, so nothing
@@ -188,7 +237,7 @@ class TestPruneIncompleteFolders:
         (tmp_path / "some-file.txt").write_text("hi")
         assert utils.prune_incomplete_folders(tmp_path) == []
 
-    def test_mixed_folders_only_orphans_are_removed(self, tmp_path):
+    def test_mixed_folders_only_completed_ones_are_kept(self, tmp_path):
         done = tmp_path / "aaa-done"
         done.mkdir()
         (done / "metadata.json").write_text("{}")
@@ -202,8 +251,8 @@ class TestPruneIncompleteFolders:
         (orphan / "source.json").write_text("{}")
 
         removed = utils.prune_incomplete_folders(tmp_path)
-        assert removed == ["ccc-orphan"]
-        assert done.exists() and failed.exists() and not orphan.exists()
+        assert sorted(removed) == ["bbb-failed", "ccc-orphan"]
+        assert done.exists() and not failed.exists() and not orphan.exists()
 
 
 class TestReserveName:
@@ -499,7 +548,7 @@ class TestBuildDockerCmd:
 
     def _cmd(self, **overrides):
         args = dict(uid=1000, gid=1000, model="vertex-proxy/gemini-flash",
-                    design_doc="/path/DESIGN_DOC.md", traj_path="/tmp/traj.json",
+                    design_doc="/path/DESIGN_DOC.md", traj_path="/tmp/traj.txt",
                     prompt_file="/tmp/prompt.md", scratch="/tmp/scratch", image="my-image")
         args.update(overrides)
         return utils.build_docker_cmd(**args)
@@ -533,10 +582,10 @@ class TestBuildDockerCmd:
         assert cmd[cmd.index("--cpus") + 1] == "1"
 
     def test_mounts_design_doc_trajectory_and_prompt_read_only(self):
-        cmd = self._cmd(design_doc="/d/DESIGN_DOC.md", traj_path="/t/traj.json",
+        cmd = self._cmd(design_doc="/d/DESIGN_DOC.md", traj_path="/t/traj.txt",
                          prompt_file="/p/prompt.md")
         assert "/d/DESIGN_DOC.md:/reference/DESIGN_DOC.md:ro" in cmd
-        assert "/t/traj.json:/trajectory.json:ro" in cmd
+        assert "/t/traj.txt:/trajectory.txt:ro" in cmd
         assert "/p/prompt.md:/prompt.md:ro" in cmd
 
     def test_mounts_output_writable_not_read_only(self):
