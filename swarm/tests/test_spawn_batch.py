@@ -9,23 +9,25 @@ reserve_name and scan_existing_output themselves now live in utils.py — see
 test_utils.py for their tests.
 """
 import json
+import subprocess
 import threading
 from datetime import datetime
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import spawn_batch
 import utils
 from spawn_batch import process_record
 
 
-def make_fake_docker_run(produce_files=True, returncode=0):
+def make_fake_docker_run(produce_files=True, returncode=0, stderr="fake stderr"):
     """A stand-in for subprocess.run(["docker", "run", ...]): writes a fake
     harness output file into whatever scratch dir process_record mounted at
     /output (found by scanning the real docker cmd for its "-v host:/output"
     arg), so process_record's real copy-into-dest and metadata-writing code
     runs against something, without needing a real container.
     """
-    def fake_run(cmd, capture_output=True, text=True):
+    def fake_run(cmd, capture_output=True, text=True, timeout=None):
         mount = next(a for a in cmd if a.endswith(":/output"))
         scratch = Path(mount[: -len(":/output")])
         if produce_files:
@@ -33,7 +35,7 @@ def make_fake_docker_run(produce_files=True, returncode=0):
         result = MagicMock()
         result.returncode = returncode
         result.stdout = "fake stdout"
-        result.stderr = "fake stderr"
+        result.stderr = stderr
         return result
     return fake_run
 
@@ -43,7 +45,7 @@ class TestProcessRecordNaming:
              harness_name="opencode", task_name="discovery",
              model="vertex-proxy/gemini-flash", experiment=None,
              produce_files=True, returncode=0, names=None, names_lock=None,
-             out_dir=None):
+             out_dir=None, stderr="fake stderr", timeout_s=1200):
         names = set() if names is None else names
         names_lock = names_lock or threading.Lock()
         design_doc = tmp_path / "DESIGN_DOC.md"
@@ -55,11 +57,11 @@ class TestProcessRecordNaming:
         out_dir.mkdir(exist_ok=True)
 
         with patch("spawn_batch.utils.generate_slug", return_value="fixed-slug"), \
-             patch("spawn_batch.subprocess.run", side_effect=make_fake_docker_run(produce_files, returncode)):
+             patch("spawn_batch.subprocess.run", side_effect=make_fake_docker_run(produce_files, returncode, stderr)):
             name, ok, tail = process_record(
                 record_line, full_hash, "fake-image", design_doc, prompt_file,
                 model, "key", "http://base", harness_name, task_name, experiment,
-                out_dir, names, names_lock,
+                timeout_s, out_dir, names, names_lock,
             )
         return out_dir, name, ok, tail
 
@@ -109,6 +111,55 @@ class TestProcessRecordNaming:
         assert ok is False
         assert not (out_dir / name / "metadata.json").exists()
 
+    def _run_timing_out(self, tmp_path, timeout_s=5, full_hash="abcdef" + "0" * 58):
+        """process_record against a docker run that never returns."""
+        killed = []
+
+        def fake_run(cmd, capture_output=True, text=True, timeout=None):
+            if cmd[:2] == ["docker", "kill"]:
+                killed.append(cmd[2])
+                return MagicMock(returncode=0, stdout="", stderr="")
+            raise subprocess.TimeoutExpired(cmd, timeout, output=b"partial out",
+                                            stderr=b"partial err")
+
+        names, lock = set(), threading.Lock()
+        design_doc = tmp_path / "DESIGN_DOC.md"; design_doc.write_text("d")
+        prompt_file = tmp_path / "prompt.md"; prompt_file.write_text("p")
+        out_dir = tmp_path / "output"; out_dir.mkdir(exist_ok=True)
+        with patch("spawn_batch.utils.generate_slug", return_value="fixed-slug"), \
+             patch("spawn_batch.subprocess.run", side_effect=fake_run):
+            name, ok, tail = process_record(
+                "{}", full_hash, "img", design_doc, prompt_file, "m", "k", "b",
+                "opencode", "discovery", None, timeout_s, out_dir, names, lock)
+        return out_dir, name, ok, tail, killed
+
+    def test_a_hung_container_is_killed_by_name_not_just_detached(self, tmp_path):
+        # subprocess's own timeout only kills the `docker run` client; the
+        # container keeps running and keeps its CPU. Killing it needs the name,
+        # which is why build_docker_cmd takes one.
+        out_dir, name, ok, tail, killed = self._run_timing_out(tmp_path)
+        assert ok is False
+        assert killed == [f"swarm-{name}"]
+
+    def test_timeout_is_recorded_as_a_distinct_returncode_with_an_explanation(self, tmp_path):
+        # Harnesses buffer output, so a killed container's transcript is often
+        # empty; without the appended note failure.json would carry a bare exit
+        # code and nothing saying the record was killed rather than crashed.
+        out_dir, _, _, tail, _ = self._run_timing_out(tmp_path, timeout_s=7)
+        meta = json.loads((out_dir.parent / "failures" / "abcdef" / "failure.json").read_text())
+        assert meta["returncode"] == spawn_batch.TIMEOUT_RETURNCODE
+        assert "timed out after 7s" in (out_dir.parent / "failures" / "abcdef" / "stderr.log").read_text()
+        # The timeout must win over anything the harness said earlier — that is
+        # why it is written last, in the `Error:` convention.
+        assert meta["error"] == "timed out after 7s and was killed."
+        assert "timed out after 7s" in tail
+
+    def test_whatever_was_captured_before_the_kill_is_kept(self, tmp_path):
+        out_dir, _, _, _, _ = self._run_timing_out(tmp_path)
+        d = out_dir.parent / "failures" / "abcdef"
+        assert "partial out" in (d / "stdout.log").read_text()
+        assert "partial err" in (d / "stderr.log").read_text()
+
     def test_failure_logs_go_to_failures_dir_and_out_dir_folder_is_removed(self, tmp_path):
         # out_dir is for successes; a failed attempt's logs live under
         # failures/ instead, so nothing has to be rescued by hand before the
@@ -126,15 +177,54 @@ class TestProcessRecordNaming:
         # The silent-stall shape: exits 0, writes nothing, reports no error.
         # Without the exit code recorded, that is indistinguishable after the
         # fact from a container that was killed.
+        # Silent means the harness said nothing at all — hence stderr="".
+        # A harness that reports an HTTP failure clearly (pi's "503 status
+        # code") must not land in this bucket, so error is only None here.
         out_dir, _, _, _ = self._run(tmp_path, produce_files=False, returncode=0,
-                                     full_hash="abcdef" + "0" * 58)
+                                     full_hash="abcdef" + "0" * 58, stderr="")
         meta = json.loads((out_dir.parent / "failures" / "abcdef" / "failure.json").read_text())
         assert meta["returncode"] == 0
         assert meta["produced_files"] is False
-        assert meta["error"] is None  # no "Error:" line — the silent signature
+        assert meta["error"] is None  # nothing reported — the silent signature
         assert meta["hash"] == "abcdef" + "0" * 58
         assert isinstance(meta["duration_s"], float)
         datetime.fromisoformat(meta["timestamp"])  # raises if malformed
+
+    def test_partial_output_is_preserved_when_the_harness_wrote_files_then_failed(self, tmp_path):
+        # The near-miss case: files written, then a non-zero exit (e.g. a 429
+        # on the last step). Still a failure — the task's contract is all four
+        # files, so no metadata.json and a rerun retries it — but the work it
+        # did manage is kept under partial/ instead of being deleted.
+        out_dir, name, ok, tail = self._run(tmp_path, produce_files=True, returncode=1,
+                                            full_hash="abcdef" + "0" * 58)
+        assert ok is False
+        assert not (out_dir / name).exists()
+        failure = out_dir.parent / "failures" / "abcdef"
+        assert (failure / "partial" / "translation.bc").read_text() == "<|program|> pass"
+        meta = json.loads((failure / "failure.json").read_text())
+        assert meta["produced_files"] is True
+        assert meta["partial_files"] == ["translation.bc"]
+        assert "partial output kept" in tail
+
+    def test_no_partial_dir_when_the_harness_wrote_nothing(self, tmp_path):
+        out_dir, _, _, tail = self._run(tmp_path, produce_files=False, returncode=0,
+                                        full_hash="abcdef" + "0" * 58)
+        failure = out_dir.parent / "failures" / "abcdef"
+        assert not (failure / "partial").exists()
+        meta = json.loads((failure / "failure.json").read_text())
+        assert meta["partial_files"] == []
+        assert "partial output kept" not in tail
+
+    def test_a_reported_http_failure_is_not_classified_as_silent(self, tmp_path):
+        # pi's wording. Before last_error_line handled it, 96 of these were
+        # reported as "no error reported", indistinguishable from a container
+        # that produced nothing and complained about nothing.
+        out_dir, _, _, tail = self._run(tmp_path, produce_files=False, returncode=1,
+                                        full_hash="abcdef" + "0" * 58,
+                                        stderr="503 status code (no body)")
+        meta = json.loads((out_dir.parent / "failures" / "abcdef" / "failure.json").read_text())
+        assert meta["error"] == "HTTP 503"
+        assert "no error reported" not in tail
 
     def test_same_record_failing_twice_gets_one_directory_per_attempt(self, tmp_path):
         # First of the two reasons a name gets suffixed: the same record

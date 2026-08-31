@@ -13,6 +13,7 @@ pipeline — not needed for normal use (see `README.md` for that).
 | `SWARM_TASK` | `discovery` | picks `tasks/$SWARM_TASK.md` |
 | `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness |
 | `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s |
+| `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed |
 | `SWARM_BATCH_SIZE` | `20` | informational — how you split data, not enforced |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in `metadata.json`; tags which run a record came from |
 
@@ -38,6 +39,17 @@ on.
 - Whatever the task wrote. For `discovery`: `translation.bc`, `decisions.md`,
   `uncertainties.md`, `keywords.md`.
 
+A record whose container passes `SWARM_TIMEOUT` is killed and recorded as a
+failure with `returncode: -9`. The ceiling exists because nothing else bounds a
+container: docker imposes no deadline, and a harness that stops making progress
+holds its pool slot indefinitely — one agent ran `grep -rn BrainCode /` at 100%
+CPU for 37 minutes with an empty `/output`, and fifteen at once starved the
+host. 1200s is far above a normal record (2-5 minutes, or ~15 while riding out
+proxy outages through the harness's own retries), so hitting it means something
+is wrong rather than slow. Killing needs the container's name, not just the
+`docker run` process — that only detaches the client and leaves the container
+running — which is why `build_docker_cmd` names it.
+
 `output/` holds successes only. A record that fails leaves nothing behind here
 — its half-written folder is removed and its logs go to `failures/` instead
 (below). Any folder without a `metadata.json` is removed at the start of the
@@ -55,9 +67,14 @@ by hand first.
 
 - `source.json` — the input record, verbatim.
 - `stdout.log`, `stderr.log` — the container's full transcript.
+- `partial/` — whatever the harness wrote before it died, when it wrote
+  anything. A record that produces three of four files and then hits a 429 has
+  done nearly all the work; that output is kept for inspection rather than
+  discarded. It is still a failure: the task's contract is *all* its files, so
+  no `metadata.json` is written and a rerun retries the record from scratch.
 - `failure.json` — `{"hash", "attempt_name", "returncode", "produced_files",
-  "duration_s", "timestamp", "harness", "task", "model", "experiment",
-  "error"}`. `returncode` and `produced_files` are the fields the logs can't
+  "partial_files", "duration_s", "timestamp", "harness", "task", "model",
+  "experiment", "error"}`. `returncode` and `produced_files` are the fields the logs can't
   give you: a container that exits 0 having written nothing is a different
   problem from one that was killed, and the two look identical afterwards
   without them. `error` is the last `Error:` line the harness printed, and is

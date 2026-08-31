@@ -1,19 +1,34 @@
 # visualizer
 
 Browse a swarm `output/` directory: pick the folder, click a trajectory subfolder,
-click a file to view it. `.bc` files get syntax highlighting; `.md`/`.json`/logs
-render as plain text (JSON pretty-printed).
+click a file to view it. `.bc`, `.md` and `.json` files get syntax highlighting;
+logs and anything else render as plain text.
 
 No build step, no dependencies, no server. Open `index.html` in a browser and click
-"Choose output folder…" (`<input webkitdirectory>` — reads the folder locally via
-the browser's own file APIs, nothing leaves your machine).
+"Choose output folder…" — the folder is read locally via the browser's own file
+APIs, nothing leaves your machine.
 
 Works with any task's output — groups files by parent subfolder and lists whatever's
 there, no fixed filename list assumed.
 
+## Live updating
+
+The folder is re-read on a timer (5s by default, configurable in the header, or
+off), so a running batch shows up on its own — no re-picking to see new results.
+Newly appeared trajectories are briefly highlighted, and if the file you're looking
+at is rewritten it reloads in place, keeping your scroll position. Only actual
+changes trigger a re-render, so open sections and scroll position survive a refresh.
+
+Sort by name, or by "newest first" to watch results land while a batch runs.
+
+This needs the File System Access API (`showDirectoryPicker`), i.e. a Chromium
+browser. Elsewhere it falls back to a one-off `<input webkitdirectory>` snapshot —
+everything still works, but you have to re-pick the folder to pick up changes, and
+the header says so.
+
 ## Highlighting
 
-Recognizes only:
+Deliberately structural rather than vocabulary-aware. For `.bc` it recognizes only:
 
 - `<|...|>` turn tags
 - strings, comments (`#`), numbers
@@ -22,3 +37,12 @@ Recognizes only:
 
 No BrainCode construct or package names are hardcoded — see `../swarm/DESIGN_DOC.md`
 for the current vocabulary state.
+
+Markdown is highlighted **as source**, not rendered: `decisions.md` and
+`uncertainties.md` are read as evidence of what a translation actually wrote, and
+rendering would quietly hide malformed markup instead of showing it. A fenced block
+tagged ```` ```bc ```` gets its body highlighted as BrainCode, since those files
+often quote it.
+
+JSON is pretty-printed, then keys, strings, numbers and literals are coloured
+separately. Invalid JSON is shown verbatim rather than erroring.

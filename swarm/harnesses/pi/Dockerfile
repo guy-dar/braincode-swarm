@@ -12,6 +12,7 @@ RUN mkdir -p /workspace && chmod 777 /workspace
 WORKDIR /workspace
 
 COPY --chmod=644 models.template.json /opt/models.template.json
+COPY --chmod=644 settings.json /opt/settings.json
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

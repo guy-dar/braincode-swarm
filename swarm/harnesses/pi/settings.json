@@ -1,0 +1,30 @@
+{
+  "_comment": [
+    "Pi's retry window, widened from its defaults (maxRetries 3, baseDelayMs",
+    "2000 => 2+4+8 = 14s). The proxy this swarm talks to goes away for ~60s at",
+    "a time — a Render instance OOMing and restarting — and 14s does not cover",
+    "that, so every record in flight died: a concurrency-32 run lost 96 of 100,",
+    "91 of them to Cloudflare 429 challenge pages in front of the restarting",
+    "instance. Observed failure durations clustered at 15.9s median, matching",
+    "the 14s backoff exactly.",
+    "6 retries at the same base gives 2+4+8+16+32+64 = 126s, comfortably past a",
+    "60s outage. Retrying inside Pi beats retrying the container: it resumes the",
+    "same session instead of re-spending the whole record's tokens.",
+    "Note retry.provider.maxRetries defaults to 0 — Pi disables the bundled",
+    "OpenAI SDK's own retries and does its own, so this block is the only knob.",
+    "Not fixed by anything server-side: these failures happen in front of the",
+    "litellm proxy, so litellm's num_retries never sees them.",
+    "This layer's backoff is plain `baseDelayMs * 2**(attempt-1)` — no jitter",
+    "and no knob for it, so N workers hitting one outage retry in lockstep.",
+    "The nested retry.provider.* layer (the bundled OpenAI SDK) does jitter and",
+    "does honor Retry-After, but it caps each sleep at 8s, so its +-25% spread",
+    "is a couple of seconds against a 60s outage — not enough to matter here,",
+    "and pi's docs warn it can swallow usage-limit errors before pi sees them.",
+    "Keep SWARM_CONCURRENCY moderate rather than relying on either."
+  ],
+  "retry": {
+    "enabled": true,
+    "maxRetries": 6,
+    "baseDelayMs": 2000
+  }
+}

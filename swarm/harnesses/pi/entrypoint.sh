@@ -12,6 +12,10 @@ set -e
 # $VAR reference, resolved by Pi itself from the environment at request time.
 mkdir -p "$HOME/pi-config"
 sed "s|__PROXY_BASE_URL__|$PROXY_BASE_URL|" /opt/models.template.json > "$HOME/pi-config/models.json"
+# Pi's own retry window, widened from its defaults — see settings.json for why.
+# It lives in the same config dir as models.json, so it gets copied in here
+# rather than mounted.
+cp /opt/settings.json "$HOME/pi-config/settings.json"
 export PI_CODING_AGENT_DIR="$HOME/pi-config"
 
 PROMPT="$(cat /prompt.md)"

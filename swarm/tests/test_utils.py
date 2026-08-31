@@ -134,6 +134,55 @@ class TestBuildFolderName:
         assert len(name.split("-", 1)[0]) == 6
 
 
+class TestLastErrorLine:
+    """Kept harness-agnostic on purpose: opencode says `Error: ...`, pi says
+    `503 status code (no body)` or dumps a Cloudflare challenge page. Reading
+    only opencode's shape reported pi's clear HTTP failures as "no error
+    reported", which is the same signature as a container that died having said
+    nothing at all — two very different problems.
+    """
+
+    def test_opencode_error_prefix(self):
+        assert utils.last_error_line("> build\nError: Too Many Requests") == "Too Many Requests"
+
+    def test_last_error_wins_when_several(self):
+        assert utils.last_error_line("Error: first\nError: second") == "second"
+
+    def test_strips_ansi(self):
+        assert utils.last_error_line("\x1b[91mError: Boom\x1b[0m") == "Boom"
+
+    def test_pi_bare_status_code(self):
+        assert utils.last_error_line("503 status code (no body)") == "HTTP 503"
+
+    def test_cloudflare_challenge_is_named_not_dumped(self):
+        body = '429 <!DOCTYPE html><title>Just a moment...</title>' + "x" * 20000
+        out = utils.last_error_line(body)
+        assert out == "HTTP 429 (Cloudflare challenge)"
+        assert len(out) < 60          # never carry the 20KB body into failure.json
+
+    def test_unrecognized_output_falls_back_to_first_line_truncated(self):
+        assert utils.last_error_line("something odd happened\nmore") == "something odd happened"
+        assert len(utils.last_error_line("z" * 500)) == 160
+
+    def test_progress_chatter_alone_is_still_silent(self):
+        # opencode's silent-stall transcripts contain only its banner and tool
+        # calls. Reporting the banner as the error would erase the difference
+        # between "produced garbage and said nothing" and "reported a failure".
+        assert utils.last_error_line("> build \u00b7 gemini-3.5-flash") is None
+        assert utils.last_error_line("> build\n\u2192 Read DESIGN_DOC.md\n\u2731 Glob \u2190 Write") is None
+        assert utils.last_error_line("# Todos\n[ ] read the doc\n$ ls") is None
+
+    def test_real_speech_after_chatter_is_reported(self):
+        assert utils.last_error_line("> build\nsomething broke") == "something broke"
+
+    def test_none_only_when_nothing_was_said(self):
+        # The genuinely silent shape — must stay distinguishable from a
+        # reported HTTP failure.
+        assert utils.last_error_line("") is None
+        assert utils.last_error_line("   \n\n  ") is None
+        assert utils.last_error_line("\x1b[91m> build\x1b[0m") is None  # banner only
+
+
 class TestTrajectoryText:
     """What the container actually gets mounted. The fallbacks matter more than
     the happy path: a record shape nobody anticipated should still reach the

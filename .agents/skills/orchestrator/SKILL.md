@@ -84,6 +84,7 @@ sources and data that grows over time are the normal case, not an edge case — 
 | `SWARM_TASK` | `discovery` | picks `swarm/tasks/$SWARM_TASK.md` |
 | `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness's entrypoint |
 | `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s within one `spawn_batch.py` call |
+| `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed and recorded as failed |
 | `SWARM_BATCH_SIZE` | `20` | informational — how you split data, not enforced |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in each record's `metadata.json`; tags which run it came from |
 | `PROXY_API_KEY` | *(required)* | — |

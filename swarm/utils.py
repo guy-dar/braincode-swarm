@@ -23,6 +23,9 @@ slug describing it: lowercase words separated by single hyphens, 3 to 6 words, \
 no punctuation, no quotes. It is one of many similar trajectories in the same \
 batch, so name what's actually distinct about this one — the specific subject, \
 action, or detail — not a generic description that could apply to any of them. \
+Use Latin letters a-z and digits only, even when the trajectory itself is in \
+another script or language: describe it in English rather than transliterating, \
+since the slug is only there to be recognizable in a directory listing. \
 Output only the slug, nothing else.
 
 Trajectory:
@@ -46,6 +49,7 @@ class Config:
     task_name: str
     model: str
     concurrency: int
+    timeout_s: int
     experiment: str
     base_url: str
     api_key: str
@@ -65,6 +69,13 @@ def load_config(self_dir: Path) -> Config:
     task_name = os.environ.get("SWARM_TASK", "discovery")
     model = os.environ.get("SWARM_MODEL", "vertex-proxy/gemini-flash")
     concurrency = int(os.environ.get("SWARM_CONCURRENCY", "4"))
+    # A ceiling on one record, not a target. Normal records finish in 2-5
+    # minutes; one riding out proxy outages through the harness's own retries
+    # can legitimately take ~15, so this is set well above that and exists
+    # only to stop a container that will never finish — an agent burning a
+    # core on `grep -rn / ` held its pool slot for 37 minutes before anyone
+    # noticed.
+    timeout_s = int(os.environ.get("SWARM_TIMEOUT", "1200"))
     experiment = os.environ.get("SWARM_EXPERIMENT") or None
     base_url = os.environ.setdefault("PROXY_BASE_URL", "https://vertex-proxy-v26q.onrender.com/v1")
     api_key = os.environ.get("PROXY_API_KEY")
@@ -78,8 +89,8 @@ def load_config(self_dir: Path) -> Config:
     if not task_file.exists():
         raise ValueError(f"no such task file: {task_file}")
 
-    return Config(harness_name, task_name, model, concurrency, experiment,
-                  base_url, api_key, harness_dir, task_file)
+    return Config(harness_name, task_name, model, concurrency, timeout_s,
+                  experiment, base_url, api_key, harness_dir, task_file)
 
 
 def load_batch(batch_path: Path, done_hashes: set) -> tuple:
@@ -179,7 +190,7 @@ def record_failure(out_dir: Path, full_hash: str, attempt_name: str,
                    record_line: str, stdout: str, stderr: str,
                    returncode: int, produced: bool, duration_s: float,
                    harness_name: str, task_name: str, model: str,
-                   experiment: str) -> Path:
+                   experiment: str, produced_dir=None) -> Path:
     """Preserve a failed attempt under `failures/`, and return its path.
 
     Kept outside out_dir, so out_dir holds successes only and none of this is
@@ -198,12 +209,32 @@ def record_failure(out_dir: Path, full_hash: str, attempt_name: str,
     (dest / "source.json").write_text(record_line)
     (dest / "stdout.log").write_text(stdout)
     (dest / "stderr.log").write_text(stderr)
+
+    # Whatever the harness managed to write before it died, under partial/.
+    # A run that gets three of four files out and then hits a 429 has done
+    # almost all the work; discarding it left nothing to inspect and no way to
+    # tell a near-miss from a container that never started. It stays a failure
+    # either way — the task's contract is all four files, so no metadata.json
+    # is written and a rerun still retries the record from scratch.
+    partial_names = []
+    if produced_dir is not None and Path(produced_dir).is_dir():
+        partial = dest / "partial"
+        for item in sorted(Path(produced_dir).iterdir()):
+            partial.mkdir(exist_ok=True)
+            target = partial / item.name
+            if item.is_dir():
+                shutil.copytree(item, target, dirs_exist_ok=True)
+            else:
+                shutil.copy2(item, target)
+            partial_names.append(item.name)
+
     (dest / "failure.json").write_text(json.dumps(
         {
             "hash": full_hash,
             "attempt_name": attempt_name,
             "returncode": returncode,
             "produced_files": produced,
+            "partial_files": partial_names,
             "duration_s": round(duration_s, 1),
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "harness": harness_name,
@@ -220,18 +251,45 @@ def record_failure(out_dir: Path, full_hash: str, attempt_name: str,
 ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
 
 
-def last_error_line(stderr: str) -> str | None:
-    """The last `Error: ...` line the harness printed, ANSI stripped.
+HTTP_STATUS_RE = re.compile(r"^(\d{3})\b")
 
-    None when there is no such line, which is itself the useful signal: a
-    failure with no error line at all is the silent-stall shape, not a
-    reported failure.
+
+def last_error_line(stderr: str) -> str | None:
+    """A short description of how the harness failed, or None if it said nothing.
+
+    Deliberately not tied to one harness's wording. opencode prefixes
+    `Error: ...`; pi writes a bare `503 status code (no body)` or dumps a whole
+    Cloudflare challenge page starting `429 <!DOCTYPE html>`. Recognizing only
+    the first shape reported pi's perfectly clear HTTP errors as "no error
+    reported", which collides with the genuinely silent shape — a container
+    that exits having produced neither output nor complaint — and those two
+    need to stay distinguishable.
+
+    None therefore means the harness really printed nothing usable, which is
+    itself the diagnostic signal.
     """
-    for line in reversed(ANSI_ESCAPE.sub("", stderr).splitlines()):
-        line = line.strip()
+    lines = [l.strip() for l in ANSI_ESCAPE.sub("", stderr).splitlines() if l.strip()]
+    for line in reversed(lines):
         if line.startswith("Error:"):
             return line[len("Error:"):].strip() or None
-    return None
+    for line in lines:
+        status = HTTP_STATUS_RE.match(line)
+        if status:
+            # Don't return the body: a Cloudflare challenge is ~20KB of HTML,
+            # and naming the mitigation is the part worth recording.
+            if "Just a moment" in stderr or "cf-mitigated" in stderr:
+                return f"HTTP {status.group(1)} (Cloudflare challenge)"
+            return f"HTTP {status.group(1)}"
+    # Anything left that isn't the harness narrating itself. Both CLIs stream
+    # progress to stderr (a banner, tool calls, todo lists), so a transcript
+    # made of nothing but that is the silent shape — treating its banner as an
+    # error message would erase the distinction this function exists to
+    # preserve. Tested structurally rather than against a list of glyphs:
+    # narration is prefixed with punctuation or symbols (> → ← ✱ ✗ # [ • $)
+    # and that set differs per harness and version, while a message meant for a
+    # human starts with a word.
+    speech = [l for l in lines if l[0].isalnum()]
+    return speech[0][:160] if speech else None
 
 
 def scan_existing_output(out_dir: Path):
@@ -356,7 +414,8 @@ def reserve_name(base: str, names: set, names_lock: threading.Lock) -> str:
 
 
 def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
-                      traj_path: Path, prompt_file: Path, scratch, image: str) -> list:
+                      traj_path: Path, prompt_file: Path, scratch, image: str,
+                      container_name: str | None = None) -> list:
     """The exact `docker run` invocation for one record: non-root (matches
     the host uid/gid, so the writable /output mount just works), all
     capabilities dropped, no privilege escalation, memory/CPU capped. Network
@@ -364,9 +423,14 @@ def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
     API. Mount surface is exactly the 3 read-only paths + 1 writable dir
     below; nothing else from the host is reachable (see ADVANCED.md's
     Security section for the fuller rationale).
+
+    container_name is what makes a timeout enforceable: killing the `docker
+    run` process only detaches the CLI, leaving the container running, so
+    spawn_batch needs a name to `docker kill`.
     """
     return [
         "docker", "run", "--rm",
+        *(("--name", container_name) if container_name else ()),
         "--user", f"{uid}:{gid}",
         "-e", "HOME=/tmp",
         "--cap-drop=ALL",

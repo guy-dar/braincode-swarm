@@ -21,12 +21,24 @@ import utils
 
 SELF_DIR = Path(__file__).resolve().parent
 
+# Distinct from any exit code a harness produces, so failure.json's returncode
+# says "we killed this" rather than being mistaken for the container's own.
+TIMEOUT_RETURNCODE = -9
+
+
+def _decode(stream) -> str:
+    """TimeoutExpired carries whatever was captured before the kill, as bytes
+    or None depending on the platform."""
+    if stream is None:
+        return ""
+    return stream if isinstance(stream, str) else stream.decode("utf-8", "replace")
+
 
 def process_record(record_line: str, full_hash: str, image: str,
                     design_doc: Path, prompt_file: Path, model: str,
                     api_key: str, base_url: str, harness_name: str,
-                    task_name: str, experiment: str, out_dir: Path,
-                    names: set, names_lock: threading.Lock):
+                    task_name: str, experiment: str, timeout_s: int,
+                    out_dir: Path, names: set, names_lock: threading.Lock):
     slug = utils.generate_slug(record_line, model, api_key, base_url)
     name = utils.reserve_name(utils.build_folder_name(full_hash, slug), names, names_lock)
 
@@ -48,10 +60,37 @@ def process_record(record_line: str, full_hash: str, image: str,
     uid, gid = os.getuid(), os.getgid()
     with tempfile.TemporaryDirectory() as scratch:
         try:
+            container_name = f"swarm-{name}"
             cmd = utils.build_docker_cmd(uid, gid, model, design_doc, traj_path,
-                                          prompt_file, scratch, image)
+                                          prompt_file, scratch, image,
+                                          container_name=container_name)
             started = time.monotonic()
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True,
+                                        timeout=timeout_s)
+            except subprocess.TimeoutExpired as expired:
+                # A container that never finishes on its own. Seen for real: an
+                # agent ran `grep -rn BrainCode /` and sat at 100% CPU for 37
+                # minutes with an empty /output, and 15 of them at once starved
+                # a 14-core host. Nothing upstream bounds this — docker has no
+                # deadline, the harness had already stopped talking to the API,
+                # and the pool slot is held the whole time — so the ceiling has
+                # to live here.
+                subprocess.run(["docker", "kill", container_name],
+                               capture_output=True, text=True)
+                result = subprocess.CompletedProcess(
+                    cmd, returncode=TIMEOUT_RETURNCODE,
+                    stdout=_decode(expired.stdout),
+                    # Harnesses buffer their output, so a killed container's
+                    # transcript is usually empty — say why the record ended,
+                    # or failure.json would show a bare exit code and nothing
+                    # to explain it. Written in the harnesses' own `Error:`
+                    # convention, and last, so last_error_line reports the
+                    # timeout rather than whatever the harness said before it
+                    # stopped making progress.
+                    stderr=(_decode(expired.stderr)
+                            + f"\nError: timed out after {timeout_s}s and was killed."),
+                )
             duration_s = time.monotonic() - started
             produced = any(Path(scratch).iterdir())
             if result.returncode == 0 and produced:
@@ -94,12 +133,18 @@ def process_record(record_line: str, full_hash: str, image: str,
                     produced=produced, duration_s=duration_s,
                     harness_name=harness_name, task_name=task_name,
                     model=model, experiment=experiment,
+                    produced_dir=scratch,
                 )
                 shutil.rmtree(dest, ignore_errors=True)
                 tail = utils.last_error_line(result.stderr) or (
                     f"no error reported — exit {result.returncode}, "
                     f"wrote nothing, after {duration_s:.0f}s"
                 )
+                if produced:
+                    # Worth calling out: the harness wrote files and still
+                    # failed, so this record was close and its partial output
+                    # is kept for inspection rather than thrown away.
+                    tail += " — partial output kept"
                 return name, False, tail
         finally:
             traj_path.unlink(missing_ok=True)
@@ -144,7 +189,7 @@ def main():
                 pool.submit(process_record, line, full_hash, image, design_doc,
                             prompt_file, config.model, config.api_key, config.base_url,
                             config.harness_name, config.task_name, config.experiment,
-                            out_dir, names, names_lock)
+                            config.timeout_s, out_dir, names, names_lock)
                 for line, full_hash in records
             ]
             for future in as_completed(futures):

@@ -13,6 +13,7 @@
     --sidebar-bg: #f7f7f7;
     --active-bg: #e6e6e6;
     --code-bg: #fafafa;
+    --new-bg: #fff8dc;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -23,6 +24,7 @@
       --sidebar-bg: #171717;
       --active-bg: #2a2a2a;
       --code-bg: #181818;
+      --new-bg: #2e2a1a;
     }
   }
   * { box-sizing: border-box; }
@@ -44,6 +46,12 @@
   }
   header h1 { font-size: 15px; margin: 0; font-weight: 600; }
   header .path { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  header .spacer { flex: 1; }
+  header label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+  header select { font: inherit; font-size: 12px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 5px; background: var(--sidebar-bg); color: var(--fg); }
+  #status { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  #status .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4caf50; margin-right: 5px; vertical-align: middle; }
+  #status.paused .dot { background: var(--muted); }
   button {
     font: inherit;
     padding: 6px 12px;
@@ -60,7 +68,7 @@
     min-height: 0;
   }
   #sidebar {
-    width: 260px;
+    width: 280px;
     flex-shrink: 0;
     overflow-y: auto;
     background: var(--sidebar-bg);
@@ -70,6 +78,7 @@
     padding: 16px;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.5;
   }
   .trajectory { border-bottom: 1px solid var(--border); }
   .trajectory-name {
@@ -77,11 +86,26 @@
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
   }
   .trajectory-name:hover { background: var(--active-bg); }
+  .trajectory-name .caret { color: var(--muted); font-size: 10px; flex-shrink: 0; }
+  /* In-flight indicator. A record's folder gets source.json when it starts and
+     metadata.json only when it succeeds, so "no metadata.json" means either
+     running now or abandoned by a killed run — told apart by mtime, since a
+     stale folder would otherwise pulse forever. */
+  .ball { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; align-self: center; }
+  .ball.working { background: #4caf50; animation: pulse 1.4s ease-in-out infinite; }
+  .ball.stalled { background: #c9a227; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+  @media (prefers-reduced-motion: reduce) { .ball.working { animation: none; } }
+  .trajectory-name .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .trajectory.is-new .trajectory-name { background: var(--new-bg); }
   .file-list { padding: 0 0 6px 0; }
   .file-item {
-    padding: 4px 12px 4px 24px;
+    padding: 4px 12px 4px 26px;
     font-size: 12.5px;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     cursor: pointer;
@@ -102,6 +126,7 @@
     padding: 24px;
     color: var(--muted);
     font-size: 13px;
+    line-height: 1.6;
   }
   #content .file-header {
     position: sticky;
@@ -112,7 +137,10 @@
     color: var(--muted);
     background: var(--bg);
     border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
   }
+  #content .file-header .reloaded { color: #4caf50; }
   pre {
     margin: 0;
     padding: 16px;
@@ -123,12 +151,29 @@
     white-space: pre-wrap;
     word-break: break-word;
   }
+  /* shared token palette */
   .tok-comment { color: #6b8a5a; font-style: italic; }
   .tok-string  { color: #b0703c; }
   .tok-tag     { color: #b13a7a; font-weight: 600; }
   .tok-number  { color: #3a7ab1; }
   .tok-keyword { color: #7a4fb1; font-weight: 600; }
   .tok-func    { color: #2a8f7a; }
+  /* markdown */
+  .tok-md-head   { color: #b13a7a; font-weight: 700; }
+  .tok-md-code   { color: #2a8f7a; background: color-mix(in srgb, currentColor 8%, transparent); }
+  .tok-md-fence  { color: #2a8f7a; }
+  .tok-md-strong { color: var(--fg); font-weight: 700; }
+  .tok-md-em     { color: var(--fg); font-style: italic; }
+  .tok-md-link   { color: #3a7ab1; text-decoration: underline; }
+  .tok-md-marker { color: #7a4fb1; font-weight: 600; }
+  .tok-md-quote  { color: #6b8a5a; font-style: italic; }
+  .tok-md-rule   { color: var(--muted); }
+  /* json */
+  .tok-json-key   { color: #b13a7a; font-weight: 600; }
+  .tok-json-str   { color: #b0703c; }
+  .tok-json-num   { color: #3a7ab1; }
+  .tok-json-lit   { color: #7a4fb1; font-weight: 600; }
+  .tok-json-punct { color: var(--muted); }
   @media (prefers-color-scheme: dark) {
     .tok-comment { color: #8fbf7a; }
     .tok-string  { color: #e0a862; }
@@ -136,6 +181,16 @@
     .tok-number  { color: #6bb0f0; }
     .tok-keyword { color: #b98cf0; }
     .tok-func    { color: #5fd0b5; }
+    .tok-md-head   { color: #f06bb0; }
+    .tok-md-code   { color: #5fd0b5; }
+    .tok-md-fence  { color: #5fd0b5; }
+    .tok-md-link   { color: #6bb0f0; }
+    .tok-md-marker { color: #b98cf0; }
+    .tok-md-quote  { color: #8fbf7a; }
+    .tok-json-key   { color: #f06bb0; }
+    .tok-json-str   { color: #e0a862; }
+    .tok-json-num   { color: #6bb0f0; }
+    .tok-json-lit   { color: #b98cf0; }
   }
 </style>
 </head>
@@ -145,6 +200,23 @@
   <h1>BrainCode visualizer</h1>
   <button id="pick">Choose output folder…</button>
   <span class="path" id="path"></span>
+  <span class="spacer"></span>
+  <label>sort
+    <select id="sort">
+      <option value="name">name</option>
+      <option value="newest">newest first</option>
+    </select>
+  </label>
+  <label>refresh
+    <select id="interval">
+      <option value="0">off</option>
+      <option value="3000">3s</option>
+      <option value="5000" selected>5s</option>
+      <option value="15000">15s</option>
+      <option value="60000">60s</option>
+    </select>
+  </label>
+  <span id="status"></span>
 </header>
 
 <main>
@@ -157,10 +229,10 @@
 <script>
 // --- Highlighting -----------------------------------------------------
 // Deliberately generic: BrainCode's canonized vocabulary isn't fixed yet
-// (see swarm/DESIGN_DOC.md), so this only recognizes structure that's true
-// of the language regardless of which constructs exist — turn tags, and
-// the Python-inspired base grammar (strings, comments, numbers, generic
-// keywords, function-call shape). No construct/package names are assumed.
+// (see swarm/DESIGN_DOC.md), so the .bc highlighter only recognizes structure
+// that's true of the language regardless of which constructs exist — turn
+// tags, and the Python-inspired base grammar (strings, comments, numbers,
+// generic keywords, function-call shape). No construct/package names assumed.
 const KEYWORDS = [
   "import", "from", "as", "def", "class", "return", "if", "elif", "else",
   "for", "while", "in", "not", "and", "or", "is", "None", "True", "False",
@@ -168,7 +240,7 @@ const KEYWORDS = [
   "break", "continue", "global", "nonlocal", "assert", "del", "async", "await"
 ];
 
-const TOKEN_RE = new RegExp([
+const BC_RE = new RegExp([
   String.raw`(?<comment>#[^\n]*)`,
   String.raw`(?<string>'''[\s\S]*?'''|"""[\s\S]*?"""|'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*")`,
   String.raw`(?<tag><\|[^\n>]*?\|>)`,
@@ -181,11 +253,23 @@ function escapeHtml(s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function highlightBC(code) {
+// Generic tokenizer: walks the text once, wrapping the first match at each
+// position and escaping everything in between. Alternation order therefore
+// decides precedence when two patterns can start at the same index.
+function tokenize(text, re, classOf) {
   let out = "", last = 0, m;
-  TOKEN_RE.lastIndex = 0;
-  while ((m = TOKEN_RE.exec(code))) {
-    if (m.index > last) out += escapeHtml(code.slice(last, m.index));
+  re.lastIndex = 0;
+  while ((m = re.exec(text))) {
+    if (m[0] === "") { re.lastIndex++; continue; }   // never spin on an empty match
+    if (m.index > last) out += escapeHtml(text.slice(last, m.index));
+    out += classOf(m);
+    last = m.index + m[0].length;
+  }
+  return out + escapeHtml(text.slice(last));
+}
+
+function highlightBC(code) {
+  return tokenize(code, BC_RE, (m) => {
     const g = m.groups;
     const cls = g.comment ? "tok-comment"
       : g.string ? "tok-string"
@@ -193,98 +277,385 @@ function highlightBC(code) {
       : g.number ? "tok-number"
       : g.keyword ? "tok-keyword"
       : "tok-func";
-    out += `<span class="${cls}">${escapeHtml(m[0])}</span>`;
-    last = m.index + m[0].length;
-  }
-  out += escapeHtml(code.slice(last));
-  return out;
+    return `<span class="${cls}">${escapeHtml(m[0])}</span>`;
+  });
 }
 
-// --- Folder loading -----------------------------------------------------
-// Groups files by their immediate parent subfolder (one per trajectory),
-// generic across whatever a task actually wrote — nothing here assumes
-// the discovery task's specific filenames.
-function groupByTrajectory(fileList) {
+// Markdown: highlights the *source* rather than rendering it, so what you see
+// is what the task actually wrote — decisions.md is read as evidence, and
+// rendering would hide malformed markup instead of showing it. Fences and
+// inline code come first in the alternation so their contents aren't
+// re-tokenized as markup.
+const MD_RE = new RegExp([
+  "(?<fence>^ {0,3}(?:```|~~~)[^\\n]*\\n[\\s\\S]*?(?:^ {0,3}(?:```|~~~)[^\\n]*$|$))",
+  "(?<code>`+[^`\\n]+`+)",
+  "(?<head>^ {0,3}#{1,6} [^\\n]*)",
+  "(?<rule>^ {0,3}(?:[-*_] *){3,}$)",
+  "(?<quote>^ {0,3}> ?[^\\n]*)",
+  "(?<marker>^ {0,3}(?:[-*+]|\\d+[.)]) )",
+  "(?<link>!?\\[[^\\]\\n]*\\]\\([^)\\n]*\\))",
+  "(?<strong>\\*\\*[^*\\n]+\\*\\*|__[^_\\n]+__)",
+  "(?<em>\\*[^*\\n]+\\*|_[^_\\n]+_)",
+].join("|"), "gm");
+
+function highlightMarkdown(text) {
+  return tokenize(text, MD_RE, (m) => {
+    const g = m.groups;
+    if (g.fence) {
+      // Highlight a fenced block's body with the .bc highlighter when the
+      // fence says so — decisions.md often quotes BrainCode.
+      const nl = m[0].indexOf("\n");
+      const info = m[0].slice(0, nl);
+      const rest = m[0].slice(nl + 1);
+      if (/^\s*(?:```|~~~)\s*(?:bc|braincode)\s*$/.test(info)) {
+        const closeAt = rest.lastIndexOf("\n");
+        const hasClose = /^\s*(?:```|~~~)/.test(rest.slice(closeAt + 1));
+        const body = hasClose ? rest.slice(0, closeAt) : rest;
+        const close = hasClose ? rest.slice(closeAt) : "";
+        return `<span class="tok-md-fence">${escapeHtml(info)}</span>\n`
+             + highlightBC(body)
+             + `<span class="tok-md-fence">${escapeHtml(close)}</span>`;
+      }
+      return `<span class="tok-md-fence">${escapeHtml(m[0])}</span>`;
+    }
+    const cls = g.code ? "tok-md-code"
+      : g.head ? "tok-md-head"
+      : g.rule ? "tok-md-rule"
+      : g.quote ? "tok-md-quote"
+      : g.marker ? "tok-md-marker"
+      : g.link ? "tok-md-link"
+      : g.strong ? "tok-md-strong"
+      : "tok-md-em";
+    return `<span class="${cls}">${escapeHtml(m[0])}</span>`;
+  });
+}
+
+const JSON_RE = new RegExp([
+  String.raw`(?<key>"(?:[^"\\]|\\.)*"(?=\s*:))`,
+  String.raw`(?<str>"(?:[^"\\]|\\.)*")`,
+  String.raw`(?<num>-?\b\d+(?:\.\d+)?(?:[eE][-+]?\d+)?\b)`,
+  String.raw`(?<lit>\b(?:true|false|null)\b)`,
+  String.raw`(?<punct>[{}\[\],:])`,
+].join("|"), "g");
+
+function highlightJson(text) {
+  let src = text;
+  try { src = JSON.stringify(JSON.parse(text), null, 2); } catch { /* show as-is */ }
+  return tokenize(src, JSON_RE, (m) => {
+    const g = m.groups;
+    const cls = g.key ? "tok-json-key"
+      : g.str ? "tok-json-str"
+      : g.num ? "tok-json-num"
+      : g.lit ? "tok-json-lit"
+      : "tok-json-punct";
+    return `<span class="${cls}">${escapeHtml(m[0])}</span>`;
+  });
+}
+
+function highlightFor(name, text) {
+  if (name.endsWith(".bc")) return highlightBC(text);
+  if (name.endsWith(".md")) return highlightMarkdown(text);
+  if (name.endsWith(".json")) return highlightJson(text);
+  return escapeHtml(text);
+}
+
+// --- State --------------------------------------------------------------
+const state = {
+  dirHandle: null,      // FileSystemDirectoryHandle when live, else null
+  rootName: "",
+  groups: new Map(),    // trajectoryId -> [{ name, getFile(), lastModified, size }]
+  expanded: new Set(),
+  selected: null,       // { trajectoryId, name }
+  openMeta: null,       // { lastModified, size } of the file on screen
+  seen: new Set(),      // trajectory ids present at the previous scan
+  fresh: new Set(),     // ids that appeared on the most recent scan
+  timer: null,
+  scanning: false,
+  live: false,
+};
+
+// --- Scanning -----------------------------------------------------------
+// Two sources, same shape out: a live directory handle (re-readable, so the
+// view can follow a running batch) or a one-shot <input webkitdirectory>
+// snapshot (fallback for browsers without the File System Access API).
+async function scanHandle(dirHandle) {
+  const groups = new Map();
+  for await (const [name, handle] of dirHandle.entries()) {
+    if (handle.kind !== "directory") continue;
+    const files = [];
+    await collectFiles(handle, "", files);
+    if (files.length) groups.set(name, files);
+  }
+  return groups;
+}
+
+async function collectFiles(dirHandle, prefix, out) {
+  for await (const [name, handle] of dirHandle.entries()) {
+    const rel = prefix ? `${prefix}/${name}` : name;
+    if (handle.kind === "directory") {
+      await collectFiles(handle, rel, out);
+    } else {
+      const file = await handle.getFile();
+      out.push({ name: rel, getFile: () => handle.getFile(),
+                 lastModified: file.lastModified, size: file.size });
+    }
+  }
+}
+
+function groupsFromInput(fileList) {
   const groups = new Map();
   for (const file of fileList) {
     const parts = file.webkitRelativePath.split("/");
-    if (parts.length < 3) continue; // expects root/<trajectory>/<file>
-    const trajectoryId = parts[1];
-    const relPath = parts.slice(2).join("/");
-    if (!groups.has(trajectoryId)) groups.set(trajectoryId, []);
-    groups.get(trajectoryId).push({ name: relPath, file });
+    if (parts.length < 3) continue;               // expects root/<trajectory>/<file>
+    const id = parts[1];
+    if (!groups.has(id)) groups.set(id, []);
+    groups.get(id).push({ name: parts.slice(2).join("/"), getFile: async () => file,
+                          lastModified: file.lastModified, size: file.size });
   }
-  for (const files of groups.values()) files.sort((a, b) => a.name.localeCompare(b.name));
-  return new Map([...groups.entries()].sort((a, b) => a[0].localeCompare(b[0])));
+  return groups;
 }
 
-function render(groups, rootName) {
-  document.getElementById("path").textContent = rootName;
+// A record is in flight while its folder has no metadata.json — spawn_batch
+// writes that only on success, and deletes the folder outright on failure.
+// The catch: a run killed mid-record leaves the same shape behind forever, so
+// anything untouched for STALE_MS is reported as stalled rather than working.
+const STALE_MS = 5 * 60 * 1000;
+
+function groupStatus(files) {
+  if (files.some(f => f.name === "metadata.json")) return "done";
+  const newest = Math.max(0, ...files.map(f => f.lastModified || 0));
+  return (Date.now() - newest) < STALE_MS ? "working" : "stalled";
+}
+
+function counts() {
+  let working = 0, stalled = 0;
+  for (const files of state.groups.values()) {
+    const s = groupStatus(files);
+    if (s === "working") working++;
+    else if (s === "stalled") stalled++;
+  }
+  return { total: state.groups.size, working, stalled };
+}
+
+function summary(extra) {
+  const c = counts();
+  const bits = [`${c.total} trajector${c.total === 1 ? "y" : "ies"}`];
+  bits.push(`${c.working} active`);
+  if (c.stalled) bits.push(`${c.stalled} stalled`);
+  if (extra) bits.push(extra);
+  return bits.join(" · ");
+}
+
+function sortGroups(groups) {
+  const mode = document.getElementById("sort").value;
+  const entries = [...groups.entries()];
+  for (const [, files] of entries) files.sort((a, b) => a.name.localeCompare(b.name));
+  if (mode === "newest") {
+    const mtime = (files) => Math.max(...files.map(f => f.lastModified || 0));
+    entries.sort((a, b) => mtime(b[1]) - mtime(a[1]));
+  } else {
+    entries.sort((a, b) => a[0].localeCompare(b[0]));
+  }
+  return new Map(entries);
+}
+
+// --- Rendering ----------------------------------------------------------
+function renderSidebar() {
   const sidebar = document.getElementById("sidebar");
+  const scrollTop = sidebar.scrollTop;
   sidebar.innerHTML = "";
-  if (groups.size === 0) {
+  if (state.groups.size === 0) {
     sidebar.innerHTML = '<div class="empty">No subfolders found in this directory.</div>';
     return;
   }
-  for (const [trajectoryId, files] of groups) {
+  for (const [id, files] of state.groups) {
     const el = document.createElement("div");
-    el.className = "trajectory";
+    el.className = "trajectory" + (state.fresh.has(id) ? " is-new" : "");
+
     const nameEl = document.createElement("div");
     nameEl.className = "trajectory-name";
-    nameEl.textContent = trajectoryId;
+    const isOpen = state.expanded.has(id);
+    const caret = document.createElement("span");
+    caret.className = "caret";
+    caret.textContent = isOpen ? "▼" : "▶";
+    const label = document.createElement("span");
+    label.className = "label";
+    label.textContent = id;
+    nameEl.append(caret, label);
+
+    const status = groupStatus(files);
+    if (status !== "done") {
+      const ball = document.createElement("span");
+      ball.className = "ball " + status;
+      ball.title = status === "working" ? "in flight — no metadata.json yet"
+                                       : "no metadata.json and untouched for a while — probably abandoned by a stopped run";
+      nameEl.appendChild(ball);
+    }
+
     const listEl = document.createElement("div");
     listEl.className = "file-list";
-    listEl.style.display = "none";
+    listEl.style.display = isOpen ? "block" : "none";
     for (const entry of files) {
       const itemEl = document.createElement("div");
       itemEl.className = "file-item" + (entry.name.endsWith(".bc") ? " bc" : "");
+      if (state.selected && state.selected.trajectoryId === id
+          && state.selected.name === entry.name) itemEl.classList.add("active");
       itemEl.textContent = entry.name;
-      itemEl.onclick = () => showFile(trajectoryId, entry, itemEl);
+      itemEl.onclick = () => showFile(id, entry.name);
       listEl.appendChild(itemEl);
     }
-    nameEl.onclick = () => { listEl.style.display = listEl.style.display === "none" ? "block" : "none"; };
-    el.appendChild(nameEl);
-    el.appendChild(listEl);
+
+    nameEl.onclick = () => {
+      if (state.expanded.has(id)) state.expanded.delete(id); else state.expanded.add(id);
+      renderSidebar();
+    };
+    el.append(nameEl, listEl);
     sidebar.appendChild(el);
   }
-  // Open the first trajectory by default.
-  const firstList = sidebar.querySelector(".file-list");
-  if (firstList) firstList.style.display = "block";
+  sidebar.scrollTop = scrollTop;
 }
 
-async function showFile(trajectoryId, entry, itemEl) {
-  document.querySelectorAll(".file-item.active").forEach(el => el.classList.remove("active"));
-  itemEl.classList.add("active");
+function setStatus(text, paused) {
+  const el = document.getElementById("status");
+  el.className = paused ? "paused" : "";
+  el.innerHTML = state.dirHandle ? `<span class="dot"></span>${escapeHtml(text)}`
+                                 : escapeHtml(text);
+}
+
+function findEntry(trajectoryId, name) {
+  const files = state.groups.get(trajectoryId);
+  return files ? files.find(f => f.name === name) : null;
+}
+
+async function showFile(trajectoryId, name, opts = {}) {
+  state.selected = { trajectoryId, name };
+  const entry = findEntry(trajectoryId, name);
+  if (!entry) return;
+  const file = await entry.getFile();
+  const text = await file.text();
+  state.openMeta = { lastModified: file.lastModified, size: file.size };
 
   const content = document.getElementById("content");
-  const text = await entry.file.text();
-  const isBc = entry.name.endsWith(".bc");
-  const isJson = entry.name.endsWith(".json");
-
-  let body;
-  if (isBc) {
-    body = highlightBC(text);
-  } else if (isJson) {
-    try { body = escapeHtml(JSON.stringify(JSON.parse(text), null, 2)); }
-    catch { body = escapeHtml(text); }
-  } else {
-    body = escapeHtml(text);
-  }
-
+  const keepScroll = opts.reloaded ? content.scrollTop : 0;
+  const note = opts.reloaded ? '<span class="reloaded">updated just now</span>' : "";
   content.innerHTML = `
-    <div class="file-header">${escapeHtml(trajectoryId)}/${escapeHtml(entry.name)}</div>
-    <pre>${body}</pre>
+    <div class="file-header"><span>${escapeHtml(trajectoryId)}/${escapeHtml(name)}</span>${note}</div>
+    <pre>${highlightFor(name, text)}</pre>
   `;
+  content.scrollTop = keepScroll;
+  if (!opts.keepSidebar) renderSidebar();
 }
 
-document.getElementById("pick").onclick = () => document.getElementById("folder-input").click();
+// --- Live refresh -------------------------------------------------------
+// Re-reads the same directory handle on a timer, so a running batch shows up
+// without re-picking the folder. Only re-renders when something actually
+// changed, to avoid fighting the user's scroll position and open sections.
+async function refresh() {
+  if (!state.dirHandle || state.scanning) return;
+  state.scanning = true;
+  try {
+    const scanned = await scanHandle(state.dirHandle);
+    const before = signature(state.groups);
+    state.groups = sortGroups(scanned);
+    const after = signature(state.groups);
+
+    const ids = new Set(state.groups.keys());
+    state.fresh = new Set([...ids].filter(id => state.seen.size && !state.seen.has(id)));
+    state.seen = ids;
+
+    if (before !== after) renderSidebar();
+
+    // If the open file changed on disk, re-read it in place.
+    if (state.selected) {
+      const entry = findEntry(state.selected.trajectoryId, state.selected.name);
+      if (entry && state.openMeta
+          && (entry.lastModified !== state.openMeta.lastModified
+              || entry.size !== state.openMeta.size)) {
+        await showFile(state.selected.trajectoryId, state.selected.name,
+                       { reloaded: true, keepSidebar: true });
+      }
+    }
+    const added = state.fresh.size ? `+${state.fresh.size} new` : "";
+    setStatus(summary([added, new Date().toLocaleTimeString()].filter(Boolean).join(" · ")));
+  } catch (err) {
+    setStatus(`refresh failed: ${err.message}`, true);
+  } finally {
+    state.scanning = false;
+  }
+}
+
+function restartTimer() {
+  if (state.timer) clearInterval(state.timer);
+  state.timer = null;
+  const ms = Number(document.getElementById("interval").value);
+  if (!state.dirHandle) return;
+  if (ms > 0) {
+    state.timer = setInterval(refresh, ms);
+  } else {
+    setStatus(summary("auto-refresh off"), true);
+  }
+}
+
+// --- Folder picking -----------------------------------------------------
+document.getElementById("pick").onclick = async () => {
+  if (window.showDirectoryPicker) {
+    let handle;
+    try {
+      handle = await window.showDirectoryPicker({ mode: "read" });
+    } catch (err) {
+      if (err && err.name === "AbortError") return;   // user cancelled
+      document.getElementById("folder-input").click(); // fall back
+      return;
+    }
+    state.dirHandle = handle;
+    state.rootName = handle.name;
+    state.seen = new Set();
+    state.fresh = new Set();
+    document.getElementById("path").textContent = handle.name;
+    await refresh();
+    if (state.groups.size && !state.expanded.size) {
+      state.expanded.add(state.groups.keys().next().value);
+      renderSidebar();
+    }
+    restartTimer();
+    document.getElementById("content").innerHTML =
+      '<div class="placeholder">Pick a file on the left. The folder is re-read on a timer, so new trajectories appear on their own.</div>';
+  } else {
+    document.getElementById("folder-input").click();
+  }
+};
+
 document.getElementById("folder-input").addEventListener("change", (e) => {
   const files = Array.from(e.target.files);
   if (files.length === 0) return;
-  const rootName = files[0].webkitRelativePath.split("/")[0];
-  render(groupByTrajectory(files), rootName);
-  document.getElementById("content").innerHTML = '<div class="placeholder">Pick a file on the left.</div>';
+  state.dirHandle = null;                            // snapshot: cannot re-read
+  state.rootName = files[0].webkitRelativePath.split("/")[0];
+  state.groups = sortGroups(groupsFromInput(files));
+  state.seen = new Set(state.groups.keys());
+  state.fresh = new Set();
+  state.expanded = new Set();
+  if (state.groups.size) state.expanded.add(state.groups.keys().next().value);
+  document.getElementById("path").textContent = state.rootName;
+  renderSidebar();
+  restartTimer();
+  setStatus(summary("snapshot (re-pick to update)"), true);
+  document.getElementById("content").innerHTML =
+    '<div class="placeholder">Pick a file on the left.<br><br>This browser lacks the File System Access API, so the folder was read as a one-off snapshot — re-pick it to see new results.</div>';
 });
+
+document.getElementById("interval").onchange = () => { restartTimer(); refresh(); };
+document.getElementById("sort").onchange = () => { state.groups = sortGroups(state.groups); renderSidebar(); };
+
+// Cheap change detector: which trajectories exist, and each file's
+// name/size/mtime. Enough to catch a new record, a rewritten file, or a
+// pruned folder without diffing contents.
+function signature(groups) {
+  const parts = [];
+  for (const [id, files] of groups) {
+    parts.push(id + ":" + files.map(f => `${f.name},${f.size},${f.lastModified}`).join("|"));
+  }
+  return parts.join(";");
+}
 </script>
 
 </body>
