@@ -29,7 +29,9 @@ each batch file:
 python3 spawn_batch.py batches/batch-01.jsonl output/
 ```
 
-Results land in `output/<hash6>-<slug>/`, one folder per record.
+Results land in `output/<hash6>-<slug>/`, one folder per successful record.
+Anything that failed leaves its logs in `failures/` instead, and re-running the
+same batch retries just those.
 
 ## Layout
 

@@ -12,6 +12,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -49,7 +50,9 @@ def process_record(record_line: str, full_hash: str, image: str,
         try:
             cmd = utils.build_docker_cmd(uid, gid, model, design_doc, traj_path,
                                           prompt_file, scratch, image)
+            started = time.monotonic()
             result = subprocess.run(cmd, capture_output=True, text=True)
+            duration_s = time.monotonic() - started
             produced = any(Path(scratch).iterdir())
             if result.returncode == 0 and produced:
                 for item in Path(scratch).iterdir():
@@ -71,12 +74,32 @@ def process_record(record_line: str, full_hash: str, image: str,
                     },
                     indent=2,
                 ))
+                # A previous failure of this record is deliberately left in
+                # failures/ — it's a history of attempts, and "this eventually
+                # succeeded" is already answerable from out_dir. Which records
+                # still need work is out_dir's job (scan_existing_output), not
+                # something failures/ has to stay in sync with.
                 return name, True, None
             else:
-                # Preserve the transcript even on failure rather than losing it.
-                (dest / "stdout.log").write_text(result.stdout)
-                (dest / "stderr.log").write_text(result.stderr)
-                tail = "\n".join(result.stderr.strip().splitlines()[-3:])
+                # Failures are preserved outside out_dir, keyed by content hash
+                # (see utils.record_failure), so out_dir holds successes only
+                # and a retry replaces its predecessor instead of leaving
+                # another near-duplicate folder behind. The half-written
+                # out_dir folder is removed rather than left for the next run's
+                # prune pass to find.
+                utils.record_failure(
+                    out_dir=out_dir, full_hash=full_hash, attempt_name=name,
+                    record_line=record_line, stdout=result.stdout,
+                    stderr=result.stderr, returncode=result.returncode,
+                    produced=produced, duration_s=duration_s,
+                    harness_name=harness_name, task_name=task_name,
+                    model=model, experiment=experiment,
+                )
+                shutil.rmtree(dest, ignore_errors=True)
+                tail = utils.last_error_line(result.stderr) or (
+                    f"no error reported — exit {result.returncode}, "
+                    f"wrote nothing, after {duration_s:.0f}s"
+                )
                 return name, False, tail
         finally:
             traj_path.unlink(missing_ok=True)
@@ -114,6 +137,7 @@ def main():
     if skipped:
         print(f"spawn_batch: skipping {skipped} already-completed record(s)", file=sys.stderr)
 
+    failed = 0
     try:
         with ThreadPoolExecutor(max_workers=config.concurrency) as pool:
             futures = [
@@ -126,13 +150,18 @@ def main():
             for future in as_completed(futures):
                 name, ok, tail = future.result()
                 if not ok:
-                    print(f"spawn_batch: {name} — no files written to /output (stderr: {tail})",
-                          file=sys.stderr)
+                    failed += 1
+                    print(f"spawn_batch: {name} — failed ({tail})", file=sys.stderr)
     finally:
         prompt_file.unlink(missing_ok=True)
 
     print(f"spawn_batch: {batch_path} (harness: {config.harness_name}, task: {config.task_name}) "
-          f"— {len(records)} dispatched, {skipped} skipped (already done)", file=sys.stderr)
+          f"— {len(records) - failed} succeeded, {failed} failed, {skipped} skipped "
+          f"(already done)", file=sys.stderr)
+    if failed:
+        print(f"spawn_batch: failure logs in {utils.failures_dir(out_dir)}/<hash6>[-n]/ "
+              f"— one directory per attempt; re-run this batch to retry just the "
+              f"records that failed", file=sys.stderr)
 
 
 if __name__ == "__main__":

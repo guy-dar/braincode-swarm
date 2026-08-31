@@ -108,12 +108,76 @@ class TestProcessRecordNaming:
         out_dir, name, ok, tail = self._run(tmp_path, produce_files=False, returncode=0)
         assert ok is False
         assert not (out_dir / name / "metadata.json").exists()
-        assert (out_dir / name / "stderr.log").exists()
 
-    def test_no_metadata_when_harness_exits_nonzero_even_if_files_produced(self, tmp_path):
-        out_dir, name, ok, tail = self._run(tmp_path, produce_files=True, returncode=1)
+    def test_failure_logs_go_to_failures_dir_and_out_dir_folder_is_removed(self, tmp_path):
+        # out_dir is for successes; a failed attempt's logs live under
+        # failures/ instead, so nothing has to be rescued by hand before the
+        # next run prunes out_dir.
+        out_dir, name, ok, _ = self._run(tmp_path, produce_files=False,
+                                         full_hash="abcdef" + "0" * 58)
         assert ok is False
-        assert not (out_dir / name / "metadata.json").exists()
+        assert not (out_dir / name).exists()
+        failure = out_dir.parent / "failures" / "abcdef"
+        assert (failure / "stderr.log").read_text() == "fake stderr"
+        assert (failure / "stdout.log").read_text() == "fake stdout"
+        assert (failure / "source.json").exists()
+
+    def test_failure_json_records_exit_code_and_that_nothing_was_produced(self, tmp_path):
+        # The silent-stall shape: exits 0, writes nothing, reports no error.
+        # Without the exit code recorded, that is indistinguishable after the
+        # fact from a container that was killed.
+        out_dir, _, _, _ = self._run(tmp_path, produce_files=False, returncode=0,
+                                     full_hash="abcdef" + "0" * 58)
+        meta = json.loads((out_dir.parent / "failures" / "abcdef" / "failure.json").read_text())
+        assert meta["returncode"] == 0
+        assert meta["produced_files"] is False
+        assert meta["error"] is None  # no "Error:" line — the silent signature
+        assert meta["hash"] == "abcdef" + "0" * 58
+        assert isinstance(meta["duration_s"], float)
+        datetime.fromisoformat(meta["timestamp"])  # raises if malformed
+
+    def test_same_record_failing_twice_gets_one_directory_per_attempt(self, tmp_path):
+        # First of the two reasons a name gets suffixed: the same record
+        # failing again, which is the common case since a re-run retries
+        # exactly what failed. Each attempt keeps its own logs.
+        out_dir = tmp_path / "output"
+        full_hash = "abcdef" + "0" * 58
+        for _ in range(3):
+            self._run(tmp_path, produce_files=False, full_hash=full_hash, out_dir=out_dir)
+        failures = out_dir.parent / "failures"
+        assert sorted(p.name for p in failures.iterdir()) == ["abcdef", "abcdef-2", "abcdef-3"]
+        # The full hash, not the name, is what groups attempts by record.
+        hashes = {json.loads((d / "failure.json").read_text())["hash"]
+                  for d in failures.iterdir()}
+        assert hashes == {full_hash}
+
+    def test_two_records_sharing_a_hash6_prefix_do_not_overwrite_each_other(self, tmp_path):
+        # The other reason: distinct records whose hashes share the first 6 hex
+        # chars — rare per pair, near-certain across a corpus this size. Their
+        # logs must stay separate, and the recorded full hash is what tells
+        # them apart despite the near-identical names.
+        out_dir = tmp_path / "output"
+        a = "abcdef" + "0" * 58
+        b = "abcdef" + "1" * 58
+        self._run(tmp_path, produce_files=False, full_hash=a, out_dir=out_dir,
+                  record_line='{"which": "a"}')
+        self._run(tmp_path, produce_files=False, full_hash=b, out_dir=out_dir,
+                  record_line='{"which": "b"}')
+        failures = out_dir.parent / "failures"
+        assert sorted(p.name for p in failures.iterdir()) == ["abcdef", "abcdef-2"]
+        by_hash = {json.loads((d / "failure.json").read_text())["hash"]:
+                   (d / "source.json").read_text() for d in failures.iterdir()}
+        assert by_hash == {a: '{"which": "a"}', b: '{"which": "b"}'}
+
+    def test_success_leaves_an_earlier_failure_in_place(self, tmp_path):
+        # failures/ is attempt history, not a to-do list: whether a record
+        # eventually succeeded is answered by out_dir, so a later success does
+        # not erase the record of what went wrong before it.
+        out_dir = tmp_path / "output"
+        full_hash = "abcdef" + "0" * 58
+        self._run(tmp_path, produce_files=False, full_hash=full_hash, out_dir=out_dir)
+        self._run(tmp_path, produce_files=True, full_hash=full_hash, out_dir=out_dir)
+        assert (out_dir.parent / "failures" / "abcdef" / "failure.json").exists()
 
     def test_two_records_with_the_same_hash_in_one_process_get_suffixed_names(self, tmp_path):
         # Dedup against already-done work is a one-time snapshot taken at

@@ -6,12 +6,14 @@ dependency this repo has beyond the standard library, isolated here rather
 than in spawn_batch.py itself.
 """
 import hashlib
+import itertools
 import json
 import os
 import re
 import shutil
 import threading
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 import litellm
@@ -125,6 +127,111 @@ def prune_incomplete_folders(out_dir: Path) -> list:
         shutil.rmtree(entry)
         removed.append(entry.name)
     return removed
+
+
+def failures_dir(out_dir: Path) -> Path:
+    """Where a failed record's logs are kept: a `failures/` sibling of out_dir.
+
+    Deliberately outside out_dir so the two never interfere — out_dir ends up
+    holding successes only, and nothing in here is subject to
+    prune_incomplete_folders.
+    """
+    return out_dir.parent / "failures"
+
+
+def claim_failure_dir(out_dir: Path, full_hash: str) -> Path:
+    """Create and return a fresh failure directory: `<hash6>`, else `<hash6>-2`,
+    `-3`, … taking the first free name.
+
+    The suffix is assigned blindly, without checking whose record already holds
+    the shorter name, so a suffixed name means only "that name was taken". Two
+    unrelated things cause that, and neither is safe to assume from the name:
+
+    - **The same record failing again** — the common case, since a re-run
+      retries exactly the records that failed. Each attempt gets its own
+      directory, so `failures/` is a history of attempts rather than a snapshot
+      of the latest one.
+    - **A different record whose hash shares the first 6 hex chars** — rare per
+      pair but near-certain across a corpus this size (24 bits collides on the
+      order of a hundred times at ~70k records).
+
+    So don't read `<hash6>` and `<hash6>-2` as the same record twice, and don't
+    read them as two different records either. Each directory's failure.json
+    records the full `hash` it belongs to; that field, not the name, is what
+    groups attempts by record — count the directories sharing a full hash to
+    see how many times one record has failed.
+
+    mkdir(exist_ok=False) is the claim, which makes it atomic: concurrent
+    workers racing for the same name can't both win, so no lock is needed.
+    """
+    base_dir = failures_dir(out_dir)
+    base = full_hash[:6]
+    for i in itertools.count(1):
+        candidate = base_dir / (base if i == 1 else f"{base}-{i}")
+        try:
+            candidate.mkdir(parents=True, exist_ok=False)
+            return candidate
+        except FileExistsError:
+            continue
+
+
+def record_failure(out_dir: Path, full_hash: str, attempt_name: str,
+                   record_line: str, stdout: str, stderr: str,
+                   returncode: int, produced: bool, duration_s: float,
+                   harness_name: str, task_name: str, model: str,
+                   experiment: str) -> Path:
+    """Preserve a failed attempt under `failures/`, and return its path.
+
+    Kept outside out_dir, so out_dir holds successes only and none of this is
+    exposed to prune_incomplete_folders — a failure's logs survive the next run
+    without anything having to be rescued by hand first. One directory per
+    *attempt* (see claim_failure_dir for how the name is chosen).
+
+    `failure.json` records what the logs cannot: the container's exit code and
+    whether it wrote anything. A run that exits 0 having produced no files is a
+    different problem from one that was killed, and without the exit code the
+    two are indistinguishable after the fact. `error` is null exactly when the
+    harness reported no error at all, which is its own diagnostic signature
+    rather than missing data.
+    """
+    dest = claim_failure_dir(out_dir, full_hash)
+    (dest / "source.json").write_text(record_line)
+    (dest / "stdout.log").write_text(stdout)
+    (dest / "stderr.log").write_text(stderr)
+    (dest / "failure.json").write_text(json.dumps(
+        {
+            "hash": full_hash,
+            "attempt_name": attempt_name,
+            "returncode": returncode,
+            "produced_files": produced,
+            "duration_s": round(duration_s, 1),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "harness": harness_name,
+            "task": task_name,
+            "model": model,
+            "experiment": experiment,
+            "error": last_error_line(stderr),
+        },
+        indent=2,
+    ))
+    return dest
+
+
+ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
+
+
+def last_error_line(stderr: str) -> str | None:
+    """The last `Error: ...` line the harness printed, ANSI stripped.
+
+    None when there is no such line, which is itself the useful signal: a
+    failure with no error line at all is the silent-stall shape, not a
+    reported failure.
+    """
+    for line in reversed(ANSI_ESCAPE.sub("", stderr).splitlines()):
+        line = line.strip()
+        if line.startswith("Error:"):
+            return line[len("Error:"):].strip() or None
+    return None
 
 
 def scan_existing_output(out_dir: Path):

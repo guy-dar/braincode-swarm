@@ -59,10 +59,18 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
    trajectory specifically. `metadata.json` on success (with the full hash,
    a timestamp, and `SWARM_TASK`/`SWARM_HARNESS`/`SWARM_MODEL`), which doubles as
    the marker a later run checks: re-running against refreshed or additional data
-   only reprocesses records whose content hash isn't already recorded. A folder
-   with no `metadata.json` (only `stdout.log`/`stderr.log`) failed — check its
-   logs *before* re-running that batch, because the next run deletes every
-   folder without a `metadata.json` (see `swarm/ADVANCED.md` for why).
+   only reprocesses records whose content hash isn't already recorded.
+6. `swarm/output/` holds successes only. A failed record's logs go to
+   `swarm/failures/<hash6>[-n]/` instead — one directory per *attempt*, with
+   `failure.json` carrying the container's exit code, whether it wrote
+   anything, how long it ran, and the harness's last error line (`null` when it
+   reported none, which is the signature of a run that stalled rather than
+   failed). These survive later runs, so re-running a batch to retry its
+   failures doesn't cost you the evidence from the previous attempt. Read the
+   `-n` suffix as nothing more than "the name was taken" — it happens both when
+   one record fails repeatedly and when two records share a hash prefix, so
+   group by `failure.json`'s full `hash`, not by name (see
+   `swarm/ADVANCED.md`).
 
 Data doesn't have to be one static source, and this isn't a one-time run: mixed
 sources and data that grows over time are the normal case, not an edge case — call

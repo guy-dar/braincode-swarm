@@ -37,15 +37,52 @@ on.
   checks to skip an already-done record.
 - Whatever the task wrote. For `discovery`: `translation.bc`, `decisions.md`,
   `uncertainties.md`, `keywords.md`.
-- On failure (no `metadata.json`): `stdout.log`, `stderr.log`.
 
-**Every folder without a `metadata.json` is removed at the start of the next
-run** — recorded failures and crash orphans alike. So read a failure's logs
-before re-running that batch, or they're gone. This isn't housekeeping for its
-own sake: a retry can't reuse the failed folder's name, because the slug half
-is LLM-generated per attempt and comes out different for the same record, so
-keeping them meant each re-run of a failing batch left another near-duplicate
-folder behind. Folders with a `metadata.json` are never touched.
+`output/` holds successes only. A record that fails leaves nothing behind here
+— its half-written folder is removed and its logs go to `failures/` instead
+(below). Any folder without a `metadata.json` is removed at the start of the
+next run, which now only ever catches crash orphans: a process killed before
+it could finish a record.
+
+## Failures
+
+`failures/`, a sibling of the output dir you passed on the command line
+(`swarm/output/` → `swarm/failures/`). Nothing in here is touched by the
+pruning above, so a failure's logs survive the next run — no rescuing anything
+by hand first.
+
+`failures/<hash6>[-n]/`, one directory **per attempt**:
+
+- `source.json` — the input record, verbatim.
+- `stdout.log`, `stderr.log` — the container's full transcript.
+- `failure.json` — `{"hash", "attempt_name", "returncode", "produced_files",
+  "duration_s", "timestamp", "harness", "task", "model", "experiment",
+  "error"}`. `returncode` and `produced_files` are the fields the logs can't
+  give you: a container that exits 0 having written nothing is a different
+  problem from one that was killed, and the two look identical afterwards
+  without them. `error` is the last `Error:` line the harness printed, and is
+  `null` exactly when it reported no error at all — which is its own
+  diagnostic signature, not missing data. A handful of entries predate this
+  file and were backfilled from the logs alone: those carry a `note` saying so,
+  and a `null` `returncode` meaning "not captured" rather than "exited 0".
+
+**On the `-n` suffix:** it is assigned blindly, taking the first free name, so
+it means only "that name was taken". Two unrelated things cause that:
+
+- the same record failing again — the common case, since re-running a batch
+  retries exactly the records that failed;
+- a different record whose hash happens to share the first 6 hex chars — rare
+  for any given pair, but near-certain across a corpus of this size (24 bits
+  collides on the order of a hundred times at ~70k records).
+
+So `abcdef` and `abcdef-2` are *not* reliably the same record twice, and not
+reliably two different records either. `failure.json`'s full `hash` is what
+groups attempts by record; count the directories sharing one to see how many
+times that record has failed.
+
+A later success does not clear an earlier failure: `failures/` is a history of
+attempts, and whether a record eventually succeeded is already answered by
+`output/`.
 
 ## Adding a task
 
