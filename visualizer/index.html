@@ -138,9 +138,18 @@
     background: var(--bg);
     border-bottom: 1px solid var(--border);
     display: flex;
+    align-items: center;
     gap: 10px;
   }
+  #content .file-header .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   #content .file-header .reloaded { color: #4caf50; }
+  #content .file-header button {
+    font-size: 11.5px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  #content .file-header button.copied { color: #4caf50; border-color: #4caf50; }
   pre {
     margin: 0;
     padding: 16px;
@@ -204,7 +213,7 @@
   <label>sort
     <select id="sort">
       <option value="name">name</option>
-      <option value="newest">newest first</option>
+      <option value="newest" selected>newest first</option>
     </select>
   </label>
   <label>refresh
@@ -229,7 +238,7 @@
 <script>
 // --- Highlighting -----------------------------------------------------
 // Deliberately generic: BrainCode's canonized vocabulary isn't fixed yet
-// (see swarm/DESIGN_DOC.md), so the .bc highlighter only recognizes structure
+// (see swarm/reference/DESIGN_DOC.md), so the .bc highlighter only recognizes structure
 // that's true of the language regardless of which constructs exist — turn
 // tags, and the Python-inspired base grammar (strings, comments, numbers,
 // generic keywords, function-call shape). No construct/package names assumed.
@@ -539,11 +548,39 @@ async function showFile(trajectoryId, name, opts = {}) {
   const keepScroll = opts.reloaded ? content.scrollTop : 0;
   const note = opts.reloaded ? '<span class="reloaded">updated just now</span>' : "";
   content.innerHTML = `
-    <div class="file-header"><span>${escapeHtml(trajectoryId)}/${escapeHtml(name)}</span>${note}</div>
+    <div class="file-header">
+      <span class="name">${escapeHtml(trajectoryId)}/${escapeHtml(name)}</span>${note}
+      <button id="copy" title="Copy this file's contents">copy</button>
+    </div>
     <pre>${highlightFor(name, text)}</pre>
   `;
+  // Copies the raw text, not the highlighted DOM — a selection would carry the
+  // markup's line breaks and lose nothing else of value.
+  const copyBtn = document.getElementById("copy");
+  copyBtn.onclick = async () => {
+    await copyText(text);
+    copyBtn.textContent = "copied";
+    copyBtn.classList.add("copied");
+    setTimeout(() => { copyBtn.textContent = "copy"; copyBtn.classList.remove("copied"); }, 1200);
+  };
   content.scrollTop = keepScroll;
   if (!opts.keepSidebar) renderSidebar();
+}
+
+// navigator.clipboard is present on file:// in Chromium but not everywhere the
+// fallback picker works, so keep the execCommand path for those browsers.
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return;
+  } catch { /* fall through */ }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); } finally { ta.remove(); }
 }
 
 // --- Live refresh -------------------------------------------------------
@@ -596,7 +633,66 @@ function restartTimer() {
   }
 }
 
+// --- Remembering the folder ---------------------------------------------
+// A directory handle survives a page reload if it's kept in IndexedDB —
+// localStorage can't hold one, since it needs structured clone. The grant may
+// not survive, so a recalled handle is re-checked before use, and a browser
+// that wants to ask again is deferred to a click: requestPermission needs a
+// user gesture, and firing it on load would throw.
+const DB_NAME = "braincode-visualizer", STORE = "handles", KEY = "outputDir";
+
+function idb() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(STORE);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+// Remembering is a convenience: every failure here is swallowed so that a
+// blocked or absent IndexedDB costs the folder's memory and nothing else.
+async function rememberDir(handle) {
+  try {
+    const db = await idb();
+    await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readwrite");
+      tx.objectStore(STORE).put(handle, KEY);
+      tx.oncomplete = res;
+      tx.onerror = () => rej(tx.error);
+    });
+  } catch { /* ignore */ }
+}
+
+async function recallDir() {
+  try {
+    const db = await idb();
+    return await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).get(KEY);
+      req.onsuccess = () => res(req.result || null);
+      req.onerror = () => rej(req.error);
+    });
+  } catch { return null; }
+}
+
 // --- Folder picking -----------------------------------------------------
+async function openDirectory(handle) {
+  state.dirHandle = handle;
+  state.rootName = handle.name;
+  state.seen = new Set();
+  state.fresh = new Set();
+  document.getElementById("path").textContent = handle.name;
+  await refresh();
+  if (state.groups.size && !state.expanded.size) {
+    state.expanded.add(state.groups.keys().next().value);
+    renderSidebar();
+  }
+  restartTimer();
+  document.getElementById("content").innerHTML =
+    '<div class="placeholder">Pick a file on the left. The folder is re-read on a timer, so new trajectories appear on their own.</div>';
+}
+
 document.getElementById("pick").onclick = async () => {
   if (window.showDirectoryPicker) {
     let handle;
@@ -607,23 +703,33 @@ document.getElementById("pick").onclick = async () => {
       document.getElementById("folder-input").click(); // fall back
       return;
     }
-    state.dirHandle = handle;
-    state.rootName = handle.name;
-    state.seen = new Set();
-    state.fresh = new Set();
-    document.getElementById("path").textContent = handle.name;
-    await refresh();
-    if (state.groups.size && !state.expanded.size) {
-      state.expanded.add(state.groups.keys().next().value);
-      renderSidebar();
-    }
-    restartTimer();
-    document.getElementById("content").innerHTML =
-      '<div class="placeholder">Pick a file on the left. The folder is re-read on a timer, so new trajectories appear on their own.</div>';
+    await openDirectory(handle);
+    rememberDir(handle);
   } else {
     document.getElementById("folder-input").click();
   }
 };
+
+(async function restoreDirectory() {
+  if (!window.showDirectoryPicker) return;             // snapshot mode can't re-read anyway
+  const handle = await recallDir();
+  if (!handle) return;
+  let perm = "denied";
+  try { perm = await handle.queryPermission({ mode: "read" }); } catch { return; }
+  if (perm === "granted") { await openDirectory(handle); return; }
+  if (perm !== "prompt") return;
+  const content = document.getElementById("content");
+  content.innerHTML =
+    `<div class="placeholder">Last folder: <strong>${escapeHtml(handle.name)}</strong>`
+    + ` — this browser wants to confirm access again.<br><br>`
+    + `<button id="reopen">Reopen ${escapeHtml(handle.name)}</button></div>`;
+  document.getElementById("reopen").onclick = async () => {
+    let granted = "denied";
+    try { granted = await handle.requestPermission({ mode: "read" }); } catch { /* denied */ }
+    if (granted === "granted") await openDirectory(handle);
+    else setStatus("access to the remembered folder was declined", true);
+  };
+})();
 
 document.getElementById("folder-input").addEventListener("change", (e) => {
   const files = Array.from(e.target.files);

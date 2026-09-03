@@ -14,10 +14,10 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
 
 - **Task** (`SWARM_TASK`) — what each subagent is asked to do. Currently one:
   `discovery` (`swarm/tasks/discovery.md`) — translates one trajectory into
-  BrainCode (see `swarm/DESIGN_DOC.md` for the language). A task file's content
+  BrainCode (see `swarm/reference/DESIGN_DOC.md` for the language). A task file's content
   *is* the prompt sent to the subagent, verbatim; nothing else to configure.
 - **Harness** (`SWARM_HARNESS`) — which CLI agent actually runs the model, each in
-  its own Docker image. Currently two: `opencode` (default) and `pi`, folders under
+  its own Docker image. Currently two: `pi` (default) and `opencode`, folders under
   `swarm/harnesses/` (`Dockerfile` + `entrypoint.sh` + config). Adding a harness
   means adding a folder there; `spawn_batch.py` never branches on which one runs.
 - **Model** (`SWARM_MODEL`) — passed straight through to the harness's entrypoint
@@ -37,15 +37,21 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
 
 ## Running a batch
 
-1. Get data into JSONL: one JSON object per line, each with `content` (the raw
-   trajectory, `<|user|>`/`<|assistant|>` turns — see `swarm/DESIGN_DOC.md`'s
-   Glossary for the Turn definition). An `id` field is optional and unused by the
-   pipeline — output folder names are derived from each record's content, not
-   from `id`. See `.claude/skills/miner` for what counts as a good trajectory and
-   where to stage one before it's batched.
-2. Split into `swarm/batches/batch-NN.jsonl` files (~20 records each is a
-   reasonable default — `SWARM_BATCH_SIZE`, informational, not enforced by the
-   script).
+1. Get data into JSONL under `swarm/data/`: one JSON object per line, each with
+   `content` (the raw trajectory, `<|user|>`/`<|assistant|>` turns). `id` is
+   optional — output folders are named from a content hash rather than from it —
+   but include it when the source has one, since it catches a record re-offered
+   with a re-serialized line, which a hash cannot. See `.claude/skills/miner` for
+   what counts as a good trajectory.
+2. Draw a batch with `python3 swarm/sample_batch.py -n 30`, which writes the next
+   free `swarm/batches/batch-NN.jsonl`. **Don't hand-roll this.** It excludes
+   every record already in `output/`, `failures/`, and any prior batch file, by
+   `id` as well as by content hash — get that wrong and a run silently re-does
+   work, which is invisible in the results and expensive. Useful flags:
+   `--max-chars` (cap trajectory length), `--latin-only` (keep a corpus readable
+   for review), `--min-chars`, `--data` (files, dirs, or globs), `--seed`. It
+   prints why records were rejected, which is how you tell an exhausted pool from
+   a too-strict filter.
 3. `pip install -r swarm/requirements.txt` (just `litellm`, used to name output
    folders). Ensure `swarm/.env` exists (`cp swarm/.env.example swarm/.env`, fill
    in `PROXY_API_KEY`) — or export `PROXY_API_KEY`/`PROXY_BASE_URL`/`SWARM_*`
@@ -80,12 +86,11 @@ sources and data that grows over time are the normal case, not an edge case — 
 
 | Var | Default | Meaning |
 |---|---|---|
-| `SWARM_HARNESS` | `opencode` | picks `swarm/harnesses/$SWARM_HARNESS/` |
+| `SWARM_HARNESS` | `pi` | picks `swarm/harnesses/$SWARM_HARNESS/` |
 | `SWARM_TASK` | `discovery` | picks `swarm/tasks/$SWARM_TASK.md` |
 | `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness's entrypoint |
 | `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s within one `spawn_batch.py` call |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed and recorded as failed |
-| `SWARM_BATCH_SIZE` | `20` | informational — how you split data, not enforced |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in each record's `metadata.json`; tags which run it came from |
 | `PROXY_API_KEY` | *(required)* | — |
 | `PROXY_BASE_URL` | vertex-proxy's URL | the model backend every harness talks to |

@@ -7,6 +7,7 @@ vars, output format, and adding a task/harness.
 """
 import json
 import os
+import random
 import shutil
 import subprocess
 import sys
@@ -35,10 +36,14 @@ def _decode(stream) -> str:
 
 
 def process_record(record_line: str, full_hash: str, image: str,
-                    design_doc: Path, prompt_file: Path, model: str,
+                    reference_dir: Path, prompt_file: Path, model: str,
                     api_key: str, base_url: str, harness_name: str,
                     task_name: str, experiment: str, timeout_s: int,
-                    out_dir: Path, names: set, names_lock: threading.Lock):
+                    out_dir: Path, names: set, names_lock: threading.Lock,
+                    stagger_s: float = 0.0):
+    # Optional start jitter, off unless SWARM_STAGGER is set (see utils.load_config).
+    if stagger_s:
+        time.sleep(random.uniform(0, stagger_s))
     slug = utils.generate_slug(record_line, model, api_key, base_url)
     name = utils.reserve_name(utils.build_folder_name(full_hash, slug), names, names_lock)
 
@@ -61,7 +66,7 @@ def process_record(record_line: str, full_hash: str, image: str,
     with tempfile.TemporaryDirectory() as scratch:
         try:
             container_name = f"swarm-{name}"
-            cmd = utils.build_docker_cmd(uid, gid, model, design_doc, traj_path,
+            cmd = utils.build_docker_cmd(uid, gid, model, reference_dir, traj_path,
                                           prompt_file, scratch, image,
                                           container_name=container_name)
             started = time.monotonic()
@@ -165,7 +170,7 @@ def main():
     subprocess.run(["docker", "build", "-t", image, str(config.harness_dir)], check=True)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    design_doc = SELF_DIR / "DESIGN_DOC.md"
+    reference_dir = SELF_DIR / "reference"
     prompt_file = Path(tempfile.mkstemp(suffix=".md")[1])
     prompt_file.write_text(config.task_file.read_text())
 
@@ -186,10 +191,11 @@ def main():
     try:
         with ThreadPoolExecutor(max_workers=config.concurrency) as pool:
             futures = [
-                pool.submit(process_record, line, full_hash, image, design_doc,
+                pool.submit(process_record, line, full_hash, image, reference_dir,
                             prompt_file, config.model, config.api_key, config.base_url,
                             config.harness_name, config.task_name, config.experiment,
-                            config.timeout_s, out_dir, names, names_lock)
+                            config.timeout_s, out_dir, names, names_lock,
+                            config.stagger_s)
                 for line, full_hash in records
             ]
             for future in as_completed(futures):

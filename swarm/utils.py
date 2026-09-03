@@ -49,6 +49,7 @@ class Config:
     task_name: str
     model: str
     concurrency: int
+    stagger_s: float
     timeout_s: int
     experiment: str
     base_url: str
@@ -65,10 +66,15 @@ def load_config(self_dir: Path) -> Config:
     """
     load_dotenv(self_dir / ".env")
 
-    harness_name = os.environ.get("SWARM_HARNESS", "opencode")
+    harness_name = os.environ.get("SWARM_HARNESS", "pi")
     task_name = os.environ.get("SWARM_TASK", "discovery")
     model = os.environ.get("SWARM_MODEL", "vertex-proxy/gemini-flash")
     concurrency = int(os.environ.get("SWARM_CONCURRENCY", "4"))
+    # Off by default. This was added on the theory that the pool's jitter-free
+    # retries arrive at a restarting proxy as one burst and knock it over again;
+    # that was not borne out — the proxy usually survives the returning traffic,
+    # so the stagger only adds latency. Kept as a knob, not a default.
+    stagger_s = float(os.environ.get("SWARM_STAGGER", "0"))
     # A ceiling on one record, not a target. Normal records finish in 2-5
     # minutes; one riding out proxy outages through the harness's own retries
     # can legitimately take ~15, so this is set well above that and exists
@@ -89,8 +95,9 @@ def load_config(self_dir: Path) -> Config:
     if not task_file.exists():
         raise ValueError(f"no such task file: {task_file}")
 
-    return Config(harness_name, task_name, model, concurrency, timeout_s,
-                  experiment, base_url, api_key, harness_dir, task_file)
+    return Config(harness_name, task_name, model, concurrency, stagger_s,
+                  timeout_s, experiment, base_url, api_key, harness_dir,
+                  task_file)
 
 
 def load_batch(batch_path: Path, done_hashes: set) -> tuple:
@@ -413,7 +420,7 @@ def reserve_name(base: str, names: set, names_lock: threading.Lock) -> str:
         return name
 
 
-def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
+def build_docker_cmd(uid: int, gid: int, model: str, reference_dir: Path,
                       traj_path: Path, prompt_file: Path, scratch, image: str,
                       container_name: str | None = None) -> list:
     """The exact `docker run` invocation for one record: non-root (matches
@@ -423,6 +430,10 @@ def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
     API. Mount surface is exactly the 3 read-only paths + 1 writable dir
     below; nothing else from the host is reachable (see ADVANCED.md's
     Security section for the fuller rationale).
+
+    reference_dir is a directory, not a file: the specification is split across
+    reference/DESIGN_DOC.md plus topic files it points at, so an agent reads the
+    main file and only the parts it needs rather than 1000 lines in one sitting.
 
     container_name is what makes a timeout enforceable: killing the `docker
     run` process only detaches the CLI, leaving the container running, so
@@ -439,7 +450,7 @@ def build_docker_cmd(uid: int, gid: int, model: str, design_doc: Path,
         "--cpus", "1",
         "-e", "PROXY_API_KEY", "-e", "PROXY_BASE_URL",
         "-e", f"SWARM_MODEL={model}",
-        "-v", f"{design_doc}:/reference/DESIGN_DOC.md:ro",
+        "-v", f"{reference_dir}:/reference:ro",
         "-v", f"{traj_path}:/trajectory.txt:ro",
         "-v", f"{prompt_file}:/prompt.md:ro",
         "-v", f"{scratch}:/output",

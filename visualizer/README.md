@@ -2,7 +2,8 @@
 
 Browse a swarm `output/` directory: pick the folder, click a trajectory subfolder,
 click a file to view it. `.bc`, `.md` and `.json` files get syntax highlighting;
-logs and anything else render as plain text.
+logs and anything else render as plain text. The header above each file has a
+`copy` button that puts its raw contents on the clipboard.
 
 No build step, no dependencies, no server. Open `index.html` in a browser and click
 "Choose output folder…" — the folder is read locally via the browser's own file
@@ -19,7 +20,8 @@ Newly appeared trajectories are briefly highlighted, and if the file you're look
 at is rewritten it reloads in place, keeping your scroll position. Only actual
 changes trigger a re-render, so open sections and scroll position survive a refresh.
 
-Sort by name, or by "newest first" to watch results land while a batch runs.
+Sorted newest first by default, so results land at the top while a batch runs;
+switch to name ordering in the header.
 
 This needs the File System Access API (`showDirectoryPicker`), i.e. a Chromium
 browser. Elsewhere it falls back to a one-off `<input webkitdirectory>` snapshot —
@@ -35,7 +37,7 @@ Deliberately structural rather than vocabulary-aware. For `.bc` it recognizes on
 - Python keywords (`import`, `from`, `def`, `if`, `for`, ...)
 - function-call shape (an identifier immediately followed by `(`)
 
-No BrainCode construct or package names are hardcoded — see `../swarm/DESIGN_DOC.md`
+No BrainCode construct or package names are hardcoded — see `../swarm/reference/DESIGN_DOC.md`
 for the current vocabulary state.
 
 Markdown is highlighted **as source**, not rendered: `decisions.md` and

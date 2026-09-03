@@ -1,52 +1,144 @@
 # Discovery
 
 You are translating one trajectory into BrainCode, in an isolated, single-use
-invocation with no memory of any other trajectory. There is no document to edit, no
-corpus to update, no vocabulary to revise — only the files you write in response to
-this one trajectory.
+invocation with no memory of any other trajectory. There is no document to edit,
+no corpus to update, no vocabulary to revise — only the files you write in
+response to this one trajectory.
 
-Read `/reference/DESIGN_DOC.md` first — it defines the language: what a BrainCode
-document has to look like, its grammar, and its fidelity rules. Then read
-`/trajectory.txt` — the trajectory's turns as plain text, already attached to this
-message; don't search for it, and don't reformat or preprocess it, it is already
-readable as-is.
+Read `/reference/DESIGN_DOC.md` first; it is the whole specification and it
+governs. Then read `/trajectory.txt`: the turns as plain text, already attached
+to this message. Don't search for it and don't reformat it, it is readable as-is.
 
-Naming a construct, in order — stop at the first gate that fails:
+## What to hold on to
 
-1. **Earns existence.** Would the nearest construct you already know lose a distinction that matters if reused here? If not, don't mint a new one. Default to minting when genuinely unsure — vocabulary sprawl is the accepted cost of fidelity.
-2. **Altitude.** Swapping the instance should leave the name valid; swapping the intent should break it. `web_search` names an intent; `search_2` names an instance and fails this gate.
-3. **Legibility.** Could a reader who's never seen the definition predict what it covers and excludes from the name alone? Roughly two words, unambiguous without relying on its namespace to rescue it.
+The reply in the trajectory has a shape — an opening, sections, claims, a
+conclusion. That shape is not your document. Record what the agent *worked out*:
+the operations it performed, the facts it established, and how those bear on each
+other. A reader holding your document and not the reply should be able to say
+what the agent concluded and why.
 
-**No uncanonized strings.** A bare natural-language string standing in for content is not a construct — reaching for one is failing gate 1, not passing it. Bare strings are for narrow, genuinely atomic data taken verbatim from the source: a filename, an exact quoted term, a single word or short phrase copied from the input. They are never acceptable for a judgment, a category, a classification, a summary, or a conclusion you are forming — however short. A sentiment reading of "strongly positive" is a judgment, not quoted data, and needs a construct (an enum member, a labeled result), not a hand-picked string. Composing the subject agent's final response to the user is an operation like any other: decompose what is actually being communicated — which finding, which values, which comparison — into its own constructs. Never fall back to storing the assembled sentence itself as a string argument; that is transcription of the surface text, and the language's fidelity contract draws that line explicitly — translation recovers operations, it does not transcribe prose.
+The failure to watch for in yourself is copying the reply's outline across and
+dressing it in syntax. It hides well, because every disguise satisfies the rules:
+a phrase sitting in a literal, a sentence turned into a capitalised enum member,
+a predicate whose name is its own object, an entity that is only a heading, one
+enum per section with the bullets as its members, a whole passage under a
+wrapper. When you finish, read your declaration block on its own — if it reads
+like a table of contents, start again.
 
-Granularity: the clearest case for a construct is an operation that transforms data or brings new data into existence. A single step of subject-agent activity usually expands into several constructs — expand along operations, not along narration. Operations count even when the source trace never states them outright, whenever a competent reader would confidently assume the operation occurred — this is a materially weaker bar than logical necessity.
+Then check what your bindings feed. If nearly all of them are referenced only by
+the response composition, you have recorded the topics the agent touched and lost
+the reasoning that connected them.
 
-Fidelity, applied:
+Two habits are worth naming because they are easy to fall into. Never add
+anything to satisfy a rule — not an operation, a binding, a field, a field value,
+or an enum member; if a rule seems to require it, you have misread the rule. And
+don't lean on one generic verb: a single operation appearing again and again with
+near-identical arguments means you are walking through the reply rather than
+translating it.
 
-- Recover the operations a competent reader would assume happened — don't limit yourself to what's explicitly narrated, and don't pad in ones that aren't warranted either.
-- Never invent reasoning: no motive or deliberation beyond what the source evidences.
-- Make human intent explicit, anchored to what the subject agent demonstrably understood the request to be (shown by what it did), not your own reading of the text.
-- Encode execution errors using the construct for the operation being performed, not a separate error construct — a miscount is still the counting construct.
+## Fidelity, applied
 
-This version of the discovery task has no shared corpus or prior translated examples to retrieve against — make the best call from `/reference/DESIGN_DOC.md` and this prompt alone rather than guessing that a reusable construct exists elsewhere.
+- Recover the operations a competent reader would assume happened — don't limit
+  yourself to what's narrated, and don't pad in ones that aren't warranted.
+- Never invent reasoning: no motive or deliberation beyond what the source
+  evidences.
+- Make human intent explicit, anchored to what the agent demonstrably understood
+  the request to be — shown by what it did — not your own reading.
+- Encode execution errors with the construct for the operation performed, putting
+  the wrong result on its result line.
+
+There is no shared corpus and no prior translated examples to retrieve against.
+Make the best call from the spec and this prompt alone.
 
 ## Write your output
 
-Actually create four files in `/output` — don't just describe or quote their
-contents in your reply instead of creating them. A response that talks about what
-these files would contain, without the files existing, is a failed run. **So is a
-file that exists but is empty or a placeholder** — every one of the four must
-contain real, finished content the first time you write it. Never write a file
-with a "TODO" / "will add this" / empty-string placeholder intending to fill it in
-later — you don't get a later. Finish composing each file's actual content before
+Actually create four files in `/output` — don't describe or quote their contents
+in your reply instead of creating them. A response that talks about what these
+files would contain, without the files existing, is a failed run. So is a file
+that exists but is empty or a placeholder. Never write a "TODO" intending to fill
+it in later; you don't get a later. Finish composing each file's content before
 you write it, then write it once.
 
-1. `/output/translation.bc` — the finished BrainCode document, and nothing else in it: no commentary, no code fences, no explanation. Must never be empty.
-2. `/output/decisions.md` — the judgment calls you made and why, in plain prose. Naming choices, granularity calls, anything that passed a naming gate narrowly or could plausibly have gone the other way. A later review pass — reading many of these across many trajectories, looking for where independent translations agree, where they conflict, and what patterns recur often enough to be worth canonizing — reads this file first. Write it for that reader, not for yourself. Must never be empty.
-3. `/output/uncertainties.md` — anything you were genuinely unsure about and what you decided anyway, stated as an open question plus your resolution (the translation itself still has to commit to one answer — ambiguity gets flagged here, not left unresolved in the document). If there genuinely isn't one, the file must still contain the word "none" — not be left empty.
-4. `/output/keywords.md` — five to ten comma-separated search terms for this trajectory: the constructs you minted or used, the domain/topic, anything that would help someone searching across many trajectories find this one. Must never be empty.
+### 1. `/output/translation.bc`
 
-All four files existing with real content is not optional and not best-effort — it
-is the definition of having done this task. Do this now, for the one trajectory
-attached to this message. Create the four files and stop — no further reading, no
-other output.
+The finished BrainCode document and nothing else: no commentary, no code fences,
+no explanation. Never empty.
+
+### 2. `/output/decisions.md`
+
+Where the language came up short, plus your naming and granularity calls. Close
+calls that could have gone either way belong in `uncertainties.md`; this file is
+about what the vocabulary could not do. Open with a table, one row per gap:
+
+| Wanted | Used instead | What it lost |
+|---|---|---|
+| `concede` | `acknowledge` | the speech act of yielding to a correction; `acknowledge` reads as neutral receipt |
+
+Include a row whenever you invented a structural construct, used an ordinary one
+that didn't really fit, or could not express something at all. Keep the `Wanted`
+column to construct names or `demands:` terms, since it has to aggregate across
+many documents. Use prose below the table for anything else a later reader needs.
+
+### 3. `/output/uncertainties.md`
+
+The hard decisions: only the forks where two or more encodings were genuinely
+defensible and you had to pick, where a competent translator reading the same
+turns and the same spec could have gone the other way. This file exists to find
+where the *specification* is underdetermined, which is a different repair from a
+missing construct. One block per fork:
+
+```
+## Retrieval vs. recall for the publication date
+- Fork: searching (the reply cites a source) vs recalling (no tool call is visible)
+- Chose: recalling
+- Because: no search is narrated and the date is common knowledge
+- Spec ref: none
+```
+
+`Spec ref:` is the important line. Cite the section that decided it if one did,
+and write `none` when nothing in the spec bears on the choice — that is the
+signal a later pass looks for, and guessing a section that doesn't apply destroys
+it.
+
+If there were genuinely no hard forks, the file must still contain the word
+"none". Don't pad it: a run of trivial forks is worse than an honest "none",
+because it hides the real ones.
+
+### 4. `/output/keywords.md`
+
+A classification of this trajectory, using only the terms below. Four lines, each
+a label plus comma-separated terms. Don't invent terms, don't add the topic (the
+folder name carries it), and don't list constructs you used, which are read from
+the `.bc` file. Keep a line even if its list is empty.
+
+```
+mode:      argue
+demands:   attributed-claim, multi-source-synthesis, citation
+stressors: long-input, duplicated-source, heavy-redaction
+strained:  cite_source, minted:corroborate
+```
+
+- **`mode:`** — exactly one: `lookup`, `explain`, `argue`, `instruct`, `create`,
+  `compute`, `advise`, `critique`, `converse`.
+- **`demands:`** — what the trajectory required the language to express:
+  `attributed-claim`, `multi-source-synthesis`, `quantitative`, `temporal`,
+  `conditional`, `procedure`, `code-artifact`, `translation`, `refusal`,
+  `persona`, `self-correction`, `comparison`, `classification`, `citation`,
+  `attachment`, `counterfactual`, `negation`.
+- **`stressors:`** — properties of the *input* that made translation harder:
+  `long-input`, `multi-party-input`, `duplicated-source`, `heavy-redaction`,
+  `non-latin-fragments`, `multi-turn-revision`, `tool-results-present`,
+  `ambiguous-request`, `malformed-source`.
+- **`strained:`** — any operation you used that did not really fit what happened,
+  plus `minted:<name>` for each structural construct you had to invent. Add
+  `inexpressible` if some part of the trajectory could not be expressed at all,
+  and say what in `decisions.md`.
+
+The closed vocabulary is the point: free-text keywords don't aggregate, and a
+term appearing in one document is worth nothing to the review pass.
+
+---
+
+All four files existing with real content is not optional and not best-effort —
+it is the definition of having done this task. Do it now, for the one trajectory
+attached to this message. Create the four files and stop.

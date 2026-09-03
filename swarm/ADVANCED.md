@@ -9,13 +9,38 @@ pipeline — not needed for normal use (see `README.md` for that).
 |---|---|---|
 | `PROXY_API_KEY` | *(required)* | — |
 | `PROXY_BASE_URL` | vertex-proxy's URL | model backend |
-| `SWARM_HARNESS` | `opencode` | picks `harnesses/$SWARM_HARNESS/` |
+| `SWARM_HARNESS` | `pi` | picks `harnesses/$SWARM_HARNESS/` |
 | `SWARM_TASK` | `discovery` | picks `tasks/$SWARM_TASK.md` |
 | `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness |
 | `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s |
+| `SWARM_STAGGER` | `0` | each worker waits a random `0..N` seconds before starting |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed |
-| `SWARM_BATCH_SIZE` | `20` | informational — how you split data, not enforced |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in `metadata.json`; tags which run a record came from |
+
+A batch file is just a list of records, and nothing anywhere depends on how long
+it is: `spawn_batch.py` reads every line and feeds a fixed-size worker pool, so
+30 records and 300 differ only in how long the run takes. Sizes on disk already
+range from 30 to 100. Size the batch to what you want to inspect together — one
+spec version's worth of output, one experiment tag — rather than to a fixed
+number.
+
+`SWARM_STAGGER` is off by default and probably not worth turning on. It was added
+on the theory that the pool stays phase-locked — every worker starts at the same
+instant, and the `pi` harness's retry backoff has no jitter
+(`harnesses/pi/settings.json`: plain `baseDelayMs * 2**(attempt-1)`) — so all N
+workers would retry a proxy outage in the same moment and knock the restarting
+instance over again. **That did not hold up:** the proxy usually survives the
+returning traffic, so staggering only adds latency to every run. The knob remains
+for experimenting.
+
+Failure rates here track the proxy's health over time far more than they track
+concurrency. One session ran, in order, concurrency 8 → 32 → 24 → 16
+and saw failure rates of 0% → 9% → 77% → 53%: monotonic in *when* the run
+happened, not in how wide it was. Before tuning `SWARM_CONCURRENCY`, check
+whether the proxy is answering at all (`curl $PROXY_BASE_URL/models`); a run that
+fails at 16 may succeed at 32 an hour later. The failures are all origin-side —
+`503`, `520`, `429`, and mid-stream `Stream ended without finish_reason` — none
+of which any client-side setting prevents.
 
 ## Output
 

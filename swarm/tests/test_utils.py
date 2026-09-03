@@ -468,7 +468,7 @@ class TestLoadConfig:
         for var in self.ENV_VARS:
             monkeypatch.delenv(var, raising=False)
 
-    def _make_harness(self, self_dir, name="opencode"):
+    def _make_harness(self, self_dir, name="pi"):
         harness_dir = self_dir / "harnesses" / name
         harness_dir.mkdir(parents=True, exist_ok=True)
         (harness_dir / "Dockerfile").write_text("FROM scratch")
@@ -481,12 +481,12 @@ class TestLoadConfig:
     def test_defaults_when_nothing_set(self, tmp_path, monkeypatch):
         self._clear_env(monkeypatch)
         monkeypatch.setenv("PROXY_API_KEY", "test-key")
-        self._make_harness(tmp_path, "opencode")
+        self._make_harness(tmp_path, "pi")
         self._make_task(tmp_path, "discovery")
 
         config = utils.load_config(tmp_path)
 
-        assert config.harness_name == "opencode"
+        assert config.harness_name == "pi"
         assert config.task_name == "discovery"
         assert config.model == "vertex-proxy/gemini-flash"
         assert config.concurrency == 4
@@ -496,17 +496,17 @@ class TestLoadConfig:
     def test_env_vars_override_defaults(self, tmp_path, monkeypatch):
         self._clear_env(monkeypatch)
         monkeypatch.setenv("PROXY_API_KEY", "k")
-        monkeypatch.setenv("SWARM_HARNESS", "pi")
+        monkeypatch.setenv("SWARM_HARNESS", "opencode")
         monkeypatch.setenv("SWARM_TASK", "custom")
         monkeypatch.setenv("SWARM_MODEL", "vertex-proxy/other-model")
         monkeypatch.setenv("SWARM_CONCURRENCY", "8")
         monkeypatch.setenv("SWARM_EXPERIMENT", "exp-1")
-        self._make_harness(tmp_path, "pi")
+        self._make_harness(tmp_path, "opencode")
         self._make_task(tmp_path, "custom")
 
         config = utils.load_config(tmp_path)
 
-        assert config.harness_name == "pi"
+        assert config.harness_name == "opencode"
         assert config.task_name == "custom"
         assert config.model == "vertex-proxy/other-model"
         assert config.concurrency == 8
@@ -597,7 +597,7 @@ class TestBuildDockerCmd:
 
     def _cmd(self, **overrides):
         args = dict(uid=1000, gid=1000, model="vertex-proxy/gemini-flash",
-                    design_doc="/path/DESIGN_DOC.md", traj_path="/tmp/traj.txt",
+                    reference_dir="/path/reference", traj_path="/tmp/traj.txt",
                     prompt_file="/tmp/prompt.md", scratch="/tmp/scratch", image="my-image")
         args.update(overrides)
         return utils.build_docker_cmd(**args)
@@ -630,10 +630,12 @@ class TestBuildDockerCmd:
         assert "--cpus" in cmd
         assert cmd[cmd.index("--cpus") + 1] == "1"
 
-    def test_mounts_design_doc_trajectory_and_prompt_read_only(self):
-        cmd = self._cmd(design_doc="/d/DESIGN_DOC.md", traj_path="/t/traj.txt",
+    def test_mounts_reference_trajectory_and_prompt_read_only(self):
+        # The spec is a directory, not a single file: reference/DESIGN_DOC.md is
+        # the entry point and points at topic files beside it.
+        cmd = self._cmd(reference_dir="/d/reference", traj_path="/t/traj.txt",
                          prompt_file="/p/prompt.md")
-        assert "/d/DESIGN_DOC.md:/reference/DESIGN_DOC.md:ro" in cmd
+        assert "/d/reference:/reference:ro" in cmd
         assert "/t/traj.txt:/trajectory.txt:ro" in cmd
         assert "/p/prompt.md:/prompt.md:ro" in cmd
 

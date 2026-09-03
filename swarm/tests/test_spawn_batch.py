@@ -48,8 +48,9 @@ class TestProcessRecordNaming:
              out_dir=None, stderr="fake stderr", timeout_s=1200):
         names = set() if names is None else names
         names_lock = names_lock or threading.Lock()
-        design_doc = tmp_path / "DESIGN_DOC.md"
-        design_doc.write_text("design")
+        design_doc = tmp_path / "reference"
+        design_doc.mkdir(exist_ok=True)
+        (design_doc / "DESIGN_DOC.md").write_text("design")
         prompt_file = tmp_path / "prompt.md"
         prompt_file.write_text("prompt")
         if out_dir is None:
@@ -123,7 +124,8 @@ class TestProcessRecordNaming:
                                             stderr=b"partial err")
 
         names, lock = set(), threading.Lock()
-        design_doc = tmp_path / "DESIGN_DOC.md"; design_doc.write_text("d")
+        design_doc = tmp_path / "reference"; design_doc.mkdir(exist_ok=True)
+        (design_doc / "DESIGN_DOC.md").write_text("d")
         prompt_file = tmp_path / "prompt.md"; prompt_file.write_text("p")
         out_dir = tmp_path / "output"; out_dir.mkdir(exist_ok=True)
         with patch("spawn_batch.utils.generate_slug", return_value="fixed-slug"), \

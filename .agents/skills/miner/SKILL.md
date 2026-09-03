@@ -20,10 +20,10 @@ procedure, and there's no single right way to go find data.
 ## What we're actually trying to do
 
 The swarm's discovery task translates real trajectories into BrainCode (see
-`swarm/DESIGN_DOC.md`) — a language for encoding human/AI trajectories, built as a
+`swarm/reference/DESIGN_DOC.md`) — a language for encoding human/AI trajectories, built as a
 research artifact for interpretability, cross-model comparison, and related uses.
 Its value depends entirely on the trajectories being real: the language's fidelity
-contract (`swarm/DESIGN_DOC.md`'s "Fidelity and Semantics")
+contract (`swarm/reference/DESIGN_DOC.md`'s "Fidelity")
 explicitly forbids inventing reasoning that wasn't evidenced — feeding the pipeline
 synthetic or fabricated "trajectories" written to look plausible defeats the whole
 purpose, even if they're structurally valid JSONL. A trajectory manufactured to be
@@ -31,8 +31,8 @@ easy to translate is worse than no trajectory at all.
 
 ## What counts as a good trajectory
 
-Per `swarm/DESIGN_DOC.md`'s own Trajectory definition: "the complete arc of a single task, from
-initial human intent through the agent's reasoning and action to completion." In
+Per `swarm/reference/DESIGN_DOC.md`'s opening: "the arc of one task, from the
+human's intent through the agent's reasoning and action to completion." In
 practice that favors:
 
 - Visible reasoning and action, not just a final answer — a bare Q&A pair with no
@@ -41,7 +41,7 @@ practice that favors:
   complete one.
 - Genuine variety *within* the volume — the swarm is also trying to grow
   BrainCode's vocabulary through what recurs across many different trajectories
-  (see `swarm/DESIGN_DOC.md`'s "Vocabulary and Canonization"), which needs real
+  (canonization — see `swarm/reference/DESIGN_DOC.md`), which needs real
   scale to work at all. The failure mode to watch for isn't a dataset being
   large — a large dataset is the point — it's a large dataset that's actually
   the same handful of tasks repeated thousands of times, which teaches the
@@ -91,7 +91,7 @@ yourself.
 When a source carries a field that's genuine evidenced reasoning distinct from
 the final response (e.g. a `thinking`/`reasoning` column separate from the
 reply text), fold it into the trajectory rather than dropping it — per
-`swarm/DESIGN_DOC.md`'s fidelity contract, reasoning is never invented, but
+`swarm/reference/DESIGN_DOC.md`'s fidelity contract, reasoning is never invented, but
 reasoning that *was* recorded by the source is exactly what discovery needs and
 should be kept, not thrown away for being inconvenient to format.
 
