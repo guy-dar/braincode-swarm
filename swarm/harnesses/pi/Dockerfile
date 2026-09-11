@@ -4,7 +4,11 @@
 # a way it didn't for opencode.
 FROM node:24-bookworm-slim
 
-RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+# Pinned: unpinned once silently picked up a release that started sending
+# `store` on every openai-completions request (compat.supportsStore), which
+# vertex_ai hard-rejects with a 400 — broke every record with no code change
+# on our side. Bump deliberately, not by a cache miss.
+RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent@0.85.1
 
 # Non-root is enforced at `docker run --user` time (see spawn_batch.py), matching
 # the host UID so the writable /output mount just works.

@@ -2,7 +2,12 @@
 # entrypoint that knows this harness's exact CLI invocation, so the host side
 # (spawn_batch.py) never needs to know it. Everything opencode-specific lives
 # here; spawn_batch.py's `docker run` is identical across every harness.
-FROM ghcr.io/anomalyco/opencode
+# Pinned by digest (no version-tag scheme is published for this image) —
+# same reasoning as harnesses/pi/Dockerfile: an unpinned FROM here means every
+# fresh `docker build` on a new host silently picks up whatever's newest,
+# which is exactly what broke the pi harness against this proxy. Bump
+# deliberately by re-resolving the digest, not by a cache miss.
+FROM ghcr.io/anomalyco/opencode:latest@sha256:412b37a894bb937a0d5d6a1860789b9fd7d34a109334bec98a3f6ecf812bb442
 
 # The config must NOT live under /reference: spawn_batch.py mounts the host's
 # reference/ directory there, and a directory mount replaces the directory and
