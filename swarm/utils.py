@@ -68,8 +68,8 @@ def load_config(self_dir: Path) -> Config:
 
     harness_name = os.environ.get("SWARM_HARNESS", "pi")
     task_name = os.environ.get("SWARM_TASK", "discovery")
-    model = os.environ.get("SWARM_MODEL", "vertex-proxy/gemini-flash")
-    concurrency = int(os.environ.get("SWARM_CONCURRENCY", "4"))
+    model = os.environ.get("SWARM_MODEL", "vertex-proxy/gemini-3.5-flash")
+    concurrency = int(os.environ.get("SWARM_CONCURRENCY", "16"))
     # Off by default. This was added on the theory that the pool's jitter-free
     # retries arrive at a restarting proxy as one burst and knock it over again;
     # that was not borne out — the proxy usually survives the returning traffic,

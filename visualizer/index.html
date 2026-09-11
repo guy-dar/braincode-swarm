@@ -101,7 +101,10 @@
   .ball.stalled { background: #c9a227; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
   @media (prefers-reduced-motion: reduce) { .ball.working { animation: none; } }
-  .trajectory-name .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* flex:1 so the label absorbs the spare width and the ball lands on the right
+     edge for every row — otherwise the ball follows the end of the text, and a
+     short name puts it halfway across a sidebar of long ones. */
+  .trajectory-name .label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .trajectory.is-new .trajectory-name { background: var(--new-bg); }
   .file-list { padding: 0 0 6px 0; }
   .file-item {

@@ -488,8 +488,8 @@ class TestLoadConfig:
 
         assert config.harness_name == "pi"
         assert config.task_name == "discovery"
-        assert config.model == "vertex-proxy/gemini-flash"
-        assert config.concurrency == 4
+        assert config.model == "vertex-proxy/gemini-3.5-flash"
+        assert config.concurrency == 16
         assert config.experiment is None
         assert config.api_key == "test-key"
 

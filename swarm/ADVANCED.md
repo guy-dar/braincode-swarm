@@ -11,8 +11,8 @@ pipeline — not needed for normal use (see `README.md` for that).
 | `PROXY_BASE_URL` | vertex-proxy's URL | model backend |
 | `SWARM_HARNESS` | `pi` | picks `harnesses/$SWARM_HARNESS/` |
 | `SWARM_TASK` | `discovery` | picks `tasks/$SWARM_TASK.md` |
-| `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness |
-| `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s |
+| `SWARM_MODEL` | `vertex-proxy/gemini-3.5-flash` | passed to the harness |
+| `SWARM_CONCURRENCY` | `16` | concurrent `docker run`s |
 | `SWARM_STAGGER` | `0` | each worker waits a random `0..N` seconds before starting |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in `metadata.json`; tags which run a record came from |

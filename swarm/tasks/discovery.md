@@ -23,7 +23,11 @@ a phrase sitting in a literal, a sentence turned into a capitalised enum member,
 a predicate whose name is its own object, an entity that is only a heading, one
 enum per section with the bullets as its members, a whole passage under a
 wrapper. When you finish, read your declaration block on its own — if it reads
-like a table of contents, start again.
+like a table of contents, start again. Then check every declared name for a noun
+in it: those are the composites, and a composite without a definition is not a
+well-formed declaration. Reading the definitions on their own is the sharper
+version of the table-of-contents check — one that restates its own name is a
+heading, and one identical to another is two names for one thing.
 
 Then check what your bindings feed. If nearly all of them are referenced only by
 the response composition, you have recorded the topics the agent touched and lost
@@ -40,6 +44,10 @@ translating it.
 
 - Recover the operations a competent reader would assume happened — don't limit
   yourself to what's narrated, and don't pad in ones that aren't warranted.
+- Record what each operation *produced*, not only that it ran. Where the agent
+  made something — a song, a plan, a program, a comparison — what it decided
+  about that thing is content, and content is statements. Where the reply shows
+  its working, the working goes in a `via` scope.
 - Never invent reasoning: no motive or deliberation beyond what the source
   evidences.
 - Make human intent explicit, anchored to what the agent demonstrably understood

@@ -22,9 +22,9 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
   means adding a folder there; `spawn_batch.py` never branches on which one runs.
 - **Model** (`SWARM_MODEL`) — passed straight through to the harness's entrypoint
   as an env var. Three are wired up, all via the vertex-proxy backend (see
-  `vertex-proxy/OPENCODE_SETUP.md`): `vertex-proxy/gemini-flash` (Gemini 3.7
-  Flash, medium reasoning effort — the default), `vertex-proxy/gemini-flash-high`
-  (same model, high effort), and `vertex-proxy/gemini-3.5-flash`. Reaching a
+  `vertex-proxy/OPENCODE_SETUP.md`): `vertex-proxy/gemini-3.5-flash` (the
+  default), `vertex-proxy/gemini-flash` (Gemini 3.7 Flash, medium reasoning
+  effort), and `vertex-proxy/gemini-flash-high` (same model, high effort). Reaching a
   model takes two things — the proxy has to serve the alias *and* the harness has
   to declare it (`swarm/harnesses/opencode/config.jsonc`'s `models` block,
   `swarm/harnesses/pi/models.template.json`'s `models` array); a string the
@@ -43,8 +43,10 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
    but include it when the source has one, since it catches a record re-offered
    with a re-serialized line, which a hash cannot. See `.claude/skills/miner` for
    what counts as a good trajectory.
-2. Draw a batch with `python3 swarm/sample_batch.py -n 30`, which writes the next
-   free `swarm/batches/batch-NN.jsonl`. **Don't hand-roll this.** It excludes
+2. Run it: `swarm/run_batch.sh <experiment> [count]` does steps 2 and 4 in one line and
+   is the normal way to start a run. To sample without dispatching, `python3
+   swarm/sample_batch.py -n 30` writes the next free
+   `swarm/batches/batch-NN.jsonl`. **Don't hand-roll the sampling.** It excludes
    every record already in `output/`, `failures/`, and any prior batch file, by
    `id` as well as by content hash — get that wrong and a run silently re-does
    work, which is invisible in the results and expensive. Useful flags:
@@ -88,8 +90,8 @@ sources and data that grows over time are the normal case, not an edge case — 
 |---|---|---|
 | `SWARM_HARNESS` | `pi` | picks `swarm/harnesses/$SWARM_HARNESS/` |
 | `SWARM_TASK` | `discovery` | picks `swarm/tasks/$SWARM_TASK.md` |
-| `SWARM_MODEL` | `vertex-proxy/gemini-flash` | passed to the harness's entrypoint |
-| `SWARM_CONCURRENCY` | `4` | concurrent `docker run`s within one `spawn_batch.py` call |
+| `SWARM_MODEL` | `vertex-proxy/gemini-3.5-flash` | passed to the harness's entrypoint |
+| `SWARM_CONCURRENCY` | `16` | concurrent `docker run`s within one `spawn_batch.py` call |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed and recorded as failed |
 | `SWARM_EXPERIMENT` | *(unset)* | recorded in each record's `metadata.json`; tags which run it came from |
 | `PROXY_API_KEY` | *(required)* | — |

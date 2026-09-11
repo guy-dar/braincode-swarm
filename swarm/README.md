@@ -22,17 +22,21 @@ cp .env.example .env
 ```
 
 Put your data in `data/` as JSONL — one JSON object per line, each with a
-`content` field (`<|user|>`/`<|assistant|>` turns; `id` optional). Then draw a
-batch and run it:
+`content` field (`<|user|>`/`<|assistant|>` turns; `id` optional). Then:
 
 ```bash
-python3 sample_batch.py -n 30 --max-chars 20000 --latin-only
-python3 spawn_batch.py batches/batch-01.jsonl output/
+./run_batch.sh my-experiment          # or: ./run_batch.sh my-experiment 50
 ```
 
-`sample_batch.py` writes the next free `batches/batch-NN.jsonl`, sampling only
-records that aren't already in `output/`, `failures/`, or an earlier batch.
-`--help` lists the filters.
+That's the two steps below in one line. `sample_batch.py` writes the next free
+`batches/batch-NN.jsonl`, sampling only records that aren't already in `output/`,
+`failures/`, or an earlier batch; `spawn_batch.py` dispatches a batch file. Run
+them separately for a different filter, or to re-run an existing batch, which
+retries just its failures:
+
+```bash
+python3 spawn_batch.py batches/batch-07.jsonl output/
+```
 
 Results land in `output/<hash6>-<slug>/`, one folder per successful record.
 Anything that failed leaves its logs in `failures/` instead, and re-running the
@@ -40,6 +44,7 @@ same batch retries just those.
 
 ## Layout
 
+- `run_batch.sh` — sample + dispatch in one line; the normal entry point.
 - `spawn_batch.py` — the dispatcher.
 - `sample_batch.py` — draws a batch file from `data/`, excluding anything already processed.
 - `tasks/`, `harnesses/` — pluggable task/harness definitions.
