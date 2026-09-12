@@ -683,6 +683,25 @@ they are the reason this language exists. Where the reply gives a conclusion and
 no working, there is no `via` — inventing plausible steps for it is inventing
 reasoning, and that is the one thing this document may never do.
 
+**A code change is content the same way a song or a plan is: parts, not a
+paraphrase.** An edit's site — the function, variable, condition, or expression
+it touches — is an entity or atom like any other, introduced by the operation
+that touched it; what changed is a fact about it, built from a verb this
+document already needs elsewhere (`assigns`, `adds`, `removes`, `replaces`,
+`guards`), never a `description=` or `change=` argument holding a sentence.
+`edit_code(file=snippets_py) >> Replaces(check=Known("os.path.samefile"),
+with=Known("os.path.commonpath"))` says what the edit did; a `description=`
+holding the same words in prose says only that an edit happened, in different
+clothes.
+
+The exact line or expression may be kept, under the same bound as a coined
+phrase: one atom, where its precise form — not what it accomplishes — is the
+point, such as the boundary value a fix changed or the exact condition a check
+now tests. A whole diff, a whole function body, or a file's contents is never
+that atom; if the exact wording of several lines mattered, translate what each
+one established and let the count of facts, not a pasted block, carry the size
+of the change.
+
 ## Where a literal may appear
 
 Argument positions carry expectations, and honouring them is what keeps a
