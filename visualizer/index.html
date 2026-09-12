@@ -395,7 +395,16 @@ async function scanHandle(dirHandle) {
   for await (const [name, handle] of dirHandle.entries()) {
     if (handle.kind !== "directory") continue;
     const files = [];
-    await collectFiles(handle, "", files);
+    try {
+      await collectFiles(handle, "", files);
+    } catch {
+      // This folder (or a file in it) was deleted between being listed and
+      // being read — e.g. an external process pruning older records while
+      // this scan is mid-flight. Not an error worth surfacing: skip it for
+      // this pass: it reappears next refresh if it's still there, and
+      // correctly stays gone if it was actually removed.
+      continue;
+    }
     if (files.length) groups.set(name, files);
   }
   return groups;
