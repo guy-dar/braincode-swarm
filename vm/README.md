@@ -18,15 +18,24 @@ cp vm/config.local.sh.example vm/config.local.sh   # fill in your VM/project det
 
 ```
 ./vm/deploy.sh              # push local code edits (fast, no data/ resync)
-./vm/run-task.sh <tag> [count] [--restartable] [--task NAME] [--harness NAME]
+./vm/run-task.sh <tag> [count] [--restartable] [--task NAME] [--harness NAME] [--batch PATH]
 ./vm/pull-results.sh        # bring output/ and failures/ back to this laptop
-./vm/watch-results.sh       # live-mirror the 1000 most-recent records into
-                            # vm/live-output for the visualizer, bounded so it
-                            # never grows unbounded on this laptop
+./vm/watch-results.sh       # live-mirror the 1000 most-recent records *per
+                            # namespace* into vm/live-output for the
+                            # visualizer, bounded so it never grows unbounded
+                            # on this laptop
 ```
 
 ## Notes
 
+- **Every run lives under its own namespace** (`output/<experiment>/`,
+  `failures/<experiment>/`, keyed by `SWARM_EXPERIMENT`, `default` if unset —
+  see `swarm/ADVANCED.md`). There's no separate "rerun" mechanism: pass
+  `--batch` with a new `<tag>` to `run-task.sh` to re-translate the exact same
+  records under a fresh namespace, e.g. to compare a spec revision's effect on
+  a fixed set of examples. `watch-results.sh` and the visualizer both
+  understand this — the visualizer shows a namespace picker when a folder
+  holds more than one.
 - **All machine-specific values (VM name/zone/GCP project, remote paths) live
   in `vm/config.local.sh`, which is gitignored.** `config.sh` itself is
   generic and committed; it errors out with a clear message if

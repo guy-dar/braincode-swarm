@@ -54,6 +54,21 @@ translating it.
   the request to be — shown by what it did — not your own reading.
 - Encode execution errors with the construct for the operation performed, putting
   the wrong result on its result line.
+- Where an edit answers something the trace just surfaced — an error, a
+  rejected argument, a search result — ground it in that fact rather than
+  stating both side by side. The diagnosis that led to a fix is the reasoning,
+  not the fix itself; leaving the link implicit throws away the point of the
+  trajectory.
+- Prose the agent writes between tool calls is not narration to skip past —
+  a stated hypothesis about a failure's cause, a reason it rules out an
+  approach, an assumption it flags as unverified: each is reasoning shown,
+  same as in a chat reply, and belongs in a `via` scope or an attributed claim,
+  not left out because it sits between actions instead of sentences.
+- Never paste a whole function, file, or unchanged surrounding code into an
+  edit's `old`/`new` (or any field standing in for them, whatever you name
+  it). Find the lines that actually differ and translate each as its own
+  fact — if you can't tell which lines differ, that's the sign to go back to
+  the source, not to paste the block.
 
 There is no shared corpus and no prior translated examples to retrieve against.
 Make the best call from the spec and this prompt alone.

@@ -47,7 +47,7 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
    is the normal way to start a run. To sample without dispatching, `python3
    swarm/sample_batch.py -n 30` writes the next free
    `swarm/batches/batch-NN.jsonl`. **Don't hand-roll the sampling.** It excludes
-   every record already in `output/`, `failures/`, and any prior batch file, by
+   every record already in `output/`, `failures/` (any namespace), and any prior batch file, by
    `id` as well as by content hash — get that wrong and a run silently re-does
    work, which is invisible in the results and expensive. Useful flags:
    `--max-chars` (cap trajectory length), `--latin-only` (keep a corpus readable
@@ -62,14 +62,22 @@ modes — read `swarm/ADVANCED.md` before re-deriving it from the code.
    swarm/output/`. Don't dispatch the same batch file from two invocations at
    once — `spawn_batch.py` doesn't coordinate across simultaneous runs of itself,
    only within one run's own concurrency.
-5. Results land in `swarm/output/<hash6>-<slug>/` — one folder per record, named
-   from a content-hash prefix plus an LLM-generated slug describing that
-   trajectory specifically. `metadata.json` on success (with the full hash,
-   a timestamp, and `SWARM_TASK`/`SWARM_HARNESS`/`SWARM_MODEL`), which doubles as
-   the marker a later run checks: re-running against refreshed or additional data
-   only reprocesses records whose content hash isn't already recorded.
-6. `swarm/output/` holds successes only. A failed record's logs go to
-   `swarm/failures/<hash6>[-n]/` instead — one directory per *attempt*, with
+5. Results land in `swarm/output/<namespace>/<hash6>-<slug>/` — one folder per
+   record, named from a content-hash prefix plus an LLM-generated slug
+   describing that trajectory specifically. `<namespace>` is `SWARM_EXPERIMENT`
+   (`default` if unset): every run gets its own namespace, not a special
+   "rerun" mode — replaying the exact same batch file under a new
+   `SWARM_EXPERIMENT` re-translates every record instead of skipping them as
+   already-done, since the done-hash scan only looks inside that one
+   namespace. This is the way to re-run the same examples against a later
+   spec revision or a different model. `metadata.json` on success (with the
+   full hash, a timestamp, and `SWARM_TASK`/`SWARM_HARNESS`/`SWARM_MODEL`),
+   which doubles as the marker a later run in the *same* namespace checks:
+   re-running against refreshed or additional data only reprocesses records
+   whose content hash isn't already recorded there.
+6. `swarm/output/<namespace>/` holds successes only. A failed record's logs go
+   to `swarm/failures/<namespace>/<hash6>[-n]/` instead — one directory per
+   *attempt*, with
    `failure.json` carrying the container's exit code, whether it wrote
    anything, how long it ran, and the harness's last error line (`null` when it
    reported none, which is the signature of a run that stalled rather than
@@ -93,6 +101,6 @@ sources and data that grows over time are the normal case, not an edge case — 
 | `SWARM_MODEL` | `vertex-proxy/gemini-3.5-flash` | passed to the harness's entrypoint |
 | `SWARM_CONCURRENCY` | `16` | concurrent `docker run`s within one `spawn_batch.py` call |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed and recorded as failed |
-| `SWARM_EXPERIMENT` | *(unset)* | recorded in each record's `metadata.json`; tags which run it came from |
+| `SWARM_EXPERIMENT` | *(unset, → `default`)* | recorded in each record's `metadata.json`; also the `output/`/`failures/` namespace subfolder the run writes to |
 | `PROXY_API_KEY` | *(required)* | — |
 | `PROXY_BASE_URL` | vertex-proxy's URL | the model backend every harness talks to |

@@ -158,12 +158,22 @@ def process_record(record_line: str, full_hash: str, image: str,
 def main():
     if len(sys.argv) != 3:
         sys.exit("usage: spawn_batch.py <batch.jsonl> <output-dir>")
-    batch_path, out_dir = Path(sys.argv[1]), Path(sys.argv[2])
+    batch_path, base_out_dir = Path(sys.argv[1]), Path(sys.argv[2])
 
     try:
         config = utils.load_config(SELF_DIR)
     except ValueError as e:
         sys.exit(f"spawn_batch: {e}")
+
+    # Every run lives under its own namespace subfolder, keyed by
+    # SWARM_EXPERIMENT ("default" if unset) — not a special "rerun" mode, just
+    # the ordinary way any two runs (a fresh corpus, a resample, the same
+    # batch replayed under a later spec) coexist without one's done-hashes
+    # shadowing the other's. Same shape one level down for failures/, so
+    # `output/<namespace>/` and `failures/<namespace>/` always pair up (see
+    # utils.failures_dir).
+    namespace = config.experiment or "default"
+    out_dir = base_out_dir / namespace
 
     image = f"braincode-swarm-{config.harness_name}"
     print(f"spawn_batch: building harness '{config.harness_name}'...", file=sys.stderr)
@@ -206,9 +216,9 @@ def main():
     finally:
         prompt_file.unlink(missing_ok=True)
 
-    print(f"spawn_batch: {batch_path} (harness: {config.harness_name}, task: {config.task_name}) "
-          f"— {len(records) - failed} succeeded, {failed} failed, {skipped} skipped "
-          f"(already done)", file=sys.stderr)
+    print(f"spawn_batch: {batch_path} (harness: {config.harness_name}, task: {config.task_name}, "
+          f"namespace: {namespace}) — {len(records) - failed} succeeded, {failed} failed, "
+          f"{skipped} skipped (already done)", file=sys.stderr)
     if failed:
         print(f"spawn_batch: failure logs in {utils.failures_dir(out_dir)}/<hash6>[-n]/ "
               f"— one directory per attempt; re-run this batch to retry just the "

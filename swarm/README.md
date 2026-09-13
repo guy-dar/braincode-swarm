@@ -30,7 +30,8 @@ Put your data in `data/` as JSONL — one JSON object per line, each with a
 
 That's the two steps below in one line. `sample_batch.py` writes the next free
 `batches/batch-NN.jsonl`, sampling only records that aren't already in `output/`,
-`failures/`, or an earlier batch; `spawn_batch.py` dispatches a batch file. Run
+`failures/` (any namespace), or an earlier batch; `spawn_batch.py` dispatches a
+batch file. Run
 them separately for a different filter, or to re-run an existing batch, which
 retries just its failures:
 
@@ -38,9 +39,13 @@ retries just its failures:
 python3 spawn_batch.py batches/batch-07.jsonl output/
 ```
 
-Results land in `output/<hash6>-<slug>/`, one folder per successful record.
-Anything that failed leaves its logs in `failures/` instead, and re-running the
-same batch retries just those.
+Results land in `output/<namespace>/<hash6>-<slug>/`, one folder per
+successful record, where `<namespace>` is `SWARM_EXPERIMENT` (or `default` if
+unset) — every run gets its own namespace, so re-running the exact same batch
+under a new tag re-translates every record instead of being skipped as
+already-done. Anything that failed leaves its logs in
+`failures/<namespace>/` instead, and re-running the same batch retries just
+those.
 
 ## Layout
 

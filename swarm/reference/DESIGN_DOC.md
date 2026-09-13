@@ -582,6 +582,27 @@ filename, a URL, a boolean or a number. These need no wrapper beyond the sort
 that says what kind of atom they are. The one other place is a `Known` key, which
 is an atom for the same reason a URL is — its exact form is what it does.
 
+A line or expression of source code is the same kind of atom when an edit's
+exact wording is the point — a short one, the size of the value it replaces,
+never a diff or a file. It is bare like a filename or a date, typed by the
+field it fills (a relation's `old`/`new`, a `Replaces`); it is not a `Known`,
+whose meaning (a proper noun any model already recognizes) it does not carry.
+
+**A large edit is decomposed, never pasted.** When a change touches a whole
+function, and most of its body carries over untouched, the untouched lines
+are not evidence of anything the agent decided and do not belong in the
+document at all — only the lines that actually differ do, each its own
+`Replaces`, however many that takes. This holds regardless of what you name
+the relation or its fields: a differently-named `edit_file(old_text=,
+new_text=)` is bound by the same rule as a `Replaces(old=, new=)`, because
+the rule is about what a field may hold, not about one construct's name. A
+real corpus record replaced a 35-line function's docstring and return value
+while leaving the rest of the body untouched, and the translation pasted the
+entire 35 lines twice, verbatim, as both `old` and `new` — identically, which
+is not a smaller version of this mistake but proof the actual edit was never
+identified. If you cannot say which lines differ, go back to the source and
+find them; pasting the surrounding function is never the fallback.
+
 **Free text is not an atom, and long strings are not permitted anywhere.** Not in
 a field, not on a result line, not under any wrapper. A literal is a few words at
 most. There is no exception for material the agent received and no exception for
@@ -620,6 +641,17 @@ across nearly every corpus, and using the ordinary name for the ordinary thing i
 what lets canonization see the pattern. That is an illustration of altitude, not a
 closed list — invent what you need at the same altitude, and record what you
 invented.
+
+An agent acting on a codebase reaches for the same handful of ordinary acts
+every time — reading a file, editing it, creating one, deleting one, running a
+command, searching a codebase, submitting the result — and a corpus of these
+trajectories sprawls exactly where a chat corpus doesn't: `edit_code`,
+`edit_file`, `edit_source`, and `modify_code` sitting for the same act inside
+one such corpus is one construct wearing four names, not four constructs. The
+altitude is the same as above; the verbs are just domain-appropriate to acting
+rather than to answering. Reaching past the plain verb here reads as
+domain-specificity but costs the same comparability every invented synonym
+does elsewhere.
 
 Do not lean on one generic verb. If a single operation accounts for most of your
 calls, appearing again and again with near-identical arguments and emitting one
@@ -689,10 +721,10 @@ it touches — is an entity or atom like any other, introduced by the operation
 that touched it; what changed is a fact about it, built from a verb this
 document already needs elsewhere (`assigns`, `adds`, `removes`, `replaces`,
 `guards`), never a `description=` or `change=` argument holding a sentence.
-`edit_code(file=snippets_py) >> Replaces(check=Known("os.path.samefile"),
-with=Known("os.path.commonpath"))` says what the edit did; a `description=`
-holding the same words in prose says only that an edit happened, in different
-clothes.
+`edit_code(file=snippets_py) >> Replaces(old="return key in self._cache",
+new="return key in self._cache or key in self._store")` says what the edit
+did; a `description=` holding the same words in prose says only that an edit
+happened, in different clothes.
 
 The exact line or expression may be kept, under the same bound as a coined
 phrase: one atom, where its precise form — not what it accomplishes — is the
@@ -701,6 +733,64 @@ now tests. A whole diff, a whole function body, or a file's contents is never
 that atom; if the exact wording of several lines mattered, translate what each
 one established and let the count of facts, not a pasted block, carry the size
 of the change.
+
+**That atom is not a `Known`.** `Known` names something any model would
+recognize unaided — a proper noun, not a line of this codebase. A local
+variable, a project-specific expression, the exact text a fix changed: none of
+that is world knowledge, however precisely it has to be quoted, so it is
+written as the bare atom it is (see Atoms) — `old="return key in
+self._cache"`, never `old=Known("return key in self._cache")`. The one
+exception is a genuinely known symbol the snippet names — a standard-library
+call like `os.path.samefile`, a well-known package — which is `Known` for the
+ordinary reason, not because it sits inside an edit.
+
+**A code edit chosen in response to something the trace surfaced is grounded
+in that fact, not left beside it.** An error a command raised, an argument a
+call rejected, a symbol a search located: when the trace shows one of these
+immediately preceding an edit that answers it, the edit is a consequence, and
+a document that states both without connecting them has recorded two facts
+where the source recorded a diagnosis. Facts already compose to say this — a
+relation may take another relation as an argument (see Facts) — so name the
+connective the trajectory earns (`Because`, `Motivates`, whatever verb fits)
+and feed it the bound fact that drove the edit:
+
+    run_command(command="python reproduce.py")
+    >> r = Rejects(target="__init__", argument="total_tokens")
+
+    edit_file(file=trio_py)
+    >> e = Replaces(old="self, *args: Any,", new="self, total_tokens: int = 0,")
+    >> Because(claim=e, ground=r)
+
+This is the same connective tissue "Before you finish" asks you to check a
+prose reply for — because, therefore, which is why — applied to a trace that
+argues in edits and error messages instead of sentences. A diagnose-then-fix
+trajectory that stops at the fix has kept the artifact and thrown away the
+reasoning that is the actual point of translating it; don't withhold the link
+just because the fact behind it was an error message or a search result
+rather than a stated premise.
+
+**Not every reason is a fact already sitting in the document — some are only
+ever stated, in prose, between tool calls, and those still count.** An agent
+narrating a hypothesis about why something failed, ruling an approach out
+because of a constraint it names ("since we're in a non-interactive
+environment, we can't..."), or flagging that it's proceeding on an assumption
+it cannot verify: each of these is reasoning shown, not a conclusion asserted,
+and it is exactly what a `via` scope is for (see "What an operation produced,
+and how"). A code-editing trajectory narrates its work in prose between
+actions the same way a chat reply narrates a derivation between sentences;
+tool calls surrounding the prose are not a reason to read past it. Where the
+agent flags a claim as its own unverified assumption rather than something it
+established, attribute it to the agent (see Facts, "say whose claim it is")
+rather than asserting it as fact or dropping it — an assumption the fix
+depends on is exactly the kind of thing a reader needs to know is unverified.
+
+A record can run this whole arc: reproduce a bug, fail to install a
+dependency, and then abandon troubleshooting it because the environment
+won't allow further diagnosis, proceeding on the explicit assumption that the
+dependency will be present at runtime. That abandonment and that assumption
+are the reasoning the trajectory turns on — more so than any one edit in
+it — and a translation that records the `delete_file`/`edit_file` calls
+without them has translated the actions and left the trajectory out.
 
 ## Where a literal may appear
 
@@ -742,6 +832,15 @@ deliberately weaker than logical necessity.
 **Reasoning is never invented.** No motive or justification the source does not
 evidence. Inferred reasoning is indistinguishable from recorded reasoning once
 written, and poisons the corpus for the uses that motivate the project.
+
+This governs a real translation only. When the exercise is testing or
+extending the language itself — trying a candidate construct against material
+richer than any trajectory yet on hand, since most of the corpus so far runs
+thin on elaboration — inventing plausible sub-processes is a legitimate way to
+find out what the language would need, and doing so on purpose is how it stays
+ready for the elaboration a trajectory does eventually supply. What it isn't
+is a translation: nothing produced this way stands as evidence for
+canonization, which still earns its vocabulary only from real documents.
 
 **Human intent is made explicit**, anchored to what the agent demonstrably
 understood the request to be — shown by what it went on to do — rather than to
@@ -823,3 +922,12 @@ are what a ground relation records.
 
 Then read your declaration block on its own. If it reads like the reply's table
 of contents, start again.
+
+**Back-translation test.** A finished document should let a reader who never
+saw the source reconstruct its substance — every operation, what it
+established, and how the facts connect — from what's declared and asserted
+alone, not from the identifier names chosen or any comment. Strip every name
+to an arbitrary label and drop every comment in your head: if the substance
+disappears, it was never in the document, only in how it was named. Run this
+alongside the table-of-contents check above — that one catches thin
+structure, this one catches thin content wearing full-looking structure.

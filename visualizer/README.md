@@ -12,6 +12,13 @@ APIs, nothing leaves your machine.
 Works with any task's output — groups files by parent subfolder and lists whatever's
 there, no fixed filename list assumed.
 
+If the picked folder holds trajectories directly, that's what you see. If it
+holds namespace subfolders instead (`output/<namespace>/<trajectory>/` — what
+every run now writes under, one namespace per `SWARM_EXPERIMENT` tag so two
+runs never shadow each other), a **namespace** selector appears in the header;
+pick one to browse its trajectories. The two shapes are told apart
+automatically — nothing to configure.
+
 ## Live updating
 
 The folder is re-read on a timer (5s by default, configurable in the header, or

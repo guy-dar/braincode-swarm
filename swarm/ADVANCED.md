@@ -15,7 +15,7 @@ pipeline — not needed for normal use (see `README.md` for that).
 | `SWARM_CONCURRENCY` | `16` | concurrent `docker run`s |
 | `SWARM_STAGGER` | `0` | each worker waits a random `0..N` seconds before starting |
 | `SWARM_TIMEOUT` | `1200` | seconds before a record's container is killed |
-| `SWARM_EXPERIMENT` | *(unset)* | recorded in `metadata.json`; tags which run a record came from |
+| `SWARM_EXPERIMENT` | *(unset, → `default`)* | recorded in `metadata.json`; also the namespace subfolder every run's output/failures land under (see "Output" below) |
 
 A batch file is just a list of records, and nothing anywhere depends on how long
 it is: `spawn_batch.py` reads every line and feeds a fixed-size worker pool, so
@@ -44,13 +44,41 @@ of which any client-side setting prevents.
 
 ## Output
 
+Every run lives under its own **namespace** subfolder, keyed by
+`SWARM_EXPERIMENT` (`default` if unset) — not a special mode, just the
+ordinary way any two runs coexist. The out-dir you pass on the command line
+(conventionally `output/`) is the *base*; `spawn_batch.py` writes into
+`<base>/<namespace>/` itself, and its own resume/dedup scan
+(`utils.scan_existing_output`) only looks inside that one namespace. So
+replaying the exact same batch file under a new `SWARM_EXPERIMENT` — the way
+to re-run the same examples against a later spec revision — re-translates
+every record instead of finding them all already-done, and never touches any
+other namespace's output. `sample_batch.py`'s own "already spoken for" check
+(see its docstring) is the one place that still looks *across* every
+namespace, since sampling a fresh batch should avoid content that's done
+anywhere, not just in one namespace.
+
+**If you ever reorganize where a corpus's output lives (as the move to
+namespaces itself was), update every existing `--restartable` unit's
+`SWARM_EXPERIMENT` to match, or don't leave any enabled.** Found in
+production: two units created before namespacing existed kept their original
+tag after their corpus was migrated into `default`, so on the next reboot
+each landed in a namespace that was empty from its own point of view and
+re-translated its entire corpus from scratch, unattended, before anyone
+noticed. There's no way to tell that apart from a genuine deliberate rerun by
+looking at the data alone — replaying a batch under a namespace where that
+work is already done elsewhere is exactly what namespacing is *for* — so this
+isn't something the pipeline can safely refuse on your behalf; it's on
+whoever does the reorganizing to check `systemctl list-unit-files
+'swarm-*'` (and any equivalent) against it.
+
 Each record's folder is named `<hash6>-<slug>`: the first 6 hex chars of a
 sha256 of the record's raw line, and a short slug describing that specific
 trajectory (generated via `litellm`, see `utils.py`). On the rare occasion two
 records would get the same name, the second gets `-2`, the third `-3`, and so
 on.
 
-`output/<hash6>-<slug>/`:
+`output/<namespace>/<hash6>-<slug>/`:
 
 - `source.json` — the input record, copied verbatim. Note this is the full
   record; what the container itself sees at `/trajectory.txt` is just the
@@ -58,9 +86,11 @@ on.
 - `metadata.json` — written only on success:
   `{"harness", "task", "model", "hash", "timestamp", "experiment"}`. `hash` is
   the full sha256 (the folder name only has the first 6 chars); `timestamp` is
-  when it finished; `experiment` is `SWARM_EXPERIMENT` or `null`. This file's
-  presence (with a `hash` matching a record's content) is also what a rerun
-  checks to skip an already-done record.
+  when it finished; `experiment` is `SWARM_EXPERIMENT` or `null` (the record
+  still physically lands under the `default` namespace either way — see
+  "Output" above). This file's presence (with a `hash` matching a record's
+  content) is also what a rerun checks to skip an already-done record, scoped
+  to that run's own namespace.
 - Whatever the task wrote. For `discovery`: `translation.bc`, `decisions.md`,
   `uncertainties.md`, `keywords.md`.
 
@@ -83,12 +113,13 @@ it could finish a record.
 
 ## Failures
 
-`failures/`, a sibling of the output dir you passed on the command line
-(`swarm/output/` → `swarm/failures/`). Nothing in here is touched by the
-pruning above, so a failure's logs survive the next run — no rescuing anything
-by hand first.
+`failures/<namespace>/` mirrors `output/<namespace>/` one level up — same
+namespace, sibling of the *base* output dir rather than of the namespace
+folder itself (`swarm/output/<namespace>/` → `swarm/failures/<namespace>/`;
+see `utils.failures_dir`). Nothing in here is touched by the pruning above, so
+a failure's logs survive the next run — no rescuing anything by hand first.
 
-`failures/<hash6>[-n]/`, one directory **per attempt**:
+`failures/<namespace>/<hash6>[-n]/`, one directory **per attempt**:
 
 - `source.json` — the input record, verbatim.
 - `stdout.log`, `stderr.log` — the container's full transcript.

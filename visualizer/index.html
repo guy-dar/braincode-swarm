@@ -212,6 +212,9 @@
   <h1>BrainCode visualizer</h1>
   <button id="pick">Choose output folder…</button>
   <span class="path" id="path"></span>
+  <label id="namespace-label" style="display:none">namespace
+    <select id="namespace"></select>
+  </label>
   <span class="spacer"></span>
   <label>sort
     <select id="sort">
@@ -374,7 +377,13 @@ function highlightFor(name, text) {
 // --- State --------------------------------------------------------------
 const state = {
   dirHandle: null,      // FileSystemDirectoryHandle when live, else null
+  inputFiles: null,     // snapshot mode's raw FileList, kept so switching
+                         // namespace can re-group without re-picking
   rootName: "",
+  namespaces: null,     // detected namespace names at the picked root, or
+                         // null when the root holds trajectories directly
+                         // (the flat, pre-namespacing shape)
+  namespace: null,      // the namespace currently being browsed
   groups: new Map(),    // trajectoryId -> [{ name, getFile(), lastModified, size }]
   expanded: new Set(),
   selected: null,       // { trajectoryId, name }
@@ -410,6 +419,59 @@ async function scanHandle(dirHandle) {
   return groups;
 }
 
+// --- Namespaces -----------------------------------------------------------
+// A picked root is either flat (its immediate children are trajectory
+// folders directly -- the shape every run wrote before namespacing) or
+// namespaced (its immediate children are themselves folders of trajectories:
+// output/<namespace>/<trajectory>/, what every run writes now, one namespace
+// per SWARM_EXPERIMENT tag so two runs never shadow each other's done-hashes).
+// The two shapes don't mix within one root, so peeking at a single child is
+// enough to classify the whole thing -- no need to inspect every entry.
+// "namespace" (has directory children), "leaf" (has file children -- a real
+// trajectory), or "empty" (nothing synced into it yet, e.g. a namespace
+// mkdir'd by watch-results.sh just ahead of its first sync pass) -- "empty"
+// is deliberately its own outcome, not folded into either shape, because a
+// single unlucky empty sample must never flip the whole root's classification
+// (found by hitting exactly that: one transiently-empty namespace folder made
+// every namespace show up in the sidebar as if it were a trajectory).
+async function classifyChild(handle) {
+  for await (const [, child] of handle.entries()) {
+    return child.kind === "directory" ? "namespace" : "leaf";
+  }
+  return "empty";
+}
+
+async function detectNamespaces(rootHandle) {
+  const names = [];
+  let sawLeaf = false;
+  for await (const [name, handle] of rootHandle.entries()) {
+    if (handle.kind !== "directory") continue;
+    const shape = await classifyChild(handle);
+    if (shape === "leaf") sawLeaf = true;
+    else names.push(name); // "namespace" or "empty" -- both belong in the list
+  }
+  if (sawLeaf) return null; // at least one real trajectory sits at the root: flat
+  return names.length ? names.sort() : null;
+}
+
+function updateNamespaceSelect(names, current) {
+  const label = document.getElementById("namespace-label");
+  const select = document.getElementById("namespace");
+  if (!names) {
+    label.style.display = "none";
+    select.innerHTML = "";
+    return null;
+  }
+  label.style.display = "";
+  const existing = [...select.options].map(o => o.value);
+  if (existing.join(" ") !== names.join(" ")) {
+    select.innerHTML = names.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join("");
+  }
+  const wanted = (current && names.includes(current)) ? current : names[0];
+  select.value = wanted;
+  return wanted;
+}
+
 async function collectFiles(dirHandle, prefix, out) {
   for await (const [name, handle] of dirHandle.entries()) {
     const rel = prefix ? `${prefix}/${name}` : name;
@@ -423,14 +485,31 @@ async function collectFiles(dirHandle, prefix, out) {
   }
 }
 
-function groupsFromInput(fileList) {
+// Snapshot-mode counterpart of detectNamespaces: a trajectory folder never
+// has its own subfolders in this pipeline, so root/<trajectory>/<file> is
+// always exactly 3 parts and a namespaced root/<namespace>/<trajectory>/<file>
+// always exactly 4+ -- peeking at one file's depth is enough, same one-shape-
+// per-root assumption as the live path.
+function detectNamespacesFromFiles(fileList) {
+  if (fileList.length === 0) return null;
+  if (fileList[0].webkitRelativePath.split("/").length < 4) return null;
+  const names = new Set();
+  for (const file of fileList) names.add(file.webkitRelativePath.split("/")[1]);
+  return [...names].sort();
+}
+
+function groupsFromInput(fileList, namespace) {
   const groups = new Map();
   for (const file of fileList) {
-    const parts = file.webkitRelativePath.split("/");
-    if (parts.length < 3) continue;               // expects root/<trajectory>/<file>
-    const id = parts[1];
+    let rest = file.webkitRelativePath.split("/").slice(1);
+    if (namespace !== null) {
+      if (rest[0] !== namespace) continue;
+      rest = rest.slice(1);
+    }
+    if (rest.length < 2) continue;                 // expects <trajectory>/<file>
+    const id = rest[0];
     if (!groups.has(id)) groups.set(id, []);
-    groups.get(id).push({ name: parts.slice(2).join("/"), getFile: async () => file,
+    groups.get(id).push({ name: rest.slice(1).join("/"), getFile: async () => file,
                           lastModified: file.lastModified, size: file.size });
   }
   return groups;
@@ -603,7 +682,14 @@ async function refresh() {
   if (!state.dirHandle || state.scanning) return;
   state.scanning = true;
   try {
-    const scanned = await scanHandle(state.dirHandle);
+    const namespaces = await detectNamespaces(state.dirHandle);
+    state.namespaces = namespaces;
+    state.namespace = updateNamespaceSelect(namespaces, state.namespace);
+    rememberNamespace(state.namespace);
+    const scanRoot = state.namespace
+      ? await state.dirHandle.getDirectoryHandle(state.namespace)
+      : state.dirHandle;
+    const scanned = await scanHandle(scanRoot);
     const before = signature(state.groups);
     state.groups = sortGroups(scanned);
     const after = signature(state.groups);
@@ -676,6 +762,38 @@ async function rememberDir(handle) {
   } catch { /* ignore */ }
 }
 
+// Same store, a second key: the last-viewed namespace, so a reload restores
+// it the same way it restores the directory handle. Without this, reloading
+// (which re-detects namespaces with no prior selection) always reopened at
+// whichever namespace sorts first, discarding what was actually being looked
+// at -- plain localStorage would do here since it's just a string, but this
+// app already has a proven store for exactly this kind of small persisted
+// value, so reuse it rather than add a second mechanism.
+const NAMESPACE_KEY = "namespace";
+async function rememberNamespace(name) {
+  try {
+    const db = await idb();
+    await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readwrite");
+      if (name) tx.objectStore(STORE).put(name, NAMESPACE_KEY);
+      else tx.objectStore(STORE).delete(NAMESPACE_KEY);
+      tx.oncomplete = res;
+      tx.onerror = () => rej(tx.error);
+    });
+  } catch { /* ignore */ }
+}
+async function recallNamespace() {
+  try {
+    const db = await idb();
+    return await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).get(NAMESPACE_KEY);
+      req.onsuccess = () => res(req.result || null);
+      req.onerror = () => rej(req.error);
+    });
+  } catch { return null; }
+}
+
 async function recallDir() {
   try {
     const db = await idb();
@@ -691,7 +809,10 @@ async function recallDir() {
 // --- Folder picking -----------------------------------------------------
 async function openDirectory(handle) {
   state.dirHandle = handle;
+  state.inputFiles = null;
   state.rootName = handle.name;
+  state.namespaces = null;
+  state.namespace = await recallNamespace(); // last one viewed, if it still exists
   state.seen = new Set();
   state.fresh = new Set();
   document.getElementById("path").textContent = handle.name;
@@ -743,12 +864,16 @@ document.getElementById("pick").onclick = async () => {
   };
 })();
 
-document.getElementById("folder-input").addEventListener("change", (e) => {
+document.getElementById("folder-input").addEventListener("change", async (e) => {
   const files = Array.from(e.target.files);
   if (files.length === 0) return;
   state.dirHandle = null;                            // snapshot: cannot re-read
+  state.inputFiles = files;                          // kept so switching namespace can re-group
   state.rootName = files[0].webkitRelativePath.split("/")[0];
-  state.groups = sortGroups(groupsFromInput(files));
+  state.namespaces = detectNamespacesFromFiles(files);
+  state.namespace = updateNamespaceSelect(state.namespaces, await recallNamespace());
+  rememberNamespace(state.namespace);
+  state.groups = sortGroups(groupsFromInput(files, state.namespace));
   state.seen = new Set(state.groups.keys());
   state.fresh = new Set();
   state.expanded = new Set();
@@ -763,6 +888,31 @@ document.getElementById("folder-input").addEventListener("change", (e) => {
 
 document.getElementById("interval").onchange = () => { restartTimer(); refresh(); };
 document.getElementById("sort").onchange = () => { state.groups = sortGroups(state.groups); renderSidebar(); };
+
+document.getElementById("namespace").onchange = async (e) => {
+  // Switching namespace is browsing a different set of trajectories
+  // entirely, so it resets the same per-folder state a fresh pick does.
+  state.namespace = e.target.value;
+  rememberNamespace(state.namespace);
+  state.expanded = new Set();
+  state.selected = null;
+  state.openMeta = null;
+  state.seen = new Set();
+  state.fresh = new Set();
+  document.getElementById("content").innerHTML =
+    '<div class="placeholder">Pick a file on the left.</div>';
+  if (state.dirHandle) {
+    await refresh();
+  } else if (state.inputFiles) {
+    state.groups = sortGroups(groupsFromInput(state.inputFiles, state.namespace));
+    renderSidebar();
+    setStatus(summary("snapshot (re-pick to update)"), true);
+  }
+  if (state.groups.size && !state.expanded.size) {
+    state.expanded.add(state.groups.keys().next().value);
+    renderSidebar();
+  }
+};
 
 // Cheap change detector: which trajectories exist, and each file's
 // name/size/mtime. Enough to catch a new record, a rewritten file, or a

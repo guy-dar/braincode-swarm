@@ -13,6 +13,16 @@
 # SWARM_HARNESS for this run only; omit either to use whatever swarm/.env
 # already has.
 #
+# --batch PATH re-runs an *existing* batch file instead of drawing a new one
+# (skips sample_batch.py entirely; [count]/--data/--min-chars/--max-chars/
+# --no-latin-only are ignored). This is the way to re-run the same examples
+# under a new tag (a later spec revision, a different model) — the recurring
+# case, not a one-off: every run already lands under output/<tag>/ and
+# failures/<tag>/, namespaced by SWARM_EXPERIMENT (spawn_batch.py's own doing,
+# not this script's), so replaying the same batch under a new --tag just
+# writes into its own fresh namespace and leaves every other tag's output
+# untouched — nothing to configure here beyond picking a new tag.
+#
 # --restartable installs (and enables, but does not start) a systemd unit
 # that re-invokes this exact batch file on boot. It's not what makes the run
 # itself resumable — spawn_batch.py's own startup scan already skips every
@@ -24,7 +34,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 . ./config.sh
 
-usage() { echo "usage: ./vm/run-task.sh <experiment-tag> [count] [--restartable] [--task NAME] [--harness NAME] [--data PATH] [--min-chars N] [--max-chars N] [--no-latin-only]" >&2; exit 1; }
+usage() { echo "usage: ./vm/run-task.sh <experiment-tag> [count] [--restartable] [--task NAME] [--harness NAME] [--data PATH] [--min-chars N] [--max-chars N] [--no-latin-only] [--batch PATH]" >&2; exit 1; }
 
 [ $# -ge 1 ] || usage
 TAG="$1"; shift
@@ -33,6 +43,7 @@ RESTARTABLE=0
 TASK=""
 HARNESS=""
 DATA=""
+BATCH=""
 # Tuned for the sharechat/discovery corpus (short-ish, Latin-script chat
 # transcripts) — not a universal contract. A source with a different shape
 # (e.g. long multi-turn tool-use trajectories) needs its own thresholds here
@@ -54,6 +65,7 @@ while [ $# -gt 0 ]; do
     --min-chars) MIN_CHARS="${2:?--min-chars needs a value}"; shift 2 ;;
     --max-chars) MAX_CHARS="${2:?--max-chars needs a value}"; shift 2 ;;
     --no-latin-only) LATIN_ONLY=0; shift ;;
+    --batch) BATCH="${2:?--batch needs a value}"; shift 2 ;;
     *) usage ;;
   esac
 done
@@ -87,9 +99,18 @@ DATA_ARG=""
 LATIN_ARG=""
 [ "$LATIN_ONLY" = "1" ] && LATIN_ARG="--latin-only"
 
-echo "==> Drawing the batch"
-ssh "$VM_HOST" "cd $SWARM_DIR && source .venv/bin/activate && $ENV_PREFIX python3 sample_batch.py -n $COUNT --min-chars $MIN_CHARS --max-chars $MAX_CHARS $LATIN_ARG $DATA_ARG"
-BATCH_FILE=$(ssh "$VM_HOST" "cd $SWARM_DIR && ls -t batches/batch-*.jsonl | head -1")
+if [ -n "$BATCH" ]; then
+  echo "==> Re-using existing batch: $BATCH"
+  if ! ssh "$VM_HOST" "test -f $SWARM_DIR/$BATCH"; then
+    echo "no such batch file on the VM: $SWARM_DIR/$BATCH" >&2
+    exit 1
+  fi
+  BATCH_FILE="$BATCH"
+else
+  echo "==> Drawing the batch"
+  ssh "$VM_HOST" "cd $SWARM_DIR && source .venv/bin/activate && $ENV_PREFIX python3 sample_batch.py -n $COUNT --min-chars $MIN_CHARS --max-chars $MAX_CHARS $LATIN_ARG $DATA_ARG"
+  BATCH_FILE=$(ssh "$VM_HOST" "cd $SWARM_DIR && ls -t batches/batch-*.jsonl | head -1")
+fi
 echo "    -> $BATCH_FILE"
 
 # The default open-file limit (1024 on this image) is per-shell/per-service,

@@ -122,13 +122,19 @@ def collect_seen(out_dir: Path, batches_dir: Path) -> tuple:
             for line in fh:
                 note_record_line(line)
 
+    # A leaf record's files sit directly under out_dir (the legacy flat
+    # layout: output/<record>/) or one level under a namespace subfolder
+    # (output/<namespace>/<record>/, what spawn_batch.py now always writes) --
+    # both can coexist on disk, so this walks at any depth rather than
+    # assuming which shape a given directory is in.
     failures = out_dir.parent / "failures"
     for base in (out_dir, failures):
         if not base.is_dir():
             continue
-        for entry in sorted(base.iterdir()):
-            if not entry.is_dir():
-                continue
+        record_dirs = set()
+        for marker in ("metadata.json", "failure.json", "source.json"):
+            record_dirs.update(p.parent for p in base.rglob(marker))
+        for entry in sorted(record_dirs):
             source = entry / "source.json"
             if source.is_file():
                 note_record_line(source.read_text(encoding="utf-8", errors="replace"))

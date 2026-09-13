@@ -148,13 +148,17 @@ def prune_incomplete_folders(out_dir: Path) -> list:
 
 
 def failures_dir(out_dir: Path) -> Path:
-    """Where a failed record's logs are kept: a `failures/` sibling of out_dir.
+    """Where a failed record's logs are kept: `failures/<namespace>/`, mirroring
+    out_dir's own `output/<namespace>/` shape one level up.
 
     Deliberately outside out_dir so the two never interfere — out_dir ends up
     holding successes only, and nothing in here is subject to
-    prune_incomplete_folders.
+    prune_incomplete_folders. Assumes out_dir is a namespace subfolder of a
+    top-level output dir (`<root>/output/<namespace>`) — spawn_batch.py always
+    constructs it that way, so `out_dir.name` is the namespace and
+    `out_dir.parent.parent` is `<root>`.
     """
-    return out_dir.parent / "failures"
+    return out_dir.parent.parent / "failures" / out_dir.name
 
 
 def claim_failure_dir(out_dir: Path, full_hash: str) -> Path:
