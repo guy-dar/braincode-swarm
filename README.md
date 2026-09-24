@@ -7,7 +7,7 @@ This repo contains the code for creating swarms in the BrainCode project.
 
 * **swarm/** is where the main code is. It contains code for spawning Docker containers where an agent (pi or opencode, for example) runs a *task prompt* on a batch of examples.
 
-* **visualizer/** is a utility code that can help you see visually by simply opening the `visualizer/index.html` file
+* **visualizer/** is a utility code that can help you visualize generated examples by simply opening the `visualizer/index.html` file
 in your browser and choosing the output folder that the swarm writes to (usually `swarm/output`).
 
 * **vm/** and **vertex-proxy/** are more technical and are not relevant to you. 
