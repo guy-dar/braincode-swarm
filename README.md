@@ -1,5 +1,5 @@
 # BrainCode Swarm
-This repo contains the code for creating swarms for the BrainCode project. 
+This repo contains the code for creating swarms in the BrainCode project. 
 
 ## Short Intro to the Repo
 * **Skills** (under `.claude` or `.agents`; `.claude/` is just a symlink) are for your coding agent to help with creating data in the required format and running swarm scripts.
