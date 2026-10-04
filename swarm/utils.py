@@ -424,39 +424,69 @@ def reserve_name(base: str, names: set, names_lock: threading.Lock) -> str:
         return name
 
 
-def build_docker_cmd(uid: int, gid: int, model: str, reference_dir: Path,
+def host_uid_gid():
+    """(uid, gid) to run containers as, or None on hosts without POSIX ids
+    (Windows/Docker Desktop, where bind mounts aren't uid-checked anyway)."""
+    if hasattr(os, "getuid") and hasattr(os, "getgid"):
+        return os.getuid(), os.getgid()
+    return None
+
+
+def build_docker_cmd(uid, gid, model: str, reference_dir: Path,
                       traj_path: Path, prompt_file: Path, scratch, image: str,
-                      container_name: str | None = None) -> list:
+                      container_name: str | None = None,
+                      extra_mounts=(), extra_env=None, add_host: bool = False,
+                      memory: str = "1g", writable_mounts=()) -> list:
     """The exact `docker run` invocation for one record: non-root (matches
     the host uid/gid, so the writable /output mount just works), all
     capabilities dropped, no privilege escalation, memory/CPU capped. Network
     is deliberately not restricted — every harness needs to reach the model
-    API. Mount surface is exactly the 3 read-only paths + 1 writable dir
-    below; nothing else from the host is reachable (see ADVANCED.md's
-    Security section for the fuller rationale).
+    API. The base mount surface is the 3 read-only paths + 1 writable dir
+    below; callers add more read-only mounts through `extra_mounts`
+    ((host_path, container_path) pairs — always mounted read-only, so /output
+    stays the only writable path). See ADVANCED.md's Security section.
 
     reference_dir is a directory, not a file: the specification is split across
-    reference/DESIGN_DOC.md plus topic files it points at, so an agent reads the
-    main file and only the parts it needs rather than 1000 lines in one sitting.
+    reference/language-spec.md plus the glossary files, so an agent reads the
+    spec and only the parts of the glossary it needs.
+
+    `add_host` maps host.docker.internal to the host gateway, so a container
+    can reach a service on the host — the glossary RAG server (rag/server.py).
+    Docker Desktop provides that name already; on Linux it needs this flag.
 
     container_name is what makes a timeout enforceable: killing the `docker
     run` process only detaches the CLI, leaving the container running, so
     spawn_batch needs a name to `docker kill`.
+
+    uid/gid may be None (Windows hosts): the --user flag is then omitted.
     """
+    env_flags = []
+    for key, value in (extra_env or {}).items():
+        env_flags += ["-e", f"{key}={value}"]
+    mount_flags = []
+    for host_path, container_path in extra_mounts:
+        mount_flags += ["-v", f"{host_path}:{container_path}:ro"]
+    # Besides /output, only state the harness itself must persist across
+    # attempts (pi's session dir for resume) is ever mounted writable.
+    for host_path, container_path in writable_mounts:
+        mount_flags += ["-v", f"{host_path}:{container_path}"]
     return [
         "docker", "run", "--rm",
         *(("--name", container_name) if container_name else ()),
-        "--user", f"{uid}:{gid}",
+        *(("--user", f"{uid}:{gid}") if uid is not None and gid is not None else ()),
         "-e", "HOME=/tmp",
         "--cap-drop=ALL",
         "--security-opt", "no-new-privileges:true",
-        "--memory", "1g",
+        "--memory", memory,
         "--cpus", "1",
+        *(("--add-host", "host.docker.internal:host-gateway") if add_host else ()),
         "-e", "PROXY_API_KEY", "-e", "PROXY_BASE_URL",
         "-e", f"SWARM_MODEL={model}",
+        *env_flags,
         "-v", f"{reference_dir}:/reference:ro",
         "-v", f"{traj_path}:/trajectory.txt:ro",
         "-v", f"{prompt_file}:/prompt.md:ro",
+        *mount_flags,
         "-v", f"{scratch}:/output",
         image,
     ]

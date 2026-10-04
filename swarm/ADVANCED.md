@@ -175,10 +175,18 @@ Add `harnesses/<name>/` with:
 Every container gets, always:
 
 ```
-read-only: /reference/DESIGN_DOC.md, /trajectory.txt, /prompt.md
+read-only: /reference (language-spec.md + glossary files), /trajectory.txt, /prompt.md
 writable:  /output
 env:       PROXY_API_KEY, PROXY_BASE_URL, SWARM_MODEL, HOME=/tmp
 ```
+
+Loop containers (`loop.py`) also get, read-only: `/kit`, `/doc_formats`, and
+per role `/rag_context.md`, `/needs.json`, `/item_raw.txt` (translator) or
+`/suggestions`, `/translations`, `/previous` (migrator); env `RAG_PORT`,
+`TRANSLATOR_ID`/`DATASET`/`BATCH_ID`; and `--add-host
+host.docker.internal:host-gateway` so they can reach the glossary RAG server
+on the host. `/output` is still the only writable path. The harness needs
+`node` for `/kit/rag.mjs` — the `pi` image has it.
 
 `/trajectory.txt` is the record's decoded `content` — the turns as plain text,
 not the raw JSONL line. It's deliberately not JSON: handed the raw record,
@@ -198,8 +206,12 @@ Run with `SWARM_HARNESS=<name>`. The two existing harnesses, for reference:
 
 - Non-root (`--user` matches host UID), `--cap-drop=ALL`,
   `--security-opt no-new-privileges`, memory/CPU capped.
-- Mount surface: exactly the 3 read-only paths + 1 writable dir above — nothing
+- Mount surface: exactly the read-only paths + 1 writable dir above — nothing
   else from the host is reachable.
+- The loop's RAG server (`rag/server.py`) listens on `RAG_HOST:RAG_PORT`
+  (default `0.0.0.0:8765`) for the duration of a run so containers can reach
+  it. It serves read-only glossary search; set `RAG_HOST` to the docker bridge
+  address if the host is on an untrusted network.
 - Network is **not** restricted — every harness needs to reach the model API.
 - Neither harness restricts its own tools; the container/mount surface above is
   the only boundary.

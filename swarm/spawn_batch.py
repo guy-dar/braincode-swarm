@@ -62,7 +62,7 @@ def process_record(record_line: str, full_hash: str, image: str,
     traj_path = Path(traj_name)
     traj_path.write_text(utils.trajectory_text(record_line))
 
-    uid, gid = os.getuid(), os.getgid()
+    uid, gid = utils.host_uid_gid() or (None, None)
     with tempfile.TemporaryDirectory() as scratch:
         try:
             container_name = f"swarm-{name}"

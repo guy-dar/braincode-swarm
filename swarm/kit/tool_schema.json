@@ -1,0 +1,82 @@
+{
+  "_comment": "Function-calling definitions of the glossary RAG, for any tool-using LLM. Each tool maps 1:1 to an HTTP endpoint of swarm/rag/server.py (POST JSON unless noted); pass \"format\": \"text\" to get the rendered text instead of JSON.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "glossary_retrieve",
+        "description": "Steps 1-4 of glossary retrieval for a whole data item (a prompt or a conversation with <|user|>/<|assistant|> turns): decompose it into source-linked needs, search each need by exact name, keyword and meaning, rerank against context, and return the candidates per need plus the full records, their dependencies and the shared rules that govern them. Endpoint: POST /retrieve.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "content": {"type": "string", "description": "The raw item text."},
+            "needs": {"type": "array", "description": "Optional pre-extracted needs [{kind, text, source}] to skip step 1.", "items": {"type": "object"}},
+            "use_llm": {"type": "boolean", "description": "Use the LLM for need extraction (default true); false uses a clause heuristic."}
+          },
+          "required": ["content"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "glossary_search",
+        "description": "Search the glossary for one need (one action, object, constraint, negation, correction, temporal relation, speech act, claim or reasoning link). Returns ranked candidate records with the channels that found them (exact/keyword/semantic). Endpoint: POST /search.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "text": {"type": "string", "description": "The need, paraphrased in a few words, e.g. 'at most twenty minutes walking between stops'."},
+            "kind": {"type": "string", "enum": ["action", "object", "constraint", "negation", "correction", "temporal", "speech_act", "claim", "reasoning", ""]},
+            "context": {"type": "string", "description": "The surrounding sentence or turn, used for reranking."},
+            "k": {"type": "integer", "default": 15},
+            "keep": {"type": "integer", "default": 12}
+          },
+          "required": ["text"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "glossary_widen",
+        "description": "A deliberately broad search for a need nothing has covered yet: a larger k, every content word searched on its own, and records the governing rules mention. Use before concluding the glossary lacks a concept. Endpoint: POST /widen.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "text": {"type": "string"},
+            "kind": {"type": "string"},
+            "context": {"type": "string"}
+          },
+          "required": ["text"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "glossary_entry",
+        "description": "The full glossary record for a symbol or stable id, with the shared rules that govern it, its dependencies, and its replacement if deprecated. Endpoint: GET /entry/<symbol-or-id>.",
+        "parameters": {
+          "type": "object",
+          "properties": {"key": {"type": "string", "description": "Symbol (e.g. 'pick_up') or id (e.g. 'v19/operation-vocabulary/pick_up')."}},
+          "required": ["key"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "glossary_check",
+        "description": "Step 5: check a translation against the item's needs. Reports which needs are covered by a candidate symbol, which are only declared covered in the coverage table, which are unresolved, and identifiers used in symbol positions that are not glossary symbols. Endpoint: POST /check.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "translation": {"type": "string", "description": "The translation document (its ```braincode block is checked)."},
+            "needs": {"type": "array", "items": {"type": "object"}, "description": "The needs from glossary_retrieve, with their candidates."}
+          },
+          "required": ["translation", "needs"]
+        }
+      }
+    }
+  ]
+}

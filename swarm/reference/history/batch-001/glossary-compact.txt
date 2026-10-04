@@ -1,0 +1,344 @@
+# BrainCode glossary (compact) — language 19.0.0-draft.1, glossary 19.0.0-draft.1+g1
+# symbol | kind | category | signature | definition | = expansion | restrictions | not: contrast | aliases | id
+
+## Shared rules
+rule_attributes_and_generate | rule | `target`, `cuisine`, `min_ram`, `ram_unit`, `reservation_availability`, `rank_field`, `rank_direction`, and `quantity` from the source inventory are argument names, not values. Their types are supplied by the operation tables. Attribute legality is per operation, never granted globally by an attribute-name entry. GENERATE supports exactly the revised spec's core fields. All retained artifact symbols return STRING in this profile. Numeric/list generation requires another explicit artifact profile, not a guessed result type. Migrate old itinerary fields to TERM constraints: - duration + duration_unit -> `duration(amount=..., unit=...)`. - stop_min_per_day + stop_requirement -> `minimum_per_period(class=..., count=..., period=unit_day)`; do not assume temple if the class is absent. - max_walk_duration + max_walk_duration_unit -> `maximum_between_stops(activity="walk", amount=..., unit=...)`. No compatibility shorthand for these attributes is enabled by this file; use the expanded forms. Domain fields `events`, `character_properties`, and `transformations` in old examples likewise migrate into explicitly scoped TERMS supplied through constraints. This preserves meaning without changing the spec's core attribute types. Exact message content remains STRING. A message-purpose composite cannot be passed directly to send_email.content; first request generation of the message from its structured topic, then send the resulting STRING. Opaque free-text fallback must be recorded as such and does not count as structured coverage. | v19/rule/attributes-and-generate
+rule_composites_general | rule | The following are acyclic expansion templates, not inline BrainCode syntax. Each left-hand name is a TERM constructor; translate an application with `TERM <name>(...) -> <handle> : TERM`. Its output may fill a TERM-valued field. A bare occurrence of the old symbol in a STRING content/constraint field is deprecated. Nested applications on the right must be emitted as separate TERM bindings when expanded into BrainCode. Parameters denoted `$name` on the right are copied from the corresponding typed argument on the left. Fixed strings are explicit semantic atoms. There is no silent default parameter value. The family names are retained for continuity, not treated as independent primitives. Fixed composite constructors can have zero arguments because their full decomposition is published here. This is different from an unexplained empty call. `topic_jazz_piano` and `topic_classical_piano` remain established genre/instrument subject labels; when the source reasons separately about instrument and genre, use a decomposed TERM rather than pretending the label expresses that relationship. Named works/products remain exact referents. `topic_greatest_cricketer_of_all_time` leaves the criterion of greatness unresolved; it does not identify a winner or select an unstated metric. `constraint_budget_limited` preserves a qualitative restriction without inventing a monetary ceiling. `constraint_17_plus` remains Needs clarification: the source conflates numeric age threshold and unspecified mature-rating systems. Use a numeric age requirement only if the source actually specifies it; do not convert every mature rating to age 17. `event_*` constructors describe narrative content. Their result is TERM, never EVENT. `char_*` constructors describe a character, not an asserted real-world person. `chg_*` describes an intended change; `assert_*` describes an expected test condition, not test success. | v19/rule/composites-general
+rule_examples_general | rule | These are complete documents, not incomplete fragments. They use the supplemental entries in Section 8. The examples have been reviewed for the documented contracts; no implemented BrainCode parser has verified them. | v19/rule/examples-general
+rule_operations_general | rule | All listed source operations are retained. Operation symbols are callable vocabulary, not arbitrary argument values. Their natural-language aliases appear in the inventory. Parameter types include category checks; a name accepted by one category is not automatically accepted by another. Every result-producing operation binds its result in REQUEST mode. All external operations may fail; failure does not create the declared successful result. Runtime failure handling is outside this glossary. TRACE represents attempts/failures without manufacturing successful runtime values. These explicit signatures are proposed migration decisions where the source had only a gloss; they are not claims that an existing runtime adapter supports them. Additional attributes require a reviewed operation profile. No `custom_general_<predicate>` operation is automatically legal. | v19/rule/operations-general
+rule_reading_guide | rule | The specification governs grammar, scope, mode, types and canonical form. This glossary governs the vocabulary meanings and signatures below. Signatures are documentation notation: `?` means optional; `A / B` means explicitly allowed alternative types; `void` means no result. These are not new BrainCode type tokens. An omitted optional value is unspecified, not a fabricated default. Stable IDs use `v19/<category>/<symbol>`. Supplementary entries use `v19/support/<symbol>` and composite constructors use `v19/composite/<symbol>`. Their source is this migration unless the inventory identifies the original category. Each family table supplies shared typing, restrictions, and example conventions for its member rows. Migration statuses: All statuses describe this proposed migration, not prior human approval. No symbol is silently deleted. Natural-language aliases are contextual recognition hints, not assertions that every occurrence of the phrase has the same meaning. When a context suggests different meanings, report the ambiguity rather than selecting by alphabetical order. For retained value entries, kind is `primitive value`, signature is `STRING` refined by its category, and the member's gloss is its definition. This uses the revised spec's explicit primitive option; it does not claim every English expression is semantically atomic. Complex propositions and requirements instead receive expansions below. | Status | Meaning | |---|---| | Retained | The source meaning remains usable under the category contract | | Adapted | The symbol remains, with the revised contract stated here | | Composite | The name is retained as a TERM constructor with an explicit expansion; bare STRING use is deprecated | | Needs clarification | Preserved for review, but cannot be used as an accepted entry in a frozen evaluation release until the ambiguity is resolved | | Structural | Syntax or an argument name, not a STRING-valued concept | | v19/rule/reading-guide
+rule_recording_signatures | rule | For RECORD ACTION, use the same operation attributes with every REF[STRING] replaced by TERM describing the identified object, and every LIST[REF[STRING]] by LIST[TERM]. Other parameter types and categories remain. RECORD returns EVENT regardless of the REQUEST result. A recording of run_tests may therefore fail or return an incorrect result without creating a valid runtime BOOL. Record actual outputs with attributed CLAIMs. No physical resources are inferred merely because an operation normally needs them. | v19/rule/recording-signatures
+rule_review_points | rule | - `cap_gb` and `cap_tb`: retain source wording for audit; resolve decimal versus binary scale before acceptance. - `constraint_17_plus`: resolve exact age threshold versus rating system before acceptance. - `dom_sgi`: the source names an acronym without resolving its referent. Preserve it, but flag semantically dependent translations until context/review resolves it. No expansion of the acronym is invented here. - Bare money symbols, locale aliases, warm/hot, and ranking phrases are contextual aliases. Matching a token alone is not enough to normalize meaning. - The source's “all previously listed members remain valid” wording is replaced by the explicit inventory here. Unavailable historical entries are not guessed. - Source examples using missing symbols or silently losing constraints are replaced by the complete examples above. This file does not preserve those defects as normative demonstrations. - The revised specification's own illustrative trace/claim profiles remain examples, not a claim that this migration covers every possible reasoning construct. This is a migrated seed, not a production-certified release. Structural and inventory checks do not replace a parser or semantic evaluation. Publishing requires resolution of entries marked Needs clarification and review of the proposed signatures/composite expansions. | v19/rule/review-points
+rule_search_web_attributes | rule | `search_web` optional attributes: `availability`, `category`, `color`, `cuisine`, `currency`, `gender`, `genre`, `location`, `platform`, `ram_unit`, `reservation_availability`, `shape`, `size`, `rank` is **not** accepted; ranking belongs to sort. Numeric filters: `max_price`, `min_ram`, `min_rating`; `trending` is BOOL. All other listed filters are STRING with matching categories. Price requires currency and RAM requires a capacity unit. No unstated default scale or source is inferred. Search ranking uses only rank_* for rank_field and dir_* for rank_direction, not any arbitrary search-value member. Product category/genre/availability similarly accept only their own subfamilies. | v19/rule/search-web-attributes
+rule_speech_acts_general | rule | All are UTTER-only, return void, and may use the specification's audience, recipient, tone, topic, content and LIST[TERM] constraints attributes. Required semantic arguments cannot be replaced by content="..." to claim fully structured coverage. There are no UTTER result bindings. | v19/rule/speech-acts-general
+rule_structural_constructs | rule | | Source entry | Migrated meaning and example reference | |---|---| | Types & Lexicon | Accepted value symbols remain STRING; TERM, CLAIM and EVENT are distinct semantic types. Example A shows typed references. | | Task | A REQUEST plan, not evidence that its work occurred. Exactly one entrypoint. Examples A and B. | | Action | Requested external work with an exact signature. TRACE uses RECORD and produces EVENT. Examples A and D. | | Utterance | A speech act inside TURN; never binds a STRING result. Targets and constraints carry meaning. Example C. | | Check | Pure comparisons of supported types; CLAIM is not BOOL. A Check belongs inside IF or a quantified Check, never alone as a step. | | Flow-If | REQUEST-only branching in a Task or Turn; branch-local bindings do not escape. No TRACE execution. | | Iterate | Finite sequential LIST iteration; ANY/ALL use pure predicates. A list of one REF is still a list. Example A. | | Bind | Immutable LET and typed producer results; no UTTER result. Earlier top-level semantic objects may be read across turns using qualified names. | | Conversation | One turn per supplied message. Whole replacement uses REVISES; targeted claim replacement uses AMENDS and revises links. | | Generate | Requested artifact production. Typed glossary extensions replace hard-coded domain exceptions; artifact constraints are LIST[TERM]. Example B. | | descriptive-value | Residual modifiers and domains; no permission to hide arbitrary propositions in names. | | canonical-form | Target first, then alphabetical attributes; canonical handles; semantic aliases only; no automatic custom operations. | | types-lexicon, action, bind | Retained documentation aliases of their capitalized entries, not separate syntax. Empty TASK examples are removed. | Additions required to express the migrated contracts: MODE REQUEST/TRACE, TERM, CLAIM, EVENT, LINK, RECORD, CALL, BY, STATUS, SOURCE, and AMENDS. The specification defines their syntax. These additions do not expand the subject-domain inventory. Structural tokens inherited from the source remain listed in the inventory. Add `.` for qualified references. `asserted`, `observed`, `inferred`, `assumed`, `hypothesized`, `reported`, `attempted`, `succeeded`, `failed`, and `unknown` are reserved in their grammar positions. SOURCE is a keyword; lower-case `source` can be an operation argument. Exact names are case-sensitive. | v19/rule/structural-constructs
+rule_supplemental_general | rule | These entries were used in old examples or are needed by the migrated examples; they are explicitly declared here rather than assumed to exist. Supplementary aliases are empty unless explicitly stated. The same static restrictions and RECORD signature conversion as Section 3 apply. No broader domain expansion is intended. | v19/rule/supplemental-general
+rule_support_primitives_general | rule | Each entry below is a proposed primitive constructor returning TERM, with stable ID `v19/support/<name>`. Literals in expansions are exact identifiers or atomic values, not hidden sentences. Optional arguments are absent unless supported. All constructors are pure descriptions and assert no occurrence or truth. The positive application is the expansion table in Section 5; the contrast column identifies an excluded interpretation. Counts and indices are nonnegative integers, with preserve index at least 1. Amounts are nonnegative. `minimum_per_period.class` uses semantic-category-value; period and temporal duration units use the temporal subset of duration-unit-value. `activity` verbs are atomic identifiers with their ordinary role-specific meaning as specified in each composite expansion; this primitive is for described content, not a route to automatic executable custom operations. A new ambiguous verb requires its own reviewed definition. | v19/rule/support-primitives-general
+rule_trace_relations_general | rule | These primitive relations support recording existing operations and corrections; they are not a comprehensive reasoning vocabulary. Example D demonstrates use and the distinction between success and an assumption. | v19/rule/trace-relations-general
+
+## Operations
+add_to_cart | operation | operation-vocabulary | (target: LIST[REF[STRING]]) -> void | Add the explicitly selected items. Does not pay or place an order. | v19/operation-vocabulary/add_to_cart
+apply_filters | operation | operation-vocabulary | (target: REF[STRING], criteria: LIST[TERM]) -> void | Apply the listed filters to an existing UI. Not repeated evidence of a search already represented. | v19/operation-vocabulary/apply_filters
+check_reservation_availability | operation | operation-vocabulary | (target: STRING, cuisine?: STRING, currency?: STRING, location?: STRING, max_price?: NUMBER) -> BOOL | Check current availability under supplied filters. A positive result does not make a reservation. | aliases: check reservation availability | v19/operation-vocabulary/check_reservation_availability
+chill | operation | operation-vocabulary | (target: REF[STRING], destination: STRING) -> REF[STRING] | Chill using the stated resource; same identity. | v19/operation-vocabulary/chill
+click | operation | operation-vocabulary | (target: REF[STRING]) -> void | Activate the selected UI element. Requires its identity, not an invented selector. | v19/operation-vocabulary/click
+extract | operation | operation-vocabulary | (target: LIST[REF[STRING]], limit: NUMBER) -> LIST[REF[STRING]] | First limit results, preserving order and identity; limit is a nonnegative integer; limit=1 is still a list | v19/support/extract
+heat | operation | operation-vocabulary | (target: REF[STRING], destination: STRING) -> REF[STRING] | Heat using the stated resource; same identity. Selecting a warm object does not imply heating it. | v19/operation-vocabulary/heat
+modify_code | operation | operation-vocabulary | (target: STRING, file: STRING, revision: TERM, method?: STRING) -> void | Apply the structured change to the indicated code. A method name alone does not specify the change. | aliases: fix, reduce, optimize | v19/operation-vocabulary/modify_code
+open_page | operation | operation-vocabulary | (target: STRING) -> REF[STRING] | Navigate to the specified URL/page identity and return its page reference. Not a search for an unspecified page. | aliases: go to | v19/operation-vocabulary/open_page
+pick_up | operation | operation-vocabulary | (target: STRING, quantity?: NUMBER, source?: STRING, color?: STRING, shape?: STRING, state?: STRING) -> REF[STRING] or LIST[REF[STRING]] | Select/acquire objects. Missing quantity or literal 1 returns REF; integer literal greater than 1 returns LIST[REF]. Other values are invalid for this profile. | aliases: grab, take, retrieve | v19/operation-vocabulary/pick_up
+place | operation | operation-vocabulary | (target: REF[STRING], destination: STRING, location?: STRING, relation?: STRING) -> void | Place an already acquired object. Spatial relation must be explicit if the source distinguishes it. | aliases: put, insert | v19/operation-vocabulary/place
+pour | operation | operation-vocabulary | (target: REF[STRING], destination: STRING) -> REF[STRING] | Transfer selected liquid to the destination, preserving tracked material identity. | v19/operation-vocabulary/pour
+rinse | operation | operation-vocabulary | (target: REF[STRING], destination: STRING) -> REF[STRING] | Rinse using the stated resource; return the same identity. It is not enough that the object is already clean. | aliases: wash | v19/operation-vocabulary/rinse
+run_tests | operation | operation-vocabulary | (target: STRING, assertion?: TERM) -> BOOL | Run the selected project's tests, optionally checking the specified assertion. TRUE means the declared test condition passed, not overall software correctness. | v19/operation-vocabulary/run_tests
+search_transit | operation | operation-vocabulary | (target: STRING, constraints?: LIST[TERM], location?: STRING) -> LIST[REF[STRING]] | Query transit options. Does not buy tickets. | v19/operation-vocabulary/search_transit
+search_travel | operation | operation-vocabulary | (target: STRING, constraints?: LIST[TERM], location?: STRING) -> LIST[REF[STRING]] | Query travel options meeting supplied constraints. Does not book them. | v19/operation-vocabulary/search_travel
+search_web | operation | operation-vocabulary | (target: STRING, ...search attributes below) -> LIST[REF[STRING]] | Query a catalog/web source. Criteria filter the result; rank separately when requested. | aliases: find, look for | v19/operation-vocabulary/search_web
+select_filter | operation | operation-vocabulary | (target: REF[STRING], criterion: TERM) -> void | Apply one specified filter in an existing UI. Do not add this operation when the source only requests filtered search. | v19/operation-vocabulary/select_filter
+send_email | operation | operation-vocabulary | (recipient: STRING, content: STRING, tone?: STRING) -> void | Send supplied exact message content to the identified recipient. A requested message purpose is not already a composed message. | aliases: email | v19/operation-vocabulary/send_email
+send_message | operation | operation-vocabulary | (recipient: STRING, content: STRING, tone?: STRING) -> void | Send supplied exact content through the specified message context. If the channel is unresolved, report it. | aliases: text | v19/operation-vocabulary/send_message
+slice | operation | operation-vocabulary | (target: REF[STRING]) -> REF[STRING] | Slice the selected material, preserving its tracked aggregate identity. Individually addressed pieces need another accepted profile. | aliases: chop, cut | v19/operation-vocabulary/slice
+sort | operation | operation-vocabulary | (target: LIST[REF[STRING]], rank_direction: STRING, rank_field: STRING) -> LIST[REF[STRING]] | Request ordering of selected results. Preserve member identity; this is not a claim that order was observed. | aliases: rank, order by | v19/operation-vocabulary/sort
+
+## Speech acts
+acknowledge | speech_act | operation-vocabulary | UTTER acknowledge(target: CLAIM / TERM) | Acknowledge receipt/awareness; does not imply agreement. | v19/operation-vocabulary/acknowledge
+ask | speech_act | operation-vocabulary | UTTER ask(target: TERM, or a sufficiently precise topic: STRING / TERM) | Request information/advice; not an assertion of an answer. | aliases: ask, how should | v19/operation-vocabulary/ask
+confirm | speech_act | operation-vocabulary | UTTER confirm(target: CLAIM) | Confirm the proposition; its evidence/status remains explicit. | v19/operation-vocabulary/confirm
+correct | speech_act | operation-vocabulary | UTTER correct(target: CLAIM) | Offer corrected content. Actual supersession requires the Conversation revision rules. | v19/operation-vocabulary/correct
+decline | speech_act | operation-vocabulary | UTTER decline(target: TERM) | Decline the represented request/proposal; not negate every proposition within it. | v19/operation-vocabulary/decline
+inform | speech_act | operation-vocabulary | UTTER inform(target: CLAIM) | Present the proposition; preserve its holder/status. | v19/operation-vocabulary/inform
+propose | speech_act | operation-vocabulary | UTTER propose(target: TERM) | Suggest an action/idea; does not record it as performed. | v19/operation-vocabulary/propose
+respond | speech_act | operation-vocabulary | UTTER respond(target: CLAIM / TERM) | Answer with structured content; not merely label the question's topic. | aliases: answer | v19/operation-vocabulary/respond
+
+## Constructors
+activity | constructor | TERM activity(verb: STRING, actor?: STRING, object?: STRING / TERM, location?: STRING, instrument?: STRING, purpose?: TERM) -> TERM | Description of the action and its roles; instrument identifies means, purpose identifies an intended end | not: Does not execute or assert it | v19/support/activity
+aesthetic | constructor | TERM aesthetic(period: STRING, style: STRING) -> TERM | A stylistic description with an explicit period | not: Not a character's age or production date | v19/support/aesthetic
+change_property | constructor | TERM change_property(property: STRING, source: STRING, target: STRING) -> TERM | Require target to inherit the property value from source | not: Not an arbitrary code patch | v19/support/change_property
+character_trait | constructor | TERM character_trait(property: STRING, value: STRING / NUMBER) -> TERM | A character attribute | not: Not a claim about a real person | v19/support/character_trait
+conjunction | constructor | TERM conjunction(items: LIST[TERM]) -> TERM | All described components apply | not: Does not imply temporal order | v19/support/conjunction
+decision | constructor | TERM decision(activity: TERM) -> TERM | A decision whose content is the described activity | not: Not proof it was carried out | v19/support/decision
+duration | constructor | TERM duration(amount: NUMBER, unit: STRING) -> TERM | Requested elapsed/calendar extent | not: Word/item counts are not time | v19/support/duration
+exclude | constructor | TERM exclude(item: STRING / TERM) -> TERM | Require absence of that content/item | not: Not a claim of observed absence | v19/support/exclude
+include | constructor | TERM include(item: STRING / TERM) -> TERM | Require the identified content/item | not: Not permission to invent an instance in a recorded trace | v19/support/include
+maximum_between_stops | constructor | TERM maximum_between_stops(activity: STRING, amount: NUMBER, unit: STRING) -> TERM | Upper bound on the stated activity between successive stops | not: Not a limit on total daily duration | v19/support/maximum_between_stops
+minimum_per_period | constructor | TERM minimum_per_period(class: STRING, count: NUMBER, period: STRING) -> TERM | At least count members of class in each period | not: Not a minimum total over the whole artifact | v19/support/minimum_per_period
+preserve | constructor | TERM preserve(component: STRING, index: NUMBER) -> TERM | Keep the indexed component unchanged, using one-based indexing | not: Not preserve all components | v19/support/preserve
+property_question | constructor | TERM property_question(property: STRING, subject: STRING / TERM) -> TERM | An open request for a property of a subject | not: Does not supply the property's value | v19/support/property_question
+regression_case | constructor | TERM regression_case(framework: STRING, modifier: STRING, relation: STRING) -> TERM | A regression scenario specifying affected framework, condition and relation | not: Does not invent a passing test or exact implementation | v19/support/regression_case
+remove_literal | constructor | TERM remove_literal(text: STRING) -> TERM | Remove occurrences of that exact literal in the stated artifact | not: Not remove similar markup unless specified | v19/support/remove_literal
+requirement | constructor | TERM requirement(property: STRING, value: STRING / NUMBER / BOOL) -> TERM | Require the named property to have the given value in the enclosing request/artifact | not: Does not assert an existing artifact already satisfies it | v19/support/requirement
+sequence | constructor | TERM sequence(items: LIST[TERM]) -> TERM | Ordered described activities/content | not: Not unordered conjunction | v19/support/sequence
+subject | constructor | TERM subject(kind: STRING, qualifier?: STRING / TERM, location?: STRING, time?: STRING) -> TERM | Subject matter with explicit qualifiers | not: Does not make a factual claim about it | v19/support/subject
+test_condition | constructor | TERM test_condition(condition: STRING, expected: BOOL) -> TERM | A testable condition with the expected Boolean outcome | not: Expected outcome is not an observed result | v19/support/test_condition
+
+## Claim relations and links
+failure | claim_relation | CLAIM failure(system: STRING) | The indicated system is failing in context; hypothesis status does not establish truth | v19/support/failure
+outcome | claim_relation | CLAIM outcome(event: EVENT, value: STRING / NUMBER / BOOL) | Recorded output of that event; BY, STATUS and SOURCE required by spec | v19/support/outcome
+rejects | link | LINK rejects(evidence: CLAIM, hypothesis: CLAIM) | Source uses the evidence to reject that hypothesis | v19/support/rejects
+revises | link | LINK revises(previous: CLAIM, replacement: CLAIM) | Explicit replacement; use with AMENDS when changing active conversation content | v19/support/revises
+supports | link | LINK supports(conclusion: CLAIM, premise: CLAIM) | Source presents premise as a reason for conclusion; not necessarily logical entailment | v19/support/supports
+
+## Composite definitions
+char_2000s_anime_style | composite | character-property-value | TERM char_2000s_anime_style() -> TERM | 2000s anime style. | = aesthetic(period="2000s", style="anime") | v19/composite/char_2000s_anime_style
+char_age_14 | composite | character-property-value | TERM char_age_14() -> TERM | Age 14. | = character_trait(property="age_years", value=14) | aliases: 14 | v19/composite/char_age_14
+char_female | composite | character-property-value | TERM char_female() -> TERM | Female gender. | = character_trait(property="gender", value="female") | aliases: female | v19/composite/char_female
+assert_multinomial_scorer | composite | code-value | TERM assert_multinomial_scorer() -> TERM | Assertion that multinomial probabilistic scoring succeeds. | = test_condition(condition="multinomial_probabilistic_scoring", expected=TRUE) | v19/composite/assert_multinomial_scorer
+chg_inherit_multi_class | composite | code-value | TERM chg_inherit_multi_class(source: STRING, target: STRING) -> TERM | Change requiring a constructed estimator to inherit multi_class. | = change_property(property="multi_class", source=$source, target=$target) | v19/composite/chg_inherit_multi_class
+constraint_beginner | composite | constraint-value | TERM constraint_beginner() -> TERM | Targeted at beginners. | = requirement(property="audience_expertise", value="beginner") | v19/composite/constraint_beginner
+constraint_budget_limited | composite | constraint-value | TERM constraint_budget_limited() -> TERM | Limited budget. | = requirement(property="budget_limited", value=TRUE) | v19/composite/constraint_budget_limited
+constraint_comprehensive | composite | constraint-value | TERM constraint_comprehensive() -> TERM | Must be comprehensive. | = requirement(property="comprehensive", value=TRUE) | v19/composite/constraint_comprehensive
+constraint_exclude_flowery_language | composite | constraint-value | TERM constraint_exclude_flowery_language() -> TERM | Avoid flowery language. | = exclude(item="flowery_language") | v19/composite/constraint_exclude_flowery_language
+constraint_exclude_liberation_theme | composite | constraint-value | TERM constraint_exclude_liberation_theme() -> TERM | Avoid liberation theme. | = exclude(item="liberation_theme") | v19/composite/constraint_exclude_liberation_theme
+constraint_include_character_attribute_list | composite | constraint-value | TERM constraint_include_character_attribute_list() -> TERM | Include character attributes. | = include(item="character_attribute_list") | v19/composite/constraint_include_character_attribute_list
+constraint_realistic | composite | constraint-value | TERM constraint_realistic() -> TERM | Must be realistic. | = requirement(property="realistic", value=TRUE) | v19/composite/constraint_realistic
+constraint_respectful | composite | constraint-value | TERM constraint_respectful() -> TERM | Must be respectful. | = requirement(property="respectful", value=TRUE) | v19/composite/constraint_respectful
+constraint_single_choice | composite | constraint-value | TERM constraint_single_choice() -> TERM | Must pick a single choice. | = requirement(property="choice_count", value=1) | v19/composite/constraint_single_choice
+content_decision_study_sgi_japan | composite | content-value | TERM content_decision_study_sgi_japan(actor: STRING) -> TERM | A personal decision to travel to Japan to study SGI. | = decision(activity=activity(verb="travel", actor=$actor, location=japan, purpose=activity(verb="study", actor=$actor, object=dom_sgi))) | v19/composite/content_decision_study_sgi_japan
+content_kyoto_itinerary | composite | content-value | TERM content_kyoto_itinerary() -> TERM | A Kyoto itinerary subject. | = subject(kind="itinerary", location="Kyoto") | v19/composite/content_kyoto_itinerary
+content_mixed_case_foreign_key_regression | composite | content-value | TERM content_mixed_case_foreign_key_regression() -> TERM | A mixed-case Django app-name ForeignKey regression test purpose. | = regression_case(framework=django, modifier=mod_mixed_case, relation="ForeignKey") | v19/composite/content_mixed_case_foreign_key_regression
+content_status_update | composite | content-value | TERM content_status_update(subject: STRING) -> TERM | A request for a status update. | = activity(verb="request_update", object=$subject) | aliases: status update | v19/composite/content_status_update
+event_camper_in_sludge_pit | composite | event-value | TERM event_camper_in_sludge_pit() -> TERM | Campers interacting in a sludge pit. | = activity(verb="interact", actor="campers", location="sludge_pit") | v19/composite/event_camper_in_sludge_pit
+event_sadie_adler_unmasking | composite | event-value | TERM event_sadie_adler_unmasking() -> TERM | Sadie Adler taking off her hat and peeling skin. | = sequence(items=[activity(verb="remove", actor="Sadie Adler", object="hat"), activity(verb="peel", actor="Sadie Adler", object="skin")]) | v19/composite/event_sadie_adler_unmasking
+topic_ai_earning_methods | composite | topic-value | TERM topic_ai_earning_methods() -> TERM | AI earning methods. | = subject(kind="methods", qualifier=activity(verb="earn", instrument="AI", object="income")) | v19/composite/topic_ai_earning_methods
+topic_current_new_york_housing_market | composite | topic-value | TERM topic_current_new_york_housing_market(as_of: STRING) -> TERM | Current New York housing market. | = subject(kind="housing_market", location="New York", time=$as_of) | v19/composite/topic_current_new_york_housing_market
+topic_greatest_cricketer_of_all_time | composite | topic-value | TERM topic_greatest_cricketer_of_all_time() -> TERM | Greatest cricketer of all time. | = subject(kind="cricketer", qualifier=requirement(property="rank_by_greatness", value=1), time="all_time") | v19/composite/topic_greatest_cricketer_of_all_time
+topic_school_work_routine | composite | topic-value | TERM topic_school_work_routine() -> TERM | School and work routine. | = subject(kind="routine", qualifier=conjunction(items=[subject(kind="school"), subject(kind="work")])) | v19/composite/topic_school_work_routine
+transform_preserve_first_column | composite | transformation-value | TERM transform_preserve_first_column() -> TERM | Preserve the first column of a table. | = preserve(component="column", index=1) | v19/composite/transform_preserve_first_column
+transform_remove_br | composite | transformation-value | TERM transform_remove_br() -> TERM | Remove <br /> tags. | = remove_literal(text="<br />") | v19/composite/transform_remove_br
+
+## Category rules and their members
+art_character_profile | value | artifact-value | Descriptive character profile. | v19/artifact-value/art_character_profile
+art_itinerary | value | artifact-value | An ordered travel plan; GENERATE returns STRING, not booked travel | v19/support/art_itinerary
+art_plan | value | artifact-value | Actionable plan. | v19/artifact-value/art_plan
+art_short_text | value | artifact-value | Short free text. | v19/artifact-value/art_short_text
+art_story | value | artifact-value | Narrative story. | v19/artifact-value/art_story
+art_structured_report | value | artifact-value | Headed/structured report. | v19/artifact-value/art_structured_report
+art_technical_explanation | value | artifact-value | Technical explanation of a concept. | v19/artifact-value/art_technical_explanation
+rule_category_artifact_value | category_rule | artifact-value | STRING artifact class for GENERATE.target. art_story says what kind of artifact to produce, not what occurs in its plot. | v19/rule/category/artifact-value
+cap_gb | value | capacity-unit-value | One gibibyte-equivalent RAM capacity unit. | aliases: GB, gigabytes | STATUS Needs clarification | v19/capacity-unit-value/cap_gb
+cap_tb | value | capacity-unit-value | One tebibyte-equivalent capacity unit. | aliases: TB, terabytes | STATUS Needs clarification | v19/capacity-unit-value/cap_tb
+rule_category_capacity_unit_value | category_rule | capacity-unit-value | Preserve original binary-unit definitions for audit, but mark Needs clarification: GB/TB aliases conflate decimal and binary units. No silent change to scale. | v19/rule/category/capacity-unit-value
+rule_category_character_property_value | category_rule | character-property-value | TERM-described trait/style. Use constraints and explicit inclusion/scope; do not use an ungoverned character_properties attribute. | v19/rule/category/character-property-value
+path_sklearn_linear_model_logistic_py | value | code-value | The scikit-learn logistic module path. | v19/code-value/path_sklearn_linear_model_logistic_py
+rule_category_code_value | category_rule | code-value | path_/sym_ remain STRING identities; migrated chg_/assert_ are TERM constructors. Do not recover an exact file path by guessing from underscores. | v19/rule/category/code-value
+sym_log_reg_scoring_path | value | code-value | The _log_reg_scoring_path program symbol. | v19/code-value/sym_log_reg_scoring_path
+constraint_17_plus | value | constraint-value | Rated 17+ or mature. | STATUS Needs clarification | v19/constraint-value/constraint_17_plus
+rule_category_constraint_value | category_rule | constraint-value | Existing requirements are TERM constructors, except unresolved entries explicitly marked. `constraints=[constraint_realistic]` is invalid; construct the TERM first. | v19/rule/category/constraint-value
+rule_category_content_value | category_rule | content-value | Existing compounds become the constructors in Section 5. Their outputs go in topic/target/constraints as appropriate, not content, whose spec type remains STRING. | v19/rule/category/content-value
+cuisine_indian | value | cuisine-value | Indian cuisine. | aliases: Indian food, Indian | v19/cuisine-value/cuisine_indian
+cuisine_italian | value | cuisine-value | Italian cuisine. | aliases: Italian food, Italian | v19/cuisine-value/cuisine_italian
+rule_category_cuisine_value | category_rule | cuisine-value | STRING cuisine class; cuisine_indian is a cuisine filter, not the location India. | v19/rule/category/cuisine-value
+curr_clp | value | currency-value | Chilean peso. | aliases: clp, Chilean pesos, Chilean peso | v19/currency-value/curr_clp
+curr_eur | value | currency-value | Euro. | aliases: eur, euros | v19/currency-value/curr_eur
+curr_usd | value | currency-value | United States dollar. | aliases: $, usd, dollars | v19/currency-value/curr_usd
+rule_category_currency_value | category_rule | currency-value | STRING currency identity. A bare dollar sign is not always curr_usd; require contextual resolution. | v19/rule/category/currency-value
+dom_ovr | value | descriptive-value | One-versus-rest domain concept. | v19/descriptive-value/dom_ovr
+dom_pain | value | descriptive-value | Pain domain concept. | aliases: pain | v19/descriptive-value/dom_pain
+dom_safari | value | descriptive-value | Safari domain concept. | aliases: safari | v19/descriptive-value/dom_safari
+dom_sgi | value | descriptive-value | SGI domain concept. | STATUS Needs clarification | v19/descriptive-value/dom_sgi
+mod_mixed_case | value | descriptive-value | Mixed-case modifier. | aliases: mixed case | v19/descriptive-value/mod_mixed_case
+rule_category_descriptive_value | category_rule | descriptive-value | STRING modifier/domain label; never a free-form proposition. dom_sgi needs its intended referent established before semantically dependent use. | v19/rule/category/descriptive-value
+rule_category_duration_unit_value | category_rule | duration-unit-value | STRING units partitioned into temporal (second through year) and output counts (word/item/paragraph/character). Do not use unit_word as elapsed time. Months/years are calendar units, not fixed seconds. | v19/rule/category/duration-unit-value
+unit_character | value | duration-unit-value | One Unicode scalar value in the final rendered artifact; line endings are normalized to LF before counting. | aliases: characters, chars | v19/duration-unit-value/unit_character
+unit_day | value | duration-unit-value | Day. | aliases: days | v19/duration-unit-value/unit_day
+unit_hour | value | duration-unit-value | Hour. | aliases: hours | v19/duration-unit-value/unit_hour
+unit_item | value | duration-unit-value | Top-level generated list or report item. | aliases: items, entries | v19/duration-unit-value/unit_item
+unit_minute | value | duration-unit-value | Minute. | aliases: minutes, min | v19/duration-unit-value/unit_minute
+unit_month | value | duration-unit-value | Month. | aliases: months | v19/duration-unit-value/unit_month
+unit_paragraph | value | duration-unit-value | Paragraph of text. | aliases: paragraphs, paragraph | v19/duration-unit-value/unit_paragraph
+unit_second | value | duration-unit-value | Second. | aliases: seconds, sec | v19/duration-unit-value/unit_second
+unit_week | value | duration-unit-value | Week. | aliases: weeks | v19/duration-unit-value/unit_week
+unit_word | value | duration-unit-value | Rendered whitespace-delimited word. | aliases: words | v19/duration-unit-value/unit_word
+unit_year | value | duration-unit-value | Year. | aliases: years | v19/duration-unit-value/unit_year
+armchair | value | entity-name | An armchair; distinct from a sofa | v19/support/armchair
+coffee_maker | value | entity-name | A coffee-making appliance; not automatically a heating resource | v19/support/coffee_maker
+mug | value | entity-name | Drinking cup. | aliases: mug | v19/entity-name/mug
+pillow | value | entity-name | A pillow; not a specific selected pillow until pick_up returns REF | v19/support/pillow
+resource_chiller | value | entity-name | Canonical abstract chilling resource when no particular appliance is named. | v19/entity-name/resource_chiller
+resource_heater | value | entity-name | Canonical abstract heating resource when no particular appliance is named. | v19/entity-name/resource_heater
+resource_sink | value | entity-name | Canonical abstract washing resource when no particular sink is named. | v19/entity-name/resource_sink
+rule_category_entity_name | category_rule | entity-name | STRING descriptors select kinds/resources. `mug` is a descriptor, not REF. Resource symbols may be used only when the source explicitly requests such a resource; missing equipment is not automatically inserted. | v19/rule/category/entity-name
+sink | value | entity-name | Washing basin. | aliases: sink | v19/entity-name/sink
+sofa | value | entity-name | A sofa used as source/destination; not the pillow on it | v19/support/sofa
+rule_category_event_value | category_rule | event-value | TERM-described narrative event, not a recorded EVENT. Require inclusion explicitly when generating a story. | v19/rule/category/event-value
+format_bullet_list | value | format-value | Bulleted list. | aliases: bullet points | v19/format-value/format_bullet_list
+format_email | value | format-value | Email layout. | aliases: as an email | v19/format-value/format_email
+format_markdown | value | format-value | Markdown layout. | aliases: in markdown | v19/format-value/format_markdown
+format_newsletter | value | format-value | Newsletter layout. | aliases: newsletter | v19/format-value/format_newsletter
+format_numbered_list | value | format-value | Numbered list. | aliases: numbered steps | v19/format-value/format_numbered_list
+format_pdf | value | format-value | PDF document. | aliases: as a pdf | v19/format-value/format_pdf
+format_plain_text | value | format-value | Unstructured prose text. | aliases: plain text | v19/format-value/format_plain_text
+format_structured_report | value | format-value | Headed structured report layout. | aliases: structured report, report | v19/format-value/format_structured_report
+format_table | value | format-value | Tabular layout. | aliases: as a table | v19/format-value/format_table
+rule_category_format_value | category_rule | format-value | STRING format. format_email is layout, not the action send_email. | v19/rule/category/format-value
+locale_en_gb | value | locale-value | UK English. | aliases: british english | v19/locale-value/locale_en_gb
+locale_en_us | value | locale-value | US English. | aliases: english, en-us | v19/locale-value/locale_en_us
+locale_es | value | locale-value | Spanish. | aliases: spanish | v19/locale-value/locale_es
+locale_fr | value | locale-value | French. | aliases: french | v19/locale-value/locale_fr
+locale_hi_en | value | locale-value | Hinglish (Hindi-English mix). | aliases: hinglish | v19/locale-value/locale_hi_en
+rule_category_locale_value | category_rule | locale-value | STRING locale. “English” alone does not always mean locale_en_us; preserve ambiguity. | v19/rule/category/locale-value
+corner | value | location-name | A corner area. | v19/location-name/corner
+eastern_cape | value | location-name | Eastern Cape region. | v19/location-name/eastern_cape
+japan | value | location-name | Country of Japan. | v19/location-name/japan
+rule_category_location_name | category_rule | location-name | STRING location descriptor. A `table` surface is not the generated artifact category art_table. | v19/rule/category/location-name
+table | value | location-name | A table surface. | v19/location-name/table
+metric_compatibility | value | metric-value | Compatibility status. | aliases: compatible | v19/metric-value/metric_compatibility
+metric_first_time_buyer | value | metric-value | Whether the customer is a first-time buyer. | aliases: first-time buyer, new customer | v19/metric-value/metric_first_time_buyer
+metric_order_late | value | metric-value | Whether an order is late. | aliases: order is late, delayed | v19/metric-value/metric_order_late
+metric_repeat_buyer | value | metric-value | Whether the customer is a repeat buyer. | aliases: repeat buyer, returning customer | v19/metric-value/metric_repeat_buyer
+metric_response_time | value | metric-value | Support response time. | aliases: response time | v19/metric-value/metric_response_time
+metric_uptime | value | metric-value | Service uptime status. | aliases: uptime, is up | v19/metric-value/metric_uptime
+rule_category_metric_value | category_rule | metric-value | STRING metric identity, not a Boolean value. Uptime and response time need numeric observations with units; order-late is Boolean-valued. Do not type every metric as BOOL. | v19/rule/category/metric-value
+django | value | platform-name | Web framework. | v19/platform-name/django
+netflix | value | platform-name | Streaming platform. | v19/platform-name/netflix
+rule_category_platform_name | category_rule | platform-name | STRING service/framework identity. `django` does not also mean the project being edited unless context establishes that identity. | v19/rule/category/platform-name
+sklearn | value | platform-name | Machine learning library. | v19/platform-name/sklearn
+youtube | value | platform-name | Video platform. | v19/platform-name/youtube
+color_black | value | product-attribute-value | Black. | v19/product-attribute-value/color_black
+color_red | value | product-attribute-value | Red. | v19/product-attribute-value/color_red
+color_white | value | product-attribute-value | White. | v19/product-attribute-value/color_white
+color_yellow | value | product-attribute-value | Yellow. | v19/product-attribute-value/color_yellow
+gender_men | value | product-attribute-value | Men's/male-targeted. | aliases: men, male | v19/product-attribute-value/gender_men
+gender_unisex | value | product-attribute-value | Unisex. | aliases: unisex | v19/product-attribute-value/gender_unisex
+gender_women | value | product-attribute-value | Women's/female-targeted. | aliases: women, female | v19/product-attribute-value/gender_women
+rule_category_product_attribute_value | category_rule | product-attribute-value | STRING color/size/product-market facets. gender_women describes a product category, not an assertion about a person's gender. | v19/rule/category/product-attribute-value
+size_large | value | product-attribute-value | Large size. | aliases: large, L | v19/product-attribute-value/size_large
+size_medium | value | product-attribute-value | Medium size. | aliases: medium, M | v19/product-attribute-value/size_medium
+size_small | value | product-attribute-value | Small size. | aliases: small, S | v19/product-attribute-value/size_small
+role_agent | value | recipient-value | The assistant. | aliases: you, the assistant | v19/recipient-value/role_agent
+role_colleague | value | recipient-value | A coworker of the user. | aliases: my colleague, coworker | v19/recipient-value/role_colleague
+role_customer | value | recipient-value | A customer/client of the user. | aliases: the customer, client | v19/recipient-value/role_customer
+role_friend | value | recipient-value | A friend of the user. | aliases: my friend | v19/recipient-value/role_friend
+role_manager | value | recipient-value | The user's manager. | aliases: my manager, boss | v19/recipient-value/role_manager
+role_professor | value | recipient-value | The user's professor/instructor. | aliases: my professor, teacher | v19/recipient-value/role_professor
+role_support_team | value | recipient-value | A customer-support team. | aliases: support, customer service | v19/recipient-value/role_support_team
+role_user | value | recipient-value | The requesting human. | aliases: me, I | v19/recipient-value/role_user
+rule_category_recipient_value | category_rule | recipient-value | STRING roles or explicit named recipients. A role is not an exact person's identity. Keep an explicit name where substituting a role loses information. | v19/rule/category/recipient-value
+reservation_available | value | reservation-status-value | A reservation can be made. | aliases: reservation availability, available reservations | v19/reservation-status-value/reservation_available
+reservation_unavailable | value | reservation-status-value | A reservation cannot be made. | aliases: no reservations | v19/reservation-status-value/reservation_unavailable
+rule_category_reservation_status_value | category_rule | reservation-status-value | STRING filter states; neither is a BOOL result binding. check_reservation_availability returns a BOOL with a distinct handle. | v19/rule/category/reservation-status-value
+avail_in_stock | value | search-value | Available for purchase now. | aliases: available | v19/search-value/avail_in_stock
+avail_out_of_stock | value | search-value | Unavailable for purchase now. | aliases: sold out | v19/search-value/avail_out_of_stock
+cat_game | value | search-value | Category: video game. | v19/search-value/cat_game
+cat_limited_time_offers | value | search-value | Category: time-limited deals. | v19/search-value/cat_limited_time_offers
+dir_asc | value | search-value | Ascending rank direction. | aliases: lowest first | v19/search-value/dir_asc
+dir_desc | value | search-value | Descending rank direction. | aliases: highest first | v19/search-value/dir_desc
+genre_comedy | value | search-value | Genre: comedy. | v19/search-value/genre_comedy
+rank_distance | value | search-value | Rank field: proximity. | aliases: nearest, closest | v19/search-value/rank_distance
+rank_price | value | search-value | Rank or filter field: monetary cost. | aliases: cheapest, lowest price | v19/search-value/rank_price
+rank_rating | value | search-value | Rank or filter field: user or critic score. | v19/search-value/rank_rating
+rule_category_search_value | category_rule | search-value | STRING refinements rank_ / dir_ / cat_ / avail_ / genre_ are separate. rank_rating may fill rank_field; genre_comedy may not. “Cheapest” usually requires both rank_price and dir_asc, not rank_price alone. | v19/rule/category/search-value
+class_temple | value | semantic-category-value | The abstract class of temples. | aliases: temple, temples | v19/semantic-category-value/class_temple
+class_town | value | semantic-category-value | The abstract class of towns. | aliases: town, towns | v19/semantic-category-value/class_town
+rule_category_semantic_category_value | category_rule | semantic-category-value | STRING class label used by typed constraints. class_temple describes a class, not an acquired physical temple reference. | v19/rule/category/semantic-category-value
+rule_category_shape_value | category_rule | shape-value | STRING geometry. shape_round may select a circular object; it does not imply color or dimensions. | v19/rule/category/shape-value
+shape_oval | value | shape-value | Oval. | aliases: oval | v19/shape-value/shape_oval
+shape_rectangular | value | shape-value | Rectangular. | aliases: rectangular, rectangle | v19/shape-value/shape_rectangular
+shape_round | value | shape-value | Circular/round. | aliases: round, circular | v19/shape-value/shape_round
+shape_square | value | shape-value | Square. | aliases: square | v19/shape-value/shape_square
+shape_triangular | value | shape-value | Triangular. | aliases: triangular, triangle | v19/shape-value/shape_triangular
+behind | value | spatial-relation | Positioned behind. | v19/spatial-relation/behind
+in | value | spatial-relation | Contained within. | aliases: inside | v19/spatial-relation/in
+in_front_of | value | spatial-relation | Positioned in front of. | aliases: in front of | v19/spatial-relation/in_front_of
+left_of | value | spatial-relation | To the left of. | aliases: left of | v19/spatial-relation/left_of
+next_to | value | spatial-relation | Adjacent to. | aliases: beside | v19/spatial-relation/next_to
+on | value | spatial-relation | Resting atop. | aliases: on top of | v19/spatial-relation/on
+right_of | value | spatial-relation | To the right of. | aliases: right of | v19/spatial-relation/right_of
+rule_category_spatial_relation | category_rule | spatial-relation | STRING relation used by place. `in` and `on` have different spatial meaning and are not aliases. Orientation requires context when left/right/front are ambiguous. | v19/rule/category/spatial-relation
+under | value | spatial-relation | Beneath. | aliases: below | v19/spatial-relation/under
+rule_category_state_value | category_rule | state-value | STRING condition used in selection. state_warm does not command heat; “hot” is not automatically synonymous with “warm.” | v19/rule/category/state-value
+state_clean | value | state-value | Clean condition. | aliases: clean | v19/state-value/state_clean
+state_cold | value | state-value | Cold or chilled condition. | aliases: cold, chilled | v19/state-value/state_cold
+state_dirty | value | state-value | Dirty condition. | aliases: dirty | v19/state-value/state_dirty
+state_empty | value | state-value | Contains no intended material or usable remaining amount. | aliases: empty, used up | v19/state-value/state_empty
+state_full | value | state-value | Contains its intended material or remaining usable amount. | aliases: full, filled | v19/state-value/state_full
+state_microwaved | value | state-value | Has been microwaved. | aliases: microwaved | v19/state-value/state_microwaved
+state_warm | value | state-value | Warm or heated condition. | aliases: warm, hot | v19/state-value/state_warm
+rule_category_style_value | category_rule | style-value | STRING production style. style_narrative does not establish that described events occurred. | v19/rule/category/style-value
+style_academic | value | style-value | Academic style. | aliases: academic | v19/style-value/style_academic
+style_catchy | value | style-value | Catchy, attention-grabbing style. | aliases: catchy | v19/style-value/style_catchy
+style_narrative | value | style-value | Story-like narrative style. | aliases: narrative, story-style | v19/style-value/style_narrative
+style_persuasive | value | style-value | Persuasive/argumentative style. | aliases: persuasive | v19/style-value/style_persuasive
+style_technical | value | style-value | Technical/expository style. | aliases: technical | v19/style-value/style_technical
+rule_category_tone_value | category_rule | tone-value | STRING register. tone_urgent describes urgency, not a concrete deadline. | v19/rule/category/tone-value
+tone_casual | value | tone-value | Informal register. | aliases: casually | v19/tone-value/tone_casual
+tone_concise | value | tone-value | Brief, to-the-point register. | aliases: briefly, concisely | v19/tone-value/tone_concise
+tone_empathetic | value | tone-value | Conveys empathy/understanding. | aliases: sympathetically | v19/tone-value/tone_empathetic
+tone_formal | value | tone-value | Formal register. | aliases: formally | v19/tone-value/tone_formal
+tone_neutral | value | tone-value | Plain, unmarked register. | v19/tone-value/tone_neutral
+tone_polite | value | tone-value | Courteous, respectful register. | aliases: politely, kindly | v19/tone-value/tone_polite
+tone_professional | value | tone-value | Workplace-appropriate register. | aliases: professionally | v19/tone-value/tone_professional
+tone_urgent | value | tone-value | Conveys urgency. | aliases: urgently, ASAP | v19/tone-value/tone_urgent
+rule_category_topic_value | category_rule | topic-value | Named subjects remain STRING; complex compositional topics use the listed TERM constructors. A subject label does not encode the question or claim about it. | v19/rule/category/topic-value
+topic_baldurs_gate_3 | value | topic-value | Baldur's Gate 3. | v19/topic-value/topic_baldurs_gate_3
+topic_classical_piano | value | topic-value | Classical piano. | v19/topic-value/topic_classical_piano
+topic_jazz_piano | value | topic-value | Jazz piano. | v19/topic-value/topic_jazz_piano
+topic_macbook_pro_2017 | value | topic-value | MacBook Pro 2017. | v19/topic-value/topic_macbook_pro_2017
+topic_pickup_lines | value | topic-value | Pickup lines. | v19/topic-value/topic_pickup_lines
+topic_politics | value | topic-value | Politics. | v19/topic-value/topic_politics
+topic_spider_man_2 | value | topic-value | Marvel's Spider-Man 2. | v19/topic-value/topic_spider_man_2
+rule_category_transformation_value | category_rule | transformation-value | TERM-described transformation. Pass it through constraints; no ungoverned transformations attribute. | v19/rule/category/transformation-value
+
+## Attributes
+cuisine | attribute | attribute-name | Restaurant or food cuisine from cuisine-value. | v19/attribute-name/cuisine
+min_ram | attribute | attribute-name | Minimum RAM capacity as NUMBER. | aliases: RAM or more, at least RAM | v19/attribute-name/min_ram
+quantity | attribute | attribute-name | Explicit count as NUMBER. | v19/attribute-name/quantity
+ram_unit | attribute | attribute-name | Unit for min_ram from capacity-unit-value. | v19/attribute-name/ram_unit
+rank_direction | attribute | attribute-name | Sort direction from search-value. | v19/attribute-name/rank_direction
+rank_field | attribute | attribute-name | Field used by sort from search-value. | v19/attribute-name/rank_field
+reservation_availability | attribute | attribute-name | Required reservation state from reservation-status-value. | v19/attribute-name/reservation_availability
+target | attribute | attribute-name | The acted-on entity or generated artifact. | v19/attribute-name/target
+
+## Structural tokens
+!= | structural | structural-word | Inequality. | v19/structural-word/!=
+( | structural | structural-word | Paren start. | v19/structural-word/(
+) | structural | structural-word | Paren end. | v19/structural-word/)
+, | structural | structural-word | Separator. | v19/structural-word/,
+- | structural | structural-word | Arithmetic difference. | v19/structural-word/-
+-> | structural | structural-word | Result bind. | v19/structural-word/->
+: | structural | structural-word | Type annotator. | v19/structural-word/:
+< | structural | structural-word | Less-than. | v19/structural-word/<
+<= | structural | structural-word | Less-or-equal. | v19/structural-word/<=
+= | structural | structural-word | Assignment. | v19/structural-word/=
+== | structural | structural-word | Equality. | v19/structural-word/==
+> | structural | structural-word | Greater-than. | v19/structural-word/>
+>= | structural | structural-word | Greater-or-equal. | v19/structural-word/>=
+ACTION | structural | structural-word | Executes an external operation. | v19/structural-word/ACTION
+AGENT | structural | structural-word | Agent speaker. | v19/structural-word/AGENT
+ALL | structural | structural-word | Universal quantifier. | v19/structural-word/ALL
+AND | structural | structural-word | Logical AND. | v19/structural-word/AND
+ANY | structural | structural-word | Existential quantifier. | v19/structural-word/ANY
+BOOL | structural | structural-word | Boolean type. | v19/structural-word/BOOL
+CONTEXT | structural | structural-word | Task context. | v19/structural-word/CONTEXT
+CONVO | structural | structural-word | Declares a conversation. | v19/structural-word/CONVO
+DECREASES | structural | structural-word | Recursion guard. | v19/structural-word/DECREASES
+EACH | structural | structural-word | Marks per-member iteration. | v19/structural-word/EACH
+ELSE | structural | structural-word | Starts the false branch. | v19/structural-word/ELSE
+ENTRYPOINT | structural | structural-word | Names the single execution root. | v19/structural-word/ENTRYPOINT
+FALSE | structural | structural-word | Boolean false literal. | v19/structural-word/FALSE
+FOR | structural | structural-word | Starts iteration. | v19/structural-word/FOR
+GENERATE | structural | structural-word | Generates a non-effectful artifact. | v19/structural-word/GENERATE
+IF | structural | structural-word | Starts a conditional branch. | v19/structural-word/IF
+IN | structural | structural-word | Introduces an iterable or relation. | v19/structural-word/IN
+LET | structural | structural-word | Binds a value. | v19/structural-word/LET
+LIST | structural | structural-word | List type. | v19/structural-word/LIST
+NOT | structural | structural-word | Logical NOT. | v19/structural-word/NOT
+NUMBER | structural | structural-word | Numeric type. | v19/structural-word/NUMBER
+OR | structural | structural-word | Logical OR. | v19/structural-word/OR
+REF | structural | structural-word | Runtime entity-reference type. | v19/structural-word/REF
+REPLY_TO | structural | structural-word | Turn adjacency. | v19/structural-word/REPLY_TO
+RETURN | structural | structural-word | Returns a task value. | v19/structural-word/RETURN
+REVISES | structural | structural-word | Turn correction. | v19/structural-word/REVISES
+SATISFIES | structural | structural-word | Introduces a quantifier condition. | v19/structural-word/SATISFIES
+SPEAKER | structural | structural-word | Speaker label. | v19/structural-word/SPEAKER
+STRING | structural | structural-word | Text type. | v19/structural-word/STRING
+TASK | structural | structural-word | Declares a task. | v19/structural-word/TASK
+THEN | structural | structural-word | Starts the true branch. | v19/structural-word/THEN
+TRUE | structural | structural-word | Boolean true literal. | v19/structural-word/TRUE
+TURN | structural | structural-word | Declares a conversation turn. | v19/structural-word/TURN
+USER | structural | structural-word | User speaker. | v19/structural-word/USER
+UTTER | structural | structural-word | Records a speech act. | v19/structural-word/UTTER
+[ | structural | structural-word | Bracket start. | v19/structural-word/[
+] | structural | structural-word | Bracket end. | v19/structural-word/]
+{ | structural | structural-word | Block start. | v19/structural-word/{
+} | structural | structural-word | Block end. | v19/structural-word/}

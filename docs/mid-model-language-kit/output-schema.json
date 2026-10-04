@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Optional BrainCode translation transport envelope",
+  "description": "Packaging only; does not change language syntax or establish semantic validity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["input_id", "language_version", "completeness", "translation", "report"],
+  "properties": {
+    "input_id": {"type": "string", "minLength": 1},
+    "language_version": {"type": "string", "minLength": 1},
+    "completeness": {"enum": ["complete", "partial", "unrepresentable"]},
+    "translation": {"type": "string"},
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coverage", "opaque_spans", "gaps", "ambiguities", "proposed_additions"],
+      "properties": {
+        "coverage": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_ref", "status"], "properties": {"source_ref": {"type": "string"}, "status": {"enum": ["represented", "approximated", "omitted"]}, "note": {"type": "string"}}}},
+        "opaque_spans": {"type": "array", "items": {"type": "string"}},
+        "gaps": {"type": "array", "items": {"type": "string"}},
+        "ambiguities": {"type": "array", "items": {"type": "string"}},
+        "proposed_additions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["proposed_name", "intended_meaning", "reason"], "properties": {"proposed_name": {"type": "string"}, "intended_meaning": {"type": "string"}, "reason": {"type": "string"}}}}
+      }
+    }
+  },
+  "allOf": [{"if": {"properties": {"completeness": {"const": "complete"}}}, "then": {"properties": {"translation": {"minLength": 1}}}}]
+}

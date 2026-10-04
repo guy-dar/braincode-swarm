@@ -1,6 +1,6 @@
 #!/bin/sh
 # This harness's entire CLI invocation lives here, not on the host — mounts are
-# fixed by convention (see ../../spawn_batch.py): /reference/DESIGN_DOC.md,
+# fixed by convention (see ../../spawn_batch.py): /reference/language-spec.md (+ glossary),
 # /trajectory.txt, /prompt.md read-only; /output writable. SWARM_MODEL,
 # PROXY_API_KEY, PROXY_BASE_URL come in as env vars.
 set -e

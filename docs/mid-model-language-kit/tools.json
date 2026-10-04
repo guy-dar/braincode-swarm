@@ -1,0 +1,39 @@
+{
+  "format": "provider-neutral named functions; host must register and route them",
+  "tools": [
+    {
+      "name": "lookup_symbols",
+      "description": "Read original glossary rows, migration statuses, surrounding prose and indexed composite references. Search does not approve an entry. Follow section pointers when retrieval_complete is false.",
+      "input_schema": {
+        "type": "object", "additionalProperties": false, "required": ["query"],
+        "properties": {
+          "query": {"type": "string", "minLength": 1, "maxLength": 500},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 8, "default": 3},
+          "section_filter": {"type": ["string", "null"], "description": "Optional substring of a source section title, e.g. Inventory: tone-value."},
+          "max_chars": {"type": "integer", "minimum": 2000, "maximum": 40000, "default": 18000}
+        }
+      }
+    },
+    {
+      "name": "read_document",
+      "description": "Read unchanged spec or glossary text. Use section=index to discover IDs. start_line is relative to the chosen section/document. Follow next_start_line while has_more is true.",
+      "input_schema": {
+        "type": "object", "additionalProperties": false, "required": ["document"],
+        "properties": {
+          "document": {"enum": ["spec", "glossary"]},
+          "section": {"type": ["string", "null"]},
+          "start_line": {"type": "integer", "minimum": 1, "default": 1},
+          "max_lines": {"type": "integer", "minimum": 1, "maximum": 150, "default": 80}
+        }
+      }
+    },
+    {
+      "name": "get_examples",
+      "description": "Retrieve unchanged glossary examples and their original preceding context. Examples retain draft qualifications and are not parser-certified.",
+      "input_schema": {
+        "type": "object", "additionalProperties": false,
+        "properties": {"query": {"type": "string", "maxLength": 500, "default": ""}, "limit": {"type": "integer", "minimum": 1, "maximum": 5, "default": 2}}
+      }
+    }
+  ]
+}
