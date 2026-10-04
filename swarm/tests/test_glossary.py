@@ -183,3 +183,10 @@ class TestValidate:
     def test_shared_rule_must_be_a_rule(self, recs):
         by_symbol(recs, "mug")["shared_rules"] = ["v19/entity-name/sink"]
         assert any("not a rule" in e for e in validate(recs))
+
+
+def test_rendered_header_has_no_shell_commands(recs):
+    # glossary.md is attached to model requests; the proxy's firewall blocks bodies containing
+    # "run `<command>`" as suspected command injection (it 403-ed every drafter in batch 2).
+    head = render.render_md(recs, "x").split("## ", 1)[0]
+    assert "python -m" not in head and "run `" not in head

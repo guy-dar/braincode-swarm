@@ -17,6 +17,15 @@ WORKDIR /workspace
 
 COPY --chmod=644 models.template.json /opt/models.template.json
 COPY --chmod=644 settings.json /opt/settings.json
+# pi extension: tool-result size cap and compaction that keeps the task message
+# (env-gated, see the file).
+COPY --chmod=644 context-limits.ts /opt/context-limits.ts
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
+# grep/find wrappers ahead of the real binaries on PATH: they only allow
+# searching the paths mounted for the agent (allowlist in guard-search.mjs).
+# /usr/local/bin precedes /usr/bin and /bin on PATH.
+COPY --chmod=644 guard-search.mjs /usr/local/lib/guard-search.mjs
+COPY --chmod=755 guard-search.sh /usr/local/bin/grep
+COPY --chmod=755 guard-search.sh /usr/local/bin/find
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

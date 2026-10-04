@@ -83,6 +83,11 @@ def test_rejection_passes_through_and_cools_down():
     gate = throttle.Gate(max_inflight=4, min_inflight=2, cooldown_s=0.5)
     s, port = _server(up, gate)
     assert _call(port)[0] == 429           # passed back unchanged, not retried
+    # The response reaches the client just before the gateway records the
+    # rejection (release() runs after the body is sent): wait for it to settle.
+    deadline = time.monotonic() + 2
+    while gate.snapshot()["inflight"] and time.monotonic() < deadline:
+        time.sleep(0.01)
     assert up.calls == 1 and gate.limit == 3
     started = time.monotonic()
     assert _call(port)[0] == 200           # waits out the cooldown first

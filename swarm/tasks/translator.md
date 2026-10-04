@@ -15,7 +15,7 @@ Your job is a **faithful** translation using only the current glossary. If that 
 | `/reference/language-spec.compact.md` | The language (attached). It governs grammar, modes, types and canonical form. `/reference/language-spec.md` is the same plus revision history. |
 | `/rag_context.md` | Glossary retrieval already run for your item (attached): the needs, the candidate symbols per need, and the full records and rules. |
 | `/trajectory.txt` | Your item (attached), numbered as `t<turn>:s<sentence> [SPEAKER] text`. These locators are your SOURCE strings. |
-| `/needs.json` | The needs with their candidates (used by `check`). |
+| `/needs.json` | Read by `rag check` itself. Don't open it: the same needs are in the attached `2-rag_context.md`. |
 | `/kit/README.md`, `/kit/rag.mjs` | The glossary search tool. `node /kit/rag.mjs …` |
 | `/reference/glossary.md` | The whole glossary, for when a search doesn't find a symbol you think exists. |
 | `/doc_formats/*.md` | The exact formats of what you write. |
@@ -60,6 +60,13 @@ Suggestions must follow the exact heading format, one of:
 - **What to suggest.** Make one suggestion, or a few, and only the ones your translation actually needs. Prefer a reusable constructor or composite over one symbol per phrase. Prefer refining an existing entry over adding a near-duplicate.
 - **What each block contains.** The block carries the fields its dimension requires, the needs that motivated it, the searches you tried, and a proposed record in the glossary schema.
 
+## Don't spend turns on these
+
+They took about a third of all turns in earlier batches and add nothing:
+- **Don't read or parse `/needs.json`** (no `cat`, no `node -e`, no `read`). Every need, its kind, its source and its candidates are already in the attached `2-rag_context.md` table. `/needs.json` exists only for `rag check`, which reads it itself.
+- **Don't re-read files you wrote.** Their content is already in this conversation. To fix something, write the corrected file again.
+- **Don't run `ls` or `mkdir`.** `/output/` already exists and is empty, and the paths you need are all listed above.
+
 ## Work in few, full turns
 
 Every model turn re-sends this whole conversation, so many small turns are slow and expensive. Batch your lookups:
@@ -68,6 +75,8 @@ Every model turn re-sends this whole conversation, so many small turns are slow 
 - one `grep -E "a|b|c"` instead of three.
 
 The needs table and candidates are already in `2-rag_context.md`, so search only for what's missing there.
+
+**Look up specific symbols, never whole categories.** Don't grep `/reference/glossary.md` for a kind or category column (`| value |`, `constructor|operation|…`), don't dump a file, and don't filter the glossary with a `node -e` script: those pulled 30-50k characters into the conversation, which is then re-sent on every later turn. Search for the words of the need (`rag search`) or fetch exact names (`rag entry a b c`, `grep -E "^\| (a|b|c) \|"`). Every tool result is cut at 8,000 characters. Long conversations are compacted: your instructions and attachments stay verbatim, the older work is replaced by a summary, so write your decisions down as you go.
 
 ## Hard rules
 

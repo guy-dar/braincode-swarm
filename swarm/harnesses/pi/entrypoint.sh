@@ -17,6 +17,9 @@ sed "s|__PROXY_BASE_URL__|$PROXY_BASE_URL|" /opt/models.template.json > "$HOME/p
 # rather than mounted.
 cp /opt/settings.json "$HOME/pi-config/settings.json"
 export PI_CODING_AGENT_DIR="$HOME/pi-config"
+# Tool-result cap (PI_TOOL_RESULT_MAX_CHARS) and context compaction
+# (PI_COMPACT_AT); both off unless their env vars are set. See the file.
+EXT="-e /opt/context-limits.ts"
 
 PROMPT="$(cat /prompt.md)"
 # Optional /attach/: every file there is attached to the first message, in
@@ -39,11 +42,11 @@ MODE=""
 # starting over: a translator killed by a proxy outage resumes where it was.
 if [ -n "$PI_SESSION_DIR" ]; then
   if [ -n "$PI_RESUME" ]; then
-    exec pi --print $MODE --session-dir "$PI_SESSION_DIR" --continue --no-context-files --approve \
+    exec pi --print $MODE $EXT --session-dir "$PI_SESSION_DIR" --continue --no-context-files --approve \
       --model "$SWARM_MODEL" "$PROMPT"
   fi
-  exec pi --print $MODE --session-dir "$PI_SESSION_DIR" --no-context-files --approve \
+  exec pi --print $MODE $EXT --session-dir "$PI_SESSION_DIR" --no-context-files --approve \
     --model "$SWARM_MODEL" "$@" "@/trajectory.txt" "$PROMPT"
 fi
-exec pi --print $MODE --no-session --no-context-files --approve \
+exec pi --print $MODE $EXT --no-session --no-context-files --approve \
   --model "$SWARM_MODEL" "$@" "@/trajectory.txt" "$PROMPT"

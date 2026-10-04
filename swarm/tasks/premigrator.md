@@ -19,6 +19,8 @@ Already attached to this message: the spec, the purpose, and both formats (`merg
 | `/doc_formats/suggestions.md` | The format the translators used. |
 | `/output/` | Where you write. |
 
+**No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
+
 ## Steps
 
 1. Read `/doc_formats/merged_suggestions.md`, then every suggestion in `/trajectory.txt`.

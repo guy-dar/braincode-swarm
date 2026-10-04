@@ -55,10 +55,13 @@ def render_md(records: list, glossary_version: str = "") -> str:
         f"Language {LANGUAGE_VERSION} · glossary {glossary_version or 'unversioned'} · {len(live)} live records"
         + (f" ({len(records) - len(live)} deprecated, listed last)" if len(records) != len(live) else ""),
         "",
-        "Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a table cell (`<br>` = line "
-        "break, `\\|` = a literal pipe) and run `python -m glossary.import_md`. To deprecate, set status to "
-        "`Deprecated` and give a reason in `not`; never delete a row. Signatures: `?` optional, `A / B` "
-        "alternatives, `void` no result. `not` is the nearest wrong reading of the symbol.",
+        # No shell commands in this header: the file is attached to model requests, and the model proxy's
+        # firewall blocks request bodies containing "run `<command>`" as suspected command injection.
+        # How to edit and re-import is documented in swarm/README.md.
+        "Rendered from glossary.jsonl (the source of truth); see swarm/README.md for how to edit it. In cells, "
+        "`<br>` is a line break and `\\|` a literal pipe. To deprecate, set status to `Deprecated` and give a "
+        "reason in `not`; never delete a row. Signatures: `?` optional, `A / B` alternatives, `void` no result. "
+        "`not` is the nearest wrong reading of the symbol.",
         "",
     ]
     for title, kinds, columns in SECTIONS:

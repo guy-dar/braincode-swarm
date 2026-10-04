@@ -21,6 +21,8 @@ The host writes the header. The translator writes the suggestions as `/output/su
 
 One `###` block per suggestion, numbered S1, S2, … Make one suggestion, or a few; each one must be needed to make the translation possible. Before suggesting an addition, make sure the concept truly doesn't exist: show the `search` and `widen` queries you tried.
 
+**No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
+
 ### Heading line (exact)
 
 ```

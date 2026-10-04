@@ -399,6 +399,7 @@ def cmd_run(args, cfg: LoopConfig):
                 log(f"loop: --max-batches {args.max_batches} reached; next run resumes at batch {batch_id}")
                 break
             processed += 1
+            batch_started = time.monotonic()
             if prefetch is not None:
                 prefetch.join()  # the previous batch's prefetch of this batch's needs
                 prefetch = None
@@ -452,16 +453,79 @@ def cmd_run(args, cfg: LoopConfig):
                 entry["throttle_after_migration"] = throttle_stats()
                 save_state(state)
 
-            row = inspector.inspect(batch_id, rows, min_finished=args.min_finished, log=log)
-            entry["inspection"] = {"decision": row["decision"], "reason": row["reason"],
-                                   "add": row["add_total"], "refine": row["refine_total"]}
+            # time and cost first, so the inspector's CSV row carries them
+            minutes = (time.monotonic() - batch_started) / 60
+            cost = batch_cost(batch_id, entry, cfg)
+            entry["wall_minutes"] = round(minutes, 1)
+            entry["cost_usd"] = cost
             save_state(state)
+            row = inspector.inspect(batch_id, rows, min_finished=args.min_finished, log=log, entry=entry)
+            entry["inspection"] = {"decision": row["decision"], "reason": row["reason"],
+                                   "add": row["add_total"], "refine": row["refine_total"],
+                                   "accepted_add": row["accepted_add_total"],
+                                   "accepted_refine": row["accepted_refine_total"]}
+            save_state(state)
+            log(f"loop: batch {batch_id} took {minutes:.1f} min, measured cost ${cost['total']:.2f} "
+                f"(translators ${cost['translators']:.2f}, migration ${cost['migration']:.2f}; need extraction "
+                f"not metered)")
             if row["decision"] == "stop":
                 state["stopped"] = {"batch": batch_id, "reason": row["reason"]}
                 save_state(state)
                 log(f"loop: early stop after batch {batch_id}")
                 break
+            over = []
+            if args.max_batch_minutes and minutes > args.max_batch_minutes:
+                over.append(f"{minutes:.1f} min > {args.max_batch_minutes} min")
+            if args.max_batch_usd and cost["total"] > args.max_batch_usd:
+                over.append(f"${cost['total']:.2f} > ${args.max_batch_usd}")
+            if over:
+                state["stopped"] = {"batch": batch_id, "reason": "budget: " + "; ".join(over)}
+                save_state(state)
+                log(f"loop: stopping after batch {batch_id} — over the per-batch limit ({'; '.join(over)})")
+                break
     cmd_status(args)
+
+
+# List prices per 1M tokens (input, cached input, output incl. reasoning), by
+# proxy model id. Gemini 3.5 Flash; Gemini 3.7 Flash at its introductory rate
+# (doubles 2027-01-01). Override with MODEL_PRICES='{"id": [in, cached, out]}'.
+MODEL_PRICES = {
+    "gemini-3.5-flash": (1.50, 0.15, 9.00),
+    "gemini-flash": (0.75, 0.075, 3.75),
+    "gemini-flash-high": (0.75, 0.075, 3.75),
+}
+
+
+def _price(model: str):
+    prices = dict(MODEL_PRICES)
+    if os.environ.get("MODEL_PRICES"):
+        prices.update({k: tuple(v) for k, v in json.loads(os.environ["MODEL_PRICES"]).items()})
+    return prices.get(model.rsplit("/", 1)[-1])
+
+
+def _usage_cost(u: dict, model: str) -> float:
+    p = _price(model)
+    if not p or not u:
+        return 0.0
+    return round((u.get("input", 0) * p[0] + u.get("cacheRead", 0) * p[1] + u.get("output", 0) * p[2]) / 1e6, 4)
+
+
+def batch_cost(batch_id: int, entry: dict, cfg: LoopConfig) -> dict:
+    """Measured cost of a batch at list prices: translators (this run's
+    rounds) plus every migration agent (each priced by the model it ran)."""
+    translators = _usage_cost(entry.get("translator_usage") or {}, cfg.model)
+    migration = 0.0
+    batch_dir = lf.MIGRATIONS_DIR / lf.batch_tag(batch_id)
+    if batch_dir.is_dir():
+        for path in batch_dir.rglob("usage.json"):
+            rel = path.as_posix()
+            model = cfg.migrator_model if ("/consolidate/" in rel or "/review/" in rel) else cfg.model
+            try:
+                migration += _usage_cost(json.loads(path.read_text(encoding="utf-8")), model)
+            except ValueError:
+                pass
+    return {"translators": round(translators, 2), "migration": round(migration, 2),
+            "total": round(translators + migration, 2)}
 
 
 def _prefetch(batch_id: int, rows: list, cfg: LoopConfig):
@@ -483,7 +547,8 @@ def cmd_status(args):
     for b, e in sorted(state["batches"].items(), key=lambda kv: int(kv[0])):
         insp = e.get("inspection") or {}
         print(f"  batch {b:>3}: translators {e.get('translator_counts', {})}, migration {e.get('migration', '-')}, "
-              f"glossary {e.get('glossary_version', '-')}, add {insp.get('add', '-')}, refine {insp.get('refine', '-')}, "
+              f"glossary {e.get('glossary_version', '-')}, add {insp.get('add', '-')}, refine {insp.get('refine', '-')} "
+              f"(accepted {insp.get('accepted_add', '-')}/{insp.get('accepted_refine', '-')}), "
               f"{insp.get('decision', 'in progress')}")
         for label in ("translator_usage", "migration_usage"):
             u = e.get(label)
@@ -506,6 +571,10 @@ def main(argv=None):
     p.add_argument("--min-finished", type=float, default=0.8, help="inspector's completion guard")
     p.add_argument("--no-dense", action="store_true", help="RAG without the embedding model")
     p.add_argument("--continue-after-stop", action="store_true")
+    p.add_argument("--max-batch-minutes", type=float, default=0,
+                   help="stop before the next batch if a batch took longer than this (wall time)")
+    p.add_argument("--max-batch-usd", type=float, default=0,
+                   help="stop before the next batch if a batch's measured cost exceeded this (list prices)")
     args = p.parse_args(argv)
     if args.command == "status":
         return cmd_status(args)

@@ -27,6 +27,8 @@ Standards:
 - **Coverage without sprawl.** Avoid both one symbol per phrase and over-general entries that hide negation, quantity, time, holder or epistemic status.
 - **Fidelity.** No entry may let a translator assert what a source doesn't say.
 
+**No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
+
 Every consolidated suggestion must end up named by at least one final op, including `reject`s.
 
 Write `/output/review.jsonl` (format in `migration_ops.md`), and optionally `/output/rag_hints.json`. Write decisions, not documentation: approve good drafts as they are, and keep reasons to one line. Finish by writing the file.

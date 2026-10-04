@@ -22,4 +22,6 @@ You can search more with `node /kit/rag.mjs search "<meaning>"` / `widen` / `ent
 3. **Prefer the general form.** One constructor with typed parameters beats several one-off symbols. A member family is several value `add`s.
 4. **Name the suggestion.** Every op's `suggestions` names the `C#S<k>` it answers, and every suggestion in your slice gets at least one op.
 
+**No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
+
 Write `/output/ops.jsonl` (one JSON op per line, per `migration_ops.md`). Finish by writing it.

@@ -304,7 +304,11 @@ class Retriever:
                     string_args.append(f'{name}="{literal}"')
         results = []
         for need in needs:
-            syms = [c["symbol"] for c in need.get("candidates") or []]
+            if not isinstance(need, dict):
+                continue
+            # candidates are records from /needs.json; an agent that builds its
+            # own needs list may pass plain symbol names instead
+            syms = [c.get("symbol", "") if isinstance(c, dict) else str(c) for c in need.get("candidates") or []]
             hit = [s for s in syms if s in used_words]
             row = coverage_rows.get(need.get("id", ""), "")
             declared = bool(row) and not re.search(r"\bunresolved\b", row, re.I)

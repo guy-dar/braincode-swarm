@@ -21,4 +21,6 @@ The glossary is at `/reference/glossary.md` (one table row per symbol) if you ne
 4. **Be compact.** One line per field, and the proposed record holds only the authored fields (`symbol`, `kind`, `category`, `signature`, `definition`, `not`, `aliases`, `expansion`). The drafters add detail.
 5. **Account for everything.** Every merged suggestion appears in exactly one block's `Sources`, or in "Not carried forward" with a reason.
 
+**No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
+
 Write `/output/consolidated_suggestions.md`, with header `# Consolidated suggestions — batch {{BATCH_ID}}` and blocks `### S1 | type: … | dimension: … | symbol|target: …`. Finish by writing it.

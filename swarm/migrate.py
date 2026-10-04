@@ -265,14 +265,24 @@ def evaluate_ops(ops: list, records: list, refs: list, batch_id: int, sources: d
     return out
 
 
+VALUE_IN_SYMBOL_RE = re.compile(r"(^|_)\d+(_|$)|\d+(gb|tb|mb|kg|km|min|h|plus)\b")
+
+
 def check_single_op(op: dict, records: list) -> str:
-    """'ok' or why this op alone wouldn't apply/validate against the glossary."""
+    """'ok' or why this op alone wouldn't apply/validate against the glossary,
+    plus a warning when a new value/composite symbol carries a value in its name."""
     try:
         new, _ = rec_mod.apply_ops(records, [op])
     except rec_mod.OpError as e:
         return f"cannot apply: {e}"
     errors = rec_mod.validate(new, previous=records)
-    return "ok" if not errors else "; ".join(errors[:4])
+    note = "ok" if not errors else "; ".join(errors[:4])
+    rec = op.get("record") if op.get("op") == "add" else None
+    if isinstance(rec, dict) and rec.get("kind") in ("value", "composite") \
+            and VALUE_IN_SYMBOL_RE.search(str(rec.get("symbol", "")).lower()):
+        note += ("; WARNING: the symbol bakes a value into its name; use measure/at_least/at_most/character_trait/"
+                 "requirement with an argument instead (proper names excepted)")
+    return note
 
 
 def install(new_records: list, batch_id: int, retriever, note: str, report: list = None) -> str:
@@ -319,6 +329,7 @@ def run_agent(stage_dir: Path, name: str, task: str, values: dict, model: str, i
         (work / "prompt.md").write_text(prompt, encoding="utf-8")
         scratch = work / "out"
         scratch.mkdir()
+        (work / "session").mkdir()
         uid, gid = utils.host_uid_gid() or (None, None)
         container = f"swarm-mig-{name}-{random.randint(1000, 9999)}"
         cmd = utils.build_docker_cmd(
@@ -326,7 +337,8 @@ def run_agent(stage_dir: Path, name: str, task: str, values: dict, model: str, i
             container_name=container, add_host=True, memory=memory,
             extra_mounts=[*mounts, (attach, "/attach"), (lf.DOC_FORMATS_DIR, "/doc_formats")]
             + ([(lf.KIT_DIR, "/kit")] if rag else []),
-            extra_env={"PI_JSON": "1", "RAG_PORT": cfg.rag_port})
+            extra_env={"PI_JSON": "1", "RAG_PORT": cfg.rag_port, "PI_SESSION_DIR": "/session"},
+            writable_mounts=[(work / "session", "/session")])
         proc, duration, usage = run_container_logged(cmd, container, timeout_s or cfg.migrator_timeout_s,
                                                      stage_dir / "progress.log")
         out_dir = stage_dir / "output"
@@ -335,6 +347,8 @@ def run_agent(stage_dir: Path, name: str, task: str, values: dict, model: str, i
         shutil.copytree(scratch, out_dir)
         (stage_dir / "stderr.log").write_text(proc.stderr or "", encoding="utf-8")
         (stage_dir / "usage.json").write_text(json.dumps(usage), encoding="utf-8")
+        from translate_batch import keep_session
+        keep_session(work / "session", stage_dir / "session.jsonl")   # full transcript (show_session.py)
     error = utils.last_error_line(proc.stderr or "") or ""
     return {"output": out_dir, "returncode": proc.returncode, "error": error, "duration_s": round(duration, 1),
             "usage": usage}

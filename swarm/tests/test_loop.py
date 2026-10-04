@@ -17,7 +17,8 @@ def loop_dirs(tmp_path, monkeypatch):
     for name, rel in (("TRANSLATIONS_DIR", "translations"), ("SUCCESS_DIR", "translations/successful"),
                       ("FAILED_DIR", "translations/failed"), ("SUGGESTIONS_DIR", "translator_suggestions"),
                       ("COUNTS_CSV", "translator_suggestions/suggestion_counts.csv"), ("RUNS_DIR", "runs"),
-                      ("PLAN_PATH", "runs/plan.jsonl")):
+                      ("PLAN_PATH", "runs/plan.jsonl"), ("STATE_PATH", "runs/loop_state.json"),
+                      ("PROVENANCE_PATH", "reference/glossary-provenance.jsonl")):
         monkeypatch.setattr(lf, name, tmp_path / rel)
     return tmp_path
 
@@ -172,26 +173,55 @@ class TestInspector:
         assert (row["add_prism"], row["refine_prism"], row["add_alfred"]) == (1, 1, 1)
         assert (row["translators_finished"], row["failed_translations"], row["successful_translations"]) == (3, 2, 1)
 
-    def test_stop_rule_thresholds_are_inclusive(self):
-        base = {"translators_planned": 30, "translators_finished": 30}
-        assert inspector.decide({**base, "add_total": 2, "refine_total": 5})[0] == "stop"
-        assert inspector.decide({**base, "add_total": 3, "refine_total": 0})[0] == "continue"
-        assert inspector.decide({**base, "add_total": 0, "refine_total": 6})[0] == "continue"
+    def test_accepted_counts_follow_provenance(self, loop_dirs):
+        rows = plan_rows(1, ["prism", "alfred"])
+        write_suggestion("1-1", "prism", GOOD_SUGGESTIONS)
+        write_suggestion("1-2", "alfred", "### S1 | type: add | dimension: vocabulary-member | symbol: sponge\n"
+                                          "### S2 | type: add | dimension: vocabulary-member | symbol: soap\n")
+        events = [
+            {"batch": 1, "op": "add", "ids": ["v19/x/sponge"], "suggestions": ["1-2#S1", "1-1#S1"]},
+            {"batch": 1, "op": "update", "ids": ["v19/x/y"], "suggestions": ["1-1#S2", "1-1#S1"]},  # S1 counts once
+            {"batch": 1, "op": "reject", "ids": [], "suggestions": ["1-2#S2"]},                      # not accepted
+            {"batch": 2, "op": "add", "ids": ["v19/x/z"], "suggestions": ["1-2#S2"]},               # other batch
+        ]
+        lf.PROVENANCE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        lf.PROVENANCE_PATH.write_text("".join(json.dumps(e) + "\n" for e in events), encoding="utf-8")
+        row = inspector.count_batch(1, rows, entry={"migration": "installed", "cost_usd": {"total": 9.5}})
+        assert (row["add_total"], row["refine_total"]) == (3, 1)
+        assert (row["accepted_add_total"], row["accepted_refine_total"]) == (2, 1)
+        assert (row["accepted_add_prism"], row["accepted_refine_prism"], row["accepted_add_alfred"]) == (1, 1, 1)
+        assert (row["ops_add"], row["ops_update"], row["accepted_pct"]) == (1, 1, 75.0)
+        assert (row["migration_status"], row["cost_usd"]) == ("installed", 9.5)
+
+    def test_stop_rule_uses_accepted_counts_and_is_inclusive(self):
+        base = {"translators_planned": 30, "translators_finished": 30, "migration_status": "installed",
+                "add_total": 40, "refine_total": 40}
+        assert inspector.decide({**base, "accepted_add_total": 2, "accepted_refine_total": 5})[0] == "stop"
+        assert inspector.decide({**base, "accepted_add_total": 3, "accepted_refine_total": 0})[0] == "continue"
+        assert inspector.decide({**base, "accepted_add_total": 0, "accepted_refine_total": 6})[0] == "continue"
 
     def test_completion_guard_blocks_stop(self):
         decision, reason = inspector.decide({"translators_planned": 30, "translators_finished": 20,
-                                             "add_total": 0, "refine_total": 0})
+                                             "migration_status": "installed",
+                                             "accepted_add_total": 0, "accepted_refine_total": 0})
         assert decision == "continue" and "20/30" in reason
+
+    def test_failed_migration_blocks_stop(self):
+        decision, reason = inspector.decide({"translators_planned": 30, "translators_finished": 30,
+                                             "migration_status": "rejected",
+                                             "accepted_add_total": 0, "accepted_refine_total": 0})
+        assert decision == "continue" and "not installed" in reason
 
     def test_csv_upserts_one_row_per_batch(self, loop_dirs):
         rows = plan_rows(1, ["prism"])
-        inspector.inspect(1, rows, log=lambda m: None)
-        inspector.inspect(1, rows, log=lambda m: None)
-        inspector.inspect(2, plan_rows(2, ["prism"]), log=lambda m: None)
+        inspector.inspect(1, rows, log=lambda m: None, graphs=False)
+        inspector.inspect(1, rows, log=lambda m: None, graphs=False)
+        inspector.inspect(2, plan_rows(2, ["prism"]), log=lambda m: None, graphs=False)
         with lf.COUNTS_CSV.open(encoding="utf-8") as fh:
             data = list(csv.DictReader(fh))
         assert [d["batch"] for d in data] == ["1", "2"]
-        assert {"add_prism", "refine_thoughttrace", "decision"} <= set(data[0])
+        assert {"add_prism", "refine_thoughttrace", "accepted_add_prism", "ops_merge", "cost_usd",
+                "decision"} <= set(data[0])
 
 
 class TestDockerCmd:
@@ -218,15 +248,15 @@ class TestMigratorEvaluate:
 
     def add_op(self):
         return {"op": "add", "suggestions": ["C#S1"], "record": {
-            "symbol": "group_size", "kind": "constructor",
-            "signature": "TERM group_size(group: STRING, count: NUMBER) -> TERM", "definition": "Group size."}}
+            "symbol": "zz_test_group_size", "kind": "constructor",
+            "signature": "TERM zz_test_group_size(group: STRING, count: NUMBER) -> TERM", "definition": "Group size."}}
 
     def test_valid_ops_and_hints(self):
         result = self.run([self.add_op(), {"op": "reject", "suggestions": ["C#S2"], "reason": "fine as is"}],
-                          hints={"aliases": {"v19/support/group_size": ["how many"]},
-                                 "related": {"v19/support/group_size": ["v19/support/requirement"]}})
+                          hints={"aliases": {"v19/support/zz_test_group_size": ["how many"]},
+                                 "related": {"v19/support/zz_test_group_size": ["v19/support/requirement"]}})
         assert result["ok"] and not result["soft"]
-        rec = next(r for r in result["new_records"] if r["symbol"] == "group_size")
+        rec = next(r for r in result["new_records"] if r["symbol"] == "zz_test_group_size")
         assert rec["aliases"] == ["how many"] and rec["related"] == ["v19/support/requirement"]
         assert rec["shared_rules"] == ["v19/rule/support-primitives-general"]
 
@@ -370,11 +400,11 @@ class TestTwoStageMigration:
         from glossary import records
         sources = migrate.source_map({"M1": MERGED_OK})
         op = {"op": "add", "suggestions": ["M1#S1"], "record": {
-            "symbol": "group_size", "kind": "constructor",
-            "signature": "TERM group_size(count: NUMBER) -> TERM", "definition": "Group size."}}
+            "symbol": "zz_test_group_size", "kind": "constructor",
+            "signature": "TERM zz_test_group_size(count: NUMBER) -> TERM", "definition": "Group size."}}
         result = migrate.evaluate_ops([op], records.load(), [{"ref": "M1#S1", "type": "add"}], 1, sources=sources)
         assert result["ok"] and not result["soft"]
-        entry = next(e for e in result["report"] if e["target"] == "v19/support/group_size")
+        entry = next(e for e in result["report"] if e["target"] == "v19/support/zz_test_group_size")
         assert entry["translator_ids"] == ["1-1", "1-2"]
 
 
@@ -423,3 +453,20 @@ class TestSpeedups:
         for heading in [l for l in src.replace("\r\n", "\n").splitlines() if l.startswith("## ") and "17." not in l]:
             assert heading in out
         assert "```ebnf" in out and out.count("```braincode") == src.count("```braincode")
+
+
+def test_context_log_is_counted_and_moved(tmp_path):
+    import translate_batch
+    session = tmp_path / "session"
+    session.mkdir()
+    (session / translate_batch.CONTEXT_LOG_NAME).write_text(
+        '{"event": "truncated", "chars": 51000}\n'
+        '{"event": "compacted", "tokens_before": 72000, "tokens_after": 48000,'
+        ' "usage": {"input": 20000, "output": 900, "reasoning": 100}}\n'
+        'not json\n', encoding="utf-8")
+    dest = tmp_path / "logs" / "1-1-attempt1.context.jsonl"
+    out = translate_batch.collect_context_log(session, {"calls": 10, "input": 5, "output": 7}, dest)
+    assert (out["calls"], out["input"], out["output"], out["reasoning"]) == (11, 20005, 907, 100)
+    assert (out["compactions"], out["truncated_tool_results"]) == (1, 1)
+    assert dest.exists() and not (session / translate_batch.CONTEXT_LOG_NAME).exists()
+    assert not any(session.rglob("*.jsonl"))   # never mistaken for a pi session on resume

@@ -16,7 +16,9 @@ Normally driven by loop.py; standalone for re-running one batch:
     python translate_batch.py --batch 3
 """
 import argparse
+import contextlib
 import json
+import os
 import random
 import re
 import shutil
@@ -211,8 +213,81 @@ CONTINUE_PROMPT = (
     "anything you already wrote is still in /output. Continue from where you stopped. Don't redo finished work. "
     "Make sure /output/translation.md (and /output/suggestions.md if the translation failed) are complete and in "
     "the required format before you end.")
+# Context limits, applied by the harness's context-limits.ts extension:
+# every tool result is cut to TOOL_RESULT_MAX_CHARS (whole-category glossary
+# greps were 28-51k characters, re-sent on every later turn), and before a
+# model call whose context is over COMPACT_AT (estimated) tokens the older
+# turns are replaced by a summary; the first message (spec, retrieval,
+# formats) stays verbatim and the latest KEEP_RECENT_TOKENS stay as they are.
+# The first message alone is ~27-38k tokens, so each compaction folds ~20k+.
+TOOL_RESULT_MAX_CHARS = int(os.environ.get("TOOL_RESULT_MAX_CHARS", 8000))
+COMPACT_AT = int(os.environ.get("TRANSLATOR_COMPACT_AT", 70000))
+KEEP_RECENT_TOKENS = int(os.environ.get("TRANSLATOR_KEEP_RECENT_TOKENS", 12000))
+# The extension logs each compaction (with the summary call's usage) here;
+# .log, not .jsonl, so it never looks like a pi session to the resume check.
+CONTEXT_LOG_NAME = "context-limits.log"
+CONTEXT_LIMITS_ENV = {"PI_TOOL_RESULT_MAX_CHARS": TOOL_RESULT_MAX_CHARS, "PI_COMPACT_AT": COMPACT_AT,
+                      "PI_KEEP_RECENT_TOKENS": KEEP_RECENT_TOKENS, "PI_CONTEXT_LOG": f"/session/{CONTEXT_LOG_NAME}"}
 NEEDS_CACHE_DIR = lf.RUNS_DIR / "needs_cache"
 TRANSLATOR_LOG_DIR = lf.RUNS_DIR / "translator_logs"   # live per-attempt progress (turns, tools, tokens)
+SESSIONS_DIR = lf.RUNS_DIR / "translator_sessions"     # full pi transcripts, one per translator
+
+
+def collect_context_log(session_dir: Path, used: dict, dest: Path) -> dict:
+    """Fold the context-limits extension's log of one attempt into its usage:
+    the compaction summary calls (tokens and calls), plus counts of
+    compactions and truncated tool results. The log is moved to `dest` (next
+    to the progress log), so the next attempt starts a fresh one."""
+    src = session_dir / CONTEXT_LOG_NAME
+    out = {k: used.get(k, 0) for k in ("calls", "input", "cacheRead", "output", "reasoning")}
+    out.update(compactions=0, truncated_tool_results=0)
+    if not src.exists():
+        return out
+    for line in src.read_text(encoding="utf-8", errors="replace").splitlines():
+        try:
+            e = json.loads(line)
+        except ValueError:
+            continue
+        if e.get("event") == "truncated":
+            out["truncated_tool_results"] += 1
+        elif e.get("event") == "compacted":
+            out["compactions"] += 1
+            u = e.get("usage") or {}
+            if u:
+                out["calls"] += 1
+                for k in ("input", "cacheRead", "output", "reasoning"):
+                    out[k] += u.get(k) or 0
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(src), dest)
+    return out
+
+
+def keep_session(session_dir: Path, dest: Path) -> None:
+    """Save pi's session transcript(s) from a work dir that is about to be
+    deleted: every message the model received and sent, tool calls and tool
+    results included (view with show_session.py). Resumed attempts continue
+    the same session, so one file normally holds all attempts."""
+    files = sorted(session_dir.rglob("*.jsonl")) if session_dir.is_dir() else []
+    if not files:
+        return
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with dest.open("w", encoding="utf-8") as out:
+        for f in files:
+            out.write(f.read_text(encoding="utf-8", errors="replace"))
+
+
+@contextlib.contextmanager
+def translator_workdir(tid: str):
+    """A translator's temporary work dir; its session transcript is kept
+    (runs/translator_sessions/<tid>.jsonl) however the translator ends."""
+    with tempfile.TemporaryDirectory(prefix=f"tr-{tid}-") as work:
+        try:
+            yield work
+        finally:
+            try:
+                keep_session(Path(work) / "session", SESSIONS_DIR / f"{tid}.jsonl")
+            except OSError:
+                pass
 
 
 def build_attachments(dest: Path, ref_snapshot: Path, work: Path) -> Path:
@@ -328,7 +403,7 @@ def process_translator(row: dict, cfg, retriever, image: str, ref_snapshot: Path
             "glossary_version": glossary_version, "glossary_sha": result["glossary_sha"], "model": cfg.model,
             "needs_count": len(needs), "needs_method": result["needs_method"]}
 
-    with tempfile.TemporaryDirectory(prefix=f"tr-{tid}-") as work:
+    with translator_workdir(tid) as work:
         work = Path(work)
         (work / "trajectory.txt").write_text(numbered, encoding="utf-8")
         (work / "item_raw.txt").write_text(content, encoding="utf-8")
@@ -363,7 +438,7 @@ def process_translator(row: dict, cfg, retriever, image: str, ref_snapshot: Path
                 prompt_path.write_text(prompt + feedback, encoding="utf-8")
             container = f"swarm-tr-{tid}-{attempt}-{random.randint(1000, 9999)}"
             env = {"TRANSLATOR_ID": tid, "DATASET": dataset, "BATCH_ID": batch_id, "RAG_PORT": cfg.rag_port,
-                   "PI_JSON": "1", "PI_SESSION_DIR": "/session"}
+                   "PI_JSON": "1", "PI_SESSION_DIR": "/session", **CONTEXT_LIMITS_ENV}
             if resume:
                 env["PI_RESUME"] = "1"
             cmd = utils.build_docker_cmd(
@@ -376,6 +451,8 @@ def process_translator(row: dict, cfg, retriever, image: str, ref_snapshot: Path
                 extra_env=env)
             proc, duration, used = run_container_logged(cmd, container, cfg.timeout_s,
                                                         TRANSLATOR_LOG_DIR / f"{tid}-attempt{attempt}.log")
+            used = {**used, **collect_context_log(session_dir, used,
+                                                  TRANSLATOR_LOG_DIR / f"{tid}-attempt{attempt}.context.jsonl")}
             for key, value in used.items():
                 usage[key] = usage.get(key, 0) + value
             status, body, sugg, problem = validate_output(scratch)

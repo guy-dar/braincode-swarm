@@ -1,8 +1,8 @@
 # BrainCode glossary
 
-Language 19.0.0-draft.1 · glossary 19.0.0-draft.1+g3 · 498 live records
+Language 19.0.0-draft.1 · glossary 19.0.0-draft.1+g14 · 685 live records (2 deprecated, listed last)
 
-Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a table cell (`<br>` = line break, `\|` = a literal pipe) and run `python -m glossary.import_md`. To deprecate, set status to `Deprecated` and give a reason in `not`; never delete a row. Signatures: `?` optional, `A / B` alternatives, `void` no result. `not` is the nearest wrong reading of the symbol.
+Rendered from glossary.jsonl (the source of truth); see swarm/README.md for how to edit it. In cells, `<br>` is a line break and `\|` a literal pipe. To deprecate, set status to `Deprecated` and give a reason in `not`; never delete a row. Signatures: `?` optional, `A / B` alternatives, `void` no result. `not` is the nearest wrong reading of the symbol.
 
 ## Shared rules
 
@@ -17,7 +17,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | rule_composites_general | rule | The following are acyclic expansion templates, not inline BrainCode syntax. Each left-hand name is a TERM constructor; translate an application with `TERM <name>(...) -> <handle> : TERM`. Its output may fill a TERM-valued field. A bare occurrence of the old symbol in a STRING content/constraint field is deprecated. Nested applications on the right must be emitted as separate TERM bindings when expanded into BrainCode.<br><br>Parameters denoted `$name` on the right are copied from the corresponding typed argument on the left. Fixed strings are explicit semantic atoms. There is no silent default parameter value.<br><br>The family names are retained for continuity, not treated as independent primitives. Fixed composite constructors can have zero arguments because their full decomposition is published here. This is different from an unexplained empty call.<br><br>`topic_jazz_piano` and `topic_classical_piano` remain established genre/instrument subject labels; when the source reasons separately about instrument and genre, use a decomposed TERM rather than pretending the label expresses that relationship. Named works/products remain exact referents. `topic_greatest_cricketer_of_all_time` leaves the criterion of greatness unresolved; it does not identify a winner or select an unstated metric.<br><br>`constraint_budget_limited` preserves a qualitative restriction without inventing a monetary ceiling. `constraint_17_plus` remains Needs clarification: the source conflates numeric age threshold and unspecified mature-rating systems. Use a numeric age requirement only if the source actually specifies it; do not convert every mature rating to age 17.<br><br>`event_*` constructors describe narrative content. Their result is TERM, never EVENT. `char_*` constructors describe a character, not an asserted real-world person. `chg_*` describes an intended change; `assert_*` describes an expected test condition, not test success. |
 | rule_examples_general | rule | These are complete documents, not incomplete fragments. They use the supplemental entries in Section 8. The examples have been reviewed for the documented contracts; no implemented BrainCode parser has verified them. |
 | rule_operations_general | rule | All listed source operations are retained. Operation symbols are callable vocabulary, not arbitrary argument values. Their natural-language aliases appear in the inventory. Parameter types include category checks; a name accepted by one category is not automatically accepted by another.<br><br>Every result-producing operation binds its result in REQUEST mode. All external operations may fail; failure does not create the declared successful result. Runtime failure handling is outside this glossary. TRACE represents attempts/failures without manufacturing successful runtime values.<br><br><br><br>These explicit signatures are proposed migration decisions where the source had only a gloss; they are not claims that an existing runtime adapter supports them. Additional attributes require a reviewed operation profile. No `custom_general_<predicate>` operation is automatically legal. |
-| rule_review_points | rule | - `cap_gb` and `cap_tb`: retain source wording for audit; resolve decimal versus binary scale before acceptance.<br><br>- `constraint_17_plus`: resolve exact age threshold versus rating system before acceptance.<br><br>- `dom_sgi`: the source names an acronym without resolving its referent. Preserve it, but flag semantically dependent translations until context/review resolves it. No expansion of the acronym is invented here.<br><br>- Bare money symbols, locale aliases, warm/hot, and ranking phrases are contextual aliases. Matching a token alone is not enough to normalize meaning.<br><br>- The source's “all previously listed members remain valid” wording is replaced by the explicit inventory here. Unavailable historical entries are not guessed.<br><br>- Source examples using missing symbols or silently losing constraints are replaced by the complete examples above. This file does not preserve those defects as normative demonstrations.<br><br>- The revised specification's own illustrative trace/claim profiles remain examples, not a claim that this migration covers every possible reasoning construct.<br><br>This is a migrated seed, not a production-certified release. Structural and inventory checks do not replace a parser or semantic evaluation. Publishing requires resolution of entries marked Needs clarification and review of the proposed signatures/composite expansions. |
+| rule_review_points | rule | - `cap_gb` and `cap_tb`: retain source wording for audit; resolve decimal versus binary scale before acceptance.<br><br>- `constraint_17_plus`: resolve exact age threshold versus rating system before acceptance.<br><br>- `dom_sgi`: the source names an acronym without resolving its referent. Preserve it, but flag semantically dependent translations until context/review resolves it. No expansion of the acronym is invented here.<br><br>- Bare money symbols, locale aliases, warm/hot, and ranking phrases are contextual aliases. Matching a token alone is not enough to normalize meaning.<br><br>- The source's “all previously listed members remain valid” wording is replaced by the explicit inventory here. Unavailable historical entries are not guessed.<br><br>- Source examples using missing symbols or silently losing constraints are replaced by the complete examples above. This file does not preserve those defects as normative demonstrations.<br><br>- The revised specification's own illustrative trace/claim profiles remain examples, not a claim that this migration covers every possible reasoning construct.<br><br>This is a migrated seed, not a production-certified release. Structural and inventory checks do not replace a parser or semantic evaluation. Publishing requires resolution of entries marked Needs clarification and review of the proposed signatures/composite expansions.<br><br>- Resolved 2026-10-04 (human decision): `cap_gb`, `cap_tb`, `constraint_17_plus` and `dom_sgi` keep their current definitions and are no longer marked Needs clarification. |
 | rule_search_web_attributes | rule | `search_web` optional attributes: `availability`, `category`, `color`, `cuisine`, `currency`, `gender`, `genre`, `location`, `platform`, `ram_unit`, `reservation_availability`, `shape`, `size`, `rank` is **not** accepted; ranking belongs to sort. Numeric filters: `max_price`, `min_ram`, `min_rating`; `trending` is BOOL. All other listed filters are STRING with matching categories. Price requires currency and RAM requires a capacity unit. No unstated default scale or source is inferred.<br><br>Search ranking uses only rank_* for rank_field and dir_* for rank_direction, not any arbitrary search-value member. Product category/genre/availability similarly accept only their own subfamilies. |
 | rule_supplemental_general | rule | These entries were used in old examples or are needed by the migrated examples; they are explicitly declared here rather than assumed to exist.<br><br>Supplementary aliases are empty unless explicitly stated. The same static restrictions and RECORD signature conversion as Section 3 apply. No broader domain expansion is intended. |
 | rule_support_primitives_general | rule | Each entry below is a proposed primitive constructor returning TERM, with stable ID `v19/support/<name>`. Literals in expansions are exact identifiers or atomic values, not hidden sentences. Optional arguments are absent unless supported. All constructors are pure descriptions and assert no occurrence or truth. The positive application is the expansion table in Section 5; the contrast column identifies an excluded interpretation.<br><br>Counts and indices are nonnegative integers, with preserve index at least 1. Amounts are nonnegative. `minimum_per_period.class` uses semantic-category-value; period and temporal duration units use the temporal subset of duration-unit-value. `activity` verbs are atomic identifiers with their ordinary role-specific meaning as specified in each composite expansion; this primitive is for described content, not a route to automatic executable custom operations. A new ambiguous verb requires its own reviewed definition. |
@@ -26,12 +26,14 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 
 | symbol | kind | signature | definition | not | aliases | expansion | status |
 |---|---|---|---|---|---|---|---|
+| press_key | operation | (target: REF[STRING], key: STRING) -> void | Press a specific keyboard key on the designated UI element. target must identify an interactive web element. | type_text (which enters text character strings into an input field) | press_enter, send_keys, key_press, hit_key |  | Accepted |
 | add_to_cart | operation | (target: LIST[REF[STRING]]) -> void | Add the explicitly selected items. Does not pay or place an order. |  |  |  | Adapted |
 | apply_filters | operation | (target: REF[STRING], criteria: LIST[TERM]) -> void | Apply the listed filters to an existing UI. Not repeated evidence of a search already represented. |  |  |  | Adapted |
 | check_reservation_availability | operation | (target: STRING, cuisine?: STRING, currency?: STRING, location?: STRING, max_price?: NUMBER) -> BOOL | Check current availability under supplied filters. A positive result does not make a reservation. |  | check reservation availability |  | Adapted |
 | chill | operation | (target: REF[STRING], destination: STRING) -> REF[STRING] | Chill using the stated resource; same identity. |  |  |  | Adapted |
 | click | operation | (target: REF[STRING]) -> void | Activate the selected UI element. Requires its identity, not an invented selector. |  |  |  | Adapted |
 | close | operation | (target: REF[STRING] / TERM) -> void | Close an articulated receptacle or appliance door. target must be a closable entity. |  | close_receptacle, close_door |  | Accepted |
+| drop | operation | (target: REF[STRING] / TERM) -> void | Drop or release the held target object from the agent's hand. | place (which requires a destination receptacle) | drop, let go, put down |  | Accepted |
 | extract | operation | (target: LIST[REF[STRING]], limit: NUMBER) -> LIST[REF[STRING]] | First limit results, preserving order and identity; limit is a nonnegative integer; limit=1 is still a list |  |  |  | Retained |
 | face | operation | (target: STRING / TERM) -> void | Orient agent body/camera directly toward a target entity. target must be a perceptible entity. |  | orient_towards |  | Accepted |
 | heat | operation | (target: REF[STRING], destination: STRING) -> REF[STRING] | Heat using the stated resource; same identity. Selecting a warm object does not imply heating it. |  |  |  | Adapted |
@@ -53,7 +55,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | select_option | operation | (target: REF[STRING], value: STRING) -> void | Select an option from a dropdown or select menu element. target must be a select element. |  | choose_option, choose_dropdown, pick_option |  | Accepted |
 | send_email | operation | (recipient: STRING, content: STRING, tone?: STRING) -> void | Send supplied exact message content to the identified recipient. A requested message purpose is not already a composed message. |  | email |  | Adapted |
 | send_message | operation | (recipient: STRING, content: STRING, tone?: STRING) -> void | Send supplied exact content through the specified message context. If the channel is unresolved, report it. |  | text |  | Adapted |
-| slice | operation | (target: REF[STRING]) -> REF[STRING] | Slice the selected material, preserving its tracked aggregate identity. Individually addressed pieces need another accepted profile. |  | chop, cut |  | Adapted |
+| slice | operation | (target: REF[STRING] / TERM) -> REF[STRING] | Slice the selected material or described term, preserving its tracked aggregate identity. |  | chop, cut |  | Adapted |
 | sort | operation | (target: LIST[REF[STRING]], rank_direction: STRING, rank_field: STRING) -> LIST[REF[STRING]] | Request ordering of selected results. Preserve member identity; this is not a claim that order was observed. |  | rank, order by |  | Adapted |
 | stand_up | operation | () -> void | Return agent posture to standard upright standing position. agent must be in a non-standing posture. |  | stand |  | Accepted |
 | turn | operation | (direction: STRING) -> void | Rotate agent body/view orientation. direction is typically left, right, or angle. |  | rotate, turn_around |  | Accepted |
@@ -61,11 +63,13 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | type_text | operation | (target: REF[STRING], text: STRING) -> void | Type text into a designated input field, text box, or editable area. target must identify an editable element. |  | enter_text, input_text, input_string |  | Accepted |
 | wait | operation | (duration?: NUMBER) -> void | Pause execution for a duration or cycle. duration in seconds or ticks. |  | idle, pause |  | Accepted |
 | walk | operation | (destination: STRING / TERM, relation?: STRING) -> void | Locomote towards a target destination or landmark. destination must identify a valid entity or location. |  | move_to, go_to, navigate_to |  | Accepted |
+| walk_backward | operation | (modifier?: STRING) -> void | Walk backward. Optional modifier can specify the degree or minor distance of movement. | walk (which moves forward toward a destination) | move backward, step back |  | Accepted |
 
 ## Speech acts
 
 | symbol | kind | signature | definition | not | aliases | expansion | status |
 |---|---|---|---|---|---|---|---|
+| apologize | speech_act | UTTER apologize(target?: CLAIM / TERM) | Speech act expressing apology or regret for an outcome or target. | decline (which is refusing) | apologize, apology, sorry |  | Accepted |
 | acknowledge | speech_act | UTTER acknowledge(target: CLAIM / TERM) | Acknowledge receipt/awareness; does not imply agreement. |  |  |  | Adapted |
 | ask | speech_act | UTTER ask(target: TERM, or a sufficiently precise topic: STRING / TERM) | Request information/advice; not an assertion of an answer. |  | ask, how should |  | Adapted |
 | confirm | speech_act | UTTER confirm(target: CLAIM) | Confirm the proposition; its evidence/status remains explicit. |  |  |  | Adapted |
@@ -83,39 +87,75 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|---|
 | activity | constructor | TERM activity(verb: STRING, actor?: STRING, object?: STRING / TERM, location?: STRING, instrument?: STRING, purpose?: TERM) -> TERM | Description of the action and its roles; instrument identifies means, purpose identifies an intended end | Does not execute or assert it |  |  | Retained |
 | aesthetic | constructor | TERM aesthetic(period: STRING, style: STRING) -> TERM | A stylistic description with an explicit period | Not a character's age or production date |  |  | Retained |
+| at_least | constructor | TERM at_least(measure: TERM) -> TERM | A lower bound: the constrained value is greater than or equal to the given measure (or number term). Use inside requirement(value=...). | an exact value; a strict 'more than' only when the source says so explicitly | at least, minimum, or more, no less than, plus |  | Accepted |
+| at_most | constructor | TERM at_most(measure: TERM) -> TERM | An upper bound: the constrained value is less than or equal to the given measure (or number term). Use inside requirement(value=...). | an exact value or a target to aim for | at most, maximum, up to, no more than, under |  | Accepted |
+| block_evaluation | constructor | TERM block_evaluation(block: STRING / TERM, maturity?: STRING, potential?: STRING, quality?: STRING, rank?: NUMBER, traps?: STRING) -> TERM | Constructs a structured evaluation, categorization, or ranking descriptor for a geological exploration block. | an external execution action or generic list sorting operation (use sort) | block assessment, block ranking, block rating, block categorization |  | Accepted |
+| calculation | constructor | TERM calculation(inputs: LIST[TERM], operation: STRING, result?: TERM) -> TERM | Constructs a descriptive representation of an arithmetic or algorithmic calculation step with inputs, operation identifier, and optional resulting value. | an executed runtime action or factual claim of outcome | math_operation, compute_step |  | Accepted |
+| captioned_figure | constructor | TERM captioned_figure(caption: STRING, label: STRING, content?: TERM) -> TERM | Constructs a descriptor for a captioned figure, photo, or visual diagram within a structured document. | an executed visual observation or UI image asset | figure, image_caption, photograph, captioned_image |  | Accepted |
 | change_property | constructor | TERM change_property(property: STRING, source: STRING, target: STRING) -> TERM | Require target to inherit the property value from source | Not an arbitrary code patch |  |  | Retained |
 | character | constructor | TERM character(name: STRING, series?: STRING) -> TERM | Constructs a descriptive representation of a fictional or narrative character. name specifies the character identifier. |  | fictional_character |  | Accepted |
 | character_trait | constructor | TERM character_trait(property: STRING, value: STRING / NUMBER) -> TERM | A character attribute | Not a claim about a real person |  |  | Retained |
 | chg_modify_code | constructor | TERM chg_modify_code(target: STRING, file: STRING / TERM, revision: TERM) -> TERM | Constructs a structured change specification describing code file modifications. software engineering revision term. |  | modify_source_code |  | Accepted |
+| cli_command | constructor | TERM cli_command(executable: STRING, args?: LIST[STRING] / LIST[TERM]) -> TERM | Constructs a structured representation of a command-line invocation with executable and optional arguments or flags. | an executed external action or process run (pure description) | command_line, shell_command, cli_invocation |  | Accepted |
+| code_entity | constructor | TERM code_entity(file?: STRING / TERM, kind: STRING, name: STRING, project?: STRING) -> TERM | Constructs a structured descriptor for a source code entity such as a function, method, class, module, or source file within a project. | an executed runtime call or file system operation | code_function, source_file, code_symbol |  | Accepted |
+| compression | constructor | TERM compression(target?: STRING / TERM, algorithm: STRING, format?: STRING) -> TERM | Constructs a descriptive representation of a data or package compression configuration specifying optional target platform or file, compression algorithm, and optional format. | an executed archive extraction/compression action or document layout format | compression_algorithm, compress_with, compression_format |  | Accepted |
 | conditional | constructor | TERM conditional(condition: TERM, consequence: TERM) -> TERM | Constructs a structured conditional proposition term connecting a condition and consequence. descriptive logic structure. |  | if_then |  | Accepted |
+| config_overlay | constructor | TERM config_overlay(files: LIST[STRING] / LIST[TERM], reverse_order?: BOOL) -> TERM | Constructs a specification of configuration file overlay precedence and ordering across multiple configuration files. | a general list sorting operation or spatial layering | overlay_config, config_precedence, overlay_order |  | Accepted |
+| config_setting | constructor | TERM config_setting(option: STRING, section: STRING, value: STRING / NUMBER / BOOL / TERM) -> TERM | Constructs a structured representation of a configuration key-value setting within an identified section. | an active runtime configuration state or environment setting | ini_setting, config_option, configuration_setting |  | Accepted |
 | conjunction | constructor | TERM conjunction(items: LIST[TERM]) -> TERM | All described components apply | Does not imply temporal order |  |  | Retained |
 | decision | constructor | TERM decision(activity: TERM) -> TERM | A decision whose content is the described activity | Not proof it was carried out |  |  | Retained |
 | dialogue | constructor | TERM dialogue(style: STRING) -> TERM | Constructs a description of conversational dialogue adhering to a style. descriptive conversational term. |  | conversation_style |  | Accepted |
+| distinguish | constructor | TERM distinguish(first: TERM, second: TERM, criterion?: STRING / TERM) -> TERM | Constructs a descriptive representation of discerning or differentiating between two entities, conditions, or behaviors along an optional criterion. | visual_contrast (optical contrast) or LINK contrast (rhetorical opposition between claims) | tell the difference, differentiate, distinguish between |  | Accepted |
+| document_section | constructor | TERM document_section(title: STRING, items?: LIST[TERM]) -> TERM | Constructs a structural document section descriptor with a section title and optional content items. | a complete document artifact class (use art_structured_report) | section, report_section, article_section |  | Accepted |
 | duration | constructor | TERM duration(amount: NUMBER, unit: STRING) -> TERM | Requested elapsed/calendar extent | Word/item counts are not time |  |  | Retained |
+| emits_light | constructor | TERM emits_light(source: STRING / TERM) -> TERM | Constructs a description of intrinsic light emission generated by an entity or light source. | reflected light (use reflects_light) or an electric appliance (use lamp) | emits light, generates light, gives off light |  | Accepted |
 | exclude | constructor | TERM exclude(item: STRING / TERM) -> TERM | Require absence of that content/item | Not a claim of observed absence |  |  | Retained |
 | footnote | constructor | TERM footnote(function: STRING, number: NUMBER) -> TERM | Constructs a footnote reference or citation marker descriptor. document formatting descriptor. |  | citation_note |  | Accepted |
+| geological_unit | constructor | TERM geological_unit(kind: STRING, depth_min?: TERM, depth_max?: TERM, lithology?: STRING, maturity?: STRING, quality?: STRING, role?: STRING) -> TERM | Constructs a descriptor for a geological formation, basin, layer, lithology, or petroleum system element with optional depth boundaries and characteristics. | an atomic geographic location (use location_spec) | geological formation, stratum, rock unit, reservoir unit, source rock |  | Accepted |
 | greeting | constructor | TERM greeting(recipient: STRING) -> TERM | Constructs a conversational salutation greeting descriptor. conversational discourse term. |  | salutation |  | Accepted |
+| group_size | constructor | TERM group_size(count: NUMBER, group?: STRING / TERM) -> TERM | The headcount or number of members in a specified group or party; count is a nonnegative integer. | minimum_per_period (a per-period minimum bound) or measure (measured quantities with units) | party_size, party of, number of guests, guest_count |  | Accepted |
+| historical_event | constructor | TERM historical_event(name: STRING, location?: STRING / TERM, period?: STRING / NUMBER) -> TERM | Constructs a descriptive representation of a historical event, conflict, or epoch. | an executed runtime event (EVENT) or past occurrence claim (use occurred) | historic_event, historical_conflict, war_event |  | Accepted |
+| illuminates | constructor | TERM illuminates(target: STRING / TERM, source: STRING / TERM) -> TERM | Constructs a description of directional illumination where a light source casts light onto a target body. | an ambient color state or reflection (use reflects_light) | illuminates, shines on, shining towards |  | Accepted |
 | include | constructor | TERM include(item: STRING / TERM) -> TERM | Require the identified content/item | Not permission to invent an instance in a recorded trace |  |  | Retained |
+| indicator | constructor | TERM indicator(condition: STRING / TERM, indicator_type?: STRING) -> TERM | Constructs a descriptive term representing a warning sign, behavioral marker, or red flag indicating an underlying condition or risk. | warning (a system alert claim relation) or color_red (a product color) | red flag, warning sign, behavioral marker, signal |  | Accepted |
+| interpersonal_stance | constructor | TERM interpersonal_stance(actor: STRING / TERM, stance: STRING, target?: STRING / TERM) -> TERM | Constructs a descriptive representation of an actor's interpersonal stance, level of commitment, or relational engagement toward a partner. | character_trait (fictional characters) or attitude (an asserted claim relation) | relational_commitment, interpersonal_behavior, relationship_stance |  | Accepted |
 | issue | constructor | TERM issue(project: STRING, number: NUMBER) -> TERM | Constructs an issue tracker ticket reference. issue tracker descriptor. |  | issue_ticket, bug_report |  | Accepted |
+| location_spec | constructor | TERM location_spec(address?: STRING, area?: STRING, city?: STRING, state?: STRING) -> TERM | Constructs a structured geographical location specification with regional and administrative qualifiers. | a fixed atomic location descriptor in location-name or a spatial relation | location_details, geographic_location |  | Accepted |
 | maximum_between_stops | constructor | TERM maximum_between_stops(activity: STRING, amount: NUMBER, unit: STRING) -> TERM | Upper bound on the stated activity between successive stops | Not a limit on total daily duration |  |  | Retained |
+| measure | constructor | TERM measure(amount: NUMBER, unit: STRING) -> TERM | A measured amount: a number with its unit symbol (a unit-category value such as unit_minute, cap_gb or curr_usd). Describes the amount only; asserts nothing. | a symbol with the number baked in (char_age_18, size_16gb); a unitless count (use the quantity argument) | amount of, size of, measured in |  | Accepted |
+| medical_condition | constructor | TERM medical_condition(condition: STRING, patient: STRING / TERM, severity?: STRING) -> TERM | Constructs a descriptive representation of a medical condition, pathology, or symptom profile. | an asserted factual attribution (use attribute_claim) or executed treatment | condition, symptom, pathology, diagnosis |  | Accepted |
 | minimum_per_period | constructor | TERM minimum_per_period(class: STRING, count: NUMBER, period: STRING) -> TERM | At least count members of class in each period | Not a minimum total over the whole artifact |  |  | Retained |
 | naming_pattern | constructor | TERM naming_pattern(description: STRING, context?: STRING) -> TERM | Constructs a descriptive naming or morphological pattern. used for rule-based or conventional naming schemes. |  | pattern_naming |  | Accepted |
+| negation | constructor | TERM negation(target: TERM) -> TERM | Constructs a descriptive semantic negation of a target descriptive proposition or condition term. | Check's runtime Boolean operator NOT or a speech-act decline | not, does not, negation, absence of |  | Accepted |
 | obligation | constructor | TERM obligation(actor: STRING / TERM, activity: TERM) -> TERM | Constructs a deontic obligation description requiring an actor to perform an activity. actor and activity specified. |  | duty, mandatory_activity |  | Accepted |
 | offer_help | constructor | TERM offer_help() -> TERM | Constructs a conversational proffer of assistance or support. conversational discourse term. |  | help_offer |  | Accepted |
+| outshines | constructor | TERM outshines(brighter: STRING / TERM, dimmer: STRING / TERM) -> TERM | Constructs a description of relative visual brightness where a brighter light source overpowers the perceived brightness of a dimmer object. | an absolute numeric brightness measurement | outshines, overpowers brightness, drowns out light |  | Accepted |
 | policy_document | constructor | TERM policy_document(title: STRING, audience?: STRING, constraints?: LIST[TERM]) -> TERM | Constructs a structured policy document representation. used for formal organizational guidelines. |  | policy_spec |  | Accepted |
 | policy_revision_request | constructor | TERM policy_revision_request(original_policy: CLAIM / TERM, inclusions: LIST[TERM]) -> TERM | Constructs a request to revise an existing policy with additional clauses. descriptive revision term. |  | policy_amendment |  | Accepted |
+| presentation_slide | constructor | TERM presentation_slide(number: NUMBER, title: STRING, content?: LIST[TERM]) -> TERM | Constructs a descriptor for a presentation slide with slide number, title, and optional content items. | a complete document artifact (use art_structured_report or art_plan) | slide, presentation slide, slide outline |  | Accepted |
 | preserve | constructor | TERM preserve(component: STRING, index: NUMBER) -> TERM | Keep the indexed component unchanged, using one-based indexing | Not preserve all components |  |  | Retained |
 | property_question | constructor | TERM property_question(property: STRING, subject: STRING / TERM) -> TERM | An open request for a property of a subject | Does not supply the property's value |  |  | Retained |
 | pull_request | constructor | TERM pull_request(project: STRING, number: NUMBER) -> TERM | Constructs a repository pull request reference. software repository reference. |  | pr |  | Accepted |
+| rate | constructor | TERM rate(denominator: TERM, numerator: TERM) -> TERM | Constructs a structured proportional rate or frequency relating a numerator measured quantity to a denominator reference quantity. | an asserted factual attribution (use attribute_claim) or bound constraint (use requirement) | per_unit, ratio |  | Accepted |
+| reconcile_code | constructor | TERM reconcile_code(entities: LIST[TERM], objective: STRING / TERM) -> TERM | Constructs a specification to reconcile multiple code entities or implementations to standardize their behavior. | a general file merge operation | reconcile_functions, standardize_behavior, reconcile_implementations |  | Accepted |
+| reflects_light | constructor | TERM reflects_light(target: STRING / TERM, source: STRING / TERM) -> TERM | Constructs a description of an optical reflection where a target surface or body reflects light emanating from a light source. | intrinsic light emission (use emits_light) | reflects, reflection of light, reflects sunlight |  | Accepted |
 | regression_case | constructor | TERM regression_case(framework: STRING, modifier: STRING, relation: STRING) -> TERM | A regression scenario specifying affected framework, condition and relation | Does not invent a passing test or exact implementation |  |  | Retained |
 | remove_literal | constructor | TERM remove_literal(text: STRING) -> TERM | Remove occurrences of that exact literal in the stated artifact | Not remove similar markup unless specified |  |  | Retained |
+| rental_vehicle | constructor | TERM rental_vehicle(category: STRING, model?: STRING) -> TERM | Constructs a descriptive representation of a rental vehicle or vehicle category. | an acquired physical vehicle reference or employee vehicle policy (use vehicle_allowance) | rental_car, hire_car, mystery_car |  | Accepted |
 | requirement | constructor | TERM requirement(property: STRING, value: STRING / NUMBER / BOOL / TERM) -> TERM | Specifies a required property constraint with an expected primitive or structured value. | Does not assert an existing artifact already satisfies it | constraint, property_requirement, structured_requirement |  | Retained |
+| self_protection | constructor | TERM self_protection(actor: STRING / TERM, domain: STRING, strategy?: STRING / TERM) -> TERM | Constructs a descriptive term representing an actor's self-protection practice, emotional boundary guarding, or coping strategy within a domain. | safe (a physical security container) or prohibited (a deontic rule) | guarding heart, emotional boundaries, protect oneself, coping strategy |  | Accepted |
 | sequence | constructor | TERM sequence(items: LIST[TERM]) -> TERM | Ordered described activities/content | Not unordered conjunction |  |  | Retained |
+| similarity | constructor | TERM similarity(target: STRING / TERM, dimension?: STRING / TERM) -> TERM | Constructs a descriptor representing comparative closeness or similarity to a target along a given dimension. | spatial proximity (use rank_distance or next_to) or an assertion of exact identity (use identity) | closest_to, similar_to, resembles |  | Accepted |
+| software_version | constructor | TERM software_version(branch?: STRING, project: STRING, version?: STRING) -> TERM | Constructs a descriptor for a software project version, release tag, or branch identifier. | an installed runtime package environment | repo_branch, git_branch, project_version |  | Accepted |
 | spatial_constraint | constructor | TERM spatial_constraint(relation: STRING, object: TERM, reference: TERM) -> TERM | Constructs a descriptive spatial constraint between an object and a reference landmark. relation must specify a spatial configuration. |  | spatial_relation |  | Accepted |
 | subject | constructor | TERM subject(kind: STRING, qualifier?: STRING / TERM, location?: STRING, time?: STRING) -> TERM | Subject matter with explicit qualifiers | Does not make a factual claim about it |  |  | Retained |
+| substitute | constructor | TERM substitute(original: STRING / TERM, replacement: STRING / TERM, purpose?: STRING / TERM) -> TERM | Constructs a descriptive representation of substituting an original entity or ingredient with a replacement alternative. | an executed change or runtime revision (use LINK revises) | substitute, substitution, alternative for, replace with |  | Accepted |
+| temporal_context | constructor | TERM temporal_context(activity: STRING / TERM, period?: STRING) -> TERM | Constructs a temporal or situational context descriptor specifying an ongoing process, evaluation phase, or historical timeframe. | time_point (a specific timestamp/date) or duration (an elapsed numerical duration) | while, during, in past relationships, timeframe |  | Accepted |
 | test_condition | constructor | TERM test_condition(condition: STRING, expected: BOOL) -> TERM | A testable condition with the expected Boolean outcome | Expected outcome is not an observed result |  |  | Retained |
+| time_point | constructor | TERM time_point(date?: STRING, time?: STRING, timezone?: STRING) -> TERM | Constructs a structured representation of a specific calendar date, time of day, or scheduled timestamp. | an elapsed time duration (use duration) | timestamp, datetime, scheduled_time |  | Accepted |
 | training_program | constructor | TERM training_program(topic: STRING / TERM, audience: STRING / TERM) -> TERM | Constructs a description of an educational or compliance training program. used for instructional policy requirements. |  | training_course |  | Accepted |
 | vehicle_allowance | constructor | TERM vehicle_allowance(roles: STRING, types: LIST[STRING]) -> TERM | Constructs a specification of permitted vehicle types for defined employee roles. specifies vehicle permissions. |  | vehicle_permission |  | Accepted |
+| visual_contrast | constructor | TERM visual_contrast(background: STRING / TERM, foreground: STRING / TERM) -> TERM | Constructs a descriptive term representing the optical contrast between a foreground object and its surrounding background environment. | a rhetorical claim link (use LINK contrast) | visual contrast, contrast against, contrast with background |  | Accepted |
 | web_element | constructor | TERM web_element(label: STRING, tag?: STRING) -> TERM | Constructs a descriptive representation of a web UI element by visible text label and optional tag. used to identify interactive DOM nodes. |  | ui_element, dom_element |  | Accepted |
 | word_blend | constructor | TERM word_blend(base: STRING / TERM, replacement: STRING / TERM, result_name?: STRING) -> TERM | Constructs a morphological blend or portmanteau from base and replacement terms. descriptive lexical structure. |  | portmanteau |  | Accepted |
 
@@ -141,6 +181,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | controversial | claim_relation | CLAIM controversial(subject: STRING / TERM) | Asserts that a topic, policy, or practice is the subject of public debate or controversy. evaluative debate claim. |  | debated, disputed |  | Accepted |
 | created_by | claim_relation | CLAIM created_by(subject: STRING / TERM, creator: STRING) | Asserts the developer, author, or creator of an entity or system. provenance/creator assertion. |  | authored_by |  | Accepted |
 | designed_to_be | claim_relation | CLAIM designed_to_be(subject: STRING / TERM, quality: STRING) | Asserts the intended design goal, alignment quality, or persona attribute of a system. design objective. |  | intended_to_be |  | Accepted |
+| duplicate_definition | claim_relation | CLAIM duplicate_definition(count: NUMBER, entity: TERM, location?: STRING / TERM) | Asserts that multiple duplicate copies or definitions of a code entity exist within a codebase or location. | an exact string equality check | duplicate_code, two_copies, duplicate_function |  | Accepted |
 | enables | claim_relation | CLAIM enables(condition: TERM / CLAIM, outcome: TERM / CLAIM) | Asserts that an enabling condition or capability facilitates an outcome. enabling condition. |  | facilitates, allows |  | Accepted |
 | escalation | claim_relation | CLAIM escalation(cause: CLAIM, conflict: TERM) | Asserts an escalation in intensity or scale of a conflict triggered by an event. conflict dynamics. |  | conflict_escalation |  | Accepted |
 | example_of | claim_relation | CLAIM example_of(example: TERM, concept: TERM) | Asserts that an instance or term exemplifies a general concept, pattern, or category. example and concept are descriptive terms. |  | exemplifies, instance_of |  | Accepted |
@@ -181,7 +222,9 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | unaware | claim_relation | CLAIM unaware(person: STRING / TERM, topic: STRING / TERM) | Asserts epistemic lack of awareness regarding a topic, fact, or event. epistemic state. |  | ignorant_of |  | Accepted |
 | user_practice | claim_relation | CLAIM user_practice(activity: TERM) | Asserts a habitual, workflow, or recurring practice of a user. workflow practice. |  | habitual_activity |  | Accepted |
 | user_preference | claim_relation | CLAIM user_preference(constraints: TERM) | Asserts a user's stated preference constraints or dietary requirements. user constraint assertion. |  | stated_preference |  | Accepted |
+| validates_parameter | claim_relation | CLAIM validates_parameter(condition: STRING, entity: TERM, parameter: STRING) | Asserts that a code entity inspects or validates parameter names or types for a specified condition. | a runtime assertion test | inspects_parameter, checks_parameter, validates_parameter_names |  | Accepted |
 | varies_by_location | claim_relation | CLAIM varies_by_location(target: CLAIM / TERM) | Asserts that a policy, rule, or phenomenon differs across regional or geographic locations. regional variation claim. |  | varies_by_region, regional_variance, location_dependent |  | Accepted |
+| varies_with | claim_relation | CLAIM varies_with(target: CLAIM / TERM, condition: STRING / TERM) | Asserts that a target claim or term varies contingently depending on specified conditions, external factors, or behavioral habits. | geographic variation only (use varies_by_location) | depends_on, contingent_on |  | Accepted |
 | warning | claim_relation | CLAIM warning(message: STRING, target?: TERM) | Asserts a recorded library warning, deprecation notice, or advisory alert. system alert claim. |  | alert, deprecation_warning |  | Accepted |
 | works_best | claim_relation | CLAIM works_best(style: STRING, count: NUMBER, purpose: STRING) | Asserts an advisory evaluation of optimal event style and participant capacity. planning evaluation. |  | optimal_format |  | Accepted |
 
@@ -189,8 +232,8 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 
 | symbol | kind | signature | definition | not | aliases | expansion | status |
 |---|---|---|---|---|---|---|---|
+| topic_derogatory_language | composite | TERM topic_derogatory_language() -> TERM | A composite term representing the topic of derogatory language. | potential_harms (which is generic) | derogatory language | subject(kind="derogatory_language") | Accepted |
 | char_2000s_anime_style | composite | TERM char_2000s_anime_style() -> TERM | 2000s anime style. |  |  | aesthetic(period="2000s", style="anime") | Composite |
-| char_age_14 | composite | TERM char_age_14() -> TERM | Age 14. |  | 14 | character_trait(property="age_years", value=14) | Composite |
 | char_female | composite | TERM char_female() -> TERM | Female gender. |  | female | character_trait(property="gender", value="female") | Composite |
 | assert_multinomial_scorer | composite | TERM assert_multinomial_scorer() -> TERM | Assertion that multinomial probabilistic scoring succeeds. |  |  | test_condition(condition="multinomial_probabilistic_scoring", expected=TRUE) | Composite |
 | chg_inherit_multi_class | composite | TERM chg_inherit_multi_class(source: STRING, target: STRING) -> TERM | Change requiring a constructed estimator to inherit multi_class. |  |  | change_property(property="multi_class", source=$source, target=$target) | Composite |
@@ -212,6 +255,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | topic_ai_earning_methods | composite | TERM topic_ai_earning_methods() -> TERM | AI earning methods. |  |  | subject(kind="methods", qualifier=activity(verb="earn", instrument="AI", object="income")) | Composite |
 | topic_current_new_york_housing_market | composite | TERM topic_current_new_york_housing_market(as_of: STRING) -> TERM | Current New York housing market. |  |  | subject(kind="housing_market", location="New York", time=$as_of) | Composite |
 | topic_greatest_cricketer_of_all_time | composite | TERM topic_greatest_cricketer_of_all_time() -> TERM | Greatest cricketer of all time. |  |  | subject(kind="cricketer", qualifier=requirement(property="rank_by_greatness", value=1), time="all_time") | Composite |
+| topic_profanity | composite | TERM topic_profanity() -> TERM | A composite term representing the topic of profanity. | potential_harms (which is generic) | profanity | subject(kind="profanity") | Accepted |
 | topic_school_work_routine | composite | TERM topic_school_work_routine() -> TERM | School and work routine. |  |  | subject(kind="routine", qualifier=conjunction(items=[subject(kind="school"), subject(kind="work")])) | Composite |
 | transform_preserve_first_column | composite | TERM transform_preserve_first_column() -> TERM | Preserve the first column of a table. |  |  | preserve(component="column", index=1) | Composite |
 | transform_remove_br | composite | TERM transform_remove_br() -> TERM | Remove <br /> tags. |  |  | remove_literal(text="<br />") | Composite |
@@ -224,6 +268,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|
 | rule_category_artifact_value | category_rule | artifact-value | STRING artifact class for GENERATE.target. art_story says what kind of artifact to produce, not what occurs in its plot. |  |  | Retained |
 | art_character_profile | value | artifact-value | Descriptive character profile. |  |  | Retained |
+| art_invitation | value | artifact-value | An invitation card, announcement, or digital invite artifact for an event. | art_plan (an actionable procedure or schedule) or art_short_text (unstructured short text) | invitation, invitation card, invite, digital invitation, printable invitation | Accepted |
 | art_itinerary | value | artifact-value | An ordered travel plan; GENERATE returns STRING, not booked travel |  |  | Retained |
 | art_plan | value | artifact-value | Actionable plan. |  |  | Retained |
 | art_short_text | value | artifact-value | Short free text. |  |  | Retained |
@@ -236,8 +281,8 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_capacity_unit_value | category_rule | capacity-unit-value | Preserve original binary-unit definitions for audit, but mark Needs clarification: GB/TB aliases conflate decimal and binary units. No silent change to scale. |  |  | Retained |
-| cap_gb | value | capacity-unit-value | One gibibyte-equivalent RAM capacity unit. |  | GB, gigabytes | Needs clarification |
-| cap_tb | value | capacity-unit-value | One tebibyte-equivalent capacity unit. |  | TB, terabytes | Needs clarification |
+| cap_gb | value | capacity-unit-value | One gibibyte-equivalent RAM capacity unit. |  | GB, gigabytes | Retained |
+| cap_tb | value | capacity-unit-value | One tebibyte-equivalent capacity unit. |  | TB, terabytes | Retained |
 
 ### character-property-value
 
@@ -251,6 +296,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|
 | rule_category_code_value | category_rule | code-value | path_/sym_ remain STRING identities; migrated chg_/assert_ are TERM constructors. Do not recover an exact file path by guessing from underscores. |  |  | Retained |
 | path_gcloud_pubsub_subscription_py | value | code-value | File path to the Google Cloud Pub/Sub subscription module. |  | gcloud_pubsub_subscription_path | Accepted |
+| path_ipython_core_magics_basic_py | value | code-value | File path to the IPython basic magics module. | an individual command line script or general config file | IPython/core/magics/basic.py, ipython_core_magics_basic_py | Accepted |
 | path_numpy_core_fromnumeric_py | value | code-value | Source code file path or exported symbol in scientific Python: path_numpy_core_fromnumeric_py. |  | path_numpy_core_fromnumeric_py | Accepted |
 | path_pandas_src_testing_pyx | value | code-value | Source code file path or exported symbol in scientific Python: path_pandas_src_testing_pyx. |  | path_pandas_src_testing_pyx | Accepted |
 | path_sklearn_linear_model_logistic_py | value | code-value | The scikit-learn logistic module path. |  |  | Retained |
@@ -262,7 +308,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_constraint_value | category_rule | constraint-value | Existing requirements are TERM constructors, except unresolved entries explicitly marked. `constraints=[constraint_realistic]` is invalid; construct the TERM first. |  |  | Retained |
-| constraint_17_plus | value | constraint-value | Rated 17+ or mature. |  |  | Needs clarification |
+| constraint_17_plus | value | constraint-value | Rated 17+ or mature. |  |  | Retained |
 
 ### content-value
 
@@ -275,9 +321,11 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_cuisine_value | category_rule | cuisine-value | STRING cuisine class; cuisine_indian is a cuisine filter, not the location India. |  |  | Retained |
+| cuisine_arab | value | cuisine-value | Arab culinary cuisine style. | cuisine_mediterranean (broader regional category) | Arab food, Arabic food, Arab cuisine | Accepted |
 | cuisine_indian | value | cuisine-value | Indian cuisine. |  | Indian food, Indian | Retained |
 | cuisine_italian | value | cuisine-value | Italian cuisine. |  | Italian food, Italian | Retained |
 | cuisine_mediterranean | value | cuisine-value | Mediterranean culinary cuisine style. |  | mediterranean | Accepted |
+| cuisine_pizza | value | cuisine-value | Pizza culinary cuisine style and food category. | cuisine_italian (broader regional/national cuisine) | pizza, pizzeria, pizza cuisine | Accepted |
 
 ### currency-value
 
@@ -286,7 +334,10 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | rule_category_currency_value | category_rule | currency-value | STRING currency identity. A bare dollar sign is not always curr_usd; require contextual resolution. |  |  | Retained |
 | curr_clp | value | currency-value | Chilean peso. |  | clp, Chilean pesos, Chilean peso | Retained |
 | curr_eur | value | currency-value | Euro. |  | eur, euros | Retained |
+| curr_gbp | value | currency-value | United Kingdom pound sterling currency. | curr_usd or curr_eur | gbp, pound, pounds, sterling, £ | Accepted |
+| curr_pln | value | currency-value | Polish złoty currency identity. | curr_eur or other European national currencies | pln, złoty, zloty, Polish złoty | Accepted |
 | curr_usd | value | currency-value | United States dollar. |  | $, usd, dollars | Retained |
+| curr_zar | value | currency-value | South African Rand currency identity. | other national currencies or currency without explicit country identity | zar, rand, R, South African Rand | Accepted |
 
 ### descriptive-value
 
@@ -297,10 +348,11 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | constitutional_ai | value | descriptive-value | Concept of rule-based constitutional training and self-critique principles in AI alignment. |  | constitutional_ai | Accepted |
 | criminality | value | descriptive-value | Descriptive concept of criminality in cultural and social contexts. |  | criminality | Accepted |
 | design_parameters | value | descriptive-value | Concept of operational and behavioral design specifications for AI systems. |  | design_parameters | Accepted |
+| dom_ddp | value | descriptive-value | DistributedDataParallel (DDP) multi-GPU distributed training configuration and execution paradigm. | dom_ovr (one-versus-rest classification) or python_platform (general Python runtime) | DDP, DistributedDataParallel, distributed data parallel | Accepted |
 | dom_ovr | value | descriptive-value | One-versus-rest domain concept. |  |  | Retained |
 | dom_pain | value | descriptive-value | Pain domain concept. |  | pain | Retained |
 | dom_safari | value | descriptive-value | Safari domain concept. |  | safari | Retained |
-| dom_sgi | value | descriptive-value | SGI domain concept. |  |  | Needs clarification |
+| dom_sgi | value | descriptive-value | SGI domain concept. |  |  | Retained |
 | mod_mixed_case | value | descriptive-value | Mixed-case modifier. |  | mixed case | Retained |
 | personal_values | value | descriptive-value | Concept of personal moral beliefs and subjective ethical commitments. |  | personal_values | Accepted |
 | potential_harms | value | descriptive-value | Concept of potential safety hazards, adverse outcomes, or risks in AI interaction. |  | potential_harms | Accepted |
@@ -330,17 +382,42 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|
 | rule_category_entity_name | category_rule | entity-name | STRING descriptors select kinds/resources. `mug` is a descriptor, not REF. Resource symbols may be used only when the source explicitly requests such a resource; missing equipment is not automatically inserted. |  |  | Retained |
 | afcfta | value | entity-name | African Continental Free Trade Area international agreement. |  | african_continental_free_trade_area | Accepted |
+| alcohol | value | entity-name | Alcoholic spirit or liquid such as brandy, rum, or whisky. | fermented non-distilled wine or pure chemical formula notation | alcohol, spirits, liquor | Accepted |
+| apple | value | entity-name | An apple fruit item, typically an ingredient or interactive food object. | tomato or other fruits/vegetables | apple, apples, red apple, green apple, apple slice | Accepted |
 | armchair | value | entity-name | An armchair; distinct from a sofa |  |  | Retained |
 | bed | value | entity-name | A bed furniture surface or sleeping area. |  | bed | Accepted |
+| bottle | value | entity-name | A bottle container object, typically used for holding liquids. | mug (a drinking cup with a handle) or water (the liquid itself) | bottle, water bottle, plastic bottle | Accepted |
 | bowl | value | entity-name | A container/dish used for holding food or small items. |  | bowl | Accepted |
 | bowtie | value | entity-name | Item or prop in joke/creative context: bowtie. |  | bowtie | Accepted |
 | bread | value | entity-name | A bread loaf or slice food object. |  | bread | Accepted |
+| cabinet | value | entity-name | An enclosed cupboard or cabinet storage furniture unit with doors or shelves. | counter (a countertop surface) or dresser (a chest of drawers) | cabinet, cupboard, storage cabinet, kitchen cupboard | Accepted |
+| caddy | value | entity-name | A portable storage caddy, organizer box, or supply tote for carrying and organizing handheld tools and supplies. | cabinet (a stationary furniture cupboard) or safe (a secure metal lockbox) | caddy, supply caddy, wrapping caddy, tool caddy, organizer caddy, supply tote | Accepted |
+| candle | value | entity-name | A candle light source made of wax with a wick. | lamp (an electric light appliance or fixture) | candle, wax candle | Accepted |
+| cardamom | value | entity-name | Aromatic spice seeds or pods from Elettaria or Amomum used in cooking and baking. | cinnamon, ginger, or other distinct spice varieties | cardamom, ground cardamom, cardamom pods | Accepted |
+| cardboard_box | value | entity-name | A cardboard box, carton, or general storage box container. | tissue_box (specifically a box of paper tissues) or safe (a lockable metal container) | cardboard box, box, carton, storage box | Accepted |
 | cat | value | entity-name | Animal entity: cat. |  | cat | Accepted |
+| cd | value | entity-name | A compact disc physical object. | a digital media file or streaming track | CD, compact_disc | Accepted |
+| chair | value | entity-name | A chair furniture seat with a backrest. | armchair (specifically an armchair with side armrests) or sofa | chair, seat | Accepted |
+| cheese | value | entity-name | Dairy food item: cheese. | meat or non-dairy food items | cheese | Accepted |
+| cinnamon | value | entity-name | Ground or whole cinnamon culinary spice from Cinnamomum tree bark. | nutmeg, cloves, or other distinct spice varieties | cinnamon, ground cinnamon, cinnamon spice, cinnamon stick | Accepted |
+| citric_acid | value | entity-name | Food and beverage acid additive. | tartaric_acid or pure chemical formula notation | citric acid | Accepted |
+| clock | value | entity-name | A clock timepiece appliance. | duration units like unit_hour | clock, timer | Accepted |
 | clothing | value | entity-name | Physical item used for concealment or covering: clothing. |  | clothing | Accepted |
+| cloves | value | entity-name | Aromatic dried flower buds of Syzygium aromaticum used as a culinary spice. | cinnamon, nutmeg, or other distinct spice varieties | cloves, clove, ground cloves, whole cloves | Accepted |
 | coffee_maker | value | entity-name | A coffee-making appliance; not automatically a heating resource |  |  | Retained |
+| credit_card | value | entity-name | A physical plastic credit, debit, or payment card object. | egift_card (an electronic gift card or digital voucher) | credit card, card, payment card | Accepted |
 | desk | value | entity-name | A work desk furniture surface. |  | desk | Accepted |
+| dishwasher | value | entity-name | A dishwasher kitchen appliance. | sink (a washing basin) or washing_machine (a laundry appliance) | dishwasher, dish washer, dishwashing machine | Accepted |
+| dog | value | entity-name | Animal entity: dog. | cat or donkey | dog, dogs, canine, pup, puppy | Accepted |
 | donkey | value | entity-name | Animal entity: donkey. |  | donkey | Accepted |
+| door | value | entity-name | A door architectural barrier or entryway. | wall or close/open operations | door, doorway, room door | Accepted |
 | dresser | value | entity-name | A chest of drawers / dresser furniture. |  | dresser | Accepted |
+| dried_fruit | value | entity-name | Generic dried fruit food item. | fresh fruit or specific dried varieties like raisin or sultana | dried fruit, dried fruits | Accepted |
+| driver_license | value | entity-name | An official government credential or authorization permitting an individual to operate motor vehicles. | vehicle_allowance (an employee vehicle policy) or rental_vehicle (a rental vehicle) | driver license, driver's license, driving license, driver licence, driver ID | Accepted |
+| dulce_de_leche | value | entity-name | Sweet caramelized milk confection or dessert spread: dulce de leche. | cheese or dulce_de_nata | dulce de leche, dulce_de_leche | Accepted |
+| dulce_de_nata | value | entity-name | Clotted cream milk confection or dessert item: dulce de nata. | dulce_de_leche or cheese | dulce de nata, dulce_de_nata | Accepted |
+| earth | value | entity-name | The planet Earth as an astronomical celestial body. | soil, ground surface, or electrical grounding | earth, the earth, planet earth, Earth | Accepted |
+| egg | value | entity-name | An egg food item, typically an ingredient or interactive food object. | apple, tomato, or other food items | egg, eggs, boiled egg, cooked egg | Accepted |
 | egift_card | value | entity-name | Electronic gift card or digital voucher product. |  | digital_gift_card, e_gift_card | Accepted |
 | entity_appetizers | value | entity-name | Event planning item or menu category: entity_appetizers. |  | entity_appetizers | Accepted |
 | entity_assembly_tips | value | entity-name | Event planning item or menu category: entity_assembly_tips. |  | entity_assembly_tips | Accepted |
@@ -349,6 +426,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | entity_condensed_grocery_list | value | entity-name | Event planning item or menu category: entity_condensed_grocery_list. |  | entity_condensed_grocery_list | Accepted |
 | entity_desserts | value | entity-name | Event planning item or menu category: entity_desserts. |  | entity_desserts | Accepted |
 | entity_drinks | value | entity-name | Event planning item or menu category: entity_drinks. |  | entity_drinks | Accepted |
+| entity_flowers | value | entity-name | Flowers, blossoms, or floral design elements. | constraint_exclude_flowery_language (a prose style constraint) or agricultural food items | flowers, floral, flower, floral decorations | Accepted |
 | entity_grocery_list | value | entity-name | Event planning item or menu category: entity_grocery_list. |  | entity_grocery_list | Accepted |
 | entity_mains | value | entity-name | Event planning item or menu category: entity_mains. |  | entity_mains | Accepted |
 | entity_menu_items | value | entity-name | Event planning item or menu category: entity_menu_items. |  | entity_menu_items | Accepted |
@@ -356,27 +434,85 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | entity_recipes | value | entity-name | Event planning item or menu category: entity_recipes. |  | entity_recipes | Accepted |
 | entity_sides | value | entity-name | Event planning item or menu category: entity_sides. |  | entity_sides | Accepted |
 | entity_sweet_food | value | entity-name | Event planning item or menu category: entity_sweet_food. |  | entity_sweet_food | Accepted |
+| enzyme | value | entity-name | Winemaking enzyme for breaking down fruit cellular structure. | living yeast strains or non-enzymatic chemical additives | enzyme, pectic enzyme, pectinase | Accepted |
+| fermentation_nutrient | value | entity-name | Yeast nutrient supplement such as diammonium phosphate (DAP). | wine_yeast (the living organism itself) or acid additives | fermentation nutrient, yeast nutrient, DAP | Accepted |
+| figurine | value | entity-name | A small carved, molded, or sculpted decorative statuette object. | character (a fictional persona) or captioned_figure (a document figure/photo) | figurine, statuette, statue, small statue, sculptural figure, miniature figure | Accepted |
 | fish | value | entity-name | Animal entity: fish. |  | fish | Accepted |
 | fridge | value | entity-name | A refrigerator cooling appliance. |  | fridge | Accepted |
+| fruit_juice | value | entity-name | Liquid juice extracted from fruit. | fermented wine or freshly crushed grape_must | fruit juice, juice | Accepted |
+| gift | value | entity-name | A physical gift or present item to be wrapped, given, or received. | egift_card (an electronic gift card or digital voucher product) | gift, present, wrapped gift, package | Accepted |
+| ginger | value | entity-name | Pungent aromatic spice root from Zingiber officinale used in cooking and baking. | cinnamon, cardamom, or other distinct spice varieties | ginger, ground ginger, fresh ginger, ginger root | Accepted |
+| grape_cabernet_sauvignon | value | entity-name | Cabernet Sauvignon wine grape variety. | other red grape varieties such as grape_merlot or grape_pinot_noir | Cabernet Sauvignon, cabernet, cabernet sauvignon grape | Accepted |
+| grape_chardonnay | value | entity-name | Chardonnay wine grape variety. | other white grape varieties such as grape_sauvignon_blanc | Chardonnay, chardonnay grape | Accepted |
+| grape_merlot | value | entity-name | Merlot wine grape variety. | other red grape varieties such as grape_cabernet_sauvignon or grape_pinot_noir | Merlot, merlot grape | Accepted |
+| grape_must | value | entity-name | Freshly crushed fruit juice mixture before fermentation. | clarified fruit_juice or finished wine | grape must, must | Accepted |
+| grape_pinot_noir | value | entity-name | Pinot Noir wine grape variety. | other red grape varieties such as grape_cabernet_sauvignon or grape_merlot | Pinot Noir, pinot noir grape | Accepted |
+| grape_sauvignon_blanc | value | entity-name | Sauvignon Blanc wine grape variety. | other white grape varieties such as grape_chardonnay | Sauvignon Blanc, sauvignon blanc grape | Accepted |
+| grape_tannin | value | entity-name | Tannin powder derived from grapes for wine structure. | oak_chips or wood aging additives | grape tannin, tannin, wine tannin | Accepted |
+| grape_thompson_seedless | value | entity-name | Thompson Seedless grape variety. | wine grape cultivars like grape_merlot or grape_chardonnay | Thompson Seedless, thompson seedless grape, sultana grape | Accepted |
+| ice_cream | value | entity-name | Frozen dessert food item: ice cream. | entity_desserts or entity_sweet_food (generic menu categories) | ice cream, ice_cream | Accepted |
+| keys | value | entity-name | A physical key or set of keys / keychain object. | press_key (a UI keyboard key press operation) | keys, key, key chain, keychain | Accepted |
 | knife | value | entity-name | A cutting utensil used for slicing or food preparation. |  | knife | Accepted |
+| lamp | value | entity-name | A lamp light source appliance. | an abstract lighting concept or ambient color | light, desk_lamp | Accepted |
+| laptop | value | entity-name | A portable laptop computer physical object. | topic_macbook_pro_2017 (a generation topic label) | laptop, laptop computer, notebook | Accepted |
+| lettuce | value | entity-name | A head of lettuce or leafy green vegetable food item. | tomato or potato (other vegetable items) | lettuce, head of lettuce, salad greens | Accepted |
+| maqluba | value | entity-name | Traditional Arab layered rice dish: maqluba. | cuisine_mediterranean (cuisine style rather than specific dish) | maqluba, makloubeh | Accepted |
+| martini_glass | value | entity-name | A cocktail or Martini drinking glass object. | mug (a drinking cup with a handle) or bottle (liquid storage container) | martini glass, cocktail glass, glass | Accepted |
+| mattress | value | entity-name | A mattress cushion or sleeping surface object. | bed (a bed furniture surface or frame) or pillow | mattress, mattresses | Accepted |
+| meat | value | entity-name | Food item: meat or beef. | tuna or fish (specific aquatic foods) | meat, beef | Accepted |
 | microwave | value | entity-name | A microwave oven appliance. |  | microwave | Accepted |
+| mirror | value | entity-name | A reflective mirror physical object or wall fixture. | reflects_light (a constructor describing optical reflection) | mirror, wall mirror, looking glass | Accepted |
 | mittens | value | entity-name | Item or prop in joke/creative context: mittens. |  | mittens | Accepted |
+| moon | value | entity-name | Earth's natural celestial satellite. | an artificial satellite or other planetary moon | moon, the moon, Luna | Accepted |
 | mug | value | entity-name | Drinking cup. |  | mug | Adapted |
+| nutmeg | value | entity-name | Ground or whole nutmeg culinary spice from Myristica fragrans seed. | cinnamon, cloves, or other distinct spice varieties | nutmeg, ground nutmeg | Accepted |
+| oak_chips | value | entity-name | Oak wood pieces or barrels used for wine aging and flavor extraction. | grape_tannin or structural chemical additives | oak chips, oak pieces, oak barrels | Accepted |
+| pan | value | entity-name | A metal cooking vessel, frying pan, skillet, saucepan, or pot cookware item used for preparing, heating, or holding food. | bowl (deep concave vessel) or plate (shallow flat dining dish) | pan, frying pan, skillet, saucepan, pot | Accepted |
+| pear | value | entity-name | A pear fruit item, typically an ingredient or fresh fruit object. | apple, tomato, or other distinct fruit items | pear, pears, fresh pear, sliced pear | Accepted |
 | pen | value | entity-name | A writing instrument. |  | pen | Accepted |
 | pencil | value | entity-name | A pencil writing instrument. |  | pencil | Accepted |
+| phone | value | entity-name | A telephone, mobile phone, smartphone, or cellular handset device. | remote_control (a handheld TV remote) or laptop (a portable computer) | phone, cell phone, cellphone, mobile phone, smartphone, telephone | Accepted |
+| piano | value | entity-name | A piano musical instrument or large furniture object. | topic_classical_piano or topic_jazz_piano (music genre topics) | piano, grand piano, upright piano, keyboard | Accepted |
 | pillow | value | entity-name | A pillow; not a specific selected pillow until pick_up returns REF |  |  | Retained |
+| plate | value | entity-name | A shallow, flat dish or vessel used for holding, preparing, or serving food. | bowl (deep concave vessel) or table (furniture surface) | dish, plate | Accepted |
 | popcorn | value | entity-name | Popcorn food item or snack. |  | popped_corn | Accepted |
+| potato | value | entity-name | A potato food item, typically an ingredient or object in interactive environments. | tomato or other vegetables | potato, potatoes, spud | Accepted |
+| raisin | value | entity-name | Dried grape food item. | sultana (specifically dried white grape) or fresh wine_grape | raisin, raisins, dried grape | Accepted |
+| recycle_bin | value | entity-name | A dedicated receptacle container for recyclable waste materials. | trash_can (a general waste receptacle container) | recycle bin, recycling bin, recycle_bin | Accepted |
+| remote_control | value | entity-name | A handheld electronic remote control device. | an individual button or interactive UI element | remote, remote control, TV remote, controller | Accepted |
 | resource_chiller | value | entity-name | Canonical abstract chilling resource when no particular appliance is named. |  |  | Adapted |
 | resource_heater | value | entity-name | Canonical abstract heating resource when no particular appliance is named. |  |  | Adapted |
 | resource_sink | value | entity-name | Canonical abstract washing resource when no particular sink is named. |  |  | Adapted |
+| restaurant | value | entity-name | A commercial restaurant, eatery, or dining establishment where meals are prepared and served. | ryokan or onsen (specific traditional hospitality establishments) | restaurant, eatery, dining establishment, restaurants | Accepted |
+| safe | value | entity-name | A secure, lockable metal storage container or receptacle for holding valuables. | cabinet (a general storage cupboard) or dresser (a chest of drawers) | safe, strongbox, lockbox, deposit box | Accepted |
+| scissors | value | entity-name | A handheld shearing cutting tool with two pivoted blades used for cutting paper, ribbon, and crafting materials. | knife (a kitchen or food preparation cutting utensil) | scissors, shears, pair of scissors | Accepted |
+| shelf | value | entity-name | A flat horizontal shelving structure or shelving furniture unit used for storage and holding objects. | cabinet (an enclosed cupboard with doors) or table (a freestanding table surface) | shelf, shelves, bookshelf, wall shelf, shelving | Accepted |
+| shower | value | entity-name | A bathroom shower fixture or stall used for bathing. | sink (a washing basin) or toilet (a toilet fixture) | shower, shower stall | Accepted |
 | sink | value | entity-name | Washing basin. |  | sink | Adapted |
 | sofa | value | entity-name | A sofa used as source/destination; not the pillow on it |  |  | Retained |
+| song | value | entity-name | A musical piece, audio track, or song entity. | piano (a musical instrument) or cd (a physical compact disc storage medium) | song, music track, audio track, track | Accepted |
+| spatula | value | entity-name | A kitchen utensil with a broad, flat, and flexible blade used for lifting, flipping, or spreading food. | knife (cutting utensil) or spoon (scooping utensil) | spatula, turner, flipper | Accepted |
+| sponge | value | entity-name | A porous, absorbent sponge cleaning tool or object. | tissue_box (a paper tissue box) or other wiping materials | sponge, cleaning sponge | Accepted |
 | spoon | value | entity-name | An eating or cooking utensil. |  | spoon | Accepted |
+| stove | value | entity-name | A kitchen stove / range appliance for cooking or heating. | microwave | stove, range, cooktop | Accepted |
+| sultana | value | entity-name | Dried white seedless grape food product. | raisin (dark dried grape) or wine_grape | sultana, sultanas, golden raisin | Accepted |
+| sun | value | entity-name | The central star of the Solar System. | an artificial lighting appliance or sunlight | sun, the sun, Sol | Accepted |
+| tape | value | entity-name | Adhesive tape used for fastening and securing wrapping paper, boxes, or packaging materials. | waterproof_bandages (medical wound dressing) or waterproof_stickers (decorative stickers) | tape, adhesive tape, sticky tape, scotch tape | Accepted |
+| tartaric_acid | value | entity-name | Winemaking acid additive used for acidity adjustment. | citric_acid or general organic chemicals | tartaric acid | Accepted |
+| textbook | value | entity-name | A textbook or instructional book used as an educational resource. | style_academic (which is a stylistic mode) or art_short_text (which is a brief generated text artifact) | textbook, book, coursebook, textbooks | Accepted |
+| tissue_box | value | entity-name | A cardboard or plastic box containing paper tissues used for wiping or cleaning. | waterproof bandages or other medical coverings | tissue box, tissues, tissue | Accepted |
+| toilet | value | entity-name | A toilet bathroom fixture or receptacle. | sink or trash_can | toilet, commode, restroom toilet | Accepted |
 | tomato | value | entity-name | A tomato item, typically a food object in interactive environments. |  | tomato | Accepted |
 | trash_can | value | entity-name | A waste receptacle container. |  | trash_can | Accepted |
 | tuna | value | entity-name | Animal entity: tuna. |  | tuna | Accepted |
+| vase | value | entity-name | A decorative or functional open container typically used for holding cut flowers or liquids. | bottle (a liquid storage container with a narrow neck) or bowl (a shallow dish) | vase, flower vase, flower_vase | Accepted |
+| watch | value | entity-name | A watch or wristwatch timepiece object. | clock (a stationary timepiece appliance) or duration units like unit_hour | watch, wristwatch, wrist watch | Accepted |
+| water | value | entity-name | Water from a tap or faucet used for washing or rinsing. | sink or other liquids | water, tap water | Accepted |
 | waterproof_bandages | value | entity-name | Physical item used for concealment or covering: waterproof_bandages. |  | waterproof_bandages | Accepted |
 | waterproof_stickers | value | entity-name | Physical item used for concealment or covering: waterproof_stickers. |  | waterproof_stickers | Accepted |
+| wine | value | entity-name | Fermented fruit or grape beverage. | unfermented fruit juice or distilled alcohol/spirits | wine, wines | Accepted |
+| wine_grape | value | entity-name | Grape variety cultivated specifically for winemaking. | table grapes or processed wine product | wine grape, wine grapes, grape | Accepted |
+| wine_yeast | value | entity-name | Yeast strain selected for alcoholic fermentation. | baking yeast or fermentation_nutrient | wine yeast, yeast, fermentation yeast | Accepted |
 | yarn | value | entity-name | Item or prop in joke/creative context: yarn. |  | yarn | Accepted |
 
 ### event-value
@@ -399,17 +535,20 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | format_plain_text | value | format-value | Unstructured prose text. |  | plain text | Retained |
 | format_structured_report | value | format-value | Headed structured report layout. |  | structured report, report | Retained |
 | format_table | value | format-value | Tabular layout. |  | as a table | Retained |
+| format_xlsx | value | format-value | Microsoft Excel OpenXML spreadsheet document format (.xlsx). | format_table (general tabular display layout) or format_pdf | XLSX, Excel 2010, Excel files, xlsx | Accepted |
 
 ### locale-value
 
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_locale_value | category_rule | locale-value | STRING locale. “English” alone does not always mean locale_en_us; preserve ambiguity. |  |  | Retained |
+| locale_de | value | locale-value | German language or locale descriptor. | other language locales (such as locale_en_us or locale_fr) or country entity (germany) | German, german, Deutsch, de, de-DE | Accepted |
 | locale_en_gb | value | locale-value | UK English. |  | british english | Adapted |
 | locale_en_us | value | locale-value | US English. |  | english, en-us | Adapted |
 | locale_es | value | locale-value | Spanish. |  | spanish | Adapted |
 | locale_fr | value | locale-value | French. |  | french | Adapted |
 | locale_hi_en | value | locale-value | Hinglish (Hindi-English mix). |  | hinglish | Adapted |
+| locale_zh | value | locale-value | Chinese language locale (Simplified and Traditional Chinese). | a specific geographical region or nationality (use location-name) | chinese, zh, zh-cn, zh-tw, mandarin | Accepted |
 
 ### location-name
 
@@ -417,18 +556,29 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|
 | rule_category_location_name | category_rule | location-name | STRING location descriptor. A `table` surface is not the generated artifact category art_table. |  |  | Retained |
 | africa | value | location-name | Geopolitical nation or continental region: africa. |  | africa | Accepted |
+| argentina | value | location-name | Geopolitical nation or location: Argentina. | locale_es (language) or curr_clp (currency) | Argentina, argentine | Accepted |
+| china | value | location-name | Geopolitical nation or sovereign state: China. | locale_zh (a language/locale code) or curr_cny | China, PRC, People's Republic of China, Chinese | Accepted |
 | corner | value | location-name | A corner area. |  |  | Retained |
 | counter | value | location-name | A kitchen or room countertop surface. |  | counter | Accepted |
 | eastern_cape | value | location-name | Eastern Cape region. |  |  | Retained |
+| floor | value | location-name | The floor surface of an indoor room or architectural space. | wall (a vertical room boundary surface) or counter (a countertop surface) | floor, ground | Accepted |
+| germany | value | location-name | Geopolitical nation or location: Germany. | locale_de (language) or curr_eur (currency) | Germany, German, Deutschland, Federal Republic of Germany | Accepted |
+| island | value | location-name | A freestanding kitchen island counter or food preparation work surface. | counter (a perimeter countertop surface) or table (a dining or general furniture surface) | island, kitchen island, kitchen_island | Accepted |
 | japan | value | location-name | Country of Japan. |  |  | Retained |
 | liberal_onsen | value | location-name | Traditional Japanese establishment or hospitality venue: liberal_onsen. |  | liberal_onsen | Accepted |
+| living_room | value | location-name | A residential room or general indoor living area. | floor (a floor surface) or wall (a vertical boundary surface) | living room, living_room, sitting room, lounge | Accepted |
+| mexico | value | location-name | Geopolitical nation or location: Mexico. | locale_es (language) or other nations (use argentina, etc.) | Mexico, Mexican, Estados Unidos Mexicanos | Accepted |
 | microwave_stand | value | location-name | A dedicated stand or cart supporting a microwave. |  | microwave_stand | Accepted |
 | new_york_university | value | location-name | New York University institution or campus grounds. |  | nyu | Accepted |
+| night_stand | value | location-name | A small bedside table or nightstand furniture surface. | a chest of drawers (use dresser) or a general table surface (use table) | nightstand, bedside table | Accepted |
 | onsen | value | location-name | Traditional Japanese establishment or hospitality venue: onsen. |  | onsen | Accepted |
+| poland | value | location-name | Geopolitical nation or location: Poland. | locale_pl (language) or neighboring nations (like germany, ukraine) | Poland, Polska, Polish | Accepted |
 | russia | value | location-name | Geopolitical nation or continental region: russia. |  | russia | Accepted |
 | ryokan | value | location-name | Traditional Japanese establishment or hospitality venue: ryokan. |  | ryokan | Accepted |
 | table | value | location-name | A table surface. |  |  | Retained |
 | ukraine | value | location-name | Geopolitical nation or continental region: ukraine. |  | ukraine | Accepted |
+| united_kingdom | value | location-name | Geopolitical nation or sovereign state: United Kingdom (Great Britain). | locale_en_gb (a language/locale code, not a location) | United Kingdom, UK, Great Britain, Britain | Accepted |
+| united_states | value | location-name | Geopolitical nation or sovereign state: United States of America. | locale_en_us (a language/locale code) or curr_usd | United States, USA, US, United States of America, America | Accepted |
 | wall | value | location-name | A room boundary wall surface. |  | wall | Accepted |
 
 ### metric-value
@@ -441,6 +591,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | metric_order_late | value | metric-value | Whether an order is late. |  | order is late, delayed | Adapted |
 | metric_repeat_buyer | value | metric-value | Whether the customer is a repeat buyer. |  | repeat buyer, returning customer | Adapted |
 | metric_response_time | value | metric-value | Support response time. |  | response time | Adapted |
+| metric_socio_economic_status | value | metric-value | Socio-economic status (SES) composite metric, index, or classification tier. | a specific income currency amount (use measure) or customer purchase metric (use metric_first_time_buyer) | SES, socio-economic status, socioeconomic status, wealth index | Accepted |
 | metric_uptime | value | metric-value | Service uptime status. |  | uptime, is up | Adapted |
 
 ### platform-name
@@ -448,13 +599,24 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_platform_name | category_rule | platform-name | STRING service/framework identity. `django` does not also mean the project being edited unless context establishes that identity. |  |  | Retained |
+| conda | value | platform-name | Conda package and environment management platform and software ecosystem. | an individual python script or general environment path | conda, anaconda, miniconda | Accepted |
 | django | value | platform-name | Web framework. |  |  | Retained |
 | gcloud | value | platform-name | Google Cloud Platform CLI and cloud software ecosystem. |  | google_cloud | Accepted |
+| ipython | value | platform-name | IPython interactive computing framework and software ecosystem. | the standard Python runtime (use python_platform) | ipython, IPython, ipython_platform | Accepted |
+| meson | value | platform-name | Meson build system software project. | an individual file path (use a string literal) | meson | Accepted |
 | netflix | value | platform-name | Streaming platform. |  |  | Retained |
 | numpy | value | platform-name | Python scientific package and computing platform: numpy. |  | numpy | Accepted |
+| openpyxl | value | platform-name | Python library for reading and writing Excel 2010 xlsx files. | an individual file path or general spreadsheet format | openpyxl, openpyxl package | Accepted |
+| os_macos | value | platform-name | Apple macOS / OSX operating system platform. | Apple hardware or machine architecture | OSX, macOS, darwin, OS X | Accepted |
 | pandas | value | platform-name | Python scientific package and computing platform: pandas. |  | pandas | Accepted |
+| pants | value | platform-name | Pants build system and software execution platform. | clothing item (which is clothing in entity-name) | pants, pantsbuild, pants_build | Accepted |
+| platform_sap | value | platform-name | SAP enterprise software platform and business analytics software ecosystem. | an individual database table or generic cloud provider (use gcloud or table) | SAP, S/4HANA, SAP ERP, BW, SAC | Accepted |
+| python_platform | value | platform-name | Python programming language execution environment and runtime platform. | an individual Python source file or package | python, python3, cpython | Accepted |
+| qiskit | value | platform-name | Quantum computing SDK and open-source software development framework: qiskit / qiskit-terra. | an individual source file path or script | qiskit, qiskit_terra, qiskit-terra | Accepted |
 | sklearn | value | platform-name | Machine learning library. |  |  | Retained |
+| tiktok | value | platform-name | Video-sharing and social media platform: TikTok. | youtube (video platform) or other social media services | TikTok, Tik Tok, tiktok.com | Accepted |
 | xarray | value | platform-name | Python scientific package and computing platform: xarray. |  | xarray | Accepted |
+| xlrd | value | platform-name | Python library for extracting data from Excel spreadsheet files. | openpyxl or an individual file path | xlrd, xlrd package | Accepted |
 | youtube | value | platform-name | Video platform. |  |  | Retained |
 
 ### product-attribute-value
@@ -464,16 +626,22 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | rule_category_product_attribute_value | category_rule | product-attribute-value | STRING color/size/product-market facets. gender_women describes a product category, not an assertion about a person's gender. |  |  | Retained |
 | color_black | value | product-attribute-value | Black. |  |  | Retained |
 | color_blue | value | product-attribute-value | Blue visual color qualifier. |  | color_blue | Accepted |
+| color_brown | value | product-attribute-value | Brown visual color qualifier. | color_black, color_grey, or other distinct color shades | brown | Accepted |
+| color_green | value | product-attribute-value | Green visual color qualifier. | color_yellow or other distinct color shades | green, color_green | Accepted |
 | color_grey | value | product-attribute-value | Grey visual color qualifier. |  | color_grey | Accepted |
+| color_pink | value | product-attribute-value | Pink visual color qualifier. | color_red, color_purple, or other distinct color shades | pink, color_pink, blush pink, rose pink, pastel pink | Accepted |
 | color_purple | value | product-attribute-value | Purple visual color qualifier. |  | color_purple | Accepted |
 | color_red | value | product-attribute-value | Red. |  |  | Retained |
 | color_white | value | product-attribute-value | White. |  |  | Retained |
 | color_yellow | value | product-attribute-value | Yellow. |  |  | Retained |
+| condition_perfect | value | product-attribute-value | Product condition rating: perfect or mint physical and operational condition. | test_condition (software testing) or state_dirty (physical environmental state) | perfect, mint, pristine, flawless, like new | Accepted |
 | gender_men | value | product-attribute-value | Men's/male-targeted. |  | men, male | Retained |
 | gender_unisex | value | product-attribute-value | Unisex. |  | unisex | Retained |
 | gender_women | value | product-attribute-value | Women's/female-targeted. |  | women, female | Retained |
+| material_memory_foam | value | product-attribute-value | Memory foam viscoelastic polyurethane material qualifier. | sponge (a porous cleaning tool) or generic bedding | memory foam, memory_foam, viscoelastic foam | Accepted |
 | size_large | value | product-attribute-value | Large size. |  | large, L | Retained |
 | size_medium | value | product-attribute-value | Medium size. |  | medium, M | Retained |
+| size_queen | value | product-attribute-value | Queen-size dimension classification for beds, mattresses, and bedding. | size_large (generic large apparel/goods size) or size_king | queen, queen size, Queen | Accepted |
 | size_small | value | product-attribute-value | Small size. |  | small, S | Retained |
 | size_tall | value | product-attribute-value | Tall relative vertical dimension qualifier. |  | size_tall | Accepted |
 | valet | value | product-attribute-value | Valet parking or dedicated vehicle attendant service. |  | valet_parking | Accepted |
@@ -485,13 +653,17 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | rule_category_recipient_value | category_rule | recipient-value | STRING roles or explicit named recipients. A role is not an exact person's identity. Keep an explicit name where substituting a role loses information. |  |  | Retained |
 | foreigners | value | recipient-value | Social, demographic, or institutional group: foreigners. |  | foreigners | Accepted |
 | japanese_government | value | recipient-value | Social, demographic, or institutional group: japanese_government. |  | japanese_government | Accepted |
+| role_adults | value | recipient-value | Adult participant group in family, event, or travel context. | role_kids (children participant group) or role_user (the specific conversational user) | adults, adult, grown-ups | Accepted |
 | role_agent | value | recipient-value | The assistant. |  | you, the assistant | Adapted |
 | role_colleague | value | recipient-value | A coworker of the user. |  | my colleague, coworker | Adapted |
 | role_customer | value | recipient-value | A customer/client of the user. |  | the customer, client | Adapted |
+| role_daughter | value | recipient-value | Daughter participant role in family or travel context. | role_sister, role_mother, or generic role_kids | daughter, my daughter | Accepted |
 | role_friend | value | recipient-value | A friend of the user. |  | my friend | Adapted |
 | role_kids | value | recipient-value | Children/kids participant group in event context. |  | kids, children | Accepted |
 | role_manager | value | recipient-value | The user's manager. |  | my manager, boss | Adapted |
+| role_mother | value | recipient-value | The mother of the user. | role_sister or role_kids | my mom, mother, mom | Accepted |
 | role_professor | value | recipient-value | The user's professor/instructor. |  | my professor, teacher | Adapted |
+| role_respondent | value | recipient-value | A respondent, survey participant, or interviewee providing primary research data. | role_customer (the user's client) or role_user (the conversational user) | respondent, respondents, survey respondent, study participant | Accepted |
 | role_sister | value | recipient-value | Sister participant role in family/event context. |  | sister | Accepted |
 | role_support_team | value | recipient-value | A customer-support team. |  | support, customer service | Adapted |
 | role_user | value | recipient-value | The requesting human. |  | me, I | Adapted |
@@ -517,6 +689,8 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | dir_asc | value | search-value | Ascending rank direction. |  | lowest first | Adapted |
 | dir_desc | value | search-value | Descending rank direction. |  | highest first | Adapted |
 | genre_comedy | value | search-value | Genre: comedy. |  |  | Adapted |
+| genre_electronic | value | search-value | Music genre refinement: electronic music. | genre_pop_rock or general style descriptors | electronic, electronic music, EDM | Accepted |
+| genre_pop_rock | value | search-value | Music genre: pop rock. | genre_comedy or general tone descriptors | pop rock, pop-rock, pop/rock | Accepted |
 | rank_distance | value | search-value | Rank field: proximity. |  | nearest, closest | Adapted |
 | rank_price | value | search-value | Rank or filter field: monetary cost. |  | cheapest, lowest price | Adapted |
 | rank_rating | value | search-value | Rank or filter field: user or critic score. |  |  | Adapted |
@@ -526,6 +700,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_semantic_category_value | category_rule | semantic-category-value | STRING class label used by typed constraints. class_temple describes a class, not an acquired physical temple reference. |  |  | Retained |
+| class_beach | value | semantic-category-value | The abstract class or category of beach destinations and coastal environments. | island (kitchen island work surface) or a specific named beach location | beach, beaches, beach destination, seaside | Accepted |
 | class_temple | value | semantic-category-value | The abstract class of temples. |  | temple, temples | Retained |
 | class_town | value | semantic-category-value | The abstract class of towns. |  | town, towns | Retained |
 
@@ -546,11 +721,13 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 |---|---|---|---|---|---|---|
 | rule_category_spatial_relation | category_rule | spatial-relation | STRING relation used by place. `in` and `on` have different spatial meaning and are not aliases. Orientation requires context when left/right/front are ambiguous. |  |  | Retained |
 | behind | value | spatial-relation | Positioned behind. |  |  | Retained |
+| between | value | spatial-relation | Positioned between or in the middle of reference entities. | next_to or in_front_of | between, in the middle of, middle of, center of | Accepted |
 | in | value | spatial-relation | Contained within. |  | inside | Retained |
 | in_front_of | value | spatial-relation | Positioned in front of. |  | in front of | Retained |
 | left_of | value | spatial-relation | To the left of. |  | left of | Retained |
 | next_to | value | spatial-relation | Adjacent to. |  | beside | Retained |
 | on | value | spatial-relation | Resting atop. |  | on top of | Retained |
+| other_side_of | value | spatial-relation | Positioned on the opposite or other side of a reference object. | next_to (which indicates general adjacency) | other side, other side of, opposite side of, opposite side | Accepted |
 | right_of | value | spatial-relation | To the right of. |  | right of | Retained |
 | under | value | spatial-relation | Beneath. |  | below | Retained |
 
@@ -565,6 +742,8 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | state_empty | value | state-value | Contains no intended material or usable remaining amount. |  | empty, used up | Adapted |
 | state_full | value | state-value | Contains its intended material or remaining usable amount. |  | full, filled | Adapted |
 | state_microwaved | value | state-value | Has been microwaved. |  | microwaved | Adapted |
+| state_sliced | value | state-value | The condition of being sliced or cut into thin pieces. | the operation slice itself | sliced, slice, chopped, cut | Accepted |
+| state_upright | value | state-value | An upright or vertically standing physical state of an object. | stand_up (which is an agent posture operation) | standing up, upright, vertical | Accepted |
 | state_warm | value | state-value | Warm or heated condition. |  | warm, hot | Adapted |
 
 ### style-value
@@ -577,6 +756,13 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | style_narrative | value | style-value | Story-like narrative style. |  | narrative, story-style | Retained |
 | style_persuasive | value | style-value | Persuasive/argumentative style. |  | persuasive | Retained |
 | style_technical | value | style-value | Technical/expository style. |  | technical | Retained |
+
+### time-of-day-value
+
+| symbol | kind | category | definition | not | aliases | status |
+|---|---|---|---|---|---|---|
+| daytime | value | time-of-day-value | The period of natural daylight between sunrise and sunset in the diurnal cycle. | unit_day (a 24-hour elapsed duration unit) or clock time timestamps | daytime, day, day time, daylight hours | Accepted |
+| nighttime | value | time-of-day-value | The period of darkness between sunset and sunrise in the diurnal cycle. | night_stand (a piece of furniture) or clock time timestamps | nighttime, night, night time, darkness | Accepted |
 
 ### tone-value
 
@@ -598,6 +784,7 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_topic_value | category_rule | topic-value | Named subjects remain STRING; complex compositional topics use the listed TERM constructors. A subject label does not encode the question or claim about it. |  |  | Retained |
+| topic_abortion | value | topic-value | The subject matter, ethical debate, healthcare procedure, or legal question of abortion and reproductive choice. | general politics (use topic_politics) or cognitive belief concepts (use beliefs) | abortion, reproductive rights, abortion rights | Accepted |
 | topic_baldurs_gate_3 | value | topic-value | Baldur's Gate 3. |  |  | Retained |
 | topic_classical_piano | value | topic-value | Classical piano. |  |  | Retained |
 | topic_current_events | value | topic-value | Current news, geopolitical events, and ongoing international developments. |  | current_events, news | Accepted |
@@ -613,6 +800,16 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | symbol | kind | category | definition | not | aliases | status |
 |---|---|---|---|---|---|---|
 | rule_category_transformation_value | category_rule | transformation-value | TERM-described transformation. Pass it through constraints; no ungoverned transformations attribute. |  |  | Retained |
+
+### unit-value
+
+| symbol | kind | category | definition | not | aliases | status |
+|---|---|---|---|---|---|---|
+| unit_fahrenheit | value | unit-value | Standard unit of temperature measurement on the Fahrenheit scale. | qualitative thermal states (use state_warm or state_cold) or duration units (use unit_minute, etc.) | Fahrenheit, deg F, degrees Fahrenheit, degrees F, F | Accepted |
+| unit_gram | value | unit-value | Standard metric measurement unit of mass equal to 1/1,000 of a kilogram (0.001 kg). | digital capacity units (like cap_gb) or temporal duration units | g, gram, grams | Accepted |
+| unit_kilometer | value | unit-value | Standard metric measurement unit of distance equal to 1,000 meters. | temporal duration units (like unit_minute) or non-metric distance units | km, kilometer, kilometres, kilometers | Accepted |
+| unit_liter | value | unit-value | Standard metric measurement unit of liquid volume equal to 1 cubic decimeter (1,000 milliliters). | digital capacity units (like cap_gb) or temporal duration units | l, liter, liters, litres | Accepted |
+| unit_percent | value | unit-value | Standard unit of proportion or ratio representing parts per hundred (%). | rate (a constructor relating two quantities) or unitless counts | percent, percentage, %, pct | Accepted |
 
 ## Attributes
 
@@ -693,3 +890,10 @@ Rendered from `glossary.jsonl` by `python -m glossary.render`. To edit: change a
 | example_c_existing_constraint_symbol_becomes_a_typed_construction | example | Existing constraint symbol becomes a typed construction<br><br>NL: “Suggest realistic pickup lines.” This example treats the message as a conversational request for suggestions.<br><br>The TERM is a requirement; it does not assert that an existing answer is realistic. Unlike the old STRING list, constraints has LIST[TERM]. | MODE REQUEST<br>ENTRYPOINT Conversation<br>CONVO Conversation {<br>  TURN t1 SPEAKER=USER {<br>    TERM constraint_realistic() -> constraint_realistic_2 : TERM<br>    UTTER ask(constraints=[constraint_realistic_2], topic=topic_pickup_lines)<br>  }<br>} |
 | example_d_record_an_actual_test_outcome_without_asserting_overall_correctness | example | Record an actual test outcome without asserting overall correctness<br><br>Source manifest: `t1:tests` identifies a supplied agent/tool trace in which the scikit-learn test run exits successfully. The source explicitly reports the selected tests passed; it does not establish that every bug is fixed. | MODE TRACE<br>ENTRYPOINT Conversation<br>CONVO Conversation {<br>  TURN t1 SPEAKER=AGENT {<br>    RECORD ACTION run_tests(target=sklearn) STATUS succeeded SOURCE "t1:tests" -> run_tests_event : EVENT<br>    CLAIM outcome(event=run_tests_event, value=TRUE) BY role_agent STATUS observed SOURCE "t1:tests" -> outcome_2 : CLAIM<br>  }<br>} |
 | example_e_preserve_exact_wording_through_generation_and_sending | example | Preserve exact wording through generation and sending<br><br>NL: “Write a polite email asking my manager for an update on Project Atlas, and send it.”<br><br>The input authorizes sending in this represented request. Reading this encoding does not itself authorize a tool action. Generating a purpose label and sending that label verbatim would not preserve the request. | MODE REQUEST<br>ENTRYPOINT ShortText<br>TASK ShortText {<br>  TERM content_status_update(subject="Project Atlas") -> content_status_update_2 : TERM<br>  GENERATE(target=art_short_text, format=format_email, tone=tone_polite, topic=content_status_update_2) -> short_text : STRING<br>  ACTION send_email(content=short_text, recipient=role_manager, tone=tone_polite)<br>} |
+
+## Deprecated
+
+| symbol | kind | category | definition | deprecated | superseded_by | status |
+|---|---|---|---|---|---|---|
+| char_age_14 | composite | character-property-value | Age 14. | use character_trait(property="age_years", value=14); human decision 2026-10-04: sizes and amounts are a number plus a unit, built with a constructor; no symbol per value | v19/support/character_trait | Deprecated |
+| char_age_18 | composite |  | Age 18 character trait. | use character_trait(property="age_years", value=18); human decision 2026-10-04: sizes and amounts are a number plus a unit, built with a constructor; no symbol per value | v19/support/character_trait | Deprecated |
