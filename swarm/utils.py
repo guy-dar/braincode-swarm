@@ -436,7 +436,7 @@ def build_docker_cmd(uid, gid, model: str, reference_dir: Path,
                       traj_path: Path, prompt_file: Path, scratch, image: str,
                       container_name: str | None = None,
                       extra_mounts=(), extra_env=None, add_host: bool = False,
-                      memory: str = "1g", writable_mounts=()) -> list:
+                      memory: str = "1g", writable_mounts=(), passthrough_env=()) -> list:
     """The exact `docker run` invocation for one record: non-root (matches
     the host uid/gid, so the writable /output mount just works), all
     capabilities dropped, no privilege escalation, memory/CPU capped. Network
@@ -459,6 +459,9 @@ def build_docker_cmd(uid, gid, model: str, reference_dir: Path,
     spawn_batch needs a name to `docker kill`.
 
     uid/gid may be None (Windows hosts): the --user flag is then omitted.
+
+    `passthrough_env` names host variables (API keys) handed to the container
+    by name only (`-e NAME`), so their values never appear on a command line.
     """
     env_flags = []
     for key, value in (extra_env or {}).items():
@@ -481,6 +484,7 @@ def build_docker_cmd(uid, gid, model: str, reference_dir: Path,
         "--cpus", "1",
         *(("--add-host", "host.docker.internal:host-gateway") if add_host else ()),
         "-e", "PROXY_API_KEY", "-e", "PROXY_BASE_URL",
+        *[flag for name in passthrough_env for flag in ("-e", name)],
         "-e", f"SWARM_MODEL={model}",
         *env_flags,
         "-v", f"{reference_dir}:/reference:ro",

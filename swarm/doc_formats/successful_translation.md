@@ -59,6 +59,7 @@ TASK Pan {
 | n1 | action | pick_up, place | covered |
 | n2 | object | sponge | covered |
 | n3 | constraint | relation=in | covered |
+| n4 | object | object_label::pan | label-preserved |
 
 ## Translation report
 
@@ -66,6 +67,7 @@ TASK Pan {
 - Coverage status: complete | partial
 - Source-span coverage: every segment t1:s1–t2:s7 is represented except …
 - Opaque-text spans: none | t3:s2 — reason (content="…" fallback)
+- Label-preserved spans: none | t1:s1 "pan" → object_label::pan (label only; no sense resolved)
 - Missing constructs: none
 - Unresolved ambiguities: none | t1:s1 — "it" could refer to the pan or the sponge; chose …
 - Check: `rag check` reported 0 unresolved needs and 0 unknown symbols
@@ -74,7 +76,7 @@ TASK Pan {
 ### Rules
 
 - **Status line.** The first line is exactly `Status: success`. The second is `Mode: REQUEST` or `Mode: TRACE` and must match the document's `MODE`.
-- **BrainCode block.** There is exactly one fenced `braincode` block. It is a complete document under `/reference/language-spec.md` (one `MODE`, one `ENTRYPOINT`) that uses only glossary symbols, local handles and literals.
-- **Needs coverage.** There is one row per need from `/needs.json`, using its `n<k>` id. `expressed by` names the glossary symbols or constructs used. `status` is `covered`, `opaque`, or `not-applicable`, and `not-applicable` must be justified in the report.
+- **BrainCode block.** There is exactly one fenced `braincode` block. It is a complete document under `/reference/language-spec.md` (one `MODE`, one `ENTRYPOINT`) that uses only glossary symbols, group values (`group::key`, spec §3.1), local handles and literals.
+- **Needs coverage.** There is one row per need from `/needs.json`, using its `n<k>` id. `expressed by` names the glossary symbols or constructs used. `status` is `covered`, `opaque`, `not-applicable` or `label-preserved` (expressed only by an open-group label such as `object_label::pan`), and `not-applicable` must be justified in the report. Label-preserved needs are also listed under "Label-preserved spans".
 - **Success means** every need is covered or justified, and `rag check` reports no symbols missing from the glossary. If any need could only be expressed with a symbol that doesn't exist, the result is a failed translation (see `failed_translation.md`), not a success with an invented symbol.
 - **Translation report.** Its fields are those required by spec §13, "Required external translation report".

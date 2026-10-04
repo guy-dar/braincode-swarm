@@ -23,10 +23,12 @@ One `###` block per suggestion, numbered S1, S2, … Make one suggestion, or a f
 
 **No values baked into symbols.** Never propose or accept a symbol whose name carries a specific number, size, age, amount or other value (`char_age_18`, `ram_16gb`, `max_5_items`). Build it from constructors with arguments instead: `measure(amount, unit)`, `at_least(...)` / `at_most(...)`, `character_trait(property, value)`, `requirement(property, value)`. Proper names that contain digits (`topic_spider_man_2`) are fine.
 
+**No leaf values as entries.** A word a value group admits is written `group::key` (spec §3.1): never suggest `pear`, `color_ochre`, `curr_zar` or `japan` as symbols. Write `food_label::pear`, `color_label::ochre`, `currency::ZAR`, `country::JP`. When a whole kind of leaf value has no group and an operation needs it, suggest a group (`lexical-group`) instead of its members: one missing platform, language or file format is a reason for a group, not for one more entry. A single-symbol suggestion is for a meaning a label can't carry (an operation, relation, constructor, or a value whose definition matters).
+
 ### Heading line (exact)
 
 ```
-### S<k> | type: add | dimension: <vocabulary-member|member-family|constructor|composite> | symbol: <new_symbol>
+### S<k> | type: add | dimension: <vocabulary-member|member-family|constructor|composite|lexical-group> | symbol: <new_symbol>
 ### S<k> | type: refine | dimension: <refine-entry|resolve-overlap> | target: <existing id or symbol>[, <second target>…]
 ```
 
@@ -49,6 +51,9 @@ For a refine, give only the fields that change.
 | `composite` | A recurring concept can be expressed with existing constructs | Expansion, Parameter mapping |
 | `refine-entry` | An entry's meaning, signature or usage is unclear or incomplete | Before, After, Justification, Affected uses, Compatibility |
 | `resolve-overlap` | Entries duplicate each other, conflate meanings or have misleading aliases | Decision (merge or split), Distinctions, Preserved references |
+| `lexical-group` | A whole kind of leaf value (plants, materials…) is needed by an operation and no group covers it | Domain, Admission (`open_label`, or `standard` with its code list), Key form, Key aliases, Consuming signatures, Illustrative values (1–3, not a whitelist), Positive example, Negative example, Overlap analysis (why no existing group serves), Signature refinements, Compatibility |
+
+A `lexical-group` proposal never lists members and comes with a `refine-entry` for every signature that should accept the group (`target: STRING / ATOM[plant_label]`): a group no signature accepts is unusable. Its proposed record is `{"symbol", "kind": "lexical_group", "definition" (the domain), "group": {"examples": ["plant_label::fern"]}}` plus any non-default `admission`/`key_form`/`key_aliases`.
 
 Every block also has:
 - **Needs:** the need ids and source locators that motivated it (e.g. `n2 (t1:s1), n7 (t3:s1)`)

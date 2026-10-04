@@ -26,6 +26,34 @@ MAX_PROMPT_CHARS = 48_000
 MAX_NEEDS = 120
 # Waits between need-extraction retries (seconds, jittered); then heuristic.
 LLM_RETRY_WAITS_S = (30, 90)
+# Bumped whenever the needs format changes, so cached needs are re-extracted
+# (v2: needs may carry the value group of a noun/value, from the catalog).
+NEEDS_VERSION = "v2"
+GLOSSARY_JSONL = SWARM_DIR / "reference" / "glossary.jsonl"
+_catalog_cache = {}
+
+
+def group_catalog(path: Path = GLOSSARY_JSONL) -> tuple:
+    """({group symbol: one-line description}, prompt text) for the value
+    groups in the current glossary, cached by file modification time."""
+    try:
+        mtime = path.stat().st_mtime
+    except OSError:
+        return {}, "(no value groups)"
+    if _catalog_cache.get("key") != (str(path), mtime):
+        import json as _json
+        groups = {}
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = _json.loads(line)
+            if r.get("kind") == "lexical_group" and r.get("status") != "Deprecated":
+                g = r.get("group") or {}
+                ex = ", ".join(g.get("examples") or [])
+                groups[r["symbol"]] = f"{' '.join(str(r.get('definition', '')).split())}" + (f" (e.g. {ex})" if ex else "")
+        text = "\n".join(f"- `{name}`: {desc}" for name, desc in sorted(groups.items())) or "(no value groups)"
+        _catalog_cache.update(key=(str(path), mtime), value=(groups, text))
+    return _catalog_cache["value"]
 
 NEGATION_RE = re.compile(r"\b(not|no|never|without|don't|dont|doesn't|isn't|aren't|won't|can't|cannot|avoid|exclude|except|nor)\b", re.I)
 CORRECTION_RE = re.compile(r"\b(actually|instead|i meant|rather|correction|scratch that|change it|make it)\b", re.I)
@@ -136,7 +164,9 @@ def llm_needs(segments: list, timeout: int = 180) -> list:
     text = numbered_text(segments)
     if len(text) > MAX_PROMPT_CHARS:
         text = text[:MAX_PROMPT_CHARS] + "\n[... item truncated for decomposition; later segments use heuristic needs ...]"
-    prompt = PROMPT_PATH.read_text(encoding="utf-8").replace("{numbered_item}", text)
+    groups, catalog = group_catalog()
+    prompt = (PROMPT_PATH.read_text(encoding="utf-8").replace("{group_catalog}", catalog)
+              .replace("{numbered_item}", text))
     import litellm
     data = None
     for attempt, wait in enumerate(LLM_RETRY_WAITS_S + (None,), 1):
@@ -167,8 +197,12 @@ def llm_needs(segments: list, timeout: int = 180) -> list:
             continue
         kind = item.get("kind") if item.get("kind") in NEED_KINDS else "object"
         source = item.get("source") or []
-        needs.append({"kind": kind, "text": str(item["text"]).strip()[:300],
-                      "source": [source] if isinstance(source, str) else [str(s) for s in source]})
+        need = {"kind": kind, "text": str(item["text"]).strip()[:300],
+                "source": [source] if isinstance(source, str) else [str(s) for s in source]}
+        group = str(item.get("group") or "").strip().strip("`").split("::", 1)[0]
+        if group in groups:   # an unknown or malformed tag is dropped, never fatal
+            need["group"] = group
+        needs.append(need)
     return needs[:MAX_NEEDS]
 
 

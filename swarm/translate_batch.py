@@ -320,6 +320,8 @@ def load_cached_needs(tid: str, content: str):
         return None
     if data.get("content_sha") != _content_sha(content) or not data.get("needs"):
         return None
+    if data.get("needs_version") != needs_mod.NEEDS_VERSION:   # older format: extract again
+        return None
     return data
 
 
@@ -343,7 +345,7 @@ def prefetch_needs(rows: list, workers: int = 4, log=print) -> dict:
         stripped = [{k: v for k, v in n.items() if k not in ("id", "context")} for n in needs]
         (NEEDS_CACHE_DIR / f"{row['translator_id']}.json").write_text(json.dumps(
             {"translator_id": row["translator_id"], "content_sha": _content_sha(content), "method": method,
-             "needs": stripped, "at": lf.now_iso()}, ensure_ascii=False), encoding="utf-8")
+             "needs_version": needs_mod.NEEDS_VERSION, "needs": stripped, "at": lf.now_iso()}, ensure_ascii=False), encoding="utf-8")
         return "cached"
 
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
@@ -360,7 +362,8 @@ def is_proxy_error(error_line: str) -> bool:
 def success_gate_problems(report: dict) -> list:
     """Why a claimed success isn't one, from the host's check. Needs must be
     covered by a used symbol or declared in the coverage table (opaque /
-    not-applicable count as declared); no invented symbols in statement heads;
+    not-applicable / label-preserved count as declared); no invented symbols
+    in statement heads; no invalid value-group atoms or retired bare symbols;
     no coverage claims for symbols the BrainCode never uses. Quoted-string
     and unbound-value warnings stay advisory: some literals are legitimate."""
     problems = []
@@ -371,6 +374,12 @@ def success_gate_problems(report: dict) -> list:
         problems.append("non-glossary symbols: " + ", ".join(report["unknown_symbols_in_head_position"]))
     if report.get("claimed_but_absent"):
         problems.append("coverage table names unused symbols: " + ", ".join(report["claimed_but_absent"]))
+    # value groups (spec §3.1): an invalid atom or a retired bare symbol is not
+    # valid BrainCode; a non-canonical alias (atom_warnings) stays advisory
+    if report.get("atom_errors"):
+        problems.append("invalid value-group atoms: " + "; ".join(report["atom_errors"][:8]))
+    if report.get("retired_symbols_used"):
+        problems.append("retired bare symbols: " + ", ".join(report["retired_symbols_used"][:8]))
     return problems
 
 

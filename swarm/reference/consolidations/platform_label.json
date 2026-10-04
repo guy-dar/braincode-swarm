@@ -1,0 +1,38 @@
+{
+  "purpose": "Fold the platform-name leaf values (services, frameworks, libraries, operating systems, build tools) into one open value group: platform_label::<name>. A new platform needs no entry.",
+  "group": {
+    "symbol": "platform_label",
+    "definition": "A source-supplied name of a software platform, service, framework, library, package, build tool or operating system (platform_label::django, platform_label::windows). Denotes that named system only; no version, vendor, capability or relation between systems is implied.",
+    "not": "The project being edited when the source does not say so (a repository named django is code_entity/software_version context), a programming-language feature, or a file format.",
+    "group": {
+      "key_form": "lower_identifier",
+      "examples": ["platform_label::django", "platform_label::windows", "platform_label::pytorch_lightning"],
+      "key_aliases": {"sklearn": "scikit_learn", "macosx": "macos", "osx": "macos", "win": "windows", "gcp": "gcloud"},
+      "recognition": ["Spell the key as the source's name in lower case with underscores for spaces or hyphens (scikit-learn -> scikit_learn, PyTorch Lightning -> pytorch_lightning)."]
+    }
+  },
+  "slots": {
+    "modify_code": ["target"],
+    "chg_modify_code": ["target"],
+    "run_tests": ["target"],
+    "code_entity": ["project"],
+    "software_version": ["project"],
+    "issue": ["project"],
+    "pull_request": ["project"],
+    "failure": ["system"],
+    "attribute_claim": ["subject", "value"],
+    "provides": ["actor", "subject"],
+    "subject": ["qualifier"],
+    "activity": ["instrument"],
+    "requirement": ["value"],
+    "config_setting": ["value"],
+    "regression_case": ["framework"]
+  },
+  "retire": {
+    "netflix": null, "django": null, "sklearn": "scikit_learn", "youtube": null, "gcloud": null,
+    "pandas": null, "numpy": null, "xarray": null, "meson": null, "pants": null, "qiskit": null,
+    "python_platform": "python", "os_macos": "macos", "conda": null, "ipython": null, "platform_sap": "sap",
+    "tiktok": null, "openpyxl": null, "xlrd": null, "pytorch_lightning": null, "os_windows": "windows"
+  },
+  "retire_rules": ["v19/rule/category/platform-name"]
+}

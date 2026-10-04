@@ -44,10 +44,16 @@ def render_entries(found: dict) -> str:
     lines = []
     for key, data in found.items():
         if not data:
-            lines.append(f"- {key}: no such glossary record")
+            lines.append(f"- {key}: no such glossary record" + (" or value group" if "::" in key else ""))
             continue
         rec = data["record"]
-        lines.append(f"- {compact_line(rec)}  [{rec['id']}]")
+        slots = [(s["symbol"], s["param"]) for s in data.get("slots") or []]
+        lines.append(f"- {compact_line(rec, slots)}  [{rec['id']}]")
+        atom = data.get("atom")
+        if atom:
+            verdict = {"ok": "valid", "alias": "valid alias"}.get(atom["status"], "INVALID")
+            lines.append(f"    {atom['atom']}: {verdict}" + (f" ({atom['name']})" if atom.get("name") else "")
+                         + (f" — {atom['message']}" if atom.get("message") else ""))
         if data.get("shared_rules"):
             lines.append("    rules: " + ", ".join(r["symbol"] for r in data["shared_rules"]))
         for dep in data.get("dependencies") or []:

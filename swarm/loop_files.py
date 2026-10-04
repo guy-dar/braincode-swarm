@@ -36,7 +36,7 @@ SUGGESTION_HEAD_RE = re.compile(
     r"^###\s+S(?P<n>\d+)\s*\|\s*type:\s*(?P<type>add|refine)\s*\|\s*dimension:\s*(?P<dim>[a-z\-]+)\s*\|\s*"
     r"(?P<field>symbol|target):\s*(?P<value>.+?)\s*$", re.M)
 LOOSE_HEAD_RE = re.compile(r"^###\s+S\d+\b.*$", re.M)
-ADD_DIMENSIONS = {"vocabulary-member", "member-family", "constructor", "composite"}
+ADD_DIMENSIONS = {"vocabulary-member", "member-family", "constructor", "composite", "lexical-group"}
 REFINE_DIMENSIONS = {"refine-entry", "resolve-overlap"}
 STATUS_RE = re.compile(r"^\s*Status:\s*(success|failed)\s*$", re.I)
 

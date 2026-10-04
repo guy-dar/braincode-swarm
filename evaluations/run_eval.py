@@ -1,0 +1,464 @@
+#!/usr/bin/env python3
+"""Run the BrainCode evaluations: translators of six models on unseen test
+items, with exactly the swarm translators' setup (compact spec, frozen
+glossary, glossary RAG, kit, formats, context limits, host check).
+
+    python run_eval.py setup         --run main                 # freeze reference, RAG, needs, contexts
+    python run_eval.py translate     --run main [--models a,b] [--items k1,k2] [--runs 3] [--max-usd 150]
+    python run_eval.py backtranslate --run main [--models ...]   # expressivity (Gemini models)
+    python run_eval.py status        --run main
+
+Everything of a run lives under runs/<run>/; every step is resumable (done
+runs are skipped). API keys: Gemini through the vertex proxy (PROXY_API_KEY,
+swarm/.env); Anthropic from ANTHROPIC_API_KEY or the user variable
+CLAUDE_API_KEY; OpenAI from OPENAI_API_KEY or OPENAI_API_KEY_PERSONAL. Keys
+reach containers by name only (`docker run -e NAME`), never as values.
+"""
+import argparse
+import json
+import os
+import random
+import shutil
+import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+EVAL_DIR = Path(__file__).resolve().parent
+SWARM = EVAL_DIR.parent / "swarm"
+sys.path.insert(0, str(SWARM))
+sys.path.insert(0, str(EVAL_DIR))
+
+import loop  # noqa: E402
+import loop_files as lf  # noqa: E402
+import sample as sample_mod  # noqa: E402
+import translate_batch as tb  # noqa: E402
+import utils  # noqa: E402
+from rag import needs as needs_mod  # noqa: E402
+
+RUNS_DIR = EVAL_DIR / "runs"
+MODELS_PATH = EVAL_DIR / "models.json"
+RAG_PORT = int(os.environ.get("EVAL_RAG_PORT", "8775"))
+THROTTLE_PORT = os.environ.setdefault("THROTTLE_PORT", "8786")
+ROUTE_CONCURRENCY = {"proxy": int(os.environ.get("EVAL_PROXY_CONCURRENCY", "6")),
+                     "anthropic": int(os.environ.get("EVAL_ANTHROPIC_CONCURRENCY", "3")),
+                     "openai": int(os.environ.get("EVAL_OPENAI_CONCURRENCY", "3"))}
+PASSTHROUGH_KEYS = ("ANTHROPIC_API_KEY", "OPENAI_API_KEY")
+TIMEOUT_S = int(os.environ.get("EVAL_TIMEOUT", "1200"))
+_cost_lock = threading.Lock()
+
+
+def log(msg: str) -> None:
+    print(msg, file=sys.stderr, flush=True)
+
+
+# ---------------------------------------------------------------------- config
+
+def load_models() -> list:
+    return json.loads(MODELS_PATH.read_text(encoding="utf-8"))["models"]
+
+
+def _user_env(name: str):
+    """A Windows user/machine environment variable not in this process's env."""
+    value = os.environ.get(name)
+    if value:
+        return value
+    try:
+        import winreg
+        for hive, path in ((winreg.HKEY_CURRENT_USER, "Environment"),
+                           (winreg.HKEY_LOCAL_MACHINE,
+                            r"SYSTEM\CurrentControlSet\Control\Session Manager\Environment")):
+            try:
+                with winreg.OpenKey(hive, path) as key:
+                    return winreg.QueryValueEx(key, name)[0]
+            except OSError:
+                continue
+    except ImportError:
+        pass
+    return None
+
+
+def prepare_keys() -> dict:
+    """Put provider keys into this process's env under the names the harness
+    expects; returns {route: available}. Values are never printed."""
+    utils.load_dotenv(SWARM / ".env")
+    anthropic = _user_env("ANTHROPIC_API_KEY") or _user_env("CLAUDE_API_KEY")
+    openai = _user_env("OPENAI_API_KEY") or _user_env("OPENAI_API_KEY_PERSONAL")
+    if anthropic:
+        os.environ["ANTHROPIC_API_KEY"] = anthropic
+    if openai:
+        os.environ["OPENAI_API_KEY"] = openai
+    return {"proxy": bool(os.environ.get("PROXY_API_KEY")), "anthropic": bool(anthropic), "openai": bool(openai)}
+
+
+def run_dir(run: str) -> Path:
+    return RUNS_DIR / run
+
+
+def items_of(run: str) -> list:
+    return [json.loads(line) for line in (run_dir(run) / "items.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()]
+
+
+def model_items(model: dict, items: list) -> list:
+    return items if model["sample"] == "all" else [i for i in items if i["all_models"]]
+
+
+def price_of(model: dict, usage: dict):
+    p = model.get("price")
+    if not p or not usage:
+        return None
+    return round((usage.get("input", 0) * p[0] + usage.get("cacheRead", 0) * p[1] + usage.get("output", 0) * p[2])
+                 / 1e6, 4)
+
+
+# ---------------------------------------------------------------------- services
+
+class Services:
+    """The frozen reference snapshot's RAG server (for the kit inside
+    containers) and the model-proxy throttle, for the duration of a command."""
+
+    def __init__(self, run: str, need_rag: bool = True):
+        self.run = run
+        self.need_rag = need_rag
+        self.retriever = self.server = self.throttle = None
+
+    def __enter__(self):
+        from rag.retrieve import Retriever
+        from rag.server import RagServer
+        d = run_dir(self.run)
+        self.retriever = Retriever(dense=True, glossary_path=d / "reference" / "glossary.jsonl",
+                                   index_dir=d / "rag_index")
+        if self.need_rag:
+            self.server = RagServer(self.retriever, "0.0.0.0", RAG_PORT).start()
+            log(f"eval: RAG server on :{RAG_PORT} ({len(self.retriever.index.records)} records, frozen snapshot)")
+        cfg = loop.load_loop_config()
+        self.throttle = loop.start_throttle(cfg)
+        return self
+
+    def __exit__(self, *exc):
+        if self.throttle is not None:
+            self.throttle.stop()
+        if self.server is not None:
+            self.server.stop()
+        loop.kill_loop_containers()
+
+
+# ---------------------------------------------------------------------- setup
+
+def cmd_setup(args):
+    d = run_dir(args.run)
+    items = sample_mod.load()
+    if args.items:
+        wanted = set(args.items.split(","))
+        items = [i for i in items if i["item_key"] in wanted]
+    d.mkdir(parents=True, exist_ok=True)
+    ref = d / "reference"
+    if not ref.exists():
+        tb.snapshot_reference(ref)
+        from glossary import manifest
+        (d / "meta.json").write_text(json.dumps({
+            "glossary_version": manifest.current_version(), "created_at": lf.now_iso(),
+            "sample": sample_mod.SAMPLE_PATH.name, "items": len(items)}, indent=1), encoding="utf-8")
+        log(f"eval: froze reference ({manifest.current_version()}) -> {ref}")
+    (d / "items.jsonl").write_text("".join(json.dumps(i, ensure_ascii=False) + "\n" for i in items), encoding="utf-8")
+    meta = json.loads((d / "meta.json").read_text(encoding="utf-8"))
+    with Services(args.run, need_rag=False) as svc:
+        def one(item):
+            idir = d / "items" / item["item_key"]
+            if (idir / "rag_context.md").exists():
+                return "cached"
+            idir.mkdir(parents=True, exist_ok=True)
+            content = lf.item_content(item)
+            segments, needs, method = needs_mod.extract_needs(content, use_llm=True)
+            stripped = [{k: v for k, v in n.items() if k not in ("id", "context")} for n in needs]
+            result = svc.retriever.retrieve(content, needs=stripped, needs_method=method)
+            needs_full = result["needs"]
+            (idir / "trajectory.txt").write_text(needs_mod.numbered_text(result["segments"]), encoding="utf-8")
+            (idir / "item_raw.txt").write_text(content, encoding="utf-8")
+            (idir / "needs.json").write_text(json.dumps({"translator_id": item["item_key"], "needs": needs_full},
+                                                        ensure_ascii=False, indent=1), encoding="utf-8")
+            from rag.retrieve import render_context
+            (idir / "rag_context.md").write_text(render_context(result, svc.retriever, meta["glossary_version"]),
+                                                 encoding="utf-8")
+            (idir / "meta.json").write_text(json.dumps({**{k: item[k] for k in ("item_key", "dataset", "item_id",
+                                                                               "stratum", "chars", "all_models")},
+                                                        "needs": len(needs_full), "needs_method": method,
+                                                        "glossary_sha": result["glossary_sha"]}, indent=1),
+                                            encoding="utf-8")
+            return method
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            done = list(pool.map(one, items))
+    log(f"eval: setup {args.run}: {len(items)} items; needs by method {dict((m, done.count(m)) for m in set(done))}")
+
+
+# ---------------------------------------------------------------------- translate
+
+def _route_semaphores():
+    return {route: threading.Semaphore(n) for route, n in ROUTE_CONCURRENCY.items()}
+
+
+def translate_one(model: dict, item: dict, k: int, run: str, image: str, retriever, budget: dict, sems: dict) -> dict:
+    d = run_dir(run)
+    out_dir = d / model["name"] / item["item_key"] / f"r{k}"
+    result_path = out_dir / "result.json"
+    if result_path.exists():
+        return json.loads(result_path.read_text(encoding="utf-8"))
+    with _cost_lock:
+        if budget["spent"].get(model["name"], 0) >= budget["max_usd"]:
+            return {"status": "skipped", "detail": "model budget reached"}
+    idir = d / "items" / item["item_key"]
+    ref = d / "reference"
+    if out_dir.exists():
+        shutil.rmtree(out_dir)   # an interrupted run starts over
+    work = out_dir / "work"
+    for sub in ("session", "out"):
+        (work / sub).mkdir(parents=True, exist_ok=True)
+    for name in ("trajectory.txt", "item_raw.txt", "rag_context.md", "needs.json"):
+        shutil.copy2(idir / name, work / name)
+    tid = f"{item['item_key']}-r{k}"
+    prompt = tb.fill_template((lf.TASKS_DIR / "translator.md").read_text(encoding="utf-8"),
+                              {"TRANSLATOR_ID": tid, "BATCH_ID": "eval", "TNUM": k, "DATASET": item["dataset"]})
+    attach = tb.build_attachments(work / "attach", ref, work)
+    needs = json.loads((work / "needs.json").read_text(encoding="utf-8"))["needs"]
+    usage, feedback, last_problem = {}, "", None
+    started = time.monotonic()
+    for attempt in (1, 2):
+        resume = attempt > 1 and any((work / "session").rglob("*.jsonl"))
+        prompt_path = work / f"prompt{attempt}.md"
+        prompt_path.write_text((tb.CONTINUE_PROMPT.format(problem=last_problem or "interrupted") if resume else prompt)
+                               + feedback, encoding="utf-8")
+        container = f"swarm-tr-eval-{model['name']}-{tid}-{attempt}-{random.randint(1000, 9999)}"
+        env = {"TRANSLATOR_ID": tid, "DATASET": item["dataset"], "BATCH_ID": "eval", "RAG_PORT": RAG_PORT,
+               "PI_JSON": "1", "PI_SESSION_DIR": "/session", **tb.CONTEXT_LIMITS_ENV}
+        if resume:
+            env["PI_RESUME"] = "1"
+        cmd = utils.build_docker_cmd(
+            None, None, model["pi_model"], ref, work / "trajectory.txt", prompt_path, work / "out", image,
+            container_name=container, add_host=True,
+            extra_mounts=[(work / "item_raw.txt", "/item_raw.txt"), (work / "rag_context.md", "/rag_context.md"),
+                          (work / "needs.json", "/needs.json"), (lf.KIT_DIR, "/kit"),
+                          (lf.DOC_FORMATS_DIR, "/doc_formats"), (attach, "/attach")],
+            writable_mounts=[(work / "session", "/session")], extra_env=env, passthrough_env=PASSTHROUGH_KEYS)
+        with sems[model["route"]]:
+            proc, duration, used = tb.run_container_logged(cmd, container, TIMEOUT_S, out_dir / f"attempt{attempt}.log")
+        used = {**used, **tb.collect_context_log(work / "session", used, out_dir / f"attempt{attempt}.context.jsonl")}
+        for key, value in used.items():
+            usage[key] = usage.get(key, 0) + value
+        status, body, sugg, problem = tb.validate_output(work / "out")
+        tail = utils.last_error_line(proc.stderr or "") or ""
+        if problem is None and proc.returncode != 0:
+            problem = f"harness exited {proc.returncode}" + (f" ({tail})" if tail else "")
+        report = None
+        if problem is None:
+            report = retriever.check(body, needs)
+            if status == "success":
+                gate = tb.success_gate_problems(report)
+                if gate:
+                    problem = "claimed success but the host check found: " + "; ".join(gate)
+                    feedback = ("\n\n## Your previous attempt was rejected\n\nIt declared `Status: success`, but the "
+                                "host's check of its BrainCode found problems. Fix every one, or report a failure "
+                                "with suggestions:\n\n" + tb.render_check(report))
+        if problem is None:
+            (out_dir / "translation.md").write_text(body, encoding="utf-8")
+            if status == "failed":
+                (out_dir / "suggestions.md").write_text(sugg or "", encoding="utf-8")
+            (out_dir / "check.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+            break
+        last_problem = problem
+        status = "error"
+        if attempt == 1 and tb.is_proxy_error(tail):
+            time.sleep(random.uniform(*tb.PROXY_BACKOFF_S))
+    tb.keep_session(work / "session", out_dir / "session.jsonl")
+    for sub in ("out",):
+        if (work / sub).exists():
+            shutil.copytree(work / sub, out_dir / "output", dirs_exist_ok=True)
+    shutil.rmtree(work, ignore_errors=True)
+    cost = price_of(model, usage)
+    res = {"model": model["name"], "item": item["item_key"], "dataset": item["dataset"], "run": k,
+           "status": status, "problem": last_problem if status == "error" else None, "attempts": attempt,
+           "duration_s": round(time.monotonic() - started, 1), "usage": usage, "cost_usd": cost}
+    result_path.write_text(json.dumps(res, indent=1), encoding="utf-8")
+    if cost:
+        with _cost_lock:
+            budget["spent"][model["name"]] = budget["spent"].get(model["name"], 0) + cost
+    return res
+
+
+def _image() -> str:
+    return loop.build_image("pi")
+
+
+def spent_so_far(run: str) -> dict:
+    spent = {}
+    for p in run_dir(run).glob("*/*/r*/result.json"):
+        r = json.loads(p.read_text(encoding="utf-8"))
+        spent[r["model"]] = spent.get(r["model"], 0) + (r.get("cost_usd") or 0)
+    return spent
+
+
+def select_models(arg: str, available: dict) -> list:
+    models = load_models()
+    if arg and arg != "all":
+        wanted = set(arg.split(","))
+        models = [m for m in models if m["name"] in wanted]
+    out = []
+    for m in models:
+        if not m.get("pi_model"):
+            log(f"eval: skipping {m['name']}: {m.get('note') or 'no harness model'}")
+        elif not available.get(m["route"]):
+            log(f"eval: skipping {m['name']}: no API key for route {m['route']}")
+        else:
+            out.append(m)
+    return out
+
+
+def cmd_translate(args):
+    available = prepare_keys()
+    models = select_models(args.models, available)
+    items = items_of(args.run)
+    if args.items:
+        wanted = set(args.items.split(","))
+        items = [i for i in items if i["item_key"] in wanted]
+    image = _image()
+    budget = {"max_usd": args.max_usd, "spent": spent_so_far(args.run)}
+    jobs = [(m, it, k) for m in models for it in model_items(m, items) for k in range(1, args.runs + 1)]
+    log(f"eval: {len(jobs)} translator runs: " + ", ".join(
+        f"{m['name']} {sum(j[0] is m for j in jobs)}" for m in models))
+    sems = _route_semaphores()
+    with Services(args.run) as svc:
+        workers = sum(ROUTE_CONCURRENCY.values())
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = {pool.submit(translate_one, m, it, k, args.run, image, svc.retriever, budget, sems): (m, it, k)
+                       for m, it, k in jobs}
+            for f in as_completed(futures):
+                m, it, k = futures[f]
+                try:
+                    r = f.result()
+                except Exception as e:   # one broken run must not stop the others
+                    import traceback
+                    traceback.print_exc()
+                    r = {"status": "error", "problem": str(e)}
+                log(f"eval: {m['name']} {it['item_key']} r{k} -> {r.get('status')}"
+                    + (f" (${r['cost_usd']:.3f}, {r.get('duration_s', 0):.0f}s)" if r.get("cost_usd") else "")
+                    + (f" [{str(r.get('problem'))[:160]}]" if r.get("status") == "error" else ""))
+
+
+# ---------------------------------------------------------------------- backtranslate
+
+def backtranslate_one(model: dict, fwd_dir: Path, item: dict, run: str, image: str, retriever, sems: dict) -> dict:
+    from rag.server import render_entries
+    import metrics
+    back = fwd_dir / "back"
+    result_path = back / "result.json"
+    if result_path.exists():
+        return json.loads(result_path.read_text(encoding="utf-8"))
+    translation = (fwd_dir / "translation.md").read_text(encoding="utf-8")
+    code = metrics.braincode_code(translation)
+    d = run_dir(run)
+    if back.exists():
+        shutil.rmtree(back)
+    work = back / "work"
+    for sub in ("session", "out", "attach"):
+        (work / sub).mkdir(parents=True, exist_ok=True)
+    (work / "trajectory.txt").write_text(code, encoding="utf-8")
+    kinds = metrics.glossary_kinds(d / "reference" / "glossary.jsonl")
+    symbols, _ = metrics.symbol_counts(translation, kinds)
+    keys = sorted({s.split("::", 1)[0] if "::" in s else s for s in symbols})
+    entries = render_entries({k: retriever.entry(k) for k in keys}) if keys else "(no glossary symbols)"
+    shutil.copy2(d / "reference" / "language-spec.compact.md", work / "attach" / "1-language-spec.md")
+    (work / "attach" / "2-glossary-entries.md").write_text("# Glossary entries used by the document\n\n" + entries,
+                                                         encoding="utf-8")
+    shutil.copy2(EVAL_DIR / "doc_formats" / "reconstruction.md", work / "attach" / "3-format-reconstruction.md")
+    prompt = tb.fill_template((EVAL_DIR / "tasks" / "backtranslator.md").read_text(encoding="utf-8"),
+                              {"DATASET": item["dataset"]})
+    (work / "prompt.md").write_text(prompt, encoding="utf-8")
+    tid = f"{item['item_key']}-{fwd_dir.name}-back"
+    container = f"swarm-tr-eval-{model['name']}-{tid}-{random.randint(1000, 9999)}"
+    env = {"RAG_PORT": RAG_PORT, "PI_JSON": "1", "PI_SESSION_DIR": "/session", **tb.CONTEXT_LIMITS_ENV}
+    cmd = utils.build_docker_cmd(
+        None, None, model["pi_model"], d / "reference", work / "trajectory.txt", work / "prompt.md", work / "out",
+        image, container_name=container, add_host=True,
+        extra_mounts=[(lf.KIT_DIR, "/kit"), (work / "attach", "/attach")],
+        writable_mounts=[(work / "session", "/session")], extra_env=env, passthrough_env=PASSTHROUGH_KEYS)
+    started = time.monotonic()
+    with sems[model["route"]]:
+        proc, duration, used = tb.run_container_logged(cmd, container, TIMEOUT_S, back / "attempt1.log")
+    used = {**used, **tb.collect_context_log(work / "session", used, back / "attempt1.context.jsonl")}
+    recon = work / "out" / "reconstruction.md"
+    status = "ok" if recon.exists() and recon.read_text(encoding="utf-8").strip() and proc.returncode == 0 else "error"
+    if recon.exists():
+        shutil.copy2(recon, back / "reconstruction.md")
+    tb.keep_session(work / "session", back / "session.jsonl")
+    shutil.rmtree(work, ignore_errors=True)
+    res = {"model": model["name"], "item": item["item_key"], "run": fwd_dir.name, "status": status,
+           "duration_s": round(time.monotonic() - started, 1), "usage": used, "cost_usd": price_of(model, used),
+           "problem": None if status == "ok" else (utils.last_error_line(proc.stderr or "") or "no reconstruction")}
+    result_path.write_text(json.dumps(res, indent=1), encoding="utf-8")
+    return res
+
+
+def cmd_backtranslate(args):
+    available = prepare_keys()
+    models = [m for m in select_models(args.models, available) if m.get("expressivity")]
+    items = {i["item_key"]: i for i in items_of(args.run)}
+    image = _image()
+    jobs = []
+    for m in models:
+        for res in sorted(run_dir(args.run).glob(f"{m['name']}/*/r*/result.json")):
+            r = json.loads(res.read_text(encoding="utf-8"))
+            if r["status"] in ("success", "failed") and (res.parent / "translation.md").exists():
+                if not args.items or r["item"] in args.items.split(","):
+                    jobs.append((m, res.parent, items[r["item"]]))
+    log(f"eval: {len(jobs)} back-translations")
+    sems = _route_semaphores()
+    with Services(args.run) as svc:
+        with ThreadPoolExecutor(max_workers=sum(ROUTE_CONCURRENCY.values())) as pool:
+            futures = {pool.submit(backtranslate_one, m, fd, it, args.run, image, svc.retriever, sems): (m, fd)
+                       for m, fd, it in jobs}
+            for f in as_completed(futures):
+                m, fd = futures[f]
+                try:
+                    r = f.result()
+                except Exception as e:
+                    import traceback
+                    traceback.print_exc()
+                    r = {"status": "error", "problem": str(e)}
+                log(f"eval: back {m['name']} {fd.parent.name} {fd.name} -> {r['status']}"
+                    + (f" [{r.get('problem')}]" if r["status"] != "ok" else ""))
+
+
+# ---------------------------------------------------------------------- status
+
+def cmd_status(args):
+    from collections import Counter
+    rows = [json.loads(p.read_text(encoding="utf-8")) for p in run_dir(args.run).glob("*/*/r*/result.json")]
+    by_model = {}
+    for r in rows:
+        by_model.setdefault(r["model"], []).append(r)
+    for name, rs in sorted(by_model.items()):
+        c = Counter(r["status"] for r in rs)
+        cost = sum(r.get("cost_usd") or 0 for r in rs)
+        tokens = sum((r.get("usage") or {}).get("input", 0) + (r.get("usage") or {}).get("cacheRead", 0) for r in rs)
+        print(f"{name:18} runs {len(rs):4}  {dict(c)}  ${cost:.2f}  input+cached {tokens:,}")
+    backs = [json.loads(p.read_text(encoding="utf-8")) for p in run_dir(args.run).glob("*/*/r*/back/result.json")]
+    if backs:
+        print("back-translations:", dict(Counter((b["model"], b["status"]) for b in backs)))
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("command", choices=["setup", "translate", "backtranslate", "status"])
+    p.add_argument("--run", default="main")
+    p.add_argument("--models", default="all", help="comma-separated model names from models.json, or all")
+    p.add_argument("--items", default="", help="comma-separated item keys (default: the run's items)")
+    p.add_argument("--runs", type=int, default=3, help="independent translations per item")
+    p.add_argument("--max-usd", type=float, default=150.0, help="per-model cost cap (priced models)")
+    args = p.parse_args(argv)
+    {"setup": cmd_setup, "translate": cmd_translate, "backtranslate": cmd_backtranslate,
+     "status": cmd_status}[args.command](args)
+
+
+if __name__ == "__main__":
+    main()

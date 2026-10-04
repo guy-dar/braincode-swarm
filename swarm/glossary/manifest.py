@@ -14,9 +14,11 @@ from . import records as rec_mod
 
 REF_DIR = rec_mod.REF_DIR
 MANIFEST = REF_DIR / "reference-manifest.json"
-LANGUAGE_VERSION = "19.0.0-draft.1"
+from .render import LANGUAGE_VERSION  # noqa: E402  (one source for header and manifest)
 TRACKED = ("language-spec.md", "language-spec.compact.md", "glossary.jsonl", "glossary.md",
-           "glossary-provenance.jsonl", "examples.jsonl", "purpose.md")
+           "glossary-provenance.jsonl", "examples.jsonl", "purpose.md",
+           # code lists of the standard value groups (country, currency); host-only
+           "standards/iso3166-1-alpha2.json", "standards/iso4217.json", "retired-symbols.json")
 
 
 def _sha(path: Path) -> str:

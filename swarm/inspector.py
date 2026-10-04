@@ -48,6 +48,7 @@ def columns() -> list:
             "failed_translations", "unfinished_translations", "success_pct",
             "add_total", "refine_total"]
     cols += [f"add_{d}" for d in ds] + [f"refine_{d}" for d in ds]
+    cols += ["add_lexical_group", "label_preserved_needs", "leaf_value_adds", "leaf_value_symbols"]
     cols += ["accepted_add_total", "accepted_refine_total", "accepted_pct"]
     cols += [f"accepted_add_{d}" for d in ds] + [f"accepted_refine_{d}" for d in ds]
     cols += [f"ops_{op}" for op in APPLIED_OPS]
@@ -111,7 +112,7 @@ def glossary_live_sets(events: list) -> tuple:
             live.update(ids[1:])
         elif op == "merge" and len(ids) > 1:
             live.difference_update(ids[1:])
-        elif op == "deprecate" and ids:
+        elif op in ("deprecate", "retire") and ids:
             live.discard(ids[0])
     if current_batch is not None and current_batch not in after:
         after[current_batch] = set(live)
@@ -120,19 +121,45 @@ def glossary_live_sets(events: list) -> tuple:
 
 # ---------------------------------------------------------------------- counting
 
+_KINDS = {}
+
+
+def _record_kind(rid: str) -> tuple:
+    """(kind, category, symbol) of a record id, from the current glossary or
+    any history snapshot (retired records exist only there)."""
+    if not _KINDS:
+        for path in sorted(lf.HISTORY_DIR.glob("*/glossary.jsonl")) + [lf.REFERENCE_DIR / "glossary.jsonl"]:
+            for line in path.read_text(encoding="utf-8").splitlines():
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                _KINDS[r.get("id")] = (r.get("kind"), r.get("category", ""), r.get("symbol"))
+    return _KINDS.get(rid, (None, "", rid))
+
+
 def count_batch(batch_id: int, plan_rows: list = None, events: list = None, entry: dict = None) -> dict:
     plan_rows = plan_rows if plan_rows is not None else lf.plan_batches(lf.load_plan()).get(batch_id, [])
     events = load_provenance() if events is None else events
     entry = load_state_entry(batch_id) if entry is None else entry
     row = {c: 0 for c in columns()}
+    row["leaf_value_symbols"] = ""
     row["batch"] = batch_id
     row["translators_planned"] = len(plan_rows)
     for item in plan_rows:
         tid, ds = item["translator_id"], item["dataset"]
+        path = None
         if lf.success_path(ds, tid).exists():
             row["successful_translations"] += 1
+            path = lf.success_path(ds, tid)
         elif lf.failed_path(ds, tid).exists():
             row["failed_translations"] += 1
+            path = lf.failed_path(ds, tid)
+        if path is not None:
+            # the host's check, appended to every routed translation: needs
+            # covered only by an open-group label (spec §3.1)
+            text = path.read_text(encoding="utf-8", errors="replace")
+            row["label_preserved_needs"] += sum(1 for line in text.splitlines() if line.startswith("- [LABEL]"))
     row["translators_finished"] = row["successful_translations"] + row["failed_translations"]
     row["unfinished_translations"] = row["translators_planned"] - row["translators_finished"]
     row["success_pct"] = round(100 * row["successful_translations"] / row["translators_planned"], 1) \
@@ -145,6 +172,8 @@ def count_batch(batch_id: int, plan_rows: list = None, events: list = None, entr
         dataset = lf.header_field(text, "Dataset")
         for s in lf.parse_suggestions(text):
             suggested[f"{path.stem}#S{s['n']}"] = (s["type"], dataset)
+            if s["dimension"] == "lexical-group":
+                row["add_lexical_group"] += 1
             row[f"{s['type']}_total"] += 1
             if f"{s['type']}_{dataset}" in row:
                 row[f"{s['type']}_{dataset}"] += 1
@@ -159,6 +188,15 @@ def count_batch(batch_id: int, plan_rows: list = None, events: list = None, entr
             continue
         row[f"ops_{op}"] += 1
         accepted.update(r for r in e.get("suggestions") or [] if r in suggested)
+        if op == "add":
+            # leaf values added as records (kind value): the glossary should
+            # grow groups, not enumerations of open domains (spec §3.1)
+            for rid in e.get("ids") or []:
+                kind, cat, sym = _record_kind(rid)
+                if kind == "value":
+                    row["leaf_value_adds"] += 1
+                    row["leaf_value_symbols"] = ", ".join(filter(None, [row["leaf_value_symbols"] or "",
+                                                                        f"{sym} ({cat})"]))
     for ref in accepted:
         kind, dataset = suggested[ref]
         row[f"accepted_{kind}_total"] += 1
@@ -247,11 +285,15 @@ def inspect(batch_id: int, plan_rows: list = None, max_add: int = DEFAULT_MAX_AD
     per_ds_acc = ", ".join(f"{ds} {row[f'accepted_add_{ds}']}/{row[f'accepted_refine_{ds}']}" for ds in lf.DATASETS)
     log(f"inspector: batch {batch_id}: translators {row['translators_finished']}/{row['translators_planned']} finished "
         f"({row['successful_translations']} successful, {row['failed_translations']} failed)")
-    log(f"inspector: batch {batch_id}: suggestions add {row['add_total']}, refine {row['refine_total']} "
-        f"(add/refine per dataset: {per_ds})")
+    log(f"inspector: batch {batch_id}: suggestions add {row['add_total']} (of them {row['add_lexical_group']} new "
+        f"value groups), refine {row['refine_total']} (add/refine per dataset: {per_ds}); "
+        f"{row['label_preserved_needs']} needs covered by a group label only")
     log(f"inspector: batch {batch_id}: accepted add {row['accepted_add_total']}, refine {row['accepted_refine_total']} "
         f"({row['accepted_pct']}% of suggestions; per dataset: {per_ds_acc}); ops "
         + ", ".join(f"{op} {row[f'ops_{op}']}" for op in APPLIED_OPS))
+    if row["leaf_value_adds"]:
+        log(f"inspector: batch {batch_id}: LEAF VALUES ADDED AS RECORDS ({row['leaf_value_adds']}): "
+            f"{row['leaf_value_symbols']} — check whether a value group should hold them instead")
     log(f"inspector: batch {batch_id}: decision {row['decision'].upper()} — {row['reason']}")
     if graphs:
         refresh_graphs(log)

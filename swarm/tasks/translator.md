@@ -39,8 +39,18 @@ Your job is a **faithful** translation using only the current glossary. If that 
    ```
    If the server can't be reached, search `/reference/glossary.md` instead (grep for the key words). Revise the translation with whatever you find, then re-run `check`.
 6. **Decide.**
-   - Every need is covered (or honestly marked opaque or not-applicable), and `check` reports nothing in any of its warning lines (unknown symbols, unbound values, quoted strings standing in for entities, symbols your coverage table claims but your code doesn't use) → **success**.
+   - Every need is covered (or honestly marked opaque, not-applicable or label-preserved), and `check` reports nothing in any of its warning lines (unknown symbols, unbound values, quoted strings standing in for entities, symbols your coverage table claims but your code doesn't use, invalid group values, retired bare symbols) → **success**.
    - Otherwise → **failure**: write the best translation you can, with every line that depends on a missing symbol marked `# PROPOSED: S<k>` or `# REFINED: S<k>`, and write suggestions that would make it valid.
+
+## Value groups: leaf values have no glossary entry
+
+Object kinds, foods, animals, colors, genres, software platforms and libraries, countries and currencies are written as **group values** `group::key` (spec §3.1), never as glossary symbols. The full list of groups, with the operation slots that accept each one, is in the attached `2-rag_context.md` ("Value groups"); a need tagged `→ object_label::<key>` there belongs to that group.
+
+- **Open groups** (`object_label`, `food_label`, `animal_label`, `color_label`, `genre_label`, `platform_label`) take any lower-case key the source supplies: `object_label::thimble`, `color_label::ochre`, `platform_label::windows`, `platform_label::pytorch_lightning`. No entry is needed and none should be suggested.
+- **Country and currency** take the ISO code: `country::JP`, `currency::ZAR` (ISO 3166-1 alpha-2, ISO 4217). If you are unsure of a code, `node /kit/rag.mjs entry currency::ZAR` says whether it is valid.
+- **Only in an accepting slot:** use a group only where the operation's signature accepts `ATOM[group]` (`pick_up.target → object_label, food_label`). No casts; a label is never a claim or a condition.
+- **A label is not a meaning.** It preserves the word and its role, not an English sense. Mark needs covered only by an open-group label as `label-preserved` in the coverage table; if the task needs more meaning than the label gives, encode it explicitly or report a gap.
+- **Retired bare symbols are invalid:** write `object_label::pillow`, `color_label::red`, `currency::USD`, `country::JP`, `platform_label::django`, never `pillow`, `color_red`, `curr_usd`, `japan`, `django`, `os_windows`. The host check rejects them.
 
 ## What you write
 
@@ -56,8 +66,10 @@ Suggestions must follow the exact heading format, one of:
 ### S2 | type: refine | dimension: refine-entry | target: <existing id or symbol>
 ```
 
-- **Dimensions.** For `add`, use `vocabulary-member`, `member-family`, `constructor` or `composite`. For `refine`, use `refine-entry` or `resolve-overlap`.
+- **Dimensions.** For `add`, use `vocabulary-member`, `member-family`, `constructor`, `composite` or `lexical-group`. For `refine`, use `refine-entry` or `resolve-overlap`.
 - **What to suggest.** Make one suggestion, or a few, and only the ones your translation actually needs. Prefer a reusable constructor or composite over one symbol per phrase. Prefer refining an existing entry over adding a near-duplicate.
+- **Never suggest a leaf value a group admits** (a new object noun, color, food, platform, country, currency…): write `group::key` instead.
+- **Suggest a group, not one member, for an open-ended kind.** If the missing thing is one member of a kind that has many members (plants, materials, programming languages, file formats, sports, diseases…) and no group covers that kind, do **not** suggest the single symbol (`python_language`, `pdf_format`). Suggest the whole group with dimension `lexical-group` (`plant_label`, `file_format_label`; format in `6-format-suggestions.md`), plus a `refine-entry` for each signature that should accept it (`target: STRING / ATOM[file_format_label]`). Mark the lines that use it `# PROPOSED: S<k>` with the group value (`file_format_label::pdf`). Suggest a single symbol only for a meaning a label can't carry: an operation, a relation, a constructor, or a value whose definition matters (`unit_sentence`, `role_son`).
 - **What each block contains.** The block carries the fields its dimension requires, the needs that motivated it, the searches you tried, and a proposed record in the glossary schema.
 
 ## Don't spend turns on these
@@ -81,11 +93,11 @@ The needs table and candidates are already in `2-rag_context.md`, so search only
 ## Hard rules
 
 - A symbol only covers a need if its **definition** fits. Using an operation whose definition describes something else (for example `open_page`, which navigates to a web page, for walking to a kitchen counter) is not coverage. It is a missing operation, and a suggestion.
-- A quoted string in place of a missing entity, resource, place or operation (`target="knife"`) is a vocabulary gap, not a translation. Strings are only for exact names, addresses and wording whose exact form matters (spec §13).
+- A quoted string in place of an entity, resource, place or operation (`target="knife"`) is not a translation. When a value group fits the slot, write the group value (`target=object_label::knife`); otherwise it is a vocabulary gap and a suggestion. Strings are only for exact names, addresses and wording whose exact form matters (spec §13).
 - The coverage table lists only symbols that actually appear in your BrainCode.
 - The host re-runs `check` on what you write and attaches the result to your translation for the migrator to see.
 
-- Every symbol in your BrainCode is either a glossary symbol, a local handle you bound, a turn name, or a literal. Nothing else. A symbol that only exists in your suggestions appears only in a failed translation, marked `# PROPOSED`.
+- Every symbol in your BrainCode is either a glossary symbol, a group value `group::key`, a local handle you bound, a turn name, or a literal. Nothing else. A symbol that only exists in your suggestions appears only in a failed translation, marked `# PROPOSED`.
 - SOURCE locators come from `/trajectory.txt` (`"t2:s3"`) and must exist there.
 - Don't spend effort on anything outside `/output`. Don't read or search the filesystem outside the paths above.
 - Finish by writing the files. A run that ends without `/output/translation.md` is lost work.

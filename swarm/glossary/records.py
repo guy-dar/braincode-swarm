@@ -26,7 +26,7 @@ QUOTED_RE = re.compile(r'"(?:[^"\\]|\\.)*"')
 # Kinds a dependency may point at. Attributes and grammar tokens are named
 # everywhere and carry no meaning a reader needs pulled in alongside.
 DEPENDABLE_KINDS = {"value", "operation", "speech_act", "constructor", "composite",
-                    "claim_relation", "link"}
+                    "claim_relation", "link", "lexical_group"}
 
 
 # ---------------------------------------------------------------------------- io
@@ -142,10 +142,11 @@ def _cycles(records: list) -> list:
     return cycles
 
 
-def validate(records: list, previous: list = None) -> list:
+def validate(records: list, previous: list = None, retired=()) -> list:
     """Every problem with this glossary, as human-readable strings. Empty
-    means valid. With `previous`, also enforces that nothing was removed:
-    the glossary only ever deprecates."""
+    means valid. With `previous`, also enforces that nothing was removed
+    except the ids in `retired` (the `retire` op: leaf values folded into a
+    value group), and that value groups keep their pinned members/standard."""
     errors = []
     for r in records:
         errors.extend(schema.record_errors(r))
@@ -184,16 +185,20 @@ def validate(records: list, previous: list = None) -> list:
         errors.append("dependency cycle: " + " -> ".join(cycle))
 
     if previous is not None:
+        from . import groups
         current = set(seen_ids)
+        retired = set(retired or ())
         for old in previous:
-            if old["id"] not in current:
+            if old["id"] not in current and old["id"] not in retired:
                 errors.append(f"{old['id']} was removed; deprecate it instead (status Deprecated + superseded_by)")
+            elif old["id"] in current and old["kind"] == "lexical_group" and seen_ids[old["id"]]["kind"] == "lexical_group":
+                errors.extend(groups.member_changes(old, seen_ids[old["id"]]))
     return errors
 
 
 # ---------------------------------------------------------------------------- operations
 
-OP_KINDS = ("add", "update", "merge", "split", "deprecate", "reject")
+OP_KINDS = ("add", "update", "merge", "split", "deprecate", "retire", "reject")
 # Host-maintained: an op can't set these directly.
 IMMUTABLE_FIELDS = {"id", "version"}
 LIST_MERGE_FIELDS = {"aliases", "related"}
@@ -374,14 +379,35 @@ def apply_ops(records: list, ops: list, batch=None, migration_ref: str = "") -> 
                 _rewrite_references(out, rec["id"], rec["superseded_by"])
             event(kind, rec["id"], sugg, "deprecated: " + op["reason"])
 
+        elif kind == "retire":
+            # Removes a record outright: a leaf value now written as a group
+            # atom (`replacement`: "object_label::pillow"). Only possible when
+            # nothing still points at it; validate(retired=...) accepts it.
+            rec = get(op.get("id"), i)
+            if not op.get("reason"):
+                raise OpError(f"op {i}: retire needs a reason")
+            refs = [r["id"] for r in out if r is not rec and any(
+                rec["id"] in (r.get(f) or []) for f in ("dependencies", "shared_rules", "related", "superseded_by"))]
+            if refs:
+                raise OpError(f"op {i}: cannot retire {rec['id']}: still referenced by {', '.join(refs[:5])}")
+            out.remove(rec)
+            ids.pop(rec["id"], None)
+            outcome = "retired: " + op["reason"] + (f" (now {op['replacement']})" if op.get("replacement") else "")
+            event(kind, rec["id"], sugg, outcome)
+
     # Re-derive dependencies for anything touched, so a new composite's
     # expansion is linked without the migrator having to list every id.
     known = {r["symbol"]: r for r in out if r["status"] != "Deprecated"}
-    touched = {t for e in report for t in e["targets"]}
+    touched = {t for e in report for t in e["targets"] if e["op"] != "retire"}
     for r in out:
         if r["id"] in touched and r["status"] != "Deprecated":
             r["dependencies"] = derive_dependencies(r, known)
     return out, report
+
+
+def retired_ids(report: list) -> set:
+    """Ids a report removed with the `retire` op (pass to validate)."""
+    return {t for e in report if e["op"] == "retire" for t in e["targets"]}
 
 
 def provenance_events(report: list, batch, migration_ref: str) -> list:

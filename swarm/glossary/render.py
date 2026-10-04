@@ -6,14 +6,16 @@ glossary.jsonl / glossary-provenance.jsonl.
 
     python -m glossary.render            # renders reference/glossary.md
 """
+import json
 import sys
 from pathlib import Path
 
+from . import groups as groups_mod
 from . import records as rec_mod
 
 REF_DIR = rec_mod.REF_DIR
 GLOSSARY_MD = REF_DIR / "glossary.md"
-LANGUAGE_VERSION = "19.0.0-draft.1"
+LANGUAGE_VERSION = "19.0.0-draft.2-lexical-groups"
 
 # (section title, kinds, columns). Columns are record field names; the
 # importer reads them back by header, so a table's columns define its fields.
@@ -25,6 +27,11 @@ SECTIONS = (
     ("Constructors", ("constructor",), ITEM_COLUMNS),
     ("Claim relations and links", ("claim_relation", "link"), ITEM_COLUMNS),
     ("Composite definitions", ("composite",), ITEM_COLUMNS),
+    # Value groups (spec §3.1): the contract is spread over these columns and
+    # folded back into the record's `group` field by import_md. Leaf values
+    # are never rows: any admissible key is valid without an entry.
+    ("Value groups", ("lexical_group",), ("symbol", "kind", "definition", "admission", "standard", "key_form",
+                                          "examples", "key_aliases", "recognition", "members", "status")),
     ("Values by category", ("category_rule", "value"), ("symbol", "kind", "category", "definition", "not", "aliases", "status")),
     ("Attributes", ("attribute",), ("symbol", "kind", "category", "definition", "aliases", "status")),
     ("Structural tokens", ("structural",), ("symbol", "kind", "category", "definition", "status")),
@@ -40,10 +47,31 @@ def cell(value) -> str:
     return text.replace("\\", "\\\\").replace("|", "\\|").replace("\r\n", "\n").replace("\n", "<br>")
 
 
+def group_cells(record: dict) -> dict:
+    """The contract of a value group as table cells (defaults left blank)."""
+    raw = record.get("group") or {}
+    members = raw.get("members") or {}
+    return {
+        "admission": raw.get("admission", ""),
+        "standard": raw.get("standard", ""),
+        "key_form": raw.get("key_form", ""),
+        "examples": ", ".join(raw.get("examples") or []),
+        "key_aliases": ", ".join(f"{a}={t}" for a, t in (raw.get("key_aliases") or {}).items()),
+        "recognition": "\n".join(raw.get("recognition") or []),
+        "members": json.dumps(members, ensure_ascii=False, separators=(",", ":")) if members else "",
+    }
+
+
+def _value(record: dict, column: str):
+    if record.get("kind") == "lexical_group" and column in groups_mod.GROUP_FIELDS:
+        return group_cells(record).get(column, "")
+    return record.get(column, "")
+
+
 def _table(records: list, columns: tuple) -> list:
     lines = ["| " + " | ".join(columns) + " |", "|" + "---|" * len(columns)]
     for r in records:
-        lines.append("| " + " | ".join(cell(r.get(c, "")) for c in columns) + " |")
+        lines.append("| " + " | ".join(cell(_value(r, c)) for c in columns) + " |")
     return lines
 
 
@@ -60,8 +88,9 @@ def render_md(records: list, glossary_version: str = "") -> str:
         # How to edit and re-import is documented in swarm/README.md.
         "Rendered from glossary.jsonl (the source of truth); see swarm/README.md for how to edit it. In cells, "
         "`<br>` is a line break and `\\|` a literal pipe. To deprecate, set status to `Deprecated` and give a "
-        "reason in `not`; never delete a row. Signatures: `?` optional, `A / B` alternatives, `void` no result. "
-        "`not` is the nearest wrong reading of the symbol.",
+        "reason in `not`. Signatures: `?` optional, `A / B` alternatives, `void` no result, `ATOM[g]` a value of "
+        "group g written `g::key`. `not` is the nearest wrong reading of the symbol. Leaf values of a value group "
+        "(object labels, colors, ISO country and currency codes) are not listed: any admissible key is valid.",
         "",
     ]
     for title, kinds, columns in SECTIONS:
@@ -88,8 +117,23 @@ def _one_line(text: str) -> str:
     return " ".join(str(text or "").split())
 
 
-def compact_line(record: dict) -> str:
-    """One line per record — how retrieval context presents a record."""
+def compact_line(record: dict, slots: list = None) -> str:
+    """One line per record — how retrieval context presents a record. A
+    value group shows its contract (admission, key form, examples, aliases)
+    and, when given, the signature slots that accept it."""
+    if record.get("kind") == "lexical_group":
+        g = groups_mod.contract(record)
+        parts = [f"{record['symbol']}::<key>", "lexical_group", groups_mod.describe(record),
+                 _one_line(record["definition"])]
+        if g["examples"]:
+            parts.append("e.g. " + ", ".join(g["examples"]))
+        if g["key_aliases"]:
+            parts.append("key aliases: " + ", ".join(f"{a}={t}" for a, t in g["key_aliases"].items()))
+        if record.get("not"):
+            parts.append("not: " + _one_line(record["not"]))
+        if slots:
+            parts.append("slots: " + ", ".join(f"{s}.{p}" for s, p in slots[:8]) + (" …" if len(slots) > 8 else ""))
+        return " | ".join(parts)
     parts = [record["symbol"], record["kind"]]
     if record.get("category"):
         parts.append(record["category"])

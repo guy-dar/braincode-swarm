@@ -1,0 +1,10 @@
+eval: skipping gemini-pro-3.1: not served by the vertex proxy (its /v1/models lists gemini-flash, gemini-flash-high, gemini-3.5-flash)
+loop: building harness image braincode-swarm-pi ...
+eval: 5 translator runs: gemini-flash-3.7 1, claude-opus-5.5 1, claude-haiku-4.5 1, gpt-6-astra 1, o4-mini 1
+eval: RAG server on :8775 (605 records, frozen snapshot)
+loop: throttle on :8786 -> https://vertex-proxy-v26q.onrender.com/v1 (up to 6 model calls in flight, adaptive down to 2)
+eval: claude-opus-5.5 mind2web-1 r1 -> error [no /output/translation.md written]
+eval: o4-mini mind2web-1 r1 -> failed ($0.092, 80s)
+eval: gpt-6-astra mind2web-1 r1 -> failed
+eval: gemini-flash-3.7 mind2web-1 r1 -> success ($0.239, 174s)
+eval: claude-haiku-4.5 mind2web-1 r1 -> failed ($0.242, 233s)

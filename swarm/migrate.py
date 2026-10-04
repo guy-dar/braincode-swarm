@@ -41,6 +41,7 @@ from pathlib import Path
 
 import loop_files as lf
 import utils
+from glossary import groups as groups_mod
 from glossary import manifest
 from glossary import records as rec_mod
 from glossary import schema
@@ -258,7 +259,7 @@ def evaluate_ops(ops: list, records: list, refs: list, batch_id: int, sources: d
                 report.append({"op": "hint", "target": rid, "targets": [rid], "suggestions": [],
                                "translator_ids": [], "outcome": f"rag hint: {field} += {', '.join(added)}"})
         out["new_records"], out["report"] = new_records, report
-        out["errors"] += rec_mod.validate(new_records, previous=records)
+        out["errors"] += rec_mod.validate(new_records, previous=records, retired=rec_mod.retired_ids(report))
     except rec_mod.OpError as e:
         out["errors"].append(str(e))
     out["ok"] = not out["errors"]
@@ -266,22 +267,42 @@ def evaluate_ops(ops: list, records: list, refs: list, batch_id: int, sources: d
 
 
 VALUE_IN_SYMBOL_RE = re.compile(r"(^|_)\d+(_|$)|\d+(gb|tb|mb|kg|km|min|h|plus)\b")
+# Value categories whose members a value group now admits as `group::key`: an
+# add there is a leaf value that should not become a record.
+GROUP_DOMAIN_CATEGORIES = {"currency-value": "currency", "color-value": "color_label", "genre-value": "genre_label",
+                           "platform-name": "platform_label"}
+GROUP_DOMAIN_PREFIXES = {"curr_": "currency", "color_": "color_label", "genre_": "genre_label", "os_": "platform_label",
+                         "platform_": "platform_label"}
 
 
 def check_single_op(op: dict, records: list) -> str:
     """'ok' or why this op alone wouldn't apply/validate against the glossary,
     plus a warning when a new value/composite symbol carries a value in its name."""
     try:
-        new, _ = rec_mod.apply_ops(records, [op])
+        new, report = rec_mod.apply_ops(records, [op])
     except rec_mod.OpError as e:
         return f"cannot apply: {e}"
-    errors = rec_mod.validate(new, previous=records)
+    errors = rec_mod.validate(new, previous=records, retired=rec_mod.retired_ids(report))
     note = "ok" if not errors else "; ".join(errors[:4])
     rec = op.get("record") if op.get("op") == "add" else None
     if isinstance(rec, dict) and rec.get("kind") in ("value", "composite") \
             and VALUE_IN_SYMBOL_RE.search(str(rec.get("symbol", "")).lower()):
         note += ("; WARNING: the symbol bakes a value into its name; use measure/at_least/at_most/character_trait/"
                  "requirement with an argument instead (proper names excepted)")
+    if isinstance(rec, dict) and rec.get("kind") == "value":
+        sym, cat = str(rec.get("symbol", "")), str(rec.get("category", ""))
+        group = GROUP_DOMAIN_CATEGORIES.get(cat) or next(
+            (g for prefix, g in GROUP_DOMAIN_PREFIXES.items() if sym.startswith(prefix)), None)
+        if group is None and cat in ("entity-name", "location-name"):
+            group = "object_label / food_label / animal_label / country"
+        if group:
+            note += (f"; WARNING: a leaf value — if the {group} group admits it, reject this add and write "
+                     f"`<group>::<key>` instead (spec §3.1); keep it only as a semantic exception a label can't hold")
+    if isinstance(rec, dict) and rec.get("kind") == "lexical_group":
+        consumers = groups_mod.consumers(new).get(rec.get("symbol"), [])
+        if not consumers:
+            note += ("; WARNING: no signature accepts this group yet: add `update` ops giving the consuming "
+                     "signatures `ATOM[" + str(rec.get("symbol")) + "]` in the same review")
     return note
 
 
@@ -470,7 +491,11 @@ def presearch(c_text: str, retriever) -> str:
     suggestion, so drafters and the review rarely need to search themselves."""
     lines = ["# Closest existing glossary entries per consolidated suggestion", "",
              "Found by the host's RAG search on each suggestion's symbol and proposed definition. `exact` = the "
-             "proposed symbol (or an alias) already exists.", ""]
+             "proposed symbol (or an alias) already exists.", "",
+             "## Value groups (leaf values are `group::key`, never records)", ""]
+    live = [r for r in retriever.index.all_records if r.get("status") != "Deprecated"]
+    lines += [f"- {line}" for line in groups_mod.catalog_lines(live)] or ["- (none)"]
+    lines.append("")
     for b in blocks_of(c_text):
         proposed = PROPOSED_RE.search(b["body"])
         meaning = b["value"].replace("_", " ")

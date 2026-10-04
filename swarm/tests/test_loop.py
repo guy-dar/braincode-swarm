@@ -470,3 +470,37 @@ def test_context_log_is_counted_and_moved(tmp_path):
     assert (out["compactions"], out["truncated_tool_results"]) == (1, 1)
     assert dest.exists() and not (session / translate_batch.CONTEXT_LOG_NAME).exists()
     assert not any(session.rglob("*.jsonl"))   # never mistaken for a pi session on resume
+
+
+def test_lexical_group_suggestion_is_counted(loop_dirs):
+    rows = plan_rows(1, ["mind2web"])
+    write_suggestion("1-1", "mind2web", "### S1 | type: add | dimension: lexical-group | symbol: plant_label\n"
+                                        "- Domain: plant kinds\n")
+    assert lf.suggestion_problems(lf.suggestions_path("1-1").read_text(encoding="utf-8")) == []
+    row = inspector.count_batch(1, rows, events=[], entry={})
+    assert (row["add_total"], row["add_lexical_group"]) == (1, 1)
+    assert {"add_lexical_group", "label_preserved_needs"} <= set(inspector.columns())
+
+
+def test_label_preserved_needs_are_counted_from_host_check(loop_dirs):
+    rows = plan_rows(1, ["alfred"])
+    s = lf.success_path("alfred", "1-1")
+    s.parent.mkdir(parents=True, exist_ok=True)
+    s.write_text("Status: success\n\n## Host check\n\n- [LABEL] n2 (object): a pan — via object_label\n"
+                 "- [OK ] n1 (action): pick up — via pick_up\n", encoding="utf-8")
+    assert inspector.count_batch(1, rows, events=[], entry={})["label_preserved_needs"] == 1
+
+
+def test_needs_cache_of_an_older_format_is_ignored(loop_dirs, monkeypatch):
+    import translate_batch
+    from rag import needs as needs_mod
+    monkeypatch.setattr(translate_batch, "NEEDS_CACHE_DIR", loop_dirs / "needs_cache")
+    (loop_dirs / "needs_cache").mkdir()
+    content = "<|user|>Put the pan away."
+    base = {"translator_id": "1-1", "content_sha": translate_batch._content_sha(content), "method": "llm",
+            "needs": [{"kind": "action", "text": "put away", "source": ["t1:s1"]}]}
+    path = loop_dirs / "needs_cache" / "1-1.json"
+    path.write_text(json.dumps(base), encoding="utf-8")
+    assert translate_batch.load_cached_needs("1-1", content) is None
+    path.write_text(json.dumps({**base, "needs_version": needs_mod.NEEDS_VERSION}), encoding="utf-8")
+    assert translate_batch.load_cached_needs("1-1", content) is not None

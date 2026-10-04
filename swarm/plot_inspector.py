@@ -47,6 +47,20 @@ INK_2 = "#52514e"
 GRID = "#e4e2dc"
 
 
+def _save(fig, path: Path, tries: int = 5):
+    """savefig, retried: on Windows a PNG open in an image viewer is briefly
+    locked (OSError 22/13) while the viewer re-reads it."""
+    import time
+    for attempt in range(tries):
+        try:
+            fig.savefig(path, dpi=150)
+            return
+        except OSError:
+            if attempt == tries - 1:
+                raise
+            time.sleep(2)
+
+
 def style():
     plt.rcParams.update({
         "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "savefig.facecolor": SURFACE,
@@ -116,7 +130,7 @@ def chart_by_class(rows: list, kind: str, accepted: bool, path: Path):
     _axes(ax, "Accepted suggestions" if accepted else "Suggestions")
     ax.legend(loc="upper right")
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    _save(fig, path)
     plt.close(fig)
 
 
@@ -139,7 +153,7 @@ def chart_by_dataset(rows: list, kind: str, accepted: bool, path: Path):
     handles, labels = ax.get_legend_handles_labels()
     fig.legend(handles, labels, loc="upper left", ncol=6, bbox_to_anchor=(0.005, 0.89))
     fig.tight_layout(rect=(0, 0, 1, 0.83))
-    fig.savefig(path, dpi=150)
+    _save(fig, path)
     plt.close(fig)
 
 
@@ -160,7 +174,7 @@ def chart_success(rows: list, path: Path):
     ax.yaxis.set_major_formatter(PercentFormatter())
     ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    _save(fig, path)
     plt.close(fig)
 
 
@@ -178,7 +192,7 @@ def chart_glossary(sizes: list, path: Path):
     ax.set_ylim(bottom=0)
     ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    _save(fig, path)
     plt.close(fig)
 
 
@@ -186,12 +200,20 @@ def glossary_sizes_by_kind(batches: list) -> tuple:
     """(xs, {kind: [live records of that kind at each x]}): x=0 is the initial
     import, then each batch's post-migration glossary. Kinds come from the
     current glossary.jsonl, which keeps every record ever created (records are
-    deprecated, never removed)."""
+    deprecated or retired; retired ones are looked up in history snapshots)."""
     import json
     kind_of = {}
-    for line in (lf.REFERENCE_DIR / "glossary.jsonl").read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            r = json.loads(line)
+    # Retired records (the lexical-groups release deleted leaf values) exist
+    # only in history snapshots; the current glossary is read last and wins.
+    sources = sorted(lf.HISTORY_DIR.glob("*/glossary.jsonl")) + [lf.REFERENCE_DIR / "glossary.jsonl"]
+    for path in sources:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                r = json.loads(line)
+            except ValueError:
+                continue
             kind_of[r.get("id")] = r.get("kind") or "unknown"
     initial, after = inspector.glossary_live_sets(inspector.load_provenance())
     points = [(0, initial)] + [(b, after[b]) for b in batches if b in after]
@@ -229,7 +251,7 @@ def chart_glossary_by_kind(xs: list, series: dict, path: Path):
     for ax in axes[-1]:
         ax.set_xlabel("Batch")
     fig.tight_layout(rect=(0, 0, 1, 1 - 0.75 / (2.6 * rows_n + 0.8)))
-    fig.savefig(path, dpi=150)
+    _save(fig, path)
     plt.close(fig)
 
 

@@ -9,6 +9,25 @@
         { "id": "gemini-flash-high", "name": "Gemini 3.7 Flash (high effort)", "maxTokens": 65536 },
         { "id": "gemini-3.5-flash", "name": "Gemini 3.5 Flash", "maxTokens": 65535 }
       ]
+    },
+    "anthropic": {
+      "baseUrl": "https://api.anthropic.com",
+      "api": "anthropic-messages",
+      "apiKey": "$ANTHROPIC_API_KEY",
+      "models": [
+        { "id": "claude-opus-5-5", "name": "Claude Opus 5.5", "reasoning": true, "contextWindow": 200000, "maxTokens": 32000,
+          "compat": { "forceAdaptiveThinking": true } },
+        { "id": "claude-haiku-4-5-20251001", "name": "Claude Haiku 4.5", "reasoning": true, "contextWindow": 200000, "maxTokens": 32000 }
+      ]
+    },
+    "openai": {
+      "baseUrl": "https://api.openai.com/v1",
+      "api": "openai-responses",
+      "apiKey": "$OPENAI_API_KEY",
+      "models": [
+        { "id": "gpt-6-astra", "name": "GPT-6 Astra", "reasoning": true, "contextWindow": 200000, "maxTokens": 32000 },
+        { "id": "o4-mini", "name": "o4-mini", "reasoning": true, "contextWindow": 200000, "maxTokens": 32000 }
+      ]
     }
   }
 }

@@ -12,6 +12,7 @@ anything is written.
     python -m glossary.import_md --check       # validate only, write nothing
 """
 import copy
+import json
 import re
 import sys
 
@@ -19,6 +20,37 @@ from . import records as rec_mod
 from . import schema
 
 LIST_COLUMNS = {"aliases", "superseded_by"}
+# Value-group contract columns (render.SECTIONS "Value groups"), folded into
+# the record's `group` field; blank cells mean the §3.1 default.
+GROUP_COLUMNS = ("admission", "standard", "key_form", "examples", "key_aliases", "recognition", "members")
+
+
+def fold_group(row: dict) -> dict:
+    """Move a value-group row's contract columns into `group`."""
+    if not any(c in row for c in GROUP_COLUMNS):
+        return row
+    row = dict(row)
+    group = {}
+    for col in GROUP_COLUMNS:
+        text = str(row.pop(col, "") or "").strip()
+        if not text:
+            continue
+        if col == "examples":
+            group[col] = [v.strip() for v in text.split(",") if v.strip()]
+        elif col == "key_aliases":
+            pairs = [p.split("=", 1) for p in text.split(",") if "=" in p]
+            group[col] = {a.strip(): t.strip() for a, t in pairs}
+        elif col == "recognition":
+            group[col] = [v.strip() for v in text.split("\n") if v.strip()]
+        elif col == "members":
+            try:
+                group[col] = json.loads(text)
+            except ValueError:
+                group[col] = {"__unparsed__": text}   # surfaces as a contract error on validate
+        else:
+            group[col] = text
+    row["group"] = group
+    return row
 
 
 def _uncell(text: str) -> str:
@@ -75,7 +107,7 @@ def parse_md(text: str) -> list:
         for name, value in zip(header, values):
             row[name] = ([v.strip() for v in value.split(",") if v.strip()] if name in LIST_COLUMNS else value)
         if row.get("symbol"):
-            rows.append(row)
+            rows.append(fold_group(row))
     return rows
 
 

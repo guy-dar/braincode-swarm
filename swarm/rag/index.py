@@ -62,8 +62,17 @@ def phrase_key(text: str) -> tuple:
     return tuple(tokenize(text, keep_stopwords=True))
 
 
+def group_words(record: dict) -> str:
+    """A value group's searchable contract words: its examples' keys, key
+    aliases and recognition hints (leaf values themselves are never records)."""
+    g = record.get("group") or {}
+    keys = [str(e).split("::", 1)[-1] for e in g.get("examples") or []]
+    return " ".join([*keys, *(g.get("key_aliases") or {}), *(g.get("recognition") or []),
+                     (g.get("standard") or "").replace("-", " ")])
+
+
 def record_search_text(record: dict) -> str:
-    parts = [record["symbol"].replace("_", " "), " ".join(record.get("aliases") or []),
+    parts = [record["symbol"].replace("_", " "), " ".join(record.get("aliases") or []), group_words(record),
              record.get("category", "").replace("-", " "), record.get("kind", "").replace("_", " "),
              record.get("definition", ""), record.get("signature", ""), record.get("expansion", ""),
              record.get("not", "")]
@@ -80,6 +89,8 @@ def record_embed_text(record: dict) -> str:
     if record.get("expansion"):
         body += " = " + record["expansion"]
     category = record.get("category") or record.get("kind", "")
+    if record.get("kind") == "lexical_group":
+        body += " Examples: " + group_words(record)
     return f"{head}: {body} [{category}]"[:1200]
 
 

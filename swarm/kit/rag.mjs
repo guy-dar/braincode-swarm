@@ -6,7 +6,9 @@
 //   node /kit/rag.mjs retrieve [--file /trajectory.txt]   steps 1-4: needs + candidates + records
 //   node /kit/rag.mjs search "<need 1>" ["<need 2>" ...] [--kind constraint]   one call, several needs
 //   node /kit/rag.mjs widen  "<need text>" [--kind ...]      step 6: broad search for an unresolved need
-//   node /kit/rag.mjs entry  <symbol> [<symbol> ...]        compact records + their rules and dependencies
+//   node /kit/rag.mjs entry  <symbol> [<symbol> ...]        compact records + their rules and dependencies;
+//                                                            a value group also lists its slots, and
+//                                                            `entry currency::ZAR` says whether that key is valid
 //   node /kit/rag.mjs check  --translation /output/translation.md [--needs /needs.json]   step 5
 //   node /kit/rag.mjs needs  [--file ...]                   step 1 only
 //   node /kit/rag.mjs health

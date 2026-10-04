@@ -538,6 +538,29 @@ def _prefetch(batch_id: int, rows: list, cfg: LoopConfig):
         log(f"loop: needs prefetch for batch {batch_id} failed ({type(e).__name__}: {e}); translators will extract live")
 
 
+def cmd_prefetch(args, cfg: LoopConfig):
+    """Extract (and cache) one batch's needs ahead of a run, through the
+    throttle, so the run's first batch doesn't extract them on each
+    translator's critical path (the in-run prefetch only covers the batch
+    after the current one)."""
+    import translate_batch
+    batches = lf.plan_batches(lf.load_plan())
+    batch_id = args.batch or next((b for b, e in sorted((int(k), v) for k, v in load_state()["batches"].items())
+                                   if not e.get("inspection")), None) or max(
+        [int(k) for k in load_state()["batches"]] or [0]) + 1
+    rows = batches.get(batch_id)
+    if not rows:
+        sys.exit(f"loop: no batch {batch_id} in the plan")
+    gateway = start_throttle(cfg)
+    try:
+        started = time.monotonic()
+        counts = translate_batch.prefetch_needs(rows, workers=cfg.prefetch_workers, log=log)
+        log(f"loop: prefetched needs for batch {batch_id} in {time.monotonic() - started:.0f}s: {counts}")
+    finally:
+        if gateway is not None:
+            gateway.stop()
+
+
 def cmd_status(args):
     plan = lf.load_plan()
     batches = lf.plan_batches(plan)
@@ -562,7 +585,8 @@ def cmd_status(args):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["plan", "run", "status"])
+    p.add_argument("command", choices=["plan", "run", "status", "prefetch"])
+    p.add_argument("--batch", type=int, default=0, help="prefetch: the batch whose needs to extract (default: next)")
     p.add_argument("--per-dataset", type=int)
     p.add_argument("--batch-size", type=int)
     p.add_argument("--seed", type=int)
@@ -581,6 +605,8 @@ def main(argv=None):
     if args.command == "plan":
         utils.load_dotenv(lf.SELF_DIR / ".env")
         return cmd_plan(args)
+    if args.command == "prefetch":
+        return cmd_prefetch(args, load_loop_config())
     cmd_run(args, load_loop_config())
 
 

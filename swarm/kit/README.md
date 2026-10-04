@@ -35,6 +35,16 @@ node /kit/rag.mjs retrieve                        # re-run steps 1-4 on /item_ra
 
 Need kinds you can pass with `--kind`: `action`, `object`, `constraint`, `negation`, `correction`, `temporal`, `speech_act`, `claim`, `reasoning`.
 
+## Value groups
+
+Leaf values (object kinds, foods, animals, colors, genres, countries, currencies) have no glossary entries. They are written `group::key` (spec §3.1): `object_label::thimble`, `color_label::ochre`, `country::JP`, `currency::ZAR`. Open groups admit any lower-case word; country and currency admit the ISO code. `rag_context.md` always lists every group and, for each retrieved operation, which of its parameters accept which groups. Look a group or a key up with:
+
+```sh
+node /kit/rag.mjs entry object_label currency::ZAR      # contract + accepting slots; whether ZAR is a valid key
+```
+
+`check` reports invalid group values (`currency::ZZZ`, `color_label::Red`, unknown groups), retired bare symbols (`pillow` → `object_label::pillow`) and needs covered only by a label (report them as `label-preserved`).
+
 ## Reading results
 
 - **Candidates are ranked best first.** `exact` means a symbol or alias phrase literally occurs in the need. `keyword` and `semantic` mean the need was found by words or by meaning. A candidate can be wrong: read its definition and its `not:` contrast before you use it.

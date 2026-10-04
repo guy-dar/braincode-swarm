@@ -15,13 +15,16 @@ A glossary record you write has **only** these fields. The host adds `id`, `vers
 | field | content |
 |---|---|
 | `symbol` | BrainCode identifier (`snake_case`) |
-| `kind` | `value`, `operation`, `speech_act`, `constructor`, `composite`, `claim_relation`, `link`, or `attribute` |
+| `kind` | `value`, `operation`, `speech_act`, `constructor`, `composite`, `claim_relation`, `link`, `attribute`, or `lexical_group` |
 | `category` | values only: their category (e.g. `entity-name`) |
 | `signature` | operations, speech acts, constructors, composites, relations and links: the typed call shape |
 | `definition` | 1–2 sentences, with restrictions included. It must draw the boundary of the meaning. |
 | `not` | one line: the nearest wrong reading (what this symbol does *not* mean) |
 | `aliases` | contextual phrases that suggest it (optional) |
 | `expansion` | composites only: the typed expansion into existing entries |
+| `group` | lexical groups only: the contract (spec §3.1), defaults omitted. `{"examples": ["plant_label::fern"]}` for an open group (1–3 examples, never members); `{"admission": "standard", "standard": "iso4217", "key_form": "upper_code", "examples": [...]}` for a standard one; optional `key_aliases` {alias: canonical} |
+
+**Leaf values are never records.** An object kind, food, animal, color, genre, country or currency that a group admits is written `group::key` and needs no op. A new group comes with an `update` of every signature that should accept it (`target: STRING / ATOM[plant_label]`) in the same ops, or it is unusable.
 
 ## 1. Drafter output: `/output/ops.jsonl`
 
@@ -33,7 +36,8 @@ One JSON object per line. Every consolidated suggestion of your slice must be na
 | `update` | `id` (or symbol), `set` {field: value}, optional `append` {`aliases`/`related`: [..]}, `reason`, `suggestions` | Changes authored fields of an existing record. |
 | `merge` | `into`, `from` [ids], `notes`, `suggestions` | `from` records are deprecated into `into`; their symbols become aliases; references are re-pointed. |
 | `split` | `id`, `into` [≥ 2 records], `notes`, `suggestions` | Adds the new records and deprecates the old one. |
-| `deprecate` | `id`, `reason`, optional `superseded_by`, `suggestions` | Never delete; deprecate. |
+| `deprecate` | `id`, `reason`, optional `superseded_by`, `suggestions` | Keeps the record, marked Deprecated. |
+| `retire` | `id`, `reason`, `replacement` (the group value, e.g. `object_label::pillow`), `suggestions` | Deletes a leaf-value record that a group now covers. Only for leaf values; fails while anything still references it. |
 | `reject` | `suggestions`, `reason` | Changes nothing; records why (e.g. "expressible as `activity(verb="walk")`"). |
 
 ```json
@@ -64,4 +68,5 @@ You receive every draft op numbered `D<k>`, with the host's validation note for 
 - Symbols are unique BrainCode identifiers.
 - Every referenced id resolves.
 - Composite expansions are acyclic.
-- Nothing is removed (only deprecated), and no live record depends on a deprecated one.
+- Nothing is removed except by `retire` (leaf values a group now covers), and no live record depends on a deprecated one.
+- A value group's contract is valid (open groups: 1–3 examples, lower-case keys, no members; standard groups: a bundled code list) and a standard group's code list is never changed.

@@ -15,12 +15,17 @@ Need kinds:
 - `claim`: a proposition someone states, observes, infers, assumes, or reports, together with who holds it
 - `reasoning`: a because/therefore/supports/contradicts/rejects relation between claims or hypotheses
 
+Value groups. Some leaf values are written as group values instead of glossary symbols: an object kind, a food, an animal, a color, a genre, a software platform or library, a country or a currency. When an `object` or `constraint` need names one of these, add `"group"` with the group name from this list; otherwise leave `group` out. Countries and currencies use their ISO codes later, so tag them even when the item spells out the name ("rand", "Japan").
+
+{group_catalog}
+
 Rules:
 - `text` paraphrases the meaning in at most 25 English words, even when the item is in another language. Name the concrete thing (for example "exclude flowery language", not "a style constraint").
 - `source` is the locator, or a list of locators, the need comes from.
+- `group` is optional and only one of the group names above.
 - Cover every turn, including assistant turns. In a long conversation, cover the main claims and moves of each turn instead of every sentence of a long answer.
 - Do not invent meaning the item does not contain.
-- Output only JSON: `{"needs": [{"kind": "...", "text": "...", "source": "t1:s2"}, ...]}`
+- Output only JSON: `{"needs": [{"kind": "...", "text": "...", "source": "t1:s2"}, {"kind": "object", "text": "...", "source": "t1:s3", "group": "..."}, ...]}`
 
 Item:
 {numbered_item}

@@ -9,7 +9,10 @@ A record is deliberately small. Only the fields a translator needs to *use*
 a symbol are authored (by the migrator, or a person editing glossary.md):
 
   symbol, kind, category (values), signature, definition, not, aliases,
-  expansion (composites), status
+  expansion (composites), group (lexical groups, see groups.py), status
+
+Leaf values of a value group are never records: `object_label::thimble` needs
+no entry, and a group record carries at most 1-3 illustrative examples.
 
 Everything else is maintained by the host: `id` (derived from kind/category/
 symbol), `version`, `shared_rules` (assigned from kind/category),
@@ -34,6 +37,7 @@ KINDS = (
     "category_rule",    # contract shared by every member of one category
     "rule",             # any other shared rule (general reading rules, family rules)
     "example",          # a complete worked example document
+    "lexical_group",    # an atomic value group (spec §3.1): `group::key` values, contract in `group`
 )
 
 STATUSES = (
@@ -44,12 +48,13 @@ STATUSES = (
 )
 
 # The fields a migrator (or a person) writes. Everything else is host-maintained.
-AUTHORED_FIELDS = ("symbol", "kind", "category", "signature", "definition", "not", "aliases", "expansion", "status")
+AUTHORED_FIELDS = ("symbol", "kind", "category", "signature", "definition", "not", "aliases", "expansion", "group",
+                   "status")
 
 # Every field, in serialization order.
 FIELDS = (
     "id", "version", "symbol", "kind", "status", "category", "signature", "definition", "not", "aliases",
-    "expansion", "code", "dependencies", "shared_rules", "related", "mentions", "core", "superseded_by",
+    "expansion", "group", "code", "dependencies", "shared_rules", "related", "mentions", "core", "superseded_by",
     "deprecated",
 )
 
@@ -62,6 +67,7 @@ DEFAULTS = {
     "not": "",
     "aliases": [],
     "expansion": "",
+    "group": {},
     "code": "",
     "dependencies": [],
     "shared_rules": [],
@@ -80,7 +86,7 @@ RULE_KINDS = {"rule", "category_rule"}
 # Kinds whose `symbol` must be a BrainCode identifier. Structural tokens
 # (`{`, `->`) and rules/examples (slugs) are exempt.
 IDENT_KINDS = {"value", "operation", "speech_act", "constructor", "composite",
-               "claim_relation", "link", "attribute"}
+               "claim_relation", "link", "attribute", "lexical_group"}
 
 # Rules every record of a kind is governed by. Values add their category's rule.
 KIND_RULES = {
@@ -92,6 +98,7 @@ KIND_RULES = {
     "link": ["v19/rule/trace-relations-general"],
     "attribute": ["v19/rule/attributes-and-generate"],
     "example": ["v19/rule/examples-general"],
+    "lexical_group": ["v19/rule/lexical-groups"],
 }
 
 IDENT_RE = re.compile(r"^[a-zA-Z_][a-zA-Z0-9_]*$")
@@ -156,6 +163,8 @@ def derive_id(record: dict) -> str:
         return f"{ID_PREFIX}rule/{sym}"
     if kind == "example":
         return f"{ID_PREFIX}example/{sym}"
+    if kind == "lexical_group":
+        return f"{ID_PREFIX}lexical-group/{sym}"
     return f"{ID_PREFIX}support/{sym}"
 
 
@@ -193,6 +202,11 @@ def record_errors(record: dict) -> list:
         errors.append(f"{rid}: composite requires an expansion")
     if record.get("kind") == "value" and not record.get("category"):
         errors.append(f"{rid}: value requires a category")
+    if record.get("kind") == "lexical_group":
+        from . import groups
+        errors.extend(groups.contract_errors(record))
+    elif record.get("group"):
+        errors.append(f"{rid}: only a lexical_group has a `group` field")
     if record.get("status") == "Deprecated" and not (record.get("superseded_by") or record.get("deprecated")):
         errors.append(f"{rid}: Deprecated needs superseded_by or a `deprecated` reason")
     if not isinstance(record.get("version"), int) or record["version"] < 1:

@@ -12,8 +12,18 @@ back to reading glossary.md directly.
 The emphasis everywhere is recall: exact matches are never dropped by
 reranking, per-need limits are generous, and expansion follows every
 dependency and shared rule a retrieved record points at.
+
+Value groups (spec §3.1: `object_label::thimble`, `currency::ZAR`) have no
+leaf records, so they are never found by similarity. Instead:
+  1. every retrieval context lists the whole group catalog;
+  2. every retrieved operation lists the groups its parameters accept
+     (`pick_up.target -> object_label, food_label`), from its signature;
+  3. need extraction tags a noun/value need with its group, which is then
+     an exact candidate for that need.
 """
+import json
 import re
+import sys
 import threading
 from pathlib import Path
 
@@ -58,6 +68,37 @@ BRAINCODE_BLOCK_RE = re.compile(r"```braincode\s*\n(.*?)```", re.S)
 UNCLOSED_BLOCK_RE = re.compile(r"```braincode\s*\n(.*?)(?=^#{1,3} |\Z)", re.S | re.M)
 GRAMMAR_WORDS = {"TRUE", "FALSE", "USER", "AGENT", "REQUEST", "TRACE", "asserted", "observed", "inferred",
                  "assumed", "hypothesized", "reported", "attempted", "succeeded", "failed", "unknown"}
+# Atom problems that make a translation invalid; `alias` (non-canonical key)
+# is only a warning.
+HARD_ATOM_PROBLEMS = {"unknown_group", "bad_key", "not_in_standard", "unregistered"}
+LIST_ARG_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*\s*=\s*\[([^\]]*)\]")
+RETIRED_PATH = index_mod.SWARM_DIR / "reference" / "retired-symbols.json"
+_retired_cache = {}
+
+
+def _glossary_modules():
+    """glossary.groups and glossary.render (the swarm dir on sys.path)."""
+    if str(index_mod.SWARM_DIR) not in sys.path:
+        sys.path.insert(0, str(index_mod.SWARM_DIR))
+    from glossary import groups, render
+    return groups, render
+
+
+def retired_symbols(path: Path = RETIRED_PATH) -> dict:
+    """{old bare symbol: replacement atom} retired by a release (host-only;
+    used to reject a bare retired symbol, never to admit anything)."""
+    try:
+        mtime = path.stat().st_mtime
+    except OSError:
+        return {}
+    if _retired_cache.get("key") != (str(path), mtime):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8")).get("retired") or {}
+            value = {k: (v or {}).get("replacement", "") for k, v in data.items()}
+        except (OSError, ValueError, AttributeError):
+            value = {}
+        _retired_cache.update(key=(str(path), mtime), value=value)
+    return _retired_cache["value"]
 
 
 def braincode_code(text: str) -> str:
@@ -80,6 +121,20 @@ class Retriever:
         self._lock = threading.Lock()
         self.index = index_mod.build(dense=dense, glossary_path=glossary_path, index_dir=index_dir)
 
+    def group_tables(self, idx=None) -> tuple:
+        """(groups by symbol, {group: [(record symbol, param)]},
+        {record id: [(param, [groups])]}) for an index, computed once."""
+        idx = idx or self.index
+        cached = getattr(idx, "_group_tables", None)
+        if cached is None:
+            groups_mod, _ = _glossary_modules()
+            live = [r for r in idx.all_records if r.get("status") != "Deprecated"]
+            slots = {r["id"]: groups_mod.signature_slots(r.get("signature") or "") for r in live}
+            cached = (groups_mod.groups_by_symbol(live), groups_mod.consumers(live),
+                      {rid: sl for rid, sl in slots.items() if sl})
+            idx._group_tables = cached
+        return cached
+
     def reload(self):
         """Rebuild from the current glossary.jsonl; queries in flight finish
         on the old index (the swap is a single reference assignment)."""
@@ -90,10 +145,11 @@ class Retriever:
 
     # ------------------------------------------------------------------ step 2+3
     def search_need(self, text: str, context: str = "", kind: str = "", k: int = 15, keep: int = 12,
-                    _vecs=None) -> list:
+                    _vecs=None, group: str = "") -> list:
         """Candidates for one need, best first:
         [{"id", "symbol", "kind", "score", "reasons": [...]}]. Exact matches
-        always survive; `keep` bounds the rest."""
+        always survive; `keep` bounds the rest. A need tagged with a value
+        `group` gets that group as an exact candidate."""
         idx = self.index
         hinted = f"{text} {KIND_HINTS.get(kind, '')}"
         fused, reasons = {}, {}
@@ -103,6 +159,10 @@ class Retriever:
             reasons.setdefault(rid, []).append(why)
 
         exact = idx.exact(text)
+        tagged = self.group_tables(idx)[0].get(group) if group else None
+        if tagged is not None and tagged["id"] in idx.by_id:
+            exact = [tagged["id"]] + [rid for rid in exact if rid != tagged["id"]]
+            reasons.setdefault(tagged["id"], []).append("group-tag")
         for rank, rid in enumerate(exact, 1):
             add(rid, rank, "exact")
         for rank, (rid, _) in enumerate(idx.keyword(hinted, k), 1):
@@ -214,17 +274,26 @@ class Retriever:
         for i, need in enumerate(needs):
             pair = (vecs[2 * i], vecs[2 * i + 1]) if vecs is not None else None
             need["candidates"] = self.search_need(need["text"], need.get("context", ""), need.get("kind", ""),
-                                                  k=k, keep=keep, _vecs=pair)
+                                                  k=k, keep=keep, _vecs=pair, group=need.get("group", ""))
             for c in need["candidates"]:
                 if c["id"] not in seeds:
                     seeds.append(c["id"])
         included = self.expand(seeds)
+        groups, _, slots_by_id = self.group_tables(idx)
+        slots = []
+        for rid in list(included):
+            for param, gs in slots_by_id.get(rid, []):
+                slots.append({"symbol": idx.by_id[rid]["symbol"], "param": param, "groups": gs})
+                for g in gs:   # a group a retrieved operation accepts is part of the context
+                    if g in groups and groups[g]["id"] not in included:
+                        included[groups[g]["id"]] = f"accepted by {idx.by_id[rid]['symbol']}.{param}"
         return {
             "glossary_sha": idx.glossary_sha,
             "needs_method": method,
             "segments": segments,
             "needs": needs,
             "records": [{"id": rid, "why": why} for rid, why in included.items()],
+            "slots": slots,
         }
 
     def widen(self, text: str, context: str = "", kind: str = "") -> dict:
@@ -250,10 +319,33 @@ class Retriever:
                         seen.add(m)
                         mentioned.append({"id": m, "symbol": idx.by_id[m]["symbol"], "kind": idx.by_id[m]["kind"],
                                           "score": 0.0, "reasons": [f"mentioned by {rule}"]})
-        return {"text": text, "candidates": main + sub + mentioned}
+        accepted = []
+        groups, _, slots_by_id = self.group_tables(idx)
+        for c in main[:10]:
+            for param, gs in slots_by_id.get(c["id"], []):
+                for g in gs:
+                    rec = groups.get(g)
+                    if rec is not None and rec["id"] not in seen:
+                        seen.add(rec["id"])
+                        accepted.append({"id": rec["id"], "symbol": rec["symbol"], "kind": rec["kind"], "score": 0.0,
+                                         "reasons": [f"accepted by {c['symbol']}.{param}"]})
+        return {"text": text, "candidates": main + sub + mentioned + accepted}
 
     def entry(self, key: str) -> dict:
         idx = self.index
+        atom = None
+        if "::" in key:   # `rag entry currency::ZAR`: the group, plus whether the key is admissible
+            groups_mod, _ = _glossary_modules()
+            g, _, k = key.partition("::")
+            status, message = groups_mod.check_atom(self.group_tables(idx)[0], g, k)
+            atom = {"atom": key, "status": status, "message": message}
+            rec_g = self.group_tables(idx)[0].get(g)
+            if rec_g is not None and status in ("ok", "alias"):
+                std = groups_mod.contract(rec_g).get("standard")
+                if std:
+                    canonical = groups_mod.normalize_key(rec_g, k)
+                    atom["name"] = groups_mod.standard_codes(std).get(canonical, "")
+            key = g
         rec = idx.by_id.get(key) or idx.by_symbol.get(key)
         if rec is None:
             lowered = {s.lower(): r for s, r in idx.by_symbol.items()}
@@ -264,6 +356,10 @@ class Retriever:
                "dependencies": [idx.by_id[d] for d in rec.get("dependencies") or [] if d in idx.by_id]}
         if rec.get("superseded_by"):
             out["superseded_by"] = [idx.by_id[s] for s in rec["superseded_by"] if s in idx.by_id]
+        if rec.get("kind") == "lexical_group":
+            out["slots"] = [{"symbol": s, "param": p} for s, p in self.group_tables(idx)[1].get(rec["symbol"], [])]
+        if atom is not None:
+            out["atom"] = atom
         return out
 
     # ------------------------------------------------------------------ step 5
@@ -297,6 +393,32 @@ class Retriever:
                 for word in re.findall(r"[A-Za-z_][A-Za-z0-9_]*", expressed):
                     if word in idx.by_symbol and word not in used_words:
                         claimed_absent.setdefault(word, []).append(m.group(1))
+        groups_mod, _ = _glossary_modules()
+        groups = self.group_tables(idx)[0]
+        atom_errors, atom_warnings, atoms_used = [], [], set()
+        # quoted literals are exact text (a C++ "pkg::name" is not a group value)
+        unquoted = re.sub(r'"(?:[^"\\]|\\.)*"', '""', code_nocomments)
+        for m in groups_mod.ATOM_RE.finditer(unquoted):
+            g, k = m.group(1), m.group(2)
+            try:
+                status, message = groups_mod.check_atom(groups, g, k)
+            except Exception:   # a malformed atom must never break the check
+                continue
+            atoms_used.add(g)
+            if status in HARD_ATOM_PROBLEMS and message not in atom_errors:
+                atom_errors.append(message)
+            elif status == "alias" and message not in atom_warnings:
+                atom_warnings.append(message)
+        # Bare retired symbols in value positions (`target=pillow`, `[red, blue]`);
+        # atoms are removed first so `object_label::pillow` never counts.
+        without_atoms = groups_mod.ATOM_RE.sub(" ", unquoted)
+        value_words = set(ATTR_VALUE_RE.findall(without_atoms))
+        for inner in LIST_ARG_RE.findall(without_atoms):
+            value_words.update(re.findall(r"[A-Za-z_][A-Za-z0-9_]*", inner))
+        retired = retired_symbols()
+        retired_used = sorted(f"{w} (write {retired[w]})" if retired[w] else w for w in value_words
+                              if w in retired and w not in idx.by_symbol and w not in bound)
+        open_groups = {s for s, r in groups.items() if groups_mod.contract(r)["admission"] == "open_label"}
         string_args = []
         for args in OP_STRING_ARG_RE.findall(code_nocomments):
             for name, literal in re.findall(r"([A-Za-z_][A-Za-z0-9_]*)\s*=\s*\"([^\"]*)\"", args):
@@ -310,9 +432,13 @@ class Retriever:
             # own needs list may pass plain symbol names instead
             syms = [c.get("symbol", "") if isinstance(c, dict) else str(c) for c in need.get("candidates") or []]
             hit = [s for s in syms if s in used_words]
+            if need.get("group") in atoms_used and need["group"] not in hit:
+                hit.append(need["group"])
             row = coverage_rows.get(need.get("id", ""), "")
             declared = bool(row) and not re.search(r"\bunresolved\b", row, re.I)
             status = "covered" if hit else ("declared" if declared else "unresolved")
+            if hit and all(s in open_groups for s in hit):
+                status = "label-preserved"   # covered by a label only: no resolved sense
             results.append({"id": need.get("id"), "kind": need.get("kind"), "text": need.get("text"),
                             "status": status, "matched_symbols": hit})
         return {
@@ -324,6 +450,10 @@ class Retriever:
             "deprecated_symbols_used": deprecated,
             "claimed_but_absent": claimed_absent,
             "string_literals_as_operation_arguments": string_args,
+            "atom_errors": atom_errors,
+            "atom_warnings": atom_warnings,
+            "retired_symbols_used": retired_used,
+            "label_preserved": [r["id"] for r in results if r["status"] == "label-preserved"],
         }
 
 
@@ -359,13 +489,25 @@ def render_context(result: dict, retriever: Retriever, glossary_version: str = "
         cands = ", ".join(f"`{c['symbol']}`" + ("*" if "exact" in c["reasons"] else "")
                           for c in (need.get("candidates") or [])[:12]) or "—"
         src = ", ".join(need.get("source") or [])
-        text = need["text"].replace("|", "/")
+        text = need["text"].replace("|", "/") + (f" → `{need['group']}::<key>`" if need.get("group") else "")
         lines.append(f"| {need['id']} | {need['kind']} | {src} | {text} | {cands} |")
-    lines += ["", "(* = exact name/alias match)", "", "## Retrieved records", ""]
+    lines += ["", "(* = exact name/alias match; → = the value group the need's noun/value belongs to)", ""]
+    groups_mod, render_mod = _glossary_modules()
+    groups, consumers, _ = retriever.group_tables(idx)
+    lines += ["## Value groups (all of them)", "",
+              "Leaf values are written `group::key` and have no glossary entry: any admissible key is valid "
+              "(open groups: a lower-case word; country and currency: the ISO code, `country::JP`, "
+              "`currency::ZAR`). Use a group only in a slot whose signature accepts `ATOM[group]`.", ""]
+    lines += [f"- {groups_mod.catalog_line(groups[s], consumers.get(s, []))}" for s in sorted(groups)] or ["- (none)"]
+    slots = result.get("slots") or []
+    if slots:
+        lines += ["", "## Slots of the retrieved records that take value groups", ""]
+        lines += [f"- {sl['symbol']}.{sl['param']} → {', '.join(sl['groups'])}" for sl in slots]
+    lines += ["", "## Retrieved records", ""]
 
     included = {r["id"]: r["why"] for r in result["records"]}
     rules = [rid for rid in included if idx.by_id[rid]["kind"] in ("rule", "category_rule")]
-    others = [rid for rid in included if rid not in rules]
+    others = [rid for rid in included if rid not in rules and idx.by_id[rid]["kind"] != "lexical_group"]
     if rules:
         lines += ["### Shared rules that govern the records below (full text)", ""]
         for rid in sorted(rules, key=lambda r: (not idx.by_id[r].get("core"), idx.by_id[r]["symbol"])):
@@ -399,7 +541,7 @@ def render_candidates(result: dict) -> str:
 def render_check(report: dict) -> str:
     lines = ["# Coverage check", ""]
     for r in report["needs"]:
-        mark = {"covered": "OK ", "declared": "DECL", "unresolved": "MISS"}[r["status"]]
+        mark = {"covered": "OK ", "declared": "DECL", "unresolved": "MISS", "label-preserved": "LABEL"}[r["status"]]
         lines.append(f"- [{mark}] {r['id']} ({r['kind']}): {r['text']}"
                      + (f" — via {', '.join(r['matched_symbols'])}" if r["matched_symbols"] else ""))
     lines.append("")
@@ -415,6 +557,12 @@ def render_check(report: dict) -> str:
     if report.get("claimed_but_absent"):
         lines.append("Coverage table names symbols the BrainCode never uses: "
                      + ", ".join(f"{s} ({', '.join(n)})" for s, n in report["claimed_but_absent"].items()))
+    for key, label in (("atom_errors", "Invalid value-group atoms (fix before declaring success)"),
+                       ("retired_symbols_used", "Retired bare symbols (use the group form)"),
+                       ("atom_warnings", "Non-canonical group keys"),
+                       ("label_preserved", "Needs covered by an open-group label only (report as label-preserved)")):
+        if report.get(key):
+            lines.append(f"{label}: {'; '.join(report[key])}")
     return "\n".join(lines)
 
 

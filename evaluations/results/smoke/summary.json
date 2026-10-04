@@ -1,0 +1,611 @@
+{
+ "run": "smoke",
+ "models": [
+  {
+   "name": "gemini-flash-3.7",
+   "label": "Gemini 3.7 Flash",
+   "company": "Gemini",
+   "tier": "weak"
+  },
+  {
+   "name": "claude-opus-5.5",
+   "label": "Claude Opus 5.5",
+   "company": "Claude",
+   "tier": "strong"
+  },
+  {
+   "name": "claude-haiku-4.5",
+   "label": "Claude Haiku 4.5",
+   "company": "Claude",
+   "tier": "weak"
+  },
+  {
+   "name": "gpt-6-astra",
+   "label": "GPT-6 Astra",
+   "company": "OpenAI",
+   "tier": "strong"
+  },
+  {
+   "name": "o4-mini",
+   "label": "o4-mini",
+   "company": "OpenAI",
+   "tier": "weak"
+  }
+ ],
+ "coverage": [
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 1,
+   "success_rate": 1.0,
+   "failed_rate": 0.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": null,
+   "mean_minutes": 2.9016666666666664,
+   "cost_usd": 0.2395,
+   "success_mind2web": 1.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "tier": "weak",
+   "items": "all",
+   "runs": 1,
+   "success_rate": 1.0,
+   "failed_rate": 0.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": null,
+   "mean_minutes": 2.9016666666666664,
+   "cost_usd": 0.2395,
+   "success_mind2web": 1.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Opus 5.5",
+   "tier": "strong",
+   "items": "shared",
+   "runs": 1,
+   "success_rate": 0.0,
+   "failed_rate": 1.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 2.0,
+   "mean_minutes": 1.8383333333333334,
+   "cost_usd": 0.4135,
+   "success_mind2web": 0.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Haiku 4.5",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 1,
+   "success_rate": 0.0,
+   "failed_rate": 1.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 2.0,
+   "mean_minutes": 3.878333333333333,
+   "cost_usd": 0.2418,
+   "success_mind2web": 0.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  },
+  {
+   "company": "OpenAI",
+   "model": "GPT-6 Astra",
+   "tier": "strong",
+   "items": "shared",
+   "runs": 1,
+   "success_rate": 0.0,
+   "failed_rate": 1.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 3.0,
+   "mean_minutes": 2.8033333333333332,
+   "cost_usd": null,
+   "success_mind2web": 0.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  },
+  {
+   "company": "OpenAI",
+   "model": "o4-mini",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 1,
+   "success_rate": 0.0,
+   "failed_rate": 1.0,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 3.0,
+   "mean_minutes": 1.3283333333333334,
+   "cost_usd": 0.0918,
+   "success_mind2web": 0.0,
+   "success_alfred": NaN,
+   "success_swebench": NaN,
+   "success_prism": NaN,
+   "success_paths": NaN,
+   "success_thoughttrace": NaN
+  }
+ ],
+ "determinism_pairs": [
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "Claude Opus 5.5",
+   "pair": "other",
+   "js_symbols": 0.07866220647738245,
+   "js_types": 0.009006984441306525
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "Claude Haiku 4.5",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.034695172270153854,
+   "js_types": 0.02090027380928983
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "GPT-6 Astra",
+   "pair": "other",
+   "js_symbols": 0.12740818467392825,
+   "js_types": 0.03468709563453572
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "o4-mini",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.625731970209815,
+   "js_types": 0.12060416039327711
+  },
+  {
+   "model_a": "Claude Opus 5.5",
+   "model_b": "Claude Haiku 4.5",
+   "pair": "weak vs strong, same company",
+   "js_symbols": 0.0789891247768489,
+   "js_types": 0.019857041670864113
+  },
+  {
+   "model_a": "Claude Opus 5.5",
+   "model_b": "GPT-6 Astra",
+   "pair": "strong vs strong, different companies",
+   "js_symbols": 0.11844321788811941,
+   "js_types": 0.018221315800942935
+  },
+  {
+   "model_a": "Claude Opus 5.5",
+   "model_b": "o4-mini",
+   "pair": "other",
+   "js_symbols": 0.657611821970402,
+   "js_types": 0.12966316418948448
+  },
+  {
+   "model_a": "Claude Haiku 4.5",
+   "model_b": "GPT-6 Astra",
+   "pair": "other",
+   "js_symbols": 0.08618414851059836,
+   "js_types": 0.04131465855831682
+  },
+  {
+   "model_a": "Claude Haiku 4.5",
+   "model_b": "o4-mini",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.6502810203891225,
+   "js_types": 0.18527078263192764
+  },
+  {
+   "model_a": "GPT-6 Astra",
+   "model_b": "o4-mini",
+   "pair": "weak vs strong, same company",
+   "js_symbols": 0.7536057329532635,
+   "js_types": 0.17340907883792744
+  }
+ ],
+ "determinism_self": [
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "name": "gemini-flash-3.7",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "name": "gemini-flash-3.7",
+   "tier": "weak",
+   "items": "all",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Opus 5.5",
+   "name": "claude-opus-5.5",
+   "tier": "strong",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Haiku 4.5",
+   "name": "claude-haiku-4.5",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  },
+  {
+   "company": "OpenAI",
+   "model": "GPT-6 Astra",
+   "name": "gpt-6-astra",
+   "tier": "strong",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  },
+  {
+   "company": "OpenAI",
+   "model": "o4-mini",
+   "name": "o4-mini",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  }
+ ],
+ "top_symbols": {
+  "Gemini 3.7 Flash": [
+   [
+    "target",
+    22
+   ],
+   [
+    "web_element",
+    20
+   ],
+   [
+    "click",
+    18
+   ],
+   [
+    "requirement",
+    3
+   ],
+   [
+    "activity",
+    3
+   ],
+   [
+    "location_spec",
+    2
+   ],
+   [
+    "group_size",
+    2
+   ],
+   [
+    "propose",
+    2
+   ],
+   [
+    "type_text",
+    2
+   ],
+   [
+    "time_point",
+    1
+   ],
+   [
+    "maximum_between_stops",
+    1
+   ],
+   [
+    "unit_hour",
+    1
+   ],
+   [
+    "role_adults",
+    1
+   ],
+   [
+    "daytime",
+    1
+   ]
+  ],
+  "Claude Opus 5.5": [
+   [
+    "target",
+    22
+   ],
+   [
+    "click",
+    18
+   ],
+   [
+    "web_element",
+    17
+   ],
+   [
+    "requirement",
+    7
+   ],
+   [
+    "subject",
+    3
+   ],
+   [
+    "activity",
+    2
+   ],
+   [
+    "location_spec",
+    2
+   ],
+   [
+    "group_size",
+    2
+   ],
+   [
+    "type_text",
+    2
+   ],
+   [
+    "time_point",
+    1
+   ],
+   [
+    "role_adults",
+    1
+   ],
+   [
+    "ask",
+    1
+   ],
+   [
+    "request",
+    1
+   ],
+   [
+    "role_user",
+    1
+   ]
+  ],
+  "Claude Haiku 4.5": [
+   [
+    "target",
+    21
+   ],
+   [
+    "web_element",
+    20
+   ],
+   [
+    "click",
+    18
+   ],
+   [
+    "location_spec",
+    2
+   ],
+   [
+    "time_point",
+    2
+   ],
+   [
+    "group_size",
+    2
+   ],
+   [
+    "activity",
+    2
+   ],
+   [
+    "type_text",
+    2
+   ],
+   [
+    "requirement",
+    1
+   ],
+   [
+    "propose",
+    1
+   ]
+  ],
+  "GPT-6 Astra": [
+   [
+    "target",
+    24
+   ],
+   [
+    "web_element",
+    20
+   ],
+   [
+    "click",
+    18
+   ],
+   [
+    "location_spec",
+    2
+   ],
+   [
+    "request",
+    2
+   ],
+   [
+    "role_user",
+    2
+   ],
+   [
+    "type_text",
+    2
+   ]
+  ],
+  "o4-mini": [
+   [
+    "location_spec",
+    2
+   ],
+   [
+    "group_size",
+    2
+   ],
+   [
+    "time_point",
+    1
+   ],
+   [
+    "role_adults",
+    1
+   ],
+   [
+    "daytime",
+    1
+   ],
+   [
+    "extract",
+    1
+   ],
+   [
+    "target",
+    1
+   ]
+  ]
+ },
+ "type_counts": {
+  "Gemini 3.7 Flash": {
+   "constructor": 32,
+   "value": 3,
+   "speech_act": 2,
+   "attribute": 22,
+   "operation": 20
+  },
+  "Claude Opus 5.5": {
+   "constructor": 34,
+   "value": 2,
+   "speech_act": 1,
+   "attribute": 22,
+   "claim_relation": 1,
+   "operation": 20
+  },
+  "Claude Haiku 4.5": {
+   "constructor": 29,
+   "speech_act": 1,
+   "attribute": 21,
+   "operation": 20
+  },
+  "GPT-6 Astra": {
+   "constructor": 22,
+   "attribute": 24,
+   "claim_relation": 2,
+   "value": 2,
+   "operation": 20
+  },
+  "o4-mini": {
+   "constructor": 5,
+   "value": 2,
+   "operation": 1,
+   "attribute": 1
+  }
+ },
+ "expressivity": [
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "all",
+   "pairs": 1,
+   "bleu": 0.29454517584299855,
+   "corpus_bleu": 0.29454517584299855,
+   "rouge_l": 0.7003891050583657,
+   "word_lev_sim": 0.5703703703703704,
+   "from_success": 1
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "Mind2Web",
+   "pairs": 1,
+   "bleu": 0.29454517584299855,
+   "corpus_bleu": 0.29454517584299855,
+   "rouge_l": 0.7003891050583657,
+   "word_lev_sim": 0.5703703703703704,
+   "from_success": 1
+  }
+ ]
+}
