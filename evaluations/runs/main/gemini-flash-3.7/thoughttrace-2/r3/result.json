@@ -3,8 +3,8 @@
  "item": "thoughttrace-2",
  "dataset": "thoughttrace",
  "run": 3,
- "status": "success",
- "problem": null,
+ "status": "error",
+ "problem": "claimed success but the host check found: 3 sentence-length quoted literal(s) carry natural language instead of encoding it: Rome e-bike tour and Tiber kayaking and underground tours | Tuscany hot air balloon and ATV and hiking and truffle hunting | Hotel Santa Maria and The Hoxton in Rome, Agriturismo Il Cicalino in Tuscany",
  "attempts": 1,
  "duration_s": 431.9,
  "usage": {
@@ -18,5 +18,11 @@
  },
  "cost_usd": 0.1999,
  "setup": "v1",
- "timeout_s": 1200
+ "timeout_s": 1200,
+ "regated": {
+  "original_status": "success",
+  "problems": [
+   "3 sentence-length quoted literal(s) carry natural language instead of encoding it: Rome e-bike tour and Tiber kayaking and underground tours | Tuscany hot air balloon and ATV and hiking and truffle hunting | Hotel Santa Maria and The Hoxton in Rome, Agriturismo Il Cicalino in Tuscany"
+  ]
+ }
 }

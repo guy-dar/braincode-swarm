@@ -1,0 +1,50 @@
+{
+ "model": "o4-mini",
+ "item": "paths-2",
+ "dataset": "paths",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 26 sentence-length quoted literal(s) carry natural language instead of encoding it: In Zuora reporting, it means that you need to ensure that the accounts receivabl… | This involves reconciling the amounts recorded in Zuora for these accounts with … | To accomplish this, you can use various Zuora reports and features to track and …",
+ "attempts": 1,
+ "duration_s": 96.6,
+ "usage": {
+  "calls": 3,
+  "input": 39470,
+  "cacheRead": 72704,
+  "cacheWrite": 0,
+  "output": 10990,
+  "reasoning": 8320,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1118,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "account_reconciliation",
+    "dimension": "constructor"
+   },
+   {
+    "term": "property_question",
+    "dimension": "constructor"
+   },
+   {
+    "term": "report_request",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "26 sentence-length quoted literal(s) carry natural language instead of encoding it: In Zuora reporting, it means that you need to ensure that the accounts receivabl… | This involves reconciling the amounts recorded in Zuora for these accounts with … | To accomplish this, you can use various Zuora reports and features to track and …"
+  ]
+ }
+}

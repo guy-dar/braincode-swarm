@@ -6,44 +6,40 @@
  "status": "failed",
  "problem": null,
  "attempts": 1,
- "duration_s": 260.4,
+ "duration_s": 406.9,
  "usage": {
-  "calls": 20,
-  "input": 254,
-  "cacheRead": 1063068,
-  "cacheWrite": 65964,
-  "output": 25729,
-  "reasoning": 14940,
-  "compactions": 0,
-  "truncated_tool_results": 1
+  "calls": 23,
+  "input": 2448,
+  "cacheRead": 1118184,
+  "cacheWrite": 123965,
+  "output": 36922,
+  "reasoning": 27086,
+  "compactions": 1,
+  "truncated_tool_results": 0
  },
- "cost_usd": 0.3177,
+ "cost_usd": 0.4538,
  "setup": "v2",
  "timeout_s": 2400,
  "failure": {
-  "add_count": 4,
-  "refine_count": 1,
+  "add_count": 2,
+  "refine_count": 2,
   "would_add": [
    {
-    "term": "couch",
-    "dimension": "vocabulary-member"
-   },
-   {
-    "term": "activity_with_direction",
+    "term": "spatial_relation",
     "dimension": "constructor"
    },
    {
-    "term": "colored_object",
-    "dimension": "constructor"
-   },
-   {
-    "term": "spatial_object",
+    "term": "object_descriptor",
     "dimension": "constructor"
    }
   ],
   "would_refine": [
    {
-    "target": "v19/constructor/activity",
+    "target": "v19/value/ottoman",
+    "dimension": "refine-entry"
+   },
+   {
+    "target": "v19/value/couch",
     "dimension": "refine-entry"
    }
   ],

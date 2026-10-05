@@ -1,0 +1,146 @@
+To find the total number of musical instruments and mobiles, we need to count each type of instrument or device.
+
+Musical instruments:
+- Rababs: 93
+- Violins: 16
+- Organs: 13
+- Sruti boxes: 3
+- Huwei nova 12s mobiles: 96
+- Samsung galaxy a55 mobiles: 64
+- Hamsters: 65
+- Huawei pura 70 pro+ mobiles: 11
+- Samsung galaxy tab s10 mobiles: 81
+- Marimbas: 46
+- HTC mobiles: 16
+- Samsung galaxy a35 mobiles: 69
+- Mules: 50
+- Iphones: 65
+- Motorolas: 94
+- Trumpets: 92
+- Impalas: 20
+- Monkeys: 99
+- Ducks: 4
+- Erhus: 65
+- Sony mobiles: 98
+- Xiamoi mobiles: 66
+- Iphones 15 mobiles: 15
+- Huawei pura 70 ultra mobiles: 40
+- Foxes: 74
+- Setars: 86
+- Bongos: 5
+- Tortoises: 88
+- Honor mobiles: 51
+- Huawei nova 12i mobiles: 16
+- Crocodiles: 80
+- Iphones 6 mobiles: 93
+- Electric violins: 69
+- Ouds: 92
+- Timpanis: 17
+- Dogs: 35
+- Iphones 7 mobiles: 88
+- Shrimps: 28
+- Doxes: 59
+- Realme mobiles: 16
+- Bats: 79
+- Oboes: 74
+- Panpipes: 67
+- Iphones 13 mobiles: 30
+- Donkeys: 61
+- Electric drums: 43
+- Trout: 86
+- Cats: 34
+- Hens: 40
+- Mallards: 28
+- Apes: 10
+- Balafons: 38
+- Squirrels: 54
+- Huawei mate 70 mobiles: 33
+- Pennywhistles: 99
+- Iphones x mobiles: 9
+- Hummingbirds: 51
+- Rats: 95
+- Tambourines: 66
+- Meizu mobiles: 29
+- Guitars: 86
+- Orangutans: 14
+- Wasps: 85
+- Reindeer: 68
+- Maracas: 50
+- Iphones 12 mobiles: 31
+- Magpies: 52
+- Skunks: 5
+- Shrews: 99
+- Drums: 18
+- Mbiras: 97
+- Ocarinas: 93
+- Huawei mate x6 mobiles: 44
+- Samsung galaxy s24 mobiles: 90
+- Alpacas: 87
+- Harps: 38
+- Cellos: 22
+- Dolphins: 52
+- Kalimbas: 48
+- Iphones 8 mobiles: 74
+- Samsung galaxy c55 mobiles: 15
+- Nokia mobiles: 55
+- Ponys: 3
+- Rats: 95
+- Meizu mobiles: 29
+- Guitars: 86
+- Double bass: 73
+- Electric guitars: 83
+- Flies: 63
+- Mandolins: 4
+- Biwa: 1
+- Zte mobiles: 74
+- Congas: 84
+- Camels: 41
+- Clarinets: 50
+- Giraffes: 50
+- Saxophones: 11
+- Guinea pigs: 70
+- Bisons: 69
+- N'gonis: 48
+- Beavers: 54
+- Armadillos: 2
+- Guzhengs: 42
+
+The total number of musical instruments is 5,729.
+
+Mobiles:
+- Huawei nova 11 se mobiles: 92
+- Huawei nova 12s mobiles: 96
+- Huawei nova 12i mobiles: 16
+- Huawei pura 70 pro+ mobiles: 11
+- Huawei pura 70 ultra mobiles: 40
+- Samsung galaxy a55 mobiles: 64
+- Samsung galaxy a35 mobiles: 69
+- Samsung galaxy tab s10 mobiles: 81
+- Samsung galaxy z fold5 mobiles: 10
+- Samsung galaxy s24 mobiles: 90
+- Iphones 6 mobiles: 93
+- Iphones 7 mobiles: 88
+- Iphones 8 mobiles: 74
+- Iphones 13 mobiles: 30
+- Iphones 15 mobiles: 15
+- Iphones x mobiles: 9
+- Iphones 12 mobiles: 31
+- Iphones 5 mobiles: 80
+- Iphones 16 mobiles: 65
+- Iphones 6 mobiles: 93
+- Iphones 7 mobiles: 88
+- Iphones 8 mobiles: 74
+- Iphones 13 mobiles: 30
+- Iphones 15 mobiles: 15
+- Iphones x mobiles: 9
+- Iphones 12 mobiles: 31
+- Xiamoi mobiles: 66
+- Meizu mobiles: 29
+- Nokia mobiles: 55
+- Realme mobiles: 16
+- Zte mobiles: 74
+- Vivo mobiles: 32
+
+The total number of mobiles is 1,131.
+
+The absolute difference of the total number of musical instruments and mobiles that I have is 5,729 - 1,131 = 4,598.

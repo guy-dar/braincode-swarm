@@ -1,0 +1,1 @@
+The answer is: A funny cartoon caption with a liberation theme excluded.

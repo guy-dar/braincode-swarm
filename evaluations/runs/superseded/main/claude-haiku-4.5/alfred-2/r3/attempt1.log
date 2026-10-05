@@ -1,0 +1,31 @@
+    4.8s turn 1
+   78.4s   model reply: in 10 + cached 0, out 7920 (+7680 reasoning)
+   78.4s   tool bash: node /kit/rag.mjs entry chill cool | head -100
+   78.5s turn 2
+  112.9s   model reply: in 13 + cached 29887, out 3446 (+3348 reasoning)
+  112.9s   tool bash: node /kit/rag.mjs entry pick_up place slice walk turn face | head -150
+  113.0s turn 3
+  188.4s   model reply: in 13 + cached 37969, out 8709 (+7517 reasoning)
+  188.4s   tool write: /output/translation.md
+  188.5s turn 4
+  190.1s   model reply: in 13 + cached 42412, out 104 (+19 reasoning)
+  190.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  190.2s turn 5
+  192.2s   model reply: in 13 + cached 51149, out 175 (+75 reasoning)
+  192.2s   tool bash: node /kit/rag.mjs search "turn left" "turn around" "rotate direction" --kind action
+  192.6s turn 6
+  196.0s   model reply: in 13 + cached 51891, out 277 (+197 reasoning)
+  196.0s   tool bash: grep -i "direction" /reference/glossary.md | head -20
+  196.1s turn 7
+  205.1s   model reply: in 13 + cached 52932, out 1302 (+256 reasoning)
+  205.1s   tool edit: /output/translation.md
+  205.1s turn 8
+  206.8s   model reply: in 12 + cached 53684, out 114 (+34 reasoning)
+  206.8s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  206.9s turn 9
+  208.7s   model reply: in 13 + cached 55000, out 126 (+47 reasoning)
+  208.7s   tool read: /output/translation.md
+  208.8s turn 10
+  217.6s   model reply: in 13 + cached 55734, out 863 (+518 reasoning)
+  217.6s agent finished
+  217.6s agent finished

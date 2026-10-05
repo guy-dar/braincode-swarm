@@ -7,7 +7,7 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "inform"
+    "propose"
    ]
   },
   {
@@ -16,7 +16,8 @@
    "text": "mow the lawn",
    "status": "covered",
    "matched_symbols": [
-    "property_question"
+    "obligation",
+    "propose"
    ]
   },
   {
@@ -60,8 +61,13 @@
    "id": "n7",
    "kind": "action",
    "text": "remove debris and obstacles from the lawn area",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "remove",
+    "exclude",
+    "obligation",
+    "propose"
+   ]
   },
   {
    "id": "n8",
@@ -69,15 +75,18 @@
    "text": "adjust mower blade height",
    "status": "covered",
    "matched_symbols": [
-    "scissors"
+    "scissors",
+    "obligation"
    ]
   },
   {
    "id": "n9",
    "kind": "constraint",
    "text": "cut no more than one third of the grass height per mowing",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "at_most"
+   ]
   },
   {
    "id": "n10",
@@ -92,8 +101,10 @@
    "id": "n11",
    "kind": "negation",
    "text": "avoid mowing in the same direction each time",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "exclude"
+   ]
   },
   {
    "id": "n12",
@@ -110,7 +121,9 @@
    "text": "trim edges using a string trimmer or edger",
    "status": "covered",
    "matched_symbols": [
-    "scissors"
+    "scissors",
+    "obligation",
+    "propose"
    ]
   },
   {
@@ -127,8 +140,10 @@
    "id": "n15",
    "kind": "constraint",
    "text": "follow safety instructions and wear protective gear",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
   },
   {
    "id": "n16",
@@ -138,8 +153,8 @@
    "matched_symbols": [
     "offer",
     "ask",
-    "inform",
-    "property_question"
+    "propose",
+    "offer_help"
    ]
   },
   {
@@ -150,7 +165,7 @@
    "matched_symbols": [
     "ask",
     "scissors",
-    "inform",
+    "propose",
     "subject"
    ]
   },
@@ -171,6 +186,7 @@
    "status": "covered",
    "matched_symbols": [
     "scissors",
+    "enables",
     "ask",
     "recommended"
    ]
@@ -182,6 +198,8 @@
    "status": "covered",
    "matched_symbols": [
     "scissors",
+    "size_small",
+    "enables",
     "recommended"
    ]
   },
@@ -191,7 +209,8 @@
    "text": "mowers are recommended for large lawns to save time and ensure uniform cut",
    "status": "covered",
    "matched_symbols": [
-    "recommended"
+    "recommended",
+    "enables"
    ]
   },
   {
@@ -200,7 +219,8 @@
    "text": "mowers are designed specifically to efficiently cut large areas evenly",
    "status": "covered",
    "matched_symbols": [
-    "scissors"
+    "scissors",
+    "designed_to_be"
    ]
   },
   {
@@ -211,7 +231,8 @@
    "matched_symbols": [
     "offer",
     "ask",
-    "inform",
+    "offer_help",
+    "propose",
     "subject"
    ]
   }
@@ -227,30 +248,47 @@
   "UTTER",
   "activity",
   "ask",
-  "in",
-  "inform",
+  "at_most",
+  "conjunction",
+  "designed_to_be",
+  "enables",
+  "exclude",
+  "measure",
   "object_label",
+  "obligation",
   "offer",
-  "property_question",
+  "offer_help",
+  "outcome",
+  "propose",
   "recommended",
+  "remove",
+  "requirement",
   "scissors",
+  "size_small",
   "subject",
   "target"
  ],
- "unknown_symbols_in_head_position": [],
- "unbound_attribute_values": [],
+ "unknown_symbols_in_head_position": [
+  "inefficient"
+ ],
+ "unbound_attribute_values": [
+  "ATOM"
+ ],
  "deprecated_symbols_used": [],
- "claimed_but_absent": {
-  "remove": [
-   "n7"
-  ]
- },
+ "claimed_but_absent": {},
  "string_literals_as_operation_arguments": [],
- "atom_errors": [],
+ "atom_errors": [
+  "object_label::lawn_mower: key must match lower_word",
+  "object_label::gardening_gloves: key must match lower_word",
+  "object_label::protective_eyewear: key must match lower_word",
+  "object_label::string_trimmer: key must match lower_word"
+ ],
  "atom_warnings": [],
  "retired_symbols_used": [],
  "label_preserved": [
   "n3",
   "n5"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

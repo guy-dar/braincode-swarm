@@ -1,0 +1,42 @@
+{
+ "model": "o4-mini",
+ "item": "prism-2",
+ "dataset": "prism",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 13 sentence-length quoted literal(s) carry natural language instead of encoding it: To mow your lawn, you'll need a lawn mower, gardening gloves, and protective eye… | Begin by preparing the lawn area by removing any debris or obstacles. | Adjust the height of your mower blades to ensure an even cut - you typically wan…",
+ "attempts": 2,
+ "duration_s": 389.3,
+ "usage": {
+  "calls": 4,
+  "input": 23922,
+  "cacheRead": 105984,
+  "cacheWrite": 0,
+  "output": 17242,
+  "reasoning": 14080,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1313,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "property_question",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "13 sentence-length quoted literal(s) carry natural language instead of encoding it: To mow your lawn, you'll need a lawn mower, gardening gloves, and protective eye… | Begin by preparing the lawn area by removing any debris or obstacles. | Adjust the height of your mower blades to ensure an even cut - you typically wan…"
+  ]
+ }
+}

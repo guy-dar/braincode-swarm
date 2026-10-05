@@ -1,0 +1,152 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "User is failing to complete a specific video game",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "User asks the assistant for help completing a game",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "offer"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "video game",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "Assistant confirms willingness and readiness to help",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "ask",
+    "respond"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "Help the user overcome a difficult part in a game",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "speech_act",
+   "text": "Assistant asks the user for more information about their issue",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "offer",
+    "respond",
+    "express_interest"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Name or title of the game being played",
+   "status": "covered",
+   "matched_symbols": [
+    "target"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Gaming platform or device used to play the game",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Specific level, boss fight, puzzle, quest, or achievement where the user is stuck",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Error messages, software glitches, or abnormal behavior encountered",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "reasoning",
+   "text": "Providing more details allows the assistant to create a better tailored solution",
+   "status": "covered",
+   "matched_symbols": [
+    "respond"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "speech_act",
+   "text": "Assistant expresses anticipation for the user's response",
+   "status": "covered",
+   "matched_symbols": [
+    "express_interest",
+    "offer",
+    "respond",
+    "ask"
+   ]
+  }
+ ],
+ "unresolved": [
+  "n1"
+ ],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "express_interest",
+  "offer",
+  "on",
+  "respond",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {
+  "in": [
+   "n3",
+   "n7",
+   "n8",
+   "n9",
+   "n10",
+   "n11"
+  ]
+ },
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": [
+  "i am failing to complete a certain game, can you help me?",
+  "I’d love to help you get past the tricky part.",
+  "What specific part or level you’re stuck on (e.g., a boss fight, puzzle, quest, …",
+  "Any error messages, glitches, or unusual behavior you’ve noticed"
+ ]
+}

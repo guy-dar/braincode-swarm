@@ -14,17 +14,15 @@
    "status": "covered",
    "matched_symbols": [
     "warning",
-    "inform",
-    "run_tests"
+    "inform"
    ]
   },
   {
    "id": "n3",
    "kind": "object",
    "text": "pytest testing framework",
-   "status": "covered",
+   "status": "label-preserved",
    "matched_symbols": [
-    "run_tests",
     "platform_label"
    ]
   },
@@ -130,10 +128,8 @@
    "id": "n14",
    "kind": "action",
    "text": "Create file test.py",
-   "status": "covered",
-   "matched_symbols": [
-    "run_tests"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n15",
@@ -179,10 +175,8 @@
    "id": "n19",
    "kind": "action",
    "text": "Run pytest on test.py",
-   "status": "covered",
-   "matched_symbols": [
-    "run_tests"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n20",
@@ -218,8 +212,7 @@
    "text": "Pytest catches the deprecation warning while running tests",
    "status": "covered",
    "matched_symbols": [
-    "warning",
-    "run_tests"
+    "warning"
    ]
   },
   {
@@ -228,7 +221,8 @@
    "text": "Modify api_core/google/api_core/protobuf_helpers.py",
    "status": "covered",
    "matched_symbols": [
-    "chg_modify_code"
+    "chg_modify_code",
+    "include"
    ]
   },
   {
@@ -264,7 +258,8 @@
    "text": "Modify core/google/cloud/iam.py",
    "status": "covered",
    "matched_symbols": [
-    "chg_modify_code"
+    "chg_modify_code",
+    "include"
    ]
   },
   {
@@ -286,21 +281,24 @@
   "TURN",
   "USER",
   "UTTER",
-  "activity",
   "attribute_claim",
   "chg_modify_code",
   "cli_command",
-  "in",
+  "code_entity",
+  "include",
   "inform",
   "platform_label",
-  "run_tests",
   "software_version",
   "statement",
   "subject",
   "target",
   "warning"
  ],
- "unknown_symbols_in_head_position": [],
+ "unknown_symbols_in_head_position": [
+  "code_file_operation",
+  "not_reproducible",
+  "package_installation"
+ ],
  "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {},
@@ -309,8 +307,11 @@
  "atom_warnings": [],
  "retired_symbols_used": [],
  "label_preserved": [
+  "n3",
   "n4",
   "n5",
   "n16"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

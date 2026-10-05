@@ -1,0 +1,1 @@
+The answer is: The task is asking to write a caption for a cartoon of two ears of corn.

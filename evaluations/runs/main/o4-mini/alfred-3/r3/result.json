@@ -1,0 +1,49 @@
+{
+ "model": "o4-mini",
+ "item": "alfred-3",
+ "dataset": "alfred",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 417.3,
+ "usage": {
+  "calls": 4,
+  "input": 10047,
+  "cacheRead": 123776,
+  "cacheWrite": 0,
+  "output": 13203,
+  "reasoning": 8320,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1032,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "command",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "walk_forward",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "select_object",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "pick_up",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

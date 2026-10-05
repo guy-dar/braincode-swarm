@@ -8,8 +8,6 @@
    "matched_symbols": [
     "role_agent",
     "greeting",
-    "offer",
-    "acknowledge",
     "propose",
     "inform",
     "ask"
@@ -23,7 +21,6 @@
    "matched_symbols": [
     "propose",
     "offer_help",
-    "offer",
     "ask"
    ]
   },
@@ -33,6 +30,7 @@
    "text": "categorize best methods for staying organized while writing a story",
    "status": "covered",
    "matched_symbols": [
+    "sequence",
     "propose"
    ]
   },
@@ -47,8 +45,10 @@
    "id": "n5",
    "kind": "object",
    "text": "fanfiction",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "label-preserved",
+   "matched_symbols": [
+    "genre_label"
+   ]
   },
   {
    "id": "n6",
@@ -67,8 +67,6 @@
    "status": "covered",
    "matched_symbols": [
     "greeting",
-    "acknowledge",
-    "offer",
     "role_user",
     "inform",
     "propose",
@@ -81,6 +79,8 @@
    "text": "present a comprehensive organization guide for fanfiction writing",
    "status": "covered",
    "matched_symbols": [
+    "genre_label",
+    "include",
     "inform"
    ]
   },
@@ -88,8 +88,10 @@
    "id": "n9",
    "kind": "action",
    "text": "create a story bible covering summary, themes, tone, audience, and length",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "document_section"
+   ]
   },
   {
    "id": "n10",
@@ -109,15 +111,21 @@
    "id": "n12",
    "kind": "action",
    "text": "build a three-level narrative structure for acts, character arcs, and chapters",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "document_section",
+    "sequence"
+   ]
   },
   {
    "id": "n13",
    "kind": "action",
    "text": "track main plots, subplots, and unresolved story threads across chapters",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "sequence",
+    "document_section"
+   ]
   },
   {
    "id": "n14",
@@ -125,6 +133,7 @@
    "text": "Notion",
    "status": "covered",
    "matched_symbols": [
+    "activity",
     "inform"
    ]
   },
@@ -153,8 +162,10 @@
    "id": "n18",
    "kind": "object",
    "text": "Scrivener",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "sequence"
+   ]
   },
   {
    "id": "n19",
@@ -162,7 +173,8 @@
    "text": "establish a pre-writing, writing, and post-writing routine",
    "status": "covered",
    "matched_symbols": [
-    "propose"
+    "propose",
+    "sequence"
    ]
   },
   {
@@ -173,6 +185,7 @@
    "matched_symbols": [
     "ask",
     "propose",
+    "include",
     "inform"
    ]
   },
@@ -183,8 +196,6 @@
    "status": "covered",
    "matched_symbols": [
     "role_agent",
-    "acknowledge",
-    "offer",
     "propose",
     "inform",
     "ask"
@@ -205,8 +216,9 @@
    "text": "offer ongoing support for character sheets, chapter outlines, scene unblocking, and proofreading",
    "status": "covered",
    "matched_symbols": [
-    "offer",
     "propose",
+    "document_section",
+    "include",
     "inform"
    ]
   },
@@ -220,7 +232,6 @@
     "propose",
     "ask",
     "offer_help",
-    "offer",
     "inform"
    ]
   },
@@ -230,7 +241,8 @@
    "text": "generate ideas to bridge planned story points when stuck",
    "status": "covered",
    "matched_symbols": [
-    "propose"
+    "propose",
+    "sequence"
    ]
   },
   {
@@ -241,7 +253,8 @@
    "matched_symbols": [
     "propose",
     "ask",
-    "inform"
+    "inform",
+    "include"
    ]
   },
   {
@@ -259,7 +272,8 @@
    "text": "instruct user to provide current story status, intended progression, and specific obstacle",
    "status": "covered",
    "matched_symbols": [
-    "propose"
+    "propose",
+    "include"
    ]
   },
   {
@@ -269,8 +283,6 @@
    "status": "covered",
    "matched_symbols": [
     "role_agent",
-    "offer",
-    "acknowledge",
     "ask",
     "offer_help",
     "inform",
@@ -283,23 +295,17 @@
    "text": "welcome future return and wish good luck with the fanfiction",
    "status": "covered",
    "matched_symbols": [
-    "well_wishes",
     "inform",
-    "propose",
-    "acknowledge"
+    "propose"
    ]
   }
  ],
  "unresolved": [
-  "n9",
   "n10",
   "n11",
-  "n12",
-  "n13",
   "n15",
   "n16",
-  "n17",
-  "n18"
+  "n17"
  ],
  "used_symbols": [
   "AGENT",
@@ -309,21 +315,22 @@
   "TURN",
   "USER",
   "UTTER",
-  "acknowledge",
+  "activity",
   "ask",
+  "document_section",
+  "genre_label",
   "greeting",
+  "include",
   "inform",
-  "offer",
   "offer_help",
   "propose",
   "role_agent",
   "role_user",
-  "target",
-  "well_wishes"
+  "sequence",
+  "target"
  ],
  "unknown_symbols_in_head_position": [
-  "organization_system",
-  "request_plan_and_categorize"
+  "sections_seq"
  ],
  "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
@@ -332,5 +339,9 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [
+  "n5"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

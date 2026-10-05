@@ -1,0 +1,2086 @@
+{
+ "translator_id": "movie_recommendation-1799",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Ask to identify which option contains the most similar movies.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.6787,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.6168,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4101,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.401,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.3735,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3707,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.3605,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.35,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Compare the similarity of movies within each option.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.7321,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.3365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3256,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3253,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3212,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3106,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.309,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.2995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.2966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.2961,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.2928,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Determine similarity based on whether a group of people will like the movies.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.7401,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.4452,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.3879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3759,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.3529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.3353,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.3331,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3316,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.33,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3284,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Movies to be compared.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.7322,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.7151,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.6973,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.6886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.6808,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.6624,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.6587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.6584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.6577,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_men",
+     "symbol": "gender_men",
+     "kind": "value",
+     "score": 0.6196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6022,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Select from a list of multiple-choice options.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n5",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.7399,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7065,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.6114,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4344,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.432,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4223,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4195,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.416,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3863,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.3724,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option A containing Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n6",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7137,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6841,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6251,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.464,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.4635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.4513,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.4437,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4425,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.4355,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4258,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4255,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.4255,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.4254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4229,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.4104,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option B containing Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70.",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n7",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.705,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6853,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.6835,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.6736,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.6649,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6622,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4943,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.4644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4548,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.4535,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.4345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.4249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.4229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4223,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4159,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.4151,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option C containing What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty.",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n8",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.7189,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.5426,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5417,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.5339,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5226,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_chardonnay",
+     "symbol": "grape_chardonnay",
+     "kind": "value",
+     "score": 0.4891,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.386,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.3835,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.3707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3531,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3525,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3336,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3254,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option D containing Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption.",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n9",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.7442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.721,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7078,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6848,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/oak_chips",
+     "symbol": "oak_chips",
+     "kind": "value",
+     "score": 0.6656,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.6612,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6431,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_full",
+     "symbol": "state_full",
+     "kind": "value",
+     "score": 0.6154,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in",
+     "symbol": "in",
+     "kind": "value",
+     "score": 0.6136,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option E containing Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Holland's Opus, The Shawshank Redemption.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n10",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7084,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.5277,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5052,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4682,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.371,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.3592,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3457,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.3388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3275,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3192,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3185,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3131,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option F containing The Shawshank Redemption, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco, Mr Holland's Opus.",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n11",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.7343,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.5458,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.5314,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.4981,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.3907,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.3904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.3373,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.3369,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option G containing Boccaccio '70, Mr Holland's Opus, Don Juan DeMarco, What's Eating Gilbert Grape, Get Shorty.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n12",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.7431,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.5499,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.4,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.3905,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.3858,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3723,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3711,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fruit_juice",
+     "symbol": "fruit_juice",
+     "kind": "value",
+     "score": 0.3574,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3485,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.3447,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option H containing Get Shorty, Mr Holland's Opus, Don Juan DeMarco, Long Night's Journey Into Day, Boccaccio '70.",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n13",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7083,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.5356,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5171,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4872,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4134,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.3912,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3798,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3697,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3557,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3427,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3268,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option I containing Mr Holland's Opus, The Shawshank Redemption, Howards End, Get Shorty, What's Eating Gilbert Grape.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n14",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.7439,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7297,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.7192,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.7037,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.6549,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.4834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.4746,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4607,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.46,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.4506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.4374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4184,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option J containing Howards End, Don Juan DeMarco, Boccaccio '70, Get Shorty, Long Night's Journey Into Day.",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n15",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Mr Holland's Opus, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Don Juan DeMarco (B) Howards End, Long Night's Journey Into Day, Get Shorty, What's Eating Gilbert Grape, Boccaccio '70 (C) What's Eating Gilbert Grape, Don Juan DeMarco, The Shawshank Redemption, Long Night's Journey Into Day, Get Shorty (D) Howards End, Mr Holland's Opus, Boccaccio '70, Get Shorty, The Shawshank Redemption (E) Get Shorty, Long Night's Journey Into Day, Boccaccio '70, Mr Hollan",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7078,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.498,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4074,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4012,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3815,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.3439,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3188,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

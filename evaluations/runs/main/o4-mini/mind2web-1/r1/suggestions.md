@@ -1,10 +1,7 @@
-### S1 | type: add | dimension: lexical-group | symbol: airline_label
-- Needs: n7 (t1:s1)
-- Searches tried: "United Airlines" → no airline-specific group; widen "airline name label" → nothing
-- Definition: A source-supplied airline name label; denotes that carrier without implied code or properties.
-- admission: open_label
-- key_form: lower_word
-- key_aliases: {}
-- Consuming signatures: slots accepting ATOM[airline_label] for string-valued slots where atomic carrier names appear.
-- Illustrative values: ["airline_label::united_airlines"]
-- Proposed record: {"symbol":"airline_label","kind":"lexical_group","definition":"A source-supplied airline name label; denotes that carrier without implied code or properties.","group":{"examples":["airline_label::united_airlines"]}}
+### S1 | type: add | dimension: constructor | symbol: flight_search_request
+- Needs: n1 (t1:s1)
+- Searches tried: "flight search request" → no matching constructor; widen "flight search request term" → nothing
+- Typed parameters: origin: TERM, destination: TERM, date: TERM, airline: ATOM[object_label], adults: TERM, seniors: TERM, trip_type: STRING, stops: STRING, time_of_day: ATOM[time-of-day-value]
+- Interpretation: Constructs a structured representation of a flight search request with specified origin, destination, departure date, chosen airline, passenger counts, trip type, stop preference, and time of day; does not assert execution.
+- Example: `TERM flight_search_request(origin=origin, destination=destination, date=departure_date, airline=object_label::united_airlines, adults=adults_count, seniors=seniors_count, trip_type="one-way", stops="nonstop", time_of_day=daytime) -> flight_search_request_2 : TERM`
+- Proposed record: `{"symbol":"flight_search_request","kind":"constructor","signature":"TERM flight_search_request(origin: TERM, destination: TERM, date: TERM, airline: ATOM[object_label], adults: TERM, seniors: TERM, trip_type: STRING, stops: STRING, time_of_day: ATOM[time-of-day-value]) -> TERM","definition":"Constructs a structured representation of a flight search request with specified origin, destination, departure date, chosen airline, passenger counts, trip type, stop preference, and time of day; asserts nothing.","not":"an executed search or booking operation","aliases":["search_flights_request","flight_search"]}`

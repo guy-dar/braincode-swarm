@@ -1,0 +1,2594 @@
+{
+ "translator_id": "temporal_sequence-3699",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "request to solve a scheduling puzzle for six participants",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.7397,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.507,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4865,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4723,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.464,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.4478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4441,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4435,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4392,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4337,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.4004,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "participants work from 9 to 5 local time on weekdays",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.7258,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5668,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.5354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.5212,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4958,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4775,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.4636,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.4618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4586,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "schedule a meeting this week",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n3",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7571,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4009,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.3374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.31,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3023,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.2946,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/tone-value",
+     "symbol": "rule_category_tone_value",
+     "kind": "category_rule",
+     "score": 0.2907,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.2877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2793,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.2723,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Claire's weekly schedule of booked and free times",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.694,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.6478,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6437,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6365,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.594,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5108,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.5046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4616,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Charlotte's weekly schedule of booked and free times",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n5",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.7047,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6443,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6392,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.5802,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4888,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4746,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4714,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4273,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4235,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4097,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Amelia's weekly schedule of booked and free times",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n6",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6862,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6419,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.586,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5186,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4788,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.467,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4537,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4207,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4154,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.4066,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Lisa's weekly schedule of booked and free times",
+   "source": [
+    "t1:s21"
+   ],
+   "id": "n7",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6907,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.6459,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6392,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.5738,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4657,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4224,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Rachel's weekly schedule of booked and free times",
+   "source": [
+    "t1:s27"
+   ],
+   "id": "n8",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.7069,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.6425,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6325,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.5706,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.507,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4799,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4724,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4687,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4599,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.4393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4116,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Alice's weekly schedule of booked and free times",
+   "source": [
+    "t1:s33"
+   ],
+   "id": "n9",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6996,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6375,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.5803,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5081,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4773,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4753,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4694,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_uptime",
+     "symbol": "metric_uptime",
+     "kind": "value",
+     "score": 0.415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4139,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4124,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Claire's meeting must end before 4pm",
+   "source": [
+    "t1:s39"
+   ],
+   "id": "n10",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.7529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.73,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.6997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6962,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6535,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/watch",
+     "symbol": "watch",
+     "kind": "value",
+     "score": 0.6527,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.6484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.6378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6338,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.6231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.6223,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Charlotte's meetings on Mondays and Thursdays must be at most 1 hour long",
+   "source": [
+    "t1:s40"
+   ],
+   "id": "n11",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7626,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4612,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4106,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3811,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3733,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3614,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.3531,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3138,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Amelia can clear morning schedule from 9:00 to 9:45 everyday if needed",
+   "source": [
+    "t1:s41"
+   ],
+   "id": "n12",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.7904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.7585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7536,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7487,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7395,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.6968,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.6717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.668,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6642,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.6495,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.6434,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Lisa requires at least 10 minutes of free time after the meeting within 9am-5pm",
+   "source": [
+    "t1:s42"
+   ],
+   "id": "n13",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7793,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4793,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4477,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3823,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3562,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3478,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3319,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.328,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Rachel can miss the last 10 minutes or less of the meeting",
+   "source": [
+    "t1:s43"
+   ],
+   "id": "n14",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7733,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3667,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.3644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3599,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/temporal_context",
+     "symbol": "temporal_context",
+     "kind": "constructor",
+     "score": 0.3167,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.2925,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.2894,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.2778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/tone-value",
+     "symbol": "rule_category_tone_value",
+     "kind": "category_rule",
+     "score": 0.2733,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.2473,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Alice can clear any meeting of 30 minutes or less",
+   "source": [
+    "t1:s44"
+   ],
+   "id": "n15",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7678,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3592,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3503,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3238,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3217,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3086,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.2972,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "meeting must start on the hour or half hour",
+   "source": [
+    "t1:s45"
+   ],
+   "id": "n16",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7768,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.5523,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4112,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3732,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3386,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3119,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3109,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "compute X, the length of the longest meeting in minutes",
+   "source": [
+    "t1:s45"
+   ],
+   "id": "n17",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7897,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4194,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4176,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4015,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3981,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3843,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.302,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "compute Y, the number of possible options of meetings of length X",
+   "source": [
+    "t1:s46"
+   ],
+   "id": "n18",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6824,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.5007,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4956,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4798,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4761,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4526,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4239,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.4094,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "report X and Y separated by a comma",
+   "source": [
+    "t1:s47"
+   ],
+   "id": "n19",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.7122,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.3676,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.3467,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3154,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.3097,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/document_section",
+     "symbol": "document_section",
+     "kind": "constructor",
+     "score": 0.3026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.2981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.292,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.2877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.2843,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "if X is 0, report 0, 0",
+   "source": [
+    "t1:s48"
+   ],
+   "id": "n20",
+   "context": "Claire, Charlotte, Amelia, Lisa, Rachel and Alice work from 9 to 5 their local time on weekdays. They want to have a meeting some time this week. The schedule for Claire's week in their local time is as follows: Monday: Booked at the following times: from 9:35 to 10:15, from 10:40 to 12:05, from 13:35 to 13:45, from 15:00 to 16:10 Tuesday: Free only at the following times: from 9:00 to 9:40, from 9:55 to 11:10, from 12:25 to 13:35, from 15:05 to 15:50, anytime after 16:00 Wednesday: Booked at the following times: from 10:05 to 10:50, from 11:25 to 12:05, from 13:05 to 13:25, from 13:55 to 15:1",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6358,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.433,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4197,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.398,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.3954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3925,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_gram",
+     "symbol": "unit_gram",
+     "kind": "value",
+     "score": 0.3858,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.385,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

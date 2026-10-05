@@ -3,21 +3,34 @@
  "item": "thoughttrace-2",
  "dataset": "thoughttrace",
  "run": 3,
- "status": "success",
+ "status": "failed",
  "problem": null,
  "attempts": 1,
- "duration_s": 269.7,
+ "duration_s": 146.4,
  "usage": {
-  "calls": 3,
-  "input": 8,
-  "cacheRead": 99949,
-  "cacheWrite": 54463,
-  "output": 7885,
-  "reasoning": 2470,
+  "calls": 2,
+  "input": 6,
+  "cacheRead": 50522,
+  "cacheWrite": 50896,
+  "output": 4305,
+  "reasoning": 764,
   "compactions": 0,
   "truncated_tool_results": 0
  },
- "cost_usd": 0.235,
+ "cost_usd": 0.1804,
  "setup": "v2",
- "timeout_s": 2400
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "desires",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
 }

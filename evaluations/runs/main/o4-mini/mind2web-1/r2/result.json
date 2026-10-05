@@ -1,0 +1,40 @@
+{
+ "model": "o4-mini",
+ "item": "mind2web-1",
+ "dataset": "mind2web",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 461.5,
+ "usage": {
+  "calls": 4,
+  "input": 25799,
+  "cacheRead": 106624,
+  "cacheWrite": 0,
+  "output": 16364,
+  "reasoning": 11840,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1297,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "flight_search",
+    "dimension": "constructor"
+   },
+   {
+    "term": "request",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

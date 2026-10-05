@@ -1,38 +1,16 @@
-   16.4s turn 1
-   46.8s   model reply: in 4 + cached 2083, out 3770 (+2179 reasoning)
-   46.8s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
-Status: failed
+    4.4s turn 1
+   54.0s   model reply: in 4 + cached 2083, out 7679 (+3860 reasoning)
+   54.0s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
+Status: success
 Mode: TRACE
 
-## Suggested translation
+## BrainCode
 
 ```braincode
 MODE TRACE
 ENTRYPOINT Conversation
-CON
-   47.0s turn 2
-   73.0s   model reply: in 2 + cached 49150, out 4635 (+114 reasoning)
-   73.0s   tool bash: cat > /output/translation.md <<'EOF'
-Status: failed
-Mode: TRACE
-
-## Suggested translation
-
-```braincode
-MODE TRACE
-ENTRYPOINT Conversation
-CONVO Conversation {
-
-   73.2s turn 3
-   76.7s   model reply: in 2 + cached 52930, out 335 (+72 reasoning)
-   76.7s   tool bash: cd /output && python3 - <<'EOF'
-p='translation.md'
-s=open(p).read()
-s=s.replace('    TERM temporal_context(activity="availability_for_date", period=unit_week) -
-   76.9s turn 4
-   79.3s   model reply: in 2 + cached 58665, out 283 (+0 reasoning)
-   79.3s   tool edit: /output/translation.md
-   79.3s turn 5
-   83.8s   model reply: in 2 + cached 59154, out 479 (+0 reasoning)
-   83.8s agent finished
-   83.8s agent finished
+CONVO Conversa
+   55.0s turn 2
+   59.5s   model reply: in 2 + cached 49964, out 408 (+0 reasoning)
+   59.6s agent finished
+   59.6s agent finished

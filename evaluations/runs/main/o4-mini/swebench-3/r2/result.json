@@ -1,0 +1,61 @@
+{
+ "model": "o4-mini",
+ "item": "swebench-3",
+ "dataset": "swebench",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 282.7,
+ "usage": {
+  "calls": 16,
+  "input": 29448,
+  "cacheRead": 615552,
+  "cacheWrite": 0,
+  "output": 20547,
+  "reasoning": 14144,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.2921,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 6,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "create_file",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "execute_cli",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "deprecation_notice",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "originates_from",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "cannot_reproduce",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "catches_warning",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/claim_relation/warning",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

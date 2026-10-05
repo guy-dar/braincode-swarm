@@ -1,0 +1,1 @@
+The answer is: 32 clocks.

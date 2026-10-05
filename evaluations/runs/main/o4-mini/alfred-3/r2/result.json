@@ -1,0 +1,45 @@
+{
+ "model": "o4-mini",
+ "item": "alfred-3",
+ "dataset": "alfred",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 379.2,
+ "usage": {
+  "calls": 4,
+  "input": 27677,
+  "cacheRead": 112000,
+  "cacheWrite": 0,
+  "output": 14982,
+  "reasoning": 9472,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1272,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "entity_reference",
+    "dimension": "constructor"
+   },
+   {
+    "term": "requirement",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/construction/activity",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

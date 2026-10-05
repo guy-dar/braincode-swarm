@@ -1,0 +1,1 @@
+The answer is: 21 minutes and 38 seconds.

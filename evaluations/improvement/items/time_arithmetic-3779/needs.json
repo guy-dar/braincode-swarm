@@ -1,0 +1,2348 @@
+{
+ "translator_id": "time_arithmetic-3779",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "Assign the hours, minutes, and seconds of Question 1's answer to variables X, Y, and Z.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7445,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7248,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.6703,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6553,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.5481,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4653,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3638,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3599,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.3476,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3157,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.314,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3125,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.298,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.2952,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Hannah takes an average of 21 minutes and 38 seconds to learn 2 magic tricks.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7191,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.6663,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3346,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3264,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3155,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3045,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/constitutional_ai",
+     "symbol": "constitutional_ai",
+     "kind": "value",
+     "score": 0.2997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.2939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/design_parameters",
+     "symbol": "design_parameters",
+     "kind": "value",
+     "score": 0.28,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.2795,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.2631,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the time (A hours, B minutes, C seconds) to learn 24 magic tricks at the same rate.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7336,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7108,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.6813,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.5533,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.4729,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.4666,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4601,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4258,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.389,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3481,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3072,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.2962,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.2871,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.2809,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.276,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the answer as the values of A, B, and C, separated by commas.",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n4",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6458,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4407,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4085,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4077,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.4052,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3912,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.384,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.3819,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3813,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_sliced",
+     "symbol": "state_sliced",
+     "kind": "value",
+     "score": 0.3783,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.378,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.3766,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate X', Y', and Z' using the formulas X-3, Y+11, and Z-6.",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n5",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7395,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3962,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3906,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3819,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3668,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Assign the hours, minutes, and seconds of Question 2's answer to variables P, R, and Q.",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n6",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7412,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7241,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.7034,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6623,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.5388,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4725,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3425,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3173,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3096,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3073,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3031,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.301,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.29,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2854,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Four phone calls lasted X':Y':Z', 2:00:50, X':Y':Z', and 1:55:10 respectively.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n7",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/entity-name/phone",
+     "symbol": "phone",
+     "kind": "value",
+     "score": 0.6716,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3863,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3795,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3494,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3287,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3235,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3124,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3093,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.2994,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.2993,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the average duration of the four phone calls.",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.761,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/phone",
+     "symbol": "phone",
+     "kind": "value",
+     "score": 0.6762,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.5725,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.5058,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4588,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4382,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4185,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4044,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3758,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3674,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3249,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the average duration as hours, minutes, and seconds without units, separated by commas.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n9",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.8445,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.8264,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.7667,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.61,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.5535,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.5406,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_kilometer",
+     "symbol": "unit_kilometer",
+     "kind": "value",
+     "score": 0.5088,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4958,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4919,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3867,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3817,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_paragraph",
+     "symbol": "unit_paragraph",
+     "kind": "value",
+     "score": 0.3367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.2937,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate P', R', and Q' using the formulas P+1987, R-33, and Q+19.",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n10",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7302,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4488,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4244,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.3971,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3933,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3919,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.3658,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.36,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Use the calculated values of P', R', and Q' to solve Question 3.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n11",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7039,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.5015,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_ai_earning_methods",
+     "symbol": "topic_ai_earning_methods",
+     "kind": "composite",
+     "score": 0.4662,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4611,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4605,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4573,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4227,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.42,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The speaker was born on date P'-R'-Q' in yyyy-mm-dd format.",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n12",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6789,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.639,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6296,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.6258,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6206,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.6204,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.6003,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.5954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.5928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.5741,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.5642,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The speaker's cousin was born 4 days before the speaker.",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n13",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6696,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5837,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4242,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.4152,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.3977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3781,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.3572,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.3552,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.355,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3549,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.3504,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3396,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Determine the cousin's date of birth.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n14",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.676,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.5005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.4206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4157,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4136,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.403,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3865,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3814,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the cousin's date of birth in the same format as the speaker's birth date.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n15",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6135,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.6113,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_email",
+     "symbol": "format_email",
+     "kind": "value",
+     "score": 0.5934,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_markdown",
+     "symbol": "format_markdown",
+     "kind": "value",
+     "score": 0.5566,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4422,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.4381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.4314,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Output 'unanswerable' if the question cannot be answered.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n16",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6207,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.5122,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/constraint-value",
+     "symbol": "rule_category_constraint_value",
+     "kind": "category_rule",
+     "score": 0.4309,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3962,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3681,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3316,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.3287,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3252,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.307,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3065,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.3024,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3024,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.3018,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the final date answer using the yyyy-mm-dd format.",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n17",
+   "context": "Let the answer to Question1 be X, Y, Z. Question1: It takes Hannah an average of 21 minutes and 38 seconds to learn 2 magic tricks. If she wants to learn 24 magic tricks at the same rate, it will take her A hours, B minutes, and C seconds. Your answer should be the value of A, B, and C, respectively (for example, 2, 5, 10). Let X' = X - 3, Y' = Y + 11, and Z' = Z - 6. Let the answer to Question2 be P, R, Q. Question2: My last phone calls took X':Y':Z', 2:00:50, X':Y':Z' and 1:55:10 hours:minutes:seconds each. On average, how long did a phone call take? Your answer should be the hours, minutes,",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6915,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6369,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_pdf",
+     "symbol": "format_pdf",
+     "kind": "value",
+     "score": 0.5992,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_email",
+     "symbol": "format_email",
+     "kind": "value",
+     "score": 0.5649,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4911,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4826,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.4596,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4586,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4333,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4167,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

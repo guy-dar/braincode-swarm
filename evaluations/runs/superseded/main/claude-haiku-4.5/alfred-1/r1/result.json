@@ -1,0 +1,59 @@
+{
+ "model": "claude-haiku-4.5",
+ "item": "alfred-1",
+ "dataset": "alfred",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 4 sentence-length quoted literal(s) carry natural language instead of encoding it: to the black end table on the wall, across from the couch | that are behind the white vase, on the black end table | through the living room, to the purple ottoman",
+ "attempts": 1,
+ "duration_s": 260.4,
+ "usage": {
+  "calls": 20,
+  "input": 254,
+  "cacheRead": 1063068,
+  "cacheWrite": 65964,
+  "output": 25729,
+  "reasoning": 14940,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.3177,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 4,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "couch",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "activity_with_direction",
+    "dimension": "constructor"
+   },
+   {
+    "term": "colored_object",
+    "dimension": "constructor"
+   },
+   {
+    "term": "spatial_object",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/constructor/activity",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "4 sentence-length quoted literal(s) carry natural language instead of encoding it: to the black end table on the wall, across from the couch | that are behind the white vase, on the black end table | through the living room, to the purple ottoman"
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+    3.7s turn 1
+   50.6s   model reply: in 10 + cached 0, out 4684 (+4460 reasoning)
+   50.6s   tool bash: grep -E "^\| n[0-9]+" /rag_context.md | head -20
+   50.9s turn 2
+   66.4s   model reply: in 13 + cached 29887, out 1420 (+1303 reasoning)
+   66.4s   tool bash: grep -i "chill\|cool" /reference/glossary.md | head -20
+   66.5s turn 3
+   79.5s   model reply: in 13 + cached 36170, out 1653 (+341 reasoning)
+   79.5s   tool write: /output/translation.md
+   79.6s turn 4
+   93.7s   model reply: in 13 + cached 37755, out 2196 (+362 reasoning)
+   93.7s   tool edit: /output/translation.md
+   93.8s turn 5
+  120.2s   model reply: in 12 + cached 39427, out 3158 (+1640 reasoning)
+  120.2s   tool write: /output/translation.md
+  120.2s turn 6
+  125.2s   model reply: in 13 + cached 41657, out 394 (+309 reasoning)
+  125.2s   tool bash: grep -E "^\| ask \|" /reference/glossary.md
+  125.4s turn 7
+  150.7s   model reply: in 13 + cached 44833, out 2307 (+2202 reasoning)
+  150.7s   tool bash: grep -i "record\|recording" /reference/glossary.md | grep -i "signature\|slice" | head -10
+  150.8s turn 8
+  167.1s   model reply: in 13 + cached 45302, out 1366 (+1252 reasoning)
+  167.1s   tool bash: cd / && timeout 10 node /kit/rag.mjs check --translation /output/translation.md 2>&1 | head -100
+  167.3s turn 9
+  169.2s   model reply: in 13 + cached 47816, out 157 (+54 reasoning)
+  169.2s   tool bash: cd / && timeout 10 node /kit/rag.mjs check --translation /output/translation.md 2>&1 | tail -50
+  169.4s turn 10
+  171.0s   model reply: in 13 + cached 49827, out 122 (+32 reasoning)
+  171.0s   tool read: /output/translation.md
+  171.1s turn 11
+  174.0s   model reply: in 13 + cached 50629, out 247 (+146 reasoning)
+  174.0s   tool bash: head -5 /output/translation.md && echo "..." && wc -l /output/translation.md
+  174.0s turn 12
+  180.0s   model reply: in 13 + cached 52140, out 539 (+211 reasoning)
+  180.0s agent finished
+  180.0s agent finished

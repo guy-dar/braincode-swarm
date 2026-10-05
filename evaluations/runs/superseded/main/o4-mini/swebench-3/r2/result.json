@@ -1,0 +1,47 @@
+{
+ "model": "o4-mini",
+ "item": "swebench-3",
+ "dataset": "swebench",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: Using or importing the ABCs from 'collections' instead of from 'collections.abc'…",
+ "attempts": 2,
+ "duration_s": 389.9,
+ "usage": {
+  "calls": 4,
+  "input": 25637,
+  "cacheRead": 102784,
+  "cacheWrite": 0,
+  "output": 11208,
+  "reasoning": 6976,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1058,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "system_warning",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "chg_modify_code",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: Using or importing the ABCs from 'collections' instead of from 'collections.abc'…"
+  ]
+ }
+}

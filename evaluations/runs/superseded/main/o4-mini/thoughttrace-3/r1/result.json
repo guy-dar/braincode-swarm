@@ -1,0 +1,46 @@
+{
+ "model": "o4-mini",
+ "item": "thoughttrace-3",
+ "dataset": "thoughttrace",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 2 sentence-length quoted literal(s) carry natural language instead of encoding it: What specific part or level you’re stuck on (e.g., a boss fight, puzzle, quest, … | Any error messages, glitches, or unusual behavior you’ve noticed",
+ "attempts": 2,
+ "duration_s": 284.8,
+ "usage": {
+  "calls": 4,
+  "input": 19394,
+  "cacheRead": 89472,
+  "cacheWrite": 0,
+  "output": 12435,
+  "reasoning": 10176,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1007,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "inability",
+    "dimension": "constructor"
+   },
+   {
+    "term": "help_request",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "2 sentence-length quoted literal(s) carry natural language instead of encoding it: What specific part or level you’re stuck on (e.g., a boss fight, puzzle, quest, … | Any error messages, glitches, or unusual behavior you’ve noticed"
+  ]
+ }
+}

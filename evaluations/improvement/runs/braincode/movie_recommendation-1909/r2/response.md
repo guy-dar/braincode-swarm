@@ -1,0 +1,1 @@
+The answer is: The task asks the system to search for the similarity of the audience liking for various movies, using the animal label "cat" as the target. The task performs this search 40 times, using different movie labels as the target. The task is essentially asking the system to find the most similar movies to the cat in terms of audience liking.

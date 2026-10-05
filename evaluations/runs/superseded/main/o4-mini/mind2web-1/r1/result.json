@@ -1,0 +1,42 @@
+{
+ "model": "o4-mini",
+ "item": "mind2web-1",
+ "dataset": "mind2web",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on U…",
+ "attempts": 2,
+ "duration_s": 234.8,
+ "usage": {
+  "calls": 4,
+  "input": 35004,
+  "cacheRead": 92928,
+  "cacheWrite": 0,
+  "output": 12277,
+  "reasoning": 9216,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1181,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "airline_label",
+    "dimension": "lexical-group"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on U…"
+  ]
+ }
+}

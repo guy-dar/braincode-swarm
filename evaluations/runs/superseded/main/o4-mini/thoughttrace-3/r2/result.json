@@ -1,0 +1,42 @@
+{
+ "model": "o4-mini",
+ "item": "thoughttrace-3",
+ "dataset": "thoughttrace",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 4 sentence-length quoted literal(s) carry natural language instead of encoding it: i am failing to complete a certain game, can you help me? | I’d love to help you get past the tricky part. | What specific part or level you’re stuck on (e.g., a boss fight, puzzle, quest, …",
+ "attempts": 1,
+ "duration_s": 269.3,
+ "usage": {
+  "calls": 5,
+  "input": 21100,
+  "cacheRead": 144896,
+  "cacheWrite": 0,
+  "output": 11004,
+  "reasoning": 9344,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.1115,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "inability_to_complete",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "4 sentence-length quoted literal(s) carry natural language instead of encoding it: i am failing to complete a certain game, can you help me? | I’d love to help you get past the tricky part. | What specific part or level you’re stuck on (e.g., a boss fight, puzzle, quest, …"
+  ]
+ }
+}

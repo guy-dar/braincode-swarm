@@ -1,0 +1,2853 @@
+{
+ "translator_id": "spatial_reasoning-3259",
+ "needs": [
+  {
+   "kind": "object",
+   "text": "circular path of 9 connected dots",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.7744,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.5243,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.5139,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.4815,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.3896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3803,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.3728,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3193,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "the starting position is the top dot of the path",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.7295,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.7058,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.7045,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6166,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4785,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.44,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.432,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4135,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.4029,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/location_spec",
+     "symbol": "location_spec",
+     "kind": "constructor",
+     "score": 0.392,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "great white shark",
+   "source": [
+    "t1:s2"
+   ],
+   "group": "animal_label",
+   "id": "n3",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.6598,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6259,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.422,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.4035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sponge",
+     "symbol": "sponge",
+     "kind": "value",
+     "score": 0.3946,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/material_memory_foam",
+     "symbol": "material_memory_foam",
+     "kind": "value",
+     "score": 0.3885,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.3856,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.3801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.3677,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3568,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3527,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "the great white shark is located at the top dot",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n4",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/support/spatial_state",
+     "symbol": "spatial_state",
+     "kind": "claim_relation",
+     "score": 0.6974,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.6495,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3865,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.3792,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3781,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.3595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.3565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3548,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3456,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3455,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3409,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "the elements are arranged in a clockwise direction from the great white shark",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n5",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.6899,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.6784,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.6776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6609,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6517,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.6404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.6372,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/earth",
+     "symbol": "earth",
+     "kind": "value",
+     "score": 0.6263,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.6231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.6215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.619,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.6166,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "umbrella",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "object_label",
+   "id": "n6",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6432,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.5769,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.5338,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.4198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3799,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.3745,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3692,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3681,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.3575,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.3542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3524,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "garter snake",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "animal_label",
+   "id": "n7",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/figurine",
+     "symbol": "figurine",
+     "kind": "value",
+     "score": 0.7051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.6996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/caddy",
+     "symbol": "caddy",
+     "kind": "value",
+     "score": 0.6649,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.654,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/watch",
+     "symbol": "watch",
+     "kind": "value",
+     "score": 0.652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.6471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.639,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.6283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6279,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.6274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6158,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6156,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Christmas stocking",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "object_label",
+   "id": "n8",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.6277,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_out_of_stock",
+     "symbol": "avail_out_of_stock",
+     "kind": "value",
+     "score": 0.6201,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/gift",
+     "symbol": "gift",
+     "kind": "value",
+     "score": 0.4594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/egift_card",
+     "symbol": "egift_card",
+     "kind": "value",
+     "score": 0.4327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.4261,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.4118,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.406,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardboard_box",
+     "symbol": "cardboard_box",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.395,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.3938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3495,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "jigsaw puzzle",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "object_label",
+   "id": "n9",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/scissors",
+     "symbol": "scissors",
+     "kind": "value",
+     "score": 0.7008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6918,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.6761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6628,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.6585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.6509,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.6346,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.6323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6322,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.6294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.629,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.6262,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.6225,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Gila monster",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "animal_label",
+   "id": "n10",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/figurine",
+     "symbol": "figurine",
+     "kind": "value",
+     "score": 0.7305,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.6965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.6831,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.6657,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.6611,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6481,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.6471,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.644,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.6368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.6247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6224,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.6133,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6061,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Tibetan Terrier",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "animal_label",
+   "id": "n11",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.6627,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.5299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.5199,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.4815,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.44,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.4378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.4288,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/caddy",
+     "symbol": "caddy",
+     "kind": "value",
+     "score": 0.4257,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ryokan",
+     "symbol": "ryokan",
+     "kind": "value",
+     "score": 0.411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3802,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.3655,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3636,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.3589,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "moped",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "object_label",
+   "id": "n12",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.675,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.6579,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.4536,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.4478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.4217,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.4095,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/phone",
+     "symbol": "phone",
+     "kind": "value",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3959,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3948,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/toilet",
+     "symbol": "toilet",
+     "kind": "value",
+     "score": 0.3901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3899,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3663,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "horse-drawn vehicle",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "object_label",
+   "id": "n13",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/support/rental_vehicle",
+     "symbol": "rental_vehicle",
+     "kind": "constructor",
+     "score": 0.6832,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.6397,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.6364,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.623,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.6175,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.6015,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.5069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_structured_report",
+     "symbol": "art_structured_report",
+     "kind": "value",
+     "score": 0.4516,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.4432,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.4431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.4406,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4228,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3803,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "move around the circular path",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n14",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.7201,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.556,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.5388,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.5326,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.4519,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.4441,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3445,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3424,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.3226,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.3076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.302,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "start moving from the jigsaw puzzle",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n15",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.7271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6935,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.6892,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.6878,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6713,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.6685,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.6321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.627,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6247,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.6237,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6234,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "first move 8 steps in a clockwise direction",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n16",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.7173,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.6519,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.4545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.4501,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4494,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.4491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.439,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4291,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.416,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "then move 2 steps in a clockwise direction",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n17",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.7041,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.4287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.4271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.4243,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.4191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3758,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "then move 2 steps in a clockwise direction",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n18",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.7041,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.4287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.4271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.4243,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.4191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3758,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "then move 3 steps in a counter-clockwise direction",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n19",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.7094,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.4645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.4531,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4446,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.4443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.4295,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.4129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4022,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3832,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "ask what object is found at the final position",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n20",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.6884,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.4522,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.4242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4123,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3972,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3928,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3872,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3846,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3842,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/artifact-value",
+     "symbol": "rule_category_artifact_value",
+     "kind": "category_rule",
+     "score": 0.3808,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3783,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "final answer must be only the object name",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n21",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.6935,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_mains",
+     "symbol": "entity_mains",
+     "kind": "value",
+     "score": 0.6791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.6755,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.6631,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.6578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.654,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.651,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.6495,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6488,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.6421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/keys",
+     "symbol": "keys",
+     "kind": "value",
+     "score": 0.6407,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.64,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6394,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "final answer must be 'unknown' if the object was not previously seen",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n22",
+   "context": "You have been given a circular path consisting of 9 connected dots. At the start, you are positioned on the dot that is located at the top of the path, where you find a great white shark. Moving in a clockwise direction from the great white shark, the elements on the path are an umbrella, a garter snake, a Christmas stocking, a jigsaw puzzle, a Gila monster, a Tibetan Terrier, a moped, and a horse-drawn vehicle. Starting from the jigsaw puzzle, you move around the ring by 8 steps in a clockwise direction, and you move around the ring by 2 steps in a clockwise direction, and you move around the",
+   "candidates": [
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.7142,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.6777,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/remove_literal",
+     "symbol": "remove_literal",
+     "kind": "constructor",
+     "score": 0.6731,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.6618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6412,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6349,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6336,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.6281,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_empty",
+     "symbol": "state_empty",
+     "kind": "value",
+     "score": 0.6204,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6196,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.6128,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred",
+     "symbol": "occurred",
+     "kind": "claim_relation",
+     "score": 0.6121,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

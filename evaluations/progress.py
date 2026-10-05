@@ -22,14 +22,14 @@ for p in glob.glob("runs/main/*/*/r*/back/result.json"):
     back_cost[r["model"]] += r.get("cost_usd") or 0
 planned = {"gemini-flash-3.7": 144, "gemini-flash-high-3.7": 144, "claude-sonnet-5.5": 54, "claude-haiku-4.5": 54,
            "gpt-6.1-sol": 54, "gpt-6-luna": 54,   # OpenAI stopped by the user part-way
-           "o4-mini": 18}                          # probe: 1 run per shared item
+           "o4-mini": 54}                          # 3 runs per shared item (+3 reruns after the gate fix)
 by_company = defaultdict(float)
 parts = []
 for m in planned:
     c = cost[m] + back_cost[m]
     by_company[company_of.get(m, "?")] += c
     s = status[m]
-    extra = f", back {backs[m]}/48" if m.startswith("gemini") else (", STOPPED" if m.startswith("gpt") else (", probe" if m == "o4-mini" else ""))
+    extra = f", back {backs[m]}/48" if m.startswith("gemini") else (", STOPPED" if m.startswith("gpt") else "")
     parts.append(f"{m} {done[m]}/{planned[m]} (ok {s['success']}, fail {s['failed']}, err {s['error']}{extra}) ${c:.2f}")
 total = sum(by_company.values())
 print("COMPANIES: " + ", ".join(f"{k} ${v:.2f}" for k, v in sorted(by_company.items())) + f" | TOTAL ${total:.2f}")

@@ -1,0 +1,1 @@
+The answer is: hat, steak, pattern, symmetry

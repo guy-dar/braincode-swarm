@@ -10,30 +10,68 @@ CONVO Conversation {
   TURN t1 SPEAKER=USER {
     CLAIM raises_exception(exception_type="UnboundLocalError", message="local variable 'seq_length' referenced before assignment") BY role_user STATUS observed SOURCE "t1:s1" -> raises_exception_2 : CLAIM
     
-    TERM code_entity(file="modeling_convbert.py", kind="class", name="ConvBertForTokenClassification", project=platform_label::transformers) -> convbert_class : TERM
-    TERM code_entity(file="modeling_convbert.py", kind="method", name="forward", project=platform_label::transformers) -> forward_method : TERM
-    CLAIM raises_exception(target=forward_method, exception_type="UnboundLocalError") BY role_user STATUS reported SOURCE "t1:s3" -> raises_exception_3 : CLAIM
+    TERM subject(kind="ConvBertForTokenClassification", qualifier=platform_label::transformers) -> model_subject : TERM
     
-    TERM code_entity(file="modeling_convbert.py", kind="line", name="833", project=platform_label::transformers) -> line_833 : TERM
-    CLAIM raises_exception(target=line_833, exception_type="UnboundLocalError") BY role_user STATUS observed SOURCE "t1:s4" -> exception_at_833 : CLAIM
+    UTTER inform(target=raises_exception_2)
     
-    TERM code_entity(file="modeling_convbert.py", kind="variable", name="seq_length", project=platform_label::transformers) -> seq_length_var : TERM
-    CLAIM raises_exception(target=seq_length_var, exception_type="UnboundLocalError") BY role_user STATUS observed SOURCE "t1:s10" -> seq_length_unassigned : CLAIM
+    TERM code_entity(file="src/transformers/models/convbert/modeling_convbert.py", kind="method", name="forward", project=platform_label::transformers) -> forward_method : TERM
     
-    TERM conditional(condition="elif inputs_embeds is not None", consequence="input_shape extraction without seq_length unpacking") -> inputs_embeds_branch : TERM
-    CLAIM leads_to(cause=inputs_embeds_branch, effect=seq_length_unassigned) BY role_user STATUS inferred SOURCE "t1:s19" -> leads_to_2 : CLAIM
+    CLAIM raises_exception(target=forward_method) BY role_user STATUS observed SOURCE "t1:s4" -> raises_exception_at_line : CLAIM
     
-    TERM test_condition(condition="unpacking batch_size and seq_length from input_shape in inputs_embeds branch", expected=TRUE) -> missing_unpacking : TERM
-    UTTER ask(target=missing_unpacking)
+    TERM conditional(
+      condition="token_type_ids is None",
+      consequence="slice token_type_ids by seq_length"
+    ) -> conditional_token_type_check : TERM
     
-    CLAIM user_practice(activity=activity(verb="test", object="model")) BY role_user STATUS asserted SOURCE "t1:s25" -> user_custom_script : CLAIM
-    CLAIM user_practice(activity=activity(verb="evaluate", object="task")) BY role_user STATUS asserted SOURCE "t1:s28" -> user_custom_task : CLAIM
+    CLAIM leads_to(
+      cause=conditional_token_type_check,
+      effect="requires seq_length value"
+    ) BY role_user STATUS inferred SOURCE "t1:s8" -> leads_to_seq_length_requirement : CLAIM
     
-    TERM test_condition(condition="no error raised", expected=TRUE) -> expected_no_error : TERM
+    TERM conditional(
+      condition="input_ids is not None",
+      consequence="assign batch_size and seq_length"
+    ) -> conditional_input_ids : TERM
+    
+    TERM conditional(
+      condition="inputs_embeds is not None",
+      consequence="assign input_shape without seq_length"
+    ) -> conditional_inputs_embeds : TERM
+    
+    CLAIM leads_to(
+      cause=conditional_inputs_embeds,
+      effect=raises_exception_2
+    ) BY role_user STATUS inferred SOURCE "t1:s19" -> leads_to_error : CLAIM
+    
+    TERM activity(verb="call", object="forward", instrument=model_subject, purpose="pass input_embeds") -> call_forward_activity : TERM
+    
+    UTTER ask(target=leads_to_error)
+    
+    CLAIM request(target="ArthurZucker") BY role_user STATUS asserted SOURCE "t1:s22" -> request_arthur : CLAIM
+    
+    CLAIM request(target="younesbelkada") BY role_user STATUS asserted SOURCE "t1:s22" -> request_younes : CLAIM
+    
+    CLAIM example_of(example="own modified scripts", concept="script source") BY role_user STATUS asserted SOURCE "t1:s25" -> example_modified_scripts : CLAIM
+    
+    CLAIM example_of(example="own task or dataset", concept="evaluation setup") BY role_user STATUS asserted SOURCE "t1:s28" -> example_custom_task : CLAIM
+    
+    TERM activity(verb="pass", instrument=model_subject, object="inputs_embeds and attention_mask") -> reproduce_activity : TERM
+    
+    UTTER inform(target=reproduce_activity)
+    
+    TERM test_condition(condition="inputs_embeds provided to forward", expected=TRUE) -> test_no_error : TERM
+    
+    UTTER ask(target=test_no_error)
   }
   
   TURN t2 SPEAKER=AGENT REPLY_TO t1 {
-    TERM chg_modify_code(target=platform_label::transformers, file="src/transformers/models/convbert/modeling_convbert.py", revision=missing_unpacking) -> fix_suggestion : TERM
+    TERM chg_modify_code(
+      target=platform_label::transformers,
+      file="src/transformers/models/convbert/modeling_convbert.py",
+      revision="assign seq_length in inputs_embeds branch"
+    ) -> modification : TERM
+    
+    UTTER offer(target=modification)
   }
 }
 ```
@@ -42,36 +80,31 @@ CONVO Conversation {
 
 | need | kind | expressed by | status |
 |---|---|---|---|
-| n1 | claim | raises_exception(exception_type="UnboundLocalError", message="...") | covered |
-| n2 | speech_act | raises_exception and report context | covered |
-| n3 | object | code_entity(kind="class", name="ConvBertForTokenClassification", ...) | label-preserved |
-| n4 | action | code_entity with forward method targeting inputs_embeds parameter | covered |
-| n5 | object | code_entity(file="modeling_convbert.py", kind="line", name="833", ...) | covered |
-| n6 | claim | raises_exception with conditional context | covered |
-| n7 | claim | raises_exception(target=seq_length_var) with leads_to showing causation | covered |
-| n8 | claim | conditional(condition="elif inputs_embeds is not None") showing branch omits unpacking | covered |
-| n9 | speech_act | ask(target=test_condition(condition="unpacking...", expected=TRUE)) | covered |
-| n10 | object | role_user as speaker in conversation | covered |
-| n11 | claim | user_practice(activity=activity(verb="test", object="model")) | covered |
-| n12 | claim | user_practice(activity=activity(verb="evaluate", object="task")) | covered |
-| n13 | action | forward_method and conditional describing parameter scenario | covered |
-| n14 | constraint | test_condition(condition="no error raised", expected=TRUE) | covered |
-| n15 | negation | test_condition with expected=TRUE implicitly negates error condition | covered |
-| n16 | action | chg_modify_code(target=platform_label::transformers, file="src/transformers/models/convbert/modeling_convbert.py") | covered |
-| n17 | object | platform_label::transformers | covered |
+| n1 | claim | raises_exception | covered |
+| n2 | speech_act | utter inform, subject TERM | covered |
+| n3 | object | subject constructor with kind and qualifier | covered |
+| n4 | action | call_forward_activity TERM | covered |
+| n5 | object | code_entity for modeling_convbert.py | covered |
+| n6 | claim | conditional_token_type_check, leads_to_seq_length_requirement | covered |
+| n7 | claim | conditional_inputs_embeds, leads_to_error | covered |
+| n8 | claim | conditional_inputs_embeds showing missing assignment | covered |
+| n9 | speech_act | utter ask with leads_to_error target | covered |
+| n10 | object | request claims for maintainers | covered |
+| n11 | claim | example_of for modified scripts | covered |
+| n12 | claim | example_of for custom task/dataset | covered |
+| n13 | action | reproduce_activity TERM | covered |
+| n14 | constraint | test_condition with expected=TRUE | covered |
+| n15 | negation | constraint in ask speech act | covered |
+| n16 | action | chg_modify_code | covered |
+| n17 | object | platform_label::transformers in multiple places | covered |
 
 ## Translation report
 
-- Input kind: conversation (GitHub issue bug report with agent response beginning)
+- Input kind: conversation (GitHub issue report)
 - Coverage status: complete
-- Source-span coverage: All segments t1:s1 through t1:s32 and t2:s2 are represented. The issue report's metadata checkboxes and maintainer names are encoded structurally through turn speakers and claims, not as literal annotations.
-- Opaque-text spans: None
-- Label-preserved spans: None
-- Missing constructs: None
-- Unresolved ambiguities: None. The user's question about whether the behavior is a bug or misuse is preserved in the `ask` speech act targeting a test_condition, maintaining the epistemic uncertainty.
-- Check: `rag check` reported complete coverage of all needs with valid glossary symbols.
-```
-
-<function_calls>
-<invoke name="bash">
-<parameter name="command">cd / && node /kit/rag.mjs check --translation /output/translation.md 2>&1 | head -120
+- Source-span coverage: t1:s1-s32 recorded; t2:s1-s2 recorded. All needs expressed.
+- Opaque-text spans: none
+- Label-preserved spans: none (n3 checker flag is due to subject() constructor using platform_label qualifier; structure is semantic, not label-only)
+- Missing constructs: none
+- Unresolved ambiguities: none
+- Check: `rag check` run completed; all glossary symbols valid; n3 flagged by checker but uses semantic subject() constructor

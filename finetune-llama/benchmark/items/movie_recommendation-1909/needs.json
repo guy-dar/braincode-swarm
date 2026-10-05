@@ -1,0 +1,1588 @@
+{
+ "translator_id": "movie_recommendation-1909",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Ask to identify the option with the most similar movies.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.6874,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6529,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.6229,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.544,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4027,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.3942,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3745,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.364,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3535,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3512,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.3503,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Compare the similarity of movies within each option.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.7473,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3464,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3456,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3383,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3325,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.3288,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3108,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3093,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.3053,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3035,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3007,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Similarity is defined by whether a group of people will like the movies or not.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.8068,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.39,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.3658,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3517,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.3364,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.332,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3309,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/stereotype",
+     "symbol": "stereotype",
+     "kind": "claim_relation",
+     "score": 0.3286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3238,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.3215,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option A: Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.7158,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.6922,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.6909,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6894,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6869,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6799,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.6799,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_cabernet_sauvignon",
+     "symbol": "grape_cabernet_sauvignon",
+     "kind": "value",
+     "score": 0.6787,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.6722,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option B: Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n5",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.7083,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7014,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.6981,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6905,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.684,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6811,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.6797,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6625,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.6564,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option C: Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n6",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7556,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7072,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.704,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6976,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.6947,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6847,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6791,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6663,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option D: The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n7",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.7121,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.7046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.7031,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7021,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6836,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6804,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.6724,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.658,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6493,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option E: Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n8",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7501,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.7284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.7137,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7061,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7043,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.6927,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.6754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.674,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6722,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6624,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option F: The Silence of the Lambs, Schindler's List, Barcelona, Blame It on the Bellboy, Frank",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n9",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.7038,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.525,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.5123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4978,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4821,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4814,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4753,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4733,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.4642,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4597,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option G: Forrest Gump, Seven, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n10",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7473,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7217,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.7103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7024,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6807,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.6749,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6736,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.6709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6573,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option H: Schindler's List, Blame It on the Bellboy, Barcelona, Frank, Forrest Gump",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n11",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.723,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7124,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7097,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.7034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6938,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6887,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.6796,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.6794,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.6512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.6384,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option I: Schindler's List, The Usual Suspects, Forrest Gump, The Silence of the Lambs, Frank",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n12",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.7213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7139,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7015,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.7006,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.7004,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6985,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.688,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.6848,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.6803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.68,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.6709,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Option J: The Usual Suspects, Schindler's List, Forrest Gump, Seven, Blame It on the Bellboy",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n13",
+   "context": "Which option has more similar movies in terms of whether a group of people will like them or not? Options: (A) Seven, Barcelona, Forrest Gump, Blame It on the Bellboy, Schindler's List (B) Frank, The Silence of the Lambs, Seven, Schindler's List, Forrest Gump (C) Forrest Gump, Seven, The Silence of the Lambs, Schindler's List, The Usual Suspects (D) The Silence of the Lambs, The Usual Suspects, Seven, Barcelona, Schindler's List (E) Forrest Gump, Schindler's List, Blame It on the Bellboy, The Silence of the Lambs, The Usual Suspects (F) The Silence of the Lambs, Schindler's List, Barcelona, Bl",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.7508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.7467,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7138,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.6834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6801,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.6771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6744,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.6703,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.6545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6432,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "model": "claude-haiku-4.5",
+ "item": "swebench-1",
+ "dataset": "swebench",
+ "run": 1,
+ "status": "error",
+ "problem": "claimed success but the host check found: 2 sentence-length quoted literal(s) carry natural language instead of encoding it: input_shape is extracted but seq_length is not unpacked | Is the missing seq_length unpacking a bug or misuse of the API?",
+ "attempts": 1,
+ "duration_s": 146.9,
+ "usage": {
+  "calls": 24,
+  "input": 307,
+  "cacheRead": 1171989,
+  "cacheWrite": 61888,
+  "output": 14001,
+  "reasoning": 8251,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.2649,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "regated": {
+  "original_status": "success",
+  "problems": [
+   "2 sentence-length quoted literal(s) carry natural language instead of encoding it: input_shape is extracted but seq_length is not unpacked | Is the missing seq_length unpacking a bug or misuse of the API?"
+  ]
+ }
+}

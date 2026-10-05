@@ -1,0 +1,40 @@
+{
+ "model": "o4-mini",
+ "item": "alfred-1",
+ "dataset": "alfred",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 456.5,
+ "usage": {
+  "calls": 4,
+  "input": 7943,
+  "cacheRead": 115968,
+  "cacheWrite": 0,
+  "output": 14752,
+  "reasoning": 11456,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1055,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "furniture_label",
+    "dimension": "lexical-group"
+   },
+   {
+    "term": "colored_object",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

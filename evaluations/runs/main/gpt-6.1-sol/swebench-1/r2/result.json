@@ -3,8 +3,8 @@
  "item": "swebench-1",
  "dataset": "swebench",
  "run": 2,
- "status": "failed",
- "problem": null,
+ "status": "error",
+ "problem": "failed translation rejected: 8 sentence-length quoted literal(s) carry natural language instead of encoding it: Hi, I am using the ConvBertForTokenClassification model in models.convbert and e… | if token_type_ids is None:\\nif hasattr(self.embeddings, \\\"token_type_ids\\\"):\\nbu… | I noticed just above this piece of code:\\nelif input_ids is not None:\\ninput_sha…",
  "attempts": 1,
  "duration_s": 465.0,
  "usage": {
@@ -41,5 +41,11 @@
   ],
   "documented": true,
   "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "8 sentence-length quoted literal(s) carry natural language instead of encoding it: Hi, I am using the ConvBertForTokenClassification model in models.convbert and e… | if token_type_ids is None:\\nif hasattr(self.embeddings, \\\"token_type_ids\\\"):\\nbu… | I noticed just above this piece of code:\\nelif input_ids is not None:\\ninput_sha…"
+  ]
  }
 }

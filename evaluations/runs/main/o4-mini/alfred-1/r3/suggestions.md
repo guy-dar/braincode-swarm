@@ -1,0 +1,7 @@
+### S1 | type: add | dimension: constructor | symbol: object_description
+- Needs: n6 (t2:s2), n8 (t2:s2), n9 (t2:s2), n13 (t2:s4), n14 (t2:s4), n16 (t2:s4), n19 (t2:s6), n20 (t2:s6), n24 (t2:s8)
+- Searches tried: "describe black end table on wall" → no matching constructors; "object description with color" → nothing; widen "object with attributes description" → nothing
+- Typed parameters: type: ATOM[object_label], color?: ATOM[color_label], location?: TERM, relation?: ATOM[spatial_relation]
+- Interpretation: structured description of an object by its label, optional color, optional spatial relation and optional location term; asserts nothing
+- Example: `TERM object_description(type=object_label::table, color=color_label::black, location=location_spec(area="wall"), relation=across_from) -> table_desc : TERM`
+- Proposed record: `{"symbol": "object_description", "kind": "constructor", "signature": "TERM object_description(type: ATOM[object_label], color?: ATOM[color_label], location?: TERM, relation?: ATOM[spatial_relation]) -> TERM", "definition": "Structured description of an object by its label with optional color, spatial relation, and referenced location.", "not": "an action or claim about the object", "aliases": ["object description", "colored object with location"]}`

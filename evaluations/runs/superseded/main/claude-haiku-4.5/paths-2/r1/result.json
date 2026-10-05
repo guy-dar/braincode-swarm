@@ -1,0 +1,42 @@
+{
+ "model": "claude-haiku-4.5",
+ "item": "paths-2",
+ "dataset": "paths",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 2 sentence-length quoted literal(s) carry natural language instead of encoding it: AR and deferred revenue balances with financial statements | school, date of usage, date billed, invoice number, and amount columns",
+ "attempts": 1,
+ "duration_s": 505.1,
+ "usage": {
+  "calls": 28,
+  "input": 350,
+  "cacheRead": 1421878,
+  "cacheWrite": 131096,
+  "output": 17703,
+  "reasoning": 6689,
+  "compactions": 1,
+  "truncated_tool_results": 2
+ },
+ "cost_usd": 0.3949,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "reconcile_accounts",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "2 sentence-length quoted literal(s) carry natural language instead of encoding it: AR and deferred revenue balances with financial statements | school, date of usage, date billed, invoice number, and amount columns"
+  ]
+ }
+}

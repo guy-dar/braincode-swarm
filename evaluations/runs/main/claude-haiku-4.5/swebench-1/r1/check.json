@@ -6,8 +6,7 @@
    "text": "encountering UnboundLocalError: local variable 'seq_length' referenced before assignment",
    "status": "covered",
    "matched_symbols": [
-    "raises_exception",
-    "outcome"
+    "raises_exception"
    ]
   },
   {
@@ -16,6 +15,8 @@
    "text": "greet and report an issue with ConvBertForTokenClassification",
    "status": "covered",
    "matched_symbols": [
+    "greeting",
+    "acknowledge",
     "raises_exception",
     "inform"
    ]
@@ -24,8 +25,9 @@
    "id": "n3",
    "kind": "object",
    "text": "ConvBertForTokenClassification model in transformers convbert module",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
+    "duplicate_definition",
     "platform_label"
    ]
   },
@@ -56,15 +58,17 @@
    "status": "covered",
    "matched_symbols": [
     "raises_exception",
-    "slice"
+    "validates_parameter"
    ]
   },
   {
    "id": "n7",
    "kind": "claim",
    "text": "seq_length variable remains unassigned in execution path",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "leads_to"
+   ]
   },
   {
    "id": "n8",
@@ -101,7 +105,7 @@
    "status": "covered",
    "matched_symbols": [
     "chg_modify_code",
-    "enables"
+    "leads_to"
    ]
   },
   {
@@ -110,16 +114,18 @@
    "text": "running custom task or dataset rather than standard benchmark",
    "status": "covered",
    "matched_symbols": [
-    "outcome",
-    "enables"
+    "leads_to",
+    "user_practice"
    ]
   },
   {
    "id": "n13",
    "kind": "action",
    "text": "reproduce bug by passing inputs_embeds and attention_mask to ConvBertForTokenClassification",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "duplicate_definition"
+   ]
   },
   {
    "id": "n14",
@@ -128,6 +134,7 @@
    "status": "covered",
    "matched_symbols": [
     "raises_exception",
+    "test_condition",
     "conditional"
    ]
   },
@@ -138,7 +145,8 @@
    "status": "covered",
    "matched_symbols": [
     "raises_exception",
-    "exclude"
+    "test_condition",
+    "negation"
    ]
   },
   {
@@ -156,6 +164,7 @@
    "text": "transformers library codebase",
    "status": "covered",
    "matched_symbols": [
+    "duplicate_definition",
     "chg_modify_code",
     "code_entity",
     "platform_label"
@@ -167,27 +176,32 @@
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
+  "FALSE",
   "REPLY_TO",
   "SPEAKER",
+  "TRUE",
   "TURN",
   "USER",
   "UTTER",
+  "acknowledge",
   "activity",
   "ask",
   "chg_modify_code",
   "code_entity",
   "conditional",
-  "enables",
-  "exclude",
+  "duplicate_definition",
+  "greeting",
+  "in",
   "inform",
-  "outcome",
+  "leads_to",
+  "negation",
   "platform_label",
   "raises_exception",
-  "reason_for",
   "role_user",
-  "slice",
-  "subject",
-  "target"
+  "target",
+  "test_condition",
+  "user_practice",
+  "validates_parameter"
  ],
  "unknown_symbols_in_head_position": [],
  "unbound_attribute_values": [],
@@ -197,7 +211,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": [
-  "n3"
- ]
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

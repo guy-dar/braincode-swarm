@@ -1,0 +1,44 @@
+{
+ "model": "o4-mini",
+ "item": "thoughttrace-2",
+ "dataset": "thoughttrace",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 420.4,
+ "usage": {
+  "calls": 4,
+  "input": 7911,
+  "cacheRead": 120192,
+  "cacheWrite": 0,
+  "output": 13834,
+  "reasoning": 10368,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1026,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "role_parents",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "style_adventure",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "itinerary_plan",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

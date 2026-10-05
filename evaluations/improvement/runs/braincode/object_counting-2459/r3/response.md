@@ -1,0 +1,1 @@
+The answer is: 44 objects of type piano, 44 objects of type car, and 44 objects of type apple.

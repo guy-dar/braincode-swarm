@@ -1,0 +1,1 @@
+The answer is: The dancers perform a square dance, with 8 dancers in the square, and 7 dancers in the outer circle.

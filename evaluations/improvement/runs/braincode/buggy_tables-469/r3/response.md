@@ -1,0 +1,1 @@
+The answer is: The task asks the user to create a sorted table of music listening minutes and study minutes, and to extract the top row of the table.

@@ -11,8 +11,10 @@
    "id": "n2",
    "kind": "constraint",
    "text": "one-way trip",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
   },
   {
    "id": "n3",
@@ -39,43 +41,57 @@
    "id": "n6",
    "kind": "temporal",
    "text": "departure date July 1",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "daytime",
+    "time_point"
+   ]
   },
   {
    "id": "n7",
    "kind": "constraint",
    "text": "airline United Airlines",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
   },
   {
    "id": "n8",
    "kind": "constraint",
    "text": "two adult passengers",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
   },
   {
    "id": "n9",
    "kind": "constraint",
    "text": "one senior passenger",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
   },
   {
    "id": "n10",
    "kind": "action",
    "text": "view flight deal",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults",
+    "propose"
+   ]
   },
   {
    "id": "n11",
    "kind": "constraint",
    "text": "morning departure flight",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "daytime"
+   ]
   },
   {
    "id": "n12",
@@ -101,6 +117,7 @@
    "text": "enter San Francisco as departure location",
    "status": "covered",
    "matched_symbols": [
+    "location_spec",
     "type_text"
    ]
   },
@@ -117,28 +134,33 @@
    "id": "n16",
    "kind": "action",
    "text": "select departure date July 1 2023",
-   "status": "unresolved",
+   "status": "declared",
    "matched_symbols": []
   },
   {
    "id": "n17",
    "kind": "action",
    "text": "update traveler passenger counts",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "group_size",
+    "role_adults"
+   ]
   },
   {
    "id": "n18",
    "kind": "action",
    "text": "submit flight search",
-   "status": "unresolved",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "propose"
+   ]
   },
   {
    "id": "n19",
    "kind": "action",
    "text": "filter search results by United Airlines",
-   "status": "unresolved",
+   "status": "declared",
    "matched_symbols": []
   },
   {
@@ -147,7 +169,8 @@
    "text": "select 5:00 AM morning flight",
    "status": "covered",
    "matched_symbols": [
-    "click"
+    "click",
+    "daytime"
    ]
   },
   {
@@ -156,18 +179,11 @@
    "text": "click View Deal button",
    "status": "covered",
    "matched_symbols": [
-    "click",
-    "web_element"
+    "click"
    ]
   }
  ],
- "unresolved": [
-  "n11",
-  "n16",
-  "n17",
-  "n18",
-  "n19"
- ],
+ "unresolved": [],
  "used_symbols": [
   "ACTION",
   "AGENT",
@@ -177,34 +193,54 @@
   "TURN",
   "USER",
   "UTTER",
-  "between",
   "click",
-  "on",
+  "daytime",
+  "group_size",
+  "location_spec",
+  "object_label",
+  "propose",
+  "role_adults",
   "target",
-  "type_text",
-  "web_element"
+  "time_point",
+  "type_text"
  ],
- "unknown_symbols_in_head_position": [
-  "content"
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [
+  "flight_search_request",
+  "role_senior"
  ],
- "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {
-  "request": [
-   "n1",
+  "include": [
    "n2",
-   "n3",
-   "n4",
-   "n5",
-   "n6",
-   "n7",
-   "n8",
-   "n9"
+   "n11"
+  ],
+  "exclude": [
+   "n3"
   ]
  },
- "string_literals_as_operation_arguments": [],
- "atom_errors": [],
+ "string_literals_as_operation_arguments": [
+  "target=\"Flights\"",
+  "target=\"One-way\"",
+  "target=\"City or Airport\"",
+  "target=\"San Francisco, CA\"",
+  "target=\"San Diego, CA\"",
+  "target=\"Thu, 6/15\"",
+  "target=\"Sat Jul 01 2023\"",
+  "target=\"Travelers 1,Economy\"",
+  "target=\"Close\"",
+  "target=\"Find flights\"",
+  "target=\"Show more\"",
+  "target=\"United\"",
+  "target=\"Sat 5:00 AM\"",
+  "target=\"View Deal\""
+ ],
+ "atom_errors": [
+  "object_label::united_airlines: key must match lower_word"
+ ],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

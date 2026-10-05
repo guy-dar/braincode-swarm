@@ -289,6 +289,11 @@ def translate_one(model: dict, item: dict, k: int, run: str, image: str, retriev
                     feedback = ("\n\n## Your previous attempt was rejected\n\nIt declared `Status: success`, but the "
                                 "host's check of its BrainCode found problems. Fix every one, or report a failure "
                                 "with suggestions:\n\n" + tb.render_check(report))
+            elif status == "failed":
+                gate = tb.failure_gate_problems(report)
+                if gate:
+                    problem = "failed translation rejected: " + "; ".join(gate)
+                    feedback = tb.FAILURE_GATE_FEEDBACK + tb.render_check(report)
         if problem is None:
             (out_dir / "translation.md").write_text(body, encoding="utf-8")
             if status == "failed":
@@ -519,9 +524,49 @@ def cmd_status(args):
         print("back-translations:", dict(Counter((b["model"], b["status"]) for b in backs)))
 
 
+def cmd_regate(args):
+    """Re-check every stored success and failure with the current host gates
+    (the opaque / quoted-text rules came after the forward runs). A run a gate
+    now rejects becomes an error; its original status and the gate's reasons
+    are kept in result.json (`regated`). A run an earlier regate rejected is
+    re-checked from its original status and restored if it now passes."""
+    from rag.retrieve import Retriever
+    d = run_dir(args.run)
+    retriever = Retriever(dense=True, glossary_path=d / "reference" / "glossary.jsonl", index_dir=d / "rag_index")
+    rejected = restored = 0
+    for res in sorted(d.glob("*/*/r*/result.json")):
+        r = json.loads(res.read_text(encoding="utf-8"))
+        doc = res.parent / "translation.md"
+        original = (r.get("regated") or {}).get("original_status") or r["status"]
+        if original not in ("success", "failed") or not doc.exists():
+            continue
+        needs = json.loads((d / "items" / r["item"] / "needs.json").read_text(encoding="utf-8"))["needs"]
+        report = retriever.check(doc.read_text(encoding="utf-8"), needs)
+        success = original == "success"
+        gate = tb.success_gate_problems(report) if success else tb.failure_gate_problems(report)
+        if gate:
+            if r.get("regated", {}).get("problems") == gate and r["status"] == "error":
+                continue
+            lead = "claimed success but the host check found: " if success else "failed translation rejected: "
+            r.update({"status": "error", "problem": lead + "; ".join(gate),
+                      "regated": {"original_status": original, "problems": gate}})
+            rejected += 1
+            log(f"eval: regate {r['model']} {r['item']} r{r['run']} -> error [{'; '.join(gate)[:160]}]")
+        elif r.get("regated"):
+            r.update({"status": original, "problem": None})
+            r.pop("regated")
+            restored += 1
+            log(f"eval: regate {r['model']} {r['item']} r{r['run']} -> {original} (restored)")
+        else:
+            continue
+        res.write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
+        (res.parent / "check.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    log(f"eval: regate rejected {rejected} run(s), restored {restored}")
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["setup", "translate", "backtranslate", "status", "document"])
+    p.add_argument("command", choices=["setup", "translate", "backtranslate", "status", "document", "regate"])
     p.add_argument("--run", default="main")
     p.add_argument("--models", default="all", help="comma-separated model names from models.json, or all")
     p.add_argument("--items", default="", help="comma-separated item keys (default: the run's items)")
@@ -529,7 +574,7 @@ def main(argv=None):
     p.add_argument("--max-usd", type=float, default=150.0, help="per-model cost cap (priced models)")
     args = p.parse_args(argv)
     {"setup": cmd_setup, "translate": cmd_translate, "backtranslate": cmd_backtranslate,
-     "status": cmd_status, "document": cmd_document}[args.command](args)
+     "status": cmd_status, "document": cmd_document, "regate": cmd_regate}[args.command](args)
 
 
 if __name__ == "__main__":

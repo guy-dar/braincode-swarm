@@ -1,0 +1,1 @@
+The answer is: The system is asking for the cousin of the hat in the tree structure.

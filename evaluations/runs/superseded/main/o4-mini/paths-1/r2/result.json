@@ -1,0 +1,62 @@
+{
+ "model": "o4-mini",
+ "item": "paths-1",
+ "dataset": "paths",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: Do you have a map? I just got lost in your eyes.",
+ "attempts": 2,
+ "duration_s": 486.2,
+ "usage": {
+  "calls": 4,
+  "input": 27837,
+  "cacheRead": 107904,
+  "cacheWrite": 0,
+  "output": 13485,
+  "reasoning": 7744,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1196,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 6,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "persona",
+    "dimension": "constructor"
+   },
+   {
+    "term": "tone_flirty",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "tone_intellectual",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "property_question",
+    "dimension": "constructor"
+   },
+   {
+    "term": "schedule_availability",
+    "dimension": "constructor"
+   },
+   {
+    "term": "explain",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: Do you have a map? I just got lost in your eyes."
+  ]
+ }
+}

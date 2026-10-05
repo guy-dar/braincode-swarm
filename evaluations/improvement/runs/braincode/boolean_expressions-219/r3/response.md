@@ -1,0 +1,1 @@
+The answer is: The task asks for a list of 200 constraints, each specifying a required property "choice_count" with a value between 1 and 200.

@@ -1,0 +1,50 @@
+{
+ "model": "o4-mini",
+ "item": "prism-3",
+ "dataset": "prism",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 3 sentence-length quoted literal(s) carry natural language instead of encoding it: Why doesn't the government eliminate anonymous online activities by requiring pe… | Even so, how can reasonable progress be made to reduce fraud, identity theft and… | But wouldn't eliminating anonymity increase accountability and aid law enforceme…",
+ "attempts": 2,
+ "duration_s": 125.2,
+ "usage": {
+  "calls": 4,
+  "input": 25723,
+  "cacheRead": 115584,
+  "cacheWrite": 0,
+  "output": 14931,
+  "reasoning": 11200,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1258,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "why_question",
+    "dimension": "constructor"
+   },
+   {
+    "term": "difficulty",
+    "dimension": "constructor"
+   },
+   {
+    "term": "investment",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "3 sentence-length quoted literal(s) carry natural language instead of encoding it: Why doesn't the government eliminate anonymous online activities by requiring pe… | Even so, how can reasonable progress be made to reduce fraud, identity theft and… | But wouldn't eliminating anonymity increase accountability and aid law enforceme…"
+  ]
+ }
+}

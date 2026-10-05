@@ -38,6 +38,7 @@
    "text": "Assistant confirms willingness and readiness to help",
    "status": "covered",
    "matched_symbols": [
+    "confirm",
     "role_agent",
     "offer",
     "offer_help",
@@ -93,7 +94,8 @@
    "matched_symbols": [
     "role_user",
     "role_agent",
-    "activity"
+    "activity",
+    "decision"
    ]
   },
   {
@@ -110,7 +112,10 @@
    "status": "covered",
    "matched_symbols": [
     "role_agent",
-    "enables"
+    "enables",
+    "decision",
+    "subject",
+    "conjunction"
    ]
   },
   {
@@ -138,20 +143,21 @@
   "UTTER",
   "activity",
   "ask",
+  "confirm",
+  "conjunction",
+  "decision",
   "enables",
   "express_interest",
-  "object_label",
   "offer",
   "offer_help",
-  "on",
   "outcome",
   "role_agent",
   "role_user",
+  "subject",
   "target"
  ],
  "unknown_symbols_in_head_position": [
-  "help_request",
-  "inability"
+  "cannot_complete"
  ],
  "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
@@ -160,5 +166,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

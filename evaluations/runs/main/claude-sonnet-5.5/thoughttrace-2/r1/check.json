@@ -6,7 +6,6 @@
    "text": "Plan a travel trip",
    "status": "covered",
    "matched_symbols": [
-    "role_adults",
     "propose"
    ]
   },
@@ -18,7 +17,6 @@
    "matched_symbols": [
     "ask",
     "requirement",
-    "group_size",
     "propose",
     "offer"
    ]
@@ -27,19 +25,15 @@
    "id": "n3",
    "kind": "action",
    "text": "Travel to Rome",
-   "status": "covered",
-   "matched_symbols": [
-    "role_adults"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n4",
    "kind": "object",
    "text": "Italy",
-   "status": "covered",
-   "matched_symbols": [
-    "country"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n5",
@@ -57,19 +51,15 @@
    "id": "n6",
    "kind": "object",
    "text": "Parents as travel companions",
-   "status": "covered",
-   "matched_symbols": [
-    "role_adults"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n7",
    "kind": "constraint",
    "text": "Adventure travel style and vibe",
-   "status": "covered",
-   "matched_symbols": [
-    "role_adults"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n8",
@@ -101,7 +91,6 @@
    "status": "covered",
    "matched_symbols": [
     "propose",
-    "role_adults",
     "ask",
     "unit_day"
    ]
@@ -141,7 +130,8 @@
    "text": "Provide an itemized cost estimate totaling approximately 3900 USD per person",
    "status": "covered",
    "matched_symbols": [
-    "recommended"
+    "recommended",
+    "ongoing"
    ]
   },
   {
@@ -173,6 +163,7 @@
   "ENTRYPOINT",
   "REPLY_TO",
   "SPEAKER",
+  "TRUE",
   "TURN",
   "USER",
   "UTTER",
@@ -180,23 +171,18 @@
   "animal_label",
   "ask",
   "at_most",
-  "attribute_claim",
-  "comfortable",
-  "country",
   "currency",
   "dog",
   "duration",
-  "group_size",
-  "in",
   "inform",
   "measure",
   "offer",
+  "ongoing",
   "property_question",
   "propose",
   "rate",
   "recommended",
   "requirement",
-  "role_adults",
   "subject",
   "supports",
   "target",
@@ -205,7 +191,8 @@
   "unit_week"
  ],
  "unknown_symbols_in_head_position": [
-  "wants"
+  "desires",
+  "has_property"
  ],
  "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
@@ -214,5 +201,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Qualitative analysis of a finished evaluation run, written by Claude.
+"""Qualitative determinism analysis (JS divergence of symbol use) of a finished evaluation run, written by Claude.
 
 Builds a compact evidence bundle from the run (analyze.py's summary.json plus
 per-model structural counts, symbols and symbol types a model uses far less
 than the others, and the most divergent translations of the same item), asks
 Claude Opus 5.5 the evaluation design's four questions, and writes
-results/<run>/qualitative.md (the bundle is saved next to it).
+results/<run>/qualitative_determinism_js.md (the bundle is saved next to it as
+qualitative_determinism_js_evidence.json).
 
     python qualitative.py --run main            # needs results/<run>/summary.json (python analyze.py first)
     python qualitative.py --run main --dry-run  # build and save the bundle only
@@ -57,6 +58,9 @@ def bundle(run: str, results: str = None) -> dict:
         model, item = p.parts[-4], p.parts[-3]
         if model not in labels or not items.get(item, {}).get("all_models"):
             continue
+        # errors (incl. successes the gate rejected on re-check) are left out
+        if json.loads((p.parent / "result.json").read_text(encoding="utf-8"))["status"] not in ("success", "failed"):
+            continue
         text = p.read_text(encoding="utf-8")
         code = metrics.code_of(text)
         struct[model].update(structure(code))
@@ -105,23 +109,26 @@ def bundle(run: str, results: str = None) -> dict:
 
 
 def ask_claude(evidence: dict) -> str:
-    run_eval.prepare_keys()
-    import os
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        sys.exit("qualitative: no Anthropic key (ANTHROPIC_API_KEY or CLAUDE_API_KEY)")
-    prompt = (
+    return call_claude(
         "You are analyzing an evaluation of BrainCode, a formal language that LLM translators write using a fixed "
         "glossary of symbols (operations, constructors, claim relations, values, and value groups written "
-        "group::key). " + f"{len(evidence['models'])} models " + "translated the same unseen items, three times each "
-        "(a model labelled 'probe' once each). Below is the measured "
+        "group::key). " + f"{len(evidence['models'])} models " + "translated the same unseen items, three times each. Below is the measured "
         "evidence: coverage, Jensen-Shannon divergences, symbol and symbol-type use, statement-head counts per "
         "translation, symbols each model uses far less than the others, and the most divergent translations of the "
         "same item.\n\nAnswer these questions for a research paper, grounded only in this evidence. Cite numbers and "
         "quote short code fragments; say when the evidence is too thin to conclude something.\n\n" + QUESTIONS +
         "\n\nFormat: Markdown, one section per question (## 1. … ## 4.), then a short '## Caveats' section.\n\n"
         "<evidence>\n" + json.dumps(evidence, ensure_ascii=False, indent=1)[:180_000] + "\n</evidence>")
-    body = json.dumps({"model": MODEL, "max_tokens": 8000,
+
+
+def call_claude(prompt: str, max_tokens: int = 8000) -> str:
+    """One Messages API call to MODEL; the key comes from the environment (never printed)."""
+    run_eval.prepare_keys()
+    import os
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        sys.exit("qualitative: no Anthropic key (ANTHROPIC_API_KEY or CLAUDE_API_KEY)")
+    body = json.dumps({"model": MODEL, "max_tokens": max_tokens,
                        "messages": [{"role": "user", "content": prompt}]}).encode("utf-8")
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, method="POST", headers={
         "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
@@ -138,15 +145,16 @@ def main(argv=None):
     args = p.parse_args(argv)
     out = EVAL_DIR / "results" / (args.results or args.run)
     evidence = bundle(args.run, args.results)
-    (out / "qualitative_evidence.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=1),
+    (out / "qualitative_determinism_js_evidence.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=1),
                                                    encoding="utf-8")
-    print(f"evidence: {len(json.dumps(evidence)):,} chars -> {out / 'qualitative_evidence.json'}")
+    print(f"evidence: {len(json.dumps(evidence)):,} chars -> {out / 'qualitative_determinism_js_evidence.json'}")
     if args.dry_run:
         return
     report = ask_claude(evidence)
-    (out / "qualitative.md").write_text(f"# Qualitative analysis (written by {MODEL})\n\n" + report + "\n",
-                                        encoding="utf-8")
-    print(f"wrote {out / 'qualitative.md'}")
+    name = "qualitative_determinism_js.md"
+    (out / name).write_text(f"# Qualitative analysis: determinism (JS divergence of symbol use), written by {MODEL}"
+                            "\n\n" + report + "\n", encoding="utf-8")
+    print(f"wrote {out / name}")
 
 
 if __name__ == "__main__":

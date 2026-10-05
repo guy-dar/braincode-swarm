@@ -381,7 +381,34 @@ def success_gate_problems(report: dict) -> list:
         problems.append("invalid value-group atoms: " + "; ".join(report["atom_errors"][:8]))
     if report.get("retired_symbols_used"):
         problems.append("retired bare symbols: " + ", ".join(report["retired_symbols_used"][:8]))
+    # spec §13: an opaque span "does not count as fully formalized coverage", and
+    # sentence-length text in any quoted literal is natural language carried, not encoded
+    if report.get("opaque_needs"):
+        problems.append("needs marked opaque (not formalized; encode them or report a failure): "
+                        + ", ".join(report["opaque_needs"][:12]))
+    if report.get("sentence_literals"):
+        problems.append(f"{len(report['sentence_literals'])} sentence-length quoted literal(s) carry natural "
+                        "language instead of encoding it: " + " | ".join(report["sentence_literals"][:3]))
     return problems
+
+
+FAILURE_GATE_FEEDBACK = (
+    "\n\n## Your previous attempt was rejected\n\n"
+    "It declared `Status: failed`, but its BrainCode carries sentences in quoted strings (`content=`, "
+    "`target=`, `message=`, any slot) instead of encoding them. A failed translation is still the best encoding you can write: express what the glossary "
+    "allows with its symbols, mark each line that needs a missing symbol `# PROPOSED: S<k>`, and suggest those "
+    "symbols. No quoted string may hold 8 or more words, in any slot except names and titles "
+    "(name=, title=, label=, caption=).\n\n")
+
+
+def failure_gate_problems(report: dict) -> list:
+    """Why a declared failure isn't a usable one: it must still be an encoding
+    (spec §13), so sentence-length text in any quoted literal is rejected.
+    Opaque needs stay allowed: a failure is where gaps are reported."""
+    if report.get("sentence_literals"):
+        return [f"{len(report['sentence_literals'])} sentence-length quoted literal(s) carry natural language "
+                "instead of encoding it: " + " | ".join(report["sentence_literals"][:3])]
+    return []
 
 
 def fill_template(text: str, values: dict) -> str:
@@ -485,8 +512,13 @@ def process_translator(row: dict, cfg, retriever, image: str, ref_snapshot: Path
                         feedback = ("\n\n## Your previous attempt was rejected\n\n"
                                     "It declared `Status: success`, but the host's check of its BrainCode found "
                                     "problems. Fix every one (cover the need, widen the search, or mark it "
-                                    "opaque/not-applicable with a reason), or report a failure with suggestions:\n\n"
+                                    "not-applicable with a reason), or report a failure with suggestions:\n\n"
                                     + render_check(report))
+                elif report is not None and status == "failed":
+                    gate = failure_gate_problems(report)
+                    if gate:
+                        problem = "failed translation rejected: " + "; ".join(gate)
+                        feedback = FAILURE_GATE_FEEDBACK + render_check(report)
             if problem is None:
                 meta["status"] = status
                 meta["at"] = lf.now_iso()

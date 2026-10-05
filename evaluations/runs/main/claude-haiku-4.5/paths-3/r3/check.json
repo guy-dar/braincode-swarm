@@ -8,7 +8,6 @@
    "matched_symbols": [
     "propose",
     "sequence",
-    "obligation",
     "target"
    ]
   },
@@ -59,8 +58,7 @@
    "matched_symbols": [
     "propose",
     "activity",
-    "sequence",
-    "obligation"
+    "sequence"
    ]
   },
   {
@@ -70,6 +68,8 @@
    "status": "covered",
    "matched_symbols": [
     "target",
+    "role_agent",
+    "role_user",
     "face"
    ]
   },
@@ -79,8 +79,8 @@
    "text": "infiltrating Prince Emory's dreams while facing subconscious defenses and inner demons",
    "status": "covered",
    "matched_symbols": [
-    "temporal_context",
     "character",
+    "self_protection",
     "propose"
    ]
   },
@@ -90,7 +90,6 @@
    "text": "Johnathon sacrifices resurrecting Elyria to complete the inception and save the kingdom",
    "status": "covered",
    "matched_symbols": [
-    "obligation",
     "propose",
     "extract"
    ]
@@ -101,8 +100,7 @@
    "text": "rewrite the story",
    "status": "covered",
    "matched_symbols": [
-    "character",
-    "obligation"
+    "character"
    ]
   },
   {
@@ -111,7 +109,7 @@
    "text": "adapt into the video game Half-Life 2 setting and lore",
    "status": "covered",
    "matched_symbols": [
-    "on"
+    "role_user"
    ]
   },
   {
@@ -131,7 +129,6 @@
    "text": "Dreamhackers in City 17 using dream manipulation against the Combine",
    "status": "covered",
    "matched_symbols": [
-    "opposes",
     "character"
    ]
   },
@@ -139,8 +136,10 @@
    "id": "n14",
    "kind": "object",
    "text": "Gordon Freeman tormented by the mysterious death of Alyx Vance",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent"
+   ]
   },
   {
    "id": "n15",
@@ -150,8 +149,7 @@
    "matched_symbols": [
     "propose",
     "character",
-    "has_goal",
-    "obligation"
+    "has_goal"
    ]
   },
   {
@@ -167,9 +165,7 @@
    "text": "delving into Breen's subconscious while facing defenses and uncovering truth about Alyx",
    "status": "covered",
    "matched_symbols": [
-    "temporal_context",
-    "propose",
-    "obligation"
+    "propose"
    ]
   },
   {
@@ -178,9 +174,7 @@
    "text": "Gordon completes the inception to secure humanity's future against the Combine",
    "status": "covered",
    "matched_symbols": [
-    "opposes",
-    "propose",
-    "obligation"
+    "propose"
    ]
   }
  ],
@@ -189,26 +183,25 @@
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
+  "REPLY_TO",
   "SPEAKER",
   "TURN",
   "USER",
   "UTTER",
   "activity",
-  "behind",
   "character",
+  "decision",
   "extract",
   "face",
   "has_goal",
-  "in",
-  "obligation",
-  "on",
-  "opposes",
   "propose",
   "respond",
+  "role_agent",
+  "role_user",
+  "self_protection",
   "sequence",
   "subject",
-  "target",
-  "temporal_context"
+  "target"
  ],
  "unknown_symbols_in_head_position": [],
  "unbound_attribute_values": [],
@@ -218,5 +211,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

@@ -3,8 +3,8 @@
  "item": "swebench-1",
  "dataset": "swebench",
  "run": 3,
- "status": "failed",
- "problem": null,
+ "status": "error",
+ "problem": "failed translation rejected: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: missing batch_size and seq_length unpacking in inputs_embeds branch",
  "attempts": 1,
  "duration_s": 468.5,
  "usage": {
@@ -53,5 +53,11 @@
   ],
   "documented": true,
   "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: missing batch_size and seq_length unpacking in inputs_embeds branch"
+  ]
  }
 }

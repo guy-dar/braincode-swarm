@@ -1,0 +1,2 @@
+<|user|>How can I implement the __nonzero__ method in pandas? Perhaps test the truthiness of DataFrame.
+<|assistant|>I propose modifying RELEASE.rst. I propose modifying doc/source/v0.11.1.txt. I propose modifying pandas/core/frame.py. I propose modifying pandas/core/generic.py.

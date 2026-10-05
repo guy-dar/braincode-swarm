@@ -53,7 +53,7 @@ CONVO Conversation {
 ### Rules
 
 - **Status line.** The first line is exactly `Status: failed`, and the second is `Mode: REQUEST|TRACE`.
-- **Suggested translation.** It is the best complete document the translator can produce if its suggestions were accepted. Every line that uses a proposed or refined symbol carries a `# PROPOSED: S<k>` or `# REFINED: S<k>` comment naming the suggestion that would make it valid. Everything else must already be valid against the current glossary.
+- **Suggested translation.** It is the best complete document the translator can produce if its suggestions were accepted. Every line that uses a proposed or refined symbol carries a `# PROPOSED: S<k>` or `# REFINED: S<k>` comment naming the suggestion that would make it valid. Everything else must already be valid against the current glossary. It encodes the source; it does not carry it: a quoted string of 8 or more words in any slot except names and titles (`name=`, `title=`, `label=`, `caption=`) makes the translation invalid (spec §13).
 - **Needs coverage.** It has the same table as for a success, with two extra status values: `proposed` (covered once suggestion S<k> is accepted) and `unresolved`. `label-preserved` (an open-group label only) is allowed here too, and the report lists label-preserved spans.
 - **Why the translation failed.** Every `proposed` or `unresolved` need gets an entry, listing the searches tried (`search` / `widen` queries and what they returned) and why each close candidate doesn't fit. This is the evidence the migrator weighs.
 - **Suggestions.** Every suggestion in the suggestions file must be referenced at least once in this document.

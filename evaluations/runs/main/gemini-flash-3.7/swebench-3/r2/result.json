@@ -3,8 +3,8 @@
  "item": "swebench-3",
  "dataset": "swebench",
  "run": 2,
- "status": "success",
- "problem": null,
+ "status": "error",
+ "problem": "claimed success but the host check found: 4 sentence-length quoted literal(s) carry natural language instead of encoding it: Using or importing the ABCs from 'collections' instead of from 'collections.abc'… | Using or importing the ABCs from 'collections' instead of from 'collections.abc'… | test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' in…",
  "attempts": 1,
  "duration_s": 719.3,
  "usage": {
@@ -18,5 +18,11 @@
  },
  "cost_usd": 0.4073,
  "setup": "v1",
- "timeout_s": 1200
+ "timeout_s": 1200,
+ "regated": {
+  "original_status": "success",
+  "problems": [
+   "4 sentence-length quoted literal(s) carry natural language instead of encoding it: Using or importing the ABCs from 'collections' instead of from 'collections.abc'… | Using or importing the ABCs from 'collections' instead of from 'collections.abc'… | test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' in…"
+  ]
+ }
 }

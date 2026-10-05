@@ -27,7 +27,7 @@
    "matched_symbols": [
     "ongoing",
     "reconcile_code",
-    "temporal_context"
+    "time_point"
    ]
   },
   {
@@ -38,8 +38,7 @@
    "matched_symbols": [
     "format_structured_report",
     "ask",
-    "reconcile_code",
-    "inform"
+    "reconcile_code"
    ]
   },
   {
@@ -58,7 +57,6 @@
    "status": "covered",
    "matched_symbols": [
     "format_structured_report",
-    "provides",
     "include"
    ]
   },
@@ -69,11 +67,8 @@
    "status": "covered",
    "matched_symbols": [
     "statement",
-    "outcome",
     "involves",
     "reconcile_code",
-    "leads_to",
-    "enables",
     "ongoing"
    ]
   },
@@ -93,11 +88,7 @@
    "status": "covered",
    "matched_symbols": [
     "format_structured_report",
-    "outcome",
-    "leads_to",
-    "ongoing",
-    "recommended",
-    "enables"
+    "ongoing"
    ]
   },
   {
@@ -106,7 +97,8 @@
    "text": "Zuora Deferred Revenue Schedule report",
    "status": "covered",
    "matched_symbols": [
-    "format_structured_report"
+    "format_structured_report",
+    "time_point"
    ]
   },
   {
@@ -115,9 +107,7 @@
    "text": "Deferred Revenue Schedule shows deferred balances and recognition entries for reconciliation",
    "status": "covered",
    "matched_symbols": [
-    "outcome",
-    "ongoing",
-    "leads_to"
+    "ongoing"
    ]
   },
   {
@@ -126,8 +116,7 @@
    "text": "Zuora Revenue Reports",
    "status": "covered",
    "matched_symbols": [
-    "format_structured_report",
-    "outcome"
+    "format_structured_report"
    ]
   },
   {
@@ -137,9 +126,7 @@
    "status": "covered",
    "matched_symbols": [
     "format_structured_report",
-    "outcome",
-    "ongoing",
-    "leads_to"
+    "ongoing"
    ]
   },
   {
@@ -150,7 +137,6 @@
    "matched_symbols": [
     "format_structured_report",
     "ask",
-    "inform",
     "propose",
     "include"
    ]
@@ -173,8 +159,10 @@
    "id": "n17",
    "kind": "object",
    "text": "date of usage and date billed",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
   },
   {
    "id": "n18",
@@ -190,10 +178,7 @@
    "status": "covered",
    "matched_symbols": [
     "format_structured_report",
-    "provides",
-    "outcome",
-    "include",
-    "enables"
+    "include"
    ]
   },
   {
@@ -219,7 +204,8 @@
    "text": "select reporting date range and add specified data columns",
    "status": "covered",
    "matched_symbols": [
-    "format_structured_report"
+    "format_structured_report",
+    "time_point"
    ]
   },
   {
@@ -238,8 +224,7 @@
    "status": "covered",
    "matched_symbols": [
     "format_structured_report",
-    "include",
-    "performance_tracking"
+    "include"
    ]
   },
   {
@@ -248,51 +233,41 @@
    "text": "schedule report to run at recurring intervals",
    "status": "covered",
    "matched_symbols": [
-    "format_structured_report",
-    "performance_tracking"
+    "time_point",
+    "format_structured_report"
    ]
   }
  ],
  "unresolved": [],
  "used_symbols": [
-  "ACTION",
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
-  "LET",
   "REPLY_TO",
   "SPEAKER",
-  "STRING",
+  "TRUE",
   "TURN",
   "USER",
   "UTTER",
   "activity",
   "ask",
-  "attribute_claim",
-  "enables",
+  "click",
   "format_structured_report",
   "include",
-  "inform",
   "involves",
-  "leads_to",
   "ongoing",
-  "outcome",
-  "performance_tracking",
   "platform_label",
   "propose",
-  "provides",
-  "recommended",
   "reconcile_code",
+  "requirement",
   "role_agent",
   "statement",
   "subject",
   "target",
-  "temporal_context"
+  "time_point"
  ],
  "unknown_symbols_in_head_position": [],
- "unbound_attribute_values": [
-  "TERM"
- ],
+ "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {},
  "string_literals_as_operation_arguments": [],
@@ -301,5 +276,7 @@
  "retired_symbols_used": [],
  "label_preserved": [
   "n5"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

@@ -4,19 +4,15 @@
    "id": "n1",
    "kind": "action",
    "text": "reconcile accounts receivable balance sheet accounts",
-   "status": "covered",
-   "matched_symbols": [
-    "reconcile_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n2",
    "kind": "action",
    "text": "reconcile deferred revenue balance sheet accounts",
-   "status": "covered",
-   "matched_symbols": [
-    "reconcile_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n3",
@@ -24,9 +20,7 @@
    "text": "maintain ongoing reconciliation over time",
    "status": "covered",
    "matched_symbols": [
-    "ongoing",
-    "reconcile_code",
-    "temporal_context"
+    "ongoing"
    ]
   },
   {
@@ -36,7 +30,7 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "reconcile_code"
+    "inform"
    ]
   },
   {
@@ -54,6 +48,7 @@
    "text": "Zuora reporting module",
    "status": "covered",
    "matched_symbols": [
+    "provides",
     "include"
    ]
   },
@@ -64,9 +59,6 @@
    "status": "covered",
    "matched_symbols": [
     "statement",
-    "involves",
-    "reconcile_code",
-    "leads_to",
     "ongoing"
    ]
   },
@@ -83,7 +75,6 @@
    "text": "AR Aging report categorizes unpaid invoices by age to spot discrepancies",
    "status": "covered",
    "matched_symbols": [
-    "leads_to",
     "ongoing"
    ]
   },
@@ -100,8 +91,7 @@
    "text": "Deferred Revenue Schedule shows deferred balances and recognition entries for reconciliation",
    "status": "covered",
    "matched_symbols": [
-    "ongoing",
-    "leads_to"
+    "ongoing"
    ]
   },
   {
@@ -117,8 +107,7 @@
    "text": "regular review and prompt investigation of report discrepancies keeps accounts reconciled",
    "status": "covered",
    "matched_symbols": [
-    "ongoing",
-    "leads_to"
+    "ongoing"
    ]
   },
   {
@@ -128,7 +117,7 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "document_section",
+    "inform",
     "propose",
     "include"
    ]
@@ -167,6 +156,7 @@
    "text": "custom report fetching requested usage, school, invoice, and amount fields can be created",
    "status": "covered",
    "matched_symbols": [
+    "provides",
     "include"
    ]
   },
@@ -176,7 +166,6 @@
    "text": "navigate to Zuora reporting section and create new custom report",
    "status": "covered",
    "matched_symbols": [
-    "document_section",
     "include"
    ]
   },
@@ -233,20 +222,20 @@
   "UTTER",
   "activity",
   "ask",
+  "attribute_claim",
   "click",
-  "document_section",
+  "conjunction",
   "include",
-  "involves",
-  "leads_to",
+  "inform",
   "ongoing",
   "platform_label",
   "propose",
-  "reconcile_code",
+  "provides",
   "sequence",
   "statement",
   "subject",
   "target",
-  "temporal_context"
+  "web_element"
  ],
  "unknown_symbols_in_head_position": [],
  "unbound_attribute_values": [],
@@ -258,5 +247,7 @@
  "retired_symbols_used": [],
  "label_preserved": [
   "n5"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

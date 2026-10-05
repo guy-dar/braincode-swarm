@@ -14,15 +14,17 @@
    "status": "covered",
    "matched_symbols": [
     "warning",
-    "inform"
+    "inform",
+    "run_tests"
    ]
   },
   {
    "id": "n3",
    "kind": "object",
    "text": "pytest testing framework",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
+    "run_tests",
     "platform_label"
    ]
   },
@@ -128,8 +130,10 @@
    "id": "n14",
    "kind": "action",
    "text": "Create file test.py",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "run_tests"
+   ]
   },
   {
    "id": "n15",
@@ -174,8 +178,10 @@
    "id": "n19",
    "kind": "action",
    "text": "Run pytest on test.py",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "run_tests"
+   ]
   },
   {
    "id": "n20",
@@ -201,8 +207,7 @@
    "text": "Warning could not be reproduced directly in the shell",
    "status": "covered",
    "matched_symbols": [
-    "warning",
-    "cli_command"
+    "warning"
    ]
   },
   {
@@ -211,7 +216,8 @@
    "text": "Pytest catches the deprecation warning while running tests",
    "status": "covered",
    "matched_symbols": [
-    "warning"
+    "warning",
+    "run_tests"
    ]
   },
   {
@@ -265,16 +271,16 @@
   "FALSE",
   "REPLY_TO",
   "SPEAKER",
+  "TRUE",
   "TURN",
   "USER",
   "UTTER",
   "activity",
   "attribute_claim",
-  "cli_command",
-  "in",
   "inform",
   "platform_label",
   "role_agent",
+  "run_tests",
   "software_version",
   "statement",
   "subject",
@@ -290,9 +296,10 @@
  "atom_warnings": [],
  "retired_symbols_used": [],
  "label_preserved": [
-  "n3",
   "n4",
   "n5",
   "n16"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

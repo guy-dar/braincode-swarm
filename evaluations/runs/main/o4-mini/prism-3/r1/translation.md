@@ -1,81 +1,93 @@
-Status: success
+Status: failed
 Mode: TRACE
 
-## BrainCode
+## Suggested translation
 
 ```braincode
 MODE TRACE
 ENTRYPOINT Conversation
 CONVO Conversation {
   TURN t1 SPEAKER=USER {
-    UTTER ask(content="Why doesn't the government eliminate anonymous online activities by forcing people to create unique accounts that are tied to ssn or other unique identification?")
+    TERM subject(kind="online activities", qualifier="anonymous") -> anonymous_online_activities : TERM
+    TERM subject(kind="account", qualifier="SSN or other unique identification") -> unique_account : TERM
+    TERM activity(verb="eliminate", actor="government", object=anonymous_online_activities) -> eliminate_anonymity : TERM
+    TERM reason_question(proposition=eliminate_anonymity) -> why_eliminate : TERM   # PROPOSED: S1
+    UTTER ask(target=why_eliminate)
   }
   TURN t2 SPEAKER=AGENT {
-    UTTER inform(content="The government has considered requiring individuals to verify their identities before engaging in online activities, but implementing such a policy would pose several challenges.")
-    UTTER inform(content="Firstly, it would require a significant investment in technology and infrastructure to create and manage a database of unique identifications tied to social security numbers or other unique identifiers.")
-    UTTER inform(content="Secondly, there are privacy concerns about requiring individuals to share sensitive personal information with the government.")
-    UTTER inform(content="Thirdly, there is a risk that such a policy would disproportionately affect marginalized communities who may not have access to the technology or resources necessary to create and maintain unique accounts.")
-    UTTER inform(content="Lastly, it is unclear whether such a policy would effectively prevent anonymous online activities, as there are still ways to circumvent identification requirements using proxy servers or virtual private networks.")
-    UTTER inform(content="Therefore, it is a complex issue that requires careful consideration and a balanced approach that strikes a delicate balance between privacy, security, and accessibility.")
+    # Unable to formalize this summary: needs a policy_document and proposed_policy plus linked challenge constructors
+    UTTER inform(target=policy_summary)                                      # PROPOSED: S2
   }
   TURN t3 SPEAKER=USER {
-    UTTER ask(content="Even so, there must be ways to make reasonable progress towards eliminating fraud, identity theft and other actions like online bullying where people hide behind anonymous identity.")
+    # Missing “propose_measures” question constructor
+    UTTER ask(target=mitigation_question)                                     # PROPOSED: S3
   }
   TURN t4 SPEAKER=AGENT {
-    UTTER inform(content="Yes, there are measures that can be taken to mitigate the risks of online fraud, identity theft, and cyberbullying without necessarily requiring individuals to verify their identities with unique government-issued numbers.")
-    UTTER inform(content="Verification of email addresses: Websites and online platforms could require users to verify their email addresses before allowing them to create accounts or post content.")
-    UTTER inform(content="This would prevent spammers and trolls from creating multiple anonymous accounts.")
-    UTTER inform(content="Strong password policies: Platforms could enforce strong password policies that include a mix of uppercase and lowercase letters, numbers, and symbols, and require users to change their passwords frequently.")
-    UTTER inform(content="This would make it harder for hackers to guess or crack passwords and steal personal information.")
-    UTTER inform(content="Two-factor authentication: Websites could implement two-factor authentication, which requires users to provide a second form of identification, such as a text message code, before granting")
+    # Missing “email_verification” requirement TERM and constraint usage
+    UTTER inform(target=email_verification_term)                              # PROPOSED: S4
+    # Missing enables claim relation for explaining deterrence
+    CLAIM enables(condition=email_verification_term, outcome=spammer_prevention) -> enable_1 : CLAIM  # PROPOSED: S5
+    # Missing requirement constructor for strong passwords
+    TERM requirement(property="password_strength", value="strong_and_rotated") -> pwd_req : TERM  # PROPOSED: S6
+    CLAIM enables(condition=pwd_req, outcome=password_security) -> enable_2 : CLAIM             # PROPOSED: S5
+    # Missing two_factor_authentication requirement TERM
+    TERM requirement(property="authentication", value="two_factor") -> twofa_req : TERM       # PROPOSED: S7
+    CLAIM enables(condition=twofa_req, outcome=unauthorized_access_prevention) -> enable_3 : CLAIM  # PROPOSED: S5
   }
   TURN t5 SPEAKER=USER {
-    UTTER ask(content="But wouldn't you agree that eliminating the anonymity would lead to greater accountability for online behavior plus give law enforcement a means to pursue criminals?")
+    # Missing reason_question for accountability benefit
+    TERM reason_question(proposition=accountability_and_enforcement) -> why_accountability : TERM  # uses S1
+    UTTER ask(target=why_accountability)
   }
   TURN t6 SPEAKER=AGENT {
-    UTTER inform(content="While eliminating anonymity online could lead to greater accountability for online behavior and provide law enforcement with a means to pursue criminals, there are also significant privacy concerns and challenges associated with requiring individuals to verify their identities with unique government-issued numbers.")
-    UTTER inform(content="As I mentioned earlier, such a policy would require a significant investment in technology and infrastructure, raise privacy concerns, and potentially disproportionately affect marginalized communities who may not have access to the technology or resources necessary to create and maintain unique accounts.")
-    UTTER inform(content="Additionally, it is unclear whether such a policy would effectively prevent anonymous online activities, as there are still ways to circumvent identification requirements using proxy servers or virtual private networks.")
-    UTTER inform(content="Therefore, while eliminating anonymity may have some benefits, it is a complex issue that requires careful consideration and a balanced approach that strikes a delicate balance between privacy, security, and accessibility.")
-    UTTER inform(content="Other measures, such as those I suggested earlier, could be implemented to mitigate the risks of online")
+    # Similar summary as t2: missing policy_tradeoff TERM and related claims
+    UTTER inform(target=tradeoff_summary)                                      # PROPOSED: S8
   }
 }
 ```
 
 ## Needs coverage
 
-| need | kind       | expressed by | status         |
-|------|------------|--------------|----------------|
-| n1   | speech_act | ask          | covered        |
-| n2   | action     | —            | not-applicable |
-| n3   | object     | —            | not-applicable |
-| n4   | claim      | —            | not-applicable |
-| n5   | claim      | —            | not-applicable |
-| n6   | claim      | —            | not-applicable |
-| n7   | claim      | —            | not-applicable |
-| n8   | claim      | —            | not-applicable |
-| n9   | reasoning  | —            | not-applicable |
-| n10  | speech_act | ask          | covered        |
-| n11  | object     | —            | not-applicable |
-| n12  | claim      | —            | not-applicable |
-| n13  | action     | —            | not-applicable |
-| n14  | reasoning  | —            | not-applicable |
-| n15  | action     | —            | not-applicable |
-| n16  | reasoning  | —            | not-applicable |
-| n17  | action     | —            | not-applicable |
-| n18  | speech_act | ask          | covered        |
-| n19  | claim      | —            | not-applicable |
-| n20  | claim      | —            | not-applicable |
-| n21  | reasoning  | —            | not-applicable |
-| n22  | claim      | —            | not-applicable |
+| need | kind        | expressed by                     | status       |
+|------|-------------|----------------------------------|--------------|
+| n1   | speech_act  | ask                              | proposed     |
+| n2   | action      | eliminate (in activity)          | covered      |
+| n3   | object      | anonymous_online_activities      | covered      |
+| n4   | claim       | proposed_policy (S2)             | proposed     |
+| n5   | claim       | created_by?                      | unresolved   |
+| n6   | claim       | raises_exception?                | unresolved   |
+| n7   | claim       | requirement (S6)                 | proposed     |
+| n8   | claim       | user_practice?                   | unresolved   |
+| n9   | reasoning   | rejects/supports?                | unresolved   |
+| n10  | speech_act  | ask                              | covered      |
+| n11  | object      | object_label::fraud              | label-preserved |
+| n12  | claim       | enables (S5)                     | proposed     |
+| n13  | action      | send_email?                      | unresolved   |
+| n14  | reasoning   | enables                          | covered      |
+| n15  | action      | requirement (S6)                 | covered      |
+| n16  | reasoning   | enables                          | covered      |
+| n17  | action      | requirement (S7)                 | covered      |
+| n18  | speech_act  | ask                              | covered      |
+| n19  | claim       | enables                          | covered      |
+| n20  | claim       | opposes?                         | unresolved   |
+| n21  | reasoning   | rejects/supports?                | unresolved   |
+| n22  | claim       | provides?                        | unresolved   |
+
+## Why the translation failed
+
+- n1 “why … eliminate anonymous online activities …?”: no existing constructor for a reason question.
+- n4 “proposed policy … challenges”: no way to build a policy_document + proposed_policy with linked challenge terms.
+- n7 “disproportionately affect marginalized communities”: no constructor to express inequity or impact on groups.
+- n13 “require email verification”: no TERM for that measure.
+- n21/n22 “trade-offs” and “targeted security practices”: missing tradeoff_summary and policy action terms.
 
 ## Translation report
 
 - Input kind: conversation
-- Coverage status: complete
-- Source-span coverage: every segment t1:s1–t6:s5 recorded as UTTER statements
+- Coverage status: partial
+- Source-span coverage: t1–t6 utterances—all located, but many needs unformalized
 - Opaque-text spans: none
-- Label-preserved spans: none
-- Missing constructs: none
-- Unresolved ambiguities: none
-- Check: `rag check` reported 0 unresolved needs and 0 unknown symbols
+- Label-preserved spans: n11 “fraud” → object_label::fraud
+- Missing constructs: S1, S2, S3, S4, S5, S6, S7, S8
+- Unresolved ambiguities: policy/challenge summaries require finer-grained terms
+- Check: `rag check` reported unresolved needs and unknown symbols as above

@@ -3,8 +3,8 @@
  "item": "swebench-5",
  "dataset": "swebench",
  "run": 1,
- "status": "success",
- "problem": null,
+ "status": "error",
+ "problem": "claimed success but the host check found: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: , revision=t1.code_entity_3) -> chg_modify_code_2 : TERM\n    RECORD ACTION modif…",
  "attempts": 1,
  "duration_s": 604.0,
  "usage": {
@@ -18,5 +18,11 @@
  },
  "cost_usd": 0.4127,
  "setup": "v2",
- "timeout_s": 2400
+ "timeout_s": 2400,
+ "regated": {
+  "original_status": "success",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: , revision=t1.code_entity_3) -> chg_modify_code_2 : TERM\n    RECORD ACTION modif…"
+  ]
+ }
 }

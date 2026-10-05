@@ -1,0 +1,1 @@
+The answer is: The task is asking to swap books between friends and have a discussion about a topic, presumably the swapped books, without specifying the topic.

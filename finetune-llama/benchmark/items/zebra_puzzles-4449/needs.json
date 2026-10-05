@@ -1,0 +1,2565 @@
+{
+ "translator_id": "zebra_puzzles-4449",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "solve a grid-based logic puzzle with 6 positions",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6728,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.6654,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4662,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.4587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.4225,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4205,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4148,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.4135,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4086,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "house colors (gold, pink, purple, white, yellow, turquoise)",
+   "source": [
+    "t1:s2"
+   ],
+   "group": "color_label",
+   "id": "n2",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.7893,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7359,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4747,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3881,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.3334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/living_room",
+     "symbol": "living_room",
+     "kind": "value",
+     "score": 0.3305,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3158,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3011,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_chardonnay",
+     "symbol": "grape_chardonnay",
+     "kind": "value",
+     "score": 0.2927,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.2812,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fruit_juice",
+     "symbol": "fruit_juice",
+     "kind": "value",
+     "score": 0.2811,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.2688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.2683,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "NFL teams (Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers)",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.6351,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.6099,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.43,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.4169,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.4045,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_support_team",
+     "symbol": "role_support_team",
+     "kind": "value",
+     "score": 0.403,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3993,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.3988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3875,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.3808,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.3688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3614,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "professions (actor, dancer, writer, athlete, singer, doctor)",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n4",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/tone-value/tone_professional",
+     "symbol": "tone_professional",
+     "kind": "value",
+     "score": 0.7218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.7113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.7019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.693,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_women",
+     "symbol": "gender_women",
+     "kind": "value",
+     "score": 0.6882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.6736,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.663,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.6589,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.6419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_men",
+     "symbol": "gender_men",
+     "kind": "value",
+     "score": 0.6369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.631,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6306,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "book genres (science fiction, magical realism, mystery, humor, spiritual, romance)",
+   "source": [
+    "t1:s5"
+   ],
+   "group": "genre_label",
+   "id": "n5",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.7296,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.6823,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_electronic",
+     "symbol": "genre_electronic",
+     "kind": "value",
+     "score": 0.5192,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.4043,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.3874,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3869,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/beliefs",
+     "symbol": "beliefs",
+     "kind": "value",
+     "score": 0.3504,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_pop_rock",
+     "symbol": "genre_pop_rock",
+     "kind": "value",
+     "score": 0.3246,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.3223,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.3182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3179,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.3157,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "gemstones (Ambers, Pearls, Gypsum, Dolomites, Topaz, Jade)",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n6",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.7164,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.6855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.6706,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_chardonnay",
+     "symbol": "grape_chardonnay",
+     "kind": "value",
+     "score": 0.6436,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6341,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.6276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6216,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.6165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_pop_rock",
+     "symbol": "genre_pop_rock",
+     "kind": "value",
+     "score": 0.6111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cloves",
+     "symbol": "cloves",
+     "kind": "value",
+     "score": 0.6102,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.6073,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "sports (soccer, ice hockey, volleyball, cricket, squash, table tennis)",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n7",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.6811,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.4836,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.3528,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.3182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.3111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.3081,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.2984,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.2928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2892,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2829,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.275,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "NBA teams (Bulls, Lakers, Hawks, Bucks, Knicks, Mavericks)",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.726,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_support_team",
+     "symbol": "role_support_team",
+     "kind": "value",
+     "score": 0.6995,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.6661,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.6613,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.6582,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.6403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_mains",
+     "symbol": "entity_mains",
+     "kind": "value",
+     "score": 0.6388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6309,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.6276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6251,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.6244,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.621,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "hobbies (beekeeping, wood carving, biking, origami, video games, canoeing)",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n9",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.7314,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.5805,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.4334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.3879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3859,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.3844,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3777,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.3769,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3627,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3623,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/oak_chips",
+     "symbol": "oak_chips",
+     "kind": "value",
+     "score": 0.3616,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "animals (crabs, elk, dugongs, blobfish, cats, finches)",
+   "source": [
+    "t1:s10"
+   ],
+   "group": "animal_label",
+   "id": "n10",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.7373,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.5992,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.5642,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.5165,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.3689,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.2989,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.2972,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/caddy",
+     "symbol": "caddy",
+     "kind": "value",
+     "score": 0.2921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/earth",
+     "symbol": "earth",
+     "kind": "value",
+     "score": 0.2841,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.2805,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "nationalities (Japanese, Serbian, Swede, Russian, Pakistani, Italian)",
+   "source": [
+    "t1:s11"
+   ],
+   "group": "country",
+   "id": "n11",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.6705,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.6672,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.6496,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.6031,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.5215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.4508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.4358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.4008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.3847,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.358,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "fruits (mangoes, oranges, raspberries, grapes, pears, bananas)",
+   "source": [
+    "t1:s12"
+   ],
+   "group": "food_label",
+   "id": "n12",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.6978,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.6844,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fruit_juice",
+     "symbol": "fruit_juice",
+     "kind": "value",
+     "score": 0.5447,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.5435,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.5319,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.5054,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.5029,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_chardonnay",
+     "symbol": "grape_chardonnay",
+     "kind": "value",
+     "score": 0.5014,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.4968,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.4862,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.4477,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.3782,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3246,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.2938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.2893,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "motorbikes (Bajaj, Buell, Kawasaki, Piaggio, Benelli, Yamaha)",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n13",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.7199,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.6558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_sauvignon_blanc",
+     "symbol": "grape_sauvignon_blanc",
+     "kind": "value",
+     "score": 0.6482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.6409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6236,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.6232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6175,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_cabernet_sauvignon",
+     "symbol": "grape_cabernet_sauvignon",
+     "kind": "value",
+     "score": 0.6159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.6117,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "cigarettes (Blends, Marlboro, Blue Master, Salem, Newport, Davidoff)",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n14",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6892,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.483,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.4484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.4211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4173,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4052,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4048,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.4031,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.3988,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine_grape",
+     "symbol": "wine_grape",
+     "kind": "value",
+     "score": 0.3823,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "physical activities (base jumping, scuba diving, weight lifting, biking, hiking, bungee jumping)",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n15",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.5964,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4027,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.3865,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3686,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3674,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.3668,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/semantic-category-value/class_beach",
+     "symbol": "class_beach",
+     "kind": "value",
+     "score": 0.3603,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.3596,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3584,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/keys",
+     "symbol": "keys",
+     "kind": "value",
+     "score": 0.3574,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "handbag brands (Polo Ralph Lauren, Gucci, Coach, Versace, Tory Burch, Tumi)",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n16",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_women",
+     "symbol": "gender_women",
+     "kind": "value",
+     "score": 0.7026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clothing",
+     "symbol": "clothing",
+     "kind": "value",
+     "score": 0.7005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.6865,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.6839,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.6583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6537,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6418,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6318,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.6311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6301,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "soft drinks (Powerade, Canada Dry, 7up, Mountain Dew, Pepsi, Coke)",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n17",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.6977,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_drinks",
+     "symbol": "entity_drinks",
+     "kind": "value",
+     "score": 0.6923,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/martini_glass",
+     "symbol": "martini_glass",
+     "kind": "value",
+     "score": 0.6744,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bottle",
+     "symbol": "bottle",
+     "kind": "value",
+     "score": 0.6328,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fruit_juice",
+     "symbol": "fruit_juice",
+     "kind": "value",
+     "score": 0.4247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.4096,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4072,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.3976,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3951,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3855,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3752,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "names (Jones, Nour, Charlie, Margaret, Rafael, Drew)",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n18",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6934,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.6923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.6868,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.658,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.6568,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6522,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6455,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6419,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6415,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.6405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.6358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.6253,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "use the provided clues to solve the puzzle, ignoring irrelevant ones",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n19",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6412,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/constraint-value",
+     "symbol": "rule_category_constraint_value",
+     "kind": "category_rule",
+     "score": 0.5935,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4447,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4349,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4275,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4096,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4057,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4049,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4021,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "determine the position of the person who likes biking",
+   "source": [
+    "t1:s151"
+   ],
+   "id": "n20",
+   "context": "There are 6 people next to each other in a row in positions 1, 2, 3, 4, 5, 6 who have the following characteristics. Everyone lives in a different colored house: gold, pink, purple, white, yellow, turquoise. Everyone supports a different NFL team: Baltimore Ravens, New England Patriots, San Francisco 49ers, Philadelphia Eagles, Seattle Seahawks, Carolina Panthers. Everyone has a different profession: actor, dancer, writer, athlete, singer, doctor. Everyone reads a different genre of books: science fiction, magical realism, mystery, humor, spiritual, romance. Everyone likes a different type of ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.6929,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.6088,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4527,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.4425,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.4193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4134,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4116,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.4047,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.401,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

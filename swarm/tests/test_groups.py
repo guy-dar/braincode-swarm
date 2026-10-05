@@ -243,6 +243,35 @@ TASK ObjectLabelThimble {
         assert success_gate_problems(ok) == []   # a non-canonical alias is only advisory
 
 
+def test_opaque_needs_and_sentence_content_block_success(retriever):
+    """Spec §13: opaque spans and source sentences carried in content="..." are
+    not formalized coverage, so a claimed success with them is rejected."""
+    from translate_batch import success_gate_problems
+    copied = ("Status: success\nMode: TRACE\n\n```braincode\nMODE TRACE\nENTRYPOINT C\nCONVO C {\n"
+              "  TURN t1 SPEAKER=USER {\n"
+              '    UTTER ask(content="in japan what is the problem in terms of work and free time")\n'
+              '    UTTER ask(content="short label")\n'
+              "  }\n}\n```\n\n## Needs coverage\n\n| need | kind | expressed by | status |\n|---|---|---|---|\n"
+              "| n1 | speech_act | ask | covered |\n| n2 | claim | content literal | opaque |\n")
+    rep = retriever.check(copied, [])
+    assert rep["opaque_needs"] == ["n2"]
+    assert len(rep["sentence_literals"]) == 1 and rep["sentence_literals"][0].startswith("in japan")
+    problems = success_gate_problems(rep)
+    assert any("marked opaque" in p for p in problems) and any("quoted literal" in p for p in problems)
+    assert "Needs marked opaque" in render_check(rep)
+    # a declared failure may report opaque needs, but not carry source sentences
+    from translate_batch import failure_gate_problems
+    assert any("quoted literal" in p for p in failure_gate_problems(rep))
+    # any slot, not only content=: a sentence moved into target= is caught too
+    moved = retriever.check(copied.replace('ask(content="in japan', 'ask(target="in japan'), [])
+    assert len(moved["sentence_literals"]) == 1
+    # names and titles are exact strings: allowed at any length
+    named = retriever.check(copied.replace('ask(content="in japan', 'ask(title="in japan'), [])
+    assert named["sentence_literals"] == []
+    clean = retriever.check(copied.replace("in japan what is the problem in terms of work and free time", "x"), [])
+    assert failure_gate_problems(clean) == []
+
+
 def test_quoted_double_colon_is_not_an_atom(retriever):
     rep = retriever.check('```braincode\nMODE REQUEST\nENTRYPOINT A\nTASK A {\n'
                           '  LET lib : STRING = "cpprestsdk::cpprest"\n}\n```', [])

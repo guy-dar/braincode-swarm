@@ -1,0 +1,30 @@
+{
+ "model": "claude-sonnet-5.5",
+ "item": "swebench-3",
+ "dataset": "swebench",
+ "run": 3,
+ "status": "error",
+ "problem": "claimed success but the host check found: needs marked opaque (not formalized; encode them or report a failure): n16; 2 sentence-length quoted literal(s) carry natural language instead of encoding it: DeprecationWarning: Using or importing the ABCs from 'collections' instead of fr… | test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' in…",
+ "attempts": 1,
+ "duration_s": 263.4,
+ "usage": {
+  "calls": 3,
+  "input": 8,
+  "cacheRead": 152632,
+  "cacheWrite": 7080,
+  "output": 5996,
+  "reasoning": 1481,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1082,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "regated": {
+  "original_status": "success",
+  "problems": [
+   "needs marked opaque (not formalized; encode them or report a failure): n16",
+   "2 sentence-length quoted literal(s) carry natural language instead of encoding it: DeprecationWarning: Using or importing the ABCs from 'collections' instead of fr… | test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' in…"
+  ]
+ }
+}

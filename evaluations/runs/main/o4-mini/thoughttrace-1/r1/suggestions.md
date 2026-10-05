@@ -1,15 +1,12 @@
-### S1 | type: add | dimension: constructor | symbol: planning_request
-- Needs: n3 (t1:s3)
-- Searches tried: "categorize best methods for staying organized" → sequence, decision, rule_category_event_value; widen "plan and categorize methods" → nothing
-- Typed parameters: task: TERM
-- Interpretation: a request to plan and categorize methods for a described activity; describes the user's desire without asserting execution
-- Example: `TERM planning_request(task=activity(verb="plan_and_categorize", object=subject(kind="story"))) -> planning_request_2 : TERM`
-- Proposed record: {"symbol":"planning_request","kind":"constructor","signature":"TERM planning_request(task: TERM) -> TERM","definition":"Represents a request to plan and categorize methods for the given task without presuming execution.","not":"An executed plan or categorization; use activity or decision for those outcomes.","aliases":["planning and categorization request"]}
-
-### S2 | type: add | dimension: constructor | symbol: organization_system
-- Needs: n4 (t1:s3)
-- Searches tried: "organization framework" → art_structured_report (artifact), format_structured_report; widen "organization system" → nothing
-- Typed parameters: none
-- Interpretation: denotes a structured system or framework for organization tasks; an abstract artifact description
-- Example: `TERM organization_system() -> organization_system_2 : TERM`
-- Proposed record: {"symbol":"organization_system","kind":"constructor","signature":"TERM organization_system() -> TERM","definition":"Describes a structured system or framework to organize a process or content.","not":"A physical system or runtime object; not an executed operation.","aliases":["organization framework","organization guide"]}
+### S1 | type: add | dimension: constructor | symbol: story_planning_guide
+- Needs: n4 (t1:s3), n8 (t2:s1, t2:s4)
+- Searches tried:
+  • "organisation guide for fanfiction" → format_structured_report (format), document_section (section constructor)
+  • widen "structured guide with named sections" → no matching term
+- Typed parameters: sections: LIST[TERM]
+- Interpretation: A structured planning guide for a story, composed of named sections each containing items; it asserts nothing about execution.
+- Example: `TERM story_planning_guide(sections=[document_section(title="Sections", items=[include(item="…")])]) -> story_planning_guide_2 : TERM`
+- not: format_structured_report (artifact format), document_section (only a single section)
+- aliases: organization_guide, planning_guide
+- Proposed record:
+  `{"symbol":"story_planning_guide","kind":"constructor","signature":"TERM story_planning_guide(sections: LIST[TERM]) -> TERM","definition":"A structured planning guide for a story, composed of named sections each containing items; asserts nothing about execution.","not":"format_structured_report","aliases":["organization_guide","planning_guide"]}`

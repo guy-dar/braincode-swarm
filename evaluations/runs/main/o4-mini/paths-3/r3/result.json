@@ -1,0 +1,44 @@
+{
+ "model": "o4-mini",
+ "item": "paths-3",
+ "dataset": "paths",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 173.1,
+ "usage": {
+  "calls": 4,
+  "input": 8414,
+  "cacheRead": 116992,
+  "cacheWrite": 0,
+  "output": 9286,
+  "reasoning": 6016,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.0823,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "plot_request",
+    "dimension": "constructor"
+   },
+   {
+    "term": "narrative_text",
+    "dimension": "constructor"
+   },
+   {
+    "term": "adaptation_request",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

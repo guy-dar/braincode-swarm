@@ -17,7 +17,6 @@
    "text": "adopt a playboy persona",
    "status": "covered",
    "matched_symbols": [
-    "role_user",
     "role_agent"
    ]
   },
@@ -25,8 +24,10 @@
    "id": "n3",
    "kind": "constraint",
    "text": "funny tone",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "tone_silly"
+   ]
   },
   {
    "id": "n4",
@@ -34,6 +35,7 @@
    "text": "flirty tone",
    "status": "covered",
    "matched_symbols": [
+    "tone_silly",
     "attitude"
    ]
   },
@@ -43,6 +45,7 @@
    "text": "intellectual tone",
    "status": "covered",
    "matched_symbols": [
+    "tone_silly",
     "activity"
    ]
   },
@@ -67,7 +70,6 @@
     "apologize",
     "acknowledge",
     "occurred",
-    "unit_week",
     "inform"
    ]
   },
@@ -90,7 +92,6 @@
    "text": "ask about schedule availability for next week",
    "status": "covered",
    "matched_symbols": [
-    "unit_week",
     "ask",
     "propose",
     "respond",
@@ -105,6 +106,7 @@
    "matched_symbols": [
     "topic_pickup_lines",
     "ask",
+    "tone_silly",
     "propose",
     "acknowledge",
     "inform",
@@ -118,7 +120,8 @@
    "status": "covered",
    "matched_symbols": [
     "constraint_budget_limited",
-    "outcome"
+    "meets_needs",
+    "entity_drinks"
    ]
   },
   {
@@ -141,7 +144,6 @@
    "text": "propose scheduling a date next week",
    "status": "covered",
    "matched_symbols": [
-    "unit_week",
     "propose"
    ]
   },
@@ -151,6 +153,7 @@
    "text": "write another funny, flirty playboy response to the same messages",
    "status": "covered",
    "matched_symbols": [
+    "tone_silly",
     "propose",
     "apologize"
    ]
@@ -161,11 +164,9 @@
    "text": "offline dating or practicing James Bond impression when Tinder fails",
    "status": "covered",
    "matched_symbols": [
-    "outcome",
-    "failure",
     "role_friend",
     "role_agent",
-    "enables"
+    "ongoing"
    ]
   },
   {
@@ -174,11 +175,9 @@
    "text": "flatter recipient as someone matching wit and charm",
    "status": "covered",
    "matched_symbols": [
-    "outcome",
-    "enables",
+    "tone_silly",
     "role_friend",
-    "leads_to",
-    "role_user"
+    "leads_to"
    ]
   },
   {
@@ -192,6 +191,7 @@
     "ask",
     "apologize",
     "respond",
+    "tone_silly",
     "inform"
    ]
   },
@@ -203,7 +203,7 @@
    "matched_symbols": [
     "wine",
     "propose",
-    "unit_week"
+    "entity_drinks"
    ]
   },
   {
@@ -224,9 +224,8 @@
    "status": "covered",
    "matched_symbols": [
     "attitude",
-    "enables",
-    "outcome",
     "leads_to",
+    "ongoing",
     "temporal_context"
    ]
   },
@@ -237,8 +236,7 @@
    "status": "covered",
    "matched_symbols": [
     "role_friend",
-    "role_user",
-    "outcome",
+    "ongoing",
     "leads_to"
    ]
   },
@@ -253,7 +251,8 @@
     "ask",
     "respond",
     "role_agent",
-    "propose"
+    "propose",
+    "contrast"
    ]
   },
   {
@@ -264,7 +263,7 @@
    "matched_symbols": [
     "propose",
     "restaurant",
-    "unit_week"
+    "entity_drinks"
    ]
   }
  ],
@@ -284,15 +283,13 @@
   "ask",
   "attitude",
   "constraint_budget_limited",
-  "enables",
-  "exclude",
-  "failure",
-  "in",
-  "include",
+  "contrast",
+  "entity_drinks",
   "inform",
   "leads_to",
+  "meets_needs",
   "occurred",
-  "outcome",
+  "ongoing",
   "platform_label",
   "propose",
   "requirement",
@@ -300,22 +297,15 @@
   "restaurant",
   "role_agent",
   "role_friend",
-  "role_user",
   "subject",
   "target",
   "temporal_context",
+  "tone_silly",
   "topic_pickup_lines",
-  "unit_week",
   "wine"
  ],
- "unknown_symbols_in_head_position": [
-  "persona"
- ],
- "unbound_attribute_values": [
-  "tone_flirty",
-  "tone_funny",
-  "tone_intellectual"
- ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {},
  "string_literals_as_operation_arguments": [],
@@ -324,5 +314,7 @@
  "retired_symbols_used": [],
  "label_preserved": [
   "n6"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

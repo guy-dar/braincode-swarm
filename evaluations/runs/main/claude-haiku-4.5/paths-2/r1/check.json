@@ -4,15 +4,19 @@
    "id": "n1",
    "kind": "action",
    "text": "reconcile accounts receivable balance sheet accounts",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "reconcile_code"
+   ]
   },
   {
    "id": "n2",
    "kind": "action",
    "text": "reconcile deferred revenue balance sheet accounts",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "reconcile_code"
+   ]
   },
   {
    "id": "n3",
@@ -20,7 +24,10 @@
    "text": "maintain ongoing reconciliation over time",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "ongoing",
+    "reconcile_code",
+    "time_point",
+    "duration"
    ]
   },
   {
@@ -29,7 +36,8 @@
    "text": "ask what balance sheet reconciliation means in Zuora reporting",
    "status": "covered",
    "matched_symbols": [
-    "ask"
+    "ask",
+    "reconcile_code"
    ]
   },
   {
@@ -57,7 +65,11 @@
    "status": "covered",
    "matched_symbols": [
     "statement",
+    "outcome",
     "involves",
+    "reconcile_code",
+    "leads_to",
+    "enables",
     "ongoing"
    ]
   },
@@ -74,15 +86,20 @@
    "text": "AR Aging report categorizes unpaid invoices by age to spot discrepancies",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome",
+    "leads_to",
+    "ongoing",
+    "enables"
    ]
   },
   {
    "id": "n10",
    "kind": "object",
    "text": "Zuora Deferred Revenue Schedule report",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
   },
   {
    "id": "n11",
@@ -90,15 +107,20 @@
    "text": "Deferred Revenue Schedule shows deferred balances and recognition entries for reconciliation",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome",
+    "duration",
+    "ongoing",
+    "leads_to"
    ]
   },
   {
    "id": "n12",
    "kind": "object",
    "text": "Zuora Revenue Reports",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "outcome"
+   ]
   },
   {
    "id": "n13",
@@ -106,7 +128,9 @@
    "text": "regular review and prompt investigation of report discrepancies keeps accounts reconciled",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome",
+    "ongoing",
+    "leads_to"
    ]
   },
   {
@@ -116,6 +140,7 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
+    "document_section",
     "include"
    ]
   },
@@ -137,8 +162,10 @@
    "id": "n17",
    "kind": "object",
    "text": "date of usage and date billed",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
   },
   {
    "id": "n18",
@@ -153,7 +180,9 @@
    "text": "custom report fetching requested usage, school, invoice, and amount fields can be created",
    "status": "covered",
    "matched_symbols": [
-    "include"
+    "outcome",
+    "include",
+    "enables"
    ]
   },
   {
@@ -162,6 +191,7 @@
    "text": "navigate to Zuora reporting section and create new custom report",
    "status": "covered",
    "matched_symbols": [
+    "document_section",
     "include"
    ]
   },
@@ -176,8 +206,10 @@
    "id": "n22",
    "kind": "action",
    "text": "select reporting date range and add specified data columns",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
   },
   {
    "id": "n23",
@@ -194,16 +226,19 @@
    "text": "apply filters, configure groupings, and execute report",
    "status": "covered",
    "matched_symbols": [
-    "include",
-    "sequence"
+    "apply_filters",
+    "include"
    ]
   },
   {
    "id": "n25",
    "kind": "temporal",
    "text": "schedule report to run at recurring intervals",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "time_point",
+    "duration"
+   ]
   }
  ],
  "unresolved": [],
@@ -211,25 +246,28 @@
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
+  "REPLY_TO",
   "SPEAKER",
   "TURN",
   "USER",
   "UTTER",
   "activity",
+  "apply_filters",
   "ask",
-  "click",
-  "conjunction",
-  "in",
+  "document_section",
+  "duration",
+  "enables",
   "include",
   "involves",
-  "on",
+  "leads_to",
   "ongoing",
+  "outcome",
   "platform_label",
-  "role_agent",
-  "sequence",
+  "reconcile_code",
   "statement",
   "subject",
-  "target"
+  "target",
+  "time_point"
  ],
  "unknown_symbols_in_head_position": [],
  "unbound_attribute_values": [],
@@ -241,5 +279,7 @@
  "retired_symbols_used": [],
  "label_preserved": [
   "n5"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

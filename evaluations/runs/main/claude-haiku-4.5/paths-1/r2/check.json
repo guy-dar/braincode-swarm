@@ -18,8 +18,7 @@
    "status": "covered",
    "matched_symbols": [
     "role_user",
-    "role_agent",
-    "character"
+    "role_agent"
    ]
   },
   {
@@ -40,7 +39,6 @@
    "matched_symbols": [
     "tone_silly",
     "style_catchy",
-    "dialogue",
     "attitude"
    ]
   },
@@ -52,15 +50,16 @@
    "matched_symbols": [
     "tone_silly",
     "activity",
-    "style_academic"
+    "style_persuasive"
    ]
   },
   {
    "id": "n6",
    "kind": "object",
    "text": "Tinder dating app",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
+    "request",
     "platform_label"
    ]
   },
@@ -77,6 +76,7 @@
     "on",
     "acknowledge",
     "occurred",
+    "unit_week",
     "inform"
    ]
   },
@@ -99,10 +99,12 @@
    "text": "ask about schedule availability for next week",
    "status": "covered",
    "matched_symbols": [
+    "unit_week",
     "ask",
     "propose",
     "respond",
-    "apologize"
+    "apologize",
+    "works_best"
    ]
   },
   {
@@ -127,7 +129,10 @@
    "text": "weekend dining plans were limited by bank account",
    "status": "covered",
    "matched_symbols": [
-    "constraint_budget_limited"
+    "constraint_budget_limited",
+    "entity_drinks",
+    "occurred_recently",
+    "outcome"
    ]
   },
   {
@@ -151,7 +156,7 @@
    "text": "propose scheduling a date next week",
    "status": "covered",
    "matched_symbols": [
-    "time_point",
+    "unit_week",
     "propose",
     "wait"
    ]
@@ -164,7 +169,6 @@
    "matched_symbols": [
     "tone_silly",
     "propose",
-    "dialogue",
     "apologize"
    ]
   },
@@ -174,9 +178,13 @@
    "text": "offline dating or practicing James Bond impression when Tinder fails",
    "status": "covered",
    "matched_symbols": [
+    "outcome",
     "failure",
     "role_friend",
-    "role_agent"
+    "role_agent",
+    "occurred_recently",
+    "works_best",
+    "enables"
    ]
   },
   {
@@ -187,6 +195,9 @@
    "matched_symbols": [
     "style_catchy",
     "tone_silly",
+    "outcome",
+    "occurred_recently",
+    "enables",
     "role_friend",
     "role_user"
    ]
@@ -213,8 +224,12 @@
    "text": "propose private wine tasting and philosophical conversation next week",
    "status": "covered",
    "matched_symbols": [
-    "wine",
-    "propose"
+    "propose",
+    "unit_week",
+    "personal_values",
+    "request",
+    "entity_drinks",
+    "style_persuasive"
    ]
   },
   {
@@ -236,7 +251,11 @@
    "status": "covered",
    "matched_symbols": [
     "attitude",
-    "style_catchy"
+    "works_best",
+    "style_catchy",
+    "occurred_recently",
+    "enables",
+    "outcome"
    ]
   },
   {
@@ -247,7 +266,10 @@
    "matched_symbols": [
     "role_friend",
     "role_user",
-    "on"
+    "occurred_recently",
+    "outcome",
+    "on",
+    "motivated_by"
    ]
   },
   {
@@ -272,6 +294,8 @@
    "matched_symbols": [
     "propose",
     "restaurant",
+    "entity_drinks",
+    "unit_week",
     "on"
    ]
   }
@@ -291,30 +315,34 @@
   "apologize",
   "ask",
   "attitude",
-  "character",
+  "character_trait",
   "constraint_budget_limited",
-  "dialogue",
+  "enables",
+  "entity_drinks",
   "failure",
-  "in",
-  "include",
   "inform",
+  "motivated_by",
   "occurred",
+  "occurred_recently",
   "on",
+  "outcome",
+  "personal_values",
   "platform_label",
   "propose",
+  "request",
   "respond",
   "restaurant",
   "role_agent",
   "role_friend",
   "role_user",
-  "style_academic",
   "style_catchy",
+  "style_persuasive",
   "target",
-  "time_point",
   "tone_silly",
   "topic_pickup_lines",
+  "unit_week",
   "wait",
-  "wine"
+  "works_best"
  ],
  "unknown_symbols_in_head_position": [],
  "unbound_attribute_values": [],
@@ -324,7 +352,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": [
-  "n6"
- ]
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

@@ -1,0 +1,45 @@
+{
+ "model": "o4-mini",
+ "item": "mind2web-3",
+ "dataset": "mind2web",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 363.2,
+ "usage": {
+  "calls": 6,
+  "input": 40585,
+  "cacheRead": 150400,
+  "cacheWrite": 0,
+  "output": 12644,
+  "reasoning": 10752,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1416,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "power_unit_label",
+    "dimension": "lexical-group"
+   },
+   {
+    "term": "request_action",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "measure",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

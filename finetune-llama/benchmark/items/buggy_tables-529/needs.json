@@ -1,0 +1,1899 @@
+{
+ "translator_id": "buggy_tables-529",
+ "needs": [
+  {
+   "kind": "claim",
+   "text": "The input table has 35 rows and 18 columns.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7639,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.6043,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.5902,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.361,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.3451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3403,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.3149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3125,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3069,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.3039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.2995,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "The table data is formatted in row-major order.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8162,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5975,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.5379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.5165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4994,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.4897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.4561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_xlsx",
+     "symbol": "format_xlsx",
+     "kind": "value",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.4445,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4243,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.4183,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "The raw table data containing headers and values.",
+   "source": [
+    "t1:s3",
+    "t1:s4",
+    "t1:s5",
+    "t1:s6",
+    "t1:s7",
+    "t1:s8",
+    "t1:s9",
+    "t1:s10"
+   ],
+   "id": "n3",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8154,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.6554,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.4542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.4169,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4085,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3728,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_xlsx",
+     "symbol": "format_xlsx",
+     "kind": "value",
+     "score": 0.3687,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/attributes-and-generate",
+     "symbol": "rule_attributes_and_generate",
+     "kind": "rule",
+     "score": 0.3519,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3438,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.3429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3245,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.3178,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The code that saved the table failed to save null values.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n4",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7209,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5793,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4975,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3778,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.3602,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.3514,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.3429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3261,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/recording-signatures",
+     "symbol": "rule_recording_signatures",
+     "kind": "rule",
+     "score": 0.3197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.3087,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3062,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "A list of 0-indexed coordinates where null values occur in the table.",
+   "source": [
+    "t1:s12",
+    "t1:s13"
+   ],
+   "id": "n5",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7813,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5765,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.5683,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.5521,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.4989,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.3997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3569,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3566,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3311,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3307,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3195,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Compute the absolute difference between the sum of two columns.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n6",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.7787,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7382,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.7038,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/between",
+     "symbol": "between",
+     "kind": "value",
+     "score": 0.6366,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_percent",
+     "symbol": "unit_percent",
+     "kind": "value",
+     "score": 0.635,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.4801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.4481,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.436,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4244,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4184,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.4128,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_paragraph",
+     "symbol": "unit_paragraph",
+     "kind": "value",
+     "score": 0.4098,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "The column named coding_minutes.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n7",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7982,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.4264,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4201,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4056,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4043,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.3912,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3807,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3792,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3501,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3432,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.3406,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "The column named study_minutes.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n8",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.7975,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.4334,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_paragraph",
+     "symbol": "unit_paragraph",
+     "kind": "value",
+     "score": 0.4181,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4037,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3873,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3795,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3695,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3675,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3598,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Only include days where the number of messages is greater than 5.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n9",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7817,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5279,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.5131,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4731,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3931,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3913,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3853,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3414,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Only include days where the phone screen time minutes is greater than 25.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n10",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.816,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.743,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6139,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.553,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/phone",
+     "symbol": "phone",
+     "kind": "value",
+     "score": 0.5444,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.5367,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5137,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.506,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4742,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4031,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3916,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3846,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3818,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3669,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3271,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Round the final computed result to 2 decimal places.",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n11",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.7629,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4562,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4014,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3788,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3774,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.3752,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.3489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.332,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.2311,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Assume the condition is not satisfied if null values make it indeterminable.",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n12",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.6938,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.6902,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.5548,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.5072,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4786,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.468,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/medical_condition",
+     "symbol": "medical_condition",
+     "kind": "constructor",
+     "score": 0.4576,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.4465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.4411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4382,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4332,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4194,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Ignore null values from the sum computations.",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n13",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.7133,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.5311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.5147,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.4923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4705,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4625,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.4524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.4398,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4335,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Output '0' if any of the sums cannot be computed due to lack of values.",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n14",
+   "context": "I have a table with 35 rows (including the header) and 18 columns. The table was saved in a row-major format as follows: [date, num_steps, study_minutes, exercise_minutes, sleep_minutes, bed_time, num_messages, num_emails, num_calls, calories_burned, weekday, calories_consumed, num_meetings, coding_minutes, num_tasks_completed, water_intake_ml, phone_screen_time_minutes, music_listening_minutes, 2025-01-27, 13344, 17, 431, 22:36, 26, 7, 595, 1289, 2, 9, 9, 1079, 50, 30, 2025-01-26, 3010, 32, 90, 21:29, 96, 1, 10, 17 1, Tue, 998, 5, 6, 9, 1025, 37, 28, 2025-01-25, 17104, 29, 64, 364, 22:35, 41,",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.7429,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4602,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_empty",
+     "symbol": "state_empty",
+     "kind": "value",
+     "score": 0.4572,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.455,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4416,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4361,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.4355,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

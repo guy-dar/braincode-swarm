@@ -1,0 +1,1 @@
+The answer is: The task asks to find a sequence of swaps that rearranges the balls so that the pink ball is next to the black ball, the white ball is next to the yellow ball, the brown ball is next to the blue ball, and the purple ball is next to the black ball.

@@ -7,7 +7,6 @@
    "status": "covered",
    "matched_symbols": [
     "enables",
-    "failure",
     "outcome"
    ]
   },
@@ -21,8 +20,7 @@
     "role_agent",
     "offer_help",
     "role_user",
-    "offer",
-    "inform"
+    "offer"
    ]
   },
   {
@@ -44,7 +42,6 @@
     "offer",
     "offer_help",
     "ask",
-    "inform",
     "enables"
    ]
   },
@@ -67,7 +64,6 @@
     "ask",
     "role_agent",
     "offer",
-    "inform",
     "express_interest",
     "role_user"
    ]
@@ -104,10 +100,8 @@
    "id": "n10",
    "kind": "object",
    "text": "Error messages, software glitches, or abnormal behavior encountered",
-   "status": "covered",
-   "matched_symbols": [
-    "failure"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n11",
@@ -116,7 +110,9 @@
    "status": "covered",
    "matched_symbols": [
     "role_agent",
-    "enables"
+    "enables",
+    "subject",
+    "conjunction"
    ]
   },
   {
@@ -129,7 +125,6 @@
     "express_interest",
     "offer",
     "ask",
-    "inform",
     "role_user"
    ]
   }
@@ -139,23 +134,22 @@
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
-  "REPLY_TO",
   "SPEAKER",
   "TURN",
   "USER",
   "UTTER",
   "activity",
   "ask",
+  "conjunction",
   "enables",
   "express_interest",
-  "failure",
-  "inform",
   "offer",
   "offer_help",
   "on",
   "outcome",
   "role_agent",
   "role_user",
+  "subject",
   "target"
  ],
  "unknown_symbols_in_head_position": [],
@@ -166,5 +160,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

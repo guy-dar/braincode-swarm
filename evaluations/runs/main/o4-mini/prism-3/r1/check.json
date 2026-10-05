@@ -7,7 +7,6 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "identity",
     "inform"
    ]
   },
@@ -15,8 +14,10 @@
    "id": "n2",
    "kind": "action",
    "text": "eliminate anonymous online activities",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
   },
   {
    "id": "n3",
@@ -31,8 +32,8 @@
    "text": "implementing mandatory identity verification for online activities poses multiple practical and policy challenges",
    "status": "covered",
    "matched_symbols": [
-    "identity",
-    "include"
+    "enables",
+    "activity"
    ]
   },
   {
@@ -41,16 +42,18 @@
    "text": "creating and managing a database linking online accounts to unique IDs requires heavy tech infrastructure investment",
    "status": "covered",
    "matched_symbols": [
-    "identity",
-    "include"
+    "enables",
+    "outcome"
    ]
   },
   {
    "id": "n6",
    "kind": "claim",
    "text": "forcing citizens to share sensitive personal information raises major privacy concerns",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "enables"
+   ]
   },
   {
    "id": "n7",
@@ -58,7 +61,8 @@
    "text": "mandatory identity requirements risk disproportionately disadvantaging marginalized communities lacking resources or access",
    "status": "covered",
    "matched_symbols": [
-    "identity"
+    "requirement",
+    "enables"
    ]
   },
   {
@@ -67,17 +71,15 @@
    "text": "users can circumvent identity checks using proxy servers or virtual private networks",
    "status": "covered",
    "matched_symbols": [
-    "identity"
+    "enables"
    ]
   },
   {
    "id": "n9",
    "kind": "reasoning",
    "text": "balancing privacy, security, and accessibility is necessary because online identity mandates carry severe trade-offs",
-   "status": "covered",
-   "matched_symbols": [
-    "identity"
-   ]
+   "status": "unresolved",
+   "matched_symbols": []
   },
   {
    "id": "n10",
@@ -85,31 +87,31 @@
    "text": "argue that progress can still be made to reduce fraud, identity theft, and cyberbullying without total anonymity",
    "status": "covered",
    "matched_symbols": [
-    "inform",
-    "identity"
+    "inform"
    ]
   },
   {
    "id": "n11",
    "kind": "object",
    "text": "online fraud, identity theft, and cyberbullying",
-   "status": "covered",
-   "matched_symbols": [
-    "identity"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n12",
    "kind": "claim",
    "text": "alternative security measures can mitigate risks without requiring government-issued ID verification",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "enables",
+    "outcome"
+   ]
   },
   {
    "id": "n13",
    "kind": "action",
    "text": "require email address verification before account creation or posting",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
@@ -149,7 +151,6 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "identity",
     "inform"
    ]
   },
@@ -159,7 +160,8 @@
    "text": "ending online anonymity would increase user accountability and facilitate criminal investigations",
    "status": "covered",
    "matched_symbols": [
-    "identity"
+    "enables",
+    "target"
    ]
   },
   {
@@ -168,25 +170,33 @@
    "text": "potential benefits to accountability and law enforcement must be weighed against severe privacy and equity drawbacks",
    "status": "covered",
    "matched_symbols": [
-    "considered"
+    "enables",
+    "outcome"
    ]
   },
   {
    "id": "n21",
    "kind": "reasoning",
    "text": "technical bypasses, infrastructure costs, and civil liberties risks make direct government ID mandates problematic",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
    "id": "n22",
    "kind": "claim",
    "text": "targeted security practices provide effective risk mitigation while preserving essential privacy and accessibility",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "target",
+    "enables"
+   ]
   }
  ],
- "unresolved": [],
+ "unresolved": [
+  "n9",
+  "n13",
+  "n21"
+ ],
  "used_symbols": [
   "AGENT",
   "CONVO",
@@ -195,23 +205,71 @@
   "TURN",
   "USER",
   "UTTER",
+  "activity",
   "ask",
-  "behind",
-  "between",
-  "considered",
-  "identity",
-  "in",
-  "include",
+  "enables",
   "inform",
-  "issue"
+  "outcome",
+  "requirement",
+  "subject",
+  "target"
  ],
- "unknown_symbols_in_head_position": [],
- "unbound_attribute_values": [],
+ "unknown_symbols_in_head_position": [
+  "reason_question"
+ ],
+ "unbound_attribute_values": [
+  "accountability_and_enforcement",
+  "email_verification_term",
+  "mitigation_question",
+  "password_security",
+  "policy_summary",
+  "spammer_prevention",
+  "tradeoff_summary",
+  "unauthorized_access_prevention"
+ ],
  "deprecated_symbols_used": [],
- "claimed_but_absent": {},
+ "claimed_but_absent": {
+  "in": [
+   "n2"
+  ],
+  "proposed_policy": [
+   "n4"
+  ],
+  "created_by": [
+   "n5"
+  ],
+  "raises_exception": [
+   "n6"
+  ],
+  "user_practice": [
+   "n8"
+  ],
+  "rejects": [
+   "n9",
+   "n21"
+  ],
+  "supports": [
+   "n9",
+   "n21"
+  ],
+  "object_label": [
+   "n11"
+  ],
+  "send_email": [
+   "n13"
+  ],
+  "opposes": [
+   "n20"
+  ],
+  "provides": [
+   "n22"
+  ]
+ },
  "string_literals_as_operation_arguments": [],
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

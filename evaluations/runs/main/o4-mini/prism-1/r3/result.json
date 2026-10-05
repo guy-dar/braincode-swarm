@@ -1,0 +1,53 @@
+{
+ "model": "o4-mini",
+ "item": "prism-1",
+ "dataset": "prism",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 431.3,
+ "usage": {
+  "calls": 4,
+  "input": 23553,
+  "cacheRead": 100096,
+  "cacheWrite": 0,
+  "output": 16073,
+  "reasoning": 11520,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1242,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 4,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "topic_work_personal_issues",
+    "dimension": "composite"
+   },
+   {
+    "term": "policy_action",
+    "dimension": "constructor"
+   },
+   {
+    "term": "job_count",
+    "dimension": "constructor"
+   },
+   {
+    "term": "part_time",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "activity",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

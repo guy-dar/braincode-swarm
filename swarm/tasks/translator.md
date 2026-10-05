@@ -6,6 +6,20 @@ You are translator **{{TRANSLATOR_ID}}** (batch {{BATCH_ID}}, item {{TNUM}} of t
 
 Your job is a **faithful** translation using only the current glossary. If that is impossible, your job is a **precise failure report** that says what the glossary is missing. Both outcomes are useful. A translation that invents symbols, drops meaning, or quietly paraphrases is worse than an honest failure.
 
+## Never carry natural language in strings
+
+BrainCode encodes meaning in symbols. **No quoted string may hold 8 or more words, in any slot** (`content=`, `target=`, `message=`, `topic=`, `value=`, …), in a success or a failure. Names and titles are the only exception (`name=`, `title=`, `label=`, `caption=`). This rule overrides spec §13's allowance for long quotations. The host rejects every document that breaks it, so a quoted sentence turns your work into an error, not a translation.
+
+```braincode
+# wrong: the sentence is carried, not encoded
+UTTER inform(content="Many Japanese companies are adopting shorter working hours")
+# right: the claim is built from glossary symbols; only short labels stay as strings
+TERM activity(verb="shorten_working_hours", actor="japanese_companies", location=country::JP) -> shorter_hours
+CLAIM statement(fact=shorter_hours)
+```
+
+If the glossary cannot encode a sentence, don't quote it: report a failure, mark the lines that need a missing symbol `# PROPOSED: S<k>`, and suggest that symbol. Write your files to the absolute paths `/output/translation.md` and `/output/suggestions.md`.
+
 ## Files
 
 **Already attached to this message, so don't read them again:** the language specification (`1-language-spec.md`), the glossary retrieval for your item (`2-rag_context.md`), the kit guide (`3-kit-README.md`), the three output formats (`4-…`, `5-…`, `6-…`), the worked examples (`7-examples.jsonl`, don't `cat` `/reference/examples.jsonl`), and your item (`/trajectory.txt`). They're also on disk at the paths below if you need to grep them.
@@ -25,7 +39,7 @@ Your job is a **faithful** translation using only the current glossary. If that 
 
 1. **Study the attached spec, retrieval and item.** They're in this message; start working from them right away. Choose the mode: a request for work is `REQUEST`; supplied messages or observed behaviour is `TRACE` (spec §2, §14.1). Most multi-turn conversations are TRACE.
 2. **Plan per need.** For each need in the table, pick the glossary symbol(s) and construct that express it. Read a candidate's definition, its `not:` contrast and the rules that govern it before using it. A candidate is a suggestion, not an answer.
-3. **Translate.** Write one complete BrainCode document. Keep every distinct request, constraint, claim, correction and reasoning link the source supports (spec §13). Invent nothing: no motives, no results, no resources, and **no symbols**. Use `TERM`s built from existing constructors before wishing for a new symbol (spec §9). Exact wording that matters stays a literal STRING, and opaque `content="..."` fallbacks are reported as opaque.
+3. **Translate.** Write one complete BrainCode document. Keep every distinct request, constraint, claim, correction and reasoning link the source supports (spec §13). Invent nothing: no motives, no results, no resources, and **no symbols**. Use `TERM`s built from existing constructors before wishing for a new symbol (spec §9). Exact wording that matters stays a literal STRING, but sentences are never carried in strings in place of encoding them: a quoted string of 8 or more words in any slot (`content=`, `target=`, `message=`, ...) except names and titles (`name=`, `title=`, `label=`, `caption=`), or a need marked opaque, makes the translation invalid (spec §13: opaque text is not formalized coverage).
 4. **Check.** Write your draft to `/output/translation.md` (format below), then run:
    ```sh
    node /kit/rag.mjs check --translation /output/translation.md
@@ -39,8 +53,9 @@ Your job is a **faithful** translation using only the current glossary. If that 
    ```
    If the server can't be reached, search `/reference/glossary.md` instead (grep for the key words). Revise the translation with whatever you find, then re-run `check`.
 6. **Decide.**
-   - Every need is covered (or honestly marked opaque, not-applicable or label-preserved), and `check` reports nothing in any of its warning lines (unknown symbols, unbound values, quoted strings standing in for entities, symbols your coverage table claims but your code doesn't use, invalid group values, retired bare symbols) → **success**.
-   - Otherwise → **failure**: write the best translation you can, with every line that depends on a missing symbol marked `# PROPOSED: S<k>` or `# REFINED: S<k>`, and write suggestions that would make it valid.
+   - Every need is covered (or justified as not-applicable, or label-preserved), and `check` reports nothing in any of its warning lines (unknown symbols, unbound values, quoted strings standing in for entities, symbols your coverage table claims but your code doesn't use, invalid group values, retired bare symbols, opaque needs, quoted strings of 8+ words in any slot except names and titles (`name=`, `title=`, `label=`, `caption=`)) → **success**.
+   - A need you could only carry as quoted source text is not covered: mark it `opaque` and report a **failure**, with suggestions for the symbols that would encode it.
+   - Otherwise → **failure**: write the best translation you can, with every line that depends on a missing symbol marked `# PROPOSED: S<k>` or `# REFINED: S<k>`, and write suggestions that would make it valid. A failure is still an encoding: never put 8 or more words in a quoted string, in any slot except names and titles (`name=`, `title=`, `label=`, `caption=`) (the host rejects a failure that does).
 
 ## Value groups: leaf values have no glossary entry
 

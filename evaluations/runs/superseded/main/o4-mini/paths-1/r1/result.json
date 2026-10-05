@@ -1,0 +1,46 @@
+{
+ "model": "o4-mini",
+ "item": "paths-1",
+ "dataset": "paths",
+ "run": 1,
+ "status": "error",
+ "problem": "failed translation rejected: 17 sentence-length quoted literal(s) carry natural language instead of encoding it: Act like a playboy, write a funny, flirty, intellectual response to the followin… | Hmm, well when Tinder is on strike, I default to old school pickup lines like \\\"… | As for my weekend, my algorithm instructed me to wine and dine a lucky lady, but…",
+ "attempts": 2,
+ "duration_s": 378.8,
+ "usage": {
+  "calls": 4,
+  "input": 25642,
+  "cacheRead": 103424,
+  "cacheWrite": 0,
+  "output": 16982,
+  "reasoning": 13504,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1314,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "adopt_persona",
+    "dimension": "constructor"
+   },
+   {
+    "term": "rely_on",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "17 sentence-length quoted literal(s) carry natural language instead of encoding it: Act like a playboy, write a funny, flirty, intellectual response to the followin… | Hmm, well when Tinder is on strike, I default to old school pickup lines like \\\"… | As for my weekend, my algorithm instructed me to wine and dine a lucky lady, but…"
+  ]
+ }
+}

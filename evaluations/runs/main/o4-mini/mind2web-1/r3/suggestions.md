@@ -1,0 +1,7 @@
+### S1 | type: add | dimension: constructor | symbol: flight_search_request
+- Needs: n1 (t1:s1), n2 (t1:s1), n3 (t1:s1), n4 (t1:s1), n5 (t1:s1), n6 (t1:s1), n7 (t1:s1), n8 (t1:s1), n9 (t1:s1)
+- Searches tried: "search for flights" → search_travel (operation, not TERM); widen "structured flight search request" → none
+- Typed parameters: origin: STRING, destination: STRING, date: STRING, airline: STRING, one_way: BOOL, nonstop: BOOL, passengers: LIST[TERM]
+- Interpretation: Represents a requested flight search with specified origin, destination, date, airline, trip type, and passenger counts; describes the search request without asserting outcome.
+- Example: `TERM flight_search_request(origin="San Francisco", destination="San Diego", date="2023-07-01", airline="United Airlines", one_way=TRUE, nonstop=TRUE, passengers=[group_size(count=2, group="adults"), group_size(count=1, group="seniors")]) -> flight_search_request_2 : TERM`
+- Proposed record: {"symbol":"flight_search_request","kind":"constructor","signature":"TERM flight_search_request(origin: STRING, destination: STRING, date: STRING, airline: STRING, one_way: BOOL, nonstop: BOOL, passengers: LIST[TERM]) -> TERM","definition":"Represents a requested flight search with specified origin, destination, date, airline, trip type, and passenger counts; describes the search request without asserting outcome.","not":"Executes the search (use ACTION search_travel)","aliases":["search_flight"]}

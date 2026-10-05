@@ -1,0 +1,191 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "encountering UnboundLocalError: local variable 'seq_length' referenced before assignment",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "greet and report an issue with ConvBertForTokenClassification",
+   "status": "covered",
+   "matched_symbols": [
+    "greeting",
+    "raises_exception",
+    "inform"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "ConvBertForTokenClassification model in transformers convbert module",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "action",
+   "text": "call forward method passing only input_embeds argument",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception",
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "source file modeling_convbert.py line 833",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "token_type_ids slicing uses seq_length variable when token_type_ids is None",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "seq_length variable remains unassigned in execution path",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "inputs_embeds branch extracts input_shape but omits unpacking seq_length",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "speech_act",
+   "text": "ask whether missing batch_size and seq_length unpacking is a bug or misuse",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "requested maintainers ArthurZucker and younesbelkada",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "running custom modified script rather than official example",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "running custom task or dataset rather than standard benchmark",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "reproduce bug by passing inputs_embeds and attention_mask to ConvBertForTokenClassification",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "expected execution without raising UnboundLocalError",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "negation",
+   "text": "no error should occur during model execution",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "modify file src/transformers/models/convbert/modeling_convbert.py",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "transformers library codebase",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity",
+    "platform_label"
+   ]
+  }
+ ],
+ "unresolved": [
+  "n7",
+  "n11",
+  "n12",
+  "n13"
+ ],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "code_entity",
+  "greeting",
+  "inform",
+  "platform_label",
+  "raises_exception",
+  "role_agent",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [
+  "code_error_context",
+  "instruct_modify_code",
+  "maintainers_list",
+  "method_call"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

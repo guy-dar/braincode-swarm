@@ -3,21 +3,38 @@
  "item": "paths-2",
  "dataset": "paths",
  "run": 1,
- "status": "success",
+ "status": "failed",
  "problem": null,
  "attempts": 2,
- "duration_s": 324.3,
+ "duration_s": 318.8,
  "usage": {
-  "calls": 3,
-  "input": 25441,
-  "cacheRead": 70528,
+  "calls": 4,
+  "input": 11159,
+  "cacheRead": 125056,
   "cacheWrite": 0,
-  "output": 15419,
-  "reasoning": 12160,
+  "output": 15954,
+  "reasoning": 14272,
   "compactions": 0,
   "truncated_tool_results": 0
  },
- "cost_usd": 0.1152,
+ "cost_usd": 0.1169,
  "setup": "v2",
- "timeout_s": 2400
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "account_reconciliation",
+    "dimension": "constructor"
+   },
+   {
+    "term": "custom_report_request",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
 }

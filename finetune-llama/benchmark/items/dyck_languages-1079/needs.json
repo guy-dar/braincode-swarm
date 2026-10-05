@@ -1,0 +1,1567 @@
+{
+ "translator_id": "dyck_languages-1079",
+ "needs": [
+  {
+   "kind": "constraint",
+   "text": "act as an expert in Dyck language",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.7529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.7363,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_formal",
+     "symbol": "tone_formal",
+     "kind": "value",
+     "score": 0.7356,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.7308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.7269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.7068,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.6988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.6894,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.6761,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.657,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.6548,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Dyck language sequence of brackets",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7206,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.4193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.3995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/naming_pattern",
+     "symbol": "naming_pattern",
+     "kind": "constructor",
+     "score": 0.3727,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3609,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_formal",
+     "symbol": "tone_formal",
+     "kind": "value",
+     "score": 0.3585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3556,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3302,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.3253,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "complete the sequence of unclosed brackets",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7865,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5692,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3918,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.3888,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/remove_literal",
+     "symbol": "remove_literal",
+     "kind": "constructor",
+     "score": 0.3692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.3619,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.3596,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3266,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.3192,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3077,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "reasoning steps provided as thoughts",
+   "source": [
+    "t1:s2",
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7451,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/beliefs",
+     "symbol": "beliefs",
+     "kind": "value",
+     "score": 0.4978,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4398,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4264,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4083,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4056,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "identify the first mistake in the reasoning steps",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n5",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.8034,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6507,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6453,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.6133,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.4862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4832,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4434,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4326,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "mistake types include forgetting to close, wrong bracket, or incorrect copying",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n6",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.7173,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.6392,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/naming_pattern",
+     "symbol": "naming_pattern",
+     "kind": "constructor",
+     "score": 0.5071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.4634,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.462,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.4531,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.4502,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4243,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/structural-constructs",
+     "symbol": "rule_structural_constructs",
+     "kind": "rule",
+     "score": 0.4211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/e",
+     "symbol": "example_e_preserve_exact_wording_through_generation_and_sending",
+     "kind": "example",
+     "score": 0.4178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/composites-general",
+     "symbol": "rule_composites_general",
+     "kind": "rule",
+     "score": 0.4144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/recording-signatures",
+     "symbol": "rule_recording_signatures",
+     "kind": "rule",
+     "score": 0.4141,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/speech-acts-general",
+     "symbol": "rule_speech_acts_general",
+     "kind": "rule",
+     "score": 0.4138,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "complete the rest of the sequence properly",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n7",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7947,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5544,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4556,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.3919,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.3597,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.3251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3107,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/document_section",
+     "symbol": "document_section",
+     "kind": "constructor",
+     "score": 0.3025,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "input bracket sequence",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n8",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7322,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5192,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.5031,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.4131,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3753,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/naming_pattern",
+     "symbol": "naming_pattern",
+     "kind": "constructor",
+     "score": 0.348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.3226,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.3119,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3118,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3101,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "sequence of thoughts tracking stack configuration",
+   "source": [
+    "t1:s8",
+    "t1:s57"
+   ],
+   "id": "n9",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7592,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.533,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/song",
+     "symbol": "song",
+     "kind": "value",
+     "score": 0.5324,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/performance_tracking",
+     "symbol": "performance_tracking",
+     "kind": "constructor",
+     "score": 0.527,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.4319,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.3827,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3773,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.3677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.3491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.3468,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.3354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.3299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.315,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3121,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "final stack state and derived answer",
+   "source": [
+    "t1:s58",
+    "t1:s61"
+   ],
+   "id": "n10",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/has_state",
+     "symbol": "has_state",
+     "kind": "claim_relation",
+     "score": 0.7438,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7009,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4401,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.4272,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4191,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4094,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_sliced",
+     "symbol": "state_sliced",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4041,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/spatial_state",
+     "symbol": "spatial_state",
+     "kind": "claim_relation",
+     "score": 0.4011,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/reason_for",
+     "symbol": "reason_for",
+     "kind": "claim_relation",
+     "score": 0.3987,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "ask if there is a mistake in the sequence",
+   "source": [
+    "t1:s62"
+   ],
+   "id": "n11",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7308,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.5247,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3679,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.3644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3541,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3536,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.3354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3308,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.3293,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3158,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.3143,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "output format: 'No' or the thought number N",
+   "source": [
+    "t1:s63"
+   ],
+   "id": "n12",
+   "context": "You are an expert in a language called dyck where you must complete the language sequence of unclosed brackets of all types (e.g., [], {}, <>). You are given an initial initial dyck language sequence and the steps, provided as thoughts, that were used to arrive at the closing bracket sequence in the dyck language. Your job is to identify the first step that was a mistake in reasoning about the closing bracket sequence in dyck language, if any. This can be forgetting to close a bracket or closing with the wrong bracket or incorrectly copying the prior subsequence of closing brackets to the next",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.776,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6681,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.5493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.5161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4794,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_formal",
+     "symbol": "tone_formal",
+     "kind": "value",
+     "score": 0.4767,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/e",
+     "symbol": "example_e_preserve_exact_wording_through_generation_and_sending",
+     "kind": "example",
+     "score": 0.4544,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.4435,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_markdown",
+     "symbol": "format_markdown",
+     "kind": "value",
+     "score": 0.4315,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.43,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,7 +1,9 @@
-### S1 | type: add | dimension: constructor | symbol: property_question
-- Needs: n17 (t3:s1)
-- Searches tried: "ask whether grass can be cut using scissors" → ask (speech_act) with TERM target; but target must be TERM property_question, not activity
-- Typed parameters: property: STRING, subject: STRING / TERM
-- Interpretation: an open request for the named property or method of the subject, without presupposing an answer
-- Example: TERM property_question(property="cutting_method", subject=object_label::grass) -> question_2 : TERM
-- Proposed record: {"symbol": "property_question", "kind": "constructor", "signature": "TERM property_question(property: STRING, subject: STRING / TERM) -> TERM", "definition": "An open request for the named property or method of the subject; does not supply the value.", "not": "An assertion of the property or its value", "aliases": ["property question", "ask for property", "method question"]}
+### S1 | type: add | dimension: vocabulary-member | symbol: inefficient
+- Needs: n19 (t4:s1)
+- Searches tried: "scissors are inefficient" → only `inefficient` alias on `negation`, not a claim relation; widen "inefficient method" → no claim relations
+- Meaning: Asserts that the described method is inefficient in context
+- Category: claim_relation
+- Contextual aliases: ["inefficient method", "not efficient"]
+- Example: `CLAIM inefficient(subject=cut_with_scissors) -> inefficient_cut : CLAIM`
+- Contrast: Not a claim of impossibility or failure; asserts low performance rather than inability
+- Proposed record: {"symbol":"inefficient","kind":"claim_relation","signature":"CLAIM inefficient(subject: TERM) -> CLAIM","definition":"Asserts that the described method is inefficient in the given context.","not":"a claim that the method cannot work","aliases":["inefficient"]}

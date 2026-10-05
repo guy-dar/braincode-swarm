@@ -1,0 +1,40 @@
+{
+ "model": "o4-mini",
+ "item": "prism-3",
+ "dataset": "prism",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 389.0,
+ "usage": {
+  "calls": 4,
+  "input": 11129,
+  "cacheRead": 113920,
+  "cacheWrite": 0,
+  "output": 7783,
+  "reasoning": 4992,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.0778,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "question_why",
+    "dimension": "constructor"
+   },
+   {
+    "term": "social_security_number",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

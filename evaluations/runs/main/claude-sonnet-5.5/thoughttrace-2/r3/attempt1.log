@@ -1,20 +1,17 @@
-    3.6s turn 1
-   24.2s   model reply: in 4 + cached 2083, out 1898 (+1810 reasoning)
-   24.2s   tool bash: node /kit/rag.mjs entry attribute_claim comparison role_agent role_user agent user 2>&1 | head -40
-   24.3s turn 2
-   56.9s   model reply: in 2 + cached 47625, out 5567 (+660 reasoning)
-   56.9s   tool bash: cat > /output/translation.md <<'EOF'
-Status: success
+   10.7s turn 1
+   35.0s   model reply: in 4 + cached 2083, out 3901 (+764 reasoning)
+   35.0s   tool bash: cat > /output/translation.md <<'EOF'
+Status: failed
 Mode: TRACE
 
-## BrainCode
+## Suggested translation
 
 ```braincode
 MODE TRACE
 ENTRYPOINT Conversation
 CONVO Conversation {
-  TURN t1 S
-   57.1s turn 3
-   62.6s   model reply: in 2 + cached 50241, out 420 (+0 reasoning)
-   62.6s agent finished
-   62.6s agent finished
+
+   37.3s turn 2
+   41.6s   model reply: in 2 + cached 48439, out 404 (+0 reasoning)
+   41.7s agent finished
+   41.7s agent finished

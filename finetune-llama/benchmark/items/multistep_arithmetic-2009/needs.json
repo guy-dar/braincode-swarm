@@ -1,0 +1,1618 @@
+{
+ "translator_id": "multistep_arithmetic-2009",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Introduce new mathematical operations.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7846,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.6882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.6698,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6602,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6498,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.6448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.6413,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.6316,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/under",
+     "symbol": "under",
+     "kind": "value",
+     "score": 0.6298,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.6213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.5931,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define the operation '#' conditionally.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7838,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7268,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.7164,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.5317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4762,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.4739,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.4499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4355,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4115,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define the operation '][' conditionally.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7823,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.7255,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7135,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6482,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.5112,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4481,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.445,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.4399,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4304,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4119,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.406,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define the operation ';' conditionally.",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n4",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7809,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.733,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7264,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6679,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.5328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4646,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.4354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4318,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4257,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.4132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4092,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define the operation '@' conditionally.",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n5",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7698,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.7044,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6873,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.5301,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4636,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4554,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4475,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.4409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4154,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4126,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define the operation '~' conditionally.",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n6",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7564,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.7027,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6931,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.5081,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4689,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4295,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4173,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.3901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3897,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3871,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3797,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define shorthand notation for chained operations.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n7",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7705,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.7215,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.5005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.4578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.4529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4371,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4294,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4293,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/structural-constructs",
+     "symbol": "rule_structural_constructs",
+     "kind": "rule",
+     "score": 0.4159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.4108,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Provide examples of the shorthand notation.",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.7728,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.528,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.4688,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4108,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.3794,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.3655,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.3593,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.3125,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3096,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/structural-constructs",
+     "symbol": "rule_structural_constructs",
+     "kind": "rule",
+     "score": 0.3035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.2964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.2925,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define expression A using operations and numbers.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n9",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7986,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.5089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4989,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.4747,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4668,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.4538,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4359,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4236,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4213,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.42,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4199,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define expression B using operations and numbers.",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n10",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7733,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4898,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.466,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.4613,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.4426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4412,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4139,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Define expression C using operations and numbers.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n11",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7801,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.4819,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.44,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.4398,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4365,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.4304,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4207,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.4161,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Compute the value of A + B - C.",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n12",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.844,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.5209,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.5087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.4942,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4701,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4175,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.4168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3932,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.3919,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.3892,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the final answer as a number.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n13",
+   "context": "Consider the following new operations: $a # b$ equals $(2 + b) - a$ if $a > b$ and $b$ otherwise. $a ][ b$ equals $(a - b)$ if $a + b > 0$; otherwise,  it equals $a + b$. $a ; b$ equals $(b # a) - b$ if $|a-b| < 2$ and $(a # b) - a$ otherwise. $a @ b$ equals $(a ][ a) - b$ if $b < 2$ and $(b ][ b) - a$ otherwise. $a ~ b$ equals $(a ; b)$ if $a - b > 0$; otherwise,  it equals $a # b$. For brevity, we use $a <op1><op2> b$ to denote $(a op1 b) op2 b$. For example, $4 +* -5$ means $(4 + -5) * -5$ and $4 *-- -5$ means $(4 * -5) -- -5$. Let A = (((((((((((((((((((2 ~- -8) *~ 5) ][~ -3) # -9) *+][ 4)",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.7774,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.7374,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6883,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5224,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.5171,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.4634,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4623,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4533,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4301,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4254,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

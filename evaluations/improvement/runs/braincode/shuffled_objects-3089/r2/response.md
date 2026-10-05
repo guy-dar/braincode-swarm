@@ -1,0 +1,1 @@
+The answer is: The task asks Alice to swap books with Gertrude 80 times.

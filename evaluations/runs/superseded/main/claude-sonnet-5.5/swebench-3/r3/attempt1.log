@@ -1,0 +1,20 @@
+    4.8s turn 1
+   38.3s   model reply: in 4 + cached 48757, out 5323 (+1349 reasoning)
+   38.3s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   38.8s turn 2
+   40.5s   model reply: in 2 + cached 48757, out 71 (+0 reasoning)
+   40.5s   tool bash: node /kit/rag.mjs check --translation /output/translation.md | head -20
+   40.8s turn 3
+   46.5s   model reply: in 2 + cached 55118, out 602 (+132 reasoning)
+   46.5s agent finished
+   46.5s agent finished

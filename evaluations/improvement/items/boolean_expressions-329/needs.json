@@ -1,0 +1,2299 @@
+{
+ "translator_id": "boolean_expressions-329",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "asks which of the five boolean expressions evaluates to true",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n1",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.761,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5148,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4966,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.4663,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4633,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4364,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4333,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apologize",
+     "symbol": "apologize",
+     "kind": "speech_act",
+     "score": 0.4285,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.4248,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.424,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "evaluate five complex boolean expressions",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.8359,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.7355,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.6711,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4816,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4681,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4577,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.452,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "exactly one of the five expressions evaluates to true",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.7306,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.5328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4833,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4827,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4668,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4602,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4582,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4532,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4508,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "boolean expression A",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6723,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5477,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.5211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4615,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4246,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.4067,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4043,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country India",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "country",
+   "id": "n5",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7659,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.5664,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.4193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.3786,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.37,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/semantic-category-value/class_temple",
+     "symbol": "class_temple",
+     "kind": "value",
+     "score": 0.3671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3516,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "boolean expression B",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n6",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6738,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4975,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.4097,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4041,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.379,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Germany",
+   "source": [
+    "t1:s4"
+   ],
+   "group": "country",
+   "id": "n7",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7762,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.6508,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.446,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.4179,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.4027,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.3942,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.3941,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3648,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3509,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.3389,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.3067,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.2976,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country India",
+   "source": [
+    "t1:s5"
+   ],
+   "group": "country",
+   "id": "n8",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7659,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.5664,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.4193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.3786,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.37,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/semantic-category-value/class_temple",
+     "symbol": "class_temple",
+     "kind": "value",
+     "score": 0.3671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3516,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "boolean expression C",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n9",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6728,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.4549,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4483,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_chardonnay",
+     "symbol": "grape_chardonnay",
+     "kind": "value",
+     "score": 0.444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.4428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4173,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4122,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4043,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4038,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Nepal",
+   "source": [
+    "t1:s6"
+   ],
+   "group": "country",
+   "id": "n10",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7354,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4224,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4085,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/semantic-category-value/class_temple",
+     "symbol": "class_temple",
+     "kind": "value",
+     "score": 0.3966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.3388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3297,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "boolean expression D",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n11",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6758,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.5191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4653,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.4642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4608,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4574,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.4419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.4339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4102,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Turkey",
+   "source": [
+    "t1:s8"
+   ],
+   "group": "country",
+   "id": "n12",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7499,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.5248,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.5103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4874,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4762,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.4503,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.4465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.4389,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4337,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.428,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Iran",
+   "source": [
+    "t1:s9"
+   ],
+   "group": "country",
+   "id": "n13",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7559,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.4207,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4151,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.4019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.3833,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.3493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reason_for",
+     "symbol": "reason_for",
+     "kind": "claim_relation",
+     "score": 0.3408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3349,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3255,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3241,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Malaysia",
+   "source": [
+    "t1:s9"
+   ],
+   "group": "country",
+   "id": "n14",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7437,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.5263,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.5008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.4901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.4868,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.4666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.4656,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.4173,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.4145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.4133,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Nigeria",
+   "source": [
+    "t1:s9"
+   ],
+   "group": "country",
+   "id": "n15",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7713,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4925,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.4295,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.4054,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3838,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.3826,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.3553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_full",
+     "symbol": "state_full",
+     "kind": "value",
+     "score": 0.3537,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.3392,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3337,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.3319,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/eastern_cape",
+     "symbol": "eastern_cape",
+     "kind": "value",
+     "score": 0.3296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3231,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "boolean expression E",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n16",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/rule/category/metric-value",
+     "symbol": "rule_category_metric_value",
+     "kind": "category_rule",
+     "score": 0.6768,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.483,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4559,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.4342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4194,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/e",
+     "symbol": "example_e_preserve_exact_wording_through_generation_and_sending",
+     "kind": "example",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4062,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/egift_card",
+     "symbol": "egift_card",
+     "kind": "value",
+     "score": 0.4056,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4048,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Gambia",
+   "source": [
+    "t1:s11"
+   ],
+   "group": "country",
+   "id": "n17",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7534,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4826,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.422,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.4013,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3697,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.3643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/eastern_cape",
+     "symbol": "eastern_cape",
+     "kind": "value",
+     "score": 0.3522,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.3479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.3447,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.3121,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3098,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the country Azerbaijan",
+   "source": [
+    "t1:s11"
+   ],
+   "group": "country",
+   "id": "n18",
+   "context": "From the following five expressions, only one evaluates to true. Which one is it? (A) not (not (not (not ((not (not not (not not (-1 * -9 + 4 * -10 > 6 * 2) or not not not (The capital of India is New Delhi.)) or not not not (True)) and (-4 * 8 + 9 * 5 is greater than 3 * -8)) and (True)) or (False)) or (False)) and (7 * 7 <= -7)) and (5 * -3 + 5 * 5 > 10 * 9) (B) not not (not (not not (not not not (8 * 8 + -3 * 2 <= 9 * 10) and not not (True)) or not not not (not (max(-8, -2, 9, -8) - min(-8, -2, 9, -8) is greater than 7) and (The capital of Germany is Munich.))) and ((not not (-9 * -9 + -10 ",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.7714,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.4779,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.4707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.4533,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3844,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.3561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.35,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.3469,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.3346,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.332,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

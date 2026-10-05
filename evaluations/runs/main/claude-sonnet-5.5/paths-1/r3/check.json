@@ -7,6 +7,7 @@
    "status": "covered",
    "matched_symbols": [
     "propose",
+    "respond",
     "apologize"
    ]
   },
@@ -16,8 +17,8 @@
    "text": "adopt a playboy persona",
    "status": "covered",
    "matched_symbols": [
-    "role_agent",
-    "character"
+    "role_user",
+    "role_agent"
    ]
   },
   {
@@ -65,8 +66,8 @@
    "matched_symbols": [
     "ask",
     "propose",
+    "respond",
     "apologize",
-    "offer",
     "acknowledge",
     "occurred",
     "inform"
@@ -80,9 +81,9 @@
    "matched_symbols": [
     "apologize",
     "acknowledge",
+    "respond",
     "ask",
-    "propose",
-    "offer"
+    "propose"
    ]
   },
   {
@@ -93,7 +94,7 @@
    "matched_symbols": [
     "ask",
     "propose",
-    "offer",
+    "respond",
     "apologize"
    ]
   },
@@ -106,10 +107,10 @@
     "topic_pickup_lines",
     "ask",
     "tone_silly",
-    "offer",
     "propose",
     "acknowledge",
-    "inform"
+    "inform",
+    "respond"
    ]
   },
   {
@@ -118,9 +119,7 @@
    "text": "weekend dining plans were limited by bank account",
    "status": "covered",
    "matched_symbols": [
-    "constraint_budget_limited",
-    "meets_needs",
-    "outcome"
+    "entity_drinks"
    ]
   },
   {
@@ -133,8 +132,8 @@
     "apologize",
     "inform",
     "ask",
-    "offer",
-    "propose"
+    "propose",
+    "respond"
    ]
   },
   {
@@ -143,6 +142,7 @@
    "text": "propose scheduling a date next week",
    "status": "covered",
    "matched_symbols": [
+    "time_point",
     "propose"
    ]
   },
@@ -154,7 +154,6 @@
    "matched_symbols": [
     "tone_silly",
     "propose",
-    "similarity",
     "apologize"
    ]
   },
@@ -164,10 +163,7 @@
    "text": "offline dating or practicing James Bond impression when Tinder fails",
    "status": "covered",
    "matched_symbols": [
-    "outcome",
-    "role_agent",
-    "enables",
-    "ongoing"
+    "role_agent"
    ]
   },
   {
@@ -177,9 +173,7 @@
    "status": "covered",
    "matched_symbols": [
     "tone_silly",
-    "outcome",
-    "enables",
-    "leads_to"
+    "role_user"
    ]
   },
   {
@@ -191,8 +185,8 @@
     "propose",
     "acknowledge",
     "ask",
-    "offer",
     "apologize",
+    "respond",
     "tone_silly",
     "inform"
    ]
@@ -203,8 +197,8 @@
    "text": "propose private wine tasting and philosophical conversation next week",
    "status": "covered",
    "matched_symbols": [
-    "wine",
-    "propose"
+    "propose",
+    "entity_drinks"
    ]
   },
   {
@@ -213,21 +207,16 @@
    "text": "generate a third playboy response variation",
    "status": "covered",
    "matched_symbols": [
-    "propose"
+    "propose",
+    "respond"
    ]
   },
   {
    "id": "n20",
    "kind": "claim",
    "text": "rely on charm and good looks during dating app downtime",
-   "status": "covered",
-   "matched_symbols": [
-    "enables",
-    "outcome",
-    "leads_to",
-    "ongoing",
-    "temporal_context"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n21",
@@ -235,9 +224,7 @@
    "text": "spent the weekend on an adventure with friends",
    "status": "covered",
    "matched_symbols": [
-    "ongoing",
-    "outcome",
-    "leads_to"
+    "role_user"
    ]
   },
   {
@@ -249,7 +236,7 @@
     "acknowledge",
     "apologize",
     "ask",
-    "offer",
+    "respond",
     "role_agent",
     "propose"
    ]
@@ -260,7 +247,8 @@
    "text": "propose dinner at a top restaurant and speakeasy drinks next week",
    "status": "covered",
    "matched_symbols": [
-    "propose"
+    "propose",
+    "entity_drinks"
    ]
   }
  ],
@@ -271,7 +259,6 @@
   "ENTRYPOINT",
   "REPLY_TO",
   "SPEAKER",
-  "TRUE",
   "TURN",
   "USER",
   "UTTER",
@@ -279,31 +266,24 @@
   "activity",
   "apologize",
   "ask",
-  "character",
-  "constraint_budget_limited",
-  "enables",
-  "in",
+  "entity_drinks",
   "inform",
-  "leads_to",
-  "meets_needs",
-  "object_label",
   "occurred",
-  "offer",
-  "ongoing",
-  "outcome",
   "platform_label",
   "propose",
   "requirement",
+  "respond",
   "role_agent",
-  "similarity",
+  "role_user",
   "subject",
   "target",
-  "temporal_context",
+  "time_point",
   "tone_silly",
-  "topic_pickup_lines",
-  "wine"
+  "topic_pickup_lines"
  ],
- "unknown_symbols_in_head_position": [],
+ "unknown_symbols_in_head_position": [
+  "persona"
+ ],
  "unbound_attribute_values": [
   "tone_flirty",
   "tone_funny",
@@ -317,5 +297,7 @@
  "retired_symbols_used": [],
  "label_preserved": [
   "n6"
- ]
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

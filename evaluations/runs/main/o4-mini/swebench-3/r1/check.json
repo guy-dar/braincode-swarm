@@ -4,7 +4,7 @@
    "id": "n1",
    "kind": "claim",
    "text": "Importing ABCs from collections instead of collections.abc is deprecated and will stop working in Python 3.8",
-   "status": "unresolved",
+   "status": "declared",
    "matched_symbols": []
   },
   {
@@ -14,6 +14,7 @@
    "status": "covered",
    "matched_symbols": [
     "warning",
+    "inform",
     "run_tests"
    ]
   },
@@ -49,72 +50,80 @@
    "id": "n6",
    "kind": "object",
    "text": "Python version 3.7.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n7",
    "kind": "object",
    "text": "google-api-core package version 1.5.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n8",
    "kind": "object",
    "text": "google-auth package version 1.5.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n9",
    "kind": "object",
    "text": "google-cloud-core package version 0.28.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n10",
    "kind": "object",
    "text": "google-cloud-storage package version 1.13.0",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n11",
    "kind": "object",
    "text": "google-resumable-media package version 0.3.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n12",
    "kind": "object",
    "text": "googleapis-common-protos package version 1.5.5",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
    "id": "n13",
    "kind": "object",
    "text": "pytest package version 3.9.1",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
@@ -132,8 +141,8 @@
    "text": "Add import statement from google.protobuf.pyext import _message",
    "status": "covered",
    "matched_symbols": [
-    "warning",
-    "chg_modify_code"
+    "statement",
+    "warning"
    ]
   },
   {
@@ -149,8 +158,9 @@
    "id": "n17",
    "kind": "action",
    "text": "Install pytest version 3.9.1 using pip",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
+    "software_version",
     "platform_label"
    ]
   },
@@ -158,9 +168,10 @@
    "id": "n18",
    "kind": "object",
    "text": "pip package installer",
-   "status": "label-preserved",
+   "status": "covered",
    "matched_symbols": [
-    "platform_label"
+    "platform_label",
+    "software_version"
    ]
   },
   {
@@ -178,7 +189,9 @@
    "text": "Pytest prints the collections ABCs DeprecationWarning on the import line",
    "status": "covered",
    "matched_symbols": [
-    "warning"
+    "warning",
+    "outcome",
+    "exclude"
    ]
   },
   {
@@ -187,7 +200,8 @@
    "text": "Warning originates from google/protobuf/internal/api_implementation.py at line 154",
    "status": "covered",
    "matched_symbols": [
-    "warning"
+    "warning",
+    "outcome"
    ]
   },
   {
@@ -197,6 +211,7 @@
    "status": "covered",
    "matched_symbols": [
     "warning",
+    "exclude",
     "cli_command"
    ]
   },
@@ -207,100 +222,82 @@
    "status": "covered",
    "matched_symbols": [
     "warning",
-    "run_tests"
+    "run_tests",
+    "outcome"
    ]
   },
   {
    "id": "n24",
    "kind": "action",
    "text": "Modify api_core/google/api_core/protobuf_helpers.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n25",
    "kind": "action",
    "text": "Modify bigquery/google/cloud/bigquery/client.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n26",
    "kind": "action",
    "text": "Modify bigquery/google/cloud/bigquery/dbapi/_helpers.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n27",
    "kind": "action",
    "text": "Modify bigquery/google/cloud/bigquery/dbapi/cursor.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n28",
    "kind": "action",
    "text": "Modify core/google/cloud/iam.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n29",
    "kind": "action",
    "text": "Modify firestore/google/cloud/firestore_v1beta1/_helpers.py",
-   "status": "covered",
-   "matched_symbols": [
-    "chg_modify_code",
-    "modify_code"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   }
  ],
- "unresolved": [
-  "n1"
- ],
+ "unresolved": [],
  "used_symbols": [
   "ACTION",
   "AGENT",
   "CONVO",
   "ENTRYPOINT",
-  "REF",
   "SPEAKER",
-  "STRING",
+  "TRUE",
   "TURN",
   "USER",
   "UTTER",
-  "chg_modify_code",
   "cli_command",
-  "in",
-  "modify_code",
-  "on",
+  "exclude",
+  "inform",
+  "outcome",
   "platform_label",
   "run_tests",
+  "software_version",
+  "statement",
   "target",
   "warning"
  ],
  "unknown_symbols_in_head_position": [
-  "content",
-  "create_file",
-  "install_package"
+  "code_location",
+  "deprecation_notice"
  ],
- "unbound_attribute_values": [],
+ "unbound_attribute_values": [
+  "deprecation_warning_detail_2"
+ ],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {},
  "string_literals_as_operation_arguments": [],
@@ -310,16 +307,8 @@
  "label_preserved": [
   "n4",
   "n5",
-  "n6",
-  "n7",
-  "n8",
-  "n9",
-  "n10",
-  "n11",
-  "n12",
-  "n13",
-  "n16",
-  "n17",
-  "n18"
- ]
+  "n16"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

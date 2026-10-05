@@ -1,0 +1,3996 @@
+{
+ "translator_id": "time_arithmetic-3879",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "Define variables X, Y, and Z as components of the answer to Question 1.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7146,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5011,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4775,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.47,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.3496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3282,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.2858,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.2853,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.2829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.2665,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The match was moved forward by 18 weeks.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7097,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.4795,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3674,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.349,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.349,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3334,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.307,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.3053,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/escalation",
+     "symbol": "escalation",
+     "kind": "claim_relation",
+     "score": 0.2928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.2891,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.2857,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2789,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Duration of 18 weeks.",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n3",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7969,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.7277,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.6097,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.5656,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.5496,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.5424,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.542,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5395,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4718,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3284,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3265,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The original date for the match was 25-12-2021.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.7069,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.688,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3967,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_macbook_pro_2017",
+     "symbol": "topic_macbook_pro_2017",
+     "kind": "value",
+     "score": 0.3694,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.3692,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3581,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred",
+     "symbol": "occurred",
+     "kind": "claim_relation",
+     "score": 0.357,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Original date of 25-12-2021.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n5",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.7799,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.7626,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7234,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7037,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.7031,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.6587,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.6531,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4725,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4469,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.4412,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_macbook_pro_2017",
+     "symbol": "topic_macbook_pro_2017",
+     "kind": "value",
+     "score": 0.4359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4358,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the new date of the match.",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n6",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.6742,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.6569,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4392,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4298,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3894,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3825,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the date answer as mm/dd/yyyy.",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n7",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.7896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.7787,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.7422,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.7014,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.6678,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6676,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.6658,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.6543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.651,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6382,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_pdf",
+     "symbol": "format_pdf",
+     "kind": "value",
+     "score": 0.6204,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define X' as X plus 26.",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n8",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.6717,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.5173,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4996,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3333,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.3208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.3175,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.2976,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_character",
+     "symbol": "unit_character",
+     "kind": "value",
+     "score": 0.2884,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/lexical_label",
+     "symbol": "lexical_label",
+     "kind": "constructor",
+     "score": 0.2826,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.2675,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.2594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.2579,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.2506,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define variable P as the answer to Question 2.",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n9",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6887,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4845,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4824,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.4483,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3494,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.2854,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.2677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.2673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.2596,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.2586,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Today is Monday.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n10",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7112,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6927,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.6733,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6724,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6713,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.6597,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.6278,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6139,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.6111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_urgent",
+     "symbol": "tone_urgent",
+     "kind": "value",
+     "score": 0.5972,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the day of the week X' days before Monday.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n11",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.763,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.744,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6915,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.5006,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4433,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3636,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.349,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.271,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.2632,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "X' days before Monday.",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n12",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7525,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.7305,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.5536,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5514,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.5055,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5054,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4914,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4758,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4756,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3388,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3155,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3081,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.2919,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the answer as a day of the week.",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n13",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.8264,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7763,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5581,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4759,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4471,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3973,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3816,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3591,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.3127,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.2787,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.2772,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define Y' as Y minus 9.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n14",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6801,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.4193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.4003,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3971,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3942,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3864,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/under",
+     "symbol": "under",
+     "kind": "value",
+     "score": 0.3512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.338,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3361,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.3318,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define P' as the day of the week 24 days after P.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n15",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.742,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7162,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6906,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.5243,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4461,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3799,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3572,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3214,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2817,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.2812,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2767,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "24 days after P.",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n16",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7439,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.5851,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.546,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.5376,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5213,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4977,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4943,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4806,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.4048,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3913,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3519,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3295,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3215,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define variable Q as the answer to Question 3.",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n17",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6766,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4795,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.477,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.4308,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/c",
+     "symbol": "example_c_existing_constraint_symbol_becomes_a_typed_construction",
+     "kind": "example",
+     "score": 0.4006,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3366,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.3352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.2996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.2923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/dialogue",
+     "symbol": "dialogue",
+     "kind": "constructor",
+     "score": 0.287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/topic-value",
+     "symbol": "rule_category_topic_value",
+     "kind": "category_rule",
+     "score": 0.2531,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The current time is 10:26 AM on P'.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n18",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.751,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4488,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4466,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4399,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4307,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4266,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4214,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4171,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4035,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the day of the week Y' hours from 10:26 AM on P'.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n19",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7776,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7708,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7474,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.7267,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4747,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4597,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2927,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.2762,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.2708,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Y' hours from 10:26 AM on P'.",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n20",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7609,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5725,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5603,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.5414,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5387,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.535,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.5292,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4877,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4762,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3913,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3719,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3664,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Reply with 'unanswerable' if information is insufficient or multiple answers exist.",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n21",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.667,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.6485,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.5925,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/constraint-value",
+     "symbol": "rule_category_constraint_value",
+     "kind": "category_rule",
+     "score": 0.5563,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4288,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3843,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3628,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.361,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.3496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3364,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3291,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.3287,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define Z' as Z minus 1990.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n22",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6605,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.4273,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4022,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.3968,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.3883,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.3842,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/measure",
+     "symbol": "measure",
+     "kind": "constructor",
+     "score": 0.3746,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/eastern_cape",
+     "symbol": "eastern_cape",
+     "kind": "value",
+     "score": 0.3652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3568,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3504,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Define Q' as the day of the week 49 days after Q.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n23",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7345,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7239,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6878,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.5136,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4289,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3432,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3333,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3184,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3175,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/greeting",
+     "symbol": "greeting",
+     "kind": "constructor",
+     "score": 0.2979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2936,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.2771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2644,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "49 days after Q.",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n24",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.7416,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.5643,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5501,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.5357,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5215,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4987,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4923,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.489,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3579,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3289,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3107,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Solve Question 4 using the calculated values.",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n25",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6774,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6315,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.4763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.4312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4118,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4044,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3861,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3598,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.3466,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.3391,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "A text was received before noon on Q' stating the deadline is in Z' hours.",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n26",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.6868,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3999,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3363,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.333,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3202,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.2632,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Before noon on Q', and a duration of Z' hours.",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n27",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.7559,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.5679,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.5603,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.5592,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.5419,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.5243,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.5239,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.5199,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5117,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.5046,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4931,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.4923,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.383,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Calculate the possible days of the week for the deadline.",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n28",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.7847,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.735,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6611,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.5216,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3944,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3648,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.3639,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.3632,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3438,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/tone-value",
+     "symbol": "rule_category_tone_value",
+     "kind": "category_rule",
+     "score": 0.3095,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Format the answer as an alphabetically ordered list.",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n29",
+   "context": "Let the answer to Question1 be X/Y/Z. Question1: The match was moved forward by 18 weeks. If the original date for the match was 25-12-2021, when will the match take place? Your answer should be the date in the mm/dd/yyyy format (for example, 06/23/2021). Let X' = X + 26. Let the answer to Question2 be P. Question2: If today is Monday, what day of the week was it X' days before now? Your answer should be the day of the week (for example, Sunday). Let Y' = Y - 9 and let P' be the day of the week 24 days after P. Let the answer to Question3 be Q. Question3: If it is 10:26 AM on P' , what is the ",
+   "candidates": [
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.6985,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6868,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.6456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6079,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.6059,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.439,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4053,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_order_vs_assemble_plan",
+     "symbol": "entity_order_vs_assemble_plan",
+     "kind": "value",
+     "score": 0.3899,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3677,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.3541,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3531,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3466,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -3,21 +3,42 @@
  "item": "swebench-3",
  "dataset": "swebench",
  "run": 3,
- "status": "success",
+ "status": "failed",
  "problem": null,
- "attempts": 1,
- "duration_s": 389.5,
+ "attempts": 2,
+ "duration_s": 911.8,
  "usage": {
-  "calls": 18,
-  "input": 229,
-  "cacheRead": 890466,
-  "cacheWrite": 23010,
-  "output": 12216,
-  "reasoning": 5529,
-  "compactions": 0,
+  "calls": 54,
+  "input": 668,
+  "cacheRead": 2742430,
+  "cacheWrite": 274812,
+  "output": 31535,
+  "reasoning": 12002,
+  "compactions": 2,
   "truncated_tool_results": 1
  },
- "cost_usd": 0.1791,
+ "cost_usd": 0.7761,
  "setup": "v2",
- "timeout_s": 2400
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "code_file_operation",
+    "dimension": "constructor"
+   },
+   {
+    "term": "package_installation",
+    "dimension": "constructor"
+   },
+   {
+    "term": "not_reproducible",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
 }

@@ -1,0 +1,1 @@
+The answer is: The dinosaur enjoys the company of the husky.

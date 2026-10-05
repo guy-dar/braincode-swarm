@@ -1,0 +1,46 @@
+{
+ "model": "claude-sonnet-5.5",
+ "item": "paths-1",
+ "dataset": "paths",
+ "run": 2,
+ "status": "error",
+ "problem": "failed translation rejected: 1 sentence-length quoted literal(s) carry natural language instead of encoding it: Do you have a map? I just got lost in your eyes.",
+ "attempts": 1,
+ "duration_s": 306.9,
+ "usage": {
+  "calls": 5,
+  "input": 12,
+  "cacheRead": 221982,
+  "cacheWrite": 57385,
+  "output": 9502,
+  "reasoning": 2365,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.2829,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "tone_funny",
+    "dimension": "member-family"
+   },
+   {
+    "term": "persona",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "1 sentence-length quoted literal(s) carry natural language instead of encoding it: Do you have a map? I just got lost in your eyes."
+  ]
+ }
+}

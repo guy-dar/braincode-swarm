@@ -18,10 +18,8 @@
    "id": "n3",
    "kind": "temporal",
    "text": "maintain ongoing reconciliation over time",
-   "status": "covered",
-   "matched_symbols": [
-    "ongoing"
-   ]
+   "status": "unresolved",
+   "matched_symbols": []
   },
   {
    "id": "n4",
@@ -30,25 +28,24 @@
    "status": "covered",
    "matched_symbols": [
     "ask",
-    "inform"
+    "role_respondent"
    ]
   },
   {
    "id": "n5",
    "kind": "object",
    "text": "Zuora subscription management platform",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
   },
   {
    "id": "n6",
    "kind": "object",
    "text": "Zuora reporting module",
-   "status": "covered",
-   "matched_symbols": [
-    "provides",
-    "include"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n7",
@@ -56,15 +53,16 @@
    "text": "Zuora reconciliation involves syncing Zuora AR and deferred revenue with financial statements",
    "status": "covered",
    "matched_symbols": [
+    "outcome",
     "involves",
-    "ongoing"
+    "enables"
    ]
   },
   {
    "id": "n8",
    "kind": "object",
    "text": "Zuora Accounts Receivable Aging Report",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
@@ -73,14 +71,15 @@
    "text": "AR Aging report categorizes unpaid invoices by age to spot discrepancies",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome",
+    "enables"
    ]
   },
   {
    "id": "n10",
    "kind": "object",
    "text": "Zuora Deferred Revenue Schedule report",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
@@ -89,15 +88,17 @@
    "text": "Deferred Revenue Schedule shows deferred balances and recognition entries for reconciliation",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome"
    ]
   },
   {
    "id": "n12",
    "kind": "object",
    "text": "Zuora Revenue Reports",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "outcome"
+   ]
   },
   {
    "id": "n13",
@@ -105,7 +106,7 @@
    "text": "regular review and prompt investigation of report discrepancies keeps accounts reconciled",
    "status": "covered",
    "matched_symbols": [
-    "ongoing"
+    "outcome"
    ]
   },
   {
@@ -114,37 +115,35 @@
    "text": "ask whether a custom report with specified columns can be created in Zuora",
    "status": "covered",
    "matched_symbols": [
-    "ask",
-    "inform",
-    "include"
+    "ask"
    ]
   },
   {
    "id": "n15",
    "kind": "object",
    "text": "usage data and adjustment records",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
    "id": "n16",
    "kind": "object",
    "text": "school entity with parent hierarchy",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
    "id": "n17",
    "kind": "object",
    "text": "date of usage and date billed",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
    "id": "n18",
    "kind": "object",
    "text": "invoice number and amount columns",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   },
   {
@@ -153,18 +152,16 @@
    "text": "custom report fetching requested usage, school, invoice, and amount fields can be created",
    "status": "covered",
    "matched_symbols": [
-    "provides",
-    "include"
+    "outcome",
+    "enables"
    ]
   },
   {
    "id": "n20",
    "kind": "action",
    "text": "navigate to Zuora reporting section and create new custom report",
-   "status": "covered",
-   "matched_symbols": [
-    "include"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n21",
@@ -184,29 +181,34 @@
    "id": "n23",
    "kind": "action",
    "text": "include Account data source to retrieve parent hierarchy fields",
-   "status": "covered",
-   "matched_symbols": [
-    "include"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n24",
    "kind": "action",
    "text": "apply filters, configure groupings, and execute report",
-   "status": "covered",
-   "matched_symbols": [
-    "include"
-   ]
+   "status": "declared",
+   "matched_symbols": []
   },
   {
    "id": "n25",
    "kind": "temporal",
    "text": "schedule report to run at recurring intervals",
-   "status": "declared",
+   "status": "unresolved",
    "matched_symbols": []
   }
  ],
- "unresolved": [],
+ "unresolved": [
+  "n3",
+  "n8",
+  "n10",
+  "n15",
+  "n16",
+  "n17",
+  "n18",
+  "n25"
+ ],
  "used_symbols": [
   "AGENT",
   "CONVO",
@@ -216,23 +218,30 @@
   "USER",
   "UTTER",
   "ask",
-  "click",
-  "important",
-  "in",
-  "include",
-  "inform",
+  "enables",
   "involves",
-  "on",
-  "ongoing",
-  "provides"
+  "outcome",
+  "platform_label",
+  "role_respondent",
+  "subject",
+  "target"
  ],
- "unknown_symbols_in_head_position": [],
- "unbound_attribute_values": [],
+ "unknown_symbols_in_head_position": [
+  "account_reconciliation",
+  "custom_report_request"
+ ],
+ "unbound_attribute_values": [
+  "ability_to_reconcile_financial_records"
+ ],
  "deprecated_symbols_used": [],
  "claimed_but_absent": {},
  "string_literals_as_operation_arguments": [],
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [
+  "n5"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

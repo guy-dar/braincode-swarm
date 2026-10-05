@@ -8,7 +8,7 @@ Coverage      coverage.md/.csv, coverage_radar_shared.png (all models, the
 Determinism   determinism.md/.csv, js_heatmap_symbols.png, js_heatmap_types.png,
               self_divergence.png, self_divergence_by_dataset.png,
               symbol_type_mix.png, determinism_vs_coverage.png
-Expressivity  expressivity.md/.csv, expressivity.png (Gemini models)
+Expressivity  expressivity.md/.csv, expressivity.png (Gemini models and o4-mini)
 summary.json  everything above as numbers (qualitative.py reads it)
 
 Every figure has a table view (the .md/.csv next to it). Color = company
@@ -45,6 +45,14 @@ BLUES = ["#f0f6fe", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184
 PROPOSED_RE = re.compile(r"#\s*PROPOSED:\s*(S\d+)")
 
 
+# Companies left out of every figure (tables keep them); set by --plot-hide-companies.
+PLOT_HIDE_COMPANIES = set()
+
+
+def plotted(models: list) -> list:
+    return [m for m in models if m["company"] not in PLOT_HIDE_COMPANIES]
+
+
 def style():
     plt.rcParams.update({
         "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "savefig.facecolor": SURFACE,
@@ -64,8 +72,19 @@ def line_style(model: dict) -> dict:
 
 
 def save(fig, path: Path):
-    fig.savefig(path, dpi=150, bbox_inches="tight")
-    plt.close(fig)
+    """Save a figure; a PNG held open by a viewer (Windows locks it) is retried,
+    then reported instead of aborting the whole analysis."""
+    import time
+    try:
+        for attempt in range(5):
+            try:
+                fig.savefig(path, dpi=150, bbox_inches="tight")
+                return
+            except OSError:
+                time.sleep(1.5)
+        print(f"WARNING: could not write {path.name} (open in a viewer?) - close it and rerun", file=sys.stderr)
+    finally:
+        plt.close(fig)
 
 
 # ---------------------------------------------------------------------- loading
@@ -137,6 +156,7 @@ def coverage(data: dict, out: Path) -> dict:
                 "company": m["company"], "model": m["label"], "tier": m["tier"], "items": scope,
                 "runs": len(rs), "success_rate": rate(rs), "failed_rate": rate(rs, "failed"),
                 "error_rate": rate(rs, "error"),
+                "rejected_successes": sum(bool(r.get("regated")) for r in rs),
                 "missing_symbols_per_failed": float(np.mean(failed)) if failed else None,
                 "mean_minutes": float(np.mean([r.get("duration_s", 0) for r in rs])) / 60 if rs else None,
                 "cost_usd": sum(costs) if costs else None,
@@ -147,11 +167,14 @@ def coverage(data: dict, out: Path) -> dict:
              "Success rate (higher is better) and mean number of missing glossary symbols per failed translation "
              "(the distinct symbols its suggestions add). `shared` = the items every model translated; `all` = the "
              "full sample (Gemini models).", "",
-             "| company | model | tier | items | runs | success | failed | error | missing symbols / failed | "
-             "min / run | cost $ |", "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|"]
+             "`rejected` = claimed successes and declared failures counted as errors because they carry source text instead of encoding it "
+             "(needs marked opaque, or quoted strings of 8+ words outside names/titles; spec §13). They are included in "
+             "`error` and left out of the determinism and expressivity analyses.", "",
+             "| company | model | tier | items | runs | success | failed | error | rejected | missing symbols / failed | "
+             "min / run | cost $ |", "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for r in rows:
         lines.append(f"| {r['company']} | {r['model']} | {r['tier']} | {r['items']} | {r['runs']} | "
-                     f"{fmt(r['success_rate'])} | {fmt(r['failed_rate'])} | {fmt(r['error_rate'])} | "
+                     f"{fmt(r['success_rate'])} | {fmt(r['failed_rate'])} | {fmt(r['error_rate'])} | {r['rejected_successes']} | "
                      f"{fmt(r['missing_symbols_per_failed'], 1)} | {fmt(r['mean_minutes'], 1)} | "
                      f"{fmt(r['cost_usd'])} |")
     lines += ["", "Success rate per dataset:", "",
@@ -160,7 +183,7 @@ def coverage(data: dict, out: Path) -> dict:
     for r in rows:
         lines.append(f"| {r['model']} | {r['items']} | " + " | ".join(fmt(r[f'success_{d}']) for d in DATASETS) + " |")
     (out / "coverage.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    radar(data, [m for m in data["models"]], "shared", out / "coverage_radar_shared.png",
+    radar(data, plotted(data["models"]), "shared", out / "coverage_radar_shared.png",
           "Translation success rate per dataset (items shared by all models)")
     gem = [m for m in data["models"] if m["sample"] == "all"]
     if gem:
@@ -267,12 +290,17 @@ def determinism(data: dict, out: Path) -> dict:
                      f"{fmt(r['self_js_symbols'], 3)} ± {fmt(r['self_js_symbols_sd'], 3)} | "
                      f"{fmt(r['self_js_types'], 3)} | {fmt(r['identical_pair_share'])} |")
     (out / "determinism.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    labels = [m["label"] for m in models]
-    heatmap(js_sym, labels, out / "js_heatmap_symbols.png", "JS divergence between models: symbols used")
-    heatmap(js_typ, labels, out / "js_heatmap_types.png", "JS divergence between models: symbol types used")
-    self_bars(self_rows, models, out / "self_divergence.png")
-    self_by_dataset(self_rows, models, out / "self_divergence_by_dataset.png")
-    type_mix(pooled, models, out / "symbol_type_mix.png")
+    shown = plotted(models)
+    idx = [models.index(m) for m in shown]
+    labels = [m["label"] for m in shown]
+    heatmap(js_sym[np.ix_(idx, idx)], labels, out / "js_heatmap_symbols.png",
+            "JS divergence between models: symbols used")
+    heatmap(js_typ[np.ix_(idx, idx)], labels, out / "js_heatmap_types.png",
+            "JS divergence between models: symbol types used")
+    shown_rows = [r for r in self_rows if any(m["name"] == r["name"] for m in shown)]
+    self_bars(shown_rows, shown, out / "self_divergence.png")
+    self_by_dataset(shown_rows, shown, out / "self_divergence_by_dataset.png")
+    type_mix(pooled, models, out / "symbol_type_mix.png")   # every model, OpenAI included
     return {"pairs": pairs, "self": self_rows,
             "pooled_top_symbols": {by_name[n]["label"]: pooled[n][0].most_common(25) for n in names},
             "pooled_types": {by_name[n]["label"]: dict(pooled[n][1]) for n in names}}
@@ -372,9 +400,17 @@ def det_vs_cov(cov, det, models, path):
     for m in models:
         c = next((r for r in cov["rows"] if r["model"] == m["label"] and r["items"] == "shared"), None)
         s = next((r for r in det["self"] if r["name"] == m["name"] and r["items"] == "shared"), None)
-        if not c or not s or s["self_js_symbols"] is None:
+        if not c:
             continue
         st = line_style(m)
+        if not s or s["self_js_symbols"] is None:
+            # no item with 2+ usable runs (e.g. a 1-run probe): no y value, so a
+            # vertical line at its success rate rather than an invented point
+            ax.axvline(c["success_rate"], color=st["color"], linestyle=(0, (4, 2)), linewidth=1.5, zorder=2)
+            ax.annotate(f"{m['label']}: no same-model value\n(1 usable run per item)", (c["success_rate"], 0.98),
+                        xycoords=("data", "axes fraction"), xytext=(6, 0), textcoords="offset points",
+                        va="top", fontsize=8.5, color=INK_2)
+            continue
         ax.scatter(c["success_rate"], s["self_js_symbols"], s=70, color=st["markerfacecolor"],
                    edgecolors=st["color"], linewidths=2, zorder=3)
         ax.annotate(m["label"], (c["success_rate"], s["self_js_symbols"]), xytext=(6, 4), textcoords="offset points",
@@ -388,22 +424,36 @@ def det_vs_cov(cov, det, models, path):
 
 # ---------------------------------------------------------------------- expressivity
 
+def quoted_share(run: dict) -> float:
+    """Share of the BrainCode's characters inside quoted string literals: text
+    carried verbatim rather than encoded in symbols (a round trip of it is a copy)."""
+    code = metrics.braincode_code((run["dir"] / "translation.md").read_text(encoding="utf-8"))
+    code = "\n".join(line.split("#", 1)[0] for line in code.splitlines())
+    return sum(len(q) for q in metrics.QUOTED_RE.findall(code)) / max(1, len(code))
+
+
 def expressivity(data: dict, out: Path) -> dict:
     rows = []
     for m in data["models"]:
-        rs = [r for r in data["runs"] if r["model"] == m["name"] and r.get("back")]
+        # errors (incl. successes the gate rejected on re-check) are left out
+        rs = [r for r in data["runs"] if r["model"] == m["name"] and r.get("back")
+              and r["status"] in ("success", "failed")]
         if not rs:
             continue
-        for ds in (None, *DATASETS):
-            sub = [r for r in rs if ds is None or r["dataset"] == ds]
+        own = "all" if m["sample"] == "all" else "shared"
+        scopes = [(own, ds) for ds in (None, *DATASETS)] + ([("shared", None)] if own == "all" else [])
+        for scope, ds in scopes:
+            sub = [r for r in rs if (ds is None or r["dataset"] == ds) and (scope == "all" or r["shared"])]
             if not sub:
                 continue
-            rows.append({"model": m["label"], "dataset": DS_LABELS[ds] if ds else "all", "pairs": len(sub),
+            rows.append({"model": m["label"], "items": scope, "dataset": DS_LABELS[ds] if ds else "all",
+                         "pairs": len(sub),
                          "bleu": float(np.mean([r["back"]["bleu"] for r in sub])),
                          "corpus_bleu": metrics.corpus_bleu([r["back"]["original"] for r in sub],
                                                             [r["back"]["reconstruction"] for r in sub]),
                          "rouge_l": float(np.mean([r["back"]["rouge_l"] for r in sub])),
                          "word_lev_sim": float(np.mean([r["back"]["word_lev_sim"] for r in sub])),
+                         "quoted_share": float(np.mean([quoted_share(r) for r in sub])),
                          "from_success": sum(r["status"] == "success" for r in sub)})
     if not rows:
         return {"rows": []}
@@ -412,17 +462,26 @@ def expressivity(data: dict, out: Path) -> dict:
              "**Every score is in [0, 1] and higher = input and output more similar = better.** BLEU = mean sentence "
              "BLEU (and corpus BLEU); ROUGE-L = longest-common-subsequence F1; word-Levenshtein similarity = "
              "1 − word edit distance / longer length. One forward translation per item (its first usable run) is back-translated by the same model "
-             "without seeing the original.", "",
-             "| model | dataset | pairs | BLEU ↑ | corpus BLEU ↑ | ROUGE-L ↑ | word-Levenshtein similarity ↑ |",
-             "|---|---|---:|---:|---:|---:|---:|"]
-    for r in rows:
-        lines.append(f"| {r['model']} | {r['dataset']} | {r['pairs']} | {fmt(r['bleu'], 3)} | "
-                     f"{fmt(r['corpus_bleu'], 3)} | {fmt(r['rouge_l'], 3)} | {fmt(r['word_lev_sim'], 3)} |")
+             "without seeing the original: the back-translator gets only the BrainCode block of the translation (not "
+             "the translation report), and the scores compare only the original item text (input) with the "
+             "reconstructed text (output), turn markers removed.", "",
+             "`items`: `all` = the model's full sample (Gemini: 48 items); `shared` = the 18 items every model "
+             "translated (use these rows to compare models; o4-mini has back-translations only where its forward "
+             "run produced a usable translation). Per-dataset rows and the figure use each model's full sample.", "",
+             "`quoted` = share of the BrainCode's characters inside quoted string literals (`content=\"…\"` and "
+             "other literals). Text carried verbatim in strings comes back almost unchanged, so a high score with a "
+             "high quoted share measures copying, not how much meaning the symbols encode.", "",
+             "| model | items | dataset | pairs | BLEU ↑ | corpus BLEU ↑ | ROUGE-L ↑ | word-Levenshtein similarity ↑ | quoted |",
+             "|---|---|---|---:|---:|---:|---:|---:|---:|"]
+    for r in sorted(rows, key=lambda r: (r["dataset"] != "all", r["items"] != "shared")):
+        lines.append(f"| {r['model']} | {r['items']} | {r['dataset']} | {r['pairs']} | {fmt(r['bleu'], 3)} | "
+                     f"{fmt(r['corpus_bleu'], 3)} | {fmt(r['rouge_l'], 3)} | {fmt(r['word_lev_sim'], 3)} | "
+                     f"{fmt(r['quoted_share'])} |")
     (out / "expressivity.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     fig, axes = plt.subplots(1, 3, figsize=(13, 4.3), sharey=True)
     fig.suptitle("Round-trip similarity per dataset (higher = more similar = better)", x=0.02, ha="left",
                  fontsize=12, fontweight="bold", color=INK)
-    models = [m for m in data["models"] if any(r["model"] == m["label"] for r in rows)]
+    models = [m for m in plotted(data["models"]) if any(r["model"] == m["label"] for r in rows)]
     width = 0.8 / max(1, len(models))
     for ax, key, title in zip(axes, ("bleu", "rouge_l", "word_lev_sim"),
                               ("BLEU", "ROUGE-L", "Word-Levenshtein similarity")):
@@ -437,7 +496,8 @@ def expressivity(data: dict, out: Path) -> dict:
         ax.set_title(title, loc="left")
         ax.set_ylim(0, 1)
     axes[0].set_ylabel("Score (0-1, higher = better)")
-    axes[0].legend(loc="upper left")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=len(labels), bbox_to_anchor=(0.5, -0.16))
     save(fig, out / "expressivity.png")
     return {"rows": rows}
 
@@ -491,7 +551,10 @@ def main(argv=None):
     p.add_argument("--only", default="coverage,determinism,expressivity,failures",
                    help="comma-separated analyses to run (summary.json only when all run)")
     p.add_argument("--out", default=None, help="results subfolder (default: the run id)")
+    p.add_argument("--plot-hide-companies", default="",
+                   help="comma-separated companies left out of every figure (tables keep them)")
     args = p.parse_args(argv)
+    PLOT_HIDE_COMPANIES.update(filter(None, args.plot_hide_companies.split(",")))
     only = set(args.only.split(","))
     sys.path.insert(0, str(EVAL_DIR.parent / "swarm"))
     style()
@@ -501,7 +564,7 @@ def main(argv=None):
     cov = coverage(data, out) if {"coverage", "determinism"} & only else None
     det = determinism(data, out) if "determinism" in only else None
     if cov and det:
-        det_vs_cov(cov, det, data["models"], out / "determinism_vs_coverage.png")
+        det_vs_cov(cov, det, plotted(data["models"]), out / "determinism_vs_coverage.png")
     exp = expressivity(data, out) if "expressivity" in only else None
     fails = failures(data, out) if "failures" in only else None
     if not (cov and det and exp and fails):

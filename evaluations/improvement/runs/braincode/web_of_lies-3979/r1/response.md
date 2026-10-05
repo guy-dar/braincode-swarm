@@ -1,0 +1,3 @@
+The task written in BrainCode is asking the system to ask the question "What is the truthfulness of a person?" 101 times, with each question having a different target. However, the target for each question is the same, which is a statement with a property of truthfulness and a subject of person. The system is essentially asking the same question 101 times with different handles for the result.
+
+The answer is: The system is asking 101 times with the same question and different handles for the result.

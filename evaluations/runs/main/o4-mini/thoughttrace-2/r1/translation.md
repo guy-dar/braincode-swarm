@@ -1,75 +1,73 @@
 Status: failed
-Mode: TRACE
+Mode: REQUEST
 
 ## Suggested translation
 
 ```braincode
-MODE TRACE
+MODE REQUEST
 ENTRYPOINT Conversation
 CONVO Conversation {
   TURN t1 SPEAKER=USER {
-    TERM activity(verb="plan", actor="user", object="trip") -> plan_trip_2 : TERM
+    UTTER inform(content="planning a trip")
   }
   TURN t2 SPEAKER=AGENT {
-    UTTER ask(target="First, tell me a bit more so I can help you properly:")
-    UTTER ask(target="Where do you want to go?")
-    UTTER ask(target="When are you thinking of traveling?")
-    UTTER ask(target="How many people?")
-    UTTER ask(target="What's your vibe?")
-    UTTER ask(target="What's your rough budget?")
+    UTTER ask(content="Where do you want to go?")
+    UTTER ask(content="When are you thinking of traveling?")
+    UTTER ask(content="How many people?")
+    UTTER ask(content="What's your vibe?")
+    UTTER ask(content="What's your rough budget?")
   }
   TURN t3 SPEAKER=USER {
-    TERM activity(verb="travel", actor="user", location=country::IT) -> travel_2 : TERM
-    TERM time_point(date="early July this year") -> time_point_2 : TERM
-    TERM group_size(count=3, group=role_adults) -> group_size_2 : TERM
-    TERM requirement(property="vibe", value="adventure") -> requirement_2 : TERM
-    TERM requirement(property="budget_per_person", value=measure(amount=5000, unit=currency::USD)) -> requirement_3 : TERM
-    TERM requirement(property="max_duration_weeks", value=2) -> requirement_4 : TERM
+    TERM travel_intent(destination=country::IT, city=object_label::rome, time="early July 2025", companions=[role_adults], style="adventure") -> travel_intent_2 : TERM # PROPOSED: S2
+    UTTER respond(target=travel_intent_2)
+    TERM requirement(property="budget", value=measure(amount=5000, unit=currency::USD)) -> budget_req_2 : TERM
+    UTTER respond(target=budget_req_2)
+    TERM at_most(measure(amount=2, unit=unit_week)) -> duration_limit_2 : TERM
+    UTTER respond(target=duration_limit_2)
   }
   TURN t4 SPEAKER=AGENT {
-    TERM itinerary_summary(duration=duration(amount=2, unit=unit_week),
-                           regions=[country::IT, country::IT],
-                           group=group_size_2,
-                           budget=measure(amount=5000, unit=currency::USD),
-                           style="adventure") -> itinerary_summary_2 : TERM  # PROPOSED: S1
-    UTTER propose(target=itinerary_summary_2)                                                  # PROPOSED: S1
+    TERM itinerary_summary(destination=[travel_intent_2], duration=duration_limit_2, party_size=travel_intent_2.companions, budget=budget_req_2, style=travel_intent_2.style) -> itinerary_summary_2 : TERM # PROPOSED: S1
+    UTTER propose(target=itinerary_summary_2)
   }
 }
 ```
 
 ## Needs coverage
 
-| need | kind        | expressed by                            | status    |
-|------|-------------|-----------------------------------------|-----------|
-| n1   | action      | activity(verb="plan",…)                 | covered   |
-| n2   | speech_act  | ask                                     | covered   |
-| n3   | action      | activity(verb="travel",…)               | covered   |
-| n4   | object      | country::IT                             | covered   |
-| n5   | temporal    | time_point                              | covered   |
-| n6   | object      | group_size                              | covered   |
-| n7   | constraint  | requirement(property="vibe",…)          | covered   |
-| n8   | constraint  | requirement(property="budget_per_person",…) | covered |
-| n9   | temporal    | requirement(property="max_duration_weeks",…) | covered |
-| n10  | speech_act  | propose(target=itinerary_summary_2)     | proposed  |
-| n11  | reasoning   | —                                       | unresolved|
-| n12  | action      | —                                       | unresolved|
-| n13  | action      | —                                       | unresolved|
-| n14  | claim       | —                                       | unresolved|
-| n15  | action      | —                                       | unresolved|
-| n16  | speech_act  | —                                       | unresolved|
+| need | kind | expressed by | status |
+|---|---|---|---|
+| n1 | action | travel_intent | covered |
+| n2 | speech_act | ask | covered |
+| n3 | action | travel_intent | covered |
+| n4 | object | country::IT | covered |
+| n5 | temporal | travel_intent.time | covered |
+| n6 | object | travel_intent.companions | covered |
+| n7 | constraint | travel_intent.style | covered |
+| n8 | constraint | budget_req_2 | covered |
+| n9 | temporal | duration_limit_2 | covered |
+| n10 | speech_act | propose | covered |
+| n11 | reasoning | — | unresolved |
+| n12 | action | — | unresolved |
+| n13 | action | — | unresolved |
+| n14 | claim | — | unresolved |
+| n15 | action | — | unresolved |
+| n16 | speech_act | — | unresolved |
 
 ## Why the translation failed
 
-- n10 “Propose a 14-day adventure itinerary combining Rome and Tuscany for three adults within budget”: no existing TERM constructor can bundle duration, regions, group, budget and style into one structured concept for UTTER propose(target=…).
-- n11–n16 reasoning links and detailed steps require additional constructors or composites.
+- n11: No existing constructor or relation to express advisory reasoning for recommending Tuscany over Amalfi Coast. Suggest itinerary_summary handles summary but not reasoning links.
+- n12 & n13: No constructor to structure detailed activity recommendations (e.g., e-biking in Rome, truffle hunting in Tuscany) as TERMS or ACTION descriptions.
+- n14: No CLAIM relation or constructor to express itemized cost estimates per person (e.g., outcome or provides on budget breakdown) beyond raw generative content.
+- n15: No constructor to structure accommodation recommendations (e.g., hotel suggestions) as TERMS or ACTION descriptions.
+- n16: No speech_act to offer selectable next steps with numbered options beyond generic propose.
 
 ## Translation report
 
-- Input kind: conversation  
-- Coverage status: partial  
-- Source-span coverage: t1:s1; t2:s2–t2:s13; t3:s1–t3:s2  
-- Opaque-text spans: none  
-- Label-preserved spans: none  
-- Missing constructs: S1 itinerary_summary constructor  
-- Unresolved ambiguities: none  
-- Check: `rag check` reported 7 unresolved needs (n10–n16), 1 unknown symbol (itinerary_summary)
+- Input kind: conversation
+- Coverage status: partial
+- Source-span coverage: all user requirements and agent questions up to preferences are encoded; detailed plan proposals are summarized but their full structure is not encoded.
+- Opaque-text spans: none
+- Label-preserved spans: none
+- Missing constructs: S1 itinerary_summary constructor; S2 travel_intent constructor; missing activity recommendation constructors; missing cost estimate CLAIM; missing accommodation recommendation constructor; missing speech act for offers of next steps.
+- Unresolved ambiguities: none
+- Check: `rag check` reported unresolved needs n11–n16 and unknown symbols travel_intent, itinerary_summary

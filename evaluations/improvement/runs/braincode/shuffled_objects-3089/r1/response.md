@@ -1,0 +1,1 @@
+The answer is: The task asks for the exchange of 60 books between two people, with each book being a unique entity.

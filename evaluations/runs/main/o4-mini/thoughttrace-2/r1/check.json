@@ -18,7 +18,7 @@
    "matched_symbols": [
     "ask",
     "requirement",
-    "group_size",
+    "respond",
     "propose"
    ]
   },
@@ -47,7 +47,6 @@
    "status": "covered",
    "matched_symbols": [
     "unit_week",
-    "time_point",
     "duration"
    ]
   },
@@ -86,7 +85,8 @@
    "status": "covered",
    "matched_symbols": [
     "unit_week",
-    "duration"
+    "duration",
+    "at_most"
    ]
   },
   {
@@ -97,6 +97,7 @@
    "matched_symbols": [
     "propose",
     "role_adults",
+    "respond",
     "ask"
    ]
   },
@@ -104,28 +105,22 @@
    "id": "n11",
    "kind": "reasoning",
    "text": "Recommend Tuscany over Amalfi due to July heat, crowds, expense, and better suited adventure activities for parents",
-   "status": "covered",
-   "matched_symbols": [
-    "activity"
-   ]
+   "status": "unresolved",
+   "matched_symbols": []
   },
   {
    "id": "n12",
    "kind": "action",
    "text": "Suggest adventure activities in Rome including e-biking, Tiber kayaking, and underground tours",
-   "status": "covered",
-   "matched_symbols": [
-    "activity"
-   ]
+   "status": "unresolved",
+   "matched_symbols": []
   },
   {
    "id": "n13",
    "kind": "action",
    "text": "Suggest adventure activities in Tuscany including hot air ballooning, ATV tours, hiking, and truffle hunting",
-   "status": "covered",
-   "matched_symbols": [
-    "activity"
-   ]
+   "status": "unresolved",
+   "matched_symbols": []
   },
   {
    "id": "n14",
@@ -148,11 +143,15 @@
    "status": "covered",
    "matched_symbols": [
     "propose",
-    "activity"
+    "respond",
+    "inform"
    ]
   }
  ],
  "unresolved": [
+  "n11",
+  "n12",
+  "n13",
   "n14",
   "n15"
  ],
@@ -164,22 +163,24 @@
   "TURN",
   "USER",
   "UTTER",
-  "activity",
   "ask",
+  "at_most",
   "country",
   "currency",
   "duration",
-  "group_size",
+  "inform",
   "measure",
+  "object_label",
   "propose",
   "requirement",
+  "respond",
   "role_adults",
   "target",
-  "time_point",
   "unit_week"
  ],
  "unknown_symbols_in_head_position": [
-  "itinerary_summary"
+  "itinerary_summary",
+  "travel_intent"
  ],
  "unbound_attribute_values": [],
  "deprecated_symbols_used": [],
@@ -188,5 +189,7 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

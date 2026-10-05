@@ -3,8 +3,8 @@
  "item": "swebench-1",
  "dataset": "swebench",
  "run": 1,
- "status": "failed",
- "problem": null,
+ "status": "error",
+ "problem": "failed translation rejected: 3 sentence-length quoted literal(s) carry natural language instead of encoding it: if token_type_ids is None:\\nif hasattr(self.embeddings, \\\"token_type_ids\\\"):\\nbu… | I noticed just above this piece of code:\\nelif input_ids is not None:\\ninput_sha… | Not sure if it is the batch_size, seq_length = input_shape missing for inputs_em…",
  "attempts": 1,
  "duration_s": 594.8,
  "usage": {
@@ -45,5 +45,11 @@
   ],
   "documented": true,
   "suggestions_file": "suggestions.md"
+ },
+ "regated": {
+  "original_status": "failed",
+  "problems": [
+   "3 sentence-length quoted literal(s) carry natural language instead of encoding it: if token_type_ids is None:\\nif hasattr(self.embeddings, \\\"token_type_ids\\\"):\\nbu… | I noticed just above this piece of code:\\nelif input_ids is not None:\\ninput_sha… | Not sure if it is the batch_size, seq_length = input_shape missing for inputs_em…"
+  ]
  }
 }

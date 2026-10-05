@@ -11,22 +11,28 @@
    "id": "n2",
    "kind": "object",
    "text": "Power supply unit (PSU)",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
   },
   {
    "id": "n3",
    "kind": "constraint",
    "text": "Cheapest / lowest price",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "at_least"
+   ]
   },
   {
    "id": "n4",
    "kind": "constraint",
    "text": "At least 600W power output",
-   "status": "declared",
-   "matched_symbols": []
+   "status": "covered",
+   "matched_symbols": [
+    "at_least"
+   ]
   },
   {
    "id": "n5",
@@ -146,7 +152,10 @@
   "USER",
   "UTTER",
   "ask",
+  "at_least",
   "click",
+  "measure",
+  "object_label",
   "select_option",
   "target",
   "type_text",
@@ -160,5 +169,9 @@
  "atom_errors": [],
  "atom_warnings": [],
  "retired_symbols_used": [],
- "label_preserved": []
+ "label_preserved": [
+  "n2"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
 }

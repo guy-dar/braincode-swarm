@@ -1,0 +1,1 @@
+The answer is: The task is asking for the correct explanation of the antecedent(s) of the pronoun(s) in the sentence "The scientist needed an assistant and was qualified for the job." and the task is asking to determine which of the options A, B, C, D, or E is the correct explanation.

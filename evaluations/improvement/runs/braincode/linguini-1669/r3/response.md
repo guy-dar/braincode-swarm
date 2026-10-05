@@ -1,0 +1,1 @@
+The answer is: The Tundra Yukaghir word "ewce" translates to "tip, point".
