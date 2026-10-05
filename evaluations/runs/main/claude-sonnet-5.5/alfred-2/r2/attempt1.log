@@ -1,0 +1,23 @@
+    4.7s turn 1
+   12.1s   model reply: in 4 + cached 2083, out 482 (+397 reasoning)
+   12.1s   tool bash: node /kit/rag.mjs entry ask request instruct action_description cool chill role_user 2>&1 | head -40
+   12.2s turn 2
+   35.4s   model reply: in 2 + cached 41350, out 3270 (+1461 reasoning)
+   35.4s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN 
+   35.8s turn 3
+   38.3s   model reply: in 2 + cached 42319, out 86 (+0 reasoning)
+   38.3s   tool bash: node /kit/rag.mjs check --translation /output/translation.md 2>&1 | grep -v "^- \[OK"
+   39.0s turn 4
+   43.3s   model reply: in 2 + cached 46408, out 405 (+0 reasoning)
+   43.3s agent finished
+   43.3s agent finished

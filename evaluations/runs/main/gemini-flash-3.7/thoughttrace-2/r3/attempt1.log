@@ -1,0 +1,55 @@
+    2.0s turn 1
+   10.6s   model reply: in 29659 + cached 0, out 1122 (+1082 reasoning)
+   10.6s   tool bash: node /kit/rag.mjs search "parents" "adventure" "travel style" "cost estimate" "hotel accommodation"
+   11.0s turn 2
+   14.1s   model reply: in 3723 + cached 28447, out 78 (+37 reasoning)
+   14.1s   tool bash: node /kit/rag.mjs search "budget" "destination" "recommend" "option" "itinerary" "hotel"
+   14.6s turn 3
+   18.1s   model reply: in 5515 + cached 28440, out 90 (+46 reasoning)
+   18.1s   tool bash: node /kit/rag.mjs entry activity requirement at_most measure duration group_size rate subject recommended time_point location_spec user_preference
+   18.3s turn 4
+   21.1s   model reply: in 3625 + cached 32499, out 58 (+27 reasoning)
+   21.1s   tool bash: node /kit/rag.mjs entry user_preference location_spec recommended supports rejects
+   21.5s turn 5
+   25.7s   model reply: in 4019 + cached 32483, out 74 (+43 reasoning)
+   25.7s   tool bash: node /kit/rag.mjs entry propose ask offer respond provides works_best contrast
+   25.8s turn 6
+   36.8s   model reply: in 4828 + cached 32470, out 1656 (+1616 reasoning)
+   36.8s   tool bash: node /kit/rag.mjs entry country::IT currency::USD unit_month unit_week unit_day unit_year
+   36.9s turn 7
+   40.0s   model reply: in 2945 + cached 36527, out 90 (+46 reasoning)
+   40.0s   tool bash: node /kit/rag.mjs search "parent" "parents" "family" "companion" "hiking" "kayaking" "balloon"
+   40.4s turn 8
+   43.5s   model reply: in 4984 + cached 36524, out 70 (+37 reasoning)
+   43.5s   tool bash: node /kit/rag.mjs entry role_adults role_mother comfortable interpersonal_stance
+   43.6s turn 9
+   64.3s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   64.4s agent finished
+   66.4s turn 10
+   80.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   80.0s agent finished
+   84.0s turn 11
+  195.9s   model reply: in 41900 + cached 0, out 169 (+130 reasoning)
+  195.9s   tool bash: node /kit/rag.mjs search "role_parents" "role_father" "travelers" "companions"
+  196.0s turn 12
+  204.8s   model reply: in 2727 + cached 40557, out 45 (+22 reasoning)
+  204.8s   tool bash: node /kit/rag.mjs entry role
+  204.9s turn 13
+  240.2s   model reply: in 2918 + cached 40538, out 5540 (+5498 reasoning)
+  240.2s   tool bash: node /kit/rag.mjs search "claim holder" "agent" "user" "role_agent" "role_user"
+  240.3s turn 14
+  246.8s   model reply: in 9987 + cached 40579, out 217 (+189 reasoning)
+  246.8s   tool bash: node /kit/rag.mjs entry role_user role_agent
+  246.9s turn 15
+  271.9s   model reply: in 2199 + cached 48677, out 4575 (+2962 reasoning)
+  271.9s   tool write: /output/translation.md
+  271.9s turn 16
+  277.9s   model reply: in 6762 + cached 48693, out 53 (+23 reasoning)
+  277.9s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  278.0s turn 17
+  290.4s   model reply: in 3306 + cached 52736, out 1237 (+1207 reasoning)
+  290.4s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  290.5s turn 18
+  295.3s   model reply: in 5082 + cached 52731, out 366 (+187 reasoning)
+  295.3s agent finished
+  295.3s agent finished

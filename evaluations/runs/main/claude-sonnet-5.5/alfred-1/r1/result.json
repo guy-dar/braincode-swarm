@@ -1,0 +1,40 @@
+{
+ "model": "claude-sonnet-5.5",
+ "item": "alfred-1",
+ "dataset": "alfred",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 41.3,
+ "usage": {
+  "calls": 2,
+  "input": 6,
+  "cacheRead": 47312,
+  "cacheWrite": 49000,
+  "output": 5451,
+  "reasoning": 1372,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1865,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "entity_description",
+    "dimension": "constructor"
+   },
+   {
+    "term": "spatial_relation",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

@@ -1,0 +1,8 @@
+### S1 | type: add | dimension: constructor | symbol: search_request
+- Needs: n2 (t1:s1), n4 (t1:s1), n5 (t1:s1)
+- Typed parameters: target: STRING / TERM; constraints: LIST[TERM]
+- Interpretation: A non-effectful description of a requested search for the target subject to the listed constraints; it asserts nothing about execution, results, or whether any result satisfies the constraints.
+- Example: `TERM search_request(target="IT jobs", constraints=[requirement_2]) -> search_request_2 : TERM`
+- Contrast: Not the executable `search_web` operation, not an `apply_filters` operation on an existing UI, and not evidence that matching results exist.
+- Searches tried: widen "browse or search job listings" → search_web, search_travel, apply_filters, search_transit, open_page; widen "filter job search results" → search_web, apply_filters, select_filter; widen "filter job listings by Security clearance certificate" → select_filter, apply_filters, search_web and generic reservation candidates; search "security clearance certificate job qualification filter" → generic filter/reservation candidates. These describe executable operations or unrelated reservation filters, not a typed non-effectful requested search with criteria.
+- Proposed record: {"symbol": "search_request", "kind": "constructor", "signature": "TERM search_request(target: STRING / TERM, constraints: LIST[TERM]) -> TERM", "definition": "A non-effectful description of a requested search for the target subject to the listed constraints. It asserts nothing about execution, results, or whether any result satisfies the constraints.", "not": "An executable search or filter operation, or evidence that matching results exist.", "aliases": ["requested_search"]}

@@ -1,0 +1,31 @@
+   10.2s turn 1
+   13.8s   model reply: in 3 + cached 0, out 65 (+0 reasoning)
+   13.8s   tool bash: node /kit/rag.mjs search "describe searching jobs with certificate filter" "IT jobs information technology employment" "Security clearance certificate filter"; 
+   15.7s turn 2
+   26.9s   model reply: in 3 + cached 26217, out 373 (+251 reasoning)
+   26.9s   tool bash: node /kit/rag.mjs widen "Browse or search job listings" --kind action; node /kit/rag.mjs widen "IT jobs" --kind object; node /kit/rag.mjs widen "Filter job sear
+   35.9s turn 3
+   54.1s   model reply: in 3 + cached 28306, out 632 (+516 reasoning)
+   54.1s   tool bash: node /kit/rag.mjs widen "Filter job search results" --kind action | head -35; node /kit/rag.mjs widen "Filter by Security clearance certificate" --kind constrai
+   56.2s turn 4
+   63.6s   model reply: in 3 + cached 31364, out 269 (+118 reasoning)
+   63.6s   tool bash: node /kit/rag.mjs search "web element accessibility role searchbox button link"; node /kit/rag.mjs widen "Search input box for job title, skill, or company" --k
+   66.2s turn 5
+   71.6s   model reply: in 3 + cached 34494, out 43 (+11 reasoning)
+   71.6s   tool bash: node /kit/rag.mjs entry role
+   71.9s turn 6
+  106.7s   model reply: in 3 + cached 36541, out 1973 (+298 reasoning)
+  106.7s   tool write: /output/translation.md
+  106.9s turn 7
+  118.6s   model reply: in 3 + cached 36712, out 550 (+0 reasoning)
+  118.6s   tool write: /output/suggestions.md
+  118.7s turn 8
+  121.1s   model reply: in 3 + cached 38703, out 36 (+0 reasoning)
+  121.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  121.2s turn 9
+  128.3s   model reply: in 3 + cached 39271, out 258 (+103 reasoning)
+  128.3s   tool edit: /output/translation.md
+  128.3s turn 10
+  130.9s   model reply: in 3 + cached 39660, out 45 (+0 reasoning)
+  130.9s agent finished
+  130.9s agent finished

@@ -1,0 +1,136 @@
+    2.1s turn 1
+    8.1s   model reply: in 27569 + cached 0, out 666 (+622 reasoning)
+    8.1s   tool bash: node /kit/rag.mjs search "title" "says" "titled" "read" "illuminates" "emits_light"
+    8.3s turn 2
+   10.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   10.2s agent finished
+   12.2s turn 3
+   25.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   25.8s agent finished
+   29.8s turn 4
+   41.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   41.4s agent finished
+   49.4s turn 5
+  156.4s   model reply: in 30023 + cached 0, out 86 (+49 reasoning)
+  156.4s   tool bash: node /kit/rag.mjs search "activity" "goal" "requirement" "turn" "walk"
+  156.6s turn 6
+  172.2s   model reply: in 3217 + cached 28424, out 86 (+47 reasoning)
+  172.2s   tool bash: node /kit/rag.mjs entry has_goal request document_section activity requirement walk turn turn_on pick_up
+  172.3s turn 7
+  188.7s   model reply: in 5146 + cached 28419, out 488 (+463 reasoning)
+  188.7s   tool bash: grep -i "alfred" /reference/* || true
+  188.8s turn 8
+  194.6s   model reply: in 5651 + cached 28405, out 80 (+44 reasoning)
+  194.6s   tool bash: node /kit/rag.mjs search "propose" "format_numbered_list" "sequence"
+  194.7s turn 9
+  202.7s   model reply: in 2624 + cached 32451, out 57 (+25 reasoning)
+  202.7s   tool bash: node /kit/rag.mjs entry propose request sequence format_numbered_list activity subject
+  202.8s turn 10
+  215.0s   model reply: in 3905 + cached 32443, out 87 (+48 reasoning)
+  215.0s   tool bash: node /kit/rag.mjs search "read" "book" "lamp" "bed" "night_stand"
+  215.2s turn 11
+  230.4s   model reply: in 5577 + cached 32438, out 1948 (+1922 reasoning)
+  230.4s   tool bash: node /kit/rag.mjs check --help || true
+  230.4s turn 12
+  262.5s   model reply: in 3482 + cached 36491, out 62 (+34 reasoning)
+  262.5s   tool bash: node -e 'console.log("rag.mjs exists")'
+  262.5s turn 13
+  275.7s   model reply: in 3568 + cached 36472, out 578 (+542 reasoning)
+  275.7s   tool bash: node /kit/rag.mjs entry textbook lamp night_stand in_front_of on right_of
+  275.8s turn 14
+  282.7s   model reply: in 4514 + cached 36461, out 75 (+37 reasoning)
+  282.7s   tool bash: node /kit/rag.mjs search "in front of" "turn right" "nightstand" "title"
+  282.8s turn 15
+  288.8s   model reply: in 5793 + cached 36454, out 89 (+46 reasoning)
+  288.8s   tool bash: node /kit/rag.mjs search "title of" "book title" "text content" "says" "label" "named"
+  289.0s turn 16
+  292.8s   model reply: in 3619 + cached 40504, out 60 (+28 reasoning)
+  292.8s   tool bash: node /kit/rag.mjs entry lexical_label naming_pattern attribute_claim requirement
+  292.9s turn 17
+  316.1s   model reply: in 4848 + cached 40497, out 2826 (+2536 reasoning)
+  316.1s   tool bash: node -e '
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+const testDoc = `Status: success
+Mode: REQUEST
+
+## BrainCode
+
+\`\`\`braincod
+  316.5s turn 18
+  331.5s   model reply: in 3981 + cached 44560, out 1876 (+1139 reasoning)
+  331.5s   tool bash: node -e '
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+function test(code, coverage) {
+  const doc = `Status: success
+Mode: REQUEST
+  331.7s turn 19
+  338.8s   model reply: in 6382 + cached 44564, out 536 (+506 reasoning)
+  338.8s   tool bash: node /kit/rag.mjs entry turn_on walk turn pick_up
+  339.0s turn 20
+  343.2s   model reply: in 3531 + cached 48607, out 139 (+104 reasoning)
+  343.2s   tool bash: node /kit/rag.mjs search "lamp" "device" "entity" "appliance"
+  343.4s turn 21
+  348.3s   model reply: in 4820 + cached 48600, out 74 (+49 reasoning)
+  348.3s   tool bash: grep "| constructor |" /reference/glossary.md
+  348.3s turn 22
+  357.0s   model reply: in 2641 + cached 52649, out 1015 (+236 reasoning)
+  357.0s   tool bash: node -e '
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+function test(code, coverage) {
+  const doc = `Status: success
+Mode: REQUEST
+  357.1s turn 23
+  361.5s   model reply: in 4104 + cached 52644, out 169 (+135 reasoning)
+  361.5s   tool bash: node -e '
+const rag = require("/kit/rag.mjs");
+' || true
+  361.6s turn 24
+  368.7s   model reply: in 4692 + cached 52631, out 76 (+28 reasoning)
+  368.7s   tool bash: node -e '
+import("/kit/rag.mjs").then(m => {
+  console.log("imported rag.mjs");
+});
+'
+  368.8s turn 25
+  379.3s   model reply: in 4825 + cached 52612, out 1456 (+538 reasoning)
+  379.3s   tool bash: node -e '
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+function test(code, coverage, report) {
+  const doc = `Status: success
+Mode:
+  379.5s turn 26
+  383.6s   model reply: in 2676 + cached 56660, out 92 (+53 reasoning)
+  383.6s   tool bash: grep -n -C 5 "Needs covered by an open-group label" /kit/rag.mjs || true
+  383.7s turn 27
+  386.9s   model reply: in 2791 + cached 56640, out 37 (+10 reasoning)
+  386.9s   tool bash: grep -rn "open-group label" /kit/ || true
+  386.9s turn 28
+  390.5s   model reply: in 2851 + cached 56620, out 37 (+15 reasoning)
+  390.5s   tool bash: grep -rn "check" /kit/
+  390.5s turn 29
+  407.5s   model reply: in 3375 + cached 56606, out 2612 (+1626 reasoning)
+  407.5s   tool bash: node -e '
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+function test(code, coverage, report) {
+  const doc = `Status: success
+Mode:
+  407.7s turn 30
+  415.7s   model reply: in 6415 + cached 56621, out 990 (+169 reasoning)
+  415.7s   tool write: /output/translation.md
+  415.7s turn 31
+  472.2s   model reply: in 64030 + cached 0, out 57 (+27 reasoning)
+  472.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  472.4s turn 32
+  479.9s   model reply: in 3891 + cached 60639, out 215 (+13 reasoning)
+  480.0s agent finished
+  480.0s agent finished

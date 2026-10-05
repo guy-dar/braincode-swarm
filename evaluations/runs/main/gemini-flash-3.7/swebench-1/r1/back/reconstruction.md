@@ -1,0 +1,2 @@
+<|user|>Hello all. UnboundLocalError: "local variable 'seq_length' referenced before assignment". In transformers, class ConvBertForTokenClassification, forward method in src/transformers/models/convbert/modeling_convbert.py (modeling_convbert.py), token_type_ids leads to seq_length. Variable inputs_embeds. Request maintainer review. I run custom script and run custom dataset. Transformers issue 833. Test condition "no_error" is not met. What about seq_length?
+<|assistant|>Modify src/transformers/models/convbert/modeling_convbert.py in transformers for seq_length.

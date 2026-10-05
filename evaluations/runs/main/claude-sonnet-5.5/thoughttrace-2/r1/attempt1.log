@@ -1,0 +1,20 @@
+    3.7s turn 1
+   21.6s   model reply: in 4 + cached 2083, out 1609 (+1526 reasoning)
+   21.6s   tool bash: node /kit/rag.mjs entry attribute_claim heat crowded expensive 2>&1 | head -40
+   21.7s turn 2
+   54.4s   model reply: in 2 + cached 47625, out 5716 (+260 reasoning)
+   54.4s   tool bash: cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+
+   54.6s turn 3
+   60.7s   model reply: in 2 + cached 49975, out 566 (+0 reasoning)
+   60.8s agent finished
+   60.8s agent finished

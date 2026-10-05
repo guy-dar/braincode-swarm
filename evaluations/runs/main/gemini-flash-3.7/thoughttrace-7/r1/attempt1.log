@@ -1,0 +1,82 @@
+    1.9s turn 1
+    6.3s   model reply: in 25899 + cached 0, out 279 (+236 reasoning)
+    6.3s   tool bash: node /kit/rag.mjs search "dinner" "recipe" "menu" "vegetarian" "food" "cook" "prep"
+    6.5s turn 2
+   12.3s   model reply: in 3732 + cached 24355, out 628 (+551 reasoning)
+   12.3s   tool bash: node /kit/rag.mjs entry ask offer propose respond include offer_help requirement user_preference propose_menu menu_works prep_time enables entity_sides entity_d
+   12.4s turn 3
+   15.5s   model reply: in 6091 + cached 24355, out 92 (+36 reasoning)
+   15.5s   tool bash: node /kit/rag.mjs search "dinner" "meal" "vegetarian" "assemble" "bake" "roast" "saute" "cook" "seasoning" "shopping list"
+   15.9s turn 4
+   18.9s   model reply: in 4884 + cached 28417, out 100 (+65 reasoning)
+   18.9s   tool bash: node /kit/rag.mjs entry entity_grocery_list entity_condensed_grocery_list
+   19.0s turn 5
+   23.5s   model reply: in 5136 + cached 28400, out 75 (+35 reasoning)
+   23.5s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| constructor \|" /reference/glossary.md
+   23.6s turn 6
+   27.1s   model reply: in 2953 + cached 32454, out 119 (+90 reasoning)
+   27.1s   tool bash: node /kit/rag.mjs entry activity conjunction sequence lexical_label measure
+   27.2s turn 7
+   35.5s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   35.5s agent finished
+   37.5s turn 8
+   51.1s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   51.1s agent finished
+   55.1s turn 9
+   82.1s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   82.1s agent finished
+   90.2s turn 10
+  152.8s   model reply: in 36979 + cached 0, out 608 (+561 reasoning)
+  152.8s   tool bash: node /kit/rag.mjs search "menu_works" "propose_menu" "user_preference" "recipe" "ingredient" "dish"
+  152.9s turn 11
+  158.6s   model reply: in 2966 + cached 36507, out 71 (+29 reasoning)
+  158.6s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| claim_relation \|" /reference/glossary.md
+  158.6s turn 12
+  171.9s   model reply: in 4973 + cached 36504, out 1921 (+1849 reasoning)
+  171.9s   tool bash: node /kit/rag.mjs entry user_preference propose_menu menu_works prep_time include requirement activity lexical_label offer_help entity_sides entity_desserts ent
+  172.0s turn 13
+  191.6s   model reply: in 4963 + cached 40576, out 729 (+690 reasoning)
+  191.6s   tool bash: node /kit/rag.mjs search "dinner suggestion" "hosting friends" "easy to prepare" "vegetarian option"
+  191.7s turn 14
+  200.5s   model reply: in 2761 + cached 44630, out 150 (+122 reasoning)
+  200.5s   tool bash: node /kit/rag.mjs entry attribute_claim has_attribute
+  200.7s turn 15
+  218.6s   model reply: in 3415 + cached 44615, out 2093 (+2053 reasoning)
+  218.6s   tool bash: grep -E "^\| (user|role_user|agent|role_agent) \|" /reference/glossary.md
+  218.6s turn 16
+  223.1s   model reply: in 5558 + cached 44614, out 152 (+120 reasoning)
+  223.1s   tool bash: grep -E "^\| (agent|user) \|" /reference/glossary.md
+  223.2s turn 17
+  232.9s   model reply: in 5737 + cached 44597, out 54 (+24 reasoning)
+  232.9s   tool bash: grep -E "\| recipient-value \|" /reference/glossary.md
+  233.0s turn 18
+  236.5s   model reply: in 2419 + cached 48637, out 105 (+79 reasoning)
+  236.5s   tool bash: grep -i "menu" /reference/glossary.md
+  236.6s turn 19
+  240.3s   model reply: in 3249 + cached 48625, out 189 (+160 reasoning)
+  240.3s   tool bash: node /kit/rag.mjs entry entity_mains entity_checklist
+  240.4s turn 20
+  256.5s   model reply: in 3567 + cached 48607, out 2867 (+2822 reasoning)
+  256.5s   tool bash: node /kit/rag.mjs entry food_label::taco food_label::chicken food_label::beef food_label::black_beans
+  256.6s turn 21
+  262.7s   model reply: in 6937 + cached 48621, out 217 (+63 reasoning)
+  262.7s   tool bash: node /kit/rag.mjs entry food_label::taco food_label::chicken food_label::beef food_label::beans food_label::veggie food_label::tortilla food_label::lettuce food
+  262.8s turn 22
+  285.4s   model reply: in 5430 + cached 52678, out 4366 (+2326 reasoning)
+  285.4s   tool write: /output/translation.md
+  285.5s turn 23
+  288.3s   model reply: in 5729 + cached 56749, out 54 (+24 reasoning)
+  288.3s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  288.4s turn 24
+  296.9s   model reply: in 2439 + cached 60790, out 1279 (+1252 reasoning)
+  296.9s   tool bash: node /kit/rag.mjs entry object_label::oil
+  297.0s turn 25
+  301.0s   model reply: in 3843 + cached 60783, out 207 (+188 reasoning)
+  301.0s   tool read: /output/translation.md
+  301.0s turn 26
+  304.1s   model reply: in 6063 + cached 60785, out 60 (+30 reasoning)
+  304.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  304.2s turn 27
+  307.4s   model reply: in 2781 + cached 64824, out 62 (+19 reasoning)
+  307.4s agent finished
+  307.4s agent finished

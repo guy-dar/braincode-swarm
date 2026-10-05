@@ -1,0 +1,20 @@
+    5.2s turn 1
+   28.1s   model reply: in 4 + cached 2083, out 1916 (+1825 reasoning)
+   28.1s   tool bash: node /kit/rag.mjs entry attribute_claim role_agent agent cost_estimate sum total price 2>&1 | head -60
+   28.3s turn 2
+   53.0s   model reply: in 2 + cached 47625, out 4618 (+363 reasoning)
+   53.1s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   53.3s turn 3
+   57.5s   model reply: in 2 + cached 50204, out 469 (+0 reasoning)
+   57.5s agent finished
+   57.5s agent finished

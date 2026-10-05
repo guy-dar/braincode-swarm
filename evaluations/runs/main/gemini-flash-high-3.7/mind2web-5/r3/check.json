@@ -1,0 +1,214 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "add birthday detail to user profile",
+   "status": "covered",
+   "matched_symbols": [
+    "user_preference",
+    "click"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "temporal",
+   "text": "birth date January 5 1980",
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "action",
+   "text": "add allergy information to profile",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "dairy allergy",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "peanut allergy",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "add bio description to profile",
+   "status": "covered",
+   "matched_symbols": [
+    "lexical_label",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "bio text specifying love ramen noodles",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "save user profile changes",
+   "status": "covered",
+   "matched_symbols": [
+    "user_preference",
+    "role_user",
+    "request",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "click Profile menu UI element",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element",
+    "select_option"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "click Profile link UI element",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element",
+    "select_option"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "select January in BIRTHDAY Month combobox",
+   "status": "covered",
+   "matched_symbols": [
+    "select_option",
+    "click"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "select 05 in Day combobox",
+   "status": "covered",
+   "matched_symbols": [
+    "select_option",
+    "click"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "select 1980 in Year combobox",
+   "status": "covered",
+   "matched_symbols": [
+    "select_option",
+    "click"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "type Love Ramen Noodles into SHORT BIO textbox",
+   "status": "covered",
+   "matched_symbols": [
+    "type_text",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "click All Dairy checkbox",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "food_label",
+    "select_option"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "click Peanuts checkbox",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "click Save button",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "request",
+    "select_option",
+    "web_element"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "activity",
+  "attribute_claim",
+  "character_trait",
+  "click",
+  "food_label",
+  "lexical_label",
+  "request",
+  "role_user",
+  "select_option",
+  "subject",
+  "target",
+  "time_point",
+  "type_text",
+  "user_preference",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n5",
+  "n7"
+ ]
+}

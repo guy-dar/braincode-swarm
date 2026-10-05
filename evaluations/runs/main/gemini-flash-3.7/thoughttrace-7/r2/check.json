@@ -1,0 +1,277 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User asks for a dinner suggestion for hosting friends",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "propose_menu",
+    "role_friend",
+    "menu_works",
+    "propose",
+    "user_preference",
+    "offer_help"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "constraint",
+   "text": "The dinner must be delicious and easy to prepare",
+   "status": "covered",
+   "matched_symbols": [
+    "plate",
+    "meat",
+    "menu_works"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "Include a vegetarian option",
+   "status": "covered",
+   "matched_symbols": [
+    "include",
+    "meat"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "Agent proposes a Taco Night dinner idea",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "propose_menu",
+    "entity_appetizers",
+    "ask"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "Taco night dinner",
+   "status": "covered",
+   "matched_symbols": [
+    "plate",
+    "meat",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Taco night is customizable, relaxed, and easy to prepare for a group",
+   "status": "covered",
+   "matched_symbols": [
+    "menu_works",
+    "plate"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Seasoned chicken or beef meat option",
+   "status": "covered",
+   "matched_symbols": [
+    "meat",
+    "plate",
+    "cheese",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Black bean and roasted veggie taco vegetarian option",
+   "status": "covered",
+   "matched_symbols": [
+    "meat",
+    "food_label",
+    "lettuce"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Taco shells including soft tortillas and crunchy shells",
+   "status": "covered",
+   "matched_symbols": [
+    "bread",
+    "plate",
+    "meat",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Taco toppings including lettuce, tomatoes, cheese, sour cream, guacamole, and salsa",
+   "status": "covered",
+   "matched_symbols": [
+    "lettuce",
+    "cheese",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "Side dishes including rice, salad, and tortilla chips with dip",
+   "status": "covered",
+   "matched_symbols": [
+    "plate",
+    "lettuce",
+    "entity_sides"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Taco night can be prepped ahead and lets guests assemble their own plates",
+   "status": "covered",
+   "matched_symbols": [
+    "plate",
+    "menu_works"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "Prepare vegetarian filling by sautéing vegetables and mixing with black beans and seasoning",
+   "status": "covered",
+   "matched_symbols": [
+    "meat",
+    "plate",
+    "lettuce"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "Cook chicken or beef with olive oil, taco seasoning, and lime juice",
+   "status": "covered",
+   "matched_symbols": [
+    "meat",
+    "fruit_juice",
+    "plate"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "Dessert options including churros, brownies, or ice cream",
+   "status": "covered",
+   "matched_symbols": [
+    "ice_cream",
+    "entity_desserts",
+    "plate",
+    "bread",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "speech_act",
+   "text": "Agent proposes a baked pasta night as an alternative dinner option",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "propose_menu",
+    "entity_appetizers",
+    "menu_works",
+    "ask",
+    "entity_desserts"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "Baked ziti or lasagna with vegetarian spinach and ricotta option and garlic bread",
+   "status": "covered",
+   "matched_symbols": [
+    "bread",
+    "meat",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "Baked pasta can be assembled ahead of time and baked right before serving",
+   "status": "covered",
+   "matched_symbols": [
+    "prep_time",
+    "menu_works",
+    "plate"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "speech_act",
+   "text": "Agent offers further help with a full menu, impressive dinner ideas, or a shopping list",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "propose",
+    "propose_menu",
+    "offer_help",
+    "entity_appetizers",
+    "menu_works",
+    "ask"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "REPLY_TO",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "bread",
+  "cheese",
+  "conjunction",
+  "entity_appetizers",
+  "entity_desserts",
+  "entity_grocery_list",
+  "entity_sides",
+  "food_label",
+  "fruit_juice",
+  "ice_cream",
+  "include",
+  "lettuce",
+  "lexical_label",
+  "meat",
+  "menu_works",
+  "offer",
+  "offer_help",
+  "plate",
+  "prep_time",
+  "propose",
+  "propose_menu",
+  "requirement",
+  "role_agent",
+  "role_friend",
+  "role_user",
+  "statement",
+  "target",
+  "user_preference"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

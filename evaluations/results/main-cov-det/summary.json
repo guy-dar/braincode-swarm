@@ -1,0 +1,1741 @@
+{
+ "run": "main",
+ "models": [
+  {
+   "name": "gemini-flash-high-3.7",
+   "label": "Gemini 3.7 Flash (high effort)",
+   "company": "Gemini",
+   "tier": "strong"
+  },
+  {
+   "name": "gemini-flash-3.7",
+   "label": "Gemini 3.7 Flash",
+   "company": "Gemini",
+   "tier": "weak"
+  },
+  {
+   "name": "claude-sonnet-5.5",
+   "label": "Claude Sonnet 5.5",
+   "company": "Claude",
+   "tier": "strong"
+  },
+  {
+   "name": "claude-haiku-4.5",
+   "label": "Claude Haiku 4.5",
+   "company": "Claude",
+   "tier": "weak"
+  },
+  {
+   "name": "o4-mini",
+   "label": "o4-mini (Flash-tier probe)",
+   "company": "OpenAI",
+   "tier": "weak"
+  }
+ ],
+ "coverage": [
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash (high effort)",
+   "tier": "strong",
+   "items": "shared",
+   "runs": 54,
+   "success_rate": 0.9629629629629629,
+   "failed_rate": 0.037037037037037035,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 1.0,
+   "mean_minutes": 21.705740740740744,
+   "cost_usd": 24.7555,
+   "success_mind2web": 0.7777777777777778,
+   "success_alfred": 1.0,
+   "success_swebench": 1.0,
+   "success_prism": 1.0,
+   "success_paths": 1.0,
+   "success_thoughttrace": 1.0
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash (high effort)",
+   "tier": "strong",
+   "items": "all",
+   "runs": 144,
+   "success_rate": 0.9583333333333334,
+   "failed_rate": 0.041666666666666664,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 1.6666666666666667,
+   "mean_minutes": 22.205127314814813,
+   "cost_usd": 65.7607,
+   "success_mind2web": 0.9166666666666666,
+   "success_alfred": 0.9166666666666666,
+   "success_swebench": 0.9166666666666666,
+   "success_prism": 1.0,
+   "success_paths": 1.0,
+   "success_thoughttrace": 1.0
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 54,
+   "success_rate": 0.9259259259259259,
+   "failed_rate": 0.07407407407407407,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 1.75,
+   "mean_minutes": 9.202623456790123,
+   "cost_usd": 14.612799999999996,
+   "success_mind2web": 0.7777777777777778,
+   "success_alfred": 1.0,
+   "success_swebench": 1.0,
+   "success_prism": 0.7777777777777778,
+   "success_paths": 1.0,
+   "success_thoughttrace": 1.0
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "tier": "weak",
+   "items": "all",
+   "runs": 144,
+   "success_rate": 0.9375,
+   "failed_rate": 0.0625,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 2.111111111111111,
+   "mean_minutes": 9.841678240740741,
+   "cost_usd": 41.0152,
+   "success_mind2web": 0.9166666666666666,
+   "success_alfred": 1.0,
+   "success_swebench": 0.8333333333333334,
+   "success_prism": 0.9166666666666666,
+   "success_paths": 0.9583333333333334,
+   "success_thoughttrace": 1.0
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Sonnet 5.5",
+   "tier": "strong",
+   "items": "shared",
+   "runs": 54,
+   "success_rate": 0.46296296296296297,
+   "failed_rate": 0.5370370370370371,
+   "error_rate": 0.0,
+   "missing_symbols_per_failed": 1.8275862068965518,
+   "mean_minutes": 2.8807098765432095,
+   "cost_usd": 11.0816,
+   "success_mind2web": 0.6666666666666666,
+   "success_alfred": 0.3333333333333333,
+   "success_swebench": 0.6666666666666666,
+   "success_prism": 0.4444444444444444,
+   "success_paths": 0.1111111111111111,
+   "success_thoughttrace": 0.5555555555555556
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Haiku 4.5",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 54,
+   "success_rate": 0.9074074074074074,
+   "failed_rate": 0.07407407407407407,
+   "error_rate": 0.018518518518518517,
+   "missing_symbols_per_failed": 2.5,
+   "mean_minutes": 5.565740740740741,
+   "cost_usd": 15.198300000000001,
+   "success_mind2web": 0.7777777777777778,
+   "success_alfred": 0.8888888888888888,
+   "success_swebench": 1.0,
+   "success_prism": 1.0,
+   "success_paths": 0.7777777777777778,
+   "success_thoughttrace": 1.0
+  },
+  {
+   "company": "OpenAI",
+   "model": "o4-mini (Flash-tier probe)",
+   "tier": "weak",
+   "items": "shared",
+   "runs": 18,
+   "success_rate": 0.16666666666666666,
+   "failed_rate": 0.6666666666666666,
+   "error_rate": 0.16666666666666666,
+   "missing_symbols_per_failed": 1.8333333333333333,
+   "mean_minutes": 5.140370370370371,
+   "cost_usd": 2.0979999999999994,
+   "success_mind2web": 0.0,
+   "success_alfred": 0.0,
+   "success_swebench": 0.0,
+   "success_prism": 0.6666666666666666,
+   "success_paths": 0.3333333333333333,
+   "success_thoughttrace": 0.0
+  }
+ ],
+ "determinism_pairs": [
+  {
+   "model_a": "Gemini 3.7 Flash (high effort)",
+   "model_b": "Gemini 3.7 Flash",
+   "pair": "weak vs strong, same company",
+   "js_symbols": 0.020465221617964446,
+   "js_types": 0.0006998808946519033
+  },
+  {
+   "model_a": "Gemini 3.7 Flash (high effort)",
+   "model_b": "Claude Sonnet 5.5",
+   "pair": "strong vs strong, different companies",
+   "js_symbols": 0.08641479333227294,
+   "js_types": 0.00597407962552862
+  },
+  {
+   "model_a": "Gemini 3.7 Flash (high effort)",
+   "model_b": "Claude Haiku 4.5",
+   "pair": "other",
+   "js_symbols": 0.09554732314621714,
+   "js_types": 0.008369437856967397
+  },
+  {
+   "model_a": "Gemini 3.7 Flash (high effort)",
+   "model_b": "o4-mini (Flash-tier probe)",
+   "pair": "other",
+   "js_symbols": 0.3274907039181113,
+   "js_types": 0.1502998313089413
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "Claude Sonnet 5.5",
+   "pair": "other",
+   "js_symbols": 0.08863547421349276,
+   "js_types": 0.006686399373521725
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "Claude Haiku 4.5",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.08846108616551768,
+   "js_types": 0.00723480165960229
+  },
+  {
+   "model_a": "Gemini 3.7 Flash",
+   "model_b": "o4-mini (Flash-tier probe)",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.31817676044127546,
+   "js_types": 0.13508409616894954
+  },
+  {
+   "model_a": "Claude Sonnet 5.5",
+   "model_b": "Claude Haiku 4.5",
+   "pair": "weak vs strong, same company",
+   "js_symbols": 0.06734862910272173,
+   "js_types": 0.003303363986638751
+  },
+  {
+   "model_a": "Claude Sonnet 5.5",
+   "model_b": "o4-mini (Flash-tier probe)",
+   "pair": "other",
+   "js_symbols": 0.3315464474104562,
+   "js_types": 0.14146471438895122
+  },
+  {
+   "model_a": "Claude Haiku 4.5",
+   "model_b": "o4-mini (Flash-tier probe)",
+   "pair": "weak vs weak, different companies",
+   "js_symbols": 0.3076954212781153,
+   "js_types": 0.11784157769478631
+  }
+ ],
+ "determinism_self": [
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash (high effort)",
+   "name": "gemini-flash-high-3.7",
+   "tier": "strong",
+   "items": "shared",
+   "items_with_2plus_runs": 18,
+   "self_js_symbols": 0.09798934500539692,
+   "self_js_symbols_sd": 0.07538993906144771,
+   "self_js_types": 0.02781447208413601,
+   "identical_pair_share": 0.07407407407407407,
+   "self_js_mind2web": 0.013830699716808448,
+   "self_js_alfred": 0.11872975785469723,
+   "self_js_swebench": 0.12073272006876484,
+   "self_js_prism": 0.14317753741619133,
+   "self_js_paths": 0.10930623303035192,
+   "self_js_thoughttrace": 0.08215912194556783
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash (high effort)",
+   "name": "gemini-flash-high-3.7",
+   "tier": "strong",
+   "items": "all",
+   "items_with_2plus_runs": 48,
+   "self_js_symbols": 0.1175110614070329,
+   "self_js_symbols_sd": 0.07770819340469688,
+   "self_js_types": 0.03248552738283855,
+   "identical_pair_share": 0.03472222222222222,
+   "self_js_mind2web": 0.04302461380722019,
+   "self_js_alfred": 0.13430180032666,
+   "self_js_swebench": 0.17166229599390992,
+   "self_js_prism": 0.10347856248578552,
+   "self_js_paths": 0.13808779116208744,
+   "self_js_thoughttrace": 0.1145113046665343
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "name": "gemini-flash-3.7",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 18,
+   "self_js_symbols": 0.11495849458248229,
+   "self_js_symbols_sd": 0.07700687173362265,
+   "self_js_types": 0.03516794446018476,
+   "identical_pair_share": 0.0,
+   "self_js_mind2web": 0.03373124228042321,
+   "self_js_alfred": 0.19108075684924095,
+   "self_js_swebench": 0.08427173858650831,
+   "self_js_prism": 0.14329347616350832,
+   "self_js_paths": 0.12294996501926236,
+   "self_js_thoughttrace": 0.11442378859595066
+  },
+  {
+   "company": "Gemini",
+   "model": "Gemini 3.7 Flash",
+   "name": "gemini-flash-3.7",
+   "tier": "weak",
+   "items": "all",
+   "items_with_2plus_runs": 48,
+   "self_js_symbols": 0.1348336205689746,
+   "self_js_symbols_sd": 0.08815742720167771,
+   "self_js_types": 0.045687785273139936,
+   "identical_pair_share": 0.03472222222222222,
+   "self_js_mind2web": 0.044779386269851576,
+   "self_js_alfred": 0.21396334824751578,
+   "self_js_swebench": 0.16332200805752148,
+   "self_js_prism": 0.12844497458743404,
+   "self_js_paths": 0.12998865247666846,
+   "self_js_thoughttrace": 0.12850335377485622
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Sonnet 5.5",
+   "name": "claude-sonnet-5.5",
+   "tier": "strong",
+   "items": "shared",
+   "items_with_2plus_runs": 18,
+   "self_js_symbols": 0.11901203640988878,
+   "self_js_symbols_sd": 0.04522224192247957,
+   "self_js_types": 0.03211519506704089,
+   "identical_pair_share": 0.018518518518518517,
+   "self_js_mind2web": 0.054656156007777616,
+   "self_js_alfred": 0.10810929106924465,
+   "self_js_swebench": 0.13639819988794452,
+   "self_js_prism": 0.1348503805278986,
+   "self_js_paths": 0.14024056640250218,
+   "self_js_thoughttrace": 0.13981762456396513
+  },
+  {
+   "company": "Claude",
+   "model": "Claude Haiku 4.5",
+   "name": "claude-haiku-4.5",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 18,
+   "self_js_symbols": 0.182609019034891,
+   "self_js_symbols_sd": 0.09428315165072966,
+   "self_js_types": 0.06281295640783331,
+   "identical_pair_share": 0.0,
+   "self_js_mind2web": 0.09618564798077898,
+   "self_js_alfred": 0.16586528484862167,
+   "self_js_swebench": 0.20360924020923477,
+   "self_js_prism": 0.14266983672536293,
+   "self_js_paths": 0.3123205072302878,
+   "self_js_thoughttrace": 0.17500359721505965
+  },
+  {
+   "company": "OpenAI",
+   "model": "o4-mini (Flash-tier probe)",
+   "name": "o4-mini",
+   "tier": "weak",
+   "items": "shared",
+   "items_with_2plus_runs": 0,
+   "self_js_symbols": null,
+   "self_js_symbols_sd": null,
+   "self_js_types": null,
+   "identical_pair_share": null,
+   "self_js_mind2web": null,
+   "self_js_alfred": null,
+   "self_js_swebench": null,
+   "self_js_prism": null,
+   "self_js_paths": null,
+   "self_js_thoughttrace": null
+  }
+ ],
+ "top_symbols": {
+  "Gemini 3.7 Flash (high effort)": [
+   [
+    "target",
+    517
+   ],
+   [
+    "activity",
+    330
+   ],
+   [
+    "role_agent",
+    287
+   ],
+   [
+    "subject",
+    262
+   ],
+   [
+    "role_user",
+    144
+   ],
+   [
+    "web_element",
+    91
+   ],
+   [
+    "click",
+    78
+   ],
+   [
+    "ask",
+    76
+   ],
+   [
+    "requirement",
+    74
+   ],
+   [
+    "statement",
+    73
+   ],
+   [
+    "character",
+    54
+   ],
+   [
+    "propose",
+    49
+   ],
+   [
+    "enables",
+    47
+   ],
+   [
+    "outcome",
+    47
+   ],
+   [
+    "recommended",
+    45
+   ],
+   [
+    "code_entity",
+    41
+   ],
+   [
+    "lexical_label",
+    38
+   ],
+   [
+    "property_question",
+    38
+   ],
+   [
+    "turn",
+    36
+   ],
+   [
+    "walk",
+    34
+   ],
+   [
+    "measure",
+    32
+   ],
+   [
+    "provides",
+    32
+   ],
+   [
+    "object_label::counter",
+    30
+   ],
+   [
+    "software_version",
+    29
+   ],
+   [
+    "platform_label::zuora",
+    28
+   ]
+  ],
+  "Gemini 3.7 Flash": [
+   [
+    "target",
+    533
+   ],
+   [
+    "activity",
+    299
+   ],
+   [
+    "role_agent",
+    240
+   ],
+   [
+    "subject",
+    196
+   ],
+   [
+    "role_user",
+    128
+   ],
+   [
+    "web_element",
+    93
+   ],
+   [
+    "click",
+    78
+   ],
+   [
+    "ask",
+    74
+   ],
+   [
+    "requirement",
+    69
+   ],
+   [
+    "propose",
+    67
+   ],
+   [
+    "statement",
+    65
+   ],
+   [
+    "character",
+    51
+   ],
+   [
+    "recommended",
+    40
+   ],
+   [
+    "enables",
+    39
+   ],
+   [
+    "outcome",
+    39
+   ],
+   [
+    "turn",
+    36
+   ],
+   [
+    "code_entity",
+    35
+   ],
+   [
+    "walk",
+    31
+   ],
+   [
+    "platform_label::zuora",
+    30
+   ],
+   [
+    "chg_modify_code",
+    30
+   ],
+   [
+    "measure",
+    29
+   ],
+   [
+    "property_question",
+    29
+   ],
+   [
+    "platform_label::pandas",
+    28
+   ],
+   [
+    "object_label::counter",
+    27
+   ],
+   [
+    "provides",
+    27
+   ]
+  ],
+  "Claude Sonnet 5.5": [
+   [
+    "target",
+    667
+   ],
+   [
+    "activity",
+    633
+   ],
+   [
+    "role_agent",
+    369
+   ],
+   [
+    "subject",
+    339
+   ],
+   [
+    "role_user",
+    180
+   ],
+   [
+    "requirement",
+    134
+   ],
+   [
+    "propose",
+    128
+   ],
+   [
+    "ask",
+    95
+   ],
+   [
+    "include",
+    95
+   ],
+   [
+    "web_element",
+    87
+   ],
+   [
+    "inform",
+    83
+   ],
+   [
+    "click",
+    74
+   ],
+   [
+    "statement",
+    67
+   ],
+   [
+    "attribute_claim",
+    52
+   ],
+   [
+    "enables",
+    51
+   ],
+   [
+    "outcome",
+    51
+   ],
+   [
+    "request",
+    50
+   ],
+   [
+    "conjunction",
+    48
+   ],
+   [
+    "recommended",
+    46
+   ],
+   [
+    "measure",
+    38
+   ],
+   [
+    "character",
+    33
+   ],
+   [
+    "offer",
+    30
+   ],
+   [
+    "constrained_by",
+    29
+   ],
+   [
+    "software_version",
+    29
+   ],
+   [
+    "platform_label::zuora",
+    28
+   ]
+  ],
+  "Claude Haiku 4.5": [
+   [
+    "target",
+    583
+   ],
+   [
+    "activity",
+    513
+   ],
+   [
+    "role_agent",
+    227
+   ],
+   [
+    "subject",
+    173
+   ],
+   [
+    "ask",
+    113
+   ],
+   [
+    "propose",
+    107
+   ],
+   [
+    "role_user",
+    89
+   ],
+   [
+    "web_element",
+    86
+   ],
+   [
+    "click",
+    68
+   ],
+   [
+    "include",
+    67
+   ],
+   [
+    "inform",
+    66
+   ],
+   [
+    "outcome",
+    64
+   ],
+   [
+    "enables",
+    62
+   ],
+   [
+    "document_section",
+    57
+   ],
+   [
+    "requirement",
+    43
+   ],
+   [
+    "character",
+    33
+   ],
+   [
+    "statement",
+    33
+   ],
+   [
+    "constrained_by",
+    33
+   ],
+   [
+    "country::IT",
+    32
+   ],
+   [
+    "obligation",
+    28
+   ],
+   [
+    "measure",
+    27
+   ],
+   [
+    "offer",
+    27
+   ],
+   [
+    "software_version",
+    26
+   ],
+   [
+    "turn",
+    25
+   ],
+   [
+    "chg_modify_code",
+    25
+   ]
+  ],
+  "o4-mini (Flash-tier probe)": [
+   [
+    "target",
+    103
+   ],
+   [
+    "inform",
+    79
+   ],
+   [
+    "ask",
+    31
+   ],
+   [
+    "web_element",
+    20
+   ],
+   [
+    "click",
+    18
+   ],
+   [
+    "propose",
+    13
+   ],
+   [
+    "object_label::counter",
+    12
+   ],
+   [
+    "activity",
+    12
+   ],
+   [
+    "subject",
+    10
+   ],
+   [
+    "chg_modify_code",
+    10
+   ],
+   [
+    "turn",
+    8
+   ],
+   [
+    "walk",
+    8
+   ],
+   [
+    "role_agent",
+    8
+   ],
+   [
+    "code_entity",
+    8
+   ],
+   [
+    "object_label::lettuce",
+    7
+   ],
+   [
+    "platform_label::transformers",
+    7
+   ],
+   [
+    "modify_code",
+    7
+   ],
+   [
+    "object_label::fridge",
+    6
+   ],
+   [
+    "face",
+    6
+   ],
+   [
+    "role_user",
+    6
+   ],
+   [
+    "platform_label::pandas",
+    6
+   ],
+   [
+    "platform_label::bigquery",
+    6
+   ],
+   [
+    "cli_command",
+    6
+   ],
+   [
+    "acknowledge",
+    5
+   ],
+   [
+    "offer",
+    4
+   ]
+  ]
+ },
+ "type_counts": {
+  "Gemini 3.7 Flash (high effort)": {
+   "group_value": 414,
+   "operation": 231,
+   "constructor": 1307,
+   "value": 607,
+   "attribute": 517,
+   "speech_act": 225,
+   "claim_relation": 402,
+   "composite": 4,
+   "link": 41
+  },
+  "Gemini 3.7 Flash": {
+   "group_value": 407,
+   "operation": 233,
+   "attribute": 533,
+   "value": 559,
+   "constructor": 1156,
+   "speech_act": 234,
+   "claim_relation": 367,
+   "composite": 4,
+   "link": 36
+  },
+  "Claude Sonnet 5.5": {
+   "group_value": 403,
+   "value": 645,
+   "constructor": 1653,
+   "speech_act": 385,
+   "attribute": 668,
+   "operation": 159,
+   "claim_relation": 437,
+   "composite": 3,
+   "link": 42
+  },
+  "Claude Haiku 4.5": {
+   "group_value": 332,
+   "constructor": 1260,
+   "speech_act": 354,
+   "attribute": 585,
+   "value": 405,
+   "operation": 181,
+   "claim_relation": 387,
+   "link": 37,
+   "composite": 4
+  },
+  "o4-mini (Flash-tier probe)": {
+   "group_value": 76,
+   "operation": 59,
+   "attribute": 104,
+   "constructor": 86,
+   "speech_act": 136,
+   "value": 23,
+   "claim_relation": 7
+  }
+ },
+ "expressivity": [
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "all",
+   "pairs": 48,
+   "bleu": 0.125711452325223,
+   "corpus_bleu": 0.052613231473457416,
+   "rouge_l": 0.3879078627537427,
+   "word_lev_sim": 0.2829175670106519,
+   "from_success": 45
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "Mind2Web",
+   "pairs": 8,
+   "bleu": 0.22495085814676086,
+   "corpus_bleu": 0.24482672218346202,
+   "rouge_l": 0.575533998897815,
+   "word_lev_sim": 0.4378118304188675,
+   "from_success": 7
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "ALFRED",
+   "pairs": 8,
+   "bleu": 0.18241779724700644,
+   "corpus_bleu": 0.20974088445607875,
+   "rouge_l": 0.5746192222203504,
+   "word_lev_sim": 0.4423129765636509,
+   "from_success": 7
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "SWE-bench",
+   "pairs": 8,
+   "bleu": 0.22220901727276718,
+   "corpus_bleu": 0.20591585049878977,
+   "rouge_l": 0.414494734482004,
+   "word_lev_sim": 0.31801156488524207,
+   "from_success": 7
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "PRISM",
+   "pairs": 8,
+   "bleu": 0.06200058455951965,
+   "corpus_bleu": 0.05478336660476673,
+   "rouge_l": 0.2939969705275457,
+   "word_lev_sim": 0.19651828510071118,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "PATHs",
+   "pairs": 8,
+   "bleu": 0.04179843233398349,
+   "corpus_bleu": 0.0208672798477922,
+   "rouge_l": 0.2495432825162262,
+   "word_lev_sim": 0.1602220797195799,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash (high effort)",
+   "dataset": "ThoughtTrace",
+   "pairs": 8,
+   "bleu": 0.020892024391300393,
+   "corpus_bleu": 0.008429449942905655,
+   "rouge_l": 0.21925896787851532,
+   "word_lev_sim": 0.14262866537585972,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "all",
+   "pairs": 48,
+   "bleu": 0.11369731820606181,
+   "corpus_bleu": 0.04384141497191415,
+   "rouge_l": 0.36190443549872064,
+   "word_lev_sim": 0.24935579538462313,
+   "from_success": 47
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "Mind2Web",
+   "pairs": 8,
+   "bleu": 0.21826428759789143,
+   "corpus_bleu": 0.23290112982404046,
+   "rouge_l": 0.5442711747027162,
+   "word_lev_sim": 0.3971943524412408,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "ALFRED",
+   "pairs": 8,
+   "bleu": 0.1545223876253408,
+   "corpus_bleu": 0.1806285303260904,
+   "rouge_l": 0.5573448334891558,
+   "word_lev_sim": 0.4144793811630648,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "SWE-bench",
+   "pairs": 8,
+   "bleu": 0.2130983460121617,
+   "corpus_bleu": 0.18136371812503316,
+   "rouge_l": 0.4090548120195664,
+   "word_lev_sim": 0.2813143306322123,
+   "from_success": 7
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "PRISM",
+   "pairs": 8,
+   "bleu": 0.05752268456556679,
+   "corpus_bleu": 0.05945160702418575,
+   "rouge_l": 0.275434100332668,
+   "word_lev_sim": 0.17421981465064418,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "PATHs",
+   "pairs": 8,
+   "bleu": 0.019101339086776425,
+   "corpus_bleu": 0.010135505864937928,
+   "rouge_l": 0.19567058042336408,
+   "word_lev_sim": 0.11553658630667946,
+   "from_success": 8
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "dataset": "ThoughtTrace",
+   "pairs": 8,
+   "bleu": 0.01967486434863367,
+   "corpus_bleu": 0.0059396017439235895,
+   "rouge_l": 0.18965111202485324,
+   "word_lev_sim": 0.11339030711389735,
+   "from_success": 8
+  }
+ ],
+ "failures": [
+  {
+   "model": "claude-haiku-4.5",
+   "item": "alfred-1",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 4,
+   "would_add": "couch, activity_with_direction, colored_object, spatial_object",
+   "refine_count": 1,
+   "would_refine": "v19/constructor/activity",
+   "documented": true
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "item": "mind2web-1",
+   "dataset": "mind2web",
+   "run": 2,
+   "add_count": 4,
+   "would_add": "trip_type_spec, nonstop_constraint, airline_selected, flight_selected",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "item": "paths-2",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "reconcile_accounts",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-1",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "entity_description, spatial_relation",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-1",
+   "dataset": "alfred",
+   "run": 2,
+   "add_count": 2,
+   "would_add": "located, described_object",
+   "refine_count": 1,
+   "would_refine": "v19/support/activity",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-1",
+   "dataset": "alfred",
+   "run": 3,
+   "add_count": 2,
+   "would_add": "spatial_relation, described_entity",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-2",
+   "dataset": "alfred",
+   "run": 3,
+   "add_count": 2,
+   "would_add": "entity_description, step",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-3",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "spatial_relation",
+   "refine_count": 2,
+   "would_refine": "v19/constructor/activity, v19/constructor/requirement",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "alfred-3",
+   "dataset": "alfred",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "spatial_relation",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-1",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "persona, tone_flirty",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-1",
+   "dataset": "paths",
+   "run": 2,
+   "add_count": 2,
+   "would_add": "tone_funny, persona",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-1",
+   "dataset": "paths",
+   "run": 3,
+   "add_count": 2,
+   "would_add": "tone_funny, reassure",
+   "refine_count": 1,
+   "would_refine": "activity",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-2",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 3,
+   "would_add": "reconcile_accounts, property_question, possible",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-2",
+   "dataset": "paths",
+   "run": 3,
+   "add_count": 3,
+   "would_add": "reconcile, meaning_question, recurrence",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-3",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "adaptation, depicts",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-3",
+   "dataset": "paths",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "depicts",
+   "refine_count": 1,
+   "would_refine": "art_story",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "paths-3",
+   "dataset": "paths",
+   "run": 3,
+   "add_count": 3,
+   "would_add": "request, story_contains, adaptation_of",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "prism-1",
+   "dataset": "prism",
+   "run": 3,
+   "add_count": 2,
+   "would_add": "occurs, yes_no_question",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "prism-2",
+   "dataset": "prism",
+   "run": 1,
+   "add_count": 4,
+   "would_add": "precedes, fraction, alternatives, feasibility",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "prism-2",
+   "dataset": "prism",
+   "run": 2,
+   "add_count": 4,
+   "would_add": "requires, precedes, alternative, suitable_for",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "prism-3",
+   "dataset": "prism",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "why_question",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "prism-3",
+   "dataset": "prism",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "open_question",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "swebench-1",
+   "dataset": "swebench",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "disjunction",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "swebench-1",
+   "dataset": "swebench",
+   "run": 3,
+   "add_count": 4,
+   "would_add": "variable_unassigned, reads_variable, lacks_statement, alternatives",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "swebench-2",
+   "dataset": "swebench",
+   "run": 3,
+   "add_count": 0,
+   "would_add": "",
+   "refine_count": 1,
+   "would_refine": "v19/constructor/chg_modify_code",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "thoughttrace-2",
+   "dataset": "thoughttrace",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "wants, property_question",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "thoughttrace-3",
+   "dataset": "thoughttrace",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "fails_to",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "thoughttrace-3",
+   "dataset": "thoughttrace",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "unable_to_complete",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "item": "thoughttrace-3",
+   "dataset": "thoughttrace",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "unable_to",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "paths-8",
+   "dataset": "paths",
+   "run": 3,
+   "add_count": 3,
+   "would_add": "praise, thank, compliment",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "prism-3",
+   "dataset": "prism",
+   "run": 2,
+   "add_count": 2,
+   "would_add": "national_id, verification_requirement",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "prism-3",
+   "dataset": "prism",
+   "run": 3,
+   "add_count": 3,
+   "would_add": "identity_credential, account_verification, multi_factor_authentication",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "swebench-4",
+   "dataset": "swebench",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "network_connection, hang",
+   "refine_count": 1,
+   "would_refine": "v19/operation-vocabulary/modify_code",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "swebench-4",
+   "dataset": "swebench",
+   "run": 3,
+   "add_count": 2,
+   "would_add": "network_connection, cli_flag",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "swebench-6",
+   "dataset": "swebench",
+   "run": 2,
+   "add_count": 1,
+   "would_add": "path_tools_py3tool_py",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-3.7",
+   "item": "swebench-7",
+   "dataset": "swebench",
+   "run": 3,
+   "add_count": 4,
+   "would_add": "chg_deprecate_code, code_usage, code_breakage, code_evaluation",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "alfred-6",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "inscribed_text",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "alfred-6",
+   "dataset": "alfred",
+   "run": 2,
+   "add_count": 0,
+   "would_add": "",
+   "refine_count": 1,
+   "would_refine": "v19/operation-vocabulary/pick_up",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "mind2web-3",
+   "dataset": "mind2web",
+   "run": 3,
+   "add_count": 1,
+   "would_add": "unit_watt",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "swebench-4",
+   "dataset": "swebench",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "connection, functions_properly",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "gemini-flash-high-3.7",
+   "item": "swebench-7",
+   "dataset": "swebench",
+   "run": 3,
+   "add_count": 5,
+   "would_add": "chg_deprecate, code_usage, breakage, inconsistent_behavior, code_eval",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "alfred-1",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "object_specification, path_specification",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "alfred-2",
+   "dataset": "alfred",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "chill, object_at_location",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "mind2web-1",
+   "dataset": "mind2web",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "airline_label",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "paths-1",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "adopt_persona, rely_on",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "paths-3",
+   "dataset": "paths",
+   "run": 1,
+   "add_count": 3,
+   "would_add": "ask, provide, rewrite",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "prism-2",
+   "dataset": "prism",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "property_question",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "swebench-1",
+   "dataset": "swebench",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "assert_variable_assigned, assert_unpack_missing",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "swebench-2",
+   "dataset": "swebench",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "implement_method, test_truthiness",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "swebench-3",
+   "dataset": "swebench",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "create_file, install_package",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "thoughttrace-1",
+   "dataset": "thoughttrace",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "planning_request, organization_system",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "thoughttrace-2",
+   "dataset": "thoughttrace",
+   "run": 1,
+   "add_count": 1,
+   "would_add": "itinerary_summary",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  },
+  {
+   "model": "o4-mini",
+   "item": "thoughttrace-3",
+   "dataset": "thoughttrace",
+   "run": 1,
+   "add_count": 2,
+   "would_add": "inability, help_request",
+   "refine_count": 0,
+   "would_refine": "",
+   "documented": true
+  }
+ ]
+}

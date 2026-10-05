@@ -1,0 +1,286 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "ask for the location of the conserved region of CYP2D6 without copy number variations",
+   "status": "covered",
+   "matched_symbols": [
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "conserved region of CYP2D6 gene",
+   "status": "covered",
+   "matched_symbols": [
+    "in",
+    "next_to"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "negation",
+   "text": "lacking copy number variations (CNV)",
+   "status": "covered",
+   "matched_symbols": [
+    "exclude"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "the conserved region of CYP2D6 is located on chromosome 22 at 22q13.31",
+   "status": "covered",
+   "matched_symbols": [
+    "spatial_state",
+    "in",
+    "outcome",
+    "enables"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "CYP2D6 enzyme is responsible for metabolizing diverse medications",
+   "status": "covered",
+   "matched_symbols": [
+    "next_to",
+    "enables"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "speech_act",
+   "text": "ask for the control region of CYP2D6 used when calling CNV",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "conjunction",
+    "respond",
+    "inform"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "control region for CYP2D6 CNV calling",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "control region is chosen outside coding region as a reference for copy number status",
+   "status": "covered",
+   "matched_symbols": [
+    "spatial_state",
+    "outcome"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "control region for CYP2D6 is typically located on chromosome 22q13.31 outside the gene",
+   "status": "covered",
+   "matched_symbols": [
+    "spatial_state",
+    "enables",
+    "outcome",
+    "in"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "speech_act",
+   "text": "request to find the specific control region for CYP2D6 during CNV calling",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "inform",
+    "conjunction",
+    "respond",
+    "temporal_context"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "agent lacks real-time database access or internet browsing capability",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "enables",
+    "possesses",
+    "unaware"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "consult scientific literature, genetic databases, or field experts for CYP2D6 control regions",
+   "status": "covered",
+   "matched_symbols": [
+    "next_to"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "speech_act",
+   "text": "query the control region of CYP2D6 for CNV calling",
+   "status": "covered",
+   "matched_symbols": [
+    "respond",
+    "inform",
+    "ask"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "control region for CYP2D6 CNV calling is often adjacent on chromosome 22q13.31, such as H238 or CYP2D7P1",
+   "status": "covered",
+   "matched_symbols": [
+    "next_to",
+    "enables"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "speech_act",
+   "text": "ask how to call copy number variations using AmpliSeq",
+   "status": "covered",
+   "matched_symbols": [
+    "ask"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "AmpliSeq technology",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "prepare targeted sequencing library using AmpliSeq primer pools",
+   "status": "covered",
+   "matched_symbols": [
+    "target"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "sequence library using compatible next-generation sequencing platforms",
+   "status": "covered",
+   "matched_symbols": [
+    "sequence"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "action",
+   "text": "align sequencing reads to reference genome using alignment algorithms like Bowtie or BWA",
+   "status": "covered",
+   "matched_symbols": [
+    "bowtie",
+    "sequence"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "object",
+   "text": "alignment software Bowtie or BWA",
+   "status": "covered",
+   "matched_symbols": [
+    "bowtie",
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "action",
+   "text": "call copy number variations using software like CNVkit, FREEC, or VarSeq to evaluate read depth",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "object",
+   "text": "CNV calling software CNVkit, FREEC, or VarSeq",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "action",
+   "text": "interpret CNV results using algorithm-specific statistical segmentation and thresholds",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "action",
+   "text": "validate identified CNVs using experimental techniques like qPCR or FISH",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "FALSE",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "attribute_claim",
+  "bowtie",
+  "conjunction",
+  "enables",
+  "exclude",
+  "in",
+  "inform",
+  "next_to",
+  "other_side_of",
+  "outcome",
+  "platform_label",
+  "possesses",
+  "property_question",
+  "recommended",
+  "respond",
+  "role_agent",
+  "sequence",
+  "spatial_state",
+  "subject",
+  "target",
+  "temporal_context",
+  "unaware",
+  "varies_with"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n22"
+ ]
+}

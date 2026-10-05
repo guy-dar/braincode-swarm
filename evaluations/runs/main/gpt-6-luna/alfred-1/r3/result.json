@@ -1,0 +1,44 @@
+{
+ "model": "gpt-6-luna",
+ "item": "alfred-1",
+ "dataset": "alfred",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 462.0,
+ "usage": {
+  "calls": 20,
+  "input": 60,
+  "cacheRead": 1061090,
+  "cacheWrite": 70300,
+  "output": 18846,
+  "reasoning": 12384,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.0288,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "action_description",
+    "dimension": "constructor"
+   },
+   {
+    "term": "qualified_entity",
+    "dimension": "constructor"
+   },
+   {
+    "term": "end_table",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

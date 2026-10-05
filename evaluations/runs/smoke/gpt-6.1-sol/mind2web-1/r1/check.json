@@ -1,0 +1,199 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "search for flights",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "constraint",
+   "text": "one-way flight",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "nonstop direct flight",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "departure city San Francisco",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "destination city San Diego",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "temporal",
+   "text": "flight date July 1",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "airline United Airlines",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "passenger count two adults",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "passenger count one senior",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "view flight deal",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "morning departure flight",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "select Flights option in UI",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "select one-way flight option",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "enter and select San Francisco as origin",
+   "status": "covered",
+   "matched_symbols": [
+    "location_spec",
+    "click",
+    "type_text"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "enter and select San Diego as destination",
+   "status": "covered",
+   "matched_symbols": [
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "select departure date July 1 2023",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "adjust travelers count for adults and senior",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "click find flights search button",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "action",
+   "text": "filter flight results by United airline",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "select the 5:00 AM morning flight",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "action",
+   "text": "click View Deal button",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "REPLY_TO",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "click",
+  "location_spec",
+  "request",
+  "role_user",
+  "target",
+  "type_text",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [
+  "flight_search",
+  "view_deal"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

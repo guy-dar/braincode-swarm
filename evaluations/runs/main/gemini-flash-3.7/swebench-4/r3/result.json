@@ -1,0 +1,39 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "swebench-4",
+ "dataset": "swebench",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 664.0,
+ "usage": {
+  "calls": 39,
+  "input": 287573,
+  "cacheRead": 1557974,
+  "output": 22114,
+  "reasoning": 16112,
+  "compactions": 1,
+  "truncated_tool_results": 5
+ },
+ "cost_usd": 0.4155,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "network_connection",
+    "dimension": "constructor"
+   },
+   {
+    "term": "cli_flag",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

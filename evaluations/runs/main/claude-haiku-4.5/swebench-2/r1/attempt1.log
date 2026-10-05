@@ -1,0 +1,22 @@
+   10.9s turn 1
+  129.3s   model reply: in 10 + cached 0, out 14199 (+12942 reasoning)
+  129.3s   tool write: /output/translation.md
+  129.3s turn 2
+  131.0s   model reply: in 13 + cached 31518, out 102 (+26 reasoning)
+  131.0s   tool bash: cd /output && node /kit/rag.mjs check --translation translation.md 2>&1
+  131.1s turn 3
+  136.9s   model reply: in 13 + cached 45742, out 943 (+161 reasoning)
+  136.9s   tool edit: /output/translation.md
+  137.0s turn 4
+  140.0s   model reply: in 12 + cached 46300, out 308 (+23 reasoning)
+  140.0s   tool edit: /output/translation.md
+  140.1s turn 5
+  141.2s   model reply: in 12 + cached 47269, out 82 (+23 reasoning)
+  141.2s   tool read: /output/translation.md
+  141.2s turn 6
+  142.8s   model reply: in 13 + cached 47622, out 111 (+31 reasoning)
+  142.8s   tool bash: node /kit/rag.mjs check --translation /output/translation.md 2>&1 | tail -20
+  142.9s turn 7
+  148.6s   model reply: in 13 + cached 48708, out 499 (+122 reasoning)
+  148.6s agent finished
+  148.6s agent finished

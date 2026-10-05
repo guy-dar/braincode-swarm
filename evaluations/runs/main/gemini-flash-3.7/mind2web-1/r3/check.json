@@ -1,0 +1,219 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "search for flights",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "constraint",
+   "text": "one-way trip",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "nonstop flight",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "origin city San Francisco",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "destination city San Diego",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "temporal",
+   "text": "departure date July 1",
+   "status": "covered",
+   "matched_symbols": [
+    "daytime",
+    "time_point"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "airline United Airlines",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "two adult passengers",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "one senior passenger",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "view flight deal",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults",
+    "propose"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "morning departure flight",
+   "status": "covered",
+   "matched_symbols": [
+    "daytime"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "select flights option",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "select one-way flight option",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "enter San Francisco as departure location",
+   "status": "covered",
+   "matched_symbols": [
+    "location_spec",
+    "type_text"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "enter San Diego as arrival destination",
+   "status": "covered",
+   "matched_symbols": [
+    "type_text"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "select departure date July 1 2023",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "update traveler passenger counts",
+   "status": "covered",
+   "matched_symbols": [
+    "group_size",
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "submit flight search",
+   "status": "covered",
+   "matched_symbols": [
+    "propose"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "action",
+   "text": "filter search results by United Airlines",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "select 5:00 AM morning flight",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "daytime"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "action",
+   "text": "click View Deal button",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "click",
+  "daytime",
+  "group_size",
+  "location_spec",
+  "propose",
+  "requirement",
+  "role_adults",
+  "target",
+  "time_point",
+  "type_text",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

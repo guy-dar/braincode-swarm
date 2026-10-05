@@ -1,0 +1,1319 @@
+{
+ "translator_id": "mind2web-8",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User requests filtering search results",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Filter search results for guitar tabs to only show songs with a difficulty rating of \"Beginner\"",
+   "candidates": [
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.6413,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5566,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.5333,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3737,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3586,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.3217,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3164,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.3088,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3019,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.2963,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Filter search results",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Filter search results for guitar tabs to only show songs with a difficulty rating of \"Beginner\"",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.8073,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.7719,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.7411,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.6796,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.6652,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6586,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.6482,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.6267,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.594,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.4343,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4149,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Guitar tabs for songs",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Filter search results for guitar tabs to only show songs with a difficulty rating of \"Beginner\"",
+   "candidates": [
+    {
+     "id": "v19/entity-name/song",
+     "symbol": "song",
+     "kind": "value",
+     "score": 0.7157,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.461,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_pop_rock",
+     "symbol": "genre_pop_rock",
+     "kind": "value",
+     "score": 0.3971,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_electronic",
+     "symbol": "genre_electronic",
+     "kind": "value",
+     "score": 0.3596,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.3463,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.3397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.329,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/piano",
+     "symbol": "piano",
+     "kind": "value",
+     "score": 0.3218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.3156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.3154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3086,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.2862,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Include only songs with a difficulty rating of Beginner",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Filter search results for guitar tabs to only show songs with a difficulty rating of \"Beginner\"",
+   "candidates": [
+    {
+     "id": "v19/entity-name/song",
+     "symbol": "song",
+     "kind": "value",
+     "score": 0.7231,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.5691,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.5631,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4958,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4936,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4735,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_pop_rock",
+     "symbol": "genre_pop_rock",
+     "kind": "value",
+     "score": 0.3688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3591,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/genre_electronic",
+     "symbol": "genre_electronic",
+     "kind": "value",
+     "score": 0.3394,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.3347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3321,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3298,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3178,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Step 1 of the action sequence",
+   "source": [
+    "t2:s1"
+   ],
+   "id": "n5",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.8269,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6451,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.5552,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4509,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.4502,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.4396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4105,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4075,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.4035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3948,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.3772,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.3719,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click the Tabs link",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n6",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7698,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.56,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.3776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.3513,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3054,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.2987,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Tabs link UI element",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.7482,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.594,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.574,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.4176,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3895,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.3627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3612,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.3506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.3416,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_safari",
+     "symbol": "dom_safari",
+     "kind": "value",
+     "score": 0.3411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3229,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Step 2 of the action sequence",
+   "source": [
+    "t2:s3"
+   ],
+   "id": "n8",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.8217,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6613,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.5459,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4571,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4199,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.41,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.4009,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3885,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3753,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3747,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3741,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click the Beginner filter link",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n9",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7798,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.6743,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.6242,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5792,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4424,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4396,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4311,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4216,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4199,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3839,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3719,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.3171,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Beginner filter link element",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n10",
+   "context": "1. [link]  Tabs -> CLICK 2. [link]  Beginner 554,396 -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.7047,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.5048,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4911,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.4718,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.4612,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4541,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.4507,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4459,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4455,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4442,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4435,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

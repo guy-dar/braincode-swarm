@@ -1,0 +1,20 @@
+    2.7s turn 1
+    8.9s   model reply: in 4 + cached 2083, out 363 (+239 reasoning)
+    8.9s   tool bash: node /kit/rag.mjs entry ask request instruct unit_watt measure requirement 2>&1 | head -60; node /kit/rag.mjs search "watt power output unit" "cheapest product 
+   10.9s turn 2
+   30.4s   model reply: in 2 + cached 43489, out 2933 (+954 reasoning)
+   30.4s   tool bash: cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+
+   30.6s turn 3
+   36.0s   model reply: in 2 + cached 45651, out 538 (+0 reasoning)
+   36.0s agent finished
+   36.0s agent finished

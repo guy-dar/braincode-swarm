@@ -1,0 +1,20 @@
+    4.4s turn 1
+  103.3s   model reply: in 10 + cached 0, out 11920 (+11759 reasoning)
+  103.3s   tool read: /trajectory.txt
+  103.4s   tool read: /rag_context.md
+  103.5s turn 2
+  116.3s   model reply: in 14 + cached 29342, out 1558 (+679 reasoning)
+  116.3s   tool write: /output/translation.md
+  116.4s turn 3
+  118.2s   model reply: in 13 + cached 43955, out 127 (+27 reasoning)
+  118.2s   tool bash: cd / && node /kit/rag.mjs check --translation /output/translation.md 2>&1
+  118.8s turn 4
+  121.6s   model reply: in 13 + cached 45542, out 243 (+99 reasoning)
+  121.6s   tool edit: /output/translation.md
+  121.7s turn 5
+  123.1s   model reply: in 12 + cached 46106, out 97 (+29 reasoning)
+  123.1s   tool read: /output/translation.md
+  123.1s turn 6
+  130.9s   model reply: in 13 + cached 46388, out 881 (+489 reasoning)
+  130.9s agent finished
+  130.9s agent finished

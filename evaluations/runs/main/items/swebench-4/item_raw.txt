@@ -1,0 +1,18 @@
+<|user|>unable to complete remote connections for two-process 
+steps to reproduce:
+
+```
+ipython console --ip=0
+```
+
+and then, try to connect to it from another window:
+
+```
+ipython console --exiting
+```
+
+and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix
+
+<|assistant|>1. modify IPython/consoleapp.py
+2. modify IPython/kernel/client.py
+3. modify IPython/qt/console/qtconsoleapp.py

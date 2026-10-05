@@ -8,7 +8,7 @@ Your job is a **faithful** translation using only the current glossary. If that 
 
 ## Files
 
-**Already attached to this message, so don't read them again:** the language specification (`1-language-spec.md`), the glossary retrieval for your item (`2-rag_context.md`), the kit guide (`3-kit-README.md`), the three output formats (`4-…`, `5-…`, `6-…`), and your item (`/trajectory.txt`). They're also on disk at the paths below if you need to grep them.
+**Already attached to this message, so don't read them again:** the language specification (`1-language-spec.md`), the glossary retrieval for your item (`2-rag_context.md`), the kit guide (`3-kit-README.md`), the three output formats (`4-…`, `5-…`, `6-…`), the worked examples (`7-examples.jsonl`, don't `cat` `/reference/examples.jsonl`), and your item (`/trajectory.txt`). They're also on disk at the paths below if you need to grep them.
 
 | Path | What it is |
 |---|---|
@@ -82,9 +82,11 @@ They took about a third of all turns in earlier batches and add nothing:
 ## Work in few, full turns
 
 Every model turn re-sends this whole conversation, so many small turns are slow and expensive. Batch your lookups:
+- **Look up every symbol you need in one call:** `node /kit/rag.mjs entry a b c d e f` returns all their records at once. Don't grep `/reference/glossary.md` one symbol at a time.
 - one `node /kit/rag.mjs search "<need 1>" "<need 2>" "<need 3>"` instead of three searches;
-- one `entry a b c` instead of three;
-- one `grep -E "a|b|c"` instead of three.
+- one `grep -E "a|b|c"` instead of three, when you do need the glossary file.
+- **Several tools in one turn:** when lookups don't depend on each other, make all the tool calls in the same reply; you can call several tools at once.
+- **Use the kit, don't inspect it:** don't read `/kit/rag.mjs`, parse `/reference/glossary.jsonl` or call the RAG server with your own `node -e` scripts. `rag entry`, `rag search` and `rag widen` return the same information.
 
 The needs table and candidates are already in `2-rag_context.md`, so search only for what's missing there.
 

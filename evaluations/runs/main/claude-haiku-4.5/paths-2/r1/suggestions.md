@@ -1,0 +1,10 @@
+### S1 | type: add | dimension: constructor | symbol: reconcile_accounts
+
+- Needs: n1 (t1:s1), n2 (t1:s1)
+- Searches tried: `reconcile_code` (for code entities only, definition: "reconcile multiple code entities or implementations to standardize their behavior"); widen "financial account reconciliation" → no results; widen "balance sheet accounts sync" → no results; widen "accounts receivable reconciliation" → only `reconcile_code` matches
+- Typed parameters: accounts: LIST[TERM], objective: STRING / TERM, location?: STRING / ATOM[platform_label]
+- Interpretation: specifies the reconciliation of multiple financial accounts (AR, deferred revenue, etc.) with an identified objective (sync with financial records, maintain accuracy, etc.). Accounts is a list of TERM descriptions of account types; objective identifies the purpose; location optionally names the accounting system (e.g., platform_label::zuora). Constructs a specification, asserts nothing about whether reconciliation has occurred.
+- Not: not `reconcile_code` (which is for code implementations); not an executed reconciliation (use RECORD ACTION if actually performed)
+- Example: `TERM reconcile_accounts(accounts=[subject(kind="AR"), subject(kind="deferred revenue")], objective="sync with financial statements", location=platform_label::zuora) -> reconcile_spec : TERM`
+- Proposed record: `{"symbol": "reconcile_accounts", "kind": "constructor", "signature": "TERM reconcile_accounts(accounts: LIST[TERM], objective: STRING / TERM, location?: STRING / ATOM[platform_label]) -> TERM", "definition": "Specifies reconciliation of identified financial accounts to a stated objective (such as syncing with financial records or maintaining accuracy). Accounts are TERM descriptions of account types; objective states the purpose; location optionally names the system (e.g., platform_label::zuora). Asserts nothing about whether reconciliation has occurred or succeeded.", "not": "reconcile_code (for code entity reconciliation) or an executed reconciliation action", "aliases": ["account reconciliation", "balance reconciliation", "financial account sync"]}`
+

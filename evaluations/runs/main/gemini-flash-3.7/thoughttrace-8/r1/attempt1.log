@@ -1,0 +1,37 @@
+    1.8s turn 1
+   13.0s   model reply: in 31171 + cached 0, out 1947 (+1897 reasoning)
+   13.0s   tool bash: node /kit/rag.mjs entry comfortable causes leads_to self_protection obligation interpersonal_stance attitude recommended has_goal user_preference activity decis
+   13.2s turn 2
+   16.6s   model reply: in 35158 + cached 0, out 64 (+19 reasoning)
+   16.6s   tool bash: node /kit/rag.mjs search "support" "advice" "quit" "job" "workload" "emergency fund" "resume"
+   17.2s turn 3
+   21.3s   model reply: in 4635 + cached 32526, out 290 (+242 reasoning)
+   21.3s   tool bash: node /kit/rag.mjs entry subject comfortable user_practice role_user role_agent role_colleague role_manager role_friend role_support_team
+   21.4s turn 4
+   24.8s   model reply: in 38361 + cached 0, out 79 (+41 reasoning)
+   24.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+   24.8s turn 5
+   28.6s   model reply: in 3663 + cached 36573, out 64 (+24 reasoning)
+   28.6s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md
+   28.7s turn 6
+   33.0s   model reply: in 5666 + cached 36567, out 355 (+327 reasoning)
+   33.0s   tool bash: grep -C 3 "comfortable" /reference/glossary.md
+   33.0s turn 7
+   41.7s   model reply: in 2367 + cached 40616, out 1256 (+1205 reasoning)
+   41.7s   tool bash: node /kit/rag.mjs search "identify root cause" "workplace culture" "toxic boss" "emotional detachment" "financial emergency fund" "stealth job search"
+   41.8s turn 8
+   44.6s   model reply: in 5337 + cached 40618, out 83 (+52 reasoning)
+   44.6s   tool bash: node /kit/rag.mjs entry reason_for well_wishes safe warning
+   44.8s turn 9
+   76.6s   model reply: in 5820 + cached 40603, out 6878 (+5238 reasoning)
+   76.6s   tool write: /output/translation.md
+   76.6s turn 10
+   79.5s   model reply: in 8613 + cached 44692, out 53 (+23 reasoning)
+   79.5s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   79.6s turn 11
+   91.5s   model reply: in 5298 + cached 48740, out 1993 (+1963 reasoning)
+   91.5s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   91.7s turn 12
+   95.2s   model reply: in 3909 + cached 52802, out 63 (+17 reasoning)
+   95.2s agent finished
+   95.2s agent finished

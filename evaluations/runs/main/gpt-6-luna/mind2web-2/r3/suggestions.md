@@ -1,0 +1,9 @@
+### S1 | type: refine | dimension: refine-entry | target: v19/support/activity
+- Needs: n2 (t1:s1), n4 (t1:s1)
+- Searches tried: widen "Browse or search job listings" → `search_web`, `search_travel`, `search_transit`, `apply_filters`; widen "Filter job search results" → `search_web`, `apply_filters`, `select_filter`. These operations describe executable or recorded operations, not the user's requested activity description in this TRACE. The existing `activity` constructor is the appropriate compositional form, but its contract does not give explicit reviewed meanings for the `search` and `filter` verb values.
+- Before: `activity` describes an action and its roles; `verb` is a STRING, with no reviewed interpretation for `search` or `filter`.
+- After: define `verb="search"` as a description of seeking information/listings about the object, and `verb="filter"` as a description of restricting a set of candidates according to `purpose`; both remain descriptive TERM content, not execution or evidence that the activity occurred.
+- Justification: this distinguishes the two requested actions compositionally without recording them as completed operations or introducing domain-specific action symbols.
+- Affected uses: activity terms for searching and filtering requested job listings in t1:s1; the existing `topic_ai_earning_methods` composite also uses `activity` with a different verb.
+- Compatibility: preserve the existing general action-description interpretation; the added verb meanings specialize only the stated verb values and do not alter other activity uses.
+- Proposed record: {"definition": "Description of an action and its roles; instrument identifies means and purpose identifies an intended end. The verb value search describes seeking information or listings about the object; filter describes restricting candidates according to purpose. These are descriptions only, not executable operations or evidence that the action occurred."}

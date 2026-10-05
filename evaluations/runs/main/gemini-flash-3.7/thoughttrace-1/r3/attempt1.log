@@ -1,0 +1,43 @@
+    1.7s turn 1
+    6.7s   model reply: in 33072 + cached 0, out 172 (+86 reasoning)
+    6.7s   tool bash: node /kit/rag.mjs entry greeting request ask acknowledge confirm offer propose respond enables provides character aesthetic document_section sequence temporal_c
+    6.9s turn 2
+   16.0s   model reply: in 35247 + cached 0, out 1394 (+1355 reasoning)
+   16.0s   tool bash: node /kit/rag.mjs search "thank" "gratitude" "advice" "recommendation" "routine"
+   16.2s turn 3
+   19.8s   model reply: in 5481 + cached 32531, out 71 (+37 reasoning)
+   19.8s   tool bash: node /kit/rag.mjs entry meets_needs recommended user_practice important attitude offer_help
+   19.9s turn 4
+   23.9s   model reply: in 2069 + cached 36581, out 301 (+269 reasoning)
+   23.9s   tool bash: node /kit/rag.mjs search "greet" "greeting" "salutation"
+   24.1s turn 5
+   27.2s   model reply: in 3328 + cached 36570, out 84 (+54 reasoning)
+   27.2s   tool bash: node /kit/rag.mjs search "speech act" "UTTER"
+   27.3s turn 6
+   30.6s   model reply: in 4001 + cached 36555, out 88 (+51 reasoning)
+   30.6s   tool bash: grep -E "^\| [a-z_]+ \| speech_act \|" /reference/glossary.md
+   30.6s turn 7
+   34.0s   model reply: in 4578 + cached 36540, out 196 (+168 reasoning)
+   34.0s   tool bash: node /kit/rag.mjs search "salutation greeting descriptor"
+   34.2s turn 8
+   45.3s   model reply: in 5090 + cached 36525, out 1770 (+1745 reasoning)
+   45.3s   tool bash: node /kit/rag.mjs entry lexical_label
+   45.4s turn 9
+   57.0s   model reply: in 3273 + cached 40582, out 1427 (+1397 reasoning)
+   57.0s   tool bash: node /kit/rag.mjs search "UTTER greeting" "greeting"
+   57.2s turn 10
+   91.8s   model reply: in 5345 + cached 40580, out 6700 (+4423 reasoning)
+   91.8s   tool write: /output/translation.md
+   91.8s turn 11
+  101.0s   model reply: in 7961 + cached 44668, out 53 (+23 reasoning)
+  101.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  101.2s turn 12
+  128.4s   model reply: in 5185 + cached 48719, out 5184 (+2907 reasoning)
+  128.4s   tool write: /output/translation.md
+  128.4s turn 13
+  133.0s   model reply: in 59092 + cached 0, out 55 (+25 reasoning)
+  133.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  133.1s turn 14
+  137.0s   model reply: in 3521 + cached 56848, out 112 (+31 reasoning)
+  137.0s agent finished
+  137.0s agent finished

@@ -1,0 +1,112 @@
+    2.0s turn 1
+    9.5s   model reply: in 30098 + cached 0, out 595 (+564 reasoning)
+    9.5s   tool bash: node /kit/rag.mjs search "cook" "between" "corner"
+    9.6s turn 2
+   16.5s   model reply: in 3112 + cached 28443, out 866 (+816 reasoning)
+   16.5s   tool bash: node /kit/rag.mjs search "cook" "heat" "microwave" "state_cooked" "turn_on" "toast" "clean" "state"
+   16.7s turn 3
+   20.1s   model reply: in 6364 + cached 28446, out 107 (+64 reasoning)
+   20.1s   tool bash: node /kit/rag.mjs entry state_microwaved has_state turn_on heat open close place pick_up walk turn face
+   20.2s turn 4
+   23.7s   model reply: in 3848 + cached 32501, out 104 (+70 reasoning)
+   23.7s   tool bash: grep -i "alfred" /reference/glossary.md | head -n 30
+   23.7s turn 5
+   40.4s   model reply: in 3974 + cached 32482, out 2409 (+2374 reasoning)
+   40.4s   tool bash: node /kit/rag.mjs search "cook apple" "microwave" "put" "walk"
+   40.5s turn 6
+   64.3s   model reply: in 7615 + cached 32490, out 3912 (+3891 reasoning)
+   64.3s   tool bash: cat /kit/rag.mjs
+   64.3s turn 7
+   85.0s   model reply: in 8979 + cached 36571, out 3033 (+2956 reasoning)
+   85.0s   tool bash: node /kit/rag.mjs entry turn walk face pick_up open close place heat turn_on remove drop look walk_backward stand_up left_of right_of next_to between on in behi
+   85.1s turn 8
+   88.1s   model reply: in 6024 + cached 44715, out 77 (+43 reasoning)
+   88.1s   tool bash: node /kit/rag.mjs entry shelf microwave sink stove apple state_microwaved sequence activity
+   88.2s turn 9
+   97.6s   model reply: in 3065 + cached 48768, out 1255 (+1217 reasoning)
+   97.6s   tool bash: node /kit/rag.mjs search "open door" "open microwave" "close door" "microwave door"
+   97.7s turn 10
+  101.5s   model reply: in 5653 + cached 48766, out 113 (+63 reasoning)
+  101.5s   tool bash: grep -E "^\| (open|close|face|walk|turn|heat|pick_up|place|door|microwave) \|" /reference/glossary.md
+  101.5s turn 11
+  110.5s   model reply: in 2287 + cached 52814, out 602 (+562 reasoning)
+  110.5s   tool bash: node /kit/rag.mjs search "entity" "open" "target" "receptacle" "appliance"
+  110.7s turn 12
+  114.6s   model reply: in 4351 + cached 52810, out 62 (+37 reasoning)
+  114.6s   tool bash: grep "| constructor |" /reference/glossary.md
+  114.7s turn 13
+  118.0s   model reply: in 2153 + cached 56866, out 189 (+155 reasoning)
+  118.0s   tool bash: node /kit/rag.mjs search "lexical_label" "door" "microwave"
+  118.2s turn 14
+  121.2s   model reply: in 3312 + cached 56854, out 58 (+33 reasoning)
+  121.2s   tool bash: node /kit/rag.mjs entry lexical_label
+  121.3s turn 15
+  130.7s   model reply: in 3856 + cached 56838, out 1072 (+1044 reasoning)
+  130.7s   tool bash: node /kit/rag.mjs widen "cooked" --kind constraint
+  130.8s turn 16
+  134.7s   model reply: in 5979 + cached 56835, out 97 (+70 reasoning)
+  134.7s   tool bash: grep "| state-value |" /reference/glossary.md
+  134.8s turn 17
+  143.4s   model reply: in 2353 + cached 60877, out 1175 (+1137 reasoning)
+  143.4s   tool bash: node /kit/rag.mjs widen "command to place a cooked apple on black shelves" --kind speech_act
+  143.6s turn 18
+  146.7s   model reply: in 5458 + cached 60883, out 46 (+19 reasoning)
+  146.7s   tool bash: grep "| speech_act |" /reference/glossary.md
+  146.7s turn 19
+  153.4s   model reply: in 5993 + cached 60868, out 611 (+583 reasoning)
+  153.4s   tool bash: node /kit/rag.mjs entry location_spec spatial_state
+  153.5s turn 20
+  157.1s   model reply: in 2734 + cached 64912, out 113 (+74 reasoning)
+  157.1s   tool bash: node /kit/rag.mjs entry between corner shelf table counter sink stove microwave apple state_microwaved state_warm
+  157.3s turn 21
+  166.8s   model reply: in 3444 + cached 64897, out 1379 (+1337 reasoning)
+  166.8s   tool bash: node /kit/rag.mjs search "cooked apple" "black shelf" "brown egg" "white table" "red apple"
+  166.9s turn 22
+  243.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  243.0s agent finished
+  245.0s turn 23
+  313.0s   model reply: in 50133 + cached 0, out 102 (+64 reasoning)
+  313.0s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+  313.1s turn 24
+  347.8s   model reply: in 52031 + cached 0, out 64 (+22 reasoning)
+  347.8s   tool bash: grep -E "^\| [e-z][a-z0-9_]+ \| constructor \|" /reference/glossary.md
+  347.8s turn 25
+  400.1s   model reply: in 5218 + cached 48644, out 2123 (+1082 reasoning)
+  400.1s   tool write: /output/translation.md
+  400.1s turn 26
+  425.1s   model reply: in 3295 + cached 52694, out 60 (+30 reasoning)
+  425.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  425.2s turn 27
+  445.2s   model reply: in 4276 + cached 52683, out 1139 (+1097 reasoning)
+  445.3s   tool bash: node /kit/rag.mjs search "between sink and stove" "next to brown egg" "left corner" "face counter"
+  445.4s turn 28
+  457.7s   model reply: in 2665 + cached 56740, out 389 (+362 reasoning)
+  457.7s   tool bash: grep "| spatial-relation |" /reference/glossary.md
+  457.8s turn 29
+  468.8s   model reply: in 3419 + cached 56727, out 421 (+398 reasoning)
+  468.9s   tool bash: node /kit/rag.mjs entry place
+  468.9s turn 30
+  492.6s   model reply: in 4007 + cached 56712, out 3077 (+1911 reasoning)
+  492.6s   tool write: /output/translation.md
+  492.6s turn 31
+  502.8s   model reply: in 7081 + cached 56719, out 54 (+24 reasoning)
+  502.8s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  502.9s turn 32
+  517.1s   model reply: in 3973 + cached 60760, out 1873 (+1845 reasoning)
+  517.1s   tool bash: node /kit/rag.mjs entry shelf counter table stove microwave sink
+  517.3s turn 33
+  538.1s   model reply: in 6144 + cached 60762, out 2950 (+1749 reasoning)
+  538.1s   tool write: /output/translation.md
+  538.1s turn 34
+  544.9s   model reply: in 5041 + cached 64819, out 54 (+24 reasoning)
+  544.9s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  545.0s turn 35
+  587.8s   model reply: in 49760 + cached 0, out 3992 (+2615 reasoning)
+  587.8s   tool write: /output/translation.md
+  587.8s turn 36
+  593.0s   model reply: in 5068 + cached 48688, out 56 (+26 reasoning)
+  593.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  593.2s turn 37
+  604.0s   model reply: in 6015 + cached 48676, out 1435 (+46 reasoning)
+  604.1s agent finished
+  604.1s agent finished

@@ -1,0 +1,4 @@
+<|user|>Plan travel.
+<|assistant|>What is the destination of the trip? What are the dates of the trip? What is the party size of the trip? What is the travel style of the trip? What is the budget of the trip?
+<|user|>I want to travel to Rome, Italy in early July with my parents for an adventure vibe. The budget is at most 5000 USD per person for a duration of at most 2 weeks.
+<|assistant|>I recommend traveling to Rome and Tuscany, Italy for 14 days for a group size of 3 adults. I considered traveling to the Amalfi Coast, Italy, but rejected it in favor of Rome and Tuscany. I recommend an e-bike tour, kayaking on the Tiber River, and an underground tour in Italy. I recommend a hot air balloon ride, an ATV tour, hiking in the Chianti hills, and truffle hunting in Italy. The cost is 3900 USD per person. I recommend hotels in Rome and Tuscany, Italy. I offer to finalize dates, customize activities, or switch destination to the Amalfi Coast, Italy.

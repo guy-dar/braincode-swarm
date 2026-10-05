@@ -1,0 +1,103 @@
+    1.6s turn 1
+   15.5s   model reply: in 29716 + cached 0, out 1296 (+1252 reasoning)
+   15.5s   tool bash: node /kit/rag.mjs search "mother-in-law" "narcissistic" "boyfriend" "boundary" "therapy"
+   15.6s turn 2
+  173.3s   model reply: in 32418 + cached 0, out 101 (+56 reasoning)
+  173.3s   tool bash: node /kit/rag.mjs search "family" "relationship" "advice" "conflict" "boundary" "partner" "counseling"
+  173.5s turn 3
+  177.6s   model reply: in 5975 + cached 28443, out 105 (+42 reasoning)
+  177.6s   tool bash: grep -i -E "stance|protect|boundar|therap|counsel|psychol|esteem|express|communicat|narciss|toxic|mother|parent|partner|boyfriend" /reference/glossary.md
+  177.6s turn 4
+  181.6s   model reply: in 3830 + cached 32501, out 269 (+217 reasoning)
+  181.6s   tool bash: node /kit/rag.mjs search "boundary" "boundaries" "toxic" "narcissistic" "esteem" "defensive" "criticism" "calm"
+  181.7s turn 5
+  185.5s   model reply: in 6281 + cached 32499, out 96 (+46 reasoning)
+  185.5s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|composite|claim_relation|link|speech_act)" /reference/glossary.md
+  185.6s turn 6
+  188.8s   model reply: in 4166 + cached 36556, out 83 (+27 reasoning)
+  188.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|composite) \|" /reference/glossary.md | cut -d'|' -f2,3,4
+  188.8s turn 7
+  191.9s   model reply: in 2237 + cached 40615, out 83 (+27 reasoning)
+  191.9s   tool bash: grep -E "^\| [a-z0-9_]+ \| (claim_relation|link)" /reference/glossary.md | cut -d'|' -f2,3,4
+  192.0s turn 8
+  195.1s   model reply: in 3919 + cached 40607, out 83 (+24 reasoning)
+  195.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| recipient-value" /reference/glossary.md | cut -d'|' -f2,3,4,5,6
+  195.2s turn 9
+  198.3s   model reply: in 4475 + cached 40592, out 100 (+25 reasoning)
+  198.3s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| (descriptive-value|topic-value|tone-value|style-value|constraint-value)" /reference/glossary.md | cut -d'|' -f2,3,4,5
+  198.3s turn 10
+  201.8s   model reply: in 5399 + cached 40580, out 73 (+35 reasoning)
+  201.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| composite \|" /reference/glossary.md
+  201.8s turn 11
+  206.0s   model reply: in 3127 + cached 44633, out 79 (+29 reasoning)
+  206.0s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | cut -d'|' -f2,4
+  206.0s turn 12
+  217.8s   model reply: in 5375 + cached 44632, out 1494 (+1366 reasoning)
+  217.8s   tool bash: node /kit/rag.mjs entry self_protection interpersonal_stance activity obligation subject property_question requirement negation exclude include dialogue decisio
+  217.9s turn 13
+  235.4s   model reply: in 4810 + cached 48700, out 72 (+23 reasoning)
+  235.4s   tool bash: node /kit/rag.mjs entry include dialogue decision recommended important attitude enables leads_to motivated_by ongoing opposes possesses prohibited role trained
+  235.5s turn 14
+  240.2s   model reply: in 55325 + cached 0, out 104 (+18 reasoning)
+  240.2s   tool bash: node /kit/rag.mjs entry personal_values beliefs role_user role_mother role_sister role_son role_daughter role_adults role_friend role_agent role_colleague role_
+  240.3s turn 15
+  250.5s   model reply: in 4084 + cached 52746, out 1419 (+1370 reasoning)
+  250.5s   tool bash: node /kit/rag.mjs search "mother" "boyfriend" "partner" "therapist" "advice" "boundary" "esteem" "defensive"
+  250.7s turn 16
+  272.3s   model reply: in 60455 + cached 0, out 1182 (+1091 reasoning)
+  272.3s   tool bash: node /kit/rag.mjs widen "forcing partner's hand or giving ultimatums is usually not advisable" --kind claim
+node /kit/rag.mjs widen "therapist can guide dealing
+  272.9s turn 17
+  356.6s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  356.7s agent finished
+  358.6s turn 18
+  372.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  372.8s agent finished
+  376.8s turn 19
+  403.7s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  403.7s agent finished
+  411.7s turn 20
+  473.2s   model reply: in 64944 + cached 0, out 49 (+12 reasoning)
+  473.2s   tool bash: node /kit/rag.mjs widen "mother's anger is not about the user personally" --kind claim
+  473.5s turn 21
+  520.9s   model reply: in 5436 + cached 60883, out 7297 (+5462 reasoning)
+  520.9s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  522.4s turn 22
+  542.8s   model reply: in 50031 + cached 0, out 334 (+277 reasoning)
+  542.8s   tool bash: node /kit/rag.mjs entry subject property_question ask self_protection propose interpersonal_stance negation activity varies_with argues_for exclude respond atti
+  544.3s turn 23
+  552.4s   model reply: in 3616 + cached 48813, out 80 (+46 reasoning)
+  552.4s   tool bash: node /kit/rag.mjs entry offer_help trained_for enables ongoing recommended important dialogue decision
+  553.1s turn 24
+  575.6s   model reply: in 4530 + cached 48798, out 3656 (+1821 reasoning)
+  575.6s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  576.4s turn 25
+  580.8s   model reply: in 5024 + cached 52875, out 144 (+121 reasoning)
+  580.8s   tool default_api:read: /output/translation.md
+  580.9s turn 26
+  585.1s   model reply: in 5190 + cached 52856, out 64 (+44 reasoning)
+  585.1s   tool bash: cat /output/translation.md
+  585.2s turn 27
+  588.7s   model reply: in 2984 + cached 56914, out 59 (+14 reasoning)
+  588.8s agent finished
+  588.8s agent finished

@@ -1,0 +1,228 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User requests instructions or performs the goal to read a book by lamp light",
+   "status": "covered",
+   "matched_symbols": [
+    "lamp",
+    "textbook"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "Read a book",
+   "status": "covered",
+   "matched_symbols": [
+    "textbook"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Book",
+   "status": "covered",
+   "matched_symbols": [
+    "textbook"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "Lamp light / lamp",
+   "status": "covered",
+   "matched_symbols": [
+    "lamp"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "temporal",
+   "text": "Sequential order of steps from 1 to 4",
+   "status": "covered",
+   "matched_symbols": [
+    "in_front_of"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "Head forward / walk toward the bed",
+   "status": "covered",
+   "matched_symbols": [
+    "walk",
+    "bed",
+    "turn",
+    "night_stand"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Bed",
+   "status": "covered",
+   "matched_symbols": [
+    "bed",
+    "night_stand",
+    "textbook"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "Located in front of the agent",
+   "status": "covered",
+   "matched_symbols": [
+    "in_front_of",
+    "turn",
+    "target"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "Pick up the book",
+   "status": "covered",
+   "matched_symbols": [
+    "textbook",
+    "pick_up"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Book",
+   "status": "covered",
+   "matched_symbols": [
+    "textbook"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "Blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "constraint",
+   "text": "Sitting on the bed",
+   "status": "covered",
+   "matched_symbols": [
+    "bed",
+    "night_stand"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "constraint",
+   "text": "Titled 'Probabilistic Robotics'",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "Turn right",
+   "status": "covered",
+   "matched_symbols": [
+    "turn",
+    "turn_on",
+    "walk",
+    "in_front_of"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Walk to the nightstand",
+   "status": "covered",
+   "matched_symbols": [
+    "night_stand",
+    "walk",
+    "bed",
+    "lamp"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "Nightstand",
+   "status": "covered",
+   "matched_symbols": [
+    "night_stand",
+    "bed",
+    "lamp",
+    "textbook"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "Turn on the lamp",
+   "status": "covered",
+   "matched_symbols": [
+    "turn_on",
+    "lamp",
+    "turn",
+    "night_stand"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "Lamp",
+   "status": "covered",
+   "matched_symbols": [
+    "lamp",
+    "textbook"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "Sitting on the nightstand",
+   "status": "covered",
+   "matched_symbols": [
+    "night_stand",
+    "bed",
+    "lamp"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "ENTRYPOINT",
+  "REF",
+  "STRING",
+  "TASK",
+  "bed",
+  "color_label",
+  "in_front_of",
+  "lamp",
+  "night_stand",
+  "pick_up",
+  "target",
+  "textbook",
+  "turn",
+  "turn_on",
+  "walk"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n11"
+ ]
+}

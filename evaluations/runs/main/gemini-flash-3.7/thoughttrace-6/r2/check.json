@@ -1,0 +1,292 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "greet the assistant",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "greeting",
+    "offer",
+    "propose",
+    "ask",
+    "inform",
+    "role_user"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "plan a summer holiday",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "propose"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "temporal",
+   "text": "summer season",
+   "status": "covered",
+   "matched_symbols": [
+    "unit_week"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "greet user and express willingness to help",
+   "status": "covered",
+   "matched_symbols": [
+    "greeting",
+    "offer_help",
+    "offer",
+    "ask",
+    "propose",
+    "inform"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "ask who is traveling",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "art_itinerary",
+    "propose"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "ask starting origin location",
+   "status": "covered",
+   "matched_symbols": [
+    "location_spec",
+    "ask",
+    "propose"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "ask destination preferences or if seeking inspiration",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "user_preference",
+    "art_itinerary",
+    "propose"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "ask budget range",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "propose"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "ask desired vibe or travel style",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "ask",
+    "propose"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "ask trip duration",
+   "status": "covered",
+   "matched_symbols": [
+    "duration",
+    "ask",
+    "unit_week",
+    "art_itinerary",
+    "propose"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "ask about specific constraints or preferences",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "requirement",
+    "user_preference"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "travel party consisting of a couple",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "group_size"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "departure country Ireland",
+   "status": "covered",
+   "matched_symbols": [
+    "country",
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "destination country Italy",
+   "status": "covered",
+   "matched_symbols": [
+    "country",
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "constraint",
+   "text": "flexible budget",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement",
+    "duration"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "constraint",
+   "text": "visit off-the-beaten-track destinations",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "temporal",
+   "text": "trip duration of one week",
+   "status": "covered",
+   "matched_symbols": [
+    "unit_week",
+    "duration",
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "propose three hidden-gem itinerary options for Italy",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "propose",
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "itinerary option 1: Abruzzo region",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary",
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "object",
+   "text": "itinerary option 2: Maremma in southern Tuscany",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "itinerary option 3: Basilicata and inland Puglia",
+   "status": "covered",
+   "matched_symbols": [
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "agent recommends Abruzzo as top choice for romance and authenticity",
+   "status": "covered",
+   "matched_symbols": [
+    "recommended",
+    "art_itinerary"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "action",
+   "text": "ask user to select preferred itinerary option",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "user_preference",
+    "art_itinerary"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "art_itinerary",
+  "ask",
+  "country",
+  "duration",
+  "greeting",
+  "group_size",
+  "inform",
+  "location_spec",
+  "offer",
+  "offer_help",
+  "property_question",
+  "propose",
+  "recommended",
+  "requirement",
+  "role_agent",
+  "role_user",
+  "subject",
+  "target",
+  "unit_week",
+  "user_preference"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

@@ -1,0 +1,29 @@
+<|user|>Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working when running tests on google_cloud_storage with pytest.
+
+Operating system: arch_linux
+python: 3.7.1
+google_api_core: 1.5.1
+google_auth: 1.5.1
+google_cloud_core: 0.28.1
+google_cloud_storage: 1.13.0
+google_resumable_media: 0.3.1
+googleapis_common_protos: 1.5.5
+pytest: 3.9.1
+
+Create file test.py with:
+from google.protobuf.pyext import _message
+
+Run pip install pytest==3.9.1 and pytest test.py.
+
+test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+
+Originates from line 154 of google/protobuf/internal/api_implementation.py in google_protobuf.
+
+Could not reproduce in shell. pytest catches deprecation warning while running tests.
+<|assistant|>Substitute 'collections' with 'collections.abc' in:
+- api_core/google/api_core/protobuf_helpers.py in google_api_core
+- bigquery/google/cloud/bigquery/client.py in google_cloud_bigquery
+- bigquery/google/cloud/bigquery/dbapi/_helpers.py in google_cloud_bigquery
+- bigquery/google/cloud/bigquery/dbapi/cursor.py in google_cloud_bigquery
+- core/google/cloud/iam.py in google_cloud_core
+- firestore/google/cloud/firestore_v1beta1/_helpers.py in google_cloud_firestore

@@ -1,0 +1,103 @@
+    1.9s turn 1
+   14.2s   model reply: in 27344 + cached 0, out 551 (+519 reasoning)
+   14.2s   tool bash: node /kit/rag.mjs search "walk to face" "wash and remove"
+   14.4s turn 2
+   24.1s   model reply: in 4212 + cached 24359, out 71 (+41 reasoning)
+   24.1s   tool bash: node /kit/rag.mjs entry walk face remove rinse place pick_up
+   24.2s turn 3
+   30.9s   model reply: in 5308 + cached 24349, out 36 (+17 reasoning)
+   30.9s   tool bash: find /reference -type f
+   31.0s turn 4
+   35.9s   model reply: in 21627 + cached 8110, out 73 (+33 reasoning)
+   35.9s   tool bash: grep -i "alfred" /reference/examples.jsonl || head -n 5 /reference/examples.jsonl
+   35.9s turn 5
+   47.3s   model reply: in 2602 + cached 28378, out 1104 (+1074 reasoning)
+   47.3s   tool bash: grep -C 10 "CONVO" /reference/examples.jsonl
+   47.3s turn 6
+   51.4s   model reply: in 4874 + cached 28380, out 61 (+29 reasoning)
+   51.4s   tool bash: wc -l /reference/examples.jsonl && cat /reference/examples.jsonl
+   51.4s turn 7
+   55.2s   model reply: in 2069 + cached 32425, out 79 (+39 reasoning)
+   55.2s   tool bash: node /kit/rag.mjs entry request sequence activity propose respond inform art_plan format_numbered_list in state_clean
+   55.2s turn 8
+   70.2s   model reply: in 3252 + cached 32417, out 1770 (+1746 reasoning)
+   70.2s   tool bash: node /kit/rag.mjs check --help
+   70.3s turn 9
+   74.1s   model reply: in 5041 + cached 32414, out 77 (+56 reasoning)
+   74.1s   tool bash: cat /kit/rag.mjs
+   74.1s turn 10
+   90.8s   model reply: in 2603 + cached 36462, out 2321 (+2273 reasoning)
+   90.8s   tool bash: node /kit/rag.mjs search "walk to face microwave" "remove potato from microwave" "wash and remove potato from sink" "put potato inside fridge"
+   91.0s turn 11
+   97.3s   model reply: in 6356 + cached 36479, out 100 (+55 reasoning)
+   97.3s   tool bash: grep -E "\| (walk|face|remove|rinse|place|pick_up|sequence) \|" /reference/glossary.md
+   97.3s turn 12
+  108.5s   model reply: in 2874 + cached 40517, out 1366 (+1151 reasoning)
+  108.5s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN
+  108.6s turn 13
+  125.3s   model reply: in 4662 + cached 40515, out 2240 (+2210 reasoning)
+  125.3s   tool bash: node /kit/rag.mjs entry remove pick_up rinse place walk face
+  125.5s turn 14
+  130.8s   model reply: in 3853 + cached 44579, out 418 (+381 reasoning)
+  130.8s   tool bash: node /kit/rag.mjs search "remove from microwave" "remove from sink" "wash and remove"
+  131.0s turn 15
+  138.4s   model reply: in 5303 + cached 44573, out 701 (+666 reasoning)
+  138.4s   tool bash: grep -E "^\| [a-z_]+ \| operation \|" /reference/glossary.md
+  138.4s turn 16
+  153.0s   model reply: in 4004 + cached 48632, out 2204 (+1393 reasoning)
+  153.0s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Microwave
+TASK Microwave {
+  ACTION walk
+  153.2s turn 17
+  162.2s   model reply: in 6734 + cached 48639, out 1112 (+370 reasoning)
+  162.2s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Microwave
+TASK Microwave {
+  ACTION walk
+  162.4s turn 18
+  182.6s   model reply: in 4315 + cached 52687, out 3100 (+2267 reasoning)
+  182.6s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT ObjectLabelMicrowave
+TASK ObjectLabelMic
+  182.8s turn 19
+  198.9s   model reply: in 3863 + cached 56756, out 2602 (+1788 reasoning)
+  198.9s   tool write: /output/translation.md
+  198.9s turn 20
+  202.4s   model reply: in 6469 + cached 56756, out 53 (+23 reasoning)
+  202.4s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  202.5s turn 21
+  207.7s   model reply: in 3000 + cached 60795, out 201 (+90 reasoning)
+  207.7s agent finished
+  207.7s agent finished

@@ -1,0 +1,2945 @@
+{
+ "translator_id": "swebench-4",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Report a bug regarding failure to complete remote connections in a two-process setup",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.6346,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.5016,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4759,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.3277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.3196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3032,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.2926,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/training_program",
+     "symbol": "training_program",
+     "kind": "constructor",
+     "score": 0.2829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.2808,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.2792,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.2771,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.2703,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.2666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.2633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.2297,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Remote connections cannot be completed for two-process setup",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.6534,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4782,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.4442,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.3347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.303,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.3028,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.2819,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.2691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/training_program",
+     "symbol": "training_program",
+     "kind": "constructor",
+     "score": 0.2686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/spatial_constraint",
+     "symbol": "spatial_constraint",
+     "kind": "constructor",
+     "score": 0.2596,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.2543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.2478,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.2459,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "remote connections",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.703,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/caddy",
+     "symbol": "caddy",
+     "kind": "value",
+     "score": 0.3056,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.2912,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.2904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.2902,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2863,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2853,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.2754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.2722,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.2719,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.2712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2689,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.2634,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Provide reproduction steps for the reported issue",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n4",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6725,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.6506,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.5394,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.5299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3699,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.3686,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.356,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.3513,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3461,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3267,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apologize",
+     "symbol": "apologize",
+     "kind": "speech_act",
+     "score": 0.3187,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.3109,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Run command 'ipython console --ip=0'",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n5",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7575,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/cli_command",
+     "symbol": "cli_command",
+     "kind": "constructor",
+     "score": 0.696,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.6761,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.4104,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.4057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.4,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.3883,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3715,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3699,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.343,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/design_parameters",
+     "symbol": "design_parameters",
+     "kind": "value",
+     "score": 0.3375,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "ipython",
+   "source": [
+    "t1:s4"
+   ],
+   "group": "platform_label",
+   "id": "n6",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.8264,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.626,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.4542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4473,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3667,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3634,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3622,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3601,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3516,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3465,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.3374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/instantiates",
+     "symbol": "instantiates",
+     "kind": "claim_relation",
+     "score": 0.3313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_safari",
+     "symbol": "dom_safari",
+     "kind": "value",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "flag '--ip=0'",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n7",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6124,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4461,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4438,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4253,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.4218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4129,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.4109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3846,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3733,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.3694,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "subsequently after starting the console",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n8",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.6028,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.4342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.42,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cabinet",
+     "symbol": "cabinet",
+     "kind": "value",
+     "score": 0.414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.4102,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3664,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.3651,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3632,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.3615,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/temporal_context",
+     "symbol": "temporal_context",
+     "kind": "constructor",
+     "score": 0.3597,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Attempt to connect to the console from another window",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n9",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.6395,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.4827,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.4679,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.4484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4304,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.412,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.4106,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.4099,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3967,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3874,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/recording-signatures",
+     "symbol": "rule_recording_signatures",
+     "kind": "rule",
+     "score": 0.3617,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Run command 'ipython console --exiting'",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n10",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7491,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/cli_command",
+     "symbol": "cli_command",
+     "kind": "constructor",
+     "score": 0.7002,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.6524,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/performance_tracking",
+     "symbol": "performance_tracking",
+     "kind": "constructor",
+     "score": 0.5816,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.4556,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.4375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.3955,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.3891,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.3807,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/training_program",
+     "symbol": "training_program",
+     "kind": "constructor",
+     "score": 0.3718,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "flag '--exiting'",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n11",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.6716,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6601,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.6499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6481,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.6464,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_concise",
+     "symbol": "tone_concise",
+     "kind": "value",
+     "score": 0.6316,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.6221,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6139,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.6054,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.5892,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_markdown",
+     "symbol": "format_markdown",
+     "kind": "value",
+     "score": 0.5811,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.5809,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The connection attempts stall / hang",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n12",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.6938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.6871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6665,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.6358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.6327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.6092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.5972,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.5972,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.5965,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.5918,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.5915,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "Omitting the '--ip' flag",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n13",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.6745,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.6222,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.5733,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.5609,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.5533,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/cli_command",
+     "symbol": "cli_command",
+     "kind": "constructor",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.3694,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.3536,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/acknowledge",
+     "symbol": "acknowledge",
+     "kind": "speech_act",
+     "score": 0.3265,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apologize",
+     "symbol": "apologize",
+     "kind": "speech_act",
+     "score": 0.3145,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.2962,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Everything works properly when '--ip' is not specified",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n14",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.7102,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.4187,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4147,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.3909,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.3816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.3777,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/operations-general",
+     "symbol": "rule_operations_general",
+     "kind": "rule",
+     "score": 0.3743,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.3593,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/speech-acts-general",
+     "symbol": "rule_speech_acts_general",
+     "kind": "rule",
+     "score": 0.3449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.3435,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/varies_with",
+     "symbol": "varies_with",
+     "kind": "claim_relation",
+     "score": 0.3431,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Local code succeeds because it follows a different code path",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n15",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7132,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.6675,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.651,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.6416,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.6161,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.5712,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.407,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3749,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3701,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Open an issue as a reference for @minrk to submit a fix",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n16",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.697,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.4799,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.3384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.3275,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3257,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_email",
+     "symbol": "send_email",
+     "kind": "operation",
+     "score": 0.3143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.2961,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.2925,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.2872,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.2803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.2803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.2721,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.2714,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.2699,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "user @minrk",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n17",
+   "context": "unable to complete remote connections for two-process steps to reproduce: ``` ipython console --ip=0 ``` and then, try to connect to it from another window: ``` ipython console --exiting ``` and it will stall. If you don't specify --ip, everything works, because the local code goes through a slightly different code path. Just opening this now so @minrk has a thing to reference as he submits the fix",
+   "candidates": [
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.6526,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6306,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.6034,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_manager",
+     "symbol": "role_manager",
+     "kind": "value",
+     "score": 0.5863,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.5797,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_customer",
+     "symbol": "role_customer",
+     "kind": "value",
+     "score": 0.5612,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.3938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.39,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3893,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/ram_unit",
+     "symbol": "ram_unit",
+     "kind": "attribute",
+     "score": 0.3762,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Modify IPython/consoleapp.py",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n18",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.7922,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.784,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7716,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.6677,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6549,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.46,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/policy_revision_request",
+     "symbol": "policy_revision_request",
+     "kind": "constructor",
+     "score": 0.448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.4197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3961,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3809,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3726,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/composites-general",
+     "symbol": "rule_composites_general",
+     "kind": "rule",
+     "score": 0.3564,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "IPython/consoleapp.py",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n19",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.8405,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7426,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.7316,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4142,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3878,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/recycle_bin",
+     "symbol": "recycle_bin",
+     "kind": "value",
+     "score": 0.3746,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.3636,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3589,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.3561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3513,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3493,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Modify IPython/kernel/client.py",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n20",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.7974,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7831,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.7709,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.6729,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6695,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_customer",
+     "symbol": "role_customer",
+     "kind": "value",
+     "score": 0.5803,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4541,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.4361,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/policy_revision_request",
+     "symbol": "policy_revision_request",
+     "kind": "constructor",
+     "score": 0.435,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3769,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3682,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3577,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "IPython/kernel/client.py",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n21",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.851,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7486,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.7319,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_customer",
+     "symbol": "role_customer",
+     "kind": "value",
+     "score": 0.6293,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.5962,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3806,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.3642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.3558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3521,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_safari",
+     "symbol": "dom_safari",
+     "kind": "value",
+     "score": 0.3491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3477,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.3475,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Modify IPython/qt/console/qtconsoleapp.py",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n22",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.8037,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.789,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7552,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6661,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.6524,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.4162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/substitute",
+     "symbol": "substitute",
+     "kind": "constructor",
+     "score": 0.4086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.4015,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/composites-general",
+     "symbol": "rule_composites_general",
+     "kind": "rule",
+     "score": 0.3778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3653,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "IPython/qt/console/qtconsoleapp.py",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n23",
+   "context": "1. modify IPython/consoleapp.py 2. modify IPython/kernel/client.py 3. modify IPython/qt/console/qtconsoleapp.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.8193,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7442,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.7177,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.5208,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.401,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3641,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3603,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3486,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_tb",
+     "symbol": "cap_tb",
+     "kind": "value",
+     "score": 0.3484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

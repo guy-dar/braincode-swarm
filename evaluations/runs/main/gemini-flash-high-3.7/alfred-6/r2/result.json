@@ -1,0 +1,35 @@
+{
+ "model": "gemini-flash-high-3.7",
+ "item": "alfred-6",
+ "dataset": "alfred",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 1510.2,
+ "usage": {
+  "calls": 61,
+  "input": 483178,
+  "cacheRead": 2239069,
+  "output": 36008,
+  "reasoning": 27751,
+  "compactions": 2,
+  "truncated_tool_results": 3
+ },
+ "cost_usd": 0.6653,
+ "failure": {
+  "add_count": 0,
+  "refine_count": 1,
+  "would_add": [],
+  "would_refine": [
+   {
+    "target": "v19/operation-vocabulary/pick_up",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

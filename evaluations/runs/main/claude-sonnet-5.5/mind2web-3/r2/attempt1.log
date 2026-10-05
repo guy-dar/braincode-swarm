@@ -1,0 +1,22 @@
+    7.5s turn 1
+   17.4s   model reply: in 4 + cached 0, out 601 (+480 reasoning)
+   17.4s   tool bash: node /kit/rag.mjs entry lexical_label ask measure unit_watt record_web 2>&1 | head -40; node /kit/rag.mjs search "watt power output unit" "search box" 2>&1 | he
+   18.9s turn 2
+   35.9s   model reply: in 2 + cached 43489, out 2647 (+689 reasoning)
+   35.9s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CON
+   36.5s turn 3
+   40.2s   model reply: in 2 + cached 46052, out 208 (+102 reasoning)
+   40.2s   tool bash: cd /output; sed -i 's/power_supply_unit/psu/g' translation.md; node /kit/rag.mjs check --translation translation.md 2>&1 | tail -4
+   40.5s turn 4
+   47.7s   model reply: in 2 + cached 49129, out 543 (+0 reasoning)
+   47.8s agent finished
+   47.8s agent finished

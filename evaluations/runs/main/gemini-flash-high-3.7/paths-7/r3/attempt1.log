@@ -1,0 +1,74 @@
+    2.0s turn 1
+   12.6s   model reply: in 27809 + cached 0, out 1501 (+1478 reasoning)
+   12.6s   tool bash: node /kit/rag.mjs --help
+   12.6s turn 2
+   19.2s   model reply: in 4983 + cached 24365, out 78 (+56 reasoning)
+   19.2s   tool bash: node /kit/rag.mjs needs
+   31.6s turn 3
+   38.0s   model reply: in 3172 + cached 28423, out 642 (+578 reasoning)
+   38.0s   tool bash: node /kit/rag.mjs search "greeting" "offer help" "dialogue" "novel" "friendship" "online" "third person" "casual" "thoughtful" "height" "tall" "flirt"
+   38.2s turn 4
+   43.2s   model reply: in 7264 + cached 28434, out 518 (+448 reasoning)
+   43.2s   tool bash: node /kit/rag.mjs entry greeting offer_help offer ask respond dialogue exclude include interpersonal_stance negation requirement character character_trait betwe
+   43.4s turn 5
+   46.8s   model reply: in 5335 + cached 32493, out 136 (+81 reasoning)
+   46.8s   tool bash: node /kit/rag.mjs search "romance" "romantic" "interest" "writing" "fiction" "novel" "perspective" "point of view" "tone" "height"
+   47.2s turn 6
+   50.6s   model reply: in 4186 + cached 36557, out 54 (+15 reasoning)
+   50.6s   tool bash: node /kit/rag.mjs entry char_female gender_identity tone_empathetic tone_polite tone_neutral
+   50.7s turn 7
+   53.7s   model reply: in 4661 + cached 36541, out 99 (+49 reasoning)
+   53.7s   tool bash: node /kit/rag.mjs search "setting" "internet" "chat" "message" "first person" "second person" "teasing" "flirting"
+   53.9s turn 8
+   60.9s   model reply: in 2932 + cached 40600, out 118 (+81 reasoning)
+   60.9s   tool bash: grep -E "^\| (style_|tone_|art_|char_|constraint_)" /reference/glossary.md
+   61.1s turn 9
+   67.0s   model reply: in 45050 + cached 0, out 384 (+334 reasoning)
+   67.0s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|speech_act|claim_relation|link) \|" /reference/glossary.md
+   67.1s turn 10
+   70.8s   model reply: in 2631 + cached 44649, out 138 (+76 reasoning)
+   70.8s   tool bash: node /kit/rag.mjs search "point_of_view" "narrative_perspective" "dialogue" "interpersonal" "stance" "exclude" "negation" "meeting" "online" "height"
+   71.3s turn 11
+   75.5s   model reply: in 5679 + cached 44655, out 79 (+34 reasoning)
+   75.5s   tool bash: node /kit/rag.mjs entry group_size aesthetic subject request involves associated_with topic_politics focus_of perceived_as attitude reason_for
+   75.7s turn 12
+   92.1s   model reply: in 3104 + cached 48706, out 2787 (+2761 reasoning)
+   92.1s   tool bash: grep -i "greeting" /reference/glossary.md
+   92.2s turn 13
+   93.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   93.4s agent finished
+   95.4s turn 14
+  109.1s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  109.1s agent finished
+  113.1s turn 15
+  140.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  140.2s agent finished
+  148.2s turn 16
+  230.8s   model reply: in 54712 + cached 0, out 3824 (+3800 reasoning)
+  230.8s   tool bash: node /kit/rag.mjs check --help
+  230.8s turn 17
+  261.9s   model reply: in 5771 + cached 52781, out 5486 (+4329 reasoning)
+  261.9s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  262.2s turn 18
+  289.2s   model reply: in 7873 + cached 56869, out 4201 (+4137 reasoning)
+  289.2s   tool bash: node /kit/rag.mjs entry role_agent role_user role_friend tone_casual tone_silly art_story style_narrative size_tall greeting offer_help dialogue exclude require
+  289.3s turn 19
+  310.8s   model reply: in 51735 + cached 0, out 2303 (+1097 reasoning)
+  310.8s   tool write: /output/translation.md
+  310.8s turn 20
+  314.2s   model reply: in 5243 + cached 48799, out 54 (+24 reasoning)
+  314.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  314.3s turn 21
+  324.4s   model reply: in 6015 + cached 48785, out 1460 (+234 reasoning)
+  324.4s agent finished
+  324.4s agent finished

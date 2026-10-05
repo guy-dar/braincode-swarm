@@ -1,0 +1,292 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "user asks for instructions on how to mow a lawn",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "constrained_by"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "mow the lawn",
+   "status": "covered",
+   "matched_symbols": [
+    "obligation",
+    "property_question"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "lawn mower",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "gardening gloves",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "protective eyewear",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "temporal",
+   "text": "first prepare the lawn before mowing",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "remove debris and obstacles from the lawn area",
+   "status": "covered",
+   "matched_symbols": [
+    "remove",
+    "obligation"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "adjust mower blade height",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "obligation"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "cut no more than one third of the grass height per mowing",
+   "status": "covered",
+   "matched_symbols": [
+    "at_most"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "mow in straight lines back and forth at an even pace",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "negation",
+   "text": "avoid mowing in the same direction each time",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "temporal",
+   "text": "after mowing the lawn, trim edges",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "trim edges using a string trimmer or edger",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "obligation"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "string trimmer or edger",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "constraint",
+   "text": "follow safety instructions and wear protective gear",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "speech_act",
+   "text": "assistant offers to answer questions about lawn mowing safety and process",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "ask",
+    "role_agent",
+    "property_question"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "speech_act",
+   "text": "user asks whether grass can be cut using scissors",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "scissors",
+    "subject"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "scissors",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "cutting grass with scissors is possible but inefficient for large lawns",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "size_large",
+    "ask",
+    "recommended",
+    "motivated_by"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "scissors are useful for small patches, detailing around obstacles, and precision grooming",
+   "status": "covered",
+   "matched_symbols": [
+    "scissors",
+    "size_small",
+    "recommended"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "mowers are recommended for large lawns to save time and ensure uniform cut",
+   "status": "covered",
+   "matched_symbols": [
+    "recommended",
+    "size_large",
+    "motivated_by"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "mowers are designed specifically to efficiently cut large areas evenly",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "scissors",
+    "designed_to_be",
+    "supports"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "speech_act",
+   "text": "assistant offers further help with lawn care or gardening",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "ask",
+    "role_agent",
+    "subject"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "FALSE",
+  "REPLY_TO",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "at_most",
+  "conjunction",
+  "constrained_by",
+  "designed_to_be",
+  "measure",
+  "motivated_by",
+  "negation",
+  "object_label",
+  "obligation",
+  "offer",
+  "property_question",
+  "recommended",
+  "remove",
+  "requirement",
+  "role_agent",
+  "scissors",
+  "size_large",
+  "size_small",
+  "subject",
+  "supports",
+  "target",
+  "then"
+ ],
+ "unknown_symbols_in_head_position": [
+  "alternative",
+  "precedes",
+  "requires",
+  "suitable_for"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3",
+  "n5"
+ ]
+}

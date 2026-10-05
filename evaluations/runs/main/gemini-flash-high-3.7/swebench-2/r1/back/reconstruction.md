@@ -1,0 +1,2 @@
+<|user|>Request method __nonzero__ in pandas. Hypothesized that DataFrame class instantiating method __nonzero__ enables test condition empty with expected outcome True.
+<|assistant|>Propose modifying code in RELEASE.rst for method __nonzero__ in pandas. Propose modifying code in doc/source/v0.11.1.txt for method __nonzero__ in pandas. Propose modifying code in pandas/core/frame.py for method __nonzero__ in pandas. Propose modifying code in pandas/core/generic.py for method __nonzero__ in pandas.

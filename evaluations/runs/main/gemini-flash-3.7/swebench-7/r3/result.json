@@ -1,0 +1,47 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "swebench-7",
+ "dataset": "swebench",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 760.6,
+ "usage": {
+  "calls": 33,
+  "input": 357286,
+  "cacheRead": 1005662,
+  "output": 22313,
+  "reasoning": 16665,
+  "compactions": 1,
+  "truncated_tool_results": 7
+ },
+ "cost_usd": 0.4271,
+ "failure": {
+  "add_count": 4,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "chg_deprecate_code",
+    "dimension": "constructor"
+   },
+   {
+    "term": "code_usage",
+    "dimension": "constructor"
+   },
+   {
+    "term": "code_breakage",
+    "dimension": "constructor"
+   },
+   {
+    "term": "code_evaluation",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

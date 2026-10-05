@@ -1,0 +1,46 @@
+    2.0s turn 1
+   11.1s   model reply: in 33072 + cached 0, out 1423 (+1385 reasoning)
+   11.1s   tool bash: node /kit/rag.mjs search "thank" "gratitude" "advice" "writer's block"
+   11.2s turn 2
+   13.8s   model reply: in 3058 + cached 32535, out 52 (+18 reasoning)
+   13.8s   tool bash: node /kit/rag.mjs entry meets_needs recommended attitude comfortable role_friend unit_sentence
+   13.9s turn 3
+   19.2s   model reply: in 3586 + cached 32519, out 420 (+388 reasoning)
+   19.2s   tool bash: node /kit/rag.mjs search "greeting" "greet" "salutation"
+   19.4s turn 4
+   23.4s   model reply: in 4963 + cached 32509, out 332 (+300 reasoning)
+   23.4s   tool bash: node /kit/rag.mjs search "speech_act" --kind speech_act
+   23.5s turn 5
+   26.4s   model reply: in 5600 + cached 32495, out 125 (+95 reasoning)
+   26.4s   tool bash: grep -i -C 3 "greeting" /reference/glossary.md
+   26.5s turn 6
+   30.6s   model reply: in 2552 + cached 36544, out 362 (+330 reasoning)
+   30.6s   tool bash: grep -i -C 2 "speech_act" /reference/glossary.md
+   30.6s turn 7
+   39.0s   model reply: in 3823 + cached 36534, out 1268 (+1231 reasoning)
+   39.0s   tool bash: node /kit/rag.mjs search "lexical_label" "enables" "created_by"
+   39.1s turn 8
+   42.3s   model reply: in 6050 + cached 36532, out 42 (+13 reasoning)
+   42.3s   tool bash: node /kit/rag.mjs entry lexical_label enables created_by
+   42.5s turn 9
+   49.5s   model reply: in 2761 + cached 40577, out 164 (+114 reasoning)
+   49.5s   tool bash: node /kit/rag.mjs entry provides subject activity obligation character character_trait document_section sequence performance_tracking well_wishes time_horizon l
+   49.6s turn 10
+   53.0s   model reply: in 4959 + cached 40576, out 77 (+39 reasoning)
+   53.0s   tool bash: node /kit/rag.mjs entry time_horizon location_spec audience_targeting config_setting spatial_constraint dialogue
+   53.1s turn 11
+   56.4s   model reply: in 5761 + cached 40564, out 89 (+54 reasoning)
+   56.4s   tool bash: node /kit/rag.mjs entry role has_style designed_to_be decision time_point
+   56.7s turn 12
+   88.5s   model reply: in 2412 + cached 44606, out 6265 (+4184 reasoning)
+   88.5s   tool write: /output/translation.md
+   88.6s turn 13
+   91.5s   model reply: in 8650 + cached 44637, out 60 (+30 reasoning)
+   91.5s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   91.6s turn 14
+  102.7s   model reply: in 5838 + cached 48685, out 1602 (+1572 reasoning)
+  102.7s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  102.8s turn 15
+  108.1s   model reply: in 4554 + cached 52747, out 466 (+396 reasoning)
+  108.1s agent finished
+  108.1s agent finished

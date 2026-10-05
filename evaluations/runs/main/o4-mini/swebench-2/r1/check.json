@@ -1,0 +1,172 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User requests the implementation of the __nonzero__ method for DataFrames.",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "Implement the __nonzero__ magic method.",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity",
+    "propose"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "The __nonzero__ method.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "DataFrame instances.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "Test whether a DataFrame is empty or not.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "Evaluate DataFrame truthiness as a boolean check for emptiness.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Implementing __nonzero__ would allow testing DataFrame emptiness in boolean contexts.",
+   "status": "covered",
+   "matched_symbols": [
+    "enables",
+    "outcome"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "Modify RELEASE.rst.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "File RELEASE.rst.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "Modify doc/source/v0.11.1.txt.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "File doc/source/v0.11.1.txt.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "Modify pandas/core/frame.py.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "File pandas/core/frame.py.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "pandas library.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Modify pandas/core/generic.py.",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "File pandas/core/generic.py.",
+   "status": "declared",
+   "matched_symbols": []
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "chg_modify_code",
+  "code_entity",
+  "enables",
+  "outcome",
+  "platform_label",
+  "propose",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [
+  "implement_method",
+  "test_truthiness"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n14"
+ ]
+}

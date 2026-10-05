@@ -1,0 +1,2 @@
+<|user|>I cannot complete a game. Can you help me complete it?
+<|assistant|>I am willing to help you complete the game. I offer my help. What is the title, platform, level, and any glitch or error message? Providing details will enable me to tailor a solution. I look forward to your response.

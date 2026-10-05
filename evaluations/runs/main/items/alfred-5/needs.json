@@ -1,0 +1,4556 @@
+{
+ "translator_id": "alfred-5",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User requests instructions or actions to place eggs in the microwave",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Put two eggs in the microwave.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8368,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.4117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.4097,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3582,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3351,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3233,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3173,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3131,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3066,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.3045,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.2118,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Put or place items inside an appliance",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Put two eggs in the microwave.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.6289,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.6184,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.5737,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.541,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.5038,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.5015,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.4874,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in",
+     "symbol": "in",
+     "kind": "value",
+     "score": 0.4148,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3425,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.3395,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3254,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3202,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.2949,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.2215,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Egg",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "food_label",
+   "id": "n3",
+   "context": "Put two eggs in the microwave.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6597,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4604,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.361,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3498,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.3275,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3221,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.322,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.304,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.2848,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Quantity of two",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Put two eggs in the microwave.",
+   "candidates": [
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.5965,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.5925,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_percent",
+     "symbol": "unit_percent",
+     "kind": "value",
+     "score": 0.5878,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_liter",
+     "symbol": "unit_liter",
+     "kind": "value",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.3702,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_tb",
+     "symbol": "cap_tb",
+     "kind": "value",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.3675,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_medium",
+     "symbol": "size_medium",
+     "kind": "value",
+     "score": 0.353,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.3522,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.3494,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_gram",
+     "symbol": "unit_gram",
+     "kind": "value",
+     "score": 0.3456,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.3404,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Microwave",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n5",
+   "context": "Put two eggs in the microwave.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.9056,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.6351,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.5102,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4953,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4895,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4838,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4744,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3672,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3063,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3012,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3011,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Go right",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n6",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7132,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.655,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.6098,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6058,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3621,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3525,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3411,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Then / sequential step",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.6764,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.4186,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.4156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4097,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3952,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.3863,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.377,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3718,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.368,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Turn left to face the sink",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n8",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7409,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.7245,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.5376,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.496,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4596,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4452,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/water",
+     "symbol": "water",
+     "kind": "value",
+     "score": 0.4387,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3927,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shower",
+     "symbol": "shower",
+     "kind": "value",
+     "score": 0.3752,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3032,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.2978,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.2837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2738,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Sink",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "object_label",
+   "id": "n9",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.8005,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.5944,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.5378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/water",
+     "symbol": "water",
+     "kind": "value",
+     "score": 0.5233,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.4792,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shower",
+     "symbol": "shower",
+     "kind": "value",
+     "score": 0.4418,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3446,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3378,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3137,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_clean",
+     "symbol": "state_clean",
+     "kind": "value",
+     "score": 0.3132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1853,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Pick up the egg from the sink",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n10",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.7077,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4577,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4321,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4194,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3794,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3459,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3082,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.2932,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.2881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.2871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2858,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Egg",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "food_label",
+   "id": "n11",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6371,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4498,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3393,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3014,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Sink",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "object_label",
+   "id": "n12",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.8005,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.5944,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.5378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/water",
+     "symbol": "water",
+     "kind": "value",
+     "score": 0.5233,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.4792,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shower",
+     "symbol": "shower",
+     "kind": "value",
+     "score": 0.4418,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3446,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3378,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3137,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_clean",
+     "symbol": "state_clean",
+     "kind": "value",
+     "score": 0.3132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1853,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Go to the right and face the microwave",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n13",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8291,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.5965,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.472,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.4595,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4255,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4112,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3789,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3565,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.3406,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.2963,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.2909,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2768,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.257,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Microwave",
+   "source": [
+    "t2:s6"
+   ],
+   "group": "object_label",
+   "id": "n14",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8945,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.6553,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.5279,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4802,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.4195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Put the egg in the microwave",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n15",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8137,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.5676,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4634,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.4288,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.3938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3744,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3067,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3013,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.2862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2807,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Egg",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "food_label",
+   "id": "n16",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6371,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4498,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3393,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3014,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Microwave",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n17",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8945,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.6553,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.5279,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4802,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.4195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Shut the microwave door",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n18",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8129,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.647,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.5611,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.5565,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4578,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cabinet",
+     "symbol": "cabinet",
+     "kind": "value",
+     "score": 0.4509,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.3925,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3664,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3608,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3267,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3262,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3138,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.2842,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Door",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n19",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.7372,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.5,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cabinet",
+     "symbol": "cabinet",
+     "kind": "value",
+     "score": 0.4791,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.4593,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/floor",
+     "symbol": "floor",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.341,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3316,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.2953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Go right, go right again, and turn to face the salt shaker on the table",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n20",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7521,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.6379,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.453,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3887,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3695,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3397,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/tartaric_acid",
+     "symbol": "tartaric_acid",
+     "kind": "value",
+     "score": 0.2985,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.2866,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.2859,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.2756,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.275,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Salt shaker",
+   "source": [
+    "t2:s10"
+   ],
+   "group": "object_label",
+   "id": "n21",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.7104,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.4808,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.4737,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.4552,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/tartaric_acid",
+     "symbol": "tartaric_acid",
+     "kind": "value",
+     "score": 0.4513,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/water",
+     "symbol": "water",
+     "kind": "value",
+     "score": 0.4483,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4295,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4241,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_stickers",
+     "symbol": "waterproof_stickers",
+     "kind": "value",
+     "score": 0.411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3058,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Table",
+   "source": [
+    "t2:s10"
+   ],
+   "group": "object_label",
+   "id": "n22",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7924,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5416,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.5404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4731,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.4595,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.4549,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3771,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3457,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3017,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3011,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Pick the egg up from the table",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n23",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7046,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.5214,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4402,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4025,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3175,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3063,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.2999,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.2921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2904,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.286,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Egg",
+   "source": [
+    "t2:s12"
+   ],
+   "group": "food_label",
+   "id": "n24",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6371,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4498,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3393,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3014,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Table",
+   "source": [
+    "t2:s12"
+   ],
+   "group": "object_label",
+   "id": "n25",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7924,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5416,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.5404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4731,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.4595,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.4549,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3771,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3457,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3017,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3011,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Go right, then left, and turn right to face the microwave",
+   "source": [
+    "t2:s14"
+   ],
+   "id": "n26",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8026,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.735,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.5717,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.5597,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.4675,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4402,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4012,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.2949,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.2584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.2211,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Microwave",
+   "source": [
+    "t2:s14"
+   ],
+   "group": "object_label",
+   "id": "n27",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8945,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.6553,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.5279,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4802,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.4195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Put the egg in the microwave",
+   "source": [
+    "t2:s16"
+   ],
+   "id": "n28",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8137,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.5676,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4634,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.4288,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.3938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3744,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3067,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3013,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.2862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2807,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Egg",
+   "source": [
+    "t2:s16"
+   ],
+   "group": "food_label",
+   "id": "n29",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6371,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4498,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3393,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3014,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Microwave",
+   "source": [
+    "t2:s16"
+   ],
+   "group": "object_label",
+   "id": "n30",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.8945,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/microwave_stand",
+     "symbol": "microwave_stand",
+     "kind": "value",
+     "score": 0.6553,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.5279,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4802,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.4195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_neutral",
+     "symbol": "tone_neutral",
+     "kind": "value",
+     "score": 0.3071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Shut the door",
+   "source": [
+    "t2:s16"
+   ],
+   "id": "n31",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.6826,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.5818,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.493,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cabinet",
+     "symbol": "cabinet",
+     "kind": "value",
+     "score": 0.4453,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.3462,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.288,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/floor",
+     "symbol": "floor",
+     "kind": "value",
+     "score": 0.286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/greeting",
+     "symbol": "greeting",
+     "kind": "constructor",
+     "score": 0.2749,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.2659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.2591,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.2462,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Door",
+   "source": [
+    "t2:s16"
+   ],
+   "group": "object_label",
+   "id": "n32",
+   "context": "1. Go right and then turn left to face the sink. 2. Pick the egg up from the sink. 3. Go to the right and face the microwave. 4. Put the egg in the microwave and shut the door. 5. Go right and then right again and turn to face the salt shaker on the table. 6. Pick the egg up from the table. 7. Go right and then left and turn to the right to face the microwave. 8. Put the egg in the microwave and shut the door.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.7372,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/close",
+     "symbol": "close",
+     "kind": "operation",
+     "score": 0.5,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cabinet",
+     "symbol": "cabinet",
+     "kind": "value",
+     "score": 0.4791,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.4593,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/floor",
+     "symbol": "floor",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.341,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3316,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.2953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1843,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  }
+ ]
+}

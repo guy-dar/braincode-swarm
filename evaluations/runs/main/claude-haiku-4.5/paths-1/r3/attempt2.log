@@ -1,0 +1,31 @@
+    2.5s turn 1
+   16.4s   model reply: in 10 + cached 0, out 1679 (+509 reasoning)
+   16.4s   tool edit: /output/translation.md
+   16.4s turn 2
+   18.3s   model reply: in 12 + cached 57163, out 121 (+51 reasoning)
+   18.3s   tool read: /output/translation.md
+   18.3s turn 3
+   20.3s   model reply: in 13 + cached 58875, out 165 (+60 reasoning)
+   20.3s   tool bash: head -5 /output/translation.md && echo "---" && tail -10 /output/translation.md
+   20.4s turn 4
+   22.0s   model reply: in 13 + cached 61385, out 136 (+51 reasoning)
+   22.0s   tool bash: grep -n "^}\`\`\`" /output/translation.md
+   22.1s turn 5
+   23.4s   model reply: in 14 + cached 61742, out 108 (+30 reasoning)
+   23.4s   tool bash: tail -30 /output/translation.md | head -20
+   23.5s turn 6
+   24.8s   model reply: in 13 + cached 61915, out 116 (+24 reasoning)
+   24.8s   tool bash: wc -l /output/translation.md && echo "---" && tail -5 /output/translation.md
+   24.9s turn 7
+   42.5s   model reply: in 13 + cached 62375, out 2466 (+50 reasoning)
+   42.5s   tool write: /output/translation.md
+   42.5s turn 8
+   43.9s   model reply: in 13 + cached 62582, out 106 (+19 reasoning)
+   43.9s   tool bash: head -5 /output/translation.md && echo "..." && tail -15 /output/translation.md
+   43.9s turn 9
+   47.7s   model reply: in 13 + cached 65076, out 341 (+219 reasoning)
+   47.7s   tool bash: cat /output/translation.md | grep -c "^| n" && echo "needs in coverage table" && grep "^Status:" /output/translation.md && grep "^Mode:" /output/translation.md
+   47.8s turn 10
+   52.6s   model reply: in 13 + cached 65471, out 461 (+161 reasoning)
+   52.6s agent finished
+   52.6s agent finished

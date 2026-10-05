@@ -1,0 +1,45 @@
+{
+ "model": "gpt-6.1-sol",
+ "item": "swebench-2",
+ "dataset": "swebench",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 527.8,
+ "usage": {
+  "calls": 10,
+  "input": 30,
+  "cacheRead": 293959,
+  "cacheWrite": 38797,
+  "output": 4614,
+  "reasoning": 603,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.1726,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "implement_code",
+    "dimension": "constructor"
+   },
+   {
+    "term": "boolean_emptiness_check",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "chg_modify_code",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

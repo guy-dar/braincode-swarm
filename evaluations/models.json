@@ -1,29 +1,126 @@
 {
-  "_comment": [
-    "Models under evaluation. `pi_model` is the harness model (provider/id, see swarm/harnesses/pi/models.template.json);",
-    "null = not reachable yet (skipped with a message). `sample`: `all` = the 48-item sample, `shared` = its 18 shared items.",
-    "`price`: USD per 1M tokens [input, cached input, output]; null = unknown (cost reported as tokens only).",
-    "`expressivity`: also back-translate (Gemini only, per the evaluation design)."
-  ],
-  "models": [
-    {"name": "gemini-flash-3.7", "label": "Gemini 3.7 Flash", "company": "Gemini", "tier": "weak",
-     "pi_model": "vertex-proxy/gemini-flash", "route": "proxy", "price": [0.75, 0.075, 3.75],
-     "sample": "all", "expressivity": true},
-    {"name": "gemini-flash-high-3.7", "label": "Gemini 3.7 Flash (high effort)", "company": "Gemini", "tier": "strong",
-     "pi_model": "vertex-proxy/gemini-flash-high", "route": "proxy", "price": [0.75, 0.075, 3.75],
-     "sample": "all", "expressivity": true,
-     "note": "stands in for Gemini 3.1 Pro, which the vertex proxy does not serve (it lists only gemini-flash, gemini-flash-high, gemini-3.5-flash; gemini-3.1-pro-preview is rejected). Same model as the weak Gemini at high reasoning effort: the Gemini pair contrasts effort, not model size."},
-    {"name": "claude-opus-5.5", "label": "Claude Opus 5.5", "company": "Claude", "tier": "strong",
-     "pi_model": "anthropic/claude-opus-5-5", "route": "anthropic", "price": [5.0, 0.5, 25.0],
-     "sample": "shared", "expressivity": false},
-    {"name": "claude-haiku-4.5", "label": "Claude Haiku 4.5", "company": "Claude", "tier": "weak",
-     "pi_model": "anthropic/claude-haiku-4-5-20251001", "route": "anthropic", "price": [1.0, 0.1, 5.0],
-     "sample": "shared", "expressivity": false},
-    {"name": "gpt-6-astra", "label": "GPT-6 Astra", "company": "OpenAI", "tier": "strong",
-     "pi_model": "openai/gpt-6-astra", "route": "openai", "price": null,
-     "sample": "shared", "expressivity": false},
-    {"name": "o4-mini", "label": "o4-mini", "company": "OpenAI", "tier": "weak",
-     "pi_model": "openai/o4-mini", "route": "openai", "price": [1.1, 0.275, 4.4],
-     "sample": "shared", "expressivity": false}
-  ]
+ "_comment": [
+  "Models under evaluation. `pi_model` is the harness model (provider/id, see swarm/harnesses/pi/models.template.json);",
+  "null = not reachable yet (skipped with a message). `sample`: `all` = the 48-item sample, `shared` = its 18 shared items.",
+  "`price`: USD per 1M tokens [input, cached input, output]; null = unknown (cost reported as tokens only).",
+  "`expressivity`: also back-translate (Gemini only, per the evaluation design).",
+  "`price` may have a 4th element: USD per 1M cache-write tokens (Anthropic, OpenAI GPT-6)."
+ ],
+ "models": [
+  {
+   "name": "gemini-flash-3.7",
+   "label": "Gemini 3.7 Flash",
+   "company": "Gemini",
+   "tier": "weak",
+   "pi_model": "vertex-proxy/gemini-flash",
+   "route": "proxy",
+   "price": [
+    0.75,
+    0.075,
+    3.75
+   ],
+   "sample": "all",
+   "expressivity": true
+  },
+  {
+   "name": "gemini-flash-high-3.7",
+   "label": "Gemini 3.7 Flash (high effort)",
+   "company": "Gemini",
+   "tier": "strong",
+   "pi_model": "vertex-proxy/gemini-flash-high",
+   "route": "proxy",
+   "price": [
+    0.75,
+    0.075,
+    3.75
+   ],
+   "sample": "all",
+   "expressivity": true,
+   "note": "stands in for Gemini 3.1 Pro, which the vertex proxy does not serve (it lists only gemini-flash, gemini-flash-high, gemini-3.5-flash; gemini-3.1-pro-preview is rejected). Same model as the weak Gemini at high reasoning effort: the Gemini pair contrasts effort, not model size."
+  },
+  {
+   "name": "claude-sonnet-5.5",
+   "label": "Claude Sonnet 5.5",
+   "company": "Claude",
+   "tier": "strong",
+   "pi_model": "anthropic/claude-sonnet-5-5",
+   "route": "anthropic",
+   "price": [
+    2.0,
+    0.2,
+    10.0,
+    2.5
+   ],
+   "sample": "shared",
+   "expressivity": false,
+   "note": "replaces Claude Opus 5.5 ($4/$20) to cut cost; Sonnet 5.5 is $2/$10, cache reads $0.20, writes 1.25x input"
+  },
+  {
+   "name": "claude-haiku-4.5",
+   "label": "Claude Haiku 4.5",
+   "company": "Claude",
+   "tier": "weak",
+   "pi_model": "anthropic/claude-haiku-4-5-20251001",
+   "route": "anthropic",
+   "price": [
+    1.0,
+    0.1,
+    5.0,
+    1.25
+   ],
+   "sample": "shared",
+   "expressivity": false
+  },
+  {
+   "name": "gpt-6.1-sol",
+   "label": "GPT-6.1 Sol",
+   "company": "OpenAI",
+   "tier": "strong",
+   "pi_model": "openai/gpt-6.1-sol",
+   "route": "openai",
+   "price": [
+    2.0,
+    0.1,
+    10.0,
+    2.5
+   ],
+   "sample": "shared",
+   "expressivity": false,
+   "note": "replaces GPT-6 Astra ($10/$50) to cut cost; GPT-6.1 Sol is OpenAI's mid tier, $2/$10, cached $0.10"
+  },
+  {
+   "name": "gpt-6-luna",
+   "label": "GPT-6 Luna",
+   "company": "OpenAI",
+   "tier": "weak",
+   "pi_model": "openai/gpt-6-luna",
+   "route": "openai",
+   "price": [
+    0.1,
+    0.01,
+    0.5,
+    0.125
+   ],
+   "sample": "shared",
+   "expressivity": false,
+   "note": "replaces o4-mini; same GPT-6 family as the strong model; positioned by OpenAI for simple high-volume work"
+  },
+  {
+   "name": "o4-mini",
+   "label": "o4-mini (Flash-tier probe)",
+   "company": "OpenAI",
+   "tier": "weak",
+   "pi_model": "openai/o4-mini",
+   "route": "openai",
+   "price": [
+    1.1,
+    0.275,
+    4.4,
+    0.0
+   ],
+   "sample": "shared",
+   "expressivity": false,
+   "note": "probe: the OpenAI model closest to Gemini 3.7 Flash in price tier ($1.10/$4.40); 1 run per shared item, to test whether the GPT-6 failures are OpenAI-wide strictness or model size"
+  }
+ ]
 }

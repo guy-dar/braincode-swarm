@@ -1,0 +1,40 @@
+    2.2s turn 1
+   10.8s   model reply: in 28345 + cached 0, out 1259 (+1205 reasoning)
+   10.8s   tool bash: node /kit/rag.mjs search "mother-in-law" "boyfriend" "boundaries" "therapist" "toxic" "narcissistic" "ultimatum"
+   11.0s turn 2
+   24.4s   model reply: in 7185 + cached 24379, out 85 (+43 reasoning)
+   24.4s   tool bash: grep -i "family\|partner\|counsel\|boundar\|relationship\|therapy\|conflict\|advice" /reference/glossary.md
+   24.4s turn 3
+   28.4s   model reply: in 4376 + cached 28432, out 81 (+36 reasoning)
+   28.4s   tool bash: node /kit/rag.mjs search "family" "mother" "boundary" "esteem" "communication" "counseling" "relationship"
+   28.7s turn 4
+   38.7s   model reply: in 2344 + cached 32490, out 1456 (+1403 reasoning)
+   38.7s   tool bash: node /kit/rag.mjs entry role_mother role_user role_support_team personal_values beliefs tone_polite tone_empathetic tone_professional style_persuasive
+   38.8s turn 5
+   41.6s   model reply: in 4273 + cached 32485, out 56 (+30 reasoning)
+   41.6s   tool bash: grep "recipient-value" /reference/glossary.md
+   41.7s turn 6
+   44.9s   model reply: in 5016 + cached 32471, out 66 (+26 reasoning)
+   44.9s   tool bash: grep -E "\| (constructor|claim_relation|composite|speech_act) \|" /reference/glossary.md
+   45.0s turn 7
+   47.7s   model reply: in 2873 + cached 36526, out 104 (+81 reasoning)
+   47.7s   tool bash: node /kit/rag.mjs entry conditional
+   47.8s turn 8
+   62.1s   model reply: in 3059 + cached 36507, out 2752 (+2704 reasoning)
+   62.1s   tool bash: node /kit/rag.mjs widen "toxic mother-in-law" "narcissistic mother" "therapist" "boyfriend" "boundaries"
+   62.3s turn 9
+   85.2s   model reply: in 7562 + cached 36525, out 4689 (+2929 reasoning)
+   85.2s   tool write: /output/translation.md
+   85.2s turn 10
+   88.1s   model reply: in 8182 + cached 40598, out 53 (+23 reasoning)
+   88.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   88.8s turn 11
+  107.7s   model reply: in 5130 + cached 44646, out 3704 (+1934 reasoning)
+  107.7s   tool write: /output/translation.md
+  107.8s turn 12
+  110.5s   model reply: in 4772 + cached 48712, out 53 (+23 reasoning)
+  110.5s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  110.6s turn 13
+  113.9s   model reply: in 5779 + cached 48701, out 81 (+31 reasoning)
+  113.9s agent finished
+  113.9s agent finished

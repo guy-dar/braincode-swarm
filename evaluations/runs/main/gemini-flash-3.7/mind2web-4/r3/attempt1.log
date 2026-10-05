@@ -1,0 +1,81 @@
+    2.0s turn 1
+    6.8s   model reply: in 26079 + cached 0, out 542 (+505 reasoning)
+    6.8s   tool bash: node /kit/rag.mjs entry click open_page web_element request ask propose statement activity country::US
+    7.0s turn 2
+    9.6s   model reply: in 3556 + cached 24354, out 73 (+29 reasoning)
+    9.6s   tool bash: node /kit/rag.mjs search "web_element" "click" "open_page" "report scam" "file a complaint"
+    9.9s turn 3
+   12.6s   model reply: in 5206 + cached 24348, out 93 (+65 reasoning)
+   12.6s   tool bash: grep -i "web_element" /reference/glossary.md
+   12.7s turn 4
+   17.8s   model reply: in 5378 + cached 24331, out 607 (+579 reasoning)
+   17.8s   tool bash: node /kit/rag.mjs entry role_user role_agent
+   18.1s turn 5
+   22.1s   model reply: in 2036 + cached 28373, out 285 (+241 reasoning)
+   22.1s   tool bash: node /kit/rag.mjs search "fraud" "scam" "report" "navigate" "link" "button" "radio"
+   22.5s turn 6
+   25.6s   model reply: in 4261 + cached 28374, out 63 (+36 reasoning)
+   25.6s   tool bash: find / -name "*.braincode" 2>/dev/null
+   25.7s turn 7
+   28.7s   model reply: in 4352 + cached 28356, out 44 (+16 reasoning)
+   28.7s   tool bash: find / -name "*translation*.md" 2>/dev/null
+   28.7s turn 8
+   32.7s   model reply: in 4424 + cached 28338, out 56 (+25 reasoning)
+   32.7s   tool bash: grep "^| " /reference/glossary.md | head -n 30
+   32.8s turn 9
+   37.2s   model reply: in 2220 + cached 32386, out 48 (+14 reasoning)
+   37.2s   tool bash: grep -E "\| constructor \||\| claim_relation \|" /reference/glossary.md
+   37.3s turn 10
+   53.8s   model reply: in 4065 + cached 32385, out 2509 (+1831 reasoning)
+   53.8s   tool bash: cat << 'EOF' > /tmp/test_trans.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 SPEA
+   53.9s turn 11
+   58.3s   model reply: in 2793 + cached 36444, out 282 (+251 reasoning)
+   58.3s   tool bash: node /kit/rag.mjs widen "report scam or fraud" --kind object
+   58.8s turn 12
+   62.3s   model reply: in 5186 + cached 36449, out 74 (+44 reasoning)
+   62.3s   tool bash: grep -n -C 5 "DECL" /kit/rag.mjs
+   62.4s turn 13
+   65.4s   model reply: in 5289 + cached 36430, out 49 (+18 reasoning)
+   65.4s   tool bash: grep -n -C 5 "Coverage check" /kit/rag.mjs
+   65.5s turn 14
+   68.3s   model reply: in 5366 + cached 36412, out 36 (+13 reasoning)
+   68.3s   tool bash: grep -rn "Coverage check" /kit/
+   68.3s turn 15
+   71.1s   model reply: in 5430 + cached 36394, out 50 (+24 reasoning)
+   71.1s   tool bash: head -n 40 /kit/rag.mjs
+   71.1s turn 16
+   76.7s   model reply: in 2075 + cached 40425, out 399 (+365 reasoning)
+   76.7s   tool bash: node /kit/rag.mjs check --json --translation /tmp/test_trans.md
+   76.8s turn 17
+   92.7s   model reply: in 3119 + cached 40112, out 463 (+437 reasoning)
+   92.7s   tool bash: node /kit/rag.mjs entry criminality warning issue statement
+   92.9s turn 18
+  104.7s   model reply: in 4021 + cached 40110, out 1733 (+1059 reasoning)
+  104.7s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  104.8s turn 19
+  116.2s   model reply: in 6015 + cached 40127, out 602 (+572 reasoning)
+  116.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  116.4s turn 20
+  119.0s   model reply: in 2885 + cached 44137, out 52 (+15 reasoning)
+  119.0s agent finished
+  119.0s agent finished

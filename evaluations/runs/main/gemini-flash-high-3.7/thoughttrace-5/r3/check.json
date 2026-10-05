@@ -1,0 +1,305 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "temporal",
+   "text": "current time is the weekend",
+   "status": "covered",
+   "matched_symbols": [
+    "time_point"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "request suggestions for day off activities",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "ask",
+    "respond",
+    "activity"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "provide exactly two ideas",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "subject"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "spending a fun day off with daughter",
+   "status": "covered",
+   "matched_symbols": [
+    "role_daughter"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "reasoning",
+   "text": "reward daughter for good academic performance during the week",
+   "status": "covered",
+   "matched_symbols": [
+    "role_daughter",
+    "style_academic",
+    "subject"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "speech_act",
+   "text": "propose mini-adventure day out as the first idea",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "ask",
+    "respond"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "visit a nature reserve, botanical garden, zoo, or aquarium",
+   "status": "covered",
+   "matched_symbols": [
+    "propose"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "conduct a nature scavenger hunt finding items like pinecones, butterflies, and bird calls",
+   "status": "covered",
+   "matched_symbols": [
+    "propose"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "butterfly",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "watch"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "bird",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "give small prizes like stickers or bookmarks for completed scavenger hunt items",
+   "status": "covered",
+   "matched_symbols": [
+    "waterproof_stickers",
+    "target"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "have a picnic lunch with favorite sandwiches, fruit, and treats",
+   "status": "covered",
+   "matched_symbols": [
+    "propose"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "sandwich",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "fruit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "ice cream",
+   "status": "covered",
+   "matched_symbols": [
+    "ice_cream",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "cookie",
+   "status": "covered",
+   "matched_symbols": [
+    "ice_cream",
+    "food_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "action",
+   "text": "give a gift shop keepsake or great job certificate after the outing",
+   "status": "covered",
+   "matched_symbols": [
+    "gift",
+    "propose"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "speech_act",
+   "text": "propose at-home science and celebration party as the second idea",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "respond",
+    "ask"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "action",
+   "text": "set up simple science experiments like lava lamps, slime, or volcanoes, or craft projects",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "target"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "hold a celebration award ceremony with a diploma or trophy celebrating academic achievements",
+   "status": "covered",
+   "matched_symbols": [
+    "style_academic",
+    "gift",
+    "propose"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "action",
+   "text": "do experiments or crafts together while explaining science in simple terms",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "activity",
+    "subject",
+    "respond",
+    "sequence"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "action",
+   "text": "end the day with a movie night featuring popcorn and a blanket fort",
+   "status": "covered",
+   "matched_symbols": [
+    "activity",
+    "propose",
+    "watch"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "object",
+   "text": "popcorn",
+   "status": "covered",
+   "matched_symbols": [
+    "food_label",
+    "ice_cream"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "both ideas blend learning with fun to reward weekly academic effort",
+   "status": "covered",
+   "matched_symbols": [
+    "style_academic",
+    "propose",
+    "enables"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "speech_act",
+   "text": "wish the user and daughter an enjoyable day together",
+   "status": "covered",
+   "matched_symbols": [
+    "role_daughter",
+    "propose",
+    "ask",
+    "respond"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "conjunction",
+  "enables",
+  "food_label",
+  "gift",
+  "ice_cream",
+  "object_label",
+  "outcome",
+  "propose",
+  "requirement",
+  "respond",
+  "role_agent",
+  "role_daughter",
+  "sequence",
+  "style_academic",
+  "subject",
+  "target",
+  "time_point",
+  "watch",
+  "waterproof_stickers",
+  "well_wishes"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n10",
+  "n13",
+  "n14"
+ ]
+}

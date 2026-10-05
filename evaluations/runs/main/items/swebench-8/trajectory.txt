@@ -1,0 +1,57 @@
+t1:s1 [USER] Cross-file binaries not being used for ConfigTool (which LLVM depends on)
+t1:s2 [USER] This is in the mesa build.
+t1:s3 [USER] When running with a cross file which contains
+t1:s4 [USER] ```
+t1:s5 [USER] [binaries]
+t1:s6 [USER] llvm-config = ''
+t1:s7 [USER] ```
+t1:s8 [USER] It still finds my build machine's llvm-config and proceeds as if it was all fine:
+t1:s9 [USER] ```
+t1:s10 [USER] The Meson build system
+t1:s11 [USER] Version: 0.45.0.dev1
+t1:s12 [USER] Source dir: /home/ilia/src/mesa-meson
+t1:s13 [USER] Build dir: /home/ilia/src/mesa-meson/armv7-build
+t1:s14 [USER] Build type: cross build
+t1:s15 [USER] Program python found: YES (/usr/bin/python)
+t1:s16 [USER] Project name: mesa
+t1:s17 [USER] Native C compiler: cc (gcc 6.4.0 "gcc (Gentoo 6.4.0 p1.1) 6.4.0")
+t1:s18 [USER] Cross C compiler: /usr/bin/armv7a-hardfloat-linux-gnueabi-gcc (gcc 4.9.4)
+t1:s19 [USER] Native C++ compiler: c++ (gcc 6.4.0 "c++ (Gentoo 6.4.0 p1.1) 6.4.0")
+t1:s20 [USER] Cross C++ compiler: /usr/bin/armv7a-hardfloat-linux-gnueabi-g++ (gcc 4.9.4)
+t1:s21 [USER] ...
+t1:s22 [USER] Found llvm-config: /usr/lib/llvm/4/bin/llvm-config (4.0.1)
+t1:s23 [USER] Dependency LLVM found: YES
+t1:s24 [USER] ```
+t1:s25 [USER] The following patch makes things work, but not sure if that's the right approach:
+t1:s26 [USER] ```
+t1:s27 [USER] diff --git a/mesonbuild/dependencies/base.py b/mesonbuild/dependencies/base.py
+t1:s28 [USER] index e29d4de5..66f6b015 100644
+t1:s29 [USER] --- a/mesonbuild/dependencies/base.py
+t1:s30 [USER] +++ b/mesonbuild/dependencies/base.py
+t1:s31 [USER] @@ -211,7 +211,21 @@ class ConfigToolDependency(ExternalDependency):
+t1:s32 [USER] def __init__(self, name, environment, language, kwargs):
+t1:s33 [USER] super().__init__('config-tool', environment, language, kwargs)
+t1:s34 [USER] self.name = name
+t1:s35 [USER] -        self.tools = listify(kwargs.get('tools', self.tools))
+t1:s36 [USER] +
+t1:s37 [USER] +        if self.want_cross:
+t1:s38 [USER] +            self.tools = []
+t1:s39 [USER] +            if self.tool_name not in environment.cross_info.config['binaries']:
+t1:s40 [USER] +                if self.required:
+t1:s41 [USER] +                    raise DependencyException('%s binary missing from cross file' % self.tool_name)
+t1:s42 [USER] +            else:
+t1:s43 [USER] +                tool = environment.cross_info.config['binaries'][self.tool_name]
+t1:s44 [USER] +                potential_toolbin = ExternalProgram(tool, silent=True)
+t1:s45 [USER] +                if potential_toolbin.found():
+t1:s46 [USER] +                    self.tools = [potential_toolbin.get_command()[0]]
+t1:s47 [USER] +                else:
+t1:s48 [USER] +                    mlog.debug('Cross %s not found.' % potential_toolbin.name)
+t1:s49 [USER] +        else:
+t1:s50 [USER] +            self.tools = listify(kwargs.get('tools', self.tools))
+t1:s51 [USER] req_version = kwargs.get('version', None)
+t1:s52 [USER] tool, version = self.find_config(req_version)
+t1:s53 [USER] ```
+t1:s54 [USER] It seems like all this should be centralized a bit, but not 100% sure where.
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify mesonbuild/dependencies/base.py

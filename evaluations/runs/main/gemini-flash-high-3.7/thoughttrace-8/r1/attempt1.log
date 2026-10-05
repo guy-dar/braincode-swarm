@@ -1,0 +1,61 @@
+    1.8s turn 1
+   15.6s   model reply: in 32542 + cached 0, out 1874 (+1852 reasoning)
+   15.6s   tool bash: node /kit/rag.mjs check
+   15.7s turn 2
+   23.2s   model reply: in 5970 + cached 28462, out 659 (+614 reasoning)
+   23.2s   tool bash: node /kit/rag.mjs search "job" "career" "work" "advice" "quitting" "support" "mental health"
+   23.5s turn 3
+   31.0s   model reply: in 4528 + cached 32525, out 74 (+38 reasoning)
+   31.0s   tool bash: node /kit/rag.mjs entry well_wishes argues_for reason_for subject attribute_claim
+   31.1s turn 4
+   45.3s   model reply: in 5713 + cached 32514, out 1975 (+1899 reasoning)
+   45.3s   tool bash: node /kit/rag.mjs entry comfortable user_preference causes leads_to self_protection obligation activity decision negation requirement conjunction recommended ha
+   45.5s turn 5
+   49.2s   model reply: in 5624 + cached 36586, out 110 (+80 reasoning)
+   49.2s   tool bash: node /kit/rag.mjs entry comfortable subject role_user personal_values
+   49.3s turn 6
+   53.2s   model reply: in 2223 + cached 40635, out 61 (+33 reasoning)
+   53.2s   tool bash: grep -C 3 "comfortable" /reference/glossary.md
+   53.3s turn 7
+   58.3s   model reply: in 2696 + cached 40618, out 82 (+45 reasoning)
+   58.3s   tool bash: node /kit/rag.mjs search "person" "actor" "character" "speaker" "entity"
+   58.5s turn 8
+   62.8s   model reply: in 4289 + cached 40610, out 80 (+55 reasoning)
+   62.8s   tool bash: grep "| constructor |" /reference/glossary.md
+   62.8s turn 9
+   66.7s   model reply: in 2109 + cached 44666, out 117 (+83 reasoning)
+   66.7s   tool bash: node /kit/rag.mjs search "user" "human" "employee" "job"
+   66.9s turn 10
+   71.0s   model reply: in 3346 + cached 44655, out 74 (+48 reasoning)
+   71.0s   tool bash: grep -i "comfortable" /reference/examples.jsonl
+   71.1s turn 11
+   74.8s   model reply: in 3449 + cached 44636, out 78 (+52 reasoning)
+   74.8s   tool bash: grep -i "person" /reference/glossary.md
+   74.8s turn 12
+  111.5s   model reply: in 4662 + cached 44626, out 5847 (+5743 reasoning)
+  111.5s   tool bash: node /kit/rag.mjs entry activity subject comfortable user_preference user_practice causes leads_to recommended has_goal meets_needs enables obligation decision 
+  111.6s turn 13
+  116.9s   model reply: in 8418 + cached 48729, out 80 (+53 reasoning)
+  116.9s   tool bash: node /kit/rag.mjs entry platform_label::linkedin
+  117.1s turn 14
+  120.7s   model reply: in 4706 + cached 52772, out 117 (+76 reasoning)
+  120.7s   tool bash: node /kit/rag.mjs entry duration unit_minute unit_day supports contrast tone_empathetic tone_professional personal_values
+  120.8s turn 15
+  125.0s   model reply: in 5261 + cached 52756, out 79 (+47 reasoning)
+  125.0s   tool bash: node /kit/rag.mjs entry ask apologize acknowledge propose respond inform offer offer_help
+  125.2s turn 16
+  177.3s   model reply: in 5865 + cached 52742, out 8859 (+6916 reasoning)
+  177.3s   tool write: /output/translation.md
+  177.3s turn 17
+  181.0s   model reply: in 10622 + cached 56848, out 57 (+27 reasoning)
+  181.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  181.2s turn 18
+  211.8s   model reply: in 3262 + cached 64955, out 5940 (+3929 reasoning)
+  211.8s   tool write: /output/translation.md
+  211.9s turn 19
+  222.1s   model reply: in 58236 + cached 0, out 55 (+25 reasoning)
+  222.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  222.2s turn 20
+  228.0s   model reply: in 2039 + cached 56942, out 363 (+179 reasoning)
+  228.1s agent finished
+  228.1s agent finished

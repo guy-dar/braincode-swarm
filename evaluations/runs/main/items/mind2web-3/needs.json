@@ -1,0 +1,2149 @@
+{
+ "translator_id": "mind2web-3",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "Find or search for a product",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Find the cheapest power supply unit with at least 600W power output.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.6774,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.3838,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.374,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.343,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3389,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.2913,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.2628,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.262,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.261,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.2572,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.2523,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_out_of_stock",
+     "symbol": "avail_out_of_stock",
+     "kind": "value",
+     "score": 0.2321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.2272,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Power supply unit (PSU)",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n2",
+   "context": "Find the cheapest power supply unit with at least 600W power output.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7536,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.6973,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6751,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.6568,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6246,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4695,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_sgi",
+     "symbol": "dom_sgi",
+     "kind": "value",
+     "score": 0.4666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_percent",
+     "symbol": "unit_percent",
+     "kind": "value",
+     "score": 0.4478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/ram_unit",
+     "symbol": "ram_unit",
+     "kind": "attribute",
+     "score": 0.4387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4379,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_gb",
+     "symbol": "cap_gb",
+     "kind": "value",
+     "score": 0.4237,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.3414,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2906,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Cheapest / lowest price",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Find the cheapest power supply unit with at least 600W power output.",
+   "candidates": [
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.7583,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4779,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3765,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.3685,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.3329,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.3192,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.2988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/condition_perfect",
+     "symbol": "condition_perfect",
+     "kind": "value",
+     "score": 0.2832,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_out_of_stock",
+     "symbol": "avail_out_of_stock",
+     "kind": "value",
+     "score": 0.2773,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.2604,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "At least 600W power output",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Find the cheapest power supply unit with at least 600W power output.",
+   "candidates": [
+    {
+     "id": "v19/support/at_least",
+     "symbol": "at_least",
+     "kind": "constructor",
+     "score": 0.735,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.4836,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_gb",
+     "symbol": "cap_gb",
+     "kind": "value",
+     "score": 0.4782,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_liter",
+     "symbol": "unit_liter",
+     "kind": "value",
+     "score": 0.4764,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.4342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.4314,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_gram",
+     "symbol": "unit_gram",
+     "kind": "value",
+     "score": 0.427,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4244,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4056,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/ram_unit",
+     "symbol": "ram_unit",
+     "kind": "attribute",
+     "score": 0.4024,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4012,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Type text into search box",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n5",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.7699,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.5241,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4612,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardboard_box",
+     "symbol": "cardboard_box",
+     "kind": "value",
+     "score": 0.456,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4422,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.4402,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.4224,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3915,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_plain_text",
+     "symbol": "format_plain_text",
+     "kind": "value",
+     "score": 0.3897,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3372,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3319,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3315,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.3259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.3144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3045,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Search box labeled 'Search Site'",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n6",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/cardboard_box",
+     "symbol": "cardboard_box",
+     "kind": "value",
+     "score": 0.7344,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5751,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.5535,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.5447,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.5236,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.5227,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3982,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_safari",
+     "symbol": "dom_safari",
+     "kind": "value",
+     "score": 0.3798,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.3791,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.3785,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3761,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3754,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Search text '600w power supply'",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.7629,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.7359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.7114,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_gb",
+     "symbol": "cap_gb",
+     "kind": "value",
+     "score": 0.703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.6934,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.69,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6852,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_liter",
+     "symbol": "unit_liter",
+     "kind": "value",
+     "score": 0.6742,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.6669,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6592,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.5966,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.5909,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click search button",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n8",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.6896,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5271,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5126,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4845,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.483,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.48,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.4506,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4419,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3515,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.2942,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Search button icon",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n9",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7275,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.7178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.7163,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.699,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.6979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.6874,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6801,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.6555,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.6541,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.6539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.6502,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.65,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click element",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n10",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.6967,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.5452,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.5291,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5057,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.4674,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.455,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3265,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.2694,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.2617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.251,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.2491,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.2464,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Filter element '600 W'",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n11",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.7042,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.5018,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4958,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4854,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4755,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4351,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_remove_br",
+     "symbol": "transform_remove_br",
+     "kind": "composite",
+     "score": 0.4249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4196,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.4122,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4089,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Select option in combobox",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n12",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7894,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.552,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5185,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.5017,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.5004,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.4797,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3696,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3315,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.3046,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.2992,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.2967,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Combobox 'Featured Items'",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n13",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.7928,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.6181,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.509,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4887,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardboard_box",
+     "symbol": "cardboard_box",
+     "kind": "value",
+     "score": 0.456,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.4478,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4314,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_bullet_list",
+     "symbol": "format_bullet_list",
+     "kind": "value",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_structured_report",
+     "symbol": "art_structured_report",
+     "kind": "value",
+     "score": 0.4004,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.3933,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Sort option 'Lowest Price'",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n14",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.8352,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.5448,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4874,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_out_of_stock",
+     "symbol": "avail_out_of_stock",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.3941,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.3873,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3869,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3844,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3602,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.3523,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.3448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3327,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click product image or listing",
+   "source": [
+    "t2:s10",
+    "t2:s11"
+   ],
+   "id": "n15",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7011,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/captioned_figure",
+     "symbol": "captioned_figure",
+     "kind": "constructor",
+     "score": 0.4269,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3438,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3261,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3115,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3056,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3006,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.2932,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.2889,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.2855,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Hercules DUAL FAN 600w-Max ATX Power Supply SATA product listing",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n16",
+   "context": "1. [searchbox]  Search Site -> TYPE: 600w power supply 2. [button]   -> CLICK 3. [generic]  600 W -> CLICK 4. [combobox]  Featured Items  -> SELECT: Lowest Price 5. [img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7784,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4639,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_gb",
+     "symbol": "cap_gb",
+     "kind": "value",
+     "score": 0.4626,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/ram_unit",
+     "symbol": "ram_unit",
+     "kind": "attribute",
+     "score": 0.4532,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.4479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.4465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/capacity-unit-value/cap_tb",
+     "symbol": "cap_tb",
+     "kind": "value",
+     "score": 0.4455,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4411,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.4266,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/min_ram",
+     "symbol": "min_ram",
+     "kind": "attribute",
+     "score": 0.4258,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.4121,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.3228,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  }
+ ]
+}

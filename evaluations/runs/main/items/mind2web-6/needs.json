@@ -1,0 +1,1562 @@
+{
+ "translator_id": "mind2web-6",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User requests to view specific properties.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.6803,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.5579,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3755,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3624,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/attribute_claim",
+     "symbol": "attribute_claim",
+     "kind": "claim_relation",
+     "score": 0.351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3458,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.3442,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.3367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.3363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.3289,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/designed_to_be",
+     "symbol": "designed_to_be",
+     "kind": "claim_relation",
+     "score": 0.3183,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.3172,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3154,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Display or filter properties.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.7656,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.7475,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.4619,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.4564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4516,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.4292,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.4257,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4183,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reflects_light",
+     "symbol": "reflects_light",
+     "kind": "constructor",
+     "score": 0.4113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.4079,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.3992,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Properties or student accommodations.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.7281,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/attribute_claim",
+     "symbol": "attribute_claim",
+     "kind": "claim_relation",
+     "score": 0.6194,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.4995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/reservation-status-value/reservation_available",
+     "symbol": "reservation_available",
+     "kind": "value",
+     "score": 0.457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.433,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.4297,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/living_room",
+     "symbol": "living_room",
+     "kind": "value",
+     "score": 0.4215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.4204,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/reservation-status-value/reservation_unavailable",
+     "symbol": "reservation_unavailable",
+     "kind": "value",
+     "score": 0.4151,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Include only properties that offer promotions or special discounts.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.7366,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.6997,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.694,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.6444,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/promotional_event",
+     "symbol": "promotional_event",
+     "kind": "constructor",
+     "score": 0.4537,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.4532,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.4513,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4245,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.4168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/requirement",
+     "symbol": "requirement",
+     "kind": "constructor",
+     "score": 0.4109,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.3694,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Filter by location associated with a university in Sydney.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n5",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.7299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.5809,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.4855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4721,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.4621,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/location_spec",
+     "symbol": "location_spec",
+     "kind": "constructor",
+     "score": 0.4559,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.4351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.4304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4256,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4171,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Universities located in Sydney.",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n6",
+   "context": "Show me only properties with promotions in one of the universities in Sydney",
+   "candidates": [
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.7945,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.5676,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.4561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.4129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3931,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3905,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.3892,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.3837,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click on the search textbox for college, city, or property.",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7667,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.6075,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.581,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.5564,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.5371,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3769,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3731,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/location_spec",
+     "symbol": "location_spec",
+     "kind": "constructor",
+     "score": 0.3637,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3571,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3522,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.346,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.3425,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click or select Sydney.",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n8",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7894,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.6392,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.4169,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4044,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4018,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3736,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3696,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3508,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3414,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3399,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.3377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.3064,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click the Special offer button.",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n9",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.779,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.6863,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4541,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/promotional_event",
+     "symbol": "promotional_event",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.4242,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3676,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3576,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.3439,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.3438,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_invitation",
+     "symbol": "art_invitation",
+     "kind": "value",
+     "score": 0.327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.3025,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click the unlabelled button.",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n10",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.8257,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5803,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5619,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4581,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3533,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.3473,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.3106,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3011,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click to select a university.",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n11",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.759,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7556,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.7041,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.6403,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5101,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4422,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.4243,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.4159,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3951,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.3768,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3705,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Select Macquarie University.",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n12",
+   "context": "1. [textbox]  Search by college, city or property -> CLICK 2. [span]  Sydney -> CLICK 3. [button]  Special offer  -> CLICK 4. [button]   -> CLICK 5. [div]  Select University -> CLICK 6. [div]  Macquarie University -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.6899,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4724,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4361,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.4352,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_academic",
+     "symbol": "style_academic",
+     "kind": "value",
+     "score": 0.4275,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/africa",
+     "symbol": "africa",
+     "kind": "value",
+     "score": 0.4008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3926,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.387,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.3712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.3702,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

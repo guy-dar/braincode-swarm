@@ -1,0 +1,108 @@
+    2.6s turn 1
+   33.1s   model reply: in 30716 + cached 0, out 2580 (+2529 reasoning)
+   33.1s   tool bash: node /kit/rag.mjs search "mow" "lawn" "grass" "cut" "trim" "safety" "prepare" "mower" "scissors"
+   33.3s turn 2
+   56.9s   model reply: in 7356 + cached 28470, out 158 (+117 reasoning)
+   56.9s   tool bash: node /kit/rag.mjs search "gardening" "instruction" "procedure" "efficient" "obstacle" "appearance"
+   57.0s turn 3
+   67.4s   model reply: in 5049 + cached 32529, out 163 (+91 reasoning)
+   67.4s   tool bash: node /kit/rag.mjs entry sequence training_program aesthetic has_style has_goal focus_of outshines activity requirement subject obligation prohibited recommended
+   67.6s turn 4
+   77.7s   model reply: in 3187 + cached 36589, out 113 (+62 reasoning)
+   77.7s   tool bash: node /kit/rag.mjs entry prohibited recommended enables constrained_by motivated_by designed_to_be important works_best at_most at_least measure negation exclude
+   77.8s turn 5
+  189.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  189.2s agent finished
+  191.2s turn 6
+  204.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  204.8s agent finished
+  208.8s turn 7
+  235.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  235.5s agent finished
+  243.5s turn 8
+  306.9s   model reply: in 41825 + cached 0, out 172 (+126 reasoning)
+  306.9s   tool bash: node /kit/rag.mjs search "guide" "advice" "step" "method" "useful" "suitable" "effort" "compare"
+  307.0s turn 9
+  315.6s   model reply: in 3505 + cached 40645, out 102 (+67 reasoning)
+  315.6s   tool bash: node /kit/rag.mjs entry meets_needs contrast reason_for similarity well_wishes sequence
+  315.7s turn 10
+  322.8s   model reply: in 4211 + cached 40630, out 380 (+334 reasoning)
+  322.8s   tool bash: node /kit/rag.mjs search "causes" "feasible" "capable" "before" "after" "gear" "protection" "yard"
+  323.0s turn 11
+  328.6s   model reply: in 2738 + cached 44692, out 86 (+53 reasoning)
+  328.6s   tool bash: node /kit/rag.mjs entry then causes leads_to temporal_context self_protection
+  328.7s turn 12
+  334.3s   model reply: in 3363 + cached 44676, out 82 (+40 reasoning)
+  334.3s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| claim_relation \|" /reference/glossary.md
+  334.3s turn 13
+  342.0s   model reply: in 5382 + cached 44672, out 50 (+10 reasoning)
+  342.0s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| constructor \|" /reference/glossary.md
+  342.1s turn 14
+  345.9s   model reply: in 3173 + cached 48727, out 52 (+12 reasoning)
+  345.9s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| link \|" /reference/glossary.md
+  345.9s turn 15
+  353.4s   model reply: in 3462 + cached 48709, out 72 (+23 reasoning)
+  353.4s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| claim_relation \|" /reference/glossary.md | tail -n +31
+  353.5s turn 16
+  357.3s   model reply: in 5436 + cached 48705, out 81 (+34 reasoning)
+  357.3s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +25
+  357.4s turn 17
+  360.9s   model reply: in 3299 + cached 52760, out 67 (+20 reasoning)
+  360.9s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +50
+  360.9s turn 18
+  367.0s   model reply: in 5119 + cached 52755, out 62 (+15 reasoning)
+  367.0s   tool bash: grep -E "^\| [a-zA-Z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +75
+  367.0s turn 19
+  385.3s   model reply: in 5873 + cached 52742, out 3046 (+3021 reasoning)
+  385.3s   tool bash: node /kit/rag.mjs entry object_label
+  385.4s turn 20
+  402.0s   model reply: in 4964 + cached 56806, out 2381 (+2351 reasoning)
+  402.0s   tool bash: node /kit/rag.mjs entry role_agent role_user user agent
+  402.1s turn 21
+  410.4s   model reply: in 3429 + cached 60866, out 907 (+869 reasoning)
+  410.4s   tool bash: node /kit/rag.mjs search "need" "require" "prerequisite" "equipment" "tool"
+  410.6s turn 22
+  439.6s   model reply: in 5646 + cached 60865, out 4636 (+3352 reasoning)
+  439.6s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  439.7s turn 23
+  458.2s   model reply: in 49116 + cached 0, out 1330 (+1307 reasoning)
+  458.2s   tool bash: node /kit/rag.mjs entry contrast
+  458.3s turn 24
+  487.3s   model reply: in 5813 + cached 44694, out 2470 (+2429 reasoning)
+  487.3s   tool bash: grep -E "^\| unit_[a-zA-Z0-9_]+ \| value \|" /reference/glossary.md
+  487.3s turn 25
+  499.2s   model reply: in 4845 + cached 48760, out 1693 (+1668 reasoning)
+  499.2s   tool bash: node /kit/rag.mjs entry attribute_claim
+  499.3s turn 26
+  514.4s   model reply: in 2830 + cached 52818, out 2546 (+830 reasoning)
+  514.4s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  514.6s turn 27
+  541.4s   model reply: in 6002 + cached 52822, out 4953 (+3259 reasoning)
+  541.4s   tool write: /output/translation.md
+  541.4s turn 28
+  544.9s   model reply: in 6884 + cached 56897, out 59 (+29 reasoning)
+  544.9s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  545.0s turn 29
+  549.6s   model reply: in 3524 + cached 60946, out 146 (+36 reasoning)
+  549.6s agent finished
+  549.6s agent finished

@@ -49,7 +49,8 @@ ATTACH = (("reference:language-spec.compact.md", "1-language-spec.md"),
           ("kit:README.md", "3-kit-README.md"),
           ("formats:successful_translation.md", "4-format-successful_translation.md"),
           ("formats:failed_translation.md", "5-format-failed_translation.md"),
-          ("formats:suggestions.md", "6-format-suggestions.md"))
+          ("formats:suggestions.md", "6-format-suggestions.md"),
+          ("reference:examples.jsonl", "7-examples.jsonl"))
 
 
 def _decode(stream) -> str:
@@ -109,7 +110,7 @@ def run_container_logged(cmd: list, container_name: str, timeout_s: int, progres
     and model reply) and totals token usage. Returns (CompletedProcess,
     duration_s, usage dict)."""
     progress_path.parent.mkdir(parents=True, exist_ok=True)
-    usage = {"calls": 0, "input": 0, "cacheRead": 0, "output": 0, "reasoning": 0}
+    usage = {"calls": 0, "input": 0, "cacheRead": 0, "cacheWrite": 0, "output": 0, "reasoning": 0}
     started = time.monotonic()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8",
                             errors="replace")
@@ -144,7 +145,7 @@ def run_container_logged(cmd: list, container_name: str, timeout_s: int, progres
             if event.get("type") == "message_end" and message.get("role") == "assistant":
                 u = message.get("usage") or {}
                 usage["calls"] += 1
-                for k in ("input", "cacheRead", "output", "reasoning"):
+                for k in ("input", "cacheRead", "cacheWrite", "output", "reasoning"):
                     usage[k] += u.get(k) or 0
             summary = _event_summary(event, turn)
             if summary:
@@ -239,7 +240,7 @@ def collect_context_log(session_dir: Path, used: dict, dest: Path) -> dict:
     compactions and truncated tool results. The log is moved to `dest` (next
     to the progress log), so the next attempt starts a fresh one."""
     src = session_dir / CONTEXT_LOG_NAME
-    out = {k: used.get(k, 0) for k in ("calls", "input", "cacheRead", "output", "reasoning")}
+    out = {k: used.get(k, 0) for k in ("calls", "input", "cacheRead", "cacheWrite", "output", "reasoning")}
     out.update(compactions=0, truncated_tool_results=0)
     if not src.exists():
         return out
@@ -255,7 +256,7 @@ def collect_context_log(session_dir: Path, used: dict, dest: Path) -> dict:
             u = e.get("usage") or {}
             if u:
                 out["calls"] += 1
-                for k in ("input", "cacheRead", "output", "reasoning"):
+                for k in ("input", "cacheRead", "cacheWrite", "output", "reasoning"):
                     out[k] += u.get(k) or 0
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(str(src), dest)

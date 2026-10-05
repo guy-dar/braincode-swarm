@@ -1,0 +1,5448 @@
+{
+ "translator_id": "alfred-3",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "command to place a pan with a knife onto a table",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.821,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8124,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.5703,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.4161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4079,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3536,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3423,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3279,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.3201,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.2805,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "place object onto surface",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.6726,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.4774,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/floor",
+     "symbol": "floor",
+     "kind": "value",
+     "score": 0.434,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.4287,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.3861,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3303,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3226,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3103,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.2988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.2953,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.2895,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2776,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "pan",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n3",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8987,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.5184,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.434,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4335,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3611,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.3586,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3526,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_urgent",
+     "symbol": "tone_urgent",
+     "kind": "value",
+     "score": 0.3526,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3434,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.315,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "knife",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n4",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.921,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.5702,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/scissors",
+     "symbol": "scissors",
+     "kind": "value",
+     "score": 0.5678,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.5117,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.4306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.4174,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3989,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.3958,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_sliced",
+     "symbol": "state_sliced",
+     "kind": "value",
+     "score": 0.3829,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3519,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3458,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/tape",
+     "symbol": "tape",
+     "kind": "value",
+     "score": 0.339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.24,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "table",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n5",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8006,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5836,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.517,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.4364,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.412,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3913,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3779,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3314,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_structured_report",
+     "symbol": "art_structured_report",
+     "kind": "value",
+     "score": 0.3218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.291,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.2868,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "pan containing the knife",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n6",
+   "context": "Put a pan with a knife on a table.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8856,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.8845,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.4512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.4266,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.4222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/scissors",
+     "symbol": "scissors",
+     "kind": "value",
+     "score": 0.3842,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3772,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.3649,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "walk forward",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.7255,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.5887,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.3222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.2897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/performance_tracking",
+     "symbol": "performance_tracking",
+     "kind": "constructor",
+     "score": 0.2889,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.285,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.2577,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.2493,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.2457,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "then",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n8",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.62,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4554,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4298,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4223,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_urgent",
+     "symbol": "tone_urgent",
+     "kind": "value",
+     "score": 0.377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3729,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3564,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3547,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3537,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3484,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_upright",
+     "symbol": "state_upright",
+     "kind": "value",
+     "score": 0.34,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "turn left towards the table",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n9",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7564,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7192,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.513,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5095,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.4798,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.4381,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3355,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3329,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3099,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.294,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.2939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.2935,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "table",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "object_label",
+   "id": "n10",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8287,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5949,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.5352,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.4664,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4582,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.4404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3845,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3764,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3544,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3107,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "black color",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "color_label",
+   "id": "n11",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.662,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.4336,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4112,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.3917,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3888,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.3837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3786,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3723,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3712,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.342,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "pick up object",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n12",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.6638,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.575,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.5379,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.4739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.329,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.329,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.3093,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3063,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.3007,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.2965,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "knife",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "object_label",
+   "id": "n13",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.8345,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.5477,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/scissors",
+     "symbol": "scissors",
+     "kind": "value",
+     "score": 0.5085,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4468,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_sliced",
+     "symbol": "state_sliced",
+     "kind": "value",
+     "score": 0.3303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3018,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1987,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "lettuce",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "food_label",
+   "id": "n14",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.8215,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.37,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.3163,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.3149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3052,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.2948,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2919,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.2667,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "next to the lettuce",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n15",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.807,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4995,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3838,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3427,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.3386,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3239,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3195,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.3137,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.3126,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3122,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.3094,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "closest one",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n16",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.7121,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4822,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.422,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/between",
+     "symbol": "between",
+     "kind": "value",
+     "score": 0.4212,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.405,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3997,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "turn around",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n17",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7421,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.5314,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3021,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3015,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.2934,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.2882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.2845,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2808,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2793,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.2767,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.2556,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "go to the stove top",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n18",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.758,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.5095,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4498,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4335,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3562,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3196,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3037,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.2848,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2839,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2783,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.2657,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "stove top",
+   "source": [
+    "t2:s6"
+   ],
+   "group": "object_label",
+   "id": "n19",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.8229,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.5177,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4846,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4664,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3209,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1918,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "located on the left",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n20",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.7739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.5033,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.5032,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4785,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.4663,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.4558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/floor",
+     "symbol": "floor",
+     "kind": "value",
+     "score": 0.4391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4243,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/between",
+     "symbol": "between",
+     "kind": "value",
+     "score": 0.4101,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "put object into container",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n21",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.7402,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.703,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.7027,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.692,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.6539,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bottle",
+     "symbol": "bottle",
+     "kind": "value",
+     "score": 0.6115,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/trash_can",
+     "symbol": "trash_can",
+     "kind": "value",
+     "score": 0.5784,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.3977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3909,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/vase",
+     "symbol": "vase",
+     "kind": "value",
+     "score": 0.3852,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3776,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.3751,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "knife",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n22",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.8345,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.5477,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/scissors",
+     "symbol": "scissors",
+     "kind": "value",
+     "score": 0.5085,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.4468,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_sliced",
+     "symbol": "state_sliced",
+     "kind": "value",
+     "score": 0.3303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3018,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1987,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "pan",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n23",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8023,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.508,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4127,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.391,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3731,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2772,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "burner",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n24",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7213,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.7006,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6695,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.6278,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.4628,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.4375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/candle",
+     "symbol": "candle",
+     "kind": "value",
+     "score": 0.415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.4009,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3823,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3529,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.3491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2795,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "on the back left burner",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n25",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.7326,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.5333,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.4581,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.4481,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.4258,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4014,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3963,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "pick up pan from the stove top",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n26",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.7627,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.7283,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4337,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4074,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3658,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.2981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.2973,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.2931,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.2881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2839,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.2838,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2752,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "pan",
+   "source": [
+    "t2:s10"
+   ],
+   "group": "object_label",
+   "id": "n27",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8023,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.508,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4127,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.391,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3731,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2772,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "stove top",
+   "source": [
+    "t2:s10"
+   ],
+   "group": "object_label",
+   "id": "n28",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.8229,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.5177,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4846,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4664,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dishwasher",
+     "symbol": "dishwasher",
+     "kind": "value",
+     "score": 0.3921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3617,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sink",
+     "symbol": "sink",
+     "kind": "value",
+     "score": 0.3345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3209,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1918,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "turn left",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n29",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7288,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.5086,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/spatial-relation",
+     "symbol": "rule_category_spatial_relation",
+     "kind": "category_rule",
+     "score": 0.3625,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3424,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3068,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3022,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.2957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2826,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.2793,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.2781,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "walk towards the safe",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n30",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.7228,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/safe",
+     "symbol": "safe",
+     "kind": "value",
+     "score": 0.6189,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.5672,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.4641,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.3225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.3029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.2987,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.2727,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2561,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.2518,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/self_protection",
+     "symbol": "self_protection",
+     "kind": "constructor",
+     "score": 0.2498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.2456,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.2438,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "safe",
+   "source": [
+    "t2:s12"
+   ],
+   "group": "object_label",
+   "id": "n31",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/safe",
+     "symbol": "safe",
+     "kind": "value",
+     "score": 0.7087,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4375,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.4069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_clean",
+     "symbol": "state_clean",
+     "kind": "value",
+     "score": 0.3402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3189,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_stickers",
+     "symbol": "waterproof_stickers",
+     "kind": "value",
+     "score": 0.3008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.2962,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.2961,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.2932,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_bandages",
+     "symbol": "waterproof_bandages",
+     "kind": "value",
+     "score": 0.2893,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/reservation-status-value/reservation_available",
+     "symbol": "reservation_available",
+     "kind": "value",
+     "score": 0.2763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.2646,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.2579,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.1922,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "turn left to face the table",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n32",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7722,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7254,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5191,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.5101,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.5068,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.4973,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3372,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3083,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3058,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3038,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.2994,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.2977,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "black table",
+   "source": [
+    "t2:s12"
+   ],
+   "group": "object_label",
+   "id": "n33",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8169,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5827,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.5331,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3789,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3755,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.3276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3138,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3081,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3039,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.296,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2123,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "put pan on the table",
+   "source": [
+    "t2:s14"
+   ],
+   "id": "n34",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.7422,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.7356,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.4905,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.481,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4115,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/island",
+     "symbol": "island",
+     "kind": "value",
+     "score": 0.3545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.3469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3254,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3034,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3024,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.2993,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.2966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.2803,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "pan",
+   "source": [
+    "t2:s14"
+   ],
+   "group": "object_label",
+   "id": "n35",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.8023,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.508,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4277,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4127,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3997,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.391,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3731,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2772,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "table",
+   "source": [
+    "t2:s14"
+   ],
+   "group": "object_label",
+   "id": "n36",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8287,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.5949,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.5352,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.4664,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.4582,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/shelf",
+     "symbol": "shelf",
+     "kind": "value",
+     "score": 0.4404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3845,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.3764,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_preserve_first_column",
+     "symbol": "transform_preserve_first_column",
+     "kind": "composite",
+     "score": 0.3561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3544,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3107,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/location-name",
+     "symbol": "rule_category_location_name",
+     "kind": "category_rule",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "lettuce",
+   "source": [
+    "t2:s14"
+   ],
+   "group": "food_label",
+   "id": "n37",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.8215,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.37,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3193,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.317,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_must",
+     "symbol": "grape_must",
+     "kind": "value",
+     "score": 0.3163,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.3149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3052,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.2948,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.2919,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.2667,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "on the left side of the table",
+   "source": [
+    "t2:s14"
+   ],
+   "id": "n38",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/location-name/table",
+     "symbol": "table",
+     "kind": "value",
+     "score": 0.8152,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.7265,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/other_side_of",
+     "symbol": "other_side_of",
+     "kind": "value",
+     "score": 0.6862,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/counter",
+     "symbol": "counter",
+     "kind": "value",
+     "score": 0.5323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.4794,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.4638,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.4322,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.406,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4021,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.4,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3935,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "above the lettuce",
+   "source": [
+    "t2:s14"
+   ],
+   "id": "n39",
+   "context": "1. Walk forward then turn left to the black table. 2. Pick up the knife next to the lettuce that is closest. 3. Turn around, go to the stove top on the left. 4. Put the knife in the pan on the back left burner. 5. Take the pan from the stove top. 6. Turn left, walk towards the safe, turn to the left to face the black table. 7. Put the pan on the table on the left side above the lettuce.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.8031,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.394,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/under",
+     "symbol": "under",
+     "kind": "value",
+     "score": 0.3673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3586,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3472,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.3233,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3194,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3171,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3115,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3102,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

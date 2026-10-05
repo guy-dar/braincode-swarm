@@ -1,0 +1,57 @@
+{
+ "model": "gpt-6-luna",
+ "item": "swebench-1",
+ "dataset": "swebench",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 468.5,
+ "usage": {
+  "calls": 11,
+  "input": 33,
+  "cacheRead": 424515,
+  "cacheWrite": 54859,
+  "output": 17189,
+  "reasoning": 11507,
+  "compactions": 0,
+  "truncated_tool_results": 3
+ },
+ "cost_usd": 0.0197,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 5,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "code_branch",
+    "dimension": "constructor"
+   },
+   {
+    "term": "code_invocation",
+    "dimension": "constructor"
+   },
+   {
+    "term": "diagnostic_question",
+    "dimension": "constructor"
+   },
+   {
+    "term": "selected_context",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "potential_helper",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/support/greeting",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

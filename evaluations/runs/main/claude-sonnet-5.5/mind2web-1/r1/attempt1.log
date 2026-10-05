@@ -1,0 +1,23 @@
+    1.8s turn 1
+    9.8s   model reply: in 4 + cached 2083, out 531 (+453 reasoning)
+    9.8s   tool bash: node /kit/rag.mjs entry ask request role_agent agent 2>&1 | head -40
+    9.9s turn 2
+   27.2s   model reply: in 2 + cached 47588, out 3154 (+282 reasoning)
+   27.2s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   27.4s turn 3
+   31.7s   model reply: in 2 + cached 48429, out 208 (+67 reasoning)
+   31.7s   tool bash: cd /output && sed -i '/include_2/d; s/^- Check: pending/- Check: `rag check` run; no unknown symbols reported (some needs matched only loosely by the tool)/; s/
+   31.7s turn 4
+   37.4s   model reply: in 2 + cached 52123, out 571 (+48 reasoning)
+   37.4s agent finished
+   37.4s agent finished

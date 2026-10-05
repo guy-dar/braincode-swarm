@@ -1,0 +1,76 @@
+    2.7s turn 1
+   11.3s   model reply: in 31208 + cached 0, out 1241 (+1196 reasoning)
+   11.3s   tool bash: node /kit/rag.mjs search "reconcile" "balance sheet" "deferred revenue" "accounts receivable" "reporting" "report"
+   11.5s turn 2
+   21.6s   model reply: in 5773 + cached 28460, out 1107 (+1060 reasoning)
+   21.6s   tool bash: node /kit/rag.mjs search "schedule" "interval" "column" "filter" "invoice" "account" "custom report" "aging"
+   21.7s turn 3
+   32.1s   model reply: in 5124 + cached 32529, out 86 (+45 reasoning)
+   32.1s   tool bash: grep -E "\| (constructor|claim_relation) \|" /reference/glossary.md | head -n 40
+   32.2s turn 4
+   42.5s   model reply: in 2947 + cached 36588, out 1093 (+1039 reasoning)
+   42.5s   tool bash: node /kit/rag.mjs entry subject activity statement involves enables leads_to ongoing temporal_context ask inform respond document_section include requirement co
+   42.6s turn 5
+   46.4s   model reply: in 6095 + cached 36589, out 136 (+86 reasoning)
+   46.4s   tool bash: node /kit/rag.mjs entry attribute_claim request provides created_by user_practice calculation config_setting performance_tracking art_structured_report format_s
+   46.5s turn 6
+   57.3s   model reply: in 3799 + cached 40647, out 773 (+725 reasoning)
+   57.3s   tool bash: node /kit/rag.mjs search "reconcile" "synchronize" "discrepancy" "hierarchy" "grouping" "run report"
+   57.4s turn 7
+   63.4s   model reply: in 6313 + cached 40644, out 68 (+40 reasoning)
+   63.4s   tool bash: node /kit/rag.mjs entry role_user role_agent
+   63.5s turn 8
+   82.4s   model reply: in 2429 + cached 44689, out 2690 (+2655 reasoning)
+   82.4s   tool bash: node /kit/rag.mjs widen "reconcile accounts receivable balance sheet accounts" --kind action
+   82.6s turn 9
+  120.8s   model reply: in 7617 + cached 44707, out 6318 (+4591 reasoning)
+  120.8s   tool bash: mkdir -p /output
+cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversa
+  120.9s turn 10
+  135.1s   model reply: in 10433 + cached 48797, out 1874 (+1849 reasoning)
+  135.1s   tool bash: node -e 'console.log(process.version)'
+  135.1s turn 11
+  138.6s   model reply: in 4190 + cached 56922, out 74 (+42 reasoning)
+  138.6s   tool bash: grep -n -C 10 "Coverage check" /kit/rag.mjs
+  138.7s turn 12
+  142.3s   model reply: in 4293 + cached 56903, out 62 (+32 reasoning)
+  142.3s   tool bash: grep -n -C 5 "check" /kit/rag.mjs
+  142.3s turn 13
+  160.3s   model reply: in 4825 + cached 56886, out 3419 (+3217 reasoning)
+  160.3s   tool bash: cat << 'EOF' > /output/test_check.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+  160.5s turn 14
+  186.0s   model reply: in 4770 + cached 60959, out 5276 (+3555 reasoning)
+  186.0s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  186.2s turn 15
+  196.8s   model reply: in 56464 + cached 0, out 173 (+59 reasoning)
+  196.8s agent finished
+  196.8s agent finished

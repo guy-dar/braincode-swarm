@@ -1,0 +1,85 @@
+    1.7s turn 1
+   17.1s   model reply: in 29716 + cached 0, out 2778 (+2706 reasoning)
+   17.1s   tool bash: node /kit/rag.mjs entry ask propose respond inform acknowledge decline apologize interpersonal_stance self_protection obligation dialogue activity negation reco
+   17.2s turn 2
+   20.6s   model reply: in 6087 + cached 28462, out 134 (+86 reasoning)
+   20.6s   tool bash: node /kit/rag.mjs entry leads_to varies_with causes possesses role_mother role_user role_support_team role_friend personal_values beliefs
+   20.7s turn 3
+   28.1s   model reply: in 35364 + cached 0, out 645 (+589 reasoning)
+   28.1s   tool bash: node /kit/rag.mjs search "family" "mother in law" "boyfriend" "partner" "therapist" "therapy" "boundaries" "toxic" "narcissistic"
+   28.5s turn 4
+   32.2s   model reply: in 6014 + cached 32516, out 86 (+40 reasoning)
+   32.2s   tool bash: node /kit/rag.mjs search "relationship" "counseling" "mental health" "limit" "contact" "conflict" "communication"
+   32.3s turn 5
+   36.4s   model reply: in 3917 + cached 36574, out 84 (+50 reasoning)
+   36.4s   tool bash: node /kit/rag.mjs entry escalation request send_message user_practice address_form similarity
+   36.5s turn 6
+   40.1s   model reply: in 4661 + cached 36560, out 96 (+58 reasoning)
+   40.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+   40.2s turn 7
+   43.2s   model reply: in 2496 + cached 40617, out 76 (+31 reasoning)
+   43.2s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +25
+   43.4s turn 8
+   46.9s   model reply: in 4415 + cached 40611, out 60 (+15 reasoning)
+   46.9s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +50
+   47.0s turn 9
+   50.5s   model reply: in 2168 + cached 44666, out 124 (+79 reasoning)
+   50.5s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +75
+   50.6s turn 10
+   53.8s   model reply: in 2985 + cached 44652, out 53 (+13 reasoning)
+   53.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md
+   53.8s turn 11
+   56.8s   model reply: in 4974 + cached 44649, out 65 (+18 reasoning)
+   56.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md | tail -n +30
+   56.8s turn 12
+   60.5s   model reply: in 2931 + cached 48704, out 169 (+131 reasoning)
+   60.5s   tool bash: node /kit/rag.mjs entry statement reason_for provides has_goal has_attribute attribute_claim conditional indicator
+   60.6s turn 13
+   63.7s   model reply: in 4427 + cached 48697, out 78 (+36 reasoning)
+   63.7s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| recipient-value \|" /reference/glossary.md
+   63.8s turn 14
+   66.8s   model reply: in 5132 + cached 48683, out 72 (+30 reasoning)
+   66.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| descriptive-value \|" /reference/glossary.md
+   66.9s turn 15
+   69.8s   model reply: in 5669 + cached 48668, out 70 (+22 reasoning)
+   69.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| (style-value|tone-value) \|" /reference/glossary.md
+   69.9s turn 16
+   72.7s   model reply: in 2081 + cached 52707, out 70 (+22 reasoning)
+   72.7s   tool bash: grep -E "^\| [a-z0-9_]+ \| value \| (topic-value|constraint-value) \|" /reference/glossary.md
+   72.8s turn 17
+   76.2s   model reply: in 2526 + cached 52690, out 54 (+16 reasoning)
+   76.2s   tool bash: grep -E "^\| [a-z0-9_]+ \| composite \|" /reference/glossary.md
+   76.3s turn 18
+   80.2s   model reply: in 4291 + cached 52687, out 157 (+119 reasoning)
+   80.2s   tool bash: grep -E "^\| [a-z0-9_]+ \| link \|" /reference/glossary.md
+   80.2s turn 19
+  102.2s   model reply: in 4683 + cached 52671, out 3770 (+3748 reasoning)
+  102.2s   tool bash: node /kit/rag.mjs check
+  102.2s turn 20
+  127.0s   model reply: in 4400 + cached 56740, out 4622 (+4598 reasoning)
+  127.0s   tool bash: node /kit/rag.mjs check --help
+  127.1s turn 21
+  136.2s   model reply: in 4960 + cached 60818, out 591 (+46 reasoning)
+  136.2s   tool write: /output/translation.md
+  136.2s turn 22
+  139.8s   model reply: in 5573 + cached 60800, out 38 (+16 reasoning)
+  139.8s   tool bash: node /kit/rag.mjs check
+  139.9s turn 23
+  187.5s   model reply: in 2261 + cached 64840, out 8658 (+6428 reasoning)
+  187.5s   tool write: /output/translation.md
+  187.5s turn 24
+  200.9s   model reply: in 53384 + cached 0, out 39 (+17 reasoning)
+  200.9s   tool bash: node /kit/rag.mjs check
+  201.0s turn 25
+  352.5s   model reply: in 5628 + cached 48700, out 5652 (+3198 reasoning)
+  352.5s   tool write: /output/translation.md
+  352.5s turn 26
+  377.3s   model reply: in 59984 + cached 0, out 38 (+16 reasoning)
+  377.3s   tool bash: node /kit/rag.mjs check
+  377.4s turn 27
+  382.9s   model reply: in 4098 + cached 56829, out 238 (+220 reasoning)
+  382.9s   tool bash: ls -la /output
+  382.9s turn 28
+  387.4s   model reply: in 4437 + cached 56811, out 183 (+39 reasoning)
+  387.4s agent finished
+  387.4s agent finished

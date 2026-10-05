@@ -1,0 +1,95 @@
+    1.8s turn 1
+    8.7s   model reply: in 12447 + cached 0, out 895 (+878 reasoning)
+    8.7s   tool bash: ls -la /
+    8.7s turn 2
+   11.5s   model reply: in 2055 + cached 12070, out 43 (+23 reasoning)
+   11.5s   tool bash: ls -la /kit /reference
+   11.5s turn 3
+   14.0s   model reply: in 2489 + cached 12059, out 44 (+23 reasoning)
+   14.0s   tool bash: cat /reference/examples.jsonl
+   14.0s turn 4
+   16.8s   model reply: in 3703 + cached 12059, out 45 (+23 reasoning)
+   16.8s   tool bash: cat /kit/needs_prompt.md
+   16.9s turn 5
+   20.2s   model reply: in 4431 + cached 12054, out 39 (+21 reasoning)
+   20.2s   tool bash: cat /prompt.md
+   20.2s turn 6
+   28.8s   model reply: in 4944 + cached 12045, out 1083 (+1051 reasoning)
+   28.8s   tool bash: grep -in -C 5 "web_element" /reference/glossary.md
+   28.9s turn 7
+   31.7s   model reply: in 2598 + cached 16070, out 56 (+28 reasoning)
+   31.7s   tool bash: find / -name "*mind2web*" 2>/dev/null
+   31.8s turn 8
+   34.4s   model reply: in 2681 + cached 16053, out 36 (+15 reasoning)
+   34.4s   tool bash: cat /kit/rag.mjs
+   34.5s turn 9
+   45.9s   model reply: in 4242 + cached 16061, out 1193 (+1164 reasoning)
+   45.9s   tool bash: grep -in -C 10 "mind2web" /reference/*
+   46.0s turn 10
+   48.8s   model reply: in 5444 + cached 16062, out 71 (+28 reasoning)
+   48.8s   tool bash: grep -in -C 5 "web_element" /reference/language-spec.md /reference/language-spec.compact.md
+   48.8s turn 11
+   52.0s   model reply: in 5540 + cached 16047, out 97 (+48 reasoning)
+   52.0s   tool bash: grep -E '"id": "(web_element|type_text|click|subject|activity|requirement|ask|request)"' /reference/glossary.jsonl
+   52.1s turn 12
+   54.8s   model reply: in 5661 + cached 16033, out 44 (+18 reasoning)
+   54.9s   tool bash: head -n 5 /reference/glossary.jsonl
+   54.9s turn 13
+   58.0s   model reply: in 2502 + cached 20039, out 68 (+23 reasoning)
+   58.0s   tool bash: grep -E '(web_element|type_text|click|subject|activity|requirement|ask|request)' /reference/glossary.jsonl
+   58.1s turn 14
+   61.3s   model reply: in 4728 + cached 20060, out 94 (+35 reasoning)
+   61.3s   tool bash: grep -E '"id": "v19/(support|claim_relation|operation-vocabulary)/(type_text|subject|activity|requirement|request|web_element)"' /reference/glossary.jsonl
+   61.3s turn 15
+   64.1s   model reply: in 5767 + cached 20060, out 46 (+28 reasoning)
+   64.1s   tool bash: ls -la /session
+   64.1s turn 16
+   66.8s   model reply: in 6002 + cached 20047, out 28 (+10 reasoning)
+   66.8s   tool bash: ls -la /output
+   66.8s turn 17
+   83.6s   model reply: in 2092 + cached 24038, out 2639 (+2606 reasoning)
+   83.6s   tool bash: find / -name "*.py" -o -name "*.json" 2>/dev/null
+   83.7s turn 18
+  110.7s   model reply: in 4710 + cached 24069, out 38 (+16 reasoning)
+  110.7s   tool bash: cat /kit/tool_schema.json
+  110.7s turn 19
+  113.6s   model reply: in 5588 + cached 23850, out 52 (+30 reasoning)
+  113.6s   tool bash: node /kit/rag.mjs health
+  113.7s turn 20
+  124.0s   model reply: in 5750 + cached 23829, out 1311 (+1278 reasoning)
+  124.0s   tool bash: node -e '
+import("./kit/rag.mjs");
+' 2>&1
+  124.1s turn 21
+  126.9s   model reply: in 3417 + cached 27826, out 47 (+25 reasoning)
+  126.9s   tool bash: node /kit/rag.mjs health
+  127.0s turn 22
+  130.8s   model reply: in 3577 + cached 27802, out 208 (+25 reasoning)
+  130.8s   tool bash: node -e '
+async function test() {
+  const content = `<|user|>Browse IT jobs with certificate Security clearance
+<|assistant|>1. Type "IT jobs" into "Search by j
+  130.9s turn 23
+  134.2s   model reply: in 4106 + cached 27798, out 35 (+21 reasoning)
+  134.2s   tool bash: env
+  134.2s turn 24
+  138.0s   model reply: in 4788 + cached 27797, out 212 (+29 reasoning)
+  138.0s   tool bash: node -e '
+async function test() {
+  const content = `<|user|>Browse IT jobs with certificate Security clearance
+<|assistant|>1. Type "IT jobs" into "Search by j
+  152.0s turn 25
+  183.5s   model reply: in 34158 + cached 0, out 1127 (+883 reasoning)
+  183.5s   tool bash: node -e '
+async function test(prompt) {
+  const content = `<|user|>` + prompt + `\n<|assistant|>1. Type "IT jobs" into "Search by job title, skill or company"\n
+  226.2s turn 26
+  327.9s   model reply: in 36112 + cached 0, out 2360 (+2259 reasoning)
+  327.9s   tool write: /output/reconstruction.md
+  327.9s turn 27
+  360.4s   model reply: in 2958 + cached 35519, out 57 (+37 reasoning)
+  360.4s   tool read: /output/reconstruction.md
+  360.4s turn 28
+  365.2s   model reply: in 38609 + cached 0, out 116 (+101 reasoning)
+  365.3s agent finished
+  365.3s agent finished

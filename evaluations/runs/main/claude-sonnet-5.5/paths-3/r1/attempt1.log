@@ -1,0 +1,20 @@
+    6.9s turn 1
+   16.1s   model reply: in 4 + cached 2083, out 551 (+467 reasoning)
+   16.1s   tool bash: node /kit/rag.mjs entry ask request depicts adaptation generation_profile 2>&1 | head -40
+   16.5s turn 2
+   45.2s   model reply: in 2 + cached 47354, out 4980 (+522 reasoning)
+   45.2s   tool bash: cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+
+   45.3s turn 3
+   50.6s   model reply: in 2 + cached 48155, out 414 (+0 reasoning)
+   50.7s agent finished
+   50.7s agent finished

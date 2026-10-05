@@ -1,0 +1,4 @@
+<|user|>What is the problem with work and personal activities in Japan?
+<|assistant|>Flexible working arrangements and shorter working hours of 1 hour in Japan have recently been ongoing, enabling morale and balance. This enables productivity and growth. Working in Japan is a practice supported by morale and balance. There are ongoing issues in Japan, which are supported by this practice.
+<|user|>What about multiple jobs in Japan for at least 2 days?
+<|assistant|>Working multiple part-time jobs in Japan is a practice. It enables balancing income and schedule, but leads to a lack of free time and stress. Hobbies and work-life balance in Japan are important.

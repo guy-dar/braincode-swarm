@@ -43,9 +43,9 @@ def structure(code: str) -> Counter:
     return c
 
 
-def bundle(run: str) -> dict:
+def bundle(run: str, results: str = None) -> dict:
     d = EVAL_DIR / "runs" / run
-    summary = json.loads((EVAL_DIR / "results" / run / "summary.json").read_text(encoding="utf-8"))
+    summary = json.loads((EVAL_DIR / "results" / (results or run) / "summary.json").read_text(encoding="utf-8"))
     labels = {m["name"]: m["label"] for m in summary["models"]}
     kinds = metrics.glossary_kinds(d / "reference" / "glossary.jsonl")
     items = {i["item_key"]: i for i in run_eval.items_of(run)}
@@ -98,7 +98,7 @@ def bundle(run: str) -> dict:
                          labels[a]: docs[item][a], labels[b]: docs[item][b]})
         if len(examples) == 6:
             break
-    return {"run": run, "coverage": summary["coverage"], "determinism_pairs": summary["determinism_pairs"],
+    return {"run": run, "models": summary["models"], "coverage": summary["coverage"], "determinism_pairs": summary["determinism_pairs"],
             "determinism_self": summary["determinism_self"], "top_symbols": summary["top_symbols"],
             "type_counts": summary["type_counts"], "statements_per_translation": per_doc,
             "symbols_avoided": avoided, "divergent_examples": examples}
@@ -113,7 +113,8 @@ def ask_claude(evidence: dict) -> str:
     prompt = (
         "You are analyzing an evaluation of BrainCode, a formal language that LLM translators write using a fixed "
         "glossary of symbols (operations, constructors, claim relations, values, and value groups written "
-        "group::key). Six models translated the same unseen items, three times each. Below is the measured "
+        "group::key). " + f"{len(evidence['models'])} models " + "translated the same unseen items, three times each "
+        "(a model labelled 'probe' once each). Below is the measured "
         "evidence: coverage, Jensen-Shannon divergences, symbol and symbol-type use, statement-head counts per "
         "translation, symbols each model uses far less than the others, and the most divergent translations of the "
         "same item.\n\nAnswer these questions for a research paper, grounded only in this evidence. Cite numbers and "
@@ -133,9 +134,10 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--run", default="main")
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--results", default=None, help="results subfolder holding summary.json (default: the run id)")
     args = p.parse_args(argv)
-    out = EVAL_DIR / "results" / args.run
-    evidence = bundle(args.run)
+    out = EVAL_DIR / "results" / (args.results or args.run)
+    evidence = bundle(args.run, args.results)
     (out / "qualitative_evidence.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=1),
                                                    encoding="utf-8")
     print(f"evidence: {len(json.dumps(evidence)):,} chars -> {out / 'qualitative_evidence.json'}")

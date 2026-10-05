@@ -1,0 +1,2573 @@
+{
+ "translator_id": "paths-5",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "user asks for a discussion question based on a documentary",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "come up with a question from the documentary \"The Social Dilemma\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.8535,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6376,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5657,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.531,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4138,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4136,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.3622,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.3509,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.3485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.3391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3327,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3315,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/dialogue",
+     "symbol": "dialogue",
+     "kind": "constructor",
+     "score": 0.3311,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "generate a discussion question",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "come up with a question from the documentary \"The Social Dilemma\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.794,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/topic-value",
+     "symbol": "rule_category_topic_value",
+     "kind": "category_rule",
+     "score": 0.6658,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_abortion",
+     "symbol": "topic_abortion",
+     "kind": "value",
+     "score": 0.6642,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.5316,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.5156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.5019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/dialogue",
+     "symbol": "dialogue",
+     "kind": "constructor",
+     "score": 0.4952,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4734,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.4677,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.444,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4307,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "documentary The Social Dilemma",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "genre_label",
+   "id": "n3",
+   "context": "come up with a question from the documentary \"The Social Dilemma\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.7557,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.7474,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.6818,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.5607,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4779,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4689,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.4513,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.4444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.4399,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.4303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.3795,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "suitable for group discussion",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "come up with a question from the documentary \"The Social Dilemma\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.8345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.7748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7713,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.7639,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.7354,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7292,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.7236,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.7162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.7064,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.7037,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.7033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6956,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "has no correct or definitive answer",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n5",
+   "context": "come up with a question from the documentary \"The Social Dilemma\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.6947,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4888,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4711,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.457,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4501,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4354,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4307,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4293,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4293,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4288,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/requirement",
+     "symbol": "requirement",
+     "kind": "constructor",
+     "score": 0.4167,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The Social Dilemma explores ethical concerns and consequences of social media usage",
+   "source": [
+    "t2:s1"
+   ],
+   "id": "n6",
+   "context": "In \"The Social Dilemma,\" the documentary explores various ethical concerns and consequences of social media usage. Here's a question that could fuel an engaging group discussion with no definitive answer: Q: Is it possible to strike a balance between utilizing social media platforms for personal or professional benefits while simultaneously mitigating the negative impact they have on our mental health? How can individuals, industry players, and society at large work together to achieve this balance?",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.7497,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.6612,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.6176,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.6015,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.5174,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/personal_values",
+     "symbol": "personal_values",
+     "kind": "value",
+     "score": 0.4547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.4426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/stereotype",
+     "symbol": "stereotype",
+     "kind": "claim_relation",
+     "score": 0.4168,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4164,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_abortion",
+     "symbol": "topic_abortion",
+     "kind": "value",
+     "score": 0.4097,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "assistant provides an open-ended discussion question",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "In \"The Social Dilemma,\" the documentary explores various ethical concerns and consequences of social media usage. Here's a question that could fuel an engaging group discussion with no definitive answer: Q: Is it possible to strike a balance between utilizing social media platforms for personal or professional benefits while simultaneously mitigating the negative impact they have on our mental health? How can individuals, industry players, and society at large work together to achieve this balance?",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7853,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7827,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.6968,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.696,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.6938,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.6931,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.6339,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4667,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.4321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.4321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4223,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4087,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apologize",
+     "symbol": "apologize",
+     "kind": "speech_act",
+     "score": 0.4007,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.3936,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "balancing social media utility against negative mental health impacts",
+   "source": [
+    "t2:s3"
+   ],
+   "id": "n8",
+   "context": "In \"The Social Dilemma,\" the documentary explores various ethical concerns and consequences of social media usage. Here's a question that could fuel an engaging group discussion with no definitive answer: Q: Is it possible to strike a balance between utilizing social media platforms for personal or professional benefits while simultaneously mitigating the negative impact they have on our mental health? How can individuals, industry players, and society at large work together to achieve this balance?",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.7879,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.691,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/opposes",
+     "symbol": "opposes",
+     "kind": "claim_relation",
+     "score": 0.6401,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/personal_values",
+     "symbol": "personal_values",
+     "kind": "value",
+     "score": 0.4917,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.4785,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.4633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4351,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.4317,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.4263,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.4144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.4127,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "cooperation among individuals, industry, and society to mitigate social media harm",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n9",
+   "context": "In \"The Social Dilemma,\" the documentary explores various ethical concerns and consequences of social media usage. Here's a question that could fuel an engaging group discussion with no definitive answer: Q: Is it possible to strike a balance between utilizing social media platforms for personal or professional benefits while simultaneously mitigating the negative impact they have on our mental health? How can individuals, industry players, and society at large work together to achieve this balance?",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.751,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.6706,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.6404,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.6346,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/involves",
+     "symbol": "involves",
+     "kind": "claim_relation",
+     "score": 0.4347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4333,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.4117,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_support_team",
+     "symbol": "role_support_team",
+     "kind": "value",
+     "score": 0.3975,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "user asks for the core theme and summary of The Social Dilemma",
+   "source": [
+    "t3:s1"
+   ],
+   "id": "n10",
+   "context": "what does \"The Social Dilemma\" really talk about",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7912,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7836,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6892,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.6813,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.5198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4728,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4603,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4561,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4528,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.4362,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The Social Dilemma investigates hidden dangers and harmful effects of social media",
+   "source": [
+    "t4:s1"
+   ],
+   "group": "genre_label",
+   "id": "n11",
+   "context": "\"The Social Dilemma\" is a documentary that delves into the hidden dangers and detrimental effects of social media. It examines the pervasive manipulation and exploitation techniques employed by major technology companies to capture users' attention, generate profit, and influence behavior. The film sheds light on issues like data privacy, algorithm-driven recommendations, the spread of misinformation, and the impact of social media on mental health. It features interviews with former employees from prominent tech companies who provide insights into the inner workings of these platforms and the",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.7292,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.663,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/criminality",
+     "symbol": "criminality",
+     "kind": "value",
+     "score": 0.6309,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.5762,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.5425,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4525,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.4348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4175,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/varies_with",
+     "symbol": "varies_with",
+     "kind": "claim_relation",
+     "score": 0.4094,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/stereotype",
+     "symbol": "stereotype",
+     "kind": "claim_relation",
+     "score": 0.3987,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3907,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/genre_label",
+     "symbol": "genre_label",
+     "kind": "lexical_group",
+     "score": 0.3317,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "tech companies manipulate and exploit user attention for profit and behavioral influence",
+   "source": [
+    "t4:s2"
+   ],
+   "id": "n12",
+   "context": "\"The Social Dilemma\" is a documentary that delves into the hidden dangers and detrimental effects of social media. It examines the pervasive manipulation and exploitation techniques employed by major technology companies to capture users' attention, generate profit, and influence behavior. The film sheds light on issues like data privacy, algorithm-driven recommendations, the spread of misinformation, and the impact of social media on mental health. It features interviews with former employees from prominent tech companies who provide insights into the inner workings of these platforms and the",
+   "candidates": [
+    {
+     "id": "v19/support/user_practice",
+     "symbol": "user_practice",
+     "kind": "claim_relation",
+     "score": 0.6885,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.6793,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.4576,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distracts_from",
+     "symbol": "distracts_from",
+     "kind": "claim_relation",
+     "score": 0.4538,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/varies_with",
+     "symbol": "varies_with",
+     "kind": "claim_relation",
+     "score": 0.4414,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4408,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4129,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.4106,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4094,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4025,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/perceived_as",
+     "symbol": "perceived_as",
+     "kind": "claim_relation",
+     "score": 0.3936,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "the film addresses privacy, algorithmic recommendations, misinformation, and mental health",
+   "source": [
+    "t4:s3"
+   ],
+   "id": "n13",
+   "context": "\"The Social Dilemma\" is a documentary that delves into the hidden dangers and detrimental effects of social media. It examines the pervasive manipulation and exploitation techniques employed by major technology companies to capture users' attention, generate profit, and influence behavior. The film sheds light on issues like data privacy, algorithm-driven recommendations, the spread of misinformation, and the impact of social media on mental health. It features interviews with former employees from prominent tech companies who provide insights into the inner workings of these platforms and the",
+   "candidates": [
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.7396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6841,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6751,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/self_protection",
+     "symbol": "self_protection",
+     "kind": "constructor",
+     "score": 0.6603,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.6571,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6496,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/allowed_to_enter",
+     "symbol": "allowed_to_enter",
+     "kind": "claim_relation",
+     "score": 0.6486,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.6481,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6474,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.6424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6411,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6312,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "former tech employees reveal platform mechanics and ethical dilemmas in interviews",
+   "source": [
+    "t4:s4"
+   ],
+   "id": "n14",
+   "context": "\"The Social Dilemma\" is a documentary that delves into the hidden dangers and detrimental effects of social media. It examines the pervasive manipulation and exploitation techniques employed by major technology companies to capture users' attention, generate profit, and influence behavior. The film sheds light on issues like data privacy, algorithm-driven recommendations, the spread of misinformation, and the impact of social media on mental health. It features interviews with former employees from prominent tech companies who provide insights into the inner workings of these platforms and the",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7055,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.7038,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.6824,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_technical",
+     "symbol": "style_technical",
+     "kind": "value",
+     "score": 0.6763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6746,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.6735,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.6692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.6587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6555,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/attribute_claim",
+     "symbol": "attribute_claim",
+     "kind": "claim_relation",
+     "score": 0.6496,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6494,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "user requests a discussion question based on a specific research paper",
+   "source": [
+    "t5:s1"
+   ],
+   "id": "n15",
+   "context": "come up with a question from \"Misinformation and Its Correction: Continued Influence and Successful Debiasing\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.7167,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.6988,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5788,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.5552,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4772,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4392,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4084,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.3886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3776,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.3633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "research paper Misinformation and Its Correction: Continued Influence and Successful Debiasing",
+   "source": [
+    "t5:s1"
+   ],
+   "id": "n16",
+   "context": "come up with a question from \"Misinformation and Its Correction: Continued Influence and Successful Debiasing\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.7705,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.7642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.7639,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.7482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.7363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.7253,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.721,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.7045,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.7004,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.6929,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.6867,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6762,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "open-ended question suitable for group discussion without a definitive answer",
+   "source": [
+    "t5:s1"
+   ],
+   "id": "n17",
+   "context": "come up with a question from \"Misinformation and Its Correction: Continued Influence and Successful Debiasing\" that is suitable in a group discussion with no correct answer",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.8121,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/property_question",
+     "symbol": "property_question",
+     "kind": "constructor",
+     "score": 0.5242,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4257,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.3999,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_support_team",
+     "symbol": "role_support_team",
+     "kind": "value",
+     "score": 0.3863,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.3855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.3838,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3827,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3736,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.3716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/topic-value",
+     "symbol": "rule_category_topic_value",
+     "kind": "category_rule",
+     "score": 0.3685,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open",
+     "symbol": "open",
+     "kind": "operation",
+     "score": 0.2924,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "the research paper investigates challenges in correcting misinformation",
+   "source": [
+    "t6:s1"
+   ],
+   "id": "n18",
+   "context": "Q: In \"Misinformation and Its Correction: Continued Influence and Successful Debiasing,\" the research explores the challenges of correcting misinformation. Considering the complexity of human cognitive biases and the pervasiveness of misinformation in today's society, how can we effectively address and mitigate its impact? Can individuals, institutions, and technology play complementary roles in combating the spread of misinformation, or are there inherent limitations that make it an insurmountable task?",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.6939,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.5381,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4515,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3897,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.3883,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.3839,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3661,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3657,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3597,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.3593,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3511,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.35,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "assistant proposes a question about mitigating misinformation despite cognitive biases",
+   "source": [
+    "t6:s2"
+   ],
+   "id": "n19",
+   "context": "Q: In \"Misinformation and Its Correction: Continued Influence and Successful Debiasing,\" the research explores the challenges of correcting misinformation. Considering the complexity of human cognitive biases and the pervasiveness of misinformation in today's society, how can we effectively address and mitigate its impact? Can individuals, institutions, and technology play complementary roles in combating the spread of misinformation, or are there inherent limitations that make it an insurmountable task?",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7825,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.7463,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.7279,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/acknowledge",
+     "symbol": "acknowledge",
+     "kind": "speech_act",
+     "score": 0.714,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.5237,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4949,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4932,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/distracts_from",
+     "symbol": "distracts_from",
+     "kind": "claim_relation",
+     "score": 0.4834,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.4831,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4772,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.4695,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "roles of individuals, institutions, and technology versus inherent limits in fighting misinformation",
+   "source": [
+    "t6:s3"
+   ],
+   "id": "n20",
+   "context": "Q: In \"Misinformation and Its Correction: Continued Influence and Successful Debiasing,\" the research explores the challenges of correcting misinformation. Considering the complexity of human cognitive biases and the pervasiveness of misinformation in today's society, how can we effectively address and mitigate its impact? Can individuals, institutions, and technology play complementary roles in combating the spread of misinformation, or are there inherent limitations that make it an insurmountable task?",
+   "candidates": [
+    {
+     "id": "v19/support/role",
+     "symbol": "role",
+     "kind": "claim_relation",
+     "score": 0.7439,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.5111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.5086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.5027,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/beliefs",
+     "symbol": "beliefs",
+     "kind": "value",
+     "score": 0.4787,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.4735,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.4702,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.4633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.4545,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.4544,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.4533,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

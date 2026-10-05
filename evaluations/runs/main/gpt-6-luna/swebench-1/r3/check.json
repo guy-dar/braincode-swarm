@@ -1,0 +1,206 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "encountering UnboundLocalError: local variable 'seq_length' referenced before assignment",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "greet and report an issue with ConvBertForTokenClassification",
+   "status": "covered",
+   "matched_symbols": [
+    "greeting",
+    "raises_exception",
+    "inform"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "ConvBertForTokenClassification model in transformers convbert module",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "action",
+   "text": "call forward method passing only input_embeds argument",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception",
+    "request",
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "source file modeling_convbert.py line 833",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "token_type_ids slicing uses seq_length variable when token_type_ids is None",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "seq_length variable remains unassigned in execution path",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "inputs_embeds branch extracts input_shape but omits unpacking seq_length",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "speech_act",
+   "text": "ask whether missing batch_size and seq_length unpacking is a bug or misuse",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "raises_exception"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "requested maintainers ArthurZucker and younesbelkada",
+   "status": "covered",
+   "matched_symbols": [
+    "request",
+    "role_user"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "running custom modified script rather than official example",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "running custom task or dataset rather than standard benchmark",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "reproduce bug by passing inputs_embeds and attention_mask to ConvBertForTokenClassification",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "expected execution without raising UnboundLocalError",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception",
+    "test_condition"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "negation",
+   "text": "no error should occur during model execution",
+   "status": "covered",
+   "matched_symbols": [
+    "raises_exception",
+    "test_condition"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "modify file src/transformers/models/convbert/modeling_convbert.py",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "transformers library codebase",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity",
+    "platform_label"
+   ]
+  }
+ ],
+ "unresolved": [
+  "n16"
+ ],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "FALSE",
+  "REPLY_TO",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "code_entity",
+  "greeting",
+  "in",
+  "inform",
+  "platform_label",
+  "raises_exception",
+  "request",
+  "role_agent",
+  "role_user",
+  "subject",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [
+  "code_branch",
+  "code_invocation",
+  "diagnostic_question",
+  "potential_helper",
+  "selected_context"
+ ],
+ "unbound_attribute_values": [
+  "input_ids",
+  "input_shape",
+  "inputs_embeds",
+  "self"
+ ],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3"
+ ]
+}

@@ -1,0 +1,46 @@
+    2.8s turn 1
+   13.0s   model reply: in 31171 + cached 0, out 1601 (+1560 reasoning)
+   13.0s   tool bash: node /kit/rag.mjs search "job dissatisfaction" "mental health" "resume" "emergency fund" "exit strategy"
+   13.2s turn 2
+   17.0s   model reply: in 5655 + cached 28460, out 215 (+174 reasoning)
+   17.0s   tool bash: node /kit/rag.mjs search "job" "career" "work" "advice" "quitting" "boundary"
+   17.3s turn 3
+   20.4s   model reply: in 3427 + cached 32518, out 136 (+36 reasoning)
+   20.4s   tool bash: node /kit/rag.mjs entry activity decision obligation self_protection indicator interpersonal_stance recommended causes comfortable user_practice user_preference
+   20.5s turn 4
+   24.6s   model reply: in 5581 + cached 32513, out 265 (+227 reasoning)
+   24.6s   tool bash: node /kit/rag.mjs entry ask apologize acknowledge propose respond inform offer offer_help contrast supports negation exclude conjunction subject
+   24.8s turn 5
+   36.6s   model reply: in 2979 + cached 36568, out 184 (+159 reasoning)
+   36.6s   tool bash: node /kit/rag.mjs search "comfortable"
+   36.8s turn 6
+   39.7s   model reply: in 3468 + cached 36551, out 70 (+42 reasoning)
+   39.7s   tool bash: grep -E "\| comfortable \|" /reference/glossary.md
+   39.8s turn 7
+   43.3s   model reply: in 3605 + cached 36532, out 66 (+38 reasoning)
+   43.3s   tool bash: node /kit/rag.mjs search "person" "employee"
+   43.4s turn 8
+   56.6s   model reply: in 4238 + cached 36518, out 2290 (+2249 reasoning)
+   56.6s   tool bash: node /kit/rag.mjs search "emergency" "financial" "resume" "network" "therapy" "burnout"
+   56.8s turn 9
+   75.4s   model reply: in 4100 + cached 40589, out 3149 (+1517 reasoning)
+   75.4s   tool write: /output/translation.md
+   75.4s turn 10
+   78.9s   model reply: in 3192 + cached 44650, out 53 (+23 reasoning)
+   78.9s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   79.2s turn 11
+   88.0s   model reply: in 3898 + cached 44636, out 1156 (+1118 reasoning)
+   88.0s   tool bash: node /kit/rag.mjs search "role_manager" "role_colleague" "role_friend"
+   88.1s turn 12
+   91.3s   model reply: in 6172 + cached 44636, out 134 (+108 reasoning)
+   91.3s   tool bash: node /kit/rag.mjs entry interpersonal_stance role
+   91.4s turn 13
+  108.5s   model reply: in 2507 + cached 48676, out 3435 (+1772 reasoning)
+  108.5s   tool write: /output/translation.md
+  108.5s turn 14
+  111.3s   model reply: in 5939 + cached 48683, out 53 (+23 reasoning)
+  111.3s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  111.5s turn 15
+  116.5s   model reply: in 2573 + cached 52725, out 407 (+232 reasoning)
+  116.5s agent finished
+  116.5s agent finished

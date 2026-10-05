@@ -1,0 +1,202 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "Find or search for a product",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_direction",
+    "rank_price"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "Power supply unit (PSU)",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "Cheapest / lowest price",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_price",
+    "at_least",
+    "dir_asc"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "At least 600W power output",
+   "status": "covered",
+   "matched_symbols": [
+    "at_least"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "Type text into search box",
+   "status": "covered",
+   "matched_symbols": [
+    "type_text",
+    "rank_direction",
+    "rank_field",
+    "web_element"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Search box labeled 'Search Site'",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_direction",
+    "rank_field",
+    "rank_price",
+    "dir_asc"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "Search text '600w power supply'",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "Click search button",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "select_option",
+    "rank_direction"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Search button icon",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "Click element",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "select_option",
+    "web_element",
+    "type_text"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "Filter element '600 W'",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_price",
+    "select_option"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "Select option in combobox",
+   "status": "covered",
+   "matched_symbols": [
+    "select_option",
+    "click"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "Combobox 'Featured Items'",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "Sort option 'Lowest Price'",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_price",
+    "select_option",
+    "dir_asc",
+    "rank_direction",
+    "rank_field"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Click product image or listing",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "Hercules DUAL FAN 600w-Max ATX Power Supply SATA product listing",
+   "status": "declared",
+   "matched_symbols": []
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "REPLY_TO",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "at_least",
+  "click",
+  "dir_asc",
+  "measure",
+  "object_label",
+  "rank_direction",
+  "rank_field",
+  "rank_price",
+  "requirement",
+  "select_option",
+  "target",
+  "type_text",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [
+  "unit_watt"
+ ],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2"
+ ]
+}

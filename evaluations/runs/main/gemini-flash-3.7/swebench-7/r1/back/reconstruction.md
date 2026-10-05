@@ -1,0 +1,2 @@
+<|user|>Propose deprecating the pandas method Index.is_mixed. The usage_count of Index.is_mixed is 1. Removing Index.is_mixed is not expected to cause breakage. The behavior of Index.is_mixed is surprising: pd.Index(['a', np.nan, 'b']).is_mixed() is True, and Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() is False.
+<|assistant|>Propose modifying doc/source/whatsnew/v1.1.0.rst in pandas. Propose modifying pandas/core/indexes/base.py in pandas.

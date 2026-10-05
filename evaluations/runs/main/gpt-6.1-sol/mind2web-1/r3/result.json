@@ -1,0 +1,40 @@
+{
+ "model": "gpt-6.1-sol",
+ "item": "mind2web-1",
+ "dataset": "mind2web",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 373.5,
+ "usage": {
+  "calls": 9,
+  "input": 27,
+  "cacheRead": 284067,
+  "cacheWrite": 40853,
+  "output": 5246,
+  "reasoning": 720,
+  "compactions": 0,
+  "truncated_tool_results": 2
+ },
+ "cost_usd": 0.1831,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "flight_search_request",
+    "dimension": "constructor"
+   },
+   {
+    "term": "flight_deal_request",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

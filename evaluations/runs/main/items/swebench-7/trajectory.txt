@@ -1,0 +1,14 @@
+t1:s1 [USER] DEPR: Index.is_mixed
+t1:s2 [USER] We only use it in one place, and removing it there doesn't break anything.
+t1:s3 [USER] Moreover, it behaves surprisingly:
+t1:s4 [USER] ```
+t1:s5 [USER] >>> pd.Index(['a', np.nan, 'b']).is_mixed()
+t1:s6 [USER] True
+t1:s7 [USER] >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed()
+t1:s8 [USER] False
+t1:s9 [USER] ```
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify doc/source/whatsnew/v1.1.0.rst
+t2:s3 [AGENT] 2.
+t2:s4 [AGENT] modify pandas/core/indexes/base.py

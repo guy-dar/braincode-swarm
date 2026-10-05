@@ -1,0 +1,19 @@
+t1:s1 [USER] unable to complete remote connections for two-process
+t1:s2 [USER] steps to reproduce:
+t1:s3 [USER] ```
+t1:s4 [USER] ipython console --ip=0
+t1:s5 [USER] ```
+t1:s6 [USER] and then, try to connect to it from another window:
+t1:s7 [USER] ```
+t1:s8 [USER] ipython console --exiting
+t1:s9 [USER] ```
+t1:s10 [USER] and it will stall.
+t1:s11 [USER] If you don't specify --ip, everything works, because the local code goes through a slightly different code path.
+t1:s12 [USER] Just opening this now so @minrk has a thing to reference as he submits the fix
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify IPython/consoleapp.py
+t2:s3 [AGENT] 2.
+t2:s4 [AGENT] modify IPython/kernel/client.py
+t2:s5 [AGENT] 3.
+t2:s6 [AGENT] modify IPython/qt/console/qtconsoleapp.py

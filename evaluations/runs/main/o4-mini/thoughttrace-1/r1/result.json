@@ -1,0 +1,40 @@
+{
+ "model": "o4-mini",
+ "item": "thoughttrace-1",
+ "dataset": "thoughttrace",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 242.9,
+ "usage": {
+  "calls": 3,
+  "input": 25674,
+  "cacheRead": 91648,
+  "cacheWrite": 0,
+  "output": 10913,
+  "reasoning": 9536,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1015,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "planning_request",
+    "dimension": "constructor"
+   },
+   {
+    "term": "organization_system",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

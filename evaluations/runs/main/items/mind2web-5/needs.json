@@ -1,0 +1,2262 @@
+{
+ "translator_id": "mind2web-5",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "add birthday detail to user profile",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6589,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.6075,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.5806,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.4045,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3869,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3656,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3624,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.3515,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "birth date January 5 1980",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.6898,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.679,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.3923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.3857,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3792,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.3622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.3609,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3594,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3437,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "add allergy information to profile",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6232,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.4373,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4014,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.399,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3947,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.3925,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.3858,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.3748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.3724,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "dairy allergy",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "food_label",
+   "id": "n4",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.7377,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.4226,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.4124,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_nata",
+     "symbol": "dulce_de_nata",
+     "kind": "value",
+     "score": 0.4086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.4075,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.4049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.4038,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.3734,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3698,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "peanut allergy",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "food_label",
+   "id": "n5",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.6869,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.4817,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.4555,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_microwaved",
+     "symbol": "state_microwaved",
+     "kind": "value",
+     "score": 0.4294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fermentation_nutrient",
+     "symbol": "fermentation_nutrient",
+     "kind": "value",
+     "score": 0.4166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/microwave",
+     "symbol": "microwave",
+     "kind": "value",
+     "score": 0.4135,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4134,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4024,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.3994,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3958,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3954,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "add bio description to profile",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n6",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6518,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/lexical_label",
+     "symbol": "lexical_label",
+     "kind": "constructor",
+     "score": 0.631,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.4381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/medical_condition",
+     "symbol": "medical_condition",
+     "kind": "constructor",
+     "score": 0.43,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.4046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/document_section",
+     "symbol": "document_section",
+     "kind": "constructor",
+     "score": 0.3742,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3705,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/captioned_figure",
+     "symbol": "captioned_figure",
+     "kind": "constructor",
+     "score": 0.3669,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.3669,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.3594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3573,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.3568,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "bio text specifying love ramen noodles",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "food_label",
+   "id": "n7",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6759,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.4608,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.4585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.4319,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4133,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4058,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.4019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/min_ram",
+     "symbol": "min_ram",
+     "kind": "attribute",
+     "score": 0.4007,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_hi_en",
+     "symbol": "locale_hi_en",
+     "kind": "value",
+     "score": 0.3951,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3896,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.3539,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "save user profile changes",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n8",
+   "context": "Add my birthday detail, January 5, 1980, and dairy and peanut allergy in my profile, also add love ramen noodles to my bio, and save.",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.6604,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.6504,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.63,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.6031,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.5735,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/user_practice",
+     "symbol": "user_practice",
+     "kind": "claim_relation",
+     "score": 0.5687,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.5533,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.5231,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.3911,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.3901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_manager",
+     "symbol": "role_manager",
+     "kind": "value",
+     "score": 0.3799,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click Profile menu UI element",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n9",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.8203,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.7092,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.5688,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.5645,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.547,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.5327,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5152,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.5006,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.4874,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.39,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.3658,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click Profile link UI element",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n10",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.8141,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.7251,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.5723,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5259,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.52,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.5184,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3889,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.3676,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3671,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3668,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3657,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.3515,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_status_update",
+     "symbol": "content_status_update",
+     "kind": "composite",
+     "score": 0.3101,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select January in BIRTHDAY Month combobox",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n11",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.6878,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.3953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.3891,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3806,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3708,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.3674,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3632,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3631,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3607,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3594,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.3403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.3395,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select 05 in Day combobox",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n12",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6626,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.6084,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.5256,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5227,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4554,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3935,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3919,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3918,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.3769,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.3711,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3647,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_mains",
+     "symbol": "entity_mains",
+     "kind": "value",
+     "score": 0.3381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3297,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3077,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select 1980 in Year combobox",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n13",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.6969,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3879,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3742,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3682,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3546,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.3509,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.3424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.3389,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.3377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.329,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3261,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "type Love Ramen Noodles into SHORT BIO textbox",
+   "source": [
+    "t2:s12"
+   ],
+   "group": "food_label",
+   "id": "n14",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.7072,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.6658,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4341,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.4274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4047,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.3964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_email",
+     "symbol": "format_email",
+     "kind": "value",
+     "score": 0.3928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3865,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.3652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/word_blend",
+     "symbol": "word_blend",
+     "kind": "constructor",
+     "score": 0.3616,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spoon",
+     "symbol": "spoon",
+     "kind": "value",
+     "score": 0.3586,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3545,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_plain_text",
+     "symbol": "format_plain_text",
+     "kind": "value",
+     "score": 0.3475,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click All Dairy checkbox",
+   "source": [
+    "t2:s14"
+   ],
+   "group": "food_label",
+   "id": "n15",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.7309,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7242,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4805,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_nata",
+     "symbol": "dulce_de_nata",
+     "kind": "value",
+     "score": 0.4711,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.4687,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4528,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4399,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.4274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4192,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.4176,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.394,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3883,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.3837,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click Peanuts checkbox",
+   "source": [
+    "t2:s16"
+   ],
+   "group": "food_label",
+   "id": "n16",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7436,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5328,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3679,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.3633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.3557,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3409,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.3264,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3254,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3062,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.3013,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.2942,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click Save button",
+   "source": [
+    "t2:s18"
+   ],
+   "id": "n17",
+   "context": "1. [generic]  Profile menu -> CLICK 2. [link]  Profile -> CLICK 3. [combobox]  BIRTHDAY Month -> SELECT: January 4. [combobox]  Day -> SELECT: 05 5. [combobox]  Year -> SELECT: 1980 6. [textbox]  SHORT BIO -> TYPE: Love Ramen Noodles 7. [checkbox]  All Dairy -> CLICK 8. [checkbox]  Peanuts -> CLICK 9. [button]  Save -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7696,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5023,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.3985,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.3836,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.3581,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.337,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.3129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.3055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.2999,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.2929,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.2753,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.2714,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

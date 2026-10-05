@@ -1,0 +1,22 @@
+    4.6s turn 1
+   10.2s   model reply: in 4 + cached 2083, out 449 (+358 reasoning)
+   10.2s   tool bash: node /kit/rag.mjs entry ask request instruct activity on_surface spatial_relation location_spec 2>&1 | head -40
+   10.3s turn 2
+   44.6s   model reply: in 2 + cached 45229, out 5561 (+1520 reasoning)
+   44.6s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CON
+   44.8s turn 3
+   46.8s   model reply: in 2 + cached 46928, out 170 (+0 reasoning)
+   46.8s   tool bash: cd /output; sed -i 's/object_label::end_table/object_label::endtable/g; s/object_label::living_room/object_label::livingroom/g' translation.md suggestions.md; s
+   47.4s turn 4
+   51.4s   model reply: in 2 + cached 52935, out 510 (+0 reasoning)
+   51.4s agent finished
+   51.4s agent finished

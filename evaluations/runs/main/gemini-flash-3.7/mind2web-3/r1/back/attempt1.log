@@ -1,0 +1,43 @@
+    2.0s turn 1
+    7.7s   model reply: in 12779 + cached 0, out 624 (+607 reasoning)
+    7.7s   tool bash: ls -la /
+    7.7s turn 2
+   11.3s   model reply: in 2115 + cached 12071, out 43 (+23 reasoning)
+   11.3s   tool bash: ls -la /kit /reference
+   11.3s turn 3
+   14.5s   model reply: in 2549 + cached 12060, out 46 (+26 reasoning)
+   14.5s   tool read: /reference/examples.jsonl
+   14.6s turn 4
+   25.5s   model reply: in 3765 + cached 12060, out 1495 (+1466 reasoning)
+   25.5s   tool bash: grep -ri "mind2web" /kit /reference /attach || true
+   25.6s turn 5
+   30.5s   model reply: in 5258 + cached 12065, out 72 (+43 reasoning)
+   30.5s   tool bash: grep -ri "web_element" /kit /reference /attach || true
+   30.5s turn 6
+   33.6s   model reply: in 5661 + cached 12055, out 35 (+18 reasoning)
+   33.6s   tool read: /prompt.md
+   33.6s turn 7
+   35.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   35.0s agent finished
+   37.0s turn 8
+   51.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   51.0s agent finished
+   55.0s turn 9
+   66.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   66.2s agent finished
+   74.2s turn 10
+  184.8s   model reply: in 18216 + cached 0, out 3259 (+3231 reasoning)
+  184.8s   tool bash: cat /kit/README.md /kit/needs_prompt.md
+  184.8s turn 11
+  250.5s   model reply: in 23316 + cached 0, out 5045 (+5027 reasoning)
+  250.5s   tool bash: ls -la /output
+  250.5s turn 12
+  289.2s   model reply: in 28414 + cached 0, out 212 (+76 reasoning)
+  289.2s   tool write: /output/reconstruction.md
+  289.2s turn 13
+  296.3s   model reply: in 28631 + cached 0, out 36 (+16 reasoning)
+  296.3s   tool read: /output/reconstruction.md
+  296.3s turn 14
+  314.9s   model reply: in 4585 + cached 24192, out 43 (+17 reasoning)
+  314.9s agent finished
+  314.9s agent finished

@@ -1,0 +1,93 @@
+    1.5s turn 1
+   11.9s   model reply: in 30716 + cached 0, out 1437 (+1393 reasoning)
+   11.9s   tool bash: node /kit/rag.mjs search "mow" "lawn" "grass" "trim" "adjust" "safety" "debris"
+   12.1s turn 2
+   15.4s   model reply: in 5600 + cached 28459, out 95 (+49 reasoning)
+   15.4s   tool bash: node /kit/rag.mjs search "instruction" "advice" "recommend" "procedure" "step" "efficient" "obstacle" "straight"
+   15.6s turn 3
+   18.6s   model reply: in 3802 + cached 32520, out 132 (+79 reasoning)
+   18.6s   tool bash: node /kit/rag.mjs entry sequence training_program decision activity obligation requirement constrained_by enables important recommended works_best motivated_by 
+   18.8s turn 4
+  100.6s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  100.6s agent finished
+  102.6s turn 5
+  116.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  116.2s agent finished
+  120.2s turn 6
+  146.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  146.8s agent finished
+  154.8s turn 7
+  218.9s   model reply: in 38448 + cached 0, out 77 (+44 reasoning)
+  218.9s   tool bash: node /kit/rag.mjs entry designed_to_be outshines has_goal
+  219.0s turn 8
+  228.4s   model reply: in 2337 + cached 36563, out 707 (+605 reasoning)
+  228.4s   tool bash: node /kit/rag.mjs widen "user asks for instructions on how to mow a lawn" --kind speech_act
+node /kit/rag.mjs widen "mow the lawn" --kind action
+node /kit/rag.m
+  229.0s turn 9
+  237.1s   model reply: in 6342 + cached 36572, out 958 (+932 reasoning)
+  237.1s   tool bash: grep -F "activity(" /reference/glossary.md
+  237.2s turn 10
+  242.2s   model reply: in 3718 + cached 40626, out 201 (+151 reasoning)
+  242.2s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|claim_relation|link|speech_act) \|" /reference/glossary.md
+  242.2s turn 11
+  251.6s   model reply: in 5769 + cached 40622, out 105 (+45 reasoning)
+  251.6s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|claim_relation|link) \|" /reference/glossary.md | cut -d'|' -f2,3,4
+  251.6s turn 12
+  255.3s   model reply: in 3863 + cached 44680, out 75 (+17 reasoning)
+  255.3s   tool bash: grep -E "^\| [a-z0-9_]+ \| (claim_relation|link) \|" /reference/glossary.md | cut -d'|' -f2,3,4
+  255.3s turn 13
+  259.1s   model reply: in 5536 + cached 44673, out 77 (+37 reasoning)
+  259.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| speech_act \|" /reference/glossary.md
+  259.1s turn 14
+  262.7s   model reply: in 2042 + cached 48718, out 257 (+196 reasoning)
+  262.7s   tool bash: node /kit/rag.mjs entry contrast supports causes leads_to enables motivated_by has_attribute has_state has_goal important recommended obligation constrained_by 
+  262.8s turn 15
+  267.9s   model reply: in 4222 + cached 48715, out 78 (+48 reasoning)
+  267.9s   tool bash: node /kit/rag.mjs entry at_most at_least measure subject
+  268.0s turn 16
+  271.8s   model reply: in 5415 + cached 48705, out 96 (+56 reasoning)
+  271.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| recipient-value \|" /reference/glossary.md
+  271.9s turn 17
+  274.6s   model reply: in 5540 + cached 48686, out 51 (+24 reasoning)
+  274.6s   tool bash: grep -E "\| role_" /reference/glossary.md
+  274.6s turn 18
+  294.3s   model reply: in 2069 + cached 52728, out 3668 (+3643 reasoning)
+  294.3s   tool bash: node /kit/rag.mjs entry object_label
+  294.5s turn 19
+  302.9s   model reply: in 5833 + cached 52741, out 1033 (+989 reasoning)
+  302.9s   tool bash: node /kit/rag.mjs search "sequence" "before" "after" "order" "temporal" "first" "precede"
+  303.1s turn 20
+  306.9s   model reply: in 4757 + cached 56805, out 81 (+56 reasoning)
+  306.9s   tool bash: node /kit/rag.mjs entry temporal_context
+  307.0s turn 21
+  314.8s   model reply: in 5067 + cached 56787, out 1153 (+1129 reasoning)
+  314.8s   tool bash: node /kit/rag.mjs check --help
+  314.8s turn 22
+  331.0s   model reply: in 2190 + cached 60833, out 2965 (+2938 reasoning)
+  331.1s   tool bash: grep -E "\| unit_" /reference/glossary.md
+  331.1s turn 23
+  337.0s   model reply: in 5830 + cached 60846, out 73 (+47 reasoning)
+  337.0s   tool bash: node /kit/rag.mjs entry unit_percent rate
+  337.1s turn 24
+  341.9s   model reply: in 6070 + cached 60828, out 454 (+430 reasoning)
+  341.9s   tool bash: node /kit/rag.mjs entry negation exclude
+  342.0s turn 25
+  359.0s   model reply: in 2620 + cached 64868, out 3397 (+1805 reasoning)
+  359.0s   tool write: /output/translation.md
+  359.0s turn 26
+  370.3s   model reply: in 52081 + cached 0, out 53 (+23 reasoning)
+  370.3s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  370.4s turn 27
+  387.5s   model reply: in 4094 + cached 48650, out 2895 (+2868 reasoning)
+  387.5s   tool bash: node /kit/rag.mjs entry designed_to_be
+  387.7s turn 28
+  418.2s   model reply: in 3069 + cached 52713, out 5392 (+3791 reasoning)
+  418.2s   tool write: /output/translation.md
+  418.2s turn 29
+  421.6s   model reply: in 8441 + cached 52737, out 53 (+23 reasoning)
+  421.6s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  421.7s turn 30
+  427.9s   model reply: in 61841 + cached 0, out 361 (+252 reasoning)
+  427.9s agent finished
+  427.9s agent finished

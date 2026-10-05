@@ -1,0 +1,2 @@
+<|user|>Pick up two books from the desk and place them on the bed.
+<|assistant|>Turn around. Walk to the room. Green. Walk in front of the trash can. Turn right. Walk to the desk. Pick up the book from the mug. Turn right. Walk to the bed. Place the book on the bed in front of the computer. Turn around. Walk to the desk. Pick up the book from the lamp. Turn right. Walk to the bed. Place the book on the bed on the other side of the bear.

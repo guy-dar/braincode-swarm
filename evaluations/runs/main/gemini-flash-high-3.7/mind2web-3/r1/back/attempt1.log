@@ -1,0 +1,108 @@
+    1.8s turn 1
+   12.2s   model reply: in 12791 + cached 0, out 1098 (+1081 reasoning)
+   12.2s   tool bash: ls -la /
+   12.2s turn 2
+   15.2s   model reply: in 2594 + cached 12078, out 49 (+29 reasoning)
+   15.2s   tool bash: ls -la /kit /reference
+   15.2s turn 3
+   18.0s   model reply: in 3034 + cached 12067, out 50 (+20 reasoning)
+   18.0s   tool read: /reference/examples.jsonl
+   18.1s turn 4
+   22.8s   model reply: in 4253 + cached 12064, out 325 (+298 reasoning)
+   22.8s   tool read: /prompt.md
+   22.8s turn 5
+   29.7s   model reply: in 5047 + cached 12056, out 683 (+658 reasoning)
+   29.7s   tool bash: node /kit/rag.mjs entry unit_watt
+   29.8s turn 6
+   33.2s   model reply: in 5745 + cached 12050, out 44 (+21 reasoning)
+   33.2s   tool bash: node /kit/rag.mjs entry click
+   33.3s turn 7
+   36.7s   model reply: in 5863 + cached 12037, out 47 (+22 reasoning)
+   36.7s   tool bash: node /kit/rag.mjs entry web_element
+   36.9s turn 8
+   40.3s   model reply: in 6003 + cached 12025, out 50 (+25 reasoning)
+   40.3s   tool bash: node /kit/rag.mjs entry select_option
+   40.4s turn 9
+   44.3s   model reply: in 2147 + cached 16017, out 67 (+31 reasoning)
+   44.3s   tool bash: grep -i "unit_watt" /reference/glossary.jsonl /reference/glossary.md
+   44.3s turn 10
+   52.1s   model reply: in 2242 + cached 15999, out 850 (+819 reasoning)
+   52.1s   tool read: /kit/needs_prompt.md
+   52.1s turn 11
+   63.3s   model reply: in 19765 + cached 0, out 778 (+755 reasoning)
+   63.3s   tool bash: git log -n 5 2>&1
+   63.4s turn 12
+   70.4s   model reply: in 4560 + cached 16005, out 77 (+22 reasoning)
+   70.4s   tool bash: find / -maxdepth 3 -not -path '*/.*' -not -path '/proc*' -not -path '/sys*' -not -path '/dev*' 2>/dev/null
+   70.5s turn 13
+   73.6s   model reply: in 20652 + cached 0, out 40 (+18 reasoning)
+   73.6s   tool bash: ls -la /session /output /attach
+   73.6s turn 14
+   77.1s   model reply: in 5075 + cached 15981, out 43 (+14 reasoning)
+   77.1s   tool read: /kit/README.md
+   77.1s turn 15
+   92.6s   model reply: in 22257 + cached 0, out 107 (+76 reasoning)
+   92.6s   tool bash: grep -C 5 "web_element" /reference/glossary.jsonl
+   92.7s turn 16
+  160.9s   model reply: in 23718 + cached 0, out 62 (+31 reasoning)
+  160.9s   tool bash: grep -A 20 "recording-signatures" /reference/glossary.md
+  160.9s turn 17
+  262.2s   model reply: in 23790 + cached 0, out 41 (+15 reasoning)
+  262.2s   tool bash: head -n 50 /reference/glossary.md
+  262.2s turn 18
+  313.6s   model reply: in 5634 + cached 19994, out 3004 (+2976 reasoning)
+  313.6s   tool bash: find / -name "*mind2web*" 2>/dev/null
+  313.7s turn 19
+  316.9s   model reply: in 28642 + cached 0, out 32 (+14 reasoning)
+  316.9s   tool bash: ls -la /session
+  316.9s turn 20
+  320.5s   model reply: in 4827 + cached 24021, out 98 (+41 reasoning)
+  320.5s   tool bash: find /kit /reference /usr/local /opt -name "*.json" -o -name "*.jsonl" -o -name "*.py" -o -name "*.md" 2>/dev/null
+  320.5s turn 21
+  326.3s   model reply: in 4951 + cached 24005, out 78 (+48 reasoning)
+  326.3s   tool read: /kit/rag.mjs
+  326.4s turn 22
+  329.2s   model reply: in 2494 + cached 28016, out 45 (+23 reasoning)
+  329.2s   tool bash: node /kit/rag.mjs health
+  329.3s turn 23
+  332.9s   model reply: in 2654 + cached 27990, out 69 (+29 reasoning)
+  332.9s   tool bash: node /kit/rag.mjs search "find the cheapest psu with power output of at least 600w"
+  333.0s turn 24
+  338.9s   model reply: in 7138 + cached 23984, out 55 (+24 reasoning)
+  338.9s   tool bash: node /kit/rag.mjs search "click" "type" "select"
+  339.1s turn 25
+  348.4s   model reply: in 4070 + cached 27982, out 52 (+20 reasoning)
+  348.4s   tool bash: node /kit/rag.mjs entry select_option type_text click web_element
+  348.5s turn 26
+  378.5s   model reply: in 4454 + cached 27971, out 4805 (+4637 reasoning)
+  378.5s   tool bash: python3 -c "
+import nltk
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+from nltk.tokenize import sent_tokenize
+
+text = '''1. Type \"
+  378.6s turn 27
+  381.9s   model reply: in 5202 + cached 32050, out 61 (+30 reasoning)
+  381.9s   tool bash: node -e '
+console.log("Node version:", process.version);
+'
+  382.0s turn 28
+  388.3s   model reply: in 5291 + cached 32033, out 426 (+216 reasoning)
+  388.3s   tool bash: node -e '
+async function test() {
+  const base = "http://host.docker.internal:8765";
+  const content = `<|user|>Find the cheapest psu with power output of at le
+  388.4s turn 29
+  405.2s   model reply: in 2034 + cached 36032, out 2440 (+2390 reasoning)
+  405.2s   tool bash: grep -n -C 5 "web_element" /reference/language-spec.md /reference/language-spec.compact.md /reference/examples.jsonl
+  405.3s turn 30
+  465.8s   model reply: in 4454 + cached 36062, out 10096 (+9975 reasoning)
+  465.8s   tool write: /output/reconstruction.md
+  465.8s turn 31
+  470.4s   model reply: in 10393 + cached 40224, out 52 (+22 reasoning)
+  470.4s   tool read: /output/reconstruction.md
+  470.4s turn 32
+  473.8s   model reply: in 2513 + cached 48247, out 43 (+17 reasoning)
+  473.9s agent finished
+  473.9s agent finished

@@ -1,0 +1,10 @@
+<|user|>Set date to 1980-01-05, allergy to dairy and peanuts, ramen, and save.
+<|assistant|>1. Click on "Profile menu"
+2. Click on "Profile"
+3. Select option "January" from "BIRTHDAY Month"
+4. Select option "05" from "Day"
+5. Select option "1980" from "Year"
+6. Type "Love Ramen Noodles" into "SHORT BIO"
+7. Click on "All Dairy"
+8. Click on "Peanuts"
+9. Click on "Save"

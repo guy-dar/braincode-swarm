@@ -1,0 +1,37 @@
+t1:s1 [USER] General:  DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+t1:s2 [USER] I'm getting this deprecation warning when running pytests on my app that uses Google Storage.
+t1:s3 [USER] #### Environment details
+t1:s4 [USER] Arch Linux
+t1:s5 [USER] Python 3.7.1
+t1:s6 [USER] google-api-core==1.5.1
+t1:s7 [USER] google-auth==1.5.1
+t1:s8 [USER] google-cloud-core==0.28.1
+t1:s9 [USER] google-cloud-storage==1.13.0
+t1:s10 [USER] google-resumable-media==0.3.1
+t1:s11 [USER] googleapis-common-protos==1.5.5
+t1:s12 [USER] pytest==3.9.1
+t1:s13 [USER] #### Steps to reproduce
+t1:s14 [USER] 1.
+t1:s15 [USER] Create file `test.py`.
+t1:s16 [USER] 2.
+t1:s17 [USER] Add line `from google.protobuf.pyext import _message` to it.
+t1:s18 [USER] 3.
+t1:s19 [USER] Run `pytest test.py` (to install pytest first `pip install pytest==3.9.1`)
+t1:s20 [USER] 4.
+t1:s21 [USER] Pytest will print the following: `test.py:1: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+t1:s22 [USER] from google.protobuf.pyext import _message`
+t1:s23 [USER] In my tests this warning comes from: `google/protobuf/internal/api_implementation.py:154`
+t1:s24 [USER] Couldn't reproduce in shell, but pytest somehow catches this while running tests.
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify api_core/google/api_core/protobuf_helpers.py
+t2:s3 [AGENT] 2.
+t2:s4 [AGENT] modify bigquery/google/cloud/bigquery/client.py
+t2:s5 [AGENT] 3.
+t2:s6 [AGENT] modify bigquery/google/cloud/bigquery/dbapi/_helpers.py
+t2:s7 [AGENT] 4.
+t2:s8 [AGENT] modify bigquery/google/cloud/bigquery/dbapi/cursor.py
+t2:s9 [AGENT] 5.
+t2:s10 [AGENT] modify core/google/cloud/iam.py
+t2:s11 [AGENT] 6.
+t2:s12 [AGENT] modify firestore/google/cloud/firestore_v1beta1/_helpers.py

@@ -1,0 +1,19 @@
+    3.5s turn 1
+   11.5s   model reply: in 4 + cached 2083, out 441 (+303 reasoning)
+   11.5s   tool bash: node /kit/rag.mjs entry ask request generate_profile adaptation narrative_event 2>&1 | head -40; node /kit/rag.mjs search "user requests a story plot" "story ad
+   11.9s turn 2
+   46.3s   model reply: in 2 + cached 47354, out 5138 (+1378 reasoning)
+   46.3s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
+Status: failed
+Mode: TRACE
+
+## Suggested translation
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CON
+   46.6s turn 3
+   53.9s   model reply: in 2 + cached 49227, out 573 (+0 reasoning)
+   53.9s agent finished
+   53.9s agent finished

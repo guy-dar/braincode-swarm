@@ -1,0 +1,33 @@
+    4.3s turn 1
+   14.6s   model reply: in 77038 + cached 0, out 1170 (+79 reasoning)
+   14.6s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+   14.8s turn 2
+   51.5s   model reply: in 48047 + cached 0, out 3336 (+2095 reasoning)
+   51.5s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+   51.6s turn 3
+  220.9s   model reply: in 51979 + cached 0, out 82 (+63 reasoning)
+  220.9s   tool read: /output/translation.md
+  221.0s turn 4
+  399.8s   model reply: in 53256 + cached 0, out 112 (+20 reasoning)
+  399.8s agent finished
+  399.8s agent finished

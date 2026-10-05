@@ -1,0 +1,39 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "prism-3",
+ "dataset": "prism",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 490.0,
+ "usage": {
+  "calls": 26,
+  "input": 224708,
+  "cacheRead": 835958,
+  "output": 21626,
+  "reasoning": 10700,
+  "compactions": 1,
+  "truncated_tool_results": 4
+ },
+ "cost_usd": 0.3123,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "national_id",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "verification_requirement",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

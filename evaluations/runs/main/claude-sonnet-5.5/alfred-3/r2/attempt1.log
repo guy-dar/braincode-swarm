@@ -1,0 +1,26 @@
+    6.1s turn 1
+   14.1s   model reply: in 4 + cached 2083, out 400 (+324 reasoning)
+   14.1s   tool bash: node /kit/rag.mjs entry ask request command instruct 2>&1 | head -40
+   14.5s turn 2
+   35.4s   model reply: in 2 + cached 49449, out 3456 (+845 reasoning)
+   35.4s   tool bash: cat > /output/translation.md <<'E'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 SPE
+   35.6s turn 3
+   37.1s   model reply: in 2 + cached 50082, out 90 (+0 reasoning)
+   37.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md 2>&1 | grep -v "^- \[OK"|head -30
+   37.2s turn 4
+   40.5s   model reply: in 2 + cached 54307, out 278 (+105 reasoning)
+   40.5s   tool bash: cd /output && sed -i 's/^| n24 | object | subject | covered |/| n24 | object | subject(kind="burner") | label-preserved |/; s/^- Label-preserved spans: .*/- Lab
+   40.6s turn 5
+   44.8s   model reply: in 2 + cached 54454, out 389 (+0 reasoning)
+   44.8s agent finished
+   44.8s agent finished

@@ -1,0 +1,61 @@
+    1.8s turn 1
+    8.1s   model reply: in 11596 + cached 0, out 585 (+568 reasoning)
+    8.1s   tool bash: ls -la /
+    8.1s turn 2
+   11.3s   model reply: in 4930 + cached 8034, out 44 (+24 reasoning)
+   11.3s   tool bash: ls -la /kit /reference
+   11.3s turn 3
+   14.5s   model reply: in 13388 + cached 0, out 47 (+27 reasoning)
+   14.5s   tool read: /reference/examples.jsonl
+   14.5s turn 4
+   17.6s   model reply: in 2563 + cached 12042, out 63 (+33 reasoning)
+   17.6s   tool bash: node /kit/rag.mjs rule rule_support_primitives_general
+   17.6s turn 5
+   20.2s   model reply: in 2679 + cached 12026, out 48 (+25 reasoning)
+   20.2s   tool bash: node /kit/rag.mjs entry activity
+   20.3s turn 6
+   27.7s   model reply: in 3353 + cached 12020, out 854 (+837 reasoning)
+   27.7s   tool read: /prompt.md
+   27.7s turn 7
+   35.7s   model reply: in 4666 + cached 12025, out 859 (+837 reasoning)
+   35.7s   tool bash: grep -rn "activity(" /reference/
+   35.8s turn 8
+   39.0s   model reply: in 3244 + cached 16062, out 44 (+22 reasoning)
+   39.0s   tool bash: cat /kit/needs_prompt.md
+   39.1s turn 9
+   51.7s   model reply: in 3972 + cached 16056, out 1624 (+1597 reasoning)
+   51.7s   tool bash: find / -name "*alfred*" 2>/dev/null
+   51.7s turn 10
+   55.1s   model reply: in 5597 + cached 16065, out 57 (+35 reasoning)
+   55.1s   tool bash: ls -la /session /workspace /output
+   55.1s turn 11
+   59.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   59.4s agent finished
+   61.4s turn 12
+   75.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   75.0s agent finished
+   79.0s turn 13
+   90.6s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   90.6s agent finished
+   98.6s turn 14
+  121.2s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  121.2s agent finished
+  137.2s turn 15
+  208.5s   model reply: in 21987 + cached 0, out 36 (+15 reasoning)
+  208.5s   tool bash: cat /kit/rag.mjs
+  208.5s turn 16
+  238.2s   model reply: in 3480 + cached 20076, out 1876 (+1851 reasoning)
+  238.2s   tool bash: git log -n 5 2>/dev/null
+  238.2s turn 17
+  253.2s   model reply: in 5356 + cached 20088, out 46 (+28 reasoning)
+  253.2s   tool bash: ls -la /attach
+  253.2s turn 18
+  287.1s   model reply: in 25642 + cached 0, out 2632 (+2566 reasoning)
+  287.1s   tool write: /output/reconstruction.md
+  287.1s turn 19
+  296.8s   model reply: in 4167 + cached 24112, out 39 (+19 reasoning)
+  296.8s   tool read: /output/reconstruction.md
+  296.8s turn 20
+  320.8s   model reply: in 4263 + cached 24095, out 132 (+118 reasoning)
+  320.8s agent finished
+  320.8s agent finished

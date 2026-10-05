@@ -1,0 +1,207 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "Cross-file binaries are not being used for ConfigTool dependencies like LLVM",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code",
+    "reconcile_code"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "ConfigTool dependency",
+   "status": "covered",
+   "matched_symbols": [
+    "config_setting"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "LLVM",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "Mesa build",
+   "status": "covered",
+   "matched_symbols": [
+    "platform_label",
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "The issue occurs during Mesa build",
+   "status": "covered",
+   "matched_symbols": [
+    "ongoing",
+    "temporal_context"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Cross-compilation definition file",
+   "status": "covered",
+   "matched_symbols": [
+    "reconcile_code",
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "llvm-config binary definition",
+   "status": "covered",
+   "matched_symbols": [
+    "config_setting",
+    "platform_label",
+    "chg_modify_code",
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "The build system incorrectly finds host machine llvm-config despite cross file configuration",
+   "status": "covered",
+   "matched_symbols": [
+    "platform_label",
+    "config_setting",
+    "failure",
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Meson build system",
+   "status": "covered",
+   "matched_symbols": [
+    "platform_label",
+    "code_entity",
+    "config_setting"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Meson performs a cross build and still resolves host llvm-config",
+   "status": "covered",
+   "matched_symbols": [
+    "config_setting",
+    "code_entity",
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "Propose a patch to fix ConfigToolDependency handling in cross builds",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code",
+    "propose",
+    "config_setting",
+    "reconcile_code"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "mesonbuild/dependencies/base.py file",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity",
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "reasoning",
+   "text": "Cross-tool lookup logic should check cross_info binaries when want_cross is true",
+   "status": "covered",
+   "matched_symbols": [
+    "validates_parameter"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "ConfigTool cross binary lookup logic should be centralized",
+   "status": "covered",
+   "matched_symbols": [
+    "config_setting",
+    "reconcile_code",
+    "validates_parameter"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Modify mesonbuild/dependencies/base.py",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code",
+    "config_setting"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "mesonbuild/dependencies/base.py target file",
+   "status": "covered",
+   "matched_symbols": [
+    "target",
+    "platform_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "attribute_claim",
+  "chg_modify_code",
+  "code_entity",
+  "config_setting",
+  "failure",
+  "ongoing",
+  "platform_label",
+  "propose",
+  "reconcile_code",
+  "role_user",
+  "statement",
+  "subject",
+  "target",
+  "temporal_context",
+  "validates_parameter"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3"
+ ]
+}

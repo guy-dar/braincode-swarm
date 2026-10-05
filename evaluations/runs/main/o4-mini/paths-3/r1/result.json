@@ -1,0 +1,44 @@
+{
+ "model": "o4-mini",
+ "item": "paths-3",
+ "dataset": "paths",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 351.7,
+ "usage": {
+  "calls": 7,
+  "input": 34274,
+  "cacheRead": 199680,
+  "cacheWrite": 0,
+  "output": 17208,
+  "reasoning": 13632,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1683,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "ask",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "provide",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "rewrite",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

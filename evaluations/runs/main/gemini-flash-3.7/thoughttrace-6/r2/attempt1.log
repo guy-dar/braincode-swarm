@@ -1,0 +1,110 @@
+    2.3s turn 1
+   12.3s   model reply: in 32559 + cached 0, out 1389 (+1342 reasoning)
+   12.3s   tool bash: node /kit/rag.mjs search "summer" "itinerary" "off the beaten track" "abruzzo" "ireland" "italy"
+   12.6s turn 2
+   15.9s   model reply: in 35656 + cached 0, out 69 (+41 reasoning)
+   15.9s   tool bash: node /kit/rag.mjs entry country::IE country::IT
+   16.0s turn 3
+   19.5s   model reply: in 3559 + cached 32519, out 129 (+83 reasoning)
+   19.5s   tool bash: node /kit/rag.mjs entry greeting offer offer_help acknowledge ask propose respond inform recommended group_size location_spec requirement duration time_point su
+   19.7s turn 4
+   22.6s   model reply: in 5754 + cached 32514, out 85 (+46 reasoning)
+   22.6s   tool bash: node /kit/rag.mjs entry request user_preference art_itinerary art_plan role_agent role_user
+   22.9s turn 5
+   26.0s   model reply: in 2130 + cached 36561, out 85 (+42 reasoning)
+   26.0s   tool bash: node /kit/rag.mjs search "holiday" "couple" "budget" "vibe" "abruzzo" "maremma"
+   26.1s turn 6
+   36.9s   model reply: in 40429 + cached 0, out 1070 (+1037 reasoning)
+   36.9s   tool bash: node /kit/rag.mjs search "speech act" "salutation" "hello"
+   37.1s turn 7
+   41.0s   model reply: in 5841 + cached 36550, out 169 (+142 reasoning)
+   41.0s   tool bash: grep "| speech_act |" /reference/glossary.md
+   41.0s turn 8
+   44.5s   model reply: in 2439 + cached 40595, out 126 (+96 reasoning)
+   44.5s   tool bash: node /kit/rag.mjs entry well_wishes greeting offer_help
+   44.6s turn 9
+   51.8s   model reply: in 2798 + cached 40578, out 113 (+87 reasoning)
+   51.8s   tool bash: grep -i "greeting" /reference/glossary.md
+   51.8s turn 10
+   52.9s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   52.9s agent finished
+   54.9s turn 11
+   68.6s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   68.6s agent finished
+   72.6s turn 12
+  177.3s   model reply: in 3044 + cached 40560, out 660 (+638 reasoning)
+  177.3s   tool bash: grep -rn "greeting" /reference/
+  177.4s turn 13
+  183.6s   model reply: in 4117 + cached 40549, out 44 (+25 reasoning)
+  183.6s   tool bash: ls -la /reference/
+  183.6s turn 14
+  196.5s   model reply: in 4382 + cached 40532, out 41 (+15 reasoning)
+  196.5s   tool bash: head -n 20 /reference/examples.jsonl
+  196.5s turn 15
+  210.5s   model reply: in 5601 + cached 40524, out 449 (+405 reasoning)
+  210.5s   tool bash: grep -A 30 "function check" /kit/rag.mjs || head -n 40 /kit/rag.mjs
+  210.5s turn 16
+  218.0s   model reply: in 2634 + cached 44566, out 287 (+248 reasoning)
+  218.0s   tool bash: node /kit/rag.mjs search "summer holiday" "summer" "vacation" "travel" "season"
+  218.2s turn 17
+  235.7s   model reply: in 4386 + cached 44564, out 1703 (+1661 reasoning)
+  235.7s   tool bash: node /kit/rag.mjs search "property_question" "question" "preference" "budget" "duration" "style"
+  235.8s turn 18
+  246.5s   model reply: in 3849 + cached 48631, out 40 (+15 reasoning)
+  246.5s   tool bash: node /kit/rag.mjs entry property_question
+  246.6s turn 19
+  269.8s   model reply: in 4038 + cached 48612, out 2411 (+2097 reasoning)
+  269.8s   tool bash: mkdir -p /output
+cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversa
+  270.0s turn 20
+  275.7s   model reply: in 55602 + cached 0, out 154 (+108 reasoning)
+  275.7s   tool bash: node /kit/rag.mjs widen "flexible budget" --kind constraint
+node /kit/rag.mjs widen "summer season" --kind temporal
+  276.0s turn 21
+  281.4s   model reply: in 5920 + cached 52683, out 48 (+23 reasoning)
+  281.4s   tool bash: node /kit/rag.mjs entry temporal_context
+  281.5s turn 22
+  303.6s   model reply: in 2145 + cached 56717, out 3908 (+2193 reasoning)
+  303.6s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  303.8s turn 23
+  327.4s   model reply: in 6641 + cached 56742, out 4315 (+2547 reasoning)
+  327.4s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  327.5s turn 24
+  343.4s   model reply: in 7489 + cached 60822, out 2809 (+1062 reasoning)
+  343.4s   tool write: /output/translation.md
+  343.4s turn 25
+  351.8s   model reply: in 51854 + cached 0, out 57 (+27 reasoning)
+  351.8s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  351.9s turn 26
+  354.7s   model reply: in 3755 + cached 48769, out 73 (+39 reasoning)
+  354.7s agent finished
+  354.7s agent finished

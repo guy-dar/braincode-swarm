@@ -1,0 +1,40 @@
+{
+ "model": "claude-sonnet-5.5",
+ "item": "prism-1",
+ "dataset": "prism",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 216.7,
+ "usage": {
+  "calls": 2,
+  "input": 6,
+  "cacheRead": 46954,
+  "cacheWrite": 51905,
+  "output": 8806,
+  "reasoning": 3312,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.2272,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "occurs",
+    "dimension": "constructor"
+   },
+   {
+    "term": "yes_no_question",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

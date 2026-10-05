@@ -1,0 +1,50 @@
+    2.0s turn 1
+   10.4s   model reply: in 26409 + cached 0, out 1189 (+1144 reasoning)
+   10.4s   tool bash: node /kit/rag.mjs search "marriage" "institution" "outdated" "partner" "fulfillment" "companionship" "commitment"
+   10.6s turn 2
+   14.3s   model reply: in 5149 + cached 24366, out 103 (+50 reasoning)
+   14.3s   tool bash: node /kit/rag.mjs entry interpersonal_stance property_question important considered controversial attitude varies_with enables meets_needs designed_to_be person
+   14.5s turn 3
+   18.7s   model reply: in 2572 + cached 28418, out 212 (+184 reasoning)
+   18.7s   tool bash: grep -E "\| constructor \|" /reference/glossary.md
+   18.8s turn 4
+   22.4s   model reply: in 4583 + cached 28415, out 193 (+31 reasoning)
+   22.4s   tool bash: node /kit/rag.mjs widen "marriage as an institution and relationship" --kind object
+node /kit/rag.mjs widen "assistant lacks personal opinions on whether marria
+   24.2s turn 5
+   29.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   29.8s agent finished
+   31.8s turn 6
+   45.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   45.4s agent finished
+   49.4s turn 7
+   76.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   76.0s agent finished
+   84.0s turn 8
+  144.9s   model reply: in 4000 + cached 32483, out 133 (+92 reasoning)
+  144.9s   tool bash: node /kit/rag.mjs entry beliefs negation possesses decline unaware contrast supports argues_for reason_for occurred_recently ongoing occurred subject
+  145.0s turn 9
+  163.3s   model reply: in 5603 + cached 32476, out 1944 (+1877 reasoning)
+  163.3s   tool bash: node /kit/rag.mjs entry property_question subject interpersonal_stance ask important considered varies_with enables meets_needs designed_to_be gender_identity c
+  163.5s turn 10
+  174.5s   model reply: in 5501 + cached 36547, out 77 (+44 reasoning)
+  174.5s   tool bash: node /kit/rag.mjs entry ongoing personal_values role_agent beliefs unaware possesses decline
+  174.6s turn 11
+  213.3s   model reply: in 6073 + cached 36533, out 3613 (+3574 reasoning)
+  213.3s   tool bash: node /kit/rag.mjs search "disagree" "opinion" "evolved" "institution" "inclusive"
+  213.4s turn 12
+  223.5s   model reply: in 6966 + cached 40611, out 1414 (+47 reasoning)
+  223.5s   tool write: /output/translation.md
+  223.5s turn 13
+  227.2s   model reply: in 4335 + cached 44660, out 53 (+23 reasoning)
+  227.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  227.4s turn 14
+  250.1s   model reply: in 5120 + cached 44646, out 3938 (+2400 reasoning)
+  250.1s   tool write: /output/translation.md
+  250.1s turn 15
+  253.8s   model reply: in 4994 + cached 48714, out 53 (+23 reasoning)
+  253.8s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  254.2s turn 16
+  260.0s   model reply: in 5778 + cached 48701, out 189 (+133 reasoning)
+  260.0s agent finished
+  260.0s agent finished

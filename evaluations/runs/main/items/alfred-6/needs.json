@@ -1,0 +1,2623 @@
+{
+ "translator_id": "alfred-6",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User requests instructions or performs the goal to read a book by lamp light",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Read a book by lamp light",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.7881,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5195,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/emits_light",
+     "symbol": "emits_light",
+     "kind": "constructor",
+     "score": 0.516,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.4904,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.4829,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reflects_light",
+     "symbol": "reflects_light",
+     "kind": "constructor",
+     "score": 0.3672,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3587,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/footnote",
+     "symbol": "footnote",
+     "kind": "constructor",
+     "score": 0.3331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3238,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.3225,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3181,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.3158,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/allowed_to_enter",
+     "symbol": "allowed_to_enter",
+     "kind": "claim_relation",
+     "score": 0.3143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.3109,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Read a book",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Read a book by lamp light",
+   "candidates": [
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.7455,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.3231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3157,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3025,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_plain_text",
+     "symbol": "format_plain_text",
+     "kind": "value",
+     "score": 0.3015,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.2963,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.2757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character",
+     "symbol": "character",
+     "kind": "constructor",
+     "score": 0.2698,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.2679,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.2679,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/beliefs",
+     "symbol": "beliefs",
+     "kind": "value",
+     "score": 0.2574,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Book",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n3",
+   "context": "Read a book by lamp light",
+   "candidates": [
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.7977,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.366,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3531,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.3463,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.3328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3164,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3015,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.2992,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.2992,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_classical_piano",
+     "symbol": "topic_classical_piano",
+     "kind": "value",
+     "score": 0.2977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.2873,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2257,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Lamp light / lamp",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "object_label",
+   "id": "n4",
+   "context": "Read a book by lamp light",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.8771,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/candle",
+     "symbol": "candle",
+     "kind": "value",
+     "score": 0.5993,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/emits_light",
+     "symbol": "emits_light",
+     "kind": "constructor",
+     "score": 0.5476,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reflects_light",
+     "symbol": "reflects_light",
+     "kind": "constructor",
+     "score": 0.5387,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mirror",
+     "symbol": "mirror",
+     "kind": "value",
+     "score": 0.5084,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.5002,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4953,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.4109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3223,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3164,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.3067,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/martini_glass",
+     "symbol": "martini_glass",
+     "kind": "value",
+     "score": 0.3053,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2355,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Sequential order of steps from 1 to 4",
+   "source": [
+    "t2:s1",
+    "t2:s3",
+    "t2:s5",
+    "t2:s7"
+   ],
+   "id": "n5",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.7585,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.7252,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.7021,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.6871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.6803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6747,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6674,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6651,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.6622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.6615,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.6559,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Head forward / walk toward the bed",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n6",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.7748,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.7308,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.6227,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.517,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.5053,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3701,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3515,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3187,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3024,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.2966,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.2962,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Bed",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "object_label",
+   "id": "n7",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.8181,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.6293,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.552,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.5342,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.4579,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.3609,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3589,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3518,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3281,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3244,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3113,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Located in front of the agent",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n8",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.722,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.4387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/face",
+     "symbol": "face",
+     "kind": "operation",
+     "score": 0.3748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.3682,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3577,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.3448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.3425,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3244,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3167,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3163,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Pick up the book",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n9",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.734,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.6276,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4274,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/drop",
+     "symbol": "drop",
+     "kind": "operation",
+     "score": 0.3431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3319,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3294,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.3215,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.318,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3012,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.2968,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.2967,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Book",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "object_label",
+   "id": "n10",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.8003,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3971,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.3694,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.3618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.3443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.3424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.3418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3404,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.3328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pen",
+     "symbol": "pen",
+     "kind": "value",
+     "score": 0.3322,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.3321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3306,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2936,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Blue",
+   "source": [
+    "t2:s4"
+   ],
+   "group": "color_label",
+   "id": "n11",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.6598,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fridge",
+     "symbol": "fridge",
+     "kind": "value",
+     "score": 0.4512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.4312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4294,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4155,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3975,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3908,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.386,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.386,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3834,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3798,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3779,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.3696,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Sitting on the bed",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n12",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.7919,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3755,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3416,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3176,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/wall",
+     "symbol": "wall",
+     "kind": "value",
+     "score": 0.3125,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3105,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3101,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3029,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Titled 'Probabilistic Robotics'",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n13",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.8127,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/design_parameters",
+     "symbol": "design_parameters",
+     "kind": "value",
+     "score": 0.776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/laptop",
+     "symbol": "laptop",
+     "kind": "value",
+     "score": 0.7654,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/figurine",
+     "symbol": "figurine",
+     "kind": "value",
+     "score": 0.7335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/remote_control",
+     "symbol": "remote_control",
+     "kind": "value",
+     "score": 0.7265,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.716,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.6949,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.6874,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6855,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.6703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6609,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_technical_explanation",
+     "symbol": "art_technical_explanation",
+     "kind": "value",
+     "score": 0.6605,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Turn right",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n14",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7621,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.5218,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4756,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3818,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3598,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/stand_up",
+     "symbol": "stand_up",
+     "kind": "operation",
+     "score": 0.3384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3093,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.301,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2989,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.29,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Walk to the nightstand",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n15",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.7565,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.724,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.5568,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3682,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.3612,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3125,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3094,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.2973,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.2945,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.2879,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Nightstand",
+   "source": [
+    "t2:s6"
+   ],
+   "group": "object_label",
+   "id": "n16",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.8375,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.5887,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.4227,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4089,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.3844,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3672,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3488,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.3484,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3387,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3336,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3246,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2975,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Turn on the lamp",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n17",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/turn_on",
+     "symbol": "turn_on",
+     "kind": "operation",
+     "score": 0.7571,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.7563,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.7492,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/candle",
+     "symbol": "candle",
+     "kind": "value",
+     "score": 0.4501,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/emits_light",
+     "symbol": "emits_light",
+     "kind": "constructor",
+     "score": 0.447,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.3606,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3127,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reflects_light",
+     "symbol": "reflects_light",
+     "kind": "constructor",
+     "score": 0.3084,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3036,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.3035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3001,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.2914,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Lamp",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "object_label",
+   "id": "n18",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.8327,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/candle",
+     "symbol": "candle",
+     "kind": "value",
+     "score": 0.5101,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4888,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4854,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.3722,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/a",
+     "symbol": "example_a_select_two_pillows_and_move_those_objects",
+     "kind": "example",
+     "score": 0.3627,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/textbook",
+     "symbol": "textbook",
+     "kind": "value",
+     "score": 0.3531,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3467,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_structured_report",
+     "symbol": "art_structured_report",
+     "kind": "value",
+     "score": 0.3328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.3315,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3211,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mirror",
+     "symbol": "mirror",
+     "kind": "value",
+     "score": 0.3192,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.2914,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Sitting on the nightstand",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n19",
+   "context": "1. Head forward to the bed in front of you 2. Pick up the blue book that is sitting on the bed; the book that says Probabilistic Robotics 3. Turn to your right and walk to the night stand 4. Turn on the lamp that is sitting on the night stand",
+   "candidates": [
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.8165,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mattress",
+     "symbol": "mattress",
+     "kind": "value",
+     "score": 0.4284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bed",
+     "symbol": "bed",
+     "kind": "value",
+     "score": 0.4235,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.3807,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3751,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dresser",
+     "symbol": "dresser",
+     "kind": "value",
+     "score": 0.3607,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.3545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/watch",
+     "symbol": "watch",
+     "kind": "value",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3248,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.3158,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

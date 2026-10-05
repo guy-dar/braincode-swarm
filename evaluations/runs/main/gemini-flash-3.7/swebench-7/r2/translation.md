@@ -1,0 +1,61 @@
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 SPEAKER=USER {
+    TERM code_entity(kind="method", name="Index.is_mixed", project=platform_label::pandas) -> code_entity_2 : TERM
+    CLAIM warning(target=code_entity_2, message="DEPR: Index.is_mixed") BY user STATUS asserted SOURCE "t1:s1" -> warning_2 : CLAIM
+    CLAIM duplicate_definition(count=1, entity=code_entity_2) BY user STATUS asserted SOURCE "t1:s2" -> duplicate_definition_2 : CLAIM
+    TERM activity(object=code_entity_2, verb="remove") -> activity_2 : TERM
+    TERM activity(object="system", verb="break") -> activity_3 : TERM
+    TERM negation(target=activity_3) -> negation_2 : TERM
+    CLAIM leads_to(cause=activity_2, effect=negation_2) BY user STATUS asserted SOURCE "t1:s2" -> leads_to_2 : CLAIM
+    CLAIM attribute_claim(property="behavior", subject=code_entity_2, value="surprising") BY user STATUS asserted SOURCE "t1:s3" -> attribute_claim_2 : CLAIM
+    TERM test_condition(condition="pd.Index(['a', np.nan, 'b']).is_mixed()", expected=TRUE) -> test_condition_2 : TERM
+    CLAIM statement(fact=test_condition_2) BY user STATUS asserted SOURCE "t1:s5" -> statement_2 : CLAIM
+    TERM test_condition(condition="Index([0, 'a', 1, 'b', 2, 'c']).is_mixed()", expected=FALSE) -> test_condition_3 : TERM
+    CLAIM statement(fact=test_condition_3) BY user STATUS asserted SOURCE "t1:s7" -> statement_3 : CLAIM
+  }
+  TURN t2 SPEAKER=AGENT {
+    TERM code_entity(file="doc/source/whatsnew/v1.1.0.rst", kind="file", name="v1.1.0.rst", project=platform_label::pandas) -> code_entity_2 : TERM
+    TERM chg_modify_code(target=platform_label::pandas, file="doc/source/whatsnew/v1.1.0.rst", revision=code_entity_2) -> chg_modify_code_2 : TERM
+    UTTER propose(target=chg_modify_code_2)
+    TERM code_entity(file="pandas/core/indexes/base.py", kind="file", name="base.py", project=platform_label::pandas) -> code_entity_3 : TERM
+    TERM chg_modify_code(target=platform_label::pandas, file="pandas/core/indexes/base.py", revision=code_entity_3) -> chg_modify_code_3 : TERM
+    UTTER propose(target=chg_modify_code_3)
+  }
+}
+```
+
+## Needs coverage
+
+| need | kind | expressed by | status |
+|---|---|---|---|
+| n1 | action | warning | covered |
+| n2 | object | code_entity, platform_label::pandas | label-preserved |
+| n3 | claim | duplicate_definition | covered |
+| n4 | claim | leads_to | covered |
+| n5 | negation | negation | covered |
+| n6 | claim | attribute_claim | covered |
+| n7 | claim | test_condition, statement | covered |
+| n8 | claim | test_condition, statement | covered |
+| n9 | action | chg_modify_code, propose | covered |
+| n10 | object | code_entity, platform_label::pandas | label-preserved |
+| n11 | action | chg_modify_code, propose | covered |
+| n12 | object | code_entity, platform_label::pandas | label-preserved |
+
+## Translation report
+
+- Input kind: conversation
+- Coverage status: complete
+- Source-span coverage: every segment t1:s1–t2:s4 is represented
+- Opaque-text spans: none
+- Label-preserved spans: t1:s1 "pandas" → platform_label::pandas; t2:s2 "pandas" → platform_label::pandas; t2:s4 "pandas" → platform_label::pandas
+- Missing constructs: none
+- Unresolved ambiguities: none
+- Check: `rag check` reported 0 unresolved needs and 0 unknown symbols

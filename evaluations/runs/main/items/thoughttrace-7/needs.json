@@ -1,0 +1,2568 @@
+{
+ "translator_id": "thoughttrace-7",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User asks for a dinner suggestion for hosting friends",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Can you suggest a delicious, easy-to-prepare dinner for my friends coming over for dinner, including a vegetarian option?",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7311,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.5714,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_friend",
+     "symbol": "role_friend",
+     "kind": "value",
+     "score": 0.4898,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3978,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3636,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3577,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/user_preference",
+     "symbol": "user_preference",
+     "kind": "claim_relation",
+     "score": 0.3413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.3108,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_drinks",
+     "symbol": "entity_drinks",
+     "kind": "value",
+     "score": 0.3055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_recipes",
+     "symbol": "entity_recipes",
+     "kind": "value",
+     "score": 0.3055,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "The dinner must be delicious and easy to prepare",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Can you suggest a delicious, easy-to-prepare dinner for my friends coming over for dinner, including a vegetarian option?",
+   "candidates": [
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.8216,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.7851,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.7728,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.7713,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.7669,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.7397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.7041,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.6989,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6935,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.6857,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.6838,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.6762,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Include a vegetarian option",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Can you suggest a delicious, easy-to-prepare dinner for my friends coming over for dinner, including a vegetarian option?",
+   "candidates": [
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.623,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.5697,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.5262,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.5154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.5034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.4918,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.447,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.4368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.4052,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Agent proposes a Taco Night dinner idea",
+   "source": [
+    "t2:s1"
+   ],
+   "id": "n4",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.7657,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.7009,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/proposed_policy",
+     "symbol": "proposed_policy",
+     "kind": "claim_relation",
+     "score": 0.6301,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5622,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_recipes",
+     "symbol": "entity_recipes",
+     "kind": "value",
+     "score": 0.4426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.423,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4166,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.4146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_invitation",
+     "symbol": "art_invitation",
+     "kind": "value",
+     "score": 0.4108,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4059,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4048,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Taco night dinner",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "food_label",
+   "id": "n5",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6839,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.6535,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.505,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.5001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.4768,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.4686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4667,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4647,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.4644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.4539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4463,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.4362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.4126,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4041,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Taco night is customizable, relaxed, and easy to prepare for a group",
+   "source": [
+    "t2:s3"
+   ],
+   "id": "n6",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6564,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3637,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3593,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/tattoos",
+     "symbol": "tattoos",
+     "kind": "value",
+     "score": 0.3431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.3329,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3255,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/ryokan",
+     "symbol": "ryokan",
+     "kind": "value",
+     "score": 0.3159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3147,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3094,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Seasoned chicken or beef meat option",
+   "source": [
+    "t2:s5"
+   ],
+   "group": "food_label",
+   "id": "n7",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.88,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4046,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4023,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.39,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.3862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.3693,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.3622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3606,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.3534,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.3324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/oak_chips",
+     "symbol": "oak_chips",
+     "kind": "value",
+     "score": 0.3301,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.3186,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.3176,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Black bean and roasted veggie taco vegetarian option",
+   "source": [
+    "t2:s6"
+   ],
+   "group": "food_label",
+   "id": "n8",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.8031,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.7381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.7172,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.713,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.6976,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.6782,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.6707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.6693,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.6692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.6638,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.6624,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.658,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Taco shells including soft tortillas and crunchy shells",
+   "source": [
+    "t2:s7"
+   ],
+   "group": "food_label",
+   "id": "n9",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.7408,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.5347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.5251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.4956,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4951,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4818,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4681,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.4595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.4564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/oak_chips",
+     "symbol": "oak_chips",
+     "kind": "value",
+     "score": 0.431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4164,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.4126,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Taco toppings including lettuce, tomatoes, cheese, sour cream, guacamole, and salsa",
+   "source": [
+    "t2:s8"
+   ],
+   "group": "food_label",
+   "id": "n10",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.762,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cheese",
+     "symbol": "cheese",
+     "kind": "value",
+     "score": 0.6994,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.4884,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_nata",
+     "symbol": "dulce_de_nata",
+     "kind": "value",
+     "score": 0.4807,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4125,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.3806,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.3616,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3609,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3574,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.3562,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.3403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3102,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Side dishes including rice, salad, and tortilla chips with dip",
+   "source": [
+    "t2:s9"
+   ],
+   "id": "n11",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.8049,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.5652,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.5407,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.5139,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.435,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4153,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3701,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.3502,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/oak_chips",
+     "symbol": "oak_chips",
+     "kind": "value",
+     "score": 0.3354,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.3203,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Taco night can be prepped ahead and lets guests assemble their own plates",
+   "source": [
+    "t2:s14"
+   ],
+   "id": "n12",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.7335,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4662,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3864,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3813,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3657,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3501,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.3489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.3353,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.3196,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3098,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_order_vs_assemble_plan",
+     "symbol": "entity_order_vs_assemble_plan",
+     "kind": "value",
+     "score": 0.2918,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Prepare vegetarian filling by sautéing vegetables and mixing with black beans and seasoning",
+   "source": [
+    "t2:s18"
+   ],
+   "id": "n13",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_full",
+     "symbol": "state_full",
+     "kind": "value",
+     "score": 0.5744,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.4619,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.4352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.4343,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.4261,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.4177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_food_safety",
+     "symbol": "topic_food_safety",
+     "kind": "value",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.3807,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/spatula",
+     "symbol": "spatula",
+     "kind": "value",
+     "score": 0.3782,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Cook chicken or beef with olive oil, taco seasoning, and lime juice",
+   "source": [
+    "t2:s27"
+   ],
+   "id": "n14",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.7953,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/fruit_juice",
+     "symbol": "fruit_juice",
+     "kind": "value",
+     "score": 0.5853,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.4381,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3859,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.3548,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3546,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3273,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.3194,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.3123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/wine",
+     "symbol": "wine",
+     "kind": "value",
+     "score": 0.2903,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/stove",
+     "symbol": "stove",
+     "kind": "value",
+     "score": 0.2865,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.2836,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Dessert options including churros, brownies, or ice cream",
+   "source": [
+    "t2:s31"
+   ],
+   "group": "food_label",
+   "id": "n15",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.7165,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.5822,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_nata",
+     "symbol": "dulce_de_nata",
+     "kind": "value",
+     "score": 0.5378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.5062,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4073,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4053,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.3842,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.3801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.3704,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.3692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/citric_acid",
+     "symbol": "citric_acid",
+     "kind": "value",
+     "score": 0.3458,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.3417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/tartaric_acid",
+     "symbol": "tartaric_acid",
+     "kind": "value",
+     "score": 0.3404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.3098,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Agent proposes a baked pasta night as an alternative dinner option",
+   "source": [
+    "t2:s36"
+   ],
+   "id": "n16",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.7576,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/proposed_policy",
+     "symbol": "proposed_policy",
+     "kind": "claim_relation",
+     "score": 0.6331,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.5859,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.4881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4808,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_recipes",
+     "symbol": "entity_recipes",
+     "kind": "value",
+     "score": 0.4771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.4592,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4578,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.4555,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sweet_food",
+     "symbol": "entity_sweet_food",
+     "kind": "value",
+     "score": 0.4521,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.4334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4227,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_desserts",
+     "symbol": "entity_desserts",
+     "kind": "value",
+     "score": 0.4174,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Baked ziti or lasagna with vegetarian spinach and ricotta option and garlic bread",
+   "source": [
+    "t2:s38"
+   ],
+   "group": "food_label",
+   "id": "n17",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.7693,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4329,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.4279,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_arab",
+     "symbol": "cuisine_arab",
+     "kind": "value",
+     "score": 0.4135,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/meat",
+     "symbol": "meat",
+     "kind": "value",
+     "score": 0.4106,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.3987,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.3977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.3743,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/knife",
+     "symbol": "knife",
+     "kind": "value",
+     "score": 0.3254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/cuisine-value",
+     "symbol": "rule_category_cuisine_value",
+     "kind": "category_rule",
+     "score": 0.3242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cardamom",
+     "symbol": "cardamom",
+     "kind": "value",
+     "score": 0.3242,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/food_label",
+     "symbol": "food_label",
+     "kind": "lexical_group",
+     "score": 0.3115,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Baked pasta can be assembled ahead of time and baked right before serving",
+   "source": [
+    "t2:s42"
+   ],
+   "id": "n18",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.7704,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/cuisine",
+     "symbol": "cuisine",
+     "kind": "attribute",
+     "score": 0.7402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.7252,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_indian",
+     "symbol": "cuisine_indian",
+     "kind": "value",
+     "score": 0.7141,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.6819,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.6802,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.6801,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowl",
+     "symbol": "bowl",
+     "kind": "value",
+     "score": 0.6627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pan",
+     "symbol": "pan",
+     "kind": "value",
+     "score": 0.662,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/plate",
+     "symbol": "plate",
+     "kind": "value",
+     "score": 0.6598,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/restaurant",
+     "symbol": "restaurant",
+     "kind": "value",
+     "score": 0.6451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/maqluba",
+     "symbol": "maqluba",
+     "kind": "value",
+     "score": 0.6425,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Agent offers further help with a full menu, impressive dinner ideas, or a shopping list",
+   "source": [
+    "t2:s43"
+   ],
+   "id": "n19",
+   "context": "Absolutely — here’s an easy, crowd-pleasing dinner idea with a built-in vegetarian option: ## Dinner Idea: Taco Night It’s fun, relaxed, customizable, and very easy to prepare for a group. ### Main components - **Protein option:** seasoned chicken or beef - **Vegetarian option:** black bean and roasted veggie tacos - **Taco shells:** soft tortillas and/or crunchy shells - **Toppings:** shredded lettuce, diced tomatoes, cheese, sour cream, guacamole, salsa, cilantro, lime wedges ### Easy sides - Mexican rice or cilantro-lime rice - Corn salad or simple green salad - Tortilla chips with salsa an",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.6785,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5603,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.5439,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/offer_help",
+     "symbol": "offer_help",
+     "kind": "constructor",
+     "score": 0.4179,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_full",
+     "symbol": "state_full",
+     "kind": "value",
+     "score": 0.3758,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3635,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.3469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_recipes",
+     "symbol": "entity_recipes",
+     "kind": "value",
+     "score": 0.3449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.3331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3323,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.3294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.3211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3086,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

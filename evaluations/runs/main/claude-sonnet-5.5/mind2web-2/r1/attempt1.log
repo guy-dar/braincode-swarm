@@ -1,0 +1,19 @@
+    1.9s turn 1
+   16.3s   model reply: in 4 + cached 2083, out 2102 (+644 reasoning)
+   16.3s   tool bash: mkdir -p /output; cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversa
+   16.4s turn 2
+   19.5s   model reply: in 2 + cached 43400, out 322 (+0 reasoning)
+   19.5s   tool bash: cd /output; sed -i 's/object_label::it_jobs/object_label::jobs/g; s/IT jobs" → object_label::jobs (label only)/IT jobs" → object_label::jobs (label only; "IT" q
+   19.8s turn 3
+   23.6s   model reply: in 2 + cached 45989, out 396 (+0 reasoning)
+   23.6s agent finished
+   23.6s agent finished

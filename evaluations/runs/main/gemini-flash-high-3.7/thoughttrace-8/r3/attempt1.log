@@ -1,0 +1,49 @@
+    2.0s turn 1
+   23.2s   model reply: in 32542 + cached 0, out 3421 (+3398 reasoning)
+   23.2s   tool bash: node /kit/rag.mjs --help
+   23.3s turn 2
+   27.1s   model reply: in 3463 + cached 32538, out 67 (+45 reasoning)
+   27.1s   tool bash: node /kit/rag.mjs check
+   27.2s turn 3
+   33.0s   model reply: in 3565 + cached 32519, out 463 (+407 reasoning)
+   33.0s   tool bash: node /kit/rag.mjs search "comfortable" "job" "career" "workplace" "mental health" "advice" "quitting" "resume" "emergency fund" "manager"
+   33.2s turn 4
+   44.9s   model reply: in 6724 + cached 32521, out 1702 (+1610 reasoning)
+   44.9s   tool bash: node /kit/rag.mjs entry comfortable self_protection obligation decision activity ask propose acknowledge apologize offer express_interest respond tone_empatheti
+   45.0s turn 5
+   49.1s   model reply: in 6490 + cached 36592, out 137 (+78 reasoning)
+   49.1s   tool bash: node /kit/rag.mjs entry leads_to attitude motivated_by has_goal user_preference negation indicator exclude include conjunction requirement subject topic_school_
+   49.3s turn 6
+   55.0s   model reply: in 4536 + cached 40652, out 392 (+367 reasoning)
+   55.0s   tool bash: node /kit/rag.mjs search "comfortable"
+   55.2s turn 7
+   59.1s   model reply: in 5231 + cached 40637, out 50 (+22 reasoning)
+   59.1s   tool bash: node /kit/rag.mjs search "person" "user"
+   59.3s turn 8
+   63.1s   model reply: in 5866 + cached 40622, out 96 (+66 reasoning)
+   63.1s   tool bash: node /kit/rag.mjs widen "user is comfortable" --kind claim
+   63.2s turn 9
+   69.5s   model reply: in 3053 + cached 44674, out 576 (+551 reasoning)
+   69.5s   tool bash: node /kit/rag.mjs search "ask"
+   69.7s turn 10
+   82.1s   model reply: in 3950 + cached 44660, out 89 (+51 reasoning)
+   82.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+   82.2s turn 11
+  106.4s   model reply: in 5839 + cached 44656, out 4528 (+4440 reasoning)
+  106.4s   tool bash: node /kit/rag.mjs entry offer offer_help apologize acknowledge respond propose ask comfortable recommended user_preference user_practice causes leads_to attitud
+  106.5s turn 12
+  136.5s   model reply: in 8292 + cached 48746, out 5436 (+3974 reasoning)
+  136.5s   tool write: /output/translation.md
+  136.6s turn 13
+  140.3s   model reply: in 5590 + cached 56888, out 53 (+23 reasoning)
+  140.3s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  140.4s turn 14
+  173.2s   model reply: in 2227 + cached 60936, out 5749 (+4266 reasoning)
+  173.2s   tool write: /output/translation.md
+  173.2s turn 15
+  177.1s   model reply: in 7961 + cached 60955, out 57 (+27 reasoning)
+  177.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  177.2s turn 16
+  182.0s   model reply: in 4602 + cached 65003, out 290 (+109 reasoning)
+  182.0s agent finished
+  182.0s agent finished

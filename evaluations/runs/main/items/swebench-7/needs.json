@@ -1,0 +1,1534 @@
+{
+ "translator_id": "swebench-7",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "deprecate Index.is_mixed method",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.8126,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7648,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.6554,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4906,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4671,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.4634,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/slice",
+     "symbol": "slice",
+     "kind": "operation",
+     "score": 0.4551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.4428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4267,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Index.is_mixed method in pandas",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "platform_label",
+   "id": "n2",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.887,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.8419,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.6993,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.4947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.478,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4608,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_ai_earning_methods",
+     "symbol": "topic_ai_earning_methods",
+     "kind": "composite",
+     "score": 0.4527,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4512,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.4289,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4212,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.4204,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3287,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Index.is_mixed is only used in one place in the codebase",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n3",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.7799,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7186,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.6299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.5753,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.4391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.4352,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.3959,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.3921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.3848,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.3796,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "removing Index.is_mixed does not break anything",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n4",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.7694,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7395,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_remove_br",
+     "symbol": "transform_remove_br",
+     "kind": "composite",
+     "score": 0.4473,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4369,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.4311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4097,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.4067,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.3999,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3965,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3956,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.3592,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "removal does not cause breakage",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n5",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.6838,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.5496,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.5143,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_remove_br",
+     "symbol": "transform_remove_br",
+     "kind": "composite",
+     "score": 0.3822,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.3433,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/remove_literal",
+     "symbol": "remove_literal",
+     "kind": "constructor",
+     "score": 0.342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3386,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/rinse",
+     "symbol": "rinse",
+     "kind": "operation",
+     "score": 0.3318,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3256,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3095,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_clean",
+     "symbol": "state_clean",
+     "kind": "value",
+     "score": 0.307,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_empty",
+     "symbol": "state_empty",
+     "kind": "value",
+     "score": 0.2949,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.2844,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Index.is_mixed exhibits surprising or inconsistent behavior",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n6",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.7834,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7247,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.6631,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distracts_from",
+     "symbol": "distracts_from",
+     "kind": "claim_relation",
+     "score": 0.4778,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.4599,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4214,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.4123,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.4068,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4054,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "pd.Index with strings and np.nan evaluates is_mixed as True",
+   "source": [
+    "t1:s5",
+    "t1:s6"
+   ],
+   "id": "n7",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7634,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6998,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.6315,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4462,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.4353,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.4132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4019,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.3955,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3916,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3873,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Index with mixed integers and strings evaluates is_mixed as False",
+   "source": [
+    "t1:s7",
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "DEPR: Index.is_mixed We only use it in one place, and removing it there doesn't break anything. Moreover, it behaves surprisingly: ``` >>> pd.Index(['a', np.nan, 'b']).is_mixed() True >>> Index([0, 'a', 1, 'b', 2, 'c']).is_mixed() False ```",
+   "candidates": [
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.7635,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/preserve",
+     "symbol": "preserve",
+     "kind": "constructor",
+     "score": 0.7141,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.6386,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4758,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4582,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.4445,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.4335,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.401,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3866,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.3849,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3781,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "modify documentation file doc/source/whatsnew/v1.1.0.rst",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n9",
+   "context": "1. modify doc/source/whatsnew/v1.1.0.rst 2. modify pandas/core/indexes/base.py",
+   "candidates": [
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.7808,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.6972,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.614,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.5088,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.4567,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.4525,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/policy_revision_request",
+     "symbol": "policy_revision_request",
+     "kind": "constructor",
+     "score": 0.4146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4105,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/footnote",
+     "symbol": "footnote",
+     "kind": "constructor",
+     "score": 0.3926,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/document_section",
+     "symbol": "document_section",
+     "kind": "constructor",
+     "score": 0.3894,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "release notes file doc/source/whatsnew/v1.1.0.rst",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n10",
+   "context": "1. modify doc/source/whatsnew/v1.1.0.rst 2. modify pandas/core/indexes/base.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.7975,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.731,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.7069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/review-points",
+     "symbol": "rule_review_points",
+     "kind": "rule",
+     "score": 0.6962,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6735,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_xlsx",
+     "symbol": "format_xlsx",
+     "kind": "value",
+     "score": 0.65,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/warning",
+     "symbol": "warning",
+     "kind": "claim_relation",
+     "score": 0.648,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_newsletter",
+     "symbol": "format_newsletter",
+     "kind": "value",
+     "score": 0.6468,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6463,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_pdf",
+     "symbol": "format_pdf",
+     "kind": "value",
+     "score": 0.6448,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.6372,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_gram",
+     "symbol": "unit_gram",
+     "kind": "value",
+     "score": 0.6322,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "modify source file pandas/core/indexes/base.py",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n11",
+   "context": "1. modify doc/source/whatsnew/v1.1.0.rst 2. modify pandas/core/indexes/base.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.848,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.7891,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.7426,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7335,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.6887,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.6439,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.6344,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.4177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.4116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.4103,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4031,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/review-points",
+     "symbol": "rule_review_points",
+     "kind": "rule",
+     "score": 0.3869,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.3796,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "source file pandas/core/indexes/base.py",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n12",
+   "context": "1. modify doc/source/whatsnew/v1.1.0.rst 2. modify pandas/core/indexes/base.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.9091,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.859,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7875,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.735,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.7034,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.626,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.6086,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.5909,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4541,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.4298,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_safari",
+     "symbol": "dom_safari",
+     "kind": "value",
+     "score": 0.4206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

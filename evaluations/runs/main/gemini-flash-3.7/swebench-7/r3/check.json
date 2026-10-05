@@ -1,0 +1,140 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "deprecate Index.is_mixed method",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "Index.is_mixed method in pandas",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Index.is_mixed is only used in one place in the codebase",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "removing Index.is_mixed does not break anything",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "negation",
+   "text": "removal does not cause breakage",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Index.is_mixed exhibits surprising or inconsistent behavior",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "pd.Index with strings and np.nan evaluates is_mixed as True",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Index with mixed integers and strings evaluates is_mixed as False",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "modify documentation file doc/source/whatsnew/v1.1.0.rst",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "release notes file doc/source/whatsnew/v1.1.0.rst",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "modify source file pandas/core/indexes/base.py",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code",
+    "code_entity"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "source file pandas/core/indexes/base.py",
+   "status": "covered",
+   "matched_symbols": [
+    "code_entity"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "FALSE",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "attribute_claim",
+  "chg_modify_code",
+  "code_entity",
+  "contrast",
+  "negation",
+  "platform_label",
+  "propose",
+  "role_user",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [
+  "chg_deprecate_code",
+  "code_breakage",
+  "code_evaluation",
+  "code_usage"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2"
+ ]
+}

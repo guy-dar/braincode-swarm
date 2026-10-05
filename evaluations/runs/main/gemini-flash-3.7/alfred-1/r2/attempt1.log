@@ -1,0 +1,122 @@
+    2.6s turn 1
+   12.2s   model reply: in 28194 + cached 0, out 1071 (+1047 reasoning)
+   12.2s   tool bash: node /kit/rag.mjs check --help
+   12.3s turn 2
+   17.9s   model reply: in 29281 + cached 0, out 48 (+19 reasoning)
+   17.9s   tool bash: node /kit/rag.mjs entry turn walk pick_up place look
+   18.0s turn 3
+   23.9s   model reply: in 5771 + cached 24352, out 91 (+65 reasoning)
+   23.9s   tool bash: grep -n "example_" /reference/glossary.md
+   23.9s turn 4
+   27.0s   model reply: in 2922 + cached 28401, out 65 (+41 reasoning)
+   27.0s   tool bash: ls -la /reference /doc_formats /kit
+   27.1s turn 5
+   33.8s   model reply: in 3585 + cached 28387, out 34 (+13 reasoning)
+   33.8s   tool bash: cat /reference/examples.jsonl
+   33.8s turn 6
+   37.2s   model reply: in 4797 + cached 28379, out 64 (+43 reasoning)
+   37.2s   tool bash: node /kit/rag.mjs
+   37.2s turn 7
+   40.2s   model reply: in 4917 + cached 28361, out 40 (+18 reasoning)
+   40.2s   tool bash: node /kit/rag.mjs needs
+   51.1s turn 8
+   60.3s   model reply: in 3593 + cached 32420, out 1493 (+1471 reasoning)
+   60.3s   tool bash: node /kit/rag.mjs check
+   60.4s turn 9
+   65.7s   model reply: in 5107 + cached 32415, out 532 (+484 reasoning)
+   65.7s   tool bash: node /kit/rag.mjs search "left" "around" "end table" "couch" "ottoman" "across" "behind" "through"
+   66.0s turn 10
+   72.9s   model reply: in 3781 + cached 36474, out 825 (+802 reasoning)
+   72.9s   tool bash: grep -i "alfred" /reference/*
+   73.0s turn 11
+   76.7s   model reply: in 4628 + cached 36462, out 97 (+58 reasoning)
+   76.7s   tool bash: node /kit/rag.mjs entry left_of behind on other_side_of living_room wall table phone vase
+   76.9s turn 12
+   80.3s   model reply: in 5263 + cached 36449, out 109 (+83 reasoning)
+   80.3s   tool bash: node /kit/rag.mjs entry keys couch chair ottoman
+   80.6s turn 13
+   84.2s   model reply: in 5550 + cached 36433, out 59 (+38 reasoning)
+   84.2s   tool bash: cat /kit/rag.mjs
+   84.2s turn 14
+   98.1s   model reply: in 3097 + cached 40478, out 2580 (+1727 reasoning)
+   98.1s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Keys
+TASK Keys {
+  ACTION turn(direction
+   98.3s turn 15
+  103.1s   model reply: in 6255 + cached 40492, out 247 (+205 reasoning)
+  103.1s   tool bash: node /kit/rag.mjs search "located on" "across from" "behind" "through" "location" "spatial"
+  103.3s turn 16
+  125.7s   model reply: in 4104 + cached 44541, out 3709 (+3682 reasoning)
+  125.7s   tool bash: grep -n "| constructor |" /reference/glossary.md
+  125.7s turn 17
+  137.3s   model reply: in 54141 + cached 0, out 1674 (+1629 reasoning)
+  137.3s   tool bash: node /kit/rag.mjs search "spatial" "relation" "relative_position" "behind" "across" "near" "location"
+  137.9s turn 18
+  149.7s   model reply: in 5091 + cached 52695, out 1822 (+1041 reasoning)
+  149.7s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT ObjectLabelKeys
+TASK ObjectLabelKeys {
+ 
+  149.8s turn 19
+  157.6s   model reply: in 3385 + cached 56751, out 767 (+729 reasoning)
+  157.6s   tool bash: node /kit/rag.mjs search "spatial_state" "location_spec" "requirement" "activity"
+  157.8s turn 20
+  161.2s   model reply: in 5436 + cached 56750, out 59 (+31 reasoning)
+  161.2s   tool bash: node /kit/rag.mjs entry spatial_constraint spatial_state
+  161.4s turn 21
+  164.9s   model reply: in 5670 + cached 56733, out 66 (+29 reasoning)
+  164.9s   tool bash: node /kit/rag.mjs search "descriptor" "entity" "object" "property" "color"
+  165.1s turn 22
+  176.4s   model reply: in 3093 + cached 60779, out 1771 (+1696 reasoning)
+  176.4s   tool bash: node /kit/rag.mjs entry object_label::table object_label::end_table object_label::couch color_label::black color_label::white color_label::purple object_label::
+  176.5s turn 23
+  185.4s   model reply: in 6038 + cached 60788, out 1047 (+1008 reasoning)
+  185.4s   tool bash: node /kit/rag.mjs search "TERM" "constructor" "entity" "descriptor" "spatial_constraint"
+  185.6s turn 24
+  190.7s   model reply: in 69330 + cached 0, out 57 (+32 reasoning)
+  190.7s   tool bash: node /kit/rag.mjs entry lexical_label
+  190.9s turn 25
+  203.7s   model reply: in 5027 + cached 64830, out 2187 (+1052 reasoning)
+  203.7s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT ObjectLabelKeys
+TASK ObjectLabelKeys {
+ 
+  203.9s turn 26
+  227.0s   model reply: in 53546 + cached 0, out 2801 (+1646 reasoning)
+  227.0s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT ObjectLabelKeys
+TASK ObjectLabelKeys {
+ 
+  227.1s turn 27
+  233.3s   model reply: in 4163 + cached 52808, out 798 (+550 reasoning)
+  233.3s agent finished
+  233.3s agent finished

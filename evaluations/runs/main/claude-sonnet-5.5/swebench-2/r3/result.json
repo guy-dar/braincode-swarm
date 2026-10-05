@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5.5",
+ "item": "swebench-2",
+ "dataset": "swebench",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 27.9,
+ "usage": {
+  "calls": 2,
+  "input": 6,
+  "cacheRead": 45960,
+  "cacheWrite": 44927,
+  "output": 3463,
+  "reasoning": 1034,
+  "compactions": 0,
+  "truncated_tool_results": 0
+ },
+ "cost_usd": 0.1562,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 0,
+  "refine_count": 1,
+  "would_add": [],
+  "would_refine": [
+   {
+    "target": "v19/constructor/chg_modify_code",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

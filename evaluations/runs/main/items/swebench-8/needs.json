@@ -1,0 +1,2069 @@
+{
+ "translator_id": "swebench-8",
+ "needs": [
+  {
+   "kind": "claim",
+   "text": "Cross-file binaries are not being used for ConfigTool dependencies like LLVM",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.7056,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.7008,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.6879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6847,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.6805,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.6728,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.6653,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6414,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/recycle_bin",
+     "symbol": "recycle_bin",
+     "kind": "value",
+     "score": 0.6166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/review-points",
+     "symbol": "rule_review_points",
+     "kind": "rule",
+     "score": 0.616,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.6144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.6131,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "ConfigTool dependency",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6491,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.4673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.459,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4497,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4377,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4295,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.4267,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4196,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_compatibility",
+     "symbol": "metric_compatibility",
+     "kind": "value",
+     "score": 0.4184,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4162,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "LLVM",
+   "source": [
+    "t1:s1"
+   ],
+   "group": "platform_label",
+   "id": "n3",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6167,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.4699,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.468,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_medium",
+     "symbol": "size_medium",
+     "kind": "value",
+     "score": 0.4642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4489,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.433,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_sgi",
+     "symbol": "dom_sgi",
+     "kind": "value",
+     "score": 0.4284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.4277,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/ram_unit",
+     "symbol": "ram_unit",
+     "kind": "attribute",
+     "score": 0.4195,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4192,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Mesa build",
+   "source": [
+    "t1:s2"
+   ],
+   "group": "platform_label",
+   "id": "n4",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6766,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6686,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6684,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.652,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.6419,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.6177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_structured_report",
+     "symbol": "art_structured_report",
+     "kind": "value",
+     "score": 0.616,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.6155,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/constitutional_ai",
+     "symbol": "constitutional_ai",
+     "kind": "value",
+     "score": 0.6128,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.6071,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.6034,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.5995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.595,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The issue occurs during Mesa build",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n5",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.6969,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.4327,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/raises_exception",
+     "symbol": "raises_exception",
+     "kind": "claim_relation",
+     "score": 0.3234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.3028,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.2813,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/regression_case",
+     "symbol": "regression_case",
+     "kind": "constructor",
+     "score": 0.2723,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.2695,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.2682,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.2586,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.258,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.2542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.2534,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/constraint-value",
+     "symbol": "rule_category_constraint_value",
+     "kind": "category_rule",
+     "score": 0.2519,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/temporal_context",
+     "symbol": "temporal_context",
+     "kind": "constructor",
+     "score": 0.2257,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Cross-compilation definition file",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n6",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/support/duplicate_definition",
+     "symbol": "duplicate_definition",
+     "kind": "claim_relation",
+     "score": 0.6759,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.4853,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.4431,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.4366,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/composites-general",
+     "symbol": "rule_composites_general",
+     "kind": "rule",
+     "score": 0.4201,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.4198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4192,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/compression",
+     "symbol": "compression",
+     "kind": "constructor",
+     "score": 0.4188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4185,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4184,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4079,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "llvm-config binary definition",
+   "source": [
+    "t1:s5",
+    "t1:s6"
+   ],
+   "group": "platform_label",
+   "id": "n7",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.6841,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.672,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.6685,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.6542,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.6281,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.4373,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.4367,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.4337,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.4309,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4275,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.4075,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4045,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "The build system incorrectly finds host machine llvm-config despite cross file configuration",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.681,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.673,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.6668,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.6281,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.4247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4117,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.4083,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4011,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.3982,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.3937,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.2978,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Meson build system",
+   "source": [
+    "t1:s10"
+   ],
+   "group": "platform_label",
+   "id": "n9",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.7002,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/design_parameters",
+     "symbol": "design_parameters",
+     "kind": "value",
+     "score": 0.6565,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.6548,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.4508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4296,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/clock",
+     "symbol": "clock",
+     "kind": "value",
+     "score": 0.4251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.42,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_medium",
+     "symbol": "size_medium",
+     "kind": "value",
+     "score": 0.4187,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4114,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3899,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.3886,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Meson performs a cross build and still resolves host llvm-config",
+   "source": [
+    "t1:s14",
+    "t1:s22",
+    "t1:s23"
+   ],
+   "id": "n10",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.6882,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.677,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.4242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.4104,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_log_reg_scoring_path",
+     "symbol": "sym_log_reg_scoring_path",
+     "kind": "value",
+     "score": 0.407,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.3892,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3849,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.3821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3815,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ddp",
+     "symbol": "dom_ddp",
+     "kind": "value",
+     "score": 0.375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.3629,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Propose a patch to fix ConfigToolDependency handling in cross builds",
+   "source": [
+    "t1:s25"
+   ],
+   "id": "n11",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.6891,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.4093,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.397,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.3954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.3885,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3839,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.3793,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.3649,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.3436,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/review-points",
+     "symbol": "rule_review_points",
+     "kind": "rule",
+     "score": 0.3291,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/composites-general",
+     "symbol": "rule_composites_general",
+     "kind": "rule",
+     "score": 0.2981,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.2929,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "mesonbuild/dependencies/base.py file",
+   "source": [
+    "t1:s27"
+   ],
+   "group": "platform_label",
+   "id": "n12",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7814,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.7416,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.6638,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/code_entity",
+     "symbol": "code_entity",
+     "kind": "constructor",
+     "score": 0.6287,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_pandas_src_testing_pyx",
+     "symbol": "path_pandas_src_testing_pyx",
+     "kind": "value",
+     "score": 0.4685,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cd",
+     "symbol": "cd",
+     "kind": "value",
+     "score": 0.4233,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4218,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4106,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.4069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4011,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.398,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.3919,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Cross-tool lookup logic should check cross_info binaries when want_cross is true",
+   "source": [
+    "t1:s37",
+    "t1:s39",
+    "t1:s43",
+    "t1:s44"
+   ],
+   "id": "n13",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.7088,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.5026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4924,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/content_mixed_case_foreign_key_regression",
+     "symbol": "content_mixed_case_foreign_key_regression",
+     "kind": "composite",
+     "score": 0.4812,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/meets_needs",
+     "symbol": "meets_needs",
+     "kind": "claim_relation",
+     "score": 0.4437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.435,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4339,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.4304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/sym_pandas_testing_assert_almost_equal",
+     "symbol": "sym_pandas_testing_assert_almost_equal",
+     "kind": "value",
+     "score": 0.4274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4185,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "ConfigTool cross binary lookup logic should be centralized",
+   "source": [
+    "t1:s54"
+   ],
+   "id": "n14",
+   "context": "Cross-file binaries not being used for ConfigTool (which LLVM depends on) This is in the mesa build. When running with a cross file which contains ``` [binaries] llvm-config = '' ``` It still finds my build machine's llvm-config and proceeds as if it was all fine: ``` The Meson build system Version: 0.45.0.dev1 Source dir: /home/ilia/src/mesa-meson Build dir: /home/ilia/src/mesa-meson/armv7-build Build type: cross build Program python found: YES (/usr/bin/python) Project name: mesa Native C compiler: cc (gcc 6.4.0 \"gcc (Gentoo 6.4.0 p1.1) 6.4.0\") Cross C compiler: /usr/bin/armv7a-hardfloat-lin",
+   "candidates": [
+    {
+     "id": "v19/rule/category/capacity-unit-value",
+     "symbol": "rule_category_capacity_unit_value",
+     "kind": "category_rule",
+     "score": 0.7098,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.4722,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.4347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_overlay",
+     "symbol": "config_overlay",
+     "kind": "constructor",
+     "score": 0.4242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/reconcile_code",
+     "symbol": "reconcile_code",
+     "kind": "constructor",
+     "score": 0.4229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/code-value",
+     "symbol": "rule_category_code_value",
+     "kind": "category_rule",
+     "score": 0.4191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4139,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4071,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.4036,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.4027,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.3881,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.387,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Modify mesonbuild/dependencies/base.py",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n15",
+   "context": "1. modify mesonbuild/dependencies/base.py",
+   "candidates": [
+    {
+     "id": "v19/support/chg_modify_code",
+     "symbol": "chg_modify_code",
+     "kind": "constructor",
+     "score": 0.8424,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/modify_code",
+     "symbol": "modify_code",
+     "kind": "operation",
+     "score": 0.7966,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.6913,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.5446,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.5057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4943,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/software_version",
+     "symbol": "software_version",
+     "kind": "constructor",
+     "score": 0.4735,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4679,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/include",
+     "symbol": "include",
+     "kind": "constructor",
+     "score": 0.4653,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/chg_inherit_multi_class",
+     "symbol": "chg_inherit_multi_class",
+     "kind": "composite",
+     "score": 0.4312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4302,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/transformation-value",
+     "symbol": "rule_category_transformation_value",
+     "kind": "category_rule",
+     "score": 0.4255,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "mesonbuild/dependencies/base.py target file",
+   "source": [
+    "t2:s2"
+   ],
+   "group": "platform_label",
+   "id": "n16",
+   "context": "1. modify mesonbuild/dependencies/base.py",
+   "candidates": [
+    {
+     "id": "v19/code-value/path_numpy_core_fromnumeric_py",
+     "symbol": "path_numpy_core_fromnumeric_py",
+     "kind": "value",
+     "score": 0.7776,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/target",
+     "symbol": "target",
+     "kind": "attribute",
+     "score": 0.7298,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/change_property",
+     "symbol": "change_property",
+     "kind": "constructor",
+     "score": 0.5036,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.4934,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4759,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4547,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.444,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/remove",
+     "symbol": "remove",
+     "kind": "operation",
+     "score": 0.4378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4286,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/pull_request",
+     "symbol": "pull_request",
+     "kind": "constructor",
+     "score": 0.4233,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/attributes-and-generate",
+     "symbol": "rule_attributes_and_generate",
+     "kind": "rule",
+     "score": 0.4218,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_sklearn_linear_model_logistic_py",
+     "symbol": "path_sklearn_linear_model_logistic_py",
+     "kind": "value",
+     "score": 0.418,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/platform_label",
+     "symbol": "platform_label",
+     "kind": "lexical_group",
+     "score": 0.4018,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  }
+ ]
+}

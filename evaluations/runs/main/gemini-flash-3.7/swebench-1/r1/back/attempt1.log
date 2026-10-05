@@ -1,0 +1,37 @@
+    2.1s turn 1
+    9.4s   model reply: in 13777 + cached 0, out 944 (+924 reasoning)
+    9.4s   tool bash: ls -la /output /attach
+    9.4s turn 2
+   12.9s   model reply: in 2854 + cached 12082, out 53 (+27 reasoning)
+   12.9s   tool bash: ls -la /kit 2>/dev/null || true
+   12.9s turn 3
+   17.0s   model reply: in 3088 + cached 12068, out 56 (+37 reasoning)
+   17.0s   tool read: /kit/README.md
+   17.0s turn 4
+   19.9s   model reply: in 4306 + cached 12068, out 60 (+37 reasoning)
+   19.9s   tool bash: ls -la / 2>/dev/null
+   19.9s turn 5
+   24.8s   model reply: in 5154 + cached 12063, out 35 (+17 reasoning)
+   24.8s   tool bash: ls -la /reference
+   24.9s turn 6
+   28.6s   model reply: in 5405 + cached 12051, out 43 (+23 reasoning)
+   28.6s   tool read: /reference/examples.jsonl
+   28.7s turn 7
+   48.3s   model reply: in 2599 + cached 16070, out 3042 (+3021 reasoning)
+   48.3s   tool bash: find /reference /kit -type f
+   48.3s turn 8
+   58.8s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   58.8s agent finished
+   60.8s turn 9
+   63.8s   model reply: in 5690 + cached 16098, out 45 (+24 reasoning)
+   63.8s   tool read: /kit/needs_prompt.md
+   63.8s turn 10
+   92.9s   model reply: in 2396 + cached 20115, out 3891 (+3722 reasoning)
+   92.9s   tool write: /output/reconstruction.md
+   92.9s turn 11
+   98.5s   model reply: in 6259 + cached 20148, out 39 (+19 reasoning)
+   98.5s   tool read: /output/reconstruction.md
+   98.5s turn 12
+  102.6s   model reply: in 2428 + cached 24161, out 98 (+75 reasoning)
+  102.6s agent finished
+  102.6s agent finished

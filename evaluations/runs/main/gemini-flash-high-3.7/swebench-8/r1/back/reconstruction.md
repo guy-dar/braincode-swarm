@@ -1,0 +1,2 @@
+<|user|>The llvm class ConfigToolDependency fails. While building mesa, in section "binaries", option "llvm-config" with value "" causes a failure in meson. In meson, "build_type" is "cross_build". Propose modifying "mesonbuild/dependencies/base.py" in meson. In "mesonbuild/dependencies/base.py", parameter "binaries" is validated under condition "want_cross". Centralize and reconcile class ConfigToolDependency in llvm and file "mesonbuild/dependencies/base.py" in meson.
+<|assistant|>Propose modifying "mesonbuild/dependencies/base.py" in meson.

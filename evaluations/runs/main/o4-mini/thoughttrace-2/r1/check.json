@@ -1,0 +1,192 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "Plan a travel trip",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults",
+    "propose"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "Ask questions to gather trip requirements including destination, dates, party size, travel style, and budget",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "requirement",
+    "group_size",
+    "propose"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "action",
+   "text": "Travel to Rome",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "Italy",
+   "status": "covered",
+   "matched_symbols": [
+    "country"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "temporal",
+   "text": "Early July of the current year",
+   "status": "covered",
+   "matched_symbols": [
+    "unit_week",
+    "time_point",
+    "duration"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Parents as travel companions",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "Adventure travel style and vibe",
+   "status": "covered",
+   "matched_symbols": [
+    "role_adults"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "Estimated budget of 5000 dollars per person",
+   "status": "covered",
+   "matched_symbols": [
+    "currency",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "temporal",
+   "text": "Maximum duration of 2 weeks",
+   "status": "covered",
+   "matched_symbols": [
+    "unit_week",
+    "duration"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "speech_act",
+   "text": "Propose a 14-day adventure itinerary combining Rome and Tuscany for three adults within budget",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "role_adults",
+    "ask"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "reasoning",
+   "text": "Recommend Tuscany over Amalfi due to July heat, crowds, expense, and better suited adventure activities for parents",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "Suggest adventure activities in Rome including e-biking, Tiber kayaking, and underground tours",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "Suggest adventure activities in Tuscany including hot air ballooning, ATV tours, hiking, and truffle hunting",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Provide an itemized cost estimate totaling approximately 3900 USD per person",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Recommend accommodations in Rome and Tuscany",
+   "status": "unresolved",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "speech_act",
+   "text": "Offer next step options to finalize dates, customize activities, or switch destination to Amalfi Coast",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "activity"
+   ]
+  }
+ ],
+ "unresolved": [
+  "n14",
+  "n15"
+ ],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "country",
+  "currency",
+  "duration",
+  "group_size",
+  "measure",
+  "propose",
+  "requirement",
+  "role_adults",
+  "target",
+  "time_point",
+  "unit_week"
+ ],
+ "unknown_symbols_in_head_position": [
+  "itinerary_summary"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

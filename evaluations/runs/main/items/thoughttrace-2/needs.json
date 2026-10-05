@@ -1,0 +1,2228 @@
+{
+ "translator_id": "thoughttrace-2",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "Plan a travel trip",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "planning a trip",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.8134,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.7937,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.7232,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.7133,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.6916,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.6675,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.6265,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.6059,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.5305,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.466,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.4358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/proposed_policy",
+     "symbol": "proposed_policy",
+     "kind": "claim_relation",
+     "score": 0.4325,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Ask questions to gather trip requirements including destination, dates, party size, travel style, and budget",
+   "source": [
+    "t2:s2",
+    "t2:s5",
+    "t2:s7",
+    "t2:s9",
+    "t2:s11",
+    "t2:s13"
+   ],
+   "id": "n2",
+   "context": "**Hell yeah, let's plan this trip!** 🔥 First, tell me a bit more so I can help you properly: ### Quick Questions: 1. **Where do you want to go?** (or are you open to suggestions?) 2. **When are you thinking of traveling?** (dates or just a month/season) 3. **How many people?** (solo, couple, friends, family, etc.) 4. **What's your vibe?** (relaxing beach, adventure, foodie, party, culture, budget backpacking, luxury, etc.) 5. **What's your rough budget?** (per person is best) ### Or just tell me whatever you already know, for example: - “I want to go to Japan in April for 10 days with my girlf",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7867,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/requirement",
+     "symbol": "requirement",
+     "kind": "constructor",
+     "score": 0.4804,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.476,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.4406,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3891,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3625,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.3577,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.3357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3307,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.3262,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/proposed_policy",
+     "symbol": "proposed_policy",
+     "kind": "claim_relation",
+     "score": 0.3203,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.292,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.2865,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Travel to Rome",
+   "source": [
+    "t3:s1"
+   ],
+   "id": "n3",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.7038,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.687,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.636,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.606,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.583,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.42,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.3832,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3668,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.3405,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3209,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Italy",
+   "source": [
+    "t3:s1"
+   ],
+   "group": "country",
+   "id": "n4",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.7747,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.7161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_es",
+     "symbol": "locale_es",
+     "kind": "value",
+     "score": 0.6573,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.6354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/russia",
+     "symbol": "russia",
+     "kind": "value",
+     "score": 0.6247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/ukraine",
+     "symbol": "ukraine",
+     "kind": "value",
+     "score": 0.5964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_pizza",
+     "symbol": "cuisine_pizza",
+     "kind": "value",
+     "score": 0.5923,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/eastern_cape",
+     "symbol": "eastern_cape",
+     "kind": "value",
+     "score": 0.587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.5836,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/country",
+     "symbol": "country",
+     "kind": "lexical_group",
+     "score": 0.55,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Early July of the current year",
+   "source": [
+    "t3:s1"
+   ],
+   "id": "n5",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.617,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.439,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4339,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4329,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.4106,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.4016,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.2579,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.2429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.2376,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.2352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.2267,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_horizon",
+     "symbol": "time_horizon",
+     "kind": "constructor",
+     "score": 0.2234,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Parents as travel companions",
+   "source": [
+    "t3:s1"
+   ],
+   "id": "n6",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.7574,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.738,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.7145,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.6571,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4574,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.3936,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3903,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.3781,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3735,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3678,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.3667,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Adventure travel style and vibe",
+   "source": [
+    "t3:s1"
+   ],
+   "id": "n7",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.6815,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.5127,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.4561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.4352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.4153,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3858,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_narrative",
+     "symbol": "style_narrative",
+     "kind": "value",
+     "score": 0.3852,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3617,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3588,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.3578,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Estimated budget of 5000 dollars per person",
+   "source": [
+    "t3:s2"
+   ],
+   "group": "currency",
+   "id": "n8",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6567,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/currency",
+     "symbol": "currency",
+     "kind": "lexical_group",
+     "score": 0.5866,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rate",
+     "symbol": "rate",
+     "kind": "constructor",
+     "score": 0.576,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_kilometer",
+     "symbol": "unit_kilometer",
+     "kind": "value",
+     "score": 0.4162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_liter",
+     "symbol": "unit_liter",
+     "kind": "value",
+     "score": 0.3954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.3791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_percent",
+     "symbol": "unit_percent",
+     "kind": "value",
+     "score": 0.3692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.3681,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_gram",
+     "symbol": "unit_gram",
+     "kind": "value",
+     "score": 0.3623,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.3587,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/requirement",
+     "symbol": "requirement",
+     "kind": "constructor",
+     "score": 0.3534,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "Maximum duration of 2 weeks",
+   "source": [
+    "t3:s2"
+   ],
+   "id": "n9",
+   "context": "I want to go to Rome in Italy, around early july this year, I want to travel with my parents.My vibe is mainly adventure. My estimate budget for each person is $5000 , and we want o stay for 2 weeks maximum",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.6682,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.6587,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.4686,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.4551,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_minute",
+     "symbol": "unit_minute",
+     "kind": "value",
+     "score": 0.4514,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4446,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/duration-unit-value",
+     "symbol": "rule_category_duration_unit_value",
+     "kind": "category_rule",
+     "score": 0.4174,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.4149,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_second",
+     "symbol": "unit_second",
+     "kind": "value",
+     "score": 0.414,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/prep_time",
+     "symbol": "prep_time",
+     "kind": "claim_relation",
+     "score": 0.3675,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.3003,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/at_most",
+     "symbol": "at_most",
+     "kind": "constructor",
+     "score": 0.2872,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_response_time",
+     "symbol": "metric_response_time",
+     "kind": "value",
+     "score": 0.282,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.2596,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Propose a 14-day adventure itinerary combining Rome and Tuscany for three adults within budget",
+   "source": [
+    "t4:s1",
+    "t4:s3",
+    "t4:s4",
+    "t4:s5",
+    "t4:s6",
+    "t4:s7",
+    "t4:s8"
+   ],
+   "id": "n10",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.7199,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6799,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.644,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.626,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4636,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.4347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4064,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3946,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3935,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3883,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.3866,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.3802,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.3634,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.3585,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.3463,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Recommend Tuscany over Amalfi due to July heat, crowds, expense, and better suited adventure activities for parents",
+   "source": [
+    "t4:s14",
+    "t4:s15",
+    "t4:s16"
+   ],
+   "id": "n11",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6868,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.5802,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.4815,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.4555,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4519,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.4292,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.4166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4131,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_kyoto_itinerary",
+     "symbol": "content_kyoto_itinerary",
+     "kind": "composite",
+     "score": 0.3827,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3778,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3638,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3589,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3557,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3501,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.3027,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Suggest adventure activities in Rome including e-biking, Tiber kayaking, and underground tours",
+   "source": [
+    "t4:s20",
+    "t4:s21",
+    "t4:s22",
+    "t4:s23",
+    "t4:s24",
+    "t4:s25"
+   ],
+   "id": "n12",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.6592,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/content_decision_study_sgi_japan",
+     "symbol": "content_decision_study_sgi_japan",
+     "kind": "composite",
+     "score": 0.5853,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4725,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4667,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.436,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.4207,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.3988,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3967,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.3877,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.3852,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3785,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Suggest adventure activities in Tuscany including hot air ballooning, ATV tours, hiking, and truffle hunting",
+   "source": [
+    "t4:s28",
+    "t4:s29",
+    "t4:s30",
+    "t4:s31",
+    "t4:s32",
+    "t4:s33"
+   ],
+   "id": "n13",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.6564,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.6486,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.6196,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4821,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4765,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4722,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.427,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.4115,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.3999,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_plan",
+     "symbol": "art_plan",
+     "kind": "value",
+     "score": 0.396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.3882,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_kyoto_itinerary",
+     "symbol": "content_kyoto_itinerary",
+     "kind": "composite",
+     "score": 0.3837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.383,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Provide an itemized cost estimate totaling approximately 3900 USD per person",
+   "source": [
+    "t4:s36",
+    "t4:s37",
+    "t4:s38",
+    "t4:s39",
+    "t4:s40",
+    "t4:s41",
+    "t4:s42",
+    "t4:s43",
+    "t4:s44",
+    "t4:s45"
+   ],
+   "id": "n14",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6214,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/provides",
+     "symbol": "provides",
+     "kind": "claim_relation",
+     "score": 0.602,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/minimum_per_period",
+     "symbol": "minimum_per_period",
+     "kind": "constructor",
+     "score": 0.5993,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.5795,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_kilometer",
+     "symbol": "unit_kilometer",
+     "kind": "value",
+     "score": 0.3508,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.3463,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.3429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.341,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3384,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/ongoing",
+     "symbol": "ongoing",
+     "kind": "claim_relation",
+     "score": 0.3362,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_year",
+     "symbol": "unit_year",
+     "kind": "value",
+     "score": 0.3358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3295,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Recommend accommodations in Rome and Tuscany",
+   "source": [
+    "t4:s47",
+    "t4:s48",
+    "t4:s49",
+    "t4:s50",
+    "t4:s51",
+    "t4:s52",
+    "t4:s53"
+   ],
+   "id": "n15",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6305,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_italian",
+     "symbol": "cuisine_italian",
+     "kind": "value",
+     "score": 0.465,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4366,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/cuisine-value/cuisine_mediterranean",
+     "symbol": "cuisine_mediterranean",
+     "kind": "value",
+     "score": 0.43,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/aesthetic",
+     "symbol": "aesthetic",
+     "kind": "constructor",
+     "score": 0.3783,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/reservation-status-value/reservation_available",
+     "symbol": "reservation_available",
+     "kind": "value",
+     "score": 0.3613,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.3525,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3507,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_es",
+     "symbol": "locale_es",
+     "kind": "value",
+     "score": 0.3486,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.346,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/night_stand",
+     "symbol": "night_stand",
+     "kind": "value",
+     "score": 0.3449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3434,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_fr",
+     "symbol": "locale_fr",
+     "kind": "value",
+     "score": 0.3428,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Offer next step options to finalize dates, customize activities, or switch destination to Amalfi Coast",
+   "source": [
+    "t4:s54",
+    "t4:s56",
+    "t4:s58",
+    "t4:s59",
+    "t4:s60",
+    "t4:s62",
+    "t4:s63"
+   ],
+   "id": "n16",
+   "context": "**Perfect!** Here's a solid, adventure-focused 2-week Rome + Italy plan for you and your parents in early July 2025. ### Trip Summary - **Destination**: Rome + 3–4 day side adventure (Tuscany or Amalfi Coast) - **Dates**: Flexible between July 1 – July 15 (I recommend **July 3 – July 17** to avoid the worst heat and crowds) - **Duration**: 13 nights / 14 days - **Travelers**: You + parents (3 adults) - **Budget per person**: $5,000 USD (very comfortable — we’ll stay ~$3,800–$4,200 per person, leaving buffer) - **Vibe**: Adventure + memorable experiences (not just museums and churches) --- ### ",
+   "candidates": [
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.636,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.6208,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.5451,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4521,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/works_best",
+     "symbol": "works_best",
+     "kind": "claim_relation",
+     "score": 0.4113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/content_kyoto_itinerary",
+     "symbol": "content_kyoto_itinerary",
+     "kind": "composite",
+     "score": 0.3971,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.388,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3826,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.3698,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3668,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3656,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/activity",
+     "symbol": "activity",
+     "kind": "constructor",
+     "score": 0.3169,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  }
+ ]
+}

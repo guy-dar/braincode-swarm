@@ -1,0 +1,30 @@
+t1:s1 [USER] Incorrect drawing of composite gates with qubits and classical bits when using text drawer
+t1:s2 [USER] <!-- ⚠️ If you do not respect this template, your issue will be closed -->
+t1:s3 [USER] <!-- ⚠️ Make sure to browse the opened and closed issues -->
+t1:s4 [USER] ### Information
+t1:s5 [USER] - **Qiskit Terra version**: 0.18.0.dev0+2ecf45d
+t1:s6 [USER] - **Python version**: 3.7
+t1:s7 [USER] ### What is the current behavior?
+t1:s8 [USER] Text drawer incorrectly draws composite gates that contain both qubits and classical bits.
+t1:s9 [USER] This error seems to arise only when appending the composite gate and the qreg_list or the creg_list provided to the qc.append() is not in ascending order.
+t1:s10 [USER] For instance consider the following code:
+t1:s11 [USER] ```python
+t1:s12 [USER] from qiskit import QuantumCircuit
+t1:s13 [USER] inst = QuantumCircuit(3, 2, name='inst').to_instruction()
+t1:s14 [USER] inst2 = QuantumCircuit(3,name='inst2').to_instruction()
+t1:s15 [USER] qc = QuantumCircuit(4,2)
+t1:s16 [USER] qc.append(inst,[2,1,0],[0,1])
+t1:s17 [USER] qc.append(inst,[0,1,2],[1,0])
+t1:s18 [USER] qc.append(inst2,[2,1,0])
+t1:s19 [USER] qc.draw()
+t1:s20 [USER] ```
+t1:s21 [USER] The text circuit drawn is as below:
+t1:s22 [USER] ![qiskit_text_error](https://user-images.githubusercontent.com/51048173/113936418-5b64cd00-9815-11eb-9ce2-7ac910e99d1d.png)
+t1:s23 [USER] Also, the numbering of the active wires is incorrect.
+t1:s24 [USER] ### Suggested solutions
+t1:s25 [USER] The error seems to be caused due to drawing the gate components in the incorrect ordering.
+t1:s26 [USER] Have a look at the following function will help.
+t1:s27 [USER] https://github.com/Qiskit/qiskit-terra/blob/2ecf45d90d47b430493e218b218d6639cabf7ff1/qiskit/visualization/text.py#L1211
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify qiskit/visualization/text.py

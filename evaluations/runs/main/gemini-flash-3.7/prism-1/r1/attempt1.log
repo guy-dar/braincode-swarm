@@ -1,0 +1,56 @@
+    1.9s turn 1
+   16.0s   model reply: in 27759 + cached 0, out 488 (+437 reasoning)
+   16.0s   tool bash: node /kit/rag.mjs search "work" "working hours" "flexible" "leisure" "hobby" "stress" "multiple jobs" "part-time"
+   16.1s turn 2
+   28.9s   model reply: in 6165 + cached 24373, out 626 (+556 reasoning)
+   28.9s   tool bash: node /kit/rag.mjs widen "morale productivity work-life balance" --kind claim
+node /kit/rag.mjs widen "employee workers company job" --kind object
+node /kit/rag.
+   29.4s turn 3
+   39.4s   model reply: in 6050 + cached 28444, out 248 (+199 reasoning)
+   39.4s   tool bash: node /kit/rag.mjs entry activity subject user_practice ongoing enables causes leads_to meets_needs important occurred_recently supports contrast at_least ask co
+   39.5s turn 4
+   47.8s   model reply: in 4266 + cached 32504, out 91 (+50 reasoning)
+   47.8s   tool bash: node /kit/rag.mjs entry topic_school_work_routine personal_values japanese_government requirement duration ask confirm respond inform
+   47.9s turn 5
+   63.7s   model reply: in 5239 + cached 32492, out 2770 (+2726 reasoning)
+   63.7s   tool bash: node /kit/rag.mjs search "balance" "morale" "productivity" "attitude" "motivated_by" "has_goal"
+   63.9s turn 6
+   71.6s   model reply: in 42247 + cached 0, out 120 (+91 reasoning)
+   71.6s   tool bash: node /kit/rag.mjs entry attitude motivated_by has_goal
+   71.7s turn 7
+   78.9s   model reply: in 2036 + cached 40613, out 122 (+64 reasoning)
+   78.9s   tool bash: grep -iE "practice|worker|employ|policy|job|income|schedule|time|free|balance|morale|productiv|stress|custom|problem|issue" /reference/glossary.md
+   78.9s turn 8
+   85.7s   model reply: in 3879 + cached 40607, out 89 (+47 reasoning)
+   85.7s   tool bash: grep -E "\| (constructor|composite|claim_relation|link|speech_act) \|" /reference/glossary.md
+   85.8s turn 9
+   89.8s   model reply: in 5818 + cached 40603, out 54 (+20 reasoning)
+   89.8s   tool bash: grep -E "\| (claim_relation|link) \|" /reference/glossary.md
+   89.8s turn 10
+   96.3s   model reply: in 3756 + cached 44659, out 58 (+17 reasoning)
+   96.3s   tool bash: grep -E "\| (claim_relation|link) \|" /reference/glossary.md | tail -n 30
+   96.3s turn 11
+  100.2s   model reply: in 5539 + cached 44653, out 77 (+53 reasoning)
+  100.2s   tool bash: node /kit/rag.mjs check --help
+  100.3s turn 12
+  125.9s   model reply: in 5650 + cached 44635, out 3390 (+3362 reasoning)
+  125.9s   tool bash: node -e '
+console.log(process.cwd());
+'
+  126.0s turn 13
+  143.2s   model reply: in 4976 + cached 48701, out 2685 (+1336 reasoning)
+  143.2s   tool write: /output/translation.md
+  143.2s turn 14
+  146.1s   model reply: in 3607 + cached 52759, out 53 (+23 reasoning)
+  146.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  146.2s turn 15
+  165.4s   model reply: in 4279 + cached 52744, out 3846 (+2478 reasoning)
+  165.4s   tool write: /output/translation.md
+  165.4s turn 16
+  170.1s   model reply: in 4061 + cached 56812, out 53 (+23 reasoning)
+  170.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  170.2s turn 17
+  173.7s   model reply: in 4739 + cached 56797, out 85 (+25 reasoning)
+  173.8s agent finished
+  173.8s agent finished

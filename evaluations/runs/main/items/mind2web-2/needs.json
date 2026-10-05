@@ -1,0 +1,2290 @@
+{
+ "translator_id": "mind2web-2",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "User requests to search and filter job postings",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Browse IT jobs and filter by Security clearance certificate",
+   "candidates": [
+    {
+     "id": "v19/support/request",
+     "symbol": "request",
+     "kind": "claim_relation",
+     "score": 0.7086,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5783,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.494,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4041,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3521,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3293,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.3162,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3115,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/acknowledge",
+     "symbol": "acknowledge",
+     "kind": "speech_act",
+     "score": 0.3101,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.2999,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.2994,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/offer",
+     "symbol": "offer",
+     "kind": "speech_act",
+     "score": 0.2968,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Browse or search job listings",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Browse IT jobs and filter by Security clearance certificate",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.7967,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.753,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.745,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.7228,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.6378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.5816,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.5759,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5203,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.43,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3938,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.3909,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "IT jobs",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Browse IT jobs and filter by Security clearance certificate",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6355,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_professional",
+     "symbol": "tone_professional",
+     "kind": "value",
+     "score": 0.4705,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.458,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.455,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_agent",
+     "symbol": "role_agent",
+     "kind": "value",
+     "score": 0.449,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.4351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_manager",
+     "symbol": "role_manager",
+     "kind": "value",
+     "score": 0.426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.4117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_support_team",
+     "symbol": "role_support_team",
+     "kind": "value",
+     "score": 0.4029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_ai_earning_methods",
+     "symbol": "topic_ai_earning_methods",
+     "kind": "composite",
+     "score": 0.3871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.3824,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3794,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Filter job search results",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Browse IT jobs and filter by Security clearance certificate",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.8083,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.8053,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.7785,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.676,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.662,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.661,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.6583,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6207,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.6155,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4336,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.4079,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3784,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Filter by Security clearance certificate",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n5",
+   "context": "Browse IT jobs and filter by Security clearance certificate",
+   "candidates": [
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.7347,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/examples-general",
+     "symbol": "rule_examples_general",
+     "kind": "rule",
+     "score": 0.7325,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.731,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.7284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.7231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.6645,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.6609,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.6594,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_bandages",
+     "symbol": "waterproof_bandages",
+     "kind": "value",
+     "score": 0.6476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.6434,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6374,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Type text into search input field",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n6",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.9156,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.6078,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.5737,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.5315,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.5291,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4822,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/send_message",
+     "symbol": "send_message",
+     "kind": "operation",
+     "score": 0.4484,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.3996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3842,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3759,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/reading-guide",
+     "symbol": "rule_reading_guide",
+     "kind": "rule",
+     "score": 0.3712,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.3635,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/content-value",
+     "symbol": "rule_category_content_value",
+     "kind": "category_rule",
+     "score": 0.3572,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Search input box for job title, skill, or company",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n7",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/cardboard_box",
+     "symbol": "cardboard_box",
+     "kind": "value",
+     "score": 0.7527,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5102,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.5073,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_assembly_tips",
+     "symbol": "entity_assembly_tips",
+     "kind": "value",
+     "score": 0.4913,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.4786,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4695,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4655,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.4634,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.4594,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_asc",
+     "symbol": "dir_asc",
+     "kind": "value",
+     "score": 0.4566,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.4521,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/search-value",
+     "symbol": "rule_category_search_value",
+     "kind": "category_rule",
+     "score": 0.4401,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Search string 'IT jobs'",
+   "source": [
+    "t2:s2"
+   ],
+   "id": "n8",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.7362,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.4901,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.4855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4818,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.4702,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_field",
+     "symbol": "rank_field",
+     "kind": "attribute",
+     "score": 0.4632,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4613,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4588,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.4558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4455,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click Search button",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n9",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.8088,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.6559,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.5828,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.5598,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.5595,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5506,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.5343,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5299,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4559,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4162,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3602,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3426,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Search button",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n10",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.7053,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5864,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.532,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.5086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4958,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.4728,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.47,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.4688,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.4686,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4672,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4666,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click Filters link",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n11",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7865,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.666,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.6452,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5691,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.488,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4438,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4159,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4082,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.3626,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3604,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.3534,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.3437,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Filters link",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n12",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.7952,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5554,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.5391,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.5379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.5252,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.479,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4756,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.4683,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/transform_remove_br",
+     "symbol": "transform_remove_br",
+     "kind": "composite",
+     "score": 0.4543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4537,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.4495,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.4406,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click Certificates filter category link",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n13",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.8077,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.7678,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7522,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.7315,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.6559,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.5612,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.5259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.4656,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.4587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4557,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.4284,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.4284,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.4272,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Certificates link",
+   "source": [
+    "t2:s8"
+   ],
+   "id": "n14",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.7166,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/egift_card",
+     "symbol": "egift_card",
+     "kind": "value",
+     "score": 0.7035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6955,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.6811,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.6806,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_sgi",
+     "symbol": "dom_sgi",
+     "kind": "value",
+     "score": 0.676,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.6698,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/credit_card",
+     "symbol": "credit_card",
+     "kind": "value",
+     "score": 0.6688,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.653,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/reservation_availability",
+     "symbol": "reservation_availability",
+     "kind": "attribute",
+     "score": 0.6518,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/examples-general",
+     "symbol": "rule_examples_general",
+     "kind": "rule",
+     "score": 0.6441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.6435,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click Security clearance option link",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n15",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7925,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5193,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4337,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4172,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3791,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.3735,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.3659,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3624,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.3291,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.329,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/allowed_to_enter",
+     "symbol": "allowed_to_enter",
+     "kind": "claim_relation",
+     "score": 0.3124,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Security clearance link",
+   "source": [
+    "t2:s10"
+   ],
+   "id": "n16",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.7338,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/safe",
+     "symbol": "safe",
+     "kind": "value",
+     "score": 0.4885,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/reservation-status-value",
+     "symbol": "rule_category_reservation_status_value",
+     "kind": "category_rule",
+     "score": 0.4707,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_bandages",
+     "symbol": "waterproof_bandages",
+     "kind": "value",
+     "score": 0.4699,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/waterproof_stickers",
+     "symbol": "waterproof_stickers",
+     "kind": "value",
+     "score": 0.468,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.4396,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/driver_license",
+     "symbol": "driver_license",
+     "kind": "value",
+     "score": 0.4353,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.434,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/allowed_to_enter",
+     "symbol": "allowed_to_enter",
+     "kind": "claim_relation",
+     "score": 0.4306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4291,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_gcloud_pubsub_subscription_py",
+     "symbol": "path_gcloud_pubsub_subscription_py",
+     "kind": "value",
+     "score": 0.4254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/trash_can",
+     "symbol": "trash_can",
+     "kind": "value",
+     "score": 0.4148,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Click Display Results button/span",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n17",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.8163,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.5677,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/performance_tracking",
+     "symbol": "performance_tracking",
+     "kind": "constructor",
+     "score": 0.5141,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.4633,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.4516,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.4421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.4073,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3911,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/presentation_slide",
+     "symbol": "presentation_slide",
+     "kind": "constructor",
+     "score": 0.382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/menu_works",
+     "symbol": "menu_works",
+     "kind": "claim_relation",
+     "score": 0.3746,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.3446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_markdown",
+     "symbol": "format_markdown",
+     "kind": "value",
+     "score": 0.3368,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Display Results element",
+   "source": [
+    "t2:s12"
+   ],
+   "id": "n18",
+   "context": "1. [searchbox]  Search by job title, skill or company -> TYPE: IT jobs 2. [button]  Search -> CLICK 3. [link]   Filters -> CLICK 4. [link]  Certificates -> CLICK 5. [link]  Security clearance -> CLICK 6. [span]  Display Results -> CLICK",
+   "candidates": [
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.7391,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_markdown",
+     "symbol": "format_markdown",
+     "kind": "value",
+     "score": 0.5142,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_structured_report",
+     "symbol": "format_structured_report",
+     "kind": "value",
+     "score": 0.5002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/desk",
+     "symbol": "desk",
+     "kind": "value",
+     "score": 0.4869,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_item",
+     "symbol": "unit_item",
+     "kind": "value",
+     "score": 0.4711,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_table",
+     "symbol": "format_table",
+     "kind": "value",
+     "score": 0.458,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.4363,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.43,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.4256,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/sequence",
+     "symbol": "sequence",
+     "kind": "constructor",
+     "score": 0.4208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/entity-name",
+     "symbol": "rule_category_entity_name",
+     "kind": "category_rule",
+     "score": 0.4147,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

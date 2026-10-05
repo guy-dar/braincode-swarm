@@ -1,0 +1,58 @@
+    2.0s turn 1
+    8.9s   model reply: in 25466 + cached 0, out 949 (+897 reasoning)
+    8.9s   tool bash: node /kit/rag.mjs entry chill heat cool slice pick_up place walk face turn remove state_sliced left right in_front_of right_of counter sink fridge knife lettuce
+    9.0s turn 2
+   12.0s   model reply: in 3775 + cached 24356, out 80 (+40 reasoning)
+   12.0s   tool bash: node /kit/rag.mjs search "turn left" "turn right" "turn around" "direction" "walk"
+   12.1s turn 3
+   15.7s   model reply: in 5376 + cached 24349, out 122 (+94 reasoning)
+   15.7s   tool bash: grep -i "turn(" /reference/glossary.md || true
+   15.8s turn 4
+   18.1s   model reply: in 5517 + cached 24333, out 50 (+22 reasoning)
+   18.1s   tool bash: grep -E "\| turn \|" /reference/glossary.md
+   18.2s turn 5
+   20.8s   model reply: in 5627 + cached 24316, out 72 (+43 reasoning)
+   20.8s   tool bash: grep -A 10 "example" /reference/glossary.md
+   20.8s turn 6
+   36.0s   model reply: in 3408 + cached 28366, out 3193 (+3161 reasoning)
+   36.0s   tool bash: node /kit/rag.mjs entry chill remove place slice pick_up face walk turn
+   36.1s turn 7
+   52.9s   model reply: in 7722 + cached 28385, out 2492 (+1532 reasoning)
+   52.9s   tool bash: cat << 'EOF' > /tmp/test_translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT FoodLabelLettuce
+TASK FoodLabelLettuce
+   53.0s turn 8
+   61.5s   model reply: in 6735 + cached 32448, out 1290 (+1267 reasoning)
+   61.5s   tool bash: node /kit/rag.mjs entry slice
+   61.6s turn 9
+   69.5s   model reply: in 4049 + cached 36496, out 499 (+472 reasoning)
+   69.5s   tool bash: node /kit/rag.mjs search "lettuce"
+   69.7s turn 10
+   87.5s   model reply: in 4864 + cached 36484, out 3838 (+2868 reasoning)
+   87.5s   tool bash: cat << 'EOF' > /tmp/test_translation2.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT ObjectLabelSink
+TASK ObjectLabelSink 
+   87.6s turn 11
+   96.6s   model reply: in 5211 + cached 40559, out 1603 (+640 reasoning)
+   96.6s   tool write: /output/translation.md
+   96.6s turn 12
+   99.2s   model reply: in 2772 + cached 44605, out 56 (+26 reasoning)
+   99.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   99.3s turn 13
+  102.6s   model reply: in 3426 + cached 44591, out 186 (+23 reasoning)
+  102.6s agent finished
+  102.6s agent finished

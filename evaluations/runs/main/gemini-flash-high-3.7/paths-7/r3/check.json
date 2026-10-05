@@ -1,0 +1,285 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "greet the assistant",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "greeting",
+    "offer",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "greet the user",
+   "status": "covered",
+   "matched_symbols": [
+    "greeting",
+    "role_friend",
+    "role_user",
+    "offer",
+    "ask",
+    "respond"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "speech_act",
+   "text": "offer assistance",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "offer_help",
+    "ask",
+    "respond"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "action",
+   "text": "write dialogue for a novel",
+   "status": "covered",
+   "matched_symbols": [
+    "dialogue",
+    "offer_help",
+    "greeting",
+    "style_narrative",
+    "respond",
+    "ask",
+    "tone_silly",
+    "art_story"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "novel about a friendship between two people",
+   "status": "covered",
+   "matched_symbols": [
+    "role_friend",
+    "style_narrative",
+    "art_story",
+    "interpersonal_stance",
+    "role_agent"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "setting is an online conversation between people who just met",
+   "status": "covered",
+   "matched_symbols": [
+    "dialogue",
+    "offer_help",
+    "interpersonal_stance",
+    "role_friend",
+    "role_user",
+    "offer"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "negation",
+   "text": "do not write in third person narrative",
+   "status": "covered",
+   "matched_symbols": [
+    "style_narrative",
+    "exclude",
+    "art_story",
+    "respond",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "roleplay directly responding to the conversation partner in second person",
+   "status": "covered",
+   "matched_symbols": [
+    "respond",
+    "offer",
+    "interpersonal_stance",
+    "role_friend",
+    "role_agent",
+    "role_user",
+    "dialogue",
+    "offer_help"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "tone should be casual but thoughtful",
+   "status": "covered",
+   "matched_symbols": [
+    "tone_casual",
+    "tone_silly",
+    "dialogue",
+    "greeting"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "constraint",
+   "text": "respond to the other person saying 'You are so tall I am 5\\'5\"'",
+   "status": "covered",
+   "matched_symbols": [
+    "size_tall",
+    "respond",
+    "role_agent",
+    "greeting",
+    "tone_silly"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "speech_act",
+   "text": "respond casually complimenting 5'5\" height and asking about online friendships",
+   "status": "covered",
+   "matched_symbols": [
+    "respond",
+    "ask",
+    "tone_casual",
+    "size_tall",
+    "role_friend",
+    "offer"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "write dialogue for the novel with updated constraints",
+   "status": "covered",
+   "matched_symbols": [
+    "dialogue",
+    "offer_help",
+    "style_narrative",
+    "respond",
+    "ask",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "negation",
+   "text": "do not mention in the dialogue that the conversation is online",
+   "status": "covered",
+   "matched_symbols": [
+    "dialogue",
+    "offer",
+    "offer_help",
+    "ask",
+    "respond",
+    "greeting"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "character's own height was stated as 6'5\"",
+   "status": "covered",
+   "matched_symbols": [
+    "size_tall",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "speech_act",
+   "text": "reply in character acknowledging 6'5\" height and teasing advantages of 5'5\"",
+   "status": "covered",
+   "matched_symbols": [
+    "size_tall",
+    "respond",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "write dialogue for the novel with character relationship dynamic",
+   "status": "covered",
+   "matched_symbols": [
+    "dialogue",
+    "interpersonal_stance",
+    "character_trait",
+    "style_narrative",
+    "offer_help",
+    "role_agent",
+    "role_friend",
+    "art_story"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "constraint",
+   "text": "the conversation partner is a girl with slight romantic interest",
+   "status": "covered",
+   "matched_symbols": [
+    "offer",
+    "dialogue",
+    "interpersonal_stance",
+    "offer_help",
+    "role_friend",
+    "tone_silly"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "speech_act",
+   "text": "reply playfully flirty about height difference and meeting in person",
+   "status": "covered",
+   "matched_symbols": [
+    "size_tall",
+    "tone_silly",
+    "respond",
+    "ask",
+    "greeting",
+    "offer"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "art_story",
+  "ask",
+  "char_female",
+  "character_trait",
+  "dialogue",
+  "exclude",
+  "greeting",
+  "interpersonal_stance",
+  "offer",
+  "offer_help",
+  "requirement",
+  "respond",
+  "role_agent",
+  "role_friend",
+  "role_user",
+  "size_tall",
+  "style_narrative",
+  "target",
+  "tone_casual",
+  "tone_silly"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

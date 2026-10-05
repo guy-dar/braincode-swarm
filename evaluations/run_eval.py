@@ -15,6 +15,7 @@ CLAUDE_API_KEY; OpenAI from OPENAI_API_KEY or OPENAI_API_KEY_PERSONAL. Keys
 reach containers by name only (`docker run -e NAME`), never as values.
 """
 import argparse
+import itertools
 import json
 import os
 import random
@@ -41,12 +42,35 @@ RUNS_DIR = EVAL_DIR / "runs"
 MODELS_PATH = EVAL_DIR / "models.json"
 RAG_PORT = int(os.environ.get("EVAL_RAG_PORT", "8775"))
 THROTTLE_PORT = os.environ.setdefault("THROTTLE_PORT", "8786")
-ROUTE_CONCURRENCY = {"proxy": int(os.environ.get("EVAL_PROXY_CONCURRENCY", "6")),
+# Setup v2 (from the 216th Gemini run on): proxy concurrency 6 -> 4 (fewer
+# throttle cooldowns), per-attempt timeout 1200 -> 2400 s (high-effort
+# SWE-bench runs were killed mid-work), and the translator prompt asks for
+# batched lookups and attaches examples.jsonl. Every result.json records the
+# setup it ran under (`setup`).
+SETUP_VERSION = "v2"
+ROUTE_CONCURRENCY = {"proxy": int(os.environ.get("EVAL_PROXY_CONCURRENCY", "4")),
                      "anthropic": int(os.environ.get("EVAL_ANTHROPIC_CONCURRENCY", "3")),
                      "openai": int(os.environ.get("EVAL_OPENAI_CONCURRENCY", "3"))}
 PASSTHROUGH_KEYS = ("ANTHROPIC_API_KEY", "OPENAI_API_KEY")
-TIMEOUT_S = int(os.environ.get("EVAL_TIMEOUT", "1200"))
+TIMEOUT_S = int(os.environ.get("EVAL_TIMEOUT", "2400"))
 _cost_lock = threading.Lock()
+# Evaluation containers are named <prefix><model>-...; a process cleans up only
+# its own models' containers, so several evaluation processes (and the swarm
+# loop, whose containers are swarm-tr-/swarm-mig-) can run side by side.
+CONTAINER_PREFIX = "swarm-ev-"
+
+
+def kill_model_containers(model_names) -> int:
+    import subprocess
+    try:
+        names = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True,
+                               timeout=60).stdout.split()
+    except Exception:
+        return 0
+    mine = [n for n in names if any(n.startswith(f"{CONTAINER_PREFIX}{m}-") for m in model_names)]
+    if mine:
+        subprocess.run(["docker", "kill", *mine], capture_output=True, text=True, timeout=120)
+    return len(mine)
 
 
 def log(msg: str) -> None:
@@ -109,8 +133,9 @@ def price_of(model: dict, usage: dict):
     p = model.get("price")
     if not p or not usage:
         return None
-    return round((usage.get("input", 0) * p[0] + usage.get("cacheRead", 0) * p[1] + usage.get("output", 0) * p[2])
-                 / 1e6, 4)
+    write = p[3] if len(p) > 3 else p[0]   # cache writes; billed only where the provider reports them
+    return round((usage.get("input", 0) * p[0] + usage.get("cacheRead", 0) * p[1] + usage.get("cacheWrite", 0) * write
+                  + usage.get("output", 0) * p[2]) / 1e6, 4)
 
 
 # ---------------------------------------------------------------------- services
@@ -119,9 +144,12 @@ class Services:
     """The frozen reference snapshot's RAG server (for the kit inside
     containers) and the model-proxy throttle, for the duration of a command."""
 
-    def __init__(self, run: str, need_rag: bool = True):
+    def __init__(self, run: str, need_rag: bool = True, models=()):
         self.run = run
         self.need_rag = need_rag
+        self.models = [m["name"] if isinstance(m, dict) else m for m in models]
+        # the proxy throttle only when a proxy model runs (or for setup's need extraction)
+        self.routes = {m["route"] for m in models if isinstance(m, dict)}
         self.retriever = self.server = self.throttle = None
 
     def __enter__(self):
@@ -133,8 +161,9 @@ class Services:
         if self.need_rag:
             self.server = RagServer(self.retriever, "0.0.0.0", RAG_PORT).start()
             log(f"eval: RAG server on :{RAG_PORT} ({len(self.retriever.index.records)} records, frozen snapshot)")
-        cfg = loop.load_loop_config()
-        self.throttle = loop.start_throttle(cfg)
+        if not self.routes or "proxy" in self.routes:
+            cfg = loop.load_loop_config()
+            self.throttle = loop.start_throttle(cfg)
         return self
 
     def __exit__(self, *exc):
@@ -142,7 +171,7 @@ class Services:
             self.throttle.stop()
         if self.server is not None:
             self.server.stop()
-        loop.kill_loop_containers()
+        kill_model_containers(self.models)
 
 
 # ---------------------------------------------------------------------- setup
@@ -204,7 +233,7 @@ def translate_one(model: dict, item: dict, k: int, run: str, image: str, retriev
     out_dir = d / model["name"] / item["item_key"] / f"r{k}"
     result_path = out_dir / "result.json"
     if result_path.exists():
-        return json.loads(result_path.read_text(encoding="utf-8"))
+        return {**json.loads(result_path.read_text(encoding="utf-8")), "already_done": True}
     with _cost_lock:
         if budget["spent"].get(model["name"], 0) >= budget["max_usd"]:
             return {"status": "skipped", "detail": "model budget reached"}
@@ -229,7 +258,7 @@ def translate_one(model: dict, item: dict, k: int, run: str, image: str, retriev
         prompt_path = work / f"prompt{attempt}.md"
         prompt_path.write_text((tb.CONTINUE_PROMPT.format(problem=last_problem or "interrupted") if resume else prompt)
                                + feedback, encoding="utf-8")
-        container = f"swarm-tr-eval-{model['name']}-{tid}-{attempt}-{random.randint(1000, 9999)}"
+        container = f"{CONTAINER_PREFIX}{model['name']}-{tid}-{attempt}-{random.randint(1000, 9999)}"
         env = {"TRANSLATOR_ID": tid, "DATASET": item["dataset"], "BATCH_ID": "eval", "RAG_PORT": RAG_PORT,
                "PI_JSON": "1", "PI_SESSION_DIR": "/session", **tb.CONTEXT_LIMITS_ENV}
         if resume:
@@ -278,12 +307,42 @@ def translate_one(model: dict, item: dict, k: int, run: str, image: str, retriev
     cost = price_of(model, usage)
     res = {"model": model["name"], "item": item["item_key"], "dataset": item["dataset"], "run": k,
            "status": status, "problem": last_problem if status == "error" else None, "attempts": attempt,
-           "duration_s": round(time.monotonic() - started, 1), "usage": usage, "cost_usd": cost}
+           "duration_s": round(time.monotonic() - started, 1), "usage": usage, "cost_usd": cost,
+           "setup": SETUP_VERSION, "timeout_s": TIMEOUT_S}
+    if status == "failed":
+        res["failure"] = failure_summary(out_dir)
     result_path.write_text(json.dumps(res, indent=1), encoding="utf-8")
     if cost:
         with _cost_lock:
             budget["spent"][model["name"]] = budget["spent"].get(model["name"], 0) + cost
     return res
+
+
+def failure_summary(out_dir: Path) -> dict:
+    """What a failed translation says the glossary lacks: the terms its
+    suggestions would add (symbol, dimension) and refine (target), with counts,
+    from suggestions.md (the translator's own failure documentation)."""
+    sugg = out_dir / "suggestions.md"
+    blocks = lf.parse_suggestions(sugg.read_text(encoding="utf-8")) if sugg.exists() else []
+    adds = [{"term": b["value"], "dimension": b["dimension"]} for b in blocks if b["type"] == "add"]
+    refines = [{"target": b["value"], "dimension": b["dimension"]} for b in blocks if b["type"] == "refine"]
+    return {"add_count": len({a["term"] for a in adds}), "refine_count": len({r["target"] for r in refines}),
+            "would_add": adds, "would_refine": refines,
+            "documented": bool(blocks), "suggestions_file": "suggestions.md" if sugg.exists() else None}
+
+
+def cmd_document(args):
+    """Add the failure summary to every failed run's result.json (backfill)."""
+    n = 0
+    for p in run_dir(args.run).glob("*/*/r*/result.json"):
+        r = json.loads(p.read_text(encoding="utf-8"))
+        if r.get("status") == "failed":
+            r["failure"] = failure_summary(p.parent)
+            p.write_text(json.dumps(r, indent=1), encoding="utf-8")
+            n += 1
+            if not r["failure"]["documented"]:
+                log(f"eval: {p.parent} failed without documented suggestions")
+    log(f"eval: documented {n} failed runs")
 
 
 def _image() -> str:
@@ -323,11 +382,17 @@ def cmd_translate(args):
         items = [i for i in items if i["item_key"] in wanted]
     image = _image()
     budget = {"max_usd": args.max_usd, "spent": spent_so_far(args.run)}
-    jobs = [(m, it, k) for m in models for it in model_items(m, items) for k in range(1, args.runs + 1)]
-    log(f"eval: {len(jobs)} translator runs: " + ", ".join(
+    # Interleaved across models (round-robin), so every route's slots fill at
+    # once: model-by-model order left the pool's threads all waiting on the
+    # first model's route while the other routes sat idle.
+    per_model = [[(m, it, k) for it in model_items(m, items) for k in range(1, args.runs + 1)] for m in models]
+    jobs = [j for group in itertools.zip_longest(*per_model) for j in group if j is not None]
+    done = sum((run_dir(args.run) / m["name"] / it["item_key"] / f"r{k}" / "result.json").exists() for m, it, k in jobs)
+    log(f"eval: {len(jobs)} translator runs ({done} already done, {len(jobs) - done} to run; setup {SETUP_VERSION}, "
+        f"timeout {TIMEOUT_S}s, proxy concurrency {ROUTE_CONCURRENCY['proxy']}): " + ", ".join(
         f"{m['name']} {sum(j[0] is m for j in jobs)}" for m in models))
     sems = _route_semaphores()
-    with Services(args.run) as svc:
+    with Services(args.run, models=models) as svc:
         workers = sum(ROUTE_CONCURRENCY.values())
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = {pool.submit(translate_one, m, it, k, args.run, image, svc.retriever, budget, sems): (m, it, k)
@@ -340,6 +405,8 @@ def cmd_translate(args):
                     import traceback
                     traceback.print_exc()
                     r = {"status": "error", "problem": str(e)}
+                if r.get("already_done"):
+                    continue   # finished in an earlier session: not logged again
                 log(f"eval: {m['name']} {it['item_key']} r{k} -> {r.get('status')}"
                     + (f" (${r['cost_usd']:.3f}, {r.get('duration_s', 0):.0f}s)" if r.get("cost_usd") else "")
                     + (f" [{str(r.get('problem'))[:160]}]" if r.get("status") == "error" else ""))
@@ -375,7 +442,7 @@ def backtranslate_one(model: dict, fwd_dir: Path, item: dict, run: str, image: s
                               {"DATASET": item["dataset"]})
     (work / "prompt.md").write_text(prompt, encoding="utf-8")
     tid = f"{item['item_key']}-{fwd_dir.name}-back"
-    container = f"swarm-tr-eval-{model['name']}-{tid}-{random.randint(1000, 9999)}"
+    container = f"{CONTAINER_PREFIX}{model['name']}-{tid}-{random.randint(1000, 9999)}"
     env = {"RAG_PORT": RAG_PORT, "PI_JSON": "1", "PI_SESSION_DIR": "/session", **tb.CONTEXT_LIMITS_ENV}
     cmd = utils.build_docker_cmd(
         None, None, model["pi_model"], d / "reference", work / "trajectory.txt", work / "prompt.md", work / "out",
@@ -404,16 +471,21 @@ def cmd_backtranslate(args):
     models = [m for m in select_models(args.models, available) if m.get("expressivity")]
     items = {i["item_key"]: i for i in items_of(args.run)}
     image = _image()
+    # One back-translation per model and item: its first forward run with a
+    # usable translation (r1, else r2, else r3).
     jobs = []
     for m in models:
-        for res in sorted(run_dir(args.run).glob(f"{m['name']}/*/r*/result.json")):
-            r = json.loads(res.read_text(encoding="utf-8"))
-            if r["status"] in ("success", "failed") and (res.parent / "translation.md").exists():
-                if not args.items or r["item"] in args.items.split(","):
-                    jobs.append((m, res.parent, items[r["item"]]))
-    log(f"eval: {len(jobs)} back-translations")
+        for item_key in sorted(items):
+            if args.items and item_key not in args.items.split(","):
+                continue
+            for res in sorted(run_dir(args.run).glob(f"{m['name']}/{item_key}/r*/result.json")):
+                r = json.loads(res.read_text(encoding="utf-8"))
+                if r["status"] in ("success", "failed") and (res.parent / "translation.md").exists():
+                    jobs.append((m, res.parent, items[item_key]))
+                    break
+    log(f"eval: {len(jobs)} back-translations (one per model and item)")
     sems = _route_semaphores()
-    with Services(args.run) as svc:
+    with Services(args.run, models=models) as svc:
         with ThreadPoolExecutor(max_workers=sum(ROUTE_CONCURRENCY.values())) as pool:
             futures = {pool.submit(backtranslate_one, m, fd, it, args.run, image, svc.retriever, sems): (m, fd)
                        for m, fd, it in jobs}
@@ -449,7 +521,7 @@ def cmd_status(args):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["setup", "translate", "backtranslate", "status"])
+    p.add_argument("command", choices=["setup", "translate", "backtranslate", "status", "document"])
     p.add_argument("--run", default="main")
     p.add_argument("--models", default="all", help="comma-separated model names from models.json, or all")
     p.add_argument("--items", default="", help="comma-separated item keys (default: the run's items)")
@@ -457,7 +529,7 @@ def main(argv=None):
     p.add_argument("--max-usd", type=float, default=150.0, help="per-model cost cap (priced models)")
     args = p.parse_args(argv)
     {"setup": cmd_setup, "translate": cmd_translate, "backtranslate": cmd_backtranslate,
-     "status": cmd_status}[args.command](args)
+     "status": cmd_status, "document": cmd_document}[args.command](args)
 
 
 if __name__ == "__main__":

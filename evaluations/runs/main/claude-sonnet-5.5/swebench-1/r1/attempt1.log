@@ -1,0 +1,20 @@
+    5.5s turn 1
+   39.3s   model reply: in 4 + cached 2083, out 5097 (+2214 reasoning)
+   39.3s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   39.5s turn 2
+   41.9s   model reply: in 2 + cached 47654, out 191 (+39 reasoning)
+   41.9s   tool bash: cd /output && sed -i '/leads_to_2 : CLAIM/d; s/; leads_to_2 is a placeholder-like self-loop and should be reviewed//' translation.md && node /kit/rag.mjs check 
+   42.0s turn 3
+   45.6s   model reply: in 2 + cached 53497, out 356 (+0 reasoning)
+   45.6s agent finished
+   45.6s agent finished

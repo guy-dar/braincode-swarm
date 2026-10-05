@@ -1,0 +1,20 @@
+    1.9s turn 1
+   45.2s   model reply: in 4 + cached 2083, out 7375 (+1408 reasoning)
+   45.2s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   45.4s turn 2
+   50.3s   model reply: in 2 + cached 52771, out 298 (+144 reasoning)
+   50.3s   tool bash: cd /output && sed -i 's/^- Check: pending/- Check: `rag check` reported 0 unknown symbols; n4 and n11 flagged only as heuristic non-matches (covered by subject\
+   50.4s turn 3
+   54.9s   model reply: in 2 + cached 61520, out 446 (+0 reasoning)
+   54.9s agent finished
+   54.9s agent finished

@@ -1,0 +1,276 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "action",
+   "text": "reconcile accounts receivable balance sheet accounts",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "reconcile deferred revenue balance sheet accounts",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "temporal",
+   "text": "maintain ongoing reconciliation over time",
+   "status": "covered",
+   "matched_symbols": [
+    "ongoing",
+    "temporal_context"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "ask what balance sheet reconciliation means in Zuora reporting",
+   "status": "covered",
+   "matched_symbols": [
+    "respond",
+    "ask",
+    "inform"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "Zuora subscription management platform",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Zuora reporting module",
+   "status": "covered",
+   "matched_symbols": [
+    "provides",
+    "include"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Zuora reconciliation involves syncing Zuora AR and deferred revenue with financial statements",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "outcome",
+    "involves",
+    "leads_to",
+    "enables",
+    "ongoing"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Zuora Accounts Receivable Aging Report",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "AR Aging report categorizes unpaid invoices by age to spot discrepancies",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome",
+    "leads_to",
+    "ongoing",
+    "recommended",
+    "enables"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Zuora Deferred Revenue Schedule report",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Deferred Revenue Schedule shows deferred balances and recognition entries for reconciliation",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome",
+    "ongoing",
+    "leads_to"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "Zuora Revenue Reports",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "regular review and prompt investigation of report discrepancies keeps accounts reconciled",
+   "status": "covered",
+   "matched_symbols": [
+    "outcome",
+    "ongoing",
+    "leads_to"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "speech_act",
+   "text": "ask whether a custom report with specified columns can be created in Zuora",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "inform",
+    "respond",
+    "include"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "usage data and adjustment records",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "school entity with parent hierarchy",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "date of usage and date billed",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "invoice number and amount columns",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "custom report fetching requested usage, school, invoice, and amount fields can be created",
+   "status": "covered",
+   "matched_symbols": [
+    "provides",
+    "outcome",
+    "include",
+    "enables"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "navigate to Zuora reporting section and create new custom report",
+   "status": "covered",
+   "matched_symbols": [
+    "include"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "Invoice and Payment data source in Zuora",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "action",
+   "text": "select reporting date range and add specified data columns",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n23",
+   "kind": "action",
+   "text": "include Account data source to retrieve parent hierarchy fields",
+   "status": "covered",
+   "matched_symbols": [
+    "include"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "action",
+   "text": "apply filters, configure groupings, and execute report",
+   "status": "covered",
+   "matched_symbols": [
+    "include",
+    "sequence"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "temporal",
+   "text": "schedule report to run at recurring intervals",
+   "status": "declared",
+   "matched_symbols": []
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "click",
+  "conjunction",
+  "enables",
+  "include",
+  "inform",
+  "involves",
+  "leads_to",
+  "ongoing",
+  "outcome",
+  "platform_label",
+  "property_question",
+  "provides",
+  "recommended",
+  "requirement",
+  "respond",
+  "role_agent",
+  "role_user",
+  "sequence",
+  "statement",
+  "subject",
+  "target",
+  "temporal_context"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n5"
+ ]
+}

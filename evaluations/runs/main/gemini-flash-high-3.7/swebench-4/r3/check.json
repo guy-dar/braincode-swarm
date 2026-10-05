@@ -1,0 +1,252 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Report a bug regarding failure to complete remote connections in a two-process setup",
+   "status": "covered",
+   "matched_symbols": [
+    "failure",
+    "propose"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Remote connections cannot be completed for two-process setup",
+   "status": "covered",
+   "matched_symbols": [
+    "failure",
+    "enables"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "remote connections",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "Provide reproduction steps for the reported issue",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "inform",
+    "enables"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "Run command 'ipython console --ip=0'",
+   "status": "covered",
+   "matched_symbols": [
+    "cli_command"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "ipython",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "flag '--ip=0'",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "temporal",
+   "text": "subsequently after starting the console",
+   "status": "covered",
+   "matched_symbols": [
+    "temporal_context"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "Attempt to connect to the console from another window",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "Run command 'ipython console --exiting'",
+   "status": "covered",
+   "matched_symbols": [
+    "cli_command"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "flag '--exiting'",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "The connection attempts stall / hang",
+   "status": "covered",
+   "matched_symbols": [
+    "enables",
+    "failure",
+    "outcome"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "negation",
+   "text": "Omitting the '--ip' flag",
+   "status": "covered",
+   "matched_symbols": [
+    "cli_command"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Everything works properly when '--ip' is not specified",
+   "status": "covered",
+   "matched_symbols": [
+    "enables"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "reasoning",
+   "text": "Local code succeeds because it follows a different code path",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "speech_act",
+   "text": "Open an issue as a reference for @minrk to submit a fix",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "user @minrk",
+   "status": "covered",
+   "matched_symbols": [
+    "role_user"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "Modify IPython/consoleapp.py",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "IPython/consoleapp.py",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "Modify IPython/kernel/client.py",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code",
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "IPython/kernel/client.py",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "action",
+   "text": "Modify IPython/qt/console/qtconsoleapp.py",
+   "status": "covered",
+   "matched_symbols": [
+    "chg_modify_code"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "object",
+   "text": "IPython/qt/console/qtconsoleapp.py",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "chg_modify_code",
+  "cli_command",
+  "code_entity",
+  "enables",
+  "failure",
+  "inform",
+  "outcome",
+  "platform_label",
+  "propose",
+  "role_user",
+  "sequence",
+  "target",
+  "temporal_context"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n6",
+  "n9",
+  "n19",
+  "n21",
+  "n23"
+ ]
+}

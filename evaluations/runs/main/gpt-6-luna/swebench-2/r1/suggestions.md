@@ -1,0 +1,7 @@
+### S1 | type: add | dimension: constructor | symbol: boolean_context_empty_test
+- Needs: n5 (t1:s2), n6 (t1:s2), n7 (t1:s2)
+- Searches tried: widen "test whether DataFrame is empty or not as a boolean" --kind constraint → `state_empty`, `test_condition`, `run_tests`, and other general candidates; search "boolean test empty DataFrame truthiness" → `test_condition`, `state_empty`, and general test entries. `state_empty` does not specifically express a DataFrame's empty condition; `test_condition` leaves the condition as an opaque STRING and does not model boolean-context evaluation of a subject.
+- Typed parameters: subject: TERM
+- Interpretation: Describes evaluating whether the subject is empty in a boolean context, without asserting an outcome or specifying which Boolean value corresponds to emptiness. It is descriptive and does not execute a test or assert implementation success.
+- Example: `TERM boolean_context_empty_test(subject=dataframe_subject) -> boolean_context_empty_test_2 : TERM`
+- Proposed record: {"symbol": "boolean_context_empty_test", "kind": "constructor", "signature": "TERM boolean_context_empty_test(subject: TERM) -> TERM", "definition": "Describes testing whether the subject is empty in a boolean context. It neither asserts an outcome nor specifies which Boolean value corresponds to emptiness, and does not execute a test.", "not": "An observed test result or a claim that a particular implementation has succeeded.", "aliases": []}

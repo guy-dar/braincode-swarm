@@ -10,7 +10,7 @@ measured on unseen test items with six models translating under exactly the swar
 | OpenAI | GPT-6 Astra | o4-mini | OpenAI API (`OPENAI_API_KEY` / `OPENAI_API_KEY_PERSONAL`) | 18 × 3 |
 
 The 18 items are a stratified subset of the 48 (3 per dataset), so every model is compared on the same items.
-Expressivity runs only for the Gemini models. Gemini 3.1 Pro is not served by the vertex proxy (`gemini-3.1-pro-preview` is
+Expressivity runs only for the Gemini models, with one back-translation per model and item (96 in all; each item's first usable forward run). Gemini 3.1 Pro is not served by the vertex proxy (`gemini-3.1-pro-preview` is
 rejected as an invalid model name), so the strong Gemini is `gemini-flash-high`: the same 3.7 Flash at high
 reasoning effort. The Gemini pair therefore contrasts reasoning effort, not model size; state this in the paper.
 

@@ -1,0 +1,86 @@
+    3.3s turn 1
+   31.8s   model reply: in 182070 + cached 0, out 3879 (+1139 reasoning)
+   31.8s   tool write: /output/translation.md
+   41.2s turn 2
+   44.0s   model reply: in 31891 + cached 0, out 30 (+0 reasoning)
+   44.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+   44.1s turn 3
+   47.1s   model reply: in 4839 + cached 28011, out 37 (+0 reasoning)
+   47.1s   tool bash: node /kit/rag.mjs search "scotland" "united_kingdom" "2014"
+   47.2s turn 4
+   49.8s   model reply: in 5791 + cached 28012, out 39 (+0 reasoning)
+   49.8s   tool bash: node /kit/rag.mjs search "scotland" "united_kingdom" "year" "unit_year"
+   50.0s turn 5
+   52.9s   model reply: in 3130 + cached 32022, out 37 (+0 reasoning)
+   52.9s   tool bash: node /kit/rag.mjs search "scotland" "scottish" "referendum" "independence"
+   53.0s turn 6
+   56.0s   model reply: in 4278 + cached 32026, out 31 (+0 reasoning)
+   56.0s   tool bash: node /kit/rag.mjs search "2014" "year"
+   56.1s turn 7
+   58.7s   model reply: in 4952 + cached 32021, out 26 (+0 reasoning)
+   58.7s   tool bash: node /kit/rag.mjs search "scotland"
+   58.8s turn 8
+   61.9s   model reply: in 5272 + cached 32008, out 39 (+0 reasoning)
+   61.9s   tool bash: node /kit/rag.mjs search "scotland" "subdivision" "region" "province" "state"
+   62.1s turn 9
+   66.4s   model reply: in 2728 + cached 36021, out 39 (+0 reasoning)
+   66.4s   tool bash: node /kit/rag.mjs search "scotland" "united_kingdom" "country" "location-name"
+   66.6s turn 10
+   68.9s   model reply: in 3972 + cached 36028, out 29 (+0 reasoning)
+   68.9s   tool bash: node /kit/rag.mjs entry rule_category_location_name
+   69.0s turn 11
+   71.6s   model reply: in 4069 + cached 36010, out 29 (+0 reasoning)
+   71.6s   tool bash: node /kit/rag.mjs search "category:location-name"
+   71.7s turn 12
+   74.3s   model reply: in 4409 + cached 35998, out 41 (+0 reasoning)
+   74.3s   tool bash: node /kit/rag.mjs search "united_kingdom" "scotland" "time_point" "time_horizon"
+   74.6s turn 13
+   77.3s   model reply: in 5710 + cached 36006, out 28 (+0 reasoning)
+   77.3s   tool bash: node /kit/rag.mjs entry time_point temporal_context
+   77.4s turn 14
+   80.2s   model reply: in 2053 + cached 39993, out 30 (+0 reasoning)
+   80.2s   tool bash: node /kit/rag.mjs search "scotland" "united kingdom"
+   80.3s turn 15
+   83.6s   model reply: in 2689 + cached 39987, out 31 (+0 reasoning)
+   83.6s   tool bash: node /kit/rag.mjs search "missing" "failure" "suggestions"
+   83.7s turn 16
+   86.5s   model reply: in 3603 + cached 39987, out 34 (+0 reasoning)
+   86.5s   tool bash: node /kit/rag.mjs search "declaration" "failed" "failure" "status"
+   86.7s turn 17
+   89.3s   model reply: in 4833 + cached 39994, out 31 (+0 reasoning)
+   89.3s   tool bash: node /kit/rag.mjs search "rule" "failure" "status"
+   89.4s turn 18
+   91.9s   model reply: in 5773 + cached 39995, out 28 (+0 reasoning)
+   91.9s   tool bash: node /kit/rag.mjs search "rule" "failure"
+   92.0s turn 19
+   94.7s   model reply: in 2408 + cached 43988, out 46 (+0 reasoning)
+   94.7s   tool bash: node /kit/rag.mjs search "rule_operations_general" "rule_structural_constructs" "rule_speech_acts_general"
+   94.9s turn 20
+   97.7s   model reply: in 3466 + cached 43991, out 40 (+0 reasoning)
+   97.7s   tool bash: node /kit/rag.mjs entry rule_structural_constructs rule_trace_relations_general rule_recording_signatures
+   97.8s turn 21
+  101.1s   model reply: in 3744 + cached 43977, out 31 (+0 reasoning)
+  101.1s   tool bash: node /kit/rag.mjs search "failure report" "Status: failure"
+  101.2s turn 22
+  103.9s   model reply: in 4471 + cached 43974, out 33 (+0 reasoning)
+  103.9s   tool bash: node /kit/rag.mjs search "declaration" "lexicon" "declarations"
+  104.0s turn 23
+  119.5s   model reply: in 5361 + cached 43973, out 2744 (+0 reasoning)
+  119.5s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 
+  119.5s turn 24
+  122.2s   model reply: in 4069 + cached 48012, out 30 (+0 reasoning)
+  122.2s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  122.3s turn 25
+  126.5s   model reply: in 5027 + cached 48013, out 71 (+0 reasoning)
+  126.5s agent finished
+  126.5s agent finished

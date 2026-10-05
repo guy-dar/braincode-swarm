@@ -1,0 +1,219 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "request to show products",
+   "status": "covered",
+   "matched_symbols": [
+    "avail_in_stock",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "display products",
+   "status": "covered",
+   "matched_symbols": [
+    "obligation"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "external solid state drives",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "available items only",
+   "status": "covered",
+   "matched_symbols": [
+    "avail_in_stock"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "constraint",
+   "text": "sort by lowest price first",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_price",
+    "dir_asc",
+    "rank_direction",
+    "rank_field"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "click Open Menu button",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Open Menu button",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "click See All link",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "See All link",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "click Computers link",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "Computers link",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "click Drives & Storage link",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "Drives & Storage link",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "click External Solid State Drives link",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "External Solid State Drives link",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "object_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "action",
+   "text": "click Sort by selector",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "rank_direction",
+    "rank_field"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "Sort by element",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_direction",
+    "rank_field"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "click Price: Low to High option",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "rank_price",
+    "avail_in_stock"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "Price: Low to High option",
+   "status": "covered",
+   "matched_symbols": [
+    "rank_price",
+    "avail_in_stock",
+    "dir_asc"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "avail_in_stock",
+  "click",
+  "dir_asc",
+  "object_label",
+  "obligation",
+  "rank_direction",
+  "rank_field",
+  "rank_price",
+  "requirement",
+  "role_agent",
+  "target",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3",
+  "n15"
+ ]
+}

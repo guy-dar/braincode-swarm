@@ -1,0 +1,34 @@
+    1.6s turn 1
+   16.8s   model reply: in 12426 + cached 0, out 1301 (+1281 reasoning)
+   16.8s   tool bash: ls -la /kit || true
+   16.8s turn 2
+   23.8s   model reply: in 5850 + cached 8044, out 43 (+24 reasoning)
+   23.8s   tool read: /kit/README.md
+   23.8s turn 3
+   30.0s   model reply: in 3032 + cached 12067, out 38 (+16 reasoning)
+   30.0s   tool bash: ls -la / reference /reference || true
+   30.0s turn 4
+   48.0s   model reply: in 4079 + cached 12065, out 46 (+26 reasoning)
+   48.0s   tool read: /reference/examples.jsonl
+   48.0s turn 5
+   69.5s   model reply: in 5295 + cached 12065, out 1960 (+1937 reasoning)
+   69.5s   tool bash: grep -rn "click" /reference || true
+   69.6s turn 6
+   78.3s   model reply: in 19676 + cached 0, out 72 (+22 reasoning)
+   78.3s   tool bash: find / -maxdepth 3 -name "*mind2web*" -o -name "*reconstruction*" -o -name "*prompt*" 2>/dev/null || true
+   78.3s turn 7
+   82.2s   model reply: in 3664 + cached 16087, out 29 (+12 reasoning)
+   82.2s   tool read: /prompt.md
+   82.2s turn 8
+  120.0s   model reply: in 4168 + cached 16077, out 5987 (+5969 reasoning)
+  120.0s   tool bash: ls -la /output
+  120.0s turn 9
+  124.9s   model reply: in 6119 + cached 20166, out 352 (+192 reasoning)
+  124.9s   tool write: /output/reconstruction.md
+  124.9s turn 10
+  127.8s   model reply: in 2460 + cached 24182, out 35 (+15 reasoning)
+  127.8s   tool read: /output/reconstruction.md
+  127.8s turn 11
+  130.5s   model reply: in 2646 + cached 24165, out 30 (+16 reasoning)
+  130.5s agent finished
+  130.5s agent finished

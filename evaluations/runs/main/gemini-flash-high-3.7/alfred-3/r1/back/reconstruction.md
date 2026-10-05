@@ -1,0 +1,1 @@
+Walk to the black table. Turn left. Pick up the knife next to the lettuce. Turn around. Walk to the left of the stove. Place the knife in the pan on the burner. Pick up the pan from the stove. Turn left. Walk to the safe. Turn left. Face the table. Place the pan on the table.

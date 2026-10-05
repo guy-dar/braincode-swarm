@@ -1,0 +1,1 @@
+Turn around. Walk to the room. Walk in front of the green trash can. Turn right. Walk to the desk. Pick up the textbook by the mug. Turn right. Walk to the bed. Place the textbook on the bed in front of the laptop. Turn around. Walk to the desk. Pick up the textbook by the lamp. Turn right. Walk to the bed. Place the textbook on the bed on the other side of the bear.

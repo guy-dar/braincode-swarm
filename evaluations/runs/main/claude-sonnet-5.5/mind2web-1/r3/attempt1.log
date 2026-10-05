@@ -1,0 +1,20 @@
+    7.2s turn 1
+   12.7s   model reply: in 4 + cached 47588, out 370 (+222 reasoning)
+   12.7s   tool bash: node /kit/rag.mjs entry ask request search_travel click type_text select_option 2>&1 | head -60; grep -E "^\| (ask|request|command|instruct|measure|passenger|on
+   13.8s turn 2
+   42.2s   model reply: in 2 + cached 47588, out 4692 (+1018 reasoning)
+   42.2s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: TRACE
+
+## BrainCode
+
+```braincode
+MODE TRACE
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN t1 S
+   43.0s turn 3
+   51.4s   model reply: in 2 + cached 49327, out 588 (+55 reasoning)
+   51.4s agent finished
+   51.4s agent finished

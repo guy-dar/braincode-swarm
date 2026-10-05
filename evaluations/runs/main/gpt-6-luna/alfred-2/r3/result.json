@@ -1,0 +1,45 @@
+{
+ "model": "gpt-6-luna",
+ "item": "alfred-2",
+ "dataset": "alfred",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 408.5,
+ "usage": {
+  "calls": 8,
+  "input": 24,
+  "cacheRead": 292854,
+  "cacheWrite": 51088,
+  "output": 14149,
+  "reasoning": 9702,
+  "compactions": 0,
+  "truncated_tool_results": 3
+ },
+ "cost_usd": 0.0164,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "food_slice",
+    "dimension": "constructor"
+   },
+   {
+    "term": "step",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "walk",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

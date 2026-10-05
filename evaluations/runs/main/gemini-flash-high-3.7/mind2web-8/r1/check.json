@@ -1,0 +1,135 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User requests filtering search results",
+   "status": "covered",
+   "matched_symbols": [
+    "request",
+    "select_filter",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "Filter search results",
+   "status": "covered",
+   "matched_symbols": [
+    "select_filter"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Guitar tabs for songs",
+   "status": "covered",
+   "matched_symbols": [
+    "song"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "Include only songs with a difficulty rating of Beginner",
+   "status": "covered",
+   "matched_symbols": [
+    "song",
+    "constraint_beginner"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "temporal",
+   "text": "Step 1 of the action sequence",
+   "status": "covered",
+   "matched_symbols": [
+    "then"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "Click the Tabs link",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "select_filter"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Tabs link UI element",
+   "status": "covered",
+   "matched_symbols": [
+    "web_element",
+    "click",
+    "select_filter"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "temporal",
+   "text": "Step 2 of the action sequence",
+   "status": "covered",
+   "matched_symbols": [
+    "then"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "Click the Beginner filter link",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "select_filter",
+    "constraint_beginner"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Beginner filter link element",
+   "status": "covered",
+   "matched_symbols": [
+    "web_element",
+    "select_filter",
+    "click",
+    "constraint_beginner"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "click",
+  "constraint_beginner",
+  "request",
+  "role_user",
+  "select_filter",
+  "song",
+  "target",
+  "then",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

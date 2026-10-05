@@ -1,0 +1,271 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User requests placing a washed potato inside the fridge.",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "sink",
+    "propose"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "Put an item inside a destination container or appliance.",
+   "status": "covered",
+   "matched_symbols": [
+    "remove",
+    "place",
+    "fridge"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "potato",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "potato must be washed",
+   "status": "covered",
+   "matched_symbols": [
+    "sink"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "fridge",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "microwave",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "temporal",
+   "text": "Sequential ordered plan from step 1 to step 6.",
+   "status": "covered",
+   "matched_symbols": [
+    "sequence"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "Walk to face the microwave.",
+   "status": "covered",
+   "matched_symbols": [
+    "microwave",
+    "walk",
+    "face",
+    "fridge",
+    "propose"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "microwave",
+   "status": "covered",
+   "matched_symbols": [
+    "microwave",
+    "fridge",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "Remove the potato from the microwave.",
+   "status": "covered",
+   "matched_symbols": [
+    "microwave",
+    "remove",
+    "fridge"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "potato",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "microwave",
+   "status": "covered",
+   "matched_symbols": [
+    "microwave",
+    "fridge",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "Walk to face the sink.",
+   "status": "covered",
+   "matched_symbols": [
+    "sink",
+    "walk",
+    "face",
+    "fridge"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "sink",
+   "status": "covered",
+   "matched_symbols": [
+    "sink",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "action",
+   "text": "Wash the potato in the sink.",
+   "status": "covered",
+   "matched_symbols": [
+    "sink"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "action",
+   "text": "Remove the potato from the sink.",
+   "status": "covered",
+   "matched_symbols": [
+    "sink",
+    "remove"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "potato",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "sink",
+   "status": "covered",
+   "matched_symbols": [
+    "sink",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "action",
+   "text": "Walk to face the fridge.",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "walk",
+    "face",
+    "propose"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "fridge",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "microwave",
+    "object_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "action",
+   "text": "Put the potato inside the fridge.",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "place",
+    "remove",
+    "microwave"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "potato",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "food_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "object",
+   "text": "fridge",
+   "status": "covered",
+   "matched_symbols": [
+    "fridge",
+    "microwave",
+    "object_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "face",
+  "food_label",
+  "fridge",
+  "microwave",
+  "object_label",
+  "place",
+  "propose",
+  "remove",
+  "sequence",
+  "sink",
+  "target",
+  "walk"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3",
+  "n10",
+  "n16",
+  "n21"
+ ]
+}

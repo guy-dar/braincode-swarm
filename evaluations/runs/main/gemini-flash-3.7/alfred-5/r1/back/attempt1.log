@@ -1,0 +1,43 @@
+    1.9s turn 1
+    8.5s   model reply: in 11618 + cached 0, out 589 (+571 reasoning)
+    8.5s   tool bash: ls -la /kit
+    8.6s turn 2
+   13.5s   model reply: in 4347 + cached 8027, out 62 (+43 reasoning)
+   13.5s   tool read: /kit/README.md
+   13.5s turn 3
+   17.7s   model reply: in 5569 + cached 8029, out 35 (+17 reasoning)
+   17.7s   tool bash: ls -la /output
+   17.7s turn 4
+   20.6s   model reply: in 5669 + cached 8017, out 35 (+18 reasoning)
+   20.6s   tool bash: ls -la /
+   20.6s turn 5
+   23.5s   model reply: in 14503 + cached 0, out 29 (+12 reasoning)
+   23.5s   tool read: /prompt.md
+   23.5s turn 6
+   57.0s   model reply: in 2982 + cached 12014, out 1172 (+1154 reasoning)
+   57.0s   tool bash: ls -la /reference
+   57.0s turn 7
+   59.9s   model reply: in 4352 + cached 12020, out 43 (+23 reasoning)
+   59.9s   tool read: /reference/examples.jsonl
+   59.9s turn 8
+   63.8s   model reply: in 5561 + cached 12024, out 80 (+44 reasoning)
+   63.8s   tool bash: grep -E "(face|turn|pick_up|place|close)" /reference/glossary.md
+   63.9s turn 9
+   74.5s   model reply: in 3512 + cached 16049, out 1361 (+1327 reasoning)
+   74.5s   tool bash: grep -rn "alfred" / 2>/dev/null | head -n 30
+   74.5s turn 10
+   77.8s   model reply: in 4871 + cached 16054, out 46 (+23 reasoning)
+   77.8s   tool bash: find /reference /kit /attach -type f
+   77.9s turn 11
+   81.2s   model reply: in 5043 + cached 16040, out 48 (+27 reasoning)
+   81.2s   tool read: /kit/needs_prompt.md
+   81.3s turn 12
+  100.7s   model reply: in 5774 + cached 16035, out 3004 (+2899 reasoning)
+  100.7s   tool write: /output/reconstruction.md
+  100.7s turn 13
+  104.0s   model reply: in 4743 + cached 20075, out 39 (+19 reasoning)
+  104.0s   tool read: /output/reconstruction.md
+  104.1s turn 14
+  110.4s   model reply: in 4876 + cached 20060, out 58 (+33 reasoning)
+  110.4s agent finished
+  110.4s agent finished

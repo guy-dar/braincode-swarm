@@ -1,0 +1,48 @@
+{
+ "model": "claude-haiku-4.5",
+ "item": "mind2web-1",
+ "dataset": "mind2web",
+ "run": 2,
+ "status": "failed",
+ "problem": null,
+ "attempts": 2,
+ "duration_s": 386.8,
+ "usage": {
+  "calls": 59,
+  "input": 732,
+  "cacheRead": 2853815,
+  "cacheWrite": 293497,
+  "output": 34009,
+  "reasoning": 11084,
+  "compactions": 2,
+  "truncated_tool_results": 2
+ },
+ "cost_usd": 0.823,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 4,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "trip_type_spec",
+    "dimension": "constructor"
+   },
+   {
+    "term": "nonstop_constraint",
+    "dimension": "constructor"
+   },
+   {
+    "term": "airline_selected",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "flight_selected",
+    "dimension": "vocabulary-member"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

@@ -1,0 +1,148 @@
+    1.7s turn 1
+   33.7s   model reply: in 30982 + cached 0, out 683 (+660 reasoning)
+   33.7s   tool bash: node /kit/rag.mjs --help
+   33.7s turn 2
+   47.1s   model reply: in 3259 + cached 28444, out 48 (+26 reasoning)
+   47.1s   tool bash: node /kit/rag.mjs needs
+   80.7s turn 3
+  103.0s   model reply: in 6021 + cached 28444, out 1865 (+1834 reasoning)
+  103.0s   tool bash: node /kit/rag.mjs entry pick_up place walk turn face drop remove
+  103.2s turn 4
+  115.4s   model reply: in 4847 + cached 32508, out 1145 (+1124 reasoning)
+  115.4s   tool bash: cat /kit/rag.mjs
+  115.4s turn 5
+  124.3s   model reply: in 3462 + cached 36571, out 55 (+33 reasoning)
+  124.3s   tool bash: node /kit/rag.mjs health
+  124.4s turn 6
+  148.0s   model reply: in 3634 + cached 36543, out 4296 (+4256 reasoning)
+  148.0s   tool bash: node /kit/rag.mjs search "command to place" "propose" "command" "request" "instruction"
+  148.2s turn 7
+  154.3s   model reply: in 9383 + cached 36566, out 68 (+31 reasoning)
+  154.3s   tool bash: grep -E "^\| [a-z_]+ \| speech_act \|" /reference/glossary.md
+  154.3s turn 8
+  161.7s   model reply: in 5877 + cached 40614, out 234 (+207 reasoning)
+  161.7s   tool bash: find / -name "*alfred*" 2>/dev/null
+  161.8s turn 9
+  166.7s   model reply: in 2079 + cached 44656, out 38 (+16 reasoning)
+  166.7s   tool bash: ls -la /reference /doc_formats
+  166.7s turn 10
+  170.8s   model reply: in 2546 + cached 44639, out 34 (+13 reasoning)
+  170.8s   tool bash: cat /reference/examples.jsonl
+  170.8s turn 11
+  178.8s   model reply: in 3760 + cached 44629, out 921 (+719 reasoning)
+  178.8s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN
+  178.9s turn 12
+  203.4s   model reply: in 5483 + cached 44624, out 3658 (+3618 reasoning)
+  203.4s   tool bash: node /kit/rag.mjs search "containing" "contains" "with" "in" "inside" "holding"
+  203.5s turn 13
+  208.2s   model reply: in 6659 + cached 48706, out 49 (+26 reasoning)
+  208.2s   tool bash: node /kit/rag.mjs entry in
+  208.3s turn 14
+  212.6s   model reply: in 2709 + cached 52745, out 134 (+94 reasoning)
+  212.6s   tool bash: node /kit/rag.mjs search "above" "over" "closest" "nearest" "burner" "black"
+  213.0s turn 15
+  220.6s   model reply: in 4524 + cached 52741, out 631 (+605 reasoning)
+  220.6s   tool bash: grep -E "direction" /reference/glossary.md
+  220.7s turn 16
+  235.2s   model reply: in 5585 + cached 52730, out 2072 (+1722 reasoning)
+  235.2s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Pan
+TASK Pan {
+  ACTION walk(destination
+  235.4s turn 17
+  250.0s   model reply: in 4405 + cached 56792, out 2046 (+2011 reasoning)
+  250.0s   tool bash: grep -E "^\| [a-z_]+ \| constructor \|" /reference/glossary.md
+  250.1s turn 18
+  253.5s   model reply: in 4176 + cached 60863, out 82 (+43 reasoning)
+  253.5s   tool bash: node /kit/rag.mjs search "entity description" "property of object" "located at" "spatial relationship"
+  253.7s turn 19
+  256.9s   model reply: in 5443 + cached 60854, out 53 (+22 reasoning)
+  256.9s   tool bash: node /kit/rag.mjs entry spatial_constraint spatial_state location_spec
+  257.0s turn 20
+  267.8s   model reply: in 5765 + cached 60837, out 1174 (+824 reasoning)
+  267.8s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Knife
+TASK Knife {
+  ACTION walk(destina
+  267.9s turn 21
+  273.9s   model reply: in 3696 + cached 64890, out 599 (+576 reasoning)
+  273.9s   tool bash: node /kit/rag.mjs entry lettuce
+  274.0s turn 22
+  279.7s   model reply: in 4384 + cached 64876, out 432 (+398 reasoning)
+  279.7s   tool bash: node /kit/rag.mjs search "lexical_label" "entity" "label"
+  279.9s turn 23
+  295.7s   model reply: in 53918 + cached 0, out 38 (+13 reasoning)
+  295.7s   tool bash: node /kit/rag.mjs entry lexical_label
+  295.8s turn 24
+  302.5s   model reply: in 5738 + cached 48688, out 731 (+271 reasoning)
+  302.5s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Knife
+TASK Knife {
+  TERM lexical_label(
+  302.6s turn 25
+  320.7s   model reply: in 3266 + cached 52739, out 2753 (+2270 reasoning)
+  320.7s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Knife
+TASK Knife {
+  TERM lexical_label(
+  320.9s turn 26
+  344.7s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  344.8s agent finished
+  346.7s turn 27
+  360.4s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  360.4s agent finished
+  364.4s turn 28
+  507.2s   model reply: in 59642 + cached 0, out 4593 (+3247 reasoning)
+  507.2s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Knife
+TASK Knife {
+  TERM lexical_label(
+  507.4s turn 29
+  527.3s   model reply: in 8285 + cached 56834, out 527 (+303 reasoning)
+  527.4s agent finished
+  527.4s agent finished

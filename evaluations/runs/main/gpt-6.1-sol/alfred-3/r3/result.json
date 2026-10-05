@@ -1,0 +1,60 @@
+{
+ "model": "gpt-6.1-sol",
+ "item": "alfred-3",
+ "dataset": "alfred",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 532.0,
+ "usage": {
+  "calls": 10,
+  "input": 30,
+  "cacheRead": 359210,
+  "cacheWrite": 50573,
+  "output": 10038,
+  "reasoning": 2588,
+  "compactions": 0,
+  "truncated_tool_results": 2
+ },
+ "cost_usd": 0.2628,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 7,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "described_place",
+    "dimension": "constructor"
+   },
+   {
+    "term": "qualified_entity",
+    "dimension": "constructor"
+   },
+   {
+    "term": "described_walk",
+    "dimension": "constructor"
+   },
+   {
+    "term": "described_turn",
+    "dimension": "constructor"
+   },
+   {
+    "term": "described_pick_up",
+    "dimension": "constructor"
+   },
+   {
+    "term": "motion_and_region_selectors",
+    "dimension": "member-family"
+   },
+   {
+    "term": "spatial_region",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

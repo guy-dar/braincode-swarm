@@ -1,0 +1,31 @@
+    1.7s turn 1
+   11.6s   model reply: in 14804 + cached 0, out 1309 (+1292 reasoning)
+   11.6s   tool bash: ls -la /
+   11.6s turn 2
+   14.4s   model reply: in 4790 + cached 12106, out 51 (+29 reasoning)
+   14.4s   tool bash: ls -la /kit /reference /output
+   14.4s turn 3
+   17.6s   model reply: in 5290 + cached 12095, out 47 (+27 reasoning)
+   17.6s   tool read: /reference/examples.jsonl
+   17.6s turn 4
+   20.6s   model reply: in 2477 + cached 16125, out 55 (+34 reasoning)
+   20.6s   tool read: /kit/needs_prompt.md
+   20.6s turn 5
+   71.9s   model reply: in 3218 + cached 16117, out 8604 (+8575 reasoning)
+   71.9s   tool bash: grep -rn "paths" /reference /kit 2>/dev/null
+   72.0s turn 6
+   75.0s   model reply: in 11764 + cached 16185, out 39 (+20 reasoning)
+   75.0s   tool read: /kit/README.md
+   75.0s turn 7
+   79.4s   model reply: in 4878 + cached 24272, out 32 (+15 reasoning)
+   79.4s   tool read: /prompt.md
+   79.4s turn 8
+  107.5s   model reply: in 5385 + cached 24260, out 5123 (+4926 reasoning)
+  107.5s   tool write: /output/reconstruction.md
+  107.5s turn 9
+  110.9s   model reply: in 6437 + cached 28336, out 39 (+19 reasoning)
+  110.9s   tool read: /output/reconstruction.md
+  110.9s turn 10
+  114.2s   model reply: in 2617 + cached 32366, out 40 (+17 reasoning)
+  114.2s agent finished
+  114.2s agent finished

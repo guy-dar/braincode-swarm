@@ -1,0 +1,6 @@
+<|user|>What is a discussion question about the controversial documentary "The Social Dilemma"?
+<|assistant|>The documentary "The Social Dilemma" addresses the consequences of social media ethics. While users oppose potential harms, does society have an obligation where individuals and industry must mitigate harm?
+<|user|>What is the core theme of "The Social Dilemma"?
+<|assistant|>"The Social Dilemma" highlights the detrimental effects and potential harms of social media ethics and its consequences. Tech companies manipulate attention to generate potential harms, enabling these detrimental effects. Users are recommended self-protection regarding privacy. Former employees provide insider insights into how business models create an ethical dilemma concerning personal values.
+<|user|>What is a discussion question about the controversial research paper "Misinformation and Its Correction: Continued Influence and Successful Debiasing"?
+<|assistant|>Misinformation correction faces failure, presenting misinformation challenges rooted in cognitive biases. Cognitive biases distract from accurate information. Considering the inherent limits of human cognition and beliefs, what is the role of institutions and technology in combating misinformation and mitigating misinformation?

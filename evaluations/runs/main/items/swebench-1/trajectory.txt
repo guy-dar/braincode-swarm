@@ -1,0 +1,35 @@
+t1:s1 [USER] UnboundLocalError: local variable 'seq_length' referenced before assignment
+t1:s2 [USER] ### System Info
+t1:s3 [USER] Hi, I am using the `ConvBertForTokenClassification` model in models.convbert and encountered the bug when passing only `input_embeds` to `forward()`.
+t1:s4 [USER] The traceback says that at line 833 in modeling_convbert.py
+t1:s5 [USER] ```
+t1:s6 [USER] if token_type_ids is None:
+t1:s7 [USER] if hasattr(self.embeddings, "token_type_ids"):
+t1:s8 [USER] buffered_token_type_ids = self.embeddings.token_type_ids[:, :seq_length]
+t1:s9 [USER] ```
+t1:s10 [USER] The seq_length is unassigned.
+t1:s11 [USER] I noticed just above this piece of code in
+t1:s12 [USER] ```
+t1:s13 [USER] elif input_ids is not None:
+t1:s14 [USER] input_shape = input_ids.size()
+t1:s15 [USER] batch_size, seq_length = input_shape
+t1:s16 [USER] elif inputs_embeds is not None:
+t1:s17 [USER] input_shape = inputs_embeds.size()[:-1]
+t1:s18 [USER] ```
+t1:s19 [USER] seq_length is not assigned if the program enters `elif inputs_embeds is not None`.
+t1:s20 [USER] Not sure if it is the `batch_size, seq_length = input_shape` missing for `inputs_embeds` or I am not using the model correctly?
+t1:s21 [USER] ### Who can help?
+t1:s22 [USER] text models: @ArthurZucker and @younesbelkada
+t1:s23 [USER] ### Information
+t1:s24 [USER] - [ ] The official example scripts
+t1:s25 [USER] - [X] My own modified scripts
+t1:s26 [USER] ### Tasks
+t1:s27 [USER] - [ ] An officially supported task in the `examples` folder (such as GLUE/SQuAD, ...)
+t1:s28 [USER] - [X] My own task or dataset (give details below)
+t1:s29 [USER] ### Reproduction
+t1:s30 [USER] passing only `inputs_embeds` and `attention_mask` to `ConvBertForTokenClassification` model.
+t1:s31 [USER] ### Expected behavior
+t1:s32 [USER] There should be no error.
+
+t2:s1 [AGENT] 1.
+t2:s2 [AGENT] modify src/transformers/models/convbert/modeling_convbert.py

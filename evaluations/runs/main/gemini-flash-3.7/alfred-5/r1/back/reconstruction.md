@@ -1,0 +1,1 @@
+Turn right. Turn left. Face the sink. Pick up the egg from the sink. Turn right. Face the microwave. Place the egg in the microwave. Close the door. Turn right. Turn right. Face the saltshaker. Pick up the egg from the table. Turn right. Turn left. Turn right. Face the microwave. Place the egg in the microwave. Close the door.

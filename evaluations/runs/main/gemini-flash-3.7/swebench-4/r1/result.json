@@ -1,0 +1,44 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "swebench-4",
+ "dataset": "swebench",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 510.1,
+ "usage": {
+  "calls": 38,
+  "input": 229937,
+  "cacheRead": 1727178,
+  "output": 23999,
+  "reasoning": 18776,
+  "compactions": 1,
+  "truncated_tool_results": 5
+ },
+ "cost_usd": 0.392,
+ "failure": {
+  "add_count": 2,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "network_connection",
+    "dimension": "constructor"
+   },
+   {
+    "term": "hang",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/operation-vocabulary/modify_code",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

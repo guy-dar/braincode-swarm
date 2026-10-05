@@ -1,0 +1,19 @@
+### S1 | type: add | dimension: vocabulary-member | symbol: request
+- Needs: n1 (t1:s1)
+- Searches tried: widen "cool a lettuce slice and place it on the counter" --kind action; search "imperative instruction speech act directed to user"; search "agent instructs action procedure". The retrieved `ask` speech act requests information, while `propose` suggests an action or idea and does not express the user's request for work to be done.
+- Meaning: Speech act by which a speaker requests that the described action or actions be carried out.
+- Category: speech_act
+- Contextual aliases: []
+- Example: `UTTER request(target=requested_sequence)`
+- Contrast: Not a question seeking information and not an agent proposal or a record that the requested action occurred.
+- Proposed record: {"symbol": "request", "kind": "speech_act", "signature": "UTTER request(target: TERM)", "definition": "The speaker requests that the action or actions described by target be carried out. This records the request only and does not authorize or claim execution.", "not": "an information-seeking question, a suggestion, or a completed event", "aliases": []}
+
+### S2 | type: refine | dimension: refine-entry | target: v19/support/activity
+- Needs: n3 (t1:s1), n5 (t2:s2), n7 (t2:s4), n9 (t2:s6), n11 (t2:s8), n12 (t2:s10), n13 (t2:s12), n14 (t2:s14), n15 (t2:s16), n16 (t2:s18), n18 (t2:s20), n19 (t2:s22), n20 (t2:s24)
+- Searches tried: search "turn left walk across room face sink"; search "step forward face entity"; search "described procedure action instruction command in a trace"; search "spatial location of activity"; search "direction modifier for movement activity"; search "cooling action with no specified resource". Existing operations describe executable operations, not TRACE action descriptions; `activity` lacks these role fields, and `spatial_constraint` only describes a spatial goal.
+- Before: `TERM activity(verb: STRING, actor?: STRING, object?: STRING / TERM / ATOM[object_label] / ATOM[food_label] / ATOM[animal_label], location?: STRING / ATOM[country], instrument?: STRING / ATOM[object_label] / ATOM[platform_label], purpose?: TERM) -> TERM`
+- After: Add optional `direction: STRING`, `path: STRING`, `source: STRING / TERM / ATOM[object_label]`, `destination: STRING / TERM / ATOM[object_label]`, `relation: STRING`, and `result_state: STRING` parameters; preserve all current parameters and their meanings. These fields describe the action only and never execute it or assert an outcome.
+- Justification: Structured activity descriptions need to distinguish direction and path, where an object is acquired from or moved to, spatial placement relations, and the state an action is intended to produce. The source requires these distinctions for the ordered agent instructions and the user's placement goal.
+- Affected uses: Existing activity constructions remain valid; the new parameters are optional and should be used only when source-supported.
+- Compatibility: Backward-compatible signature extension. No event or execution semantics are added.
+- Proposed record: {"signature": "TERM activity(verb: STRING, actor?: STRING, object?: STRING / TERM / ATOM[object_label] / ATOM[food_label] / ATOM[animal_label], location?: STRING / ATOM[country], instrument?: STRING / ATOM[object_label] / ATOM[platform_label], purpose?: TERM, direction?: STRING, path?: STRING, source?: STRING / TERM / ATOM[object_label], destination?: STRING / TERM / ATOM[object_label], relation?: STRING, result_state?: STRING) -> TERM", "definition": "Description of an action and its roles, including optional direction, path, source, destination, spatial relation, and intended resulting state. It does not execute or assert that the action or result occurred.", "not": "an executable operation or a claim that an outcome happened"}

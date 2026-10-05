@@ -1,0 +1,2581 @@
+{
+ "translator_id": "mind2web-1",
+ "needs": [
+  {
+   "kind": "action",
+   "text": "search for flights",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.7006,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.6809,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.6271,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.5432,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/avail_in_stock",
+     "symbol": "avail_in_stock",
+     "kind": "value",
+     "score": 0.5216,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3754,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.3741,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.3524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3457,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.3228,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.3202,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/moon",
+     "symbol": "moon",
+     "kind": "value",
+     "score": 0.3196,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "one-way trip",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n2",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.6635,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4655,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.4529,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.4278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.4154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_kilometer",
+     "symbol": "unit_kilometer",
+     "kind": "value",
+     "score": 0.38,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/dom_ovr",
+     "symbol": "dom_ovr",
+     "kind": "value",
+     "score": 0.3758,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3723,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_first_time_buyer",
+     "symbol": "metric_first_time_buyer",
+     "kind": "value",
+     "score": 0.3709,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3681,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "nonstop flight",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n3",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.6524,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/maximum_between_stops",
+     "symbol": "maximum_between_stops",
+     "kind": "constructor",
+     "score": 0.6495,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.6493,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_hour",
+     "symbol": "unit_hour",
+     "kind": "value",
+     "score": 0.6197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/duration",
+     "symbol": "duration",
+     "kind": "constructor",
+     "score": 0.5988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.5879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_horizon",
+     "symbol": "time_horizon",
+     "kind": "constructor",
+     "score": 0.5853,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.5745,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.5743,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "origin city San Francisco",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n4",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.6511,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.6418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/new_york_university",
+     "symbol": "new_york_university",
+     "kind": "value",
+     "score": 0.6378,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.6192,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.6049,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.5742,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/japanese_government",
+     "symbol": "japanese_government",
+     "kind": "value",
+     "score": 0.5608,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_de",
+     "symbol": "locale_de",
+     "kind": "value",
+     "score": 0.5583,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.5507,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "destination city San Diego",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n5",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.6514,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.6403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.627,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_es",
+     "symbol": "locale_es",
+     "kind": "value",
+     "score": 0.6168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.5928,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.5924,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.5817,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/semantic-category-value/class_beach",
+     "symbol": "class_beach",
+     "kind": "value",
+     "score": 0.5752,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_distance",
+     "symbol": "rank_distance",
+     "kind": "value",
+     "score": 0.5734,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.5662,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_zh",
+     "symbol": "locale_zh",
+     "kind": "value",
+     "score": 0.5595,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.5583,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "temporal",
+   "text": "departure date July 1",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n6",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6808,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6753,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.6686,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4267,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.4107,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.3969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.3887,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/time_point",
+     "symbol": "time_point",
+     "kind": "constructor",
+     "score": 0.364,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_week",
+     "symbol": "unit_week",
+     "kind": "value",
+     "score": 0.3545,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.3538,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.3461,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/b",
+     "symbol": "example_b_preserve_the_class_and_amount_of_an_itinerary_constraint",
+     "kind": "example",
+     "score": 0.342,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "airline United Airlines",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n7",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_us",
+     "symbol": "locale_en_us",
+     "kind": "value",
+     "score": 0.6425,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/afcfta",
+     "symbol": "afcfta",
+     "kind": "value",
+     "score": 0.6245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.6208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.613,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.5969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.5914,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.5742,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.5677,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "two adult passengers",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n8",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.7234,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.3271,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.3222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.3221,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/tattooed_guests",
+     "symbol": "tattooed_guests",
+     "kind": "value",
+     "score": 0.2621,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.2547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_user",
+     "symbol": "role_user",
+     "kind": "value",
+     "score": 0.2539,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.2503,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.2497,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.2464,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.2385,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.2372,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "one senior passenger",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n9",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.7221,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.6762,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.6744,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.6407,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_colleague",
+     "symbol": "role_colleague",
+     "kind": "value",
+     "score": 0.6198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.6058,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rental_vehicle",
+     "symbol": "rental_vehicle",
+     "kind": "constructor",
+     "score": 0.5868,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/chair",
+     "symbol": "chair",
+     "kind": "value",
+     "score": 0.5857,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.5753,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "view flight deal",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n10",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.6547,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.6443,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.6278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.6216,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.62,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.6166,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.5986,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.5883,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.5816,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5785,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_limited_time_offers",
+     "symbol": "cat_limited_time_offers",
+     "kind": "value",
+     "score": 0.5733,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/look",
+     "symbol": "look",
+     "kind": "operation",
+     "score": 0.5672,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "morning departure flight",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n11",
+   "context": "Find a one-way nonstop flight between San Fransisco to San Diego on July 1, on United Airlines for 2 adults and 1 senior, and view the deal of the morning flight.",
+   "candidates": [
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.7056,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.6771,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.6758,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.6452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_daughter",
+     "symbol": "role_daughter",
+     "kind": "value",
+     "score": 0.6396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.6241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sun",
+     "symbol": "sun",
+     "kind": "value",
+     "score": 0.6139,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/moon",
+     "symbol": "moon",
+     "kind": "value",
+     "score": 0.606,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.6,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.5911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5894,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.5825,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select flights option",
+   "source": [
+    "t2:s4"
+   ],
+   "id": "n12",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.784,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7819,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.7679,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.6988,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.6482,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.6428,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4169,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.4089,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4038,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_condensed_grocery_list",
+     "symbol": "entity_condensed_grocery_list",
+     "kind": "value",
+     "score": 0.3885,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/config_setting",
+     "symbol": "config_setting",
+     "kind": "constructor",
+     "score": 0.3808,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select one-way flight option",
+   "source": [
+    "t2:s6"
+   ],
+   "id": "n13",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7757,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.7739,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.7574,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.6877,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.6793,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4242,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4028,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.3957,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.3874,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.3828,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.374,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "enter San Francisco as departure location",
+   "source": [
+    "t2:s8",
+    "t2:s10"
+   ],
+   "id": "n14",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.7865,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.732,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.7231,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/location_spec",
+     "symbol": "location_spec",
+     "kind": "constructor",
+     "score": 0.6943,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.4355,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.4207,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.402,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.4009,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/door",
+     "symbol": "door",
+     "kind": "value",
+     "score": 0.3868,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/onsen",
+     "symbol": "onsen",
+     "kind": "value",
+     "score": 0.3864,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.3803,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/spatial-relation",
+     "symbol": "rule_category_spatial_relation",
+     "kind": "category_rule",
+     "score": 0.378,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "enter San Diego as arrival destination",
+   "source": [
+    "t2:s12",
+    "t2:s14"
+   ],
+   "id": "n15",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.7233,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk_backward",
+     "symbol": "walk_backward",
+     "kind": "operation",
+     "score": 0.6408,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/allowed_to_enter",
+     "symbol": "allowed_to_enter",
+     "kind": "claim_relation",
+     "score": 0.6029,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/place",
+     "symbol": "place",
+     "kind": "operation",
+     "score": 0.4115,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/reservation_availability",
+     "symbol": "reservation_availability",
+     "kind": "attribute",
+     "score": 0.4032,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.3965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/dir_desc",
+     "symbol": "dir_desc",
+     "kind": "value",
+     "score": 0.3954,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/type_text",
+     "symbol": "type_text",
+     "kind": "operation",
+     "score": 0.3939,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pour",
+     "symbol": "pour",
+     "kind": "operation",
+     "score": 0.3797,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select departure date July 1 2023",
+   "source": [
+    "t2:s16",
+    "t2:s18"
+   ],
+   "id": "n16",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7383,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5346,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.514,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.4159,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/reservation_availability",
+     "symbol": "reservation_availability",
+     "kind": "attribute",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/wait",
+     "symbol": "wait",
+     "kind": "operation",
+     "score": 0.4003,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/format-value/format_numbered_list",
+     "symbol": "format_numbered_list",
+     "kind": "value",
+     "score": 0.3921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.39,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_month",
+     "symbol": "unit_month",
+     "kind": "value",
+     "score": 0.382,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.3798,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "update traveler passenger counts",
+   "source": [
+    "t2:s20",
+    "t2:s22",
+    "t2:s24",
+    "t2:s26"
+   ],
+   "id": "n17",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/attribute-name/quantity",
+     "symbol": "quantity",
+     "kind": "attribute",
+     "score": 0.658,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.654,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.5074,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.4802,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/issue",
+     "symbol": "issue",
+     "kind": "constructor",
+     "score": 0.4453,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/vehicle_allowance",
+     "symbol": "vehicle_allowance",
+     "kind": "constructor",
+     "score": 0.4308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.4145,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/reservation_availability",
+     "symbol": "reservation_availability",
+     "kind": "attribute",
+     "score": 0.4105,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_adults",
+     "symbol": "role_adults",
+     "kind": "value",
+     "score": 0.4039,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4033,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_son",
+     "symbol": "role_son",
+     "kind": "value",
+     "score": 0.3893,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "submit flight search",
+   "source": [
+    "t2:s30"
+   ],
+   "id": "n18",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.8132,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.8088,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.721,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/open_page",
+     "symbol": "open_page",
+     "kind": "operation",
+     "score": 0.6729,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.5726,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/walk",
+     "symbol": "walk",
+     "kind": "operation",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4398,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.4243,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/art_itinerary",
+     "symbol": "art_itinerary",
+     "kind": "value",
+     "score": 0.4096,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.4019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/attribute-name/rank_direction",
+     "symbol": "rank_direction",
+     "kind": "attribute",
+     "score": 0.3745,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "filter search results by United Airlines",
+   "source": [
+    "t2:s32",
+    "t2:s34"
+   ],
+   "id": "n19",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.779,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_web",
+     "symbol": "search_web",
+     "kind": "operation",
+     "score": 0.7774,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/apply_filters",
+     "symbol": "apply_filters",
+     "kind": "operation",
+     "score": 0.7738,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.7643,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.7489,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/check_reservation_availability",
+     "symbol": "check_reservation_availability",
+     "kind": "operation",
+     "score": 0.712,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_rating",
+     "symbol": "rank_rating",
+     "kind": "value",
+     "score": 0.6427,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/rank_price",
+     "symbol": "rank_price",
+     "kind": "value",
+     "score": 0.6358,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6295,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/search-web-attributes",
+     "symbol": "rule_search_web_attributes",
+     "kind": "rule",
+     "score": 0.4251,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.4119,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/pick_up",
+     "symbol": "pick_up",
+     "kind": "operation",
+     "score": 0.4031,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "select 5:00 AM morning flight",
+   "source": [
+    "t2:s36"
+   ],
+   "id": "n20",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/select_option",
+     "symbol": "select_option",
+     "kind": "operation",
+     "score": 0.7437,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_transit",
+     "symbol": "search_transit",
+     "kind": "operation",
+     "score": 0.5181,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/search_travel",
+     "symbol": "search_travel",
+     "kind": "operation",
+     "score": 0.4764,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.45,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/select_filter",
+     "symbol": "select_filter",
+     "kind": "operation",
+     "score": 0.4239,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.4226,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/sort",
+     "symbol": "sort",
+     "kind": "operation",
+     "score": 0.4143,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/tone-value",
+     "symbol": "rule_category_tone_value",
+     "kind": "category_rule",
+     "score": 0.4116,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.4063,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/valet",
+     "symbol": "valet",
+     "kind": "value",
+     "score": 0.3898,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/propose_menu",
+     "symbol": "propose_menu",
+     "kind": "claim_relation",
+     "score": 0.384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.38,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "click View Deal button",
+   "source": [
+    "t2:s38",
+    "t2:s40"
+   ],
+   "id": "n21",
+   "context": "1. [circle]   -> CLICK 2. [span]  Flights -> CLICK 3. [span]  One-way -> CLICK 4. [textbox]  City or Airport -> TYPE: SAN FRANSISCO 5. [span]  San Francisco, CA -> CLICK 6. [textbox]  City or Airport -> TYPE: SAN DIEGO 7. [span]  San Diego, CA -> CLICK 8. [div]  Thu, 6/15 -> CLICK 9. [gridcell]  Sat Jul 01 2023 -> CLICK 10. [generic]  Travelers 1,Economy -> CLICK 11. [svg]   -> CLICK 12. [svg]   -> CLICK 13. [span]  Close -> CLICK 14. [span]   -> CLICK 15. [button]  Find flights -> CLICK 16. [span]  Show more -> CLICK 17. [label]  United -> CLICK 18. [div]  Sat 5:00 AM -> CLICK 19. [button]  V",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/click",
+     "symbol": "click",
+     "kind": "operation",
+     "score": 0.7224,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/hover",
+     "symbol": "hover",
+     "kind": "operation",
+     "score": 0.4992,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/format-value",
+     "symbol": "rule_category_format_value",
+     "kind": "category_rule",
+     "score": 0.4237,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/press_key",
+     "symbol": "press_key",
+     "kind": "operation",
+     "score": 0.351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/add_to_cart",
+     "symbol": "add_to_cart",
+     "kind": "operation",
+     "score": 0.3487,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/turn",
+     "symbol": "turn",
+     "kind": "operation",
+     "score": 0.3388,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_checklist",
+     "symbol": "entity_checklist",
+     "kind": "value",
+     "score": 0.3212,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_grocery_list",
+     "symbol": "entity_grocery_list",
+     "kind": "value",
+     "score": 0.3106,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_menu_items",
+     "symbol": "entity_menu_items",
+     "kind": "value",
+     "score": 0.304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_sides",
+     "symbol": "entity_sides",
+     "kind": "value",
+     "score": 0.299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_cake",
+     "symbol": "entity_cake",
+     "kind": "value",
+     "score": 0.2856,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/web_element",
+     "symbol": "web_element",
+     "kind": "constructor",
+     "score": 0.2837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_appetizers",
+     "symbol": "entity_appetizers",
+     "kind": "value",
+     "score": 0.2787,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

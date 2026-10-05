@@ -1,0 +1,25 @@
+    1.9s turn 1
+   15.0s   model reply: in 27270 + cached 0, out 1951 (+1755 reasoning)
+   15.0s   tool bash: node /kit/rag.mjs entry ask offer propose respond include offer_help requirement constraint_budget_limited enables failure outcome prep_time propose_menu propos
+   15.2s turn 2
+   19.9s   model reply: in 6891 + cached 24377, out 100 (+56 reasoning)
+   19.9s   tool bash: node /kit/rag.mjs search "dinner" "recipe" "cook" "vegetarian" "taco" "pasta" "menu"
+   20.1s turn 3
+   24.6s   model reply: in 4834 + cached 28436, out 118 (+71 reasoning)
+   24.6s   tool bash: node /kit/rag.mjs search "easy" "delicious" "friend" "assemble" "filling" "ahead" "sides" "toppings"
+   25.0s turn 4
+   40.1s   model reply: in 3089 + cached 32495, out 2062 (+1948 reasoning)
+   40.1s   tool bash: node /kit/rag.mjs entry entity_menu_items entity_recipes entity_appetizers entity_sides entity_desserts entity_assembly_tips entity_order_vs_assemble_plan entit
+   40.3s turn 5
+   44.2s   model reply: in 7346 + cached 32506, out 136 (+88 reasoning)
+   44.2s   tool bash: node /kit/rag.mjs search "bake" "roast" "saute" "mix" "assemble" "step" "alternative" "suggest"
+   44.5s turn 6
+   51.7s   model reply: in 5571 + cached 36567, out 105 (+57 reasoning)
+   51.7s   tool bash: grep -E "^\| [a-z0-9_]+ \| (constructor|claim_relation|link|composite) \|" /reference/glossary.md
+   51.8s turn 7
+   55.9s   model reply: in 3415 + cached 40624, out 136 (+33 reasoning)
+   55.9s   tool bash: grep -iE "\| (constructor|claim_relation|link|composite) \|" /reference/glossary.md | grep -iE "food|recipe|dish|meal|dinner|option|menu|preference|diet|cook|ba
+   56.0s turn 8
+   56.7s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   56.7s agent finished
+   56.7s agent finished

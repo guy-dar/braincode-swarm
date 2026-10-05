@@ -1,0 +1,55 @@
+    2.2s turn 1
+   16.8s   model reply: in 32542 + cached 0, out 1942 (+1918 reasoning)
+   16.8s   tool bash: node /kit/rag.mjs check --help
+   16.9s turn 2
+   29.5s   model reply: in 6038 + cached 28462, out 1913 (+1860 reasoning)
+   29.5s   tool bash: node /kit/rag.mjs search "uncomfortable" "career advice" "workplace" "mental health" "exit strategy" "emergency fund" "job search" "resume"
+   29.7s turn 3
+   33.8s   model reply: in 6053 + cached 32535, out 170 (+123 reasoning)
+   33.8s   tool bash: node /kit/rag.mjs search "recommend" "advice" "strategy" "quit" "saving" "support" "burnout" "values"
+   34.1s turn 4
+   38.2s   model reply: in 41022 + cached 0, out 108 (+63 reasoning)
+   38.2s   tool bash: grep -E "^\| [a-z_]+ \| (constructor|claim_relation|speech_act|link)" /reference/glossary.md
+   38.3s turn 5
+   43.8s   model reply: in 2319 + cached 40657, out 286 (+219 reasoning)
+   43.8s   tool bash: node /kit/rag.mjs entry comfortable role_user activity negation obligation self_protection interpersonal_stance recommended has_goal motivated_by causes leads_t
+   44.0s turn 6
+   48.4s   model reply: in 4574 + cached 40652, out 157 (+97 reasoning)
+   48.4s   tool bash: node /kit/rag.mjs entry conditional subject requirement duration unit_minute unit_day personal_values role_manager role_colleague role_friend role_support_team 
+   48.6s turn 7
+   59.3s   model reply: in 6004 + cached 40642, out 770 (+721 reasoning)
+   59.3s   tool bash: node /kit/rag.mjs search "family" "counseling" "finance" "application" "workload" "boundary" "decision" "search"
+   59.5s turn 8
+   64.3s   model reply: in 4963 + cached 44708, out 357 (+331 reasoning)
+   64.3s   tool bash: grep -i "comfortable" /reference/glossary.md
+   64.3s turn 9
+   68.0s   model reply: in 5385 + cached 44691, out 67 (+41 reasoning)
+   68.0s   tool bash: grep -n "comfortable(" /reference/glossary.md
+   68.1s turn 10
+   71.8s   model reply: in 5521 + cached 44673, out 132 (+104 reasoning)
+   71.8s   tool bash: node /kit/rag.mjs widen "comfortable" --kind claim
+   72.0s turn 11
+   76.9s   model reply: in 2774 + cached 48724, out 137 (+112 reasoning)
+   76.9s   tool bash: node /kit/rag.mjs widen "user"
+   77.1s turn 12
+   86.0s   model reply: in 3948 + cached 48713, out 927 (+901 reasoning)
+   86.0s   tool bash: grep -i "question" /reference/glossary.md
+   86.1s turn 13
+  124.6s   model reply: in 5091 + cached 48702, out 6061 (+5955 reasoning)
+  124.6s   tool bash: node /kit/rag.mjs entry offer_help duration constraint_budget_limited role_support_team role_colleague role_manager role_friend role_agent role_user tone_empath
+  124.8s turn 14
+  167.8s   model reply: in 9160 + cached 52806, out 7461 (+5872 reasoning)
+  167.8s   tool write: /output/translation.md
+  167.8s turn 15
+  171.1s   model reply: in 8469 + cached 60962, out 54 (+24 reasoning)
+  171.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  171.2s turn 16
+  201.4s   model reply: in 56749 + cached 0, out 3718 (+2129 reasoning)
+  201.4s   tool write: /output/translation.md
+  201.4s turn 17
+  204.6s   model reply: in 7625 + cached 52846, out 53 (+23 reasoning)
+  204.6s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  204.9s turn 18
+  212.2s   model reply: in 4309 + cached 56895, out 656 (+493 reasoning)
+  212.2s agent finished
+  212.2s agent finished

@@ -70,7 +70,7 @@ def save(fig, path: Path):
 
 # ---------------------------------------------------------------------- loading
 
-def load(run: str) -> dict:
+def load(run: str, exclude=()) -> dict:
     d = EVAL_DIR / "runs" / run
     models = {m["name"]: m for m in json.loads((EVAL_DIR / "models.json").read_text(encoding="utf-8"))["models"]}
     items = {json.loads(l)["item_key"]: json.loads(l) for l in
@@ -79,7 +79,7 @@ def load(run: str) -> dict:
     runs = []
     for p in sorted(d.glob("*/*/r*/result.json")):
         r = json.loads(p.read_text(encoding="utf-8"))
-        if r["model"] not in models or r["status"] == "skipped":
+        if r["model"] not in models or r["model"] in exclude or r["status"] == "skipped":
             continue
         r["dir"] = p.parent
         r["shared"] = items[r["item"]]["all_models"]
@@ -411,7 +411,7 @@ def expressivity(data: dict, out: Path) -> dict:
     lines = ["# Expressivity: round trip natural language → BrainCode → natural language", "",
              "**Every score is in [0, 1] and higher = input and output more similar = better.** BLEU = mean sentence "
              "BLEU (and corpus BLEU); ROUGE-L = longest-common-subsequence F1; word-Levenshtein similarity = "
-             "1 − word edit distance / longer length. Each forward translation is back-translated by the same model "
+             "1 − word edit distance / longer length. One forward translation per item (its first usable run) is back-translated by the same model "
              "without seeing the original.", "",
              "| model | dataset | pairs | BLEU ↑ | corpus BLEU ↑ | ROUGE-L ↑ | word-Levenshtein similarity ↑ |",
              "|---|---|---:|---:|---:|---:|---:|"]
@@ -442,6 +442,39 @@ def expressivity(data: dict, out: Path) -> dict:
     return {"rows": rows}
 
 
+def failures(data: dict, out: Path) -> dict:
+    """failures.md: every failed translation with the terms it would add or
+    refine (its own documentation, from result.json / suggestions.md), and the
+    terms most often missing per model."""
+    rows, per_model = [], defaultdict(Counter)
+    for r in sorted(data["runs"], key=lambda r: (r["model"], r["item"], r["run"])):
+        if r["status"] != "failed":
+            continue
+        res = json.loads((r["dir"] / "result.json").read_text(encoding="utf-8"))
+        f = res.get("failure") or {}
+        adds = [a["term"] for a in f.get("would_add") or []]
+        refines = [x["target"] for x in f.get("would_refine") or []]
+        per_model[r["model"]].update(adds)
+        rows.append({"model": r["model"], "item": r["item"], "dataset": r["dataset"], "run": r["run"],
+                     "add_count": len(set(adds)), "would_add": ", ".join(adds),
+                     "refine_count": len(set(refines)), "would_refine": ", ".join(refines),
+                     "documented": f.get("documented", False)})
+    write_csv(out / "failures.csv", rows)
+    labels = {m["name"]: m["label"] for m in data["models"]}
+    lines = ["# Failed translations and what they were missing", "",
+             "Every failed run, with the terms its translator documented as missing from the glossary "
+             "(`add`) or needing a change (`refine`), from its suggestions.", "",
+             "| model | item | run | adds | terms it would add | refines | targets |", "|---|---|---:|---:|---|---:|---|"]
+    for r in rows:
+        lines.append(f"| {labels.get(r['model'], r['model'])} | {r['item']} | r{r['run']} | {r['add_count']} | "
+                     f"{r['would_add'] or '—'} | {r['refine_count']} | {r['would_refine'] or '—'} |")
+    lines += ["", "## Most frequent missing terms per model", ""]
+    for m, c in per_model.items():
+        lines.append(f"- **{labels.get(m, m)}**: " + ", ".join(f"{t} ({n})" for t, n in c.most_common(15)))
+    (out / "failures.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return {"rows": rows}
+
+
 def write_csv(path: Path, rows: list):
     if not rows:
         return
@@ -454,21 +487,31 @@ def write_csv(path: Path, rows: list):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--run", default="main")
+    p.add_argument("--exclude", default="", help="comma-separated model names to leave out")
+    p.add_argument("--only", default="coverage,determinism,expressivity,failures",
+                   help="comma-separated analyses to run (summary.json only when all run)")
+    p.add_argument("--out", default=None, help="results subfolder (default: the run id)")
     args = p.parse_args(argv)
+    only = set(args.only.split(","))
     sys.path.insert(0, str(EVAL_DIR.parent / "swarm"))
     style()
-    data = load(args.run)
-    out = EVAL_DIR / "results" / args.run
+    data = load(args.run, exclude=set(filter(None, args.exclude.split(","))))
+    out = EVAL_DIR / "results" / (args.out or args.run)
     out.mkdir(parents=True, exist_ok=True)
-    cov = coverage(data, out)
-    det = determinism(data, out)
-    det_vs_cov(cov, det, data["models"], out / "determinism_vs_coverage.png")
-    exp = expressivity(data, out)
+    cov = coverage(data, out) if {"coverage", "determinism"} & only else None
+    det = determinism(data, out) if "determinism" in only else None
+    if cov and det:
+        det_vs_cov(cov, det, data["models"], out / "determinism_vs_coverage.png")
+    exp = expressivity(data, out) if "expressivity" in only else None
+    fails = failures(data, out) if "failures" in only else None
+    if not (cov and det and exp and fails):
+        print(f"wrote {', '.join(sorted(p.name for p in out.iterdir()))} to {out}")
+        return
     summary = {"run": args.run, "models": [{k: m[k] for k in ("name", "label", "company", "tier")} for m in
                                            data["models"]],
                "coverage": cov["rows"], "determinism_pairs": det["pairs"], "determinism_self": det["self"],
                "top_symbols": det["pooled_top_symbols"], "type_counts": det["pooled_types"],
-               "expressivity": exp["rows"]}
+               "expressivity": exp["rows"], "failures": fails["rows"]}
     (out / "summary.json").write_text(json.dumps(summary, indent=1, default=float), encoding="utf-8")
     print(f"wrote {', '.join(sorted(p.name for p in out.iterdir()))} to {out}")
 

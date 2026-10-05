@@ -1,0 +1,138 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "Text drawer incorrectly draws composite gates containing qubits and classical bits",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "Qiskit Terra",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "constraint",
+   "text": "Qiskit Terra version 0.18.0.dev0+2ecf45d",
+   "status": "covered",
+   "matched_symbols": [
+    "software_version"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "Python",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "platform_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "constraint",
+   "text": "Python version 3.7",
+   "status": "covered",
+   "matched_symbols": [
+    "software_version"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Text drawer incorrectly renders composite gates containing both qubits and classical bits",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Drawing error occurs when qreg_list or creg_list in qc.append() is not in ascending order",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Quantum circuit example with non-ascending register lists appended",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Image showing incorrect text circuit drawer rendering",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Numbering of active wires in text drawer is incorrect",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "reasoning",
+   "text": "Drawing error is caused by drawing gate components in incorrect ordering",
+   "status": "covered",
+   "matched_symbols": [
+    "causes"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "qiskit/visualization/text.py around line 1211",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "Modify qiskit/visualization/text.py",
+   "status": "covered",
+   "matched_symbols": [
+    "modify_code"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "captioned_figure",
+  "causes",
+  "code_entity",
+  "failure",
+  "modify_code",
+  "platform_label",
+  "role_user",
+  "software_version",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n4"
+ ]
+}

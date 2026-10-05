@@ -1,0 +1,7 @@
+### S1 | type: add | dimension: constructor | symbol: boolean_test_behavior
+- Needs: n2 (t1:s1), n5 (t1:s2), n6 (t1:s2)
+- Searches tried: widen “Implement the __nonzero__ magic method for pandas DataFrame instances”; search “describe implementation of a special method in a class,” “a method's behavior returns a boolean indicating whether a DataFrame is empty,” “implementation of a code method with behavioral requirement,” and “empty dataframe evaluated as boolean truth value.” Close candidates `requirement`, `test_condition`, `state_empty`, and `activity` do not express a subject-specific boolean-context behavior.
+- Typed parameters: subject: TERM, condition: TERM
+- Interpretation: Describes required behavior in which the subject can be used in a Boolean context to evaluate the specified condition. It describes a requirement, not a claim that the behavior is implemented or an observed result.
+- Example: `TERM boolean_test_behavior(condition=test_condition_2, subject=dataframe) -> boolean_test_behavior_2 : TERM`
+- Proposed record: {"symbol": "boolean_test_behavior", "kind": "constructor", "signature": "TERM boolean_test_behavior(subject: TERM, condition: TERM) -> TERM", "definition": "Describes required behavior in which the subject can be used in a Boolean context to evaluate the specified condition. It is a requirement description, not a claim that the behavior is implemented or an observed result.", "not": "An observed Boolean outcome or a claim that an implementation already has this behavior", "aliases": []}

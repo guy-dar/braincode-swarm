@@ -1,0 +1,1 @@
+Turn left. Walk to the table. Pick up the keys from the table. Turn around. Walk to the living room. Walk to the ottoman. Place the keys on the ottoman to the left of the phone.

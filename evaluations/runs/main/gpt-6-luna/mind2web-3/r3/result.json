@@ -1,0 +1,44 @@
+{
+ "model": "gpt-6-luna",
+ "item": "mind2web-3",
+ "dataset": "mind2web",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 335.3,
+ "usage": {
+  "calls": 15,
+  "input": 45,
+  "cacheRead": 732895,
+  "cacheWrite": 63967,
+  "output": 11694,
+  "reasoning": 6959,
+  "compactions": 0,
+  "truncated_tool_results": 1
+ },
+ "cost_usd": 0.0212,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "catalog_search_request",
+    "dimension": "constructor"
+   },
+   {
+    "term": "unit_watt",
+    "dimension": "vocabulary-member"
+   },
+   {
+    "term": "entity_description",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

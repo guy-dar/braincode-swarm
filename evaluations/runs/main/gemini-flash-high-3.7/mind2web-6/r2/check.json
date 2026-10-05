@@ -1,0 +1,150 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "User requests to view specific properties.",
+   "status": "covered",
+   "matched_symbols": [
+    "request",
+    "user_preference",
+    "include",
+    "offer"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "action",
+   "text": "Display or filter properties.",
+   "status": "covered",
+   "matched_symbols": [
+    "include"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Properties or student accommodations.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "Include only properties that offer promotions or special discounts.",
+   "status": "covered",
+   "matched_symbols": [
+    "include",
+    "promotional_event",
+    "offer"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "constraint",
+   "text": "Filter by location associated with a university in Sydney.",
+   "status": "covered",
+   "matched_symbols": [
+    "associated_with",
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Universities located in Sydney.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "Click on the search textbox for college, city, or property.",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "location_spec"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "Click or select Sydney.",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "Click the Special offer button.",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "offer",
+    "promotional_event"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "Click the unlabelled button.",
+   "status": "covered",
+   "matched_symbols": [
+    "click",
+    "web_element"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "Click to select a university.",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "action",
+   "text": "Select Macquarie University.",
+   "status": "covered",
+   "matched_symbols": [
+    "click"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "ACTION",
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "activity",
+  "associated_with",
+  "click",
+  "include",
+  "location_spec",
+  "offer",
+  "promotional_event",
+  "request",
+  "role_user",
+  "subject",
+  "target",
+  "user_preference",
+  "web_element"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

@@ -1,0 +1,179 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "claim",
+   "text": "User is failing to complete a specific video game",
+   "status": "covered",
+   "matched_symbols": [
+    "cat_game",
+    "enables",
+    "failure",
+    "outcome"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "speech_act",
+   "text": "User asks the assistant for help completing a game",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "role_agent",
+    "cat_game",
+    "offer_help",
+    "role_user",
+    "offer"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "video game",
+   "status": "covered",
+   "matched_symbols": [
+    "cat_game",
+    "role_user"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "speech_act",
+   "text": "Assistant confirms willingness and readiness to help",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "offer",
+    "offer_help",
+    "ask",
+    "enables"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "Help the user overcome a difficult part in a game",
+   "status": "covered",
+   "matched_symbols": [
+    "cat_game",
+    "role_user",
+    "offer_help"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "speech_act",
+   "text": "Assistant asks the user for more information about their issue",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "role_agent",
+    "offer",
+    "express_interest",
+    "role_user"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "Name or title of the game being played",
+   "status": "covered",
+   "matched_symbols": [
+    "cat_game",
+    "activity",
+    "target"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Gaming platform or device used to play the game",
+   "status": "covered",
+   "matched_symbols": [
+    "cat_game"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Specific level, boss fight, puzzle, quest, or achievement where the user is stuck",
+   "status": "covered",
+   "matched_symbols": [
+    "role_user",
+    "role_agent",
+    "activity"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Error messages, software glitches, or abnormal behavior encountered",
+   "status": "covered",
+   "matched_symbols": [
+    "indicator",
+    "failure"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "reasoning",
+   "text": "Providing more details allows the assistant to create a better tailored solution",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "enables",
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "speech_act",
+   "text": "Assistant expresses anticipation for the user's response",
+   "status": "covered",
+   "matched_symbols": [
+    "role_agent",
+    "express_interest",
+    "offer",
+    "ask",
+    "role_user"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "AGENT",
+  "CONVO",
+  "ENTRYPOINT",
+  "REPLY_TO",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "cat_game",
+  "conjunction",
+  "enables",
+  "express_interest",
+  "failure",
+  "indicator",
+  "offer",
+  "offer_help",
+  "outcome",
+  "property_question",
+  "role_agent",
+  "role_user",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": []
+}

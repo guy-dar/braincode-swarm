@@ -1,0 +1,1 @@
+Turn left and walk to the black table on the other side of the couch on the wall. Pick up the keys behind the white vase on the table. Turn around and walk to the living room. Walk to the purple ottoman. Place the keys to the left of the phone on the ottoman.

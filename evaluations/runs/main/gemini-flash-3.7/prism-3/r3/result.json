@@ -1,0 +1,43 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "prism-3",
+ "dataset": "prism",
+ "run": 3,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 629.3,
+ "usage": {
+  "calls": 38,
+  "input": 269430,
+  "cacheRead": 1557013,
+  "output": 28952,
+  "reasoning": 19239,
+  "compactions": 2,
+  "truncated_tool_results": 8
+ },
+ "cost_usd": 0.4274,
+ "failure": {
+  "add_count": 3,
+  "refine_count": 0,
+  "would_add": [
+   {
+    "term": "identity_credential",
+    "dimension": "constructor"
+   },
+   {
+    "term": "account_verification",
+    "dimension": "constructor"
+   },
+   {
+    "term": "multi_factor_authentication",
+    "dimension": "constructor"
+   }
+  ],
+  "would_refine": [],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ },
+ "setup": "v1",
+ "timeout_s": 1200
+}

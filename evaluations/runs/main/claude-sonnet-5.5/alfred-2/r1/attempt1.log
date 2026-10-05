@@ -1,0 +1,23 @@
+    4.0s turn 1
+   10.7s   model reply: in 4 + cached 2083, out 393 (+329 reasoning)
+   10.7s   tool bash: node /kit/rag.mjs entry chill remove face
+   10.8s turn 2
+   30.8s   model reply: in 2 + cached 41350, out 2896 (+1229 reasoning)
+   30.8s   tool bash: cat > /output/translation.md <<'EOF'
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN 
+   31.0s turn 3
+   34.6s   model reply: in 2 + cached 42244, out 150 (+37 reasoning)
+   34.6s   tool bash: cd /output && sed -i 's/direction=left/direction="left"/; s/direction=around/direction="around"/' translation.md && node /kit/rag.mjs check --translation transl
+   35.0s turn 4
+   39.6s   model reply: in 2 + cached 45992, out 415 (+0 reasoning)
+   39.6s agent finished
+   39.6s agent finished

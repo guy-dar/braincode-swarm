@@ -1,0 +1,11 @@
+<|user|>place potato
+<|assistant|>walk microwave
+face microwave
+remove potato
+walk sink
+face sink
+wash potato
+remove potato
+walk fridge
+face fridge
+place potato

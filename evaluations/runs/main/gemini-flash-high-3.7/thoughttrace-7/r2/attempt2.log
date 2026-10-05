@@ -1,0 +1,58 @@
+    1.8s turn 1
+    5.5s   model reply: in 46046 + cached 0, out 69 (+29 reasoning)
+    5.5s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md
+    5.6s turn 2
+    9.7s   model reply: in 3381 + cached 44667, out 63 (+16 reasoning)
+    9.7s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md | tail -n +35
+    9.8s turn 3
+   12.8s   model reply: in 5115 + cached 44661, out 72 (+34 reasoning)
+   12.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+   12.8s turn 4
+   16.0s   model reply: in 2928 + cached 48716, out 58 (+13 reasoning)
+   16.0s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +25
+   16.0s turn 5
+   19.1s   model reply: in 4828 + cached 48711, out 61 (+16 reasoning)
+   19.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +50
+   19.1s turn 6
+   23.3s   model reply: in 2583 + cached 52765, out 60 (+15 reasoning)
+   23.3s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | tail -n +75
+   23.4s turn 7
+   27.7s   model reply: in 3336 + cached 52751, out 50 (+12 reasoning)
+   27.7s   tool bash: grep -E "^\| [a-z0-9_]+ \| link \|" /reference/glossary.md
+   27.8s turn 8
+   30.8s   model reply: in 3623 + cached 52733, out 57 (+13 reasoning)
+   30.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| (operation|speech_act) \|" /reference/glossary.md
+   30.9s turn 9
+   34.3s   model reply: in 5741 + cached 52732, out 55 (+15 reasoning)
+   34.3s   tool bash: grep -E "^\| [a-z0-9_]+ \| speech_act \|" /reference/glossary.md
+   34.3s turn 10
+   54.7s   model reply: in 2230 + cached 56772, out 3436 (+3411 reasoning)
+   54.7s   tool bash: node /kit/rag.mjs entry lexical_label
+   54.9s turn 11
+   65.8s   model reply: in 6121 + cached 56787, out 1302 (+1277 reasoning)
+   65.8s   tool bash: node /kit/rag.mjs entry food_label
+   65.9s turn 12
+   71.1s   model reply: in 3489 + cached 60836, out 427 (+384 reasoning)
+   71.1s   tool bash: node /kit/rag.mjs entry food_label::taco food_label::beans food_label::rice food_label::vegetarian
+   71.4s turn 13
+  102.8s   model reply: in 4428 + cached 60824, out 6123 (+4367 reasoning)
+  102.8s   tool write: /output/translation.md
+  102.9s turn 14
+  124.6s   model reply: in 46096 + cached 0, out 54 (+24 reasoning)
+  124.6s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  125.0s turn 15
+  143.5s   model reply: in 46781 + cached 0, out 2590 (+2559 reasoning)
+  143.5s   tool bash: node /kit/rag.mjs entry role_agent role_user role_friend
+  143.7s turn 16
+  148.2s   model reply: in 4887 + cached 44625, out 184 (+119 reasoning)
+  148.2s   tool bash: node /kit/rag.mjs entry meat lettuce cheese entity_sides fruit_juice ice_cream entity_desserts bread entity_appetizers entity_recipes ask propose offer propose_
+  148.3s turn 17
+  170.1s   model reply: in 3145 + cached 48682, out 3801 (+2045 reasoning)
+  170.1s   tool write: /output/translation.md
+  170.2s turn 18
+  174.1s   model reply: in 10999 + cached 44633, out 54 (+24 reasoning)
+  174.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+  174.2s turn 19
+  188.2s   model reply: in 3583 + cached 52734, out 1980 (+198 reasoning)
+  188.2s agent finished
+  188.2s agent finished

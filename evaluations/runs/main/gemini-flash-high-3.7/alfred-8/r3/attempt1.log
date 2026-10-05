@@ -1,0 +1,91 @@
+    7.0s turn 1
+   73.2s   model reply: in 31458 + cached 0, out 1893 (+1853 reasoning)
+   73.2s   tool bash: node /kit/rag.mjs search "alfred" "turn around" "walk across the room" "turn right"
+   73.4s turn 2
+   81.9s   model reply: in 6068 + cached 28462, out 68 (+40 reasoning)
+   81.9s   tool bash: node /kit/rag.mjs entry turn walk pick_up place
+   82.0s turn 3
+  382.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  382.1s agent finished
+  384.1s turn 4
+  684.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  684.1s agent finished
+  688.1s turn 5
+  925.9s   model reply: in 35324 + cached 0, out 93 (+50 reasoning)
+  925.9s   tool bash: grep -E "spatial-relation|location-name|entity-name" /reference/glossary.md | head -n 40
+  926.0s turn 6
+  968.7s   model reply: in 4550 + cached 32506, out 46 (+14 reasoning)
+  968.8s   tool bash: grep -A 25 "### spatial-relation" /reference/glossary.md
+  968.8s turn 7
+ 1005.8s   model reply: in 5204 + cached 32492, out 4791 (+4758 reasoning)
+ 1005.8s   tool bash: node /kit/rag.mjs search "Move two books from the desk to the bed"
+ 1006.0s turn 8
+ 1016.0s   model reply: in 6304 + cached 36572, out 1266 (+1241 reasoning)
+ 1016.0s   tool bash: node -e 'console.log("testing node")'
+ 1016.1s turn 9
+ 1024.8s   model reply: in 3519 + cached 40625, out 303 (+270 reasoning)
+ 1024.8s   tool bash: grep -A 10 -B 2 "turn" /reference/glossary.md
+ 1024.9s turn 10
+ 1028.4s   model reply: in 5639 + cached 40621, out 58 (+35 reasoning)
+ 1028.4s   tool bash: node /kit/rag.mjs entry turn
+ 1028.5s turn 11
+ 1032.8s   model reply: in 5785 + cached 40602, out 130 (+91 reasoning)
+ 1032.8s   tool bash: node /kit/rag.mjs search "walk" "turn" "look" "pick_up" "place"
+ 1032.9s turn 12
+ 1050.9s   model reply: in 3412 + cached 44656, out 2150 (+2115 reasoning)
+ 1050.9s   tool bash: grep -B 2 -A 10 "example_a" /reference/glossary.md
+ 1051.0s turn 13
+ 1072.0s   model reply: in 6718 + cached 44663, out 2979 (+2952 reasoning)
+ 1072.0s   tool bash: grep -E "turn\(" /reference/glossary.md
+ 1072.0s turn 14
+ 1081.6s   model reply: in 5643 + cached 48727, out 71 (+27 reasoning)
+ 1081.6s   tool bash: node /kit/rag.mjs search "turn around" "turn right" "walk across the room" "garbage can" "just before"
+ 1081.8s turn 15
+ 1089.6s   model reply: in 55887 + cached 0, out 456 (+422 reasoning)
+ 1089.6s   tool bash: grep -B 2 -A 5 "walk | operation" /reference/glossary.md
+ 1089.7s turn 16
+ 1094.7s   model reply: in 3819 + cached 52764, out 478 (+428 reasoning)
+ 1094.7s   tool bash: node /kit/rag.mjs search "located to the right of" "to the right of" "across from" "in front of" "at the end of"
+ 1094.8s turn 17
+ 1098.1s   model reply: in 5759 + cached 52761, out 66 (+28 reasoning)
+ 1098.1s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+ 1098.2s turn 18
+ 1101.6s   model reply: in 3567 + cached 56815, out 87 (+33 reasoning)
+ 1101.6s   tool bash: grep -E "\| constructor \|" /reference/glossary.md | grep -E "spatial|location|object|item|entity|qualifier|target|source|relative|place"
+ 1101.7s turn 19
+ 1104.6s   model reply: in 5451 + cached 56811, out 57 (+22 reasoning)
+ 1104.6s   tool bash: grep -E "\| constructor \|" /reference/glossary.md | tail -n 30
+ 1104.7s turn 20
+ 1107.8s   model reply: in 3157 + cached 60863, out 92 (+67 reasoning)
+ 1107.8s   tool bash: node /kit/rag.mjs entry spatial_constraint
+ 1107.9s turn 21
+ 1115.6s   model reply: in 3345 + cached 60844, out 743 (+586 reasoning)
+ 1115.6s   tool write: /output/translation.md
+ 1115.7s turn 22
+ 1119.1s   model reply: in 4109 + cached 60827, out 53 (+23 reasoning)
+ 1119.1s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+ 1119.9s turn 23
+ 1132.1s   model reply: in 4921 + cached 60814, out 1853 (+1813 reasoning)
+ 1132.1s   tool bash: node /kit/rag.mjs search "garbage can" "green" "trash_can" "garbage" "room"
+ 1132.2s turn 24
+ 1136.6s   model reply: in 4082 + cached 64879, out 336 (+298 reasoning)
+ 1136.6s   tool bash: node /kit/rag.mjs search "lexical_label" "spatial_constraint" "object_label"
+ 1136.8s turn 25
+ 1164.8s   model reply: in 51047 + cached 0, out 3366 (+2328 reasoning)
+ 1164.8s   tool write: /output/translation.md
+ 1164.8s turn 26
+ 1169.0s   model reply: in 5736 + cached 48681, out 53 (+23 reasoning)
+ 1169.0s   tool bash: node /kit/rag.mjs check --translation /output/translation.md
+ 1169.2s turn 27
+ 1175.9s   model reply: in 55435 + cached 0, out 541 (+495 reasoning)
+ 1175.9s   tool bash: grep -E "\| (turn|walk|pick_up|place|look|stand_up|drop) \|" /reference/glossary.md
+ 1176.0s turn 28
+ 1179.4s   model reply: in 3697 + cached 52715, out 71 (+43 reasoning)
+ 1179.4s   tool bash: grep "\| spatial-relation \|" /reference/glossary.md
+ 1179.4s turn 29
+ 1182.9s   model reply: in 5793 + cached 52714, out 62 (+32 reasoning)
+ 1182.9s   tool bash: grep "\| value \| spatial-relation \|" /reference/glossary.md
+ 1182.9s turn 30
+ 1186.8s   model reply: in 3825 + cached 56768, out 92 (+47 reasoning)
+ 1186.8s   tool bash: node /kit/rag.mjs entry behind between in_front_of left_of next_to on other_side_of right_of under
+ 1187.0s turn 31
