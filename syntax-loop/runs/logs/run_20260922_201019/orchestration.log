@@ -1,0 +1,74 @@
+2026-09-22 20:10:19,722 [INFO] Logging this run to C:\projects\BrainCode\syntax-loop\runs\logs\run_20260922_201019\ (orchestration.log + transcript.log)
+2026-09-22 20:10:19,761 [INFO] Simulation pool: mind2web -> 1000 items from mind2web.jsonl
+2026-09-22 20:10:19,767 [INFO] Simulation pool: alfred -> 1000 items from alfred.jsonl
+2026-09-22 20:10:19,777 [INFO] Simulation pool: swebench -> 500 items from swebench.jsonl
+2026-09-22 20:10:19,809 [INFO] Simulation pool: prism -> 1000 items from prism.jsonl
+2026-09-22 20:10:19,860 [INFO] Simulation pool: paths -> 999 items from paths.jsonl
+2026-09-22 20:10:19,973 [INFO] Simulation pool: thoughttrace -> 1000 items from thoughttrace.jsonl
+2026-09-22 20:10:19,973 [INFO] Simulation pool: {'seed_tasks': 9, 'mind2web': 1000, 'alfred': 1000, 'swebench': 500, 'prism': 1000, 'paths': 999, 'thoughttrace': 1000}
+2026-09-22 20:10:19,977 [INFO] Budget burndown (before this run):
+  Total spent across all real runs: $8.4752 (this run's cap: $2.00)
+  By provider:
+    - anthropic: $2.0166
+    - gemini: $0.1382
+    - openai: $0.2579
+  Last 2 run(s) (oldest first):
+    - 2026-09-21T03:09:20  $0.0143  (gemini=$0.0143)
+    - 2026-09-22T19:49:46  $2.3982  (anthropic=$2.0166, gemini=$0.1239, openai=$0.2579)
+2026-09-22 20:10:19,977 [INFO] Starting BrainCode syntax loop: max_budget=$2.00 max_iterations=1 dry_run=False
+2026-09-22 20:10:19,977 [INFO] --- Sprint 0 (bootstrap) --- (up to 100 attempt(s))
+2026-09-22 20:10:51,772 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:12:52,041 [INFO] Sprint 0 attempt 1: Shaper (anthropic/claude-sonnet-5) proposed: Action(add), Task(add), Condition(add), Binding(add), ForEach(add)
+2026-09-22 20:12:53,533 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:13:19,504 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:13:35,467 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:13:55,324 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:14:03,806 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:14:14,784 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:14:28,293 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:14:56,830 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:15:30,241 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-22 20:15:31,322 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:15:42,412 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:15:50,170 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:16:00,170 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:16:09,067 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:16:34,109 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-22 20:16:35,401 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:16:55,080 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:17:12,672 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:17:25,988 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:17:35,703 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:17:43,552 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:18:05,464 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:18:13,885 [INFO] Sprint 0 attempt 1: 20 simulation items, cross-check: run: proposal is substantive and budget allows
+2026-09-22 20:19:42,730 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 20:19:42,746 [INFO] Sprint 0 attempt 1: Critic (needs-rework): This is a promising core: ordered Tasks, bindings, fixed-precedence conditions, and sequential iteration provide useful structure for several sampled closed tasks. It cannot be ...
+2026-09-22 20:19:44,406 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:19:48,589 [INFO] Sprint 0 attempt 1/100 done: decision=needs-rework hygiene=pass changes=5 cost=$0.7409 cumulative=$0.7409
+2026-09-22 20:19:50,622 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:25:24,805 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-22 20:25:24,805 [INFO] Sprint 0 attempt 2: Shaper (anthropic/claude-sonnet-5) proposed: Document(add), Action(revise), Task(revise), Condition(revise), Binding(revise)
+2026-09-22 20:25:24,805 [WARNING] Sprint 0 attempt 2: Doc hygiene FAILED — `Binding` missing glossary_gloss, worked_example, worked_example.nl/braincode
+2026-09-22 20:25:24,805 [INFO] Sprint 0 attempt 2: 20 simulation items, cross-check: skipped: no constructs in the spec yet and fewer than 2 proposed — nothing to translate with
+2026-09-22 20:27:39,054 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 20:27:39,064 [INFO] Sprint 0 attempt 2: Critic (needs-rework): This is a promising direction: explicit indentation, entry-point rules, ordered evaluation, pure Query predicates, strict comparison behavior, and the Edit/Assert/Verify core ad...
+2026-09-22 20:27:41,644 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:27:44,889 [INFO] Sprint 0 attempt 2/100 done: decision=needs-rework hygiene=FAIL changes=5 cost=$0.7103 cumulative=$1.4512
+2026-09-22 20:27:46,520 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-22 20:33:04,532 [INFO] Sprint 0 attempt 3: Shaper (anthropic/claude-sonnet-5) proposed: Document(revise), Action(revise), Task(revise), Condition(revise), Binding(revise), ForEach(add), Dialogue(add)
+2026-09-22 20:33:04,532 [INFO] Sprint 0 attempt 3: 20 simulation items, cross-check: skipped: remaining budget $0.03 too low for ~$0.80 of translations
+2026-09-22 20:34:51,667 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 20:34:51,674 [INFO] Sprint 0 attempt 3: Critic (needs-rework): This is a promising and substantially more complete bootstrap basis: it gives useful deterministic semantics for sequencing, control flow, data flow, iteration, and dialogue ord...
+2026-09-22 20:34:51,676 [WARNING] Sprint 0 (bootstrap) cut short by budget: budget_exhausted ($2.14 spent >= $2.00 max). No steady-state sprints ran.
+2026-09-22 20:34:51,699 [INFO] Snapshotted this run's docs/ to C:\projects\BrainCode\syntax-loop\braincode_loop\seed_docs\runs\run_20260922_201019
+2026-09-22 20:34:51,699 [INFO] Budget burndown (after this run, +$2.1430):
+  Total spent across all real runs: $10.6182 (this run's cap: $2.00)
+  By provider:
+    - anthropic: $3.6089
+    - gemini: $0.2434
+    - openai: $0.7034
+  Last 3 run(s) (oldest first):
+    - 2026-09-21T03:09:20  $0.0143  (gemini=$0.0143)
+    - 2026-09-22T19:49:46  $2.3982  (anthropic=$2.0166, gemini=$0.1239, openai=$0.2579)
+    - 2026-09-22T20:34:51  $2.1430  (anthropic=$1.5923, gemini=$0.1052, openai=$0.4455)

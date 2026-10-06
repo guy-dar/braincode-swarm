@@ -1,0 +1,1165 @@
+{
+  "N1": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "4f383af05177",
+    "last_assessment": null
+  },
+  "N2": {
+    "status": "stalled",
+    "sprints": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "text_hash": "e2fc8d85d501",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "The glossary moves substantially toward a complete lexicon by adding structural, action, entity, attribute, relation, search, platform, location, and descriptive categories. It remains incomplete and insufficiently categorized: several retained lexical forms are unresolved, attribute value categories are conflated, and required descriptive domains are not independently look-upable."
+    },
+    "last_attempt": null
+  },
+  "N3": {
+    "status": "open",
+    "sprints": [
+      18
+    ],
+    "text_hash": "65dbf64468ec",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "Several formerly residual attribute values now have named categories or defined rules, and the vocabulary-symbol typing inconsistency is addressed. However, content, policy, amenity, ticket, seat, code fields, medical fields, food/meal fields, and message/collaboration fields remain arbitrary STRING values; merely naming future categories does not make those values glossary symbols or glossary-derived values. The unqualified itinerary count additionally loses a required attribute constraint."
+    },
+    "last_attempt": {
+      "changes": [
+        {
+          "op": "revise",
+          "construct_name": "Types & Lexicon",
+          "grammar": "type ::= \"NUMBER\" | \"STRING\" | \"BOOL\" | \"LIST\" \"[\" type \"]\" | \"REF\" \"[\" type \"]\"\nvalue ::= STRING | NUMBER | IDENT | \"TRUE\" | \"FALSE\" | list_lit | diff\nlist_lit ::= \"[\" value (\",\" value)* \"]\"\ndiff ::= IDENT \"-\" NUMBER\nIDENT ::= [a-zA-Z_][a-zA-Z0-9_]*\nSTRING ::= \"\\\"\" ( [^\"\\\\\\n] | \"\\\\\\\"\" | \"\\\\\\\\\" | \"\\\\n\" | \"\\\\t\" | \"\\\\u\" HEXHEXHEXHEX )* \"\\\"\"\nNUMBER ::= \"-\"? [0-9]+ ( \".\" [0-9]+ )? ( (\"e\"|\"E\") (\"+\"|\"-\")? [0-9]+ )?\nCOMMENT ::= \"#\" through end of physical line.",
+          "semantics": "As before, with one addition: a bare IDENT token that names a member of a defined vocabulary category (e.g. `role_manager`, `tone_urgent`, `art_itinerary`) is a **vocabulary symbol**. Lexically it is an IDENT (unquoted, no STRING escaping), but for all static typing purposes — RETURN type matching, LET's exact-type rule, Check comparisons, and LIST[T] element typing — a vocabulary symbol has static type STRING. This resolves the prior inconsistency where `LIST[STRING]` was declared to hold bare category symbols (e.g. itinerary stops as entity-name/location-name members) despite IDENT and STRING being distinct value forms: the rule makes that legal and precise rather than contradictory. A vocabulary symbol is never a STRING *literal* (it carries no quotes and cannot use string escapes) but it type-checks as STRING wherever STRING is required. Everything else in Types & Lexicon (REF[T], the four base types, `diff`) is unchanged.",
+          "worked_example": {
+            "nl": "Plan a 3-day itinerary with two named stops.",
+            "braincode": "LET stops : LIST[STRING] = [temple, garden]\nGENERATE(target=art_itinerary, duration=3, duration_unit=unit_day, content=\"itinerary\") -> plan : STRING"
+          },
+          "glossary_gloss": "A bare glossary symbol like role_manager or tone_urgent is written without quotes, but for type-checking it counts as a STRING — so a list of such symbols can be typed LIST[STRING] without contradiction.",
+          "change_type": "MAJOR",
+          "rationale": "The Critic identified a genuine type-system gap: attribute-name's itinerary/route rule needs LIST[STRING] to legally hold unquoted category symbols, but nothing previously said an IDENT symbol has static type STRING. This one addition closes that gap for every category, not just itinerary/route.",
+          "cites_source": null,
+          "addresses_note": "N3"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Generate",
+          "grammar": "generation ::= \"GENERATE\" \"(\" generate-attr (\",\" generate-attr)* \")\" \"->\" IDENT \":\" gen_type\ngenerate-attr ::= attribute-name \"=\" value\ngen_type ::= \"NUMBER\" | \"STRING\" | \"BOOL\" | \"LIST\" \"[\" gen_type \"]\"",
+          "semantics": "Legal Generate attributes: target, audience, content, duration, duration_unit, format, locale, quantity, style, tone, stop_min_per_day, max_walk_duration, max_walk_duration_unit. `target`'s value is an artifact-value symbol (GENERATE always produces an artifact, never an entity; Action.target stays entity-name/artifact-value split by construct, not by attribute name). `audience` -> recipient-value. `tone` -> tone-value. `format` -> format-value. `duration_unit`/`max_walk_duration_unit` -> duration-unit-value. `style` -> style-value. `locale` -> locale-value. `duration`, `quantity`, `stop_min_per_day`, `max_walk_duration` are NUMBER. `stop_min_per_day` expresses a minimum-count-per-day constraint (e.g. at least one temple per day); `max_walk_duration`+`max_walk_duration_unit` express a maximum-walking-time-between-stops constraint. Canonical ordering: target first, then optional attributes alphabetically. Handle rule unchanged. `content` remains a transitional STRING channel pending N4.",
+          "worked_example": {
+            "nl": "Plan a 3-day Kyoto itinerary that includes at least one temple per day and avoids more than a 20-minute walk from the last stop.",
+            "braincode": "ENTRYPOINT PlanKyotoItinerary\nTASK PlanKyotoItinerary : STRING {\n  GENERATE(target=art_itinerary, content=\"Kyoto itinerary\", duration=3, duration_unit=unit_day, stop_min_per_day=1, max_walk_duration=20, max_walk_duration_unit=unit_minute) -> plan : STRING\n  RETURN plan\n}"
+          },
+          "glossary_gloss": "GENERATE builds a non-effectful artifact; its target names the artifact kind (from artifact-value), and constraints like a minimum stops-per-day or a maximum walking time are now first-class numeric attributes instead of hidden inside prose content.",
+          "change_type": "MAJOR",
+          "rationale": "Fixes the target/artifact-value contradiction the Critic flagged and gives held-trip-1's per-day cardinality and walking-time constraints a symbolic (not prose-only) representation, directly closing one of the simulated coverage gaps.",
+          "cites_source": null,
+          "addresses_note": "N3"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Action",
+          "grammar": "action ::= \"ACTION\" operation-id \"(\" action-attrs? \")\" (\"->\" IDENT \":\" type)?\naction-attrs ::= action-attr (\",\" action-attr)*\naction-attr ::= attribute-name \"=\" value\noperation-id ::= operation-vocabulary member\n\n-- Updated/added signatures (others unchanged from prior sprint):\n-- search_web(target, [availability, category, color, currency, genre, gender, location, max_price, min_rating, platform, shape, size, trending]) -> LIST[REF[STRING]] [NEW]\n-- pick_up(target, [source, color, shape, state]) -> REF[STRING] [SAME]\n-- place(target, destination, [location, relation, state]) -> NONE\n-- browse_trending(target, [location]) -> LIST[REF[STRING]] [NEW]\n-- offer_discount(target, [content, discount_percent]) -> NONE\n-- check_support_status(target, metric) -> BOOL [VALUE]",
+          "semantics": "Unchanged validation rule (attribute must be a governed attribute-name member, category-valid, and signature-listed) plus these wirings: `color`/`size`/`gender` (product-attribute-value) and `shape` (shape-value, new) are now legal on `search_web` and `pick_up` so product search/selection can carry physical descriptors (e.g. a gray round mirror). `state` (state-value, new) is legal on `pick_up` and `place` so an object's required or resulting condition (warm, clean, microwaved) can be asserted when selecting/placing it, without requiring an extra heat/rinse step when the object is merely being identified by state. `browse_trending` is a new operation for browsing a platform's currently-popular items/searches by location; its `target` is an entity-name symbol for the thing browsed (e.g. `trending_searches`, pending addition — quoted-string transitional exception applies per entity-name's rule until added). `discount_percent` (NUMBER, 0-100) is now legal on `offer_discount` to express a percentage discount. `check_support_status`'s `metric` attribute now also accepts order/customer-status members from the expanded metric-value category (e.g. order lateness, first-time vs. repeat buyer), so conditional support logic can branch on them via Check/Flow-If. Canonical ordering and handle rules are unchanged.",
+          "worked_example": {
+            "nl": "Find the lowest-priced gray round mirror in stock in Atlanta, under $20.",
+            "braincode": "ACTION search_web(target=mirror, color=color_gray, shape=shape_round, availability=avail_in_stock, location=atlanta, currency=curr_usd, max_price=20) -> mirrors : LIST[REF[STRING]]\nACTION sort(target=mirrors, rank_field=rank_price, rank_direction=dir_asc) -> sorted_mirrors : LIST[REF[STRING]]"
+          },
+          "glossary_gloss": "Action's per-operation attribute lists now actually include the physical descriptors (color, size, gender, shape, state) and the new trending-browse and percentage-discount attributes that requests need, instead of leaving them valid by category but rejected by signature.",
+          "change_type": "MAJOR",
+          "rationale": "Directly resolves the Critic's core objection: product-attribute-value and the new shape/state categories are useless if no Action signature admits them. Wiring them into search_web/pick_up/place, and adding browse_trending and discount_percent, closes the gray-round-mirror, warm-cup, white-cup, trending-search, and order-discount gaps.",
+          "cites_source": "HTML",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "shape-value",
+          "glossary_gloss": "The closed set of geometric-shape symbols usable wherever an attribute calls for an object's shape (Action's shape attribute).",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "shape_round",
+              "gloss": "Circular/round.",
+              "nl_synonyms": [
+                "round",
+                "circular"
+              ]
+            },
+            {
+              "symbol": "shape_square",
+              "gloss": "Square.",
+              "nl_synonyms": [
+                "square"
+              ]
+            },
+            {
+              "symbol": "shape_rectangular",
+              "gloss": "Rectangular.",
+              "nl_synonyms": [
+                "rectangular",
+                "rectangle"
+              ]
+            },
+            {
+              "symbol": "shape_oval",
+              "gloss": "Oval.",
+              "nl_synonyms": [
+                "oval"
+              ]
+            },
+            {
+              "symbol": "shape_triangular",
+              "gloss": "Triangular.",
+              "nl_synonyms": [
+                "triangular",
+                "triangle"
+              ]
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "Find the lowest-priced gray round mirror in stock.",
+            "braincode": "ACTION search_web(target=mirror, color=color_gray, shape=shape_round, availability=avail_in_stock) -> mirrors : LIST[REF[STRING]]"
+          },
+          "change_type": "MINOR",
+          "rationale": "The Critic's simulated item shows a shape constraint (round mirror) that no category carried; this is a small, closed, enumerable set distinct from color/size/gender.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "state-value",
+          "glossary_gloss": "Canonical symbols for a physical object's condition or state, used with Action's state attribute (selecting, confirming, or producing an object in a given condition).",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "state_warm",
+              "gloss": "Warm/heated condition.",
+              "nl_synonyms": [
+                "warm",
+                "hot"
+              ]
+            },
+            {
+              "symbol": "state_cold",
+              "gloss": "Cold/chilled condition.",
+              "nl_synonyms": [
+                "cold",
+                "chilled"
+              ]
+            },
+            {
+              "symbol": "state_microwaved",
+              "gloss": "Has been microwaved.",
+              "nl_synonyms": [
+                "microwaved"
+              ]
+            },
+            {
+              "symbol": "state_clean",
+              "gloss": "Clean condition.",
+              "nl_synonyms": [
+                "clean"
+              ]
+            },
+            {
+              "symbol": "state_dirty",
+              "gloss": "Dirty condition.",
+              "nl_synonyms": [
+                "dirty"
+              ]
+            }
+          ],
+          "membership_rule": "An atomic symbol matching `state_[a-z_]+` naming a physical condition an entity can be in or be required to be in. New states are added as new members, never as free text.",
+          "worked_example": {
+            "nl": "Put a warm coffee cup in the coffee maker.",
+            "braincode": "ACTION pick_up(target=cup, state=state_warm) -> cup : REF[STRING]\nACTION place(target=cup, destination=coffee_maker)"
+          },
+          "change_type": "MINOR",
+          "rationale": "Moves `state` out of descriptive-value's generic residual bucket into a dedicated category with a precise rule, per the Critic's required change, and closes the warm-cup gap by letting `state` appear directly on pick_up.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "style-value",
+          "glossary_gloss": "Canonical writing/production style symbols for GENERATE's style attribute.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "style_narrative",
+              "gloss": "Story-like narrative style.",
+              "nl_synonyms": [
+                "narrative",
+                "story-style"
+              ]
+            },
+            {
+              "symbol": "style_technical",
+              "gloss": "Technical/expository style.",
+              "nl_synonyms": [
+                "technical"
+              ]
+            },
+            {
+              "symbol": "style_academic",
+              "gloss": "Academic style.",
+              "nl_synonyms": [
+                "academic"
+              ]
+            },
+            {
+              "symbol": "style_persuasive",
+              "gloss": "Persuasive/argumentative style.",
+              "nl_synonyms": [
+                "persuasive"
+              ]
+            },
+            {
+              "symbol": "style_catchy",
+              "gloss": "Catchy, attention-grabbing style.",
+              "nl_synonyms": [
+                "catchy"
+              ]
+            }
+          ],
+          "membership_rule": "An atomic symbol matching `style_[a-z_]+` naming a compositional/rhetorical style. New styles are added as new members, never as free text.",
+          "worked_example": {
+            "nl": "Give another catchy SEO title.",
+            "braincode": "GENERATE(target=art_short_text, content=\"SEO title\", style=style_catchy) -> title : STRING"
+          },
+          "change_type": "MINOR",
+          "rationale": "Splits `style` out of descriptive-value's residual bucket, which only defines mod_/state_/dom_ prefixes and has no rule for style, per the Critic's required change.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "locale-value",
+          "glossary_gloss": "Canonical language/region locale symbols for GENERATE's locale attribute.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "locale_en_us",
+              "gloss": "US English.",
+              "nl_synonyms": [
+                "english",
+                "en-us"
+              ]
+            },
+            {
+              "symbol": "locale_en_gb",
+              "gloss": "UK English.",
+              "nl_synonyms": [
+                "british english"
+              ]
+            },
+            {
+              "symbol": "locale_hi_en",
+              "gloss": "Hinglish (Hindi-English mix).",
+              "nl_synonyms": [
+                "hinglish"
+              ]
+            },
+            {
+              "symbol": "locale_es",
+              "gloss": "Spanish.",
+              "nl_synonyms": [
+                "spanish"
+              ]
+            },
+            {
+              "symbol": "locale_fr",
+              "gloss": "French.",
+              "nl_synonyms": [
+                "french"
+              ]
+            }
+          ],
+          "membership_rule": "An atomic symbol matching `locale_[a-z_]+` naming a language/region variant. New locales are added as new members, never as free text.",
+          "worked_example": {
+            "nl": "Give a Hinglish SEO title.",
+            "braincode": "GENERATE(target=art_short_text, content=\"SEO title\", locale=locale_hi_en, style=style_catchy) -> title : STRING"
+          },
+          "change_type": "MINOR",
+          "rationale": "Splits `locale` out of descriptive-value's residual bucket into a dedicated category and closes the Hinglish-title item's language gap.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "metric-value",
+          "glossary_gloss": "Canonical symbols for a queryable status metric, used with check_support_status's metric attribute — covering both service-support metrics and order/customer status facts.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "metric_uptime",
+              "gloss": "Service uptime status.",
+              "nl_synonyms": [
+                "uptime",
+                "is up"
+              ]
+            },
+            {
+              "symbol": "metric_response_time",
+              "gloss": "Support response time.",
+              "nl_synonyms": [
+                "response time"
+              ]
+            },
+            {
+              "symbol": "metric_compatibility",
+              "gloss": "Compatibility status.",
+              "nl_synonyms": [
+                "compatible"
+              ]
+            },
+            {
+              "symbol": "metric_order_late",
+              "gloss": "Whether an order is late.",
+              "nl_synonyms": [
+                "order is late",
+                "delayed"
+              ]
+            },
+            {
+              "symbol": "metric_first_time_buyer",
+              "gloss": "Whether the customer is a first-time buyer.",
+              "nl_synonyms": [
+                "first-time buyer",
+                "new customer"
+              ]
+            },
+            {
+              "symbol": "metric_repeat_buyer",
+              "gloss": "Whether the customer is a repeat buyer.",
+              "nl_synonyms": [
+                "repeat buyer",
+                "returning customer"
+              ]
+            }
+          ],
+          "membership_rule": "An atomic symbol matching `metric_[a-z_]+` naming a boolean-queryable status fact. New metrics are added as new members, never as free text.",
+          "worked_example": {
+            "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount; if repeat, offer free expedited shipping instead.",
+            "braincode": "ACTION check_support_status(target=order, metric=metric_order_late) -> is_late : BOOL\nACTION check_support_status(target=customer, metric=metric_first_time_buyer) -> is_new : BOOL\nIF is_late AND is_new THEN {\n  ACTION offer_discount(target=order, discount_percent=10)\n} ELSE {\n  ACTION offer_expedited_shipping(target=order)\n}"
+          },
+          "change_type": "MINOR",
+          "rationale": "Gives check_support_status's metric attribute (previously a descriptive-value dom_ symbol with no rule) a dedicated, precise category, and directly closes the held-support-1 gap by combining with the new discount_percent attribute.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "construct_name": "descriptive-value",
+          "grammar": "-- unchanged as a vocabulary category (no grammar production)",
+          "semantics": "A narrowed residual bucket now covering only entity modifiers (`mod_`) and genuinely unclassified domain concepts (`dom_`) that have no dedicated category yet. `state`, `style`, `locale`, and `metric` are retired from this category — use state-value, style-value, locale-value, and metric-value respectively. `role_`, `tone_`, `curr_`, `art_`, and `unit_` were already retired in a prior sprint.",
+          "worked_example": {
+            "nl": "Plan a safari.",
+            "braincode": "GENERATE(target=art_plan, content=\"Plan a safari\", style=style_narrative) -> plan : STRING"
+          },
+          "glossary_gloss": "descriptive-value is now a small, explicitly residual bucket for entity modifiers and truly unclassified domain concepts only — every other kind of descriptive word has its own dedicated category.",
+          "change_type": "MAJOR",
+          "rationale": "Required by the Critic: the prior version claimed to govern style/locale/metric/state without a matching membership rule for them. Narrowing it to mod_/dom_ (which it already defines precisely) removes the contradiction.",
+          "cites_source": null,
+          "addresses_note": "N3"
+        },
+        {
+          "op": "revise",
+          "kind": "vocabulary",
+          "construct_name": "format-value",
+          "glossary_gloss": "Canonical output-format symbols for the format attribute (used by GENERATE). Every legal value must already be a listed member — no minting inside an expression.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "format_plain_text",
+              "gloss": "Unstructured prose text.",
+              "nl_synonyms": [
+                "plain text"
+              ]
+            },
+            {
+              "symbol": "format_bullet_list",
+              "gloss": "Bulleted list.",
+              "nl_synonyms": [
+                "bullet points",
+                "bulleted"
+              ]
+            },
+            {
+              "symbol": "format_numbered_list",
+              "gloss": "Numbered list.",
+              "nl_synonyms": [
+                "numbered steps"
+              ]
+            },
+            {
+              "symbol": "format_email",
+              "gloss": "Email message layout.",
+              "nl_synonyms": [
+                "as an email"
+              ]
+            },
+            {
+              "symbol": "format_markdown",
+              "gloss": "Markdown-formatted text.",
+              "nl_synonyms": [
+                "in markdown"
+              ]
+            },
+            {
+              "symbol": "format_table",
+              "gloss": "Tabular layout.",
+              "nl_synonyms": [
+                "as a table"
+              ]
+            },
+            {
+              "symbol": "format_pdf",
+              "gloss": "PDF document.",
+              "nl_synonyms": [
+                "as a pdf"
+              ]
+            },
+            {
+              "symbol": "format_newsletter",
+              "gloss": "Newsletter layout.",
+              "nl_synonyms": [
+                "newsletter"
+              ]
+            }
+          ],
+          "membership_rule": "format-value is treated as a closed-for-encoding category: a translator may only emit a `format_` symbol that already appears in this members list. A layout with no matching member is a real language gap and must be added as a new glossary member in a future sprint before it can be used — it is never minted ad hoc inside an expression, and it is never replaced with free text.",
+          "worked_example": {
+            "nl": "Create a newsletter from the article.",
+            "braincode": "GENERATE(target=art_short_text, content=\"newsletter from the supplied article\", format=format_newsletter) -> newsletter : STRING"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Resolves the Critic-flagged self-contradiction (permitting minting while also saying new symbols are only recorded next sprint) by choosing the N1-aligned rule: prior membership required, minting prohibited, gaps added explicitly (here, format_newsletter is added directly rather than left as a future promise).",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "revise",
+          "kind": "vocabulary",
+          "construct_name": "attribute-name",
+          "glossary_gloss": "The complete index of attributes, each mapped to the exact glossary value-set category, literal rule, or explicitly-named future category that governs its values, per N3.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "target",
+              "gloss": "Subject acted on (entity-name) or artifact generated (artifact-value), depending on construct.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "destination",
+              "gloss": "Destination entity/location -> entity-name or location-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "source",
+              "gloss": "Source entity/location -> entity-name or location-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "relation",
+              "gloss": "Spatial relation -> spatial-relation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "content",
+              "gloss": "Transitional STRING payload; future target category: message-content-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "recipient",
+              "gloss": "Recipient -> recipient-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "audience",
+              "gloss": "Named reader -> recipient-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "tone",
+              "gloss": "Register -> tone-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "format",
+              "gloss": "Artifact output format -> format-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "style",
+              "gloss": "Artifact style -> style-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "locale",
+              "gloss": "Artifact locale -> locale-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "quantity",
+              "gloss": "Exact count -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "duration",
+              "gloss": "Numeric duration -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "duration_unit",
+              "gloss": "Duration unit -> duration-unit-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "stop_min_per_day",
+              "gloss": "Minimum stop count per day -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "max_walk_duration",
+              "gloss": "Maximum walking time between stops -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "max_walk_duration_unit",
+              "gloss": "Unit for max_walk_duration -> duration-unit-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "execution_date",
+              "gloss": "TASK context anchor -> ISO_DATE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "origin",
+              "gloss": "Travel origin -> location-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "date",
+              "gloss": "Travel date -> ISO_DATE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "return_date",
+              "gloss": "Travel return -> ISO_DATE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "passengers",
+              "gloss": "Passenger count -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "location",
+              "gloss": "Search/placement location -> location-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "distance",
+              "gloss": "Search distance -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "min_rating",
+              "gloss": "Minimum rating -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "max_price",
+              "gloss": "Maximum price -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "currency",
+              "gloss": "Price currency -> currency-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "genre",
+              "gloss": "Search genre -> search-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "category",
+              "gloss": "Search category -> search-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "availability",
+              "gloss": "Search stock -> search-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "trending",
+              "gloss": "Popularity/trending flag -> BOOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rank_field",
+              "gloss": "Sort field -> search-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rank_direction",
+              "gloss": "Sort direction -> search-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "limit",
+              "gloss": "Extract member count -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "deadline",
+              "gloss": "Reply deadline -> UTC_TIMESTAMP.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "metric",
+              "gloss": "Support/order/customer status metric -> metric-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "platform",
+              "gloss": "Platform constraint -> platform-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "modifier",
+              "gloss": "Entity modifier -> descriptive-value (mod_ prefix).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "state",
+              "gloss": "Entity condition -> state-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "color",
+              "gloss": "Product color -> product-attribute-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "size",
+              "gloss": "Product/garment size -> product-attribute-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "gender",
+              "gloss": "Demographic-audience facet -> product-attribute-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "shape",
+              "gloss": "Geometric shape -> shape-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "discount_percent",
+              "gloss": "Percentage discount -> NUMBER (0-100).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "itinerary",
+              "gloss": "Travel itinerary -> LIST[STRING] of entity-name/location-name vocabulary symbols (typed STRING per Types & Lexicon's vocabulary-symbol rule).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "route",
+              "gloss": "Travel route -> LIST[STRING] of location-name vocabulary symbols.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "travel_time",
+              "gloss": "Travel time -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "stop_count",
+              "gloss": "Transit stops -> NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "policy",
+              "gloss": "Transitional STRING payload; future target category: policy-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "amenity",
+              "gloss": "Transitional STRING payload; future target category: amenity-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "venue",
+              "gloss": "Venue -> location-name.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "showtime",
+              "gloss": "Showtime -> UTC_TIMESTAMP.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ticket",
+              "gloss": "Transitional STRING payload; future target category: ticket-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "seat",
+              "gloss": "Transitional STRING payload; future target category: seat-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "compatibility",
+              "gloss": "Compatibility -> metric-value (metric_compatibility).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "file",
+              "gloss": "Transitional STRING payload; future target category: code-path-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "method",
+              "gloss": "Transitional STRING payload; future target category: code-symbol-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "property",
+              "gloss": "Transitional STRING payload; future target category: code-symbol-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "call",
+              "gloss": "Transitional STRING payload; future target category: code-call-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "assertion",
+              "gloss": "Transitional STRING payload; future target category: code-assertion-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "expected_output",
+              "gloss": "Transitional STRING payload; future target category: code-outcome-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "actual_output",
+              "gloss": "Transitional STRING payload; future target category: code-outcome-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "reproduction_step",
+              "gloss": "Transitional STRING payload; future target category: code-repro-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "revision",
+              "gloss": "Transitional STRING payload; future target category: code-change-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "procedure",
+              "gloss": "Transitional STRING payload; future target category: procedure-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "safety",
+              "gloss": "Transitional STRING payload; future target category: safety-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "escalation",
+              "gloss": "Transitional STRING payload; future target category: escalation-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "academic_goal",
+              "gloss": "Transitional STRING payload; future target category: academic-goal-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "job_search_goal",
+              "gloss": "Transitional STRING payload; future target category: job-search-goal-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "food",
+              "gloss": "Transitional STRING payload; future target category: food-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "nutrition",
+              "gloss": "Transitional STRING payload; future target category: nutrition-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "meal",
+              "gloss": "Transitional STRING payload; future target category: meal-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "medical_topic",
+              "gloss": "Transitional STRING payload; future target category: medical-topic-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "medical_audience",
+              "gloss": "Transitional STRING payload; future target category: recipient-value extension.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "message_structure",
+              "gloss": "Transitional STRING payload; future target category: message-structure-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "collaboration_structure",
+              "gloss": "Transitional STRING payload; future target category: collaboration-structure-value.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "Each attribute resolves to exactly one governing rule as listed per member above. Attributes marked 'transitional STRING payload' are explicitly tracked N2/N3 gaps, each already assigned the name of the dedicated category that will replace it in a future sprint — they are not silently left as an undifferentiated bucket. `itinerary`/`route` hold LIST[STRING] where each element is an unquoted vocabulary symbol (entity-name/location-name), legal per Types & Lexicon's vocabulary-symbol-typing rule.",
+          "worked_example": {
+            "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount.",
+            "braincode": "ACTION check_support_status(target=order, metric=metric_order_late) -> is_late : BOOL\nACTION check_support_status(target=customer, metric=metric_first_time_buyer) -> is_new : BOOL\nIF is_late AND is_new THEN {\n  ACTION offer_discount(target=order, discount_percent=10)\n}"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Restores every previously-listed attribute, wires in all new categories (shape-value, state-value, style-value, locale-value, metric-value), adds the new itinerary-constraint and discount attributes, resolves the itinerary/route list-typing conflict via the Types & Lexicon fix, and gives every remaining transitional STRING attribute an explicit, named future category instead of an unstated gap.",
+          "cites_source": "HTML",
+          "addresses_note": "N3"
+        }
+      ],
+      "critique": {
+        "decision": "needs-rework",
+        "kpi_assessment": {
+          "coverage": {
+            "impact": "benefit",
+            "reasoning": "The added shape, state, metric, locale, style, itinerary, browsing, and discount facilities cover several previously unsupported held-out constraints, including round mirrors, full/empty rolls, support discounts, and itinerary timing. However, the proposed stop_min_per_day attribute records only a number and cannot state that the required daily stop is a temple, while several code and content attributes remain opaque STRING payloads."
+          },
+          "expressivity": {
+            "impact": "mixed",
+            "reasoning": "The proposal adds first-class fields for several constraints previously hidden in content, but its itinerary example still loses the required temple category: stop_min_per_day=1 means only a count. Transitional STRING attributes continue to carry code paths, expected outcomes, policies, message structure, and substantive generation requests as prose rather than defined value sets."
+          },
+          "determinism": {
+            "impact": "mixed",
+            "reasoning": "Dedicated value categories and the closed-for-encoding format rule improve convergence. Yet independent translations still diverge materially on TASK versus CONVO, target selection, status-query sequencing, artifact type, return type, and handle names; the new open categories also lack exhaustive synonym/canonicalization rules. The worked examples themselves violate the stated canonical attribute ordering."
+          },
+          "interpretability": {
+            "impact": "mixed",
+            "reasoning": "Splitting state/style/locale/metric out of descriptive-value makes values easier to look up. But attribute-name calls itself a complete index while retaining dozens of unresolved future categories, and the duplicate add of the already-existing descriptive-value entry is structurally unclear. The overloaded rule that every vocabulary symbol statically counts as STRING also obscures category identity in general typed contexts."
+          },
+          "improvement": {
+            "impact": "benefit",
+            "reasoning": "A weaker planner gains useful actionable structure from color, shape, state, discount percentage, support metrics, and numeric itinerary constraints. It still cannot reliably act on semantic constraints hidden in STRING content, such as the private-members feature behavior, the exact temple requirement, or a user-provided script that must be revised."
+          }
+        },
+        "simulations": [
+          {
+            "item_id": "held-support-1",
+            "source": "seed_tasks",
+            "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount; if they're a repeat buyer, offer free expedited shipping instead.",
+            "braincode": "ENTRYPOINT HandleLateOrder\nTASK HandleLateOrder {\n  ACTION check_support_status(target=order, metric=metric_order_late) -> is_late : BOOL\n  ACTION check_support_status(target=customer, metric=metric_first_time_buyer) -> is_first_time : BOOL\n  ACTION check_support_status(target=customer, metric=metric_repeat_buyer) -> is_repeat : BOOL\n  IF is_late AND is_first_time THEN {\n    ACTION offer_discount(target=order, discount_percent=10)\n  } ELSE {\n    IF is_late AND is_repeat THEN {\n      ACTION offer_expedited_shipping(target=order)\n    }\n  }\n}",
+            "coverage": "Full",
+            "notes": "metric-value and discount_percent directly help. The entity symbols are assumed available through existing entity-name under N6."
+          },
+          {
+            "item_id": "dev-code-1",
+            "source": "seed_tasks",
+            "nl": "Given a list of file paths, delete every file older than 30 days unless it's in the 'archive' folder.",
+            "braincode": "ENTRYPOINT DeleteOldFiles\nTASK DeleteOldFiles(files : LIST[STRING]) {\n  FOR EACH file_path IN files {\n    ACTION file_age_days(target=file_path) -> age : NUMBER\n    ACTION path_in_folder(target=file_path, destination=\"archive\") -> is_archived : BOOL\n    IF age > 30 AND NOT is_archived THEN {\n      ACTION delete_file(target=file_path)\n    }\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The actionable control structure is present, but archive is a quoted STRING rather than a file-path/category value; code-path-value remains only a future target."
+          },
+          {
+            "item_id": "8c5ccffa-b88e-4928-9394-6d46cfd36e59",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "What are today's Limited Time Offers deals?",
+            "braincode": "ENTRYPOINT FindLimitedTimeOffers\nTASK FindLimitedTimeOffers : LIST[REF[STRING]] {\n  ACTION search_web(target=deal, category=cat_limited_time_offers) -> deals : LIST[REF[STRING]]\n  RETURN deals\n}",
+            "coverage": "Full",
+            "notes": "Existing search-value category expresses the actionable category filter; this proposal is irrelevant to this item."
+          },
+          {
+            "item_id": "b49f88ac-b407-41af-a9e7-f5e4cd1f970a",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "Check the rating and user reviews for the game \"Deathloop\".",
+            "braincode": "ENTRYPOINT CheckDeathloopReviews\nTASK CheckDeathloopReviews : STRING {\n  ACTION search_web(target=deathloop) -> results : LIST[REF[STRING]]\n  ACTION extract(target=results, limit=1) -> game : REF[STRING]\n  ACTION read_page(target=game, content=\"rating and user reviews\") -> reviews : STRING\n  RETURN reviews\n}",
+            "coverage": "Partial",
+            "notes": "The search/read sequence is expressible, but the requested page fields remain a prose content selector rather than a defined metric/review category."
+          },
+          {
+            "item_id": "trial_T20190912_052310_164968#2",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "To move a full roll of toilet paper and an empty roll to the counter.",
+            "braincode": "ENTRYPOINT MoveToiletPaperRolls\nTASK MoveToiletPaperRolls {\n  ACTION pick_up(target=toilet_paper, state=state_full) -> full_roll : REF[STRING]\n  ACTION place(target=full_roll, destination=counter)\n  ACTION pick_up(target=toilet_paper, state=state_empty) -> empty_roll : REF[STRING]\n  ACTION place(target=empty_roll, destination=counter)\n}",
+            "coverage": "Full",
+            "notes": "state-value and the pick_up wiring make full and empty selection expressible through the category's open atomic-symbol rule."
+          },
+          {
+            "item_id": "trial_T20190919_003451_692296#1",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "Move a sponge and bowl from a counter to a cupboard",
+            "braincode": "ENTRYPOINT MoveSpongeAndBowl\nTASK MoveSpongeAndBowl {\n  ACTION pick_up(target=sponge, source=counter) -> sponge : REF[STRING]\n  ACTION place(target=sponge, destination=cupboard)\n  ACTION pick_up(target=bowl, source=counter) -> bowl : REF[STRING]\n  ACTION place(target=bowl, destination=cupboard)\n  ACTION close_container(target=cupboard)\n}",
+            "coverage": "Full",
+            "notes": "No proposed change is needed; existing household actions cover the goal."
+          },
+          {
+            "item_id": "sphinx-doc__sphinx-8035",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "Support defining specific :private-members: for autodoc.",
+            "braincode": "ENTRYPOINT SupportPrivateMembers\nTASK SupportPrivateMembers {\n  ACTION modify_code(target=autodoc, file=\"sphinx/ext/autodoc/__init__.py\", actual_output=\"private-members documents all private members and accepts no selected members\", expected_output=\"private-members accepts selected member arguments like members\", content=\"support selected private-members\")\n}",
+            "coverage": "Partial",
+            "notes": "modify_code gives an action shape, but file, actual_output, expected_output, and content remain prose STRING channels with only future category names."
+          },
+          {
+            "item_id": "sphinx-doc__sphinx-7462",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "IndexError: pop from empty list for empty tuple type annotation.",
+            "braincode": "ENTRYPOINT FixEmptyTupleAnnotation\nTASK FixEmptyTupleAnnotation {\n  ACTION modify_code(target=sphinx, file=\"sphinx/domains/python.py\", reproduction_step=\"render Tuple[()] annotation\", actual_output=\"IndexError: pop from empty list\", expected_output=\"empty tuple annotation renders without error\")\n  ACTION modify_code(target=sphinx, file=\"sphinx/pycode/ast.py\", content=\"support empty tuple annotation parsing\")\n  ACTION run_tests(target=sphinx, file=\"docs/requirements.txt\")\n}",
+            "coverage": "Partial",
+            "notes": "The sequence is captured, but every software-specific value is still an opaque STRING payload and does not realize N3."
+          },
+          {
+            "item_id": "c3312",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "All people should switch to veganism on moral and ethical grounds",
+            "braincode": "ENTRYPOINT VeganismConversation\nCONVO VeganismConversation {\n  TURN t1 SPEAKER=USER {\n    UTTER propose(content=\"All people should switch to veganism on moral and ethical grounds\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "Conversation speech act and recipient are present, but substantive proposition remains prose; N4's hard restriction overrides the normal open-item allowance."
+          },
+          {
+            "item_id": "c4642",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "What does christianity mean?",
+            "braincode": "ENTRYPOINT ChristianityQuestion\nCONVO ChristianityQuestion {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(content=\"What does Christianity mean?\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The ask structure is represented, but Christianity and the requested definition are free prose content."
+          },
+          {
+            "item_id": "c5110",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "Boris Johnson good or bad",
+            "braincode": "ENTRYPOINT BorisJohnsonEvaluation\nCONVO BorisJohnsonEvaluation {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(content=\"Evaluate whether Boris Johnson is good or bad\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The request is an ask, but subject and evaluative criterion remain in content STRING."
+          },
+          {
+            "item_id": "c74",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "Should Israel exist in the land of Levant?",
+            "braincode": "ENTRYPOINT IsraelLevantQuestion\nCONVO IsraelLevantQuestion {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(content=\"Should Israel exist in the Levant?\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The question speech act is captured, but its geopolitical proposition remains prose."
+          },
+          {
+            "item_id": "wildchat1m_en3u-149175",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Write 10 funny tweets about how I found these two quahogs on the beach this afternoon",
+            "braincode": "ENTRYPOINT WriteFunnyQuahogTweets\nTASK WriteFunnyQuahogTweets : STRING {\n  GENERATE(target=art_short_text, content=\"funny tweets about finding two quahogs on a beach this afternoon\", quantity=10, style=style_catchy, tone=tone_casual) -> tweets : STRING\n  RETURN tweets\n}",
+            "coverage": "Partial",
+            "notes": "quantity, style, tone, and artifact target are structured, but tweet form, humor, quahogs, beach, and event content remain prose."
+          },
+          {
+            "item_id": "wildchat1m_en3u-30995",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Add novel and useful ideas to my mental-health presentation script and send it to me.",
+            "braincode": "ENTRYPOINT ReviseMentalHealthPresentation\nTASK ReviseMentalHealthPresentation : STRING {\n  GENERATE(target=art_structured_report, content=\"revise the supplied mental-health presentation script by adding novel and useful ideas\", audience=role_user, style=style_persuasive) -> presentation : STRING\n  RETURN presentation\n}",
+            "coverage": "Partial",
+            "notes": "Generation and audience are represented, but supplied text, requested revisions, novelty, usefulness, and presentation structure are opaque content."
+          },
+          {
+            "item_id": "wildchat1m_en3u-69869",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Create personalities, dynamics, roles, appearances, and relationships for the listed fictional characters with Trinidad Osborn.",
+            "braincode": "ENTRYPOINT CreateCharacterProfiles\nTASK CreateCharacterProfiles : STRING {\n  GENERATE(target=art_character_profile, content=\"create personalities, dynamics, roles, appearances, and relationships for the supplied fictional-character ensemble and Trinidad Osborn\", style=style_narrative) -> profiles : STRING\n  RETURN profiles\n}",
+            "coverage": "Partial",
+            "notes": "artifact target and style are available, but the character list and all requested relationship details remain prose."
+          },
+          {
+            "item_id": "wildchat1m_en3u-65289",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Write a detailed, very long scene in which Chandler Hallow learns during filming that his wife and child died.",
+            "braincode": "ENTRYPOINT WriteGriefScene\nTASK WriteGriefScene : STRING {\n  GENERATE(target=art_story, content=\"detailed scene during filming where Chandler Hallow learns his wife and child died; depict hysteria and horror\", quantity=10000, style=style_narrative) -> scene : STRING\n  RETURN scene\n}",
+            "coverage": "Partial",
+            "notes": "A numeric quantity can approximate length, but scene events, people, emotional constraints, and the requested maximum length remain prose."
+          },
+          {
+            "item_id": "1775938591749",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "Please define literary fiction.",
+            "braincode": "ENTRYPOINT DefineLiteraryFiction\nCONVO DefineLiteraryFiction {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(content=\"Define literary fiction\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The late-turn conversational ask is captured, but the term and definition request are content prose."
+          },
+          {
+            "item_id": "1775498956373",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "I think this will really helped a lot because you did show me how to respond in a polite manner",
+            "braincode": "ENTRYPOINT ThankForCoworkerScript\nCONVO ThankForCoworkerScript {\n  TURN t1 SPEAKER=USER {\n    UTTER acknowledge(content=\"The polite response script for a difficult coworker was helpful\", recipient=role_agent, tone=tone_polite)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "Acknowledgement and tone are structured, but the underlying coworker-script subject remains prose."
+          },
+          {
+            "item_id": "1775791789755",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "I woke up early, had coffee, and now I’m juggling a few things, finishing a report, preparing slides for tomorrow’s meeting, and squeezing in some exercise before dinner. I also need to figure out what to cook tonight that’s quick but healthy.",
+            "braincode": "ENTRYPOINT PlanWorkday\nCONVO PlanWorkday {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(content=\"Prioritize finishing a report, preparing tomorrow's meeting slides, exercising before dinner, and choosing a quick healthy dinner\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The request is represented as an ask, but tasks, temporal constraints, health criterion, and meal request remain content prose."
+          },
+          {
+            "item_id": "1775940921302",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "The meal would be dinner for 4 people, I have 2 hours and no one has allergies. I have pork chops rice and baked beans on hand.",
+            "braincode": "ENTRYPOINT PlanPorkChopDinner\nCONVO PlanPorkChopDinner {\n  TURN t1 SPEAKER=USER {\n    UTTER inform(content=\"Plan dinner for four within two hours using pork chops, rice, and baked beans; no allergies\", recipient=role_agent)\n  }\n}",
+            "coverage": "Partial",
+            "notes": "The interaction act is available, but meal, ingredients, allergy state, and time constraint have no dedicated value categories."
+          }
+        ],
+        "cross_check": {
+          "used": true,
+          "agreement": "low",
+          "notes": "Providers exactly agree only on Limited Time Offers. For support they differ on entity targets, check sequencing, and branch structure; for toilet-paper movement they differ on source order and handle naming; for the Sphinx item one reports a gap while the other uses opaque strings; and for veganism and tweets they differ on TASK versus CONVO, artifact type, styles, and result type. The proposal improves some canonical value symbols but does not resolve these construct-selection and decomposition divergences."
+        },
+        "required_changes": [
+          {
+            "target": "descriptive-value",
+            "change": "Change the operation from add to revise. It already exists in the current glossary, so a second entry would be duplicate and conflicting; replace its state-inclusive semantics and example with the narrowed mod_/dom_ definition."
+          },
+          {
+            "target": "Generate",
+            "change": "Correct the worked example to obey its own canonical ordering: target, content, duration, duration_unit, max_walk_duration, max_walk_duration_unit, stop_min_per_day. Also add a typed symbolic requirement field, such as stop_requirement -> entity-name/category-value, so 'at least one temple per day' is not reduced to an unqualified count."
+          },
+          {
+            "target": "Action",
+            "change": "Correct the search_web worked example to its stated required-first then alphabetical optional order: target, availability, color, currency, location, max_price, shape. Do not retain examples that violate the canonical encoding rule."
+          },
+          {
+            "target": "attribute-name",
+            "change": "Do not describe future category names as if they govern values now. For each transitional STRING attribute, explicitly state that it remains an N3 violation in the build phase and give a concrete next-step category specification; prioritize code-path-value, code-symbol-value, code-call-value, code-outcome-value, food-value, meal-value, message-structure-value, and procedure-value."
+          },
+          {
+            "target": "itinerary constraints",
+            "change": "Define the semantics and value category for what a per-day minimum applies to, plus the scope of max walking duration (e.g. consecutive itinerary stops), rather than only accepting two numbers and units."
+          },
+          {
+            "target": "state-value",
+            "change": "Add explicit canonical members and synonym mappings for state_full and state_empty, since they are required by the sampled household task and are not merely illustrative variants of warm/clean."
+          },
+          {
+            "target": "basis",
+            "change": "Add canonical translation rules for closed-task decomposition and for choosing TASK versus CONVO versus GENERATE. In particular, specify when status checks are hoisted, which entity is target for order/customer support actions, and the canonical artifact/result type for multi-item generation."
+          }
+        ],
+        "logic_issues": [
+          "The proposal adds descriptive-value even though descriptive-value already exists. This conflicts with the stated change operation and would create duplicate normative glossary entries rather than revise the residual bucket.",
+          "Generate's Kyoto worked example violates its own canonical ordering: stop_min_per_day appears before max_walk_duration and max_walk_duration_unit, although optional attributes must be alphabetized.",
+          "Action's mirror worked example violates its own canonical ordering: availability, currency, location, max_price, and shape are not emitted in alphabetical optional-attribute order.",
+          "stop_min_per_day=1 cannot encode the source meaning 'at least one temple per day'; it expresses only an unqualified minimum count. The proposed claim that the constraint is symbolically covered is therefore overstated.",
+          "The new attribute-name entry calls itself a complete index while numerous attributes still resolve only to STRING and a named future category. Naming an eventual category is not a present value-set rule under N3."
+        ],
+        "notes_assessment": {
+          "N2": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "Dedicated shape, state, style, locale, metric, and more explicit format vocabulary materially expand the descriptive lexicon, but many needed descriptive categories remain absent and their values still reside in STRING payloads."
+          },
+          "N3": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "Several formerly residual attribute values now have named categories or defined rules, and the vocabulary-symbol typing inconsistency is addressed. However, content, policy, amenity, ticket, seat, code fields, medical fields, food/meal fields, and message/collaboration fields remain arbitrary STRING values; merely naming future categories does not make those values glossary symbols or glossary-derived values. The unqualified itinerary count additionally loses a required attribute constraint."
+          },
+          "N7": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "The category splits and closed format encoding reduce value-level ambiguity, but the supplied examples violate canonical ordering and independent translations remain strongly divergent on decomposition, construct selection, targets, and handles."
+          },
+          "N1": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "Free STRING values and unrestricted identifiers remain legal in expressions. This build-phase proposal does not close them, and it does not make the existing violation worse."
+          },
+          "N4": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "All open-item simulations and several closed-item simulations still require sentence-like STRING payloads. The proposal expressly retains content as a transitional STRING channel, as permitted by the stated build-phase sequencing."
+          },
+          "N5": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "Arbitrary strings and open identifier-derived symbols remain available, so the language is not self-contained. The added categories do not worsen that pre-existing condition."
+          },
+          "N6": {
+            "status": "partial",
+            "trend": "unchanged",
+            "reasoning": "The proposal generally uses category-level syntax and permits assuming missing members in an existing category, but several real needs have only future category names rather than an existing category capable of holding them."
+          },
+          "N8": {
+            "status": "partial",
+            "trend": "improved",
+            "reasoning": "Fine-grained state, shape, style, locale, metric, and itinerary numeric constraints preserve distinctions rather than collapsing them. Richness remains incomplete where substantive constraints are kept in STRING and where temple-per-day cannot be represented."
+          }
+        },
+        "rebuttal_rulings": [],
+        "accept_changes": [
+          "Types & Lexicon",
+          "shape-value",
+          "state-value",
+          "style-value",
+          "locale-value",
+          "metric-value",
+          "format-value"
+        ],
+        "chosen_position": null,
+        "position_comparison": null,
+        "reasoning": "[Forced acceptance after 3 attempt(s) without a clean accept — the required changes below are known issues carried forward for a future sprint to address, not resolved.] This is real progress on N3: several actionable attributes now have dedicated value categories, and the previous symbol/list typing contradiction is repaired. The bundle cannot be accepted intact because it duplicates an existing glossary construct, has canonical-order violations in normative examples, and overclaims symbolic coverage for an itinerary constraint whose required temple qualifier is absent. The listed vocabulary and type changes are self-contained, non-regressive increments and should land now."
+      },
+      "origin": "carried over from sprint 18"
+    }
+  },
+  "N4": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "cb68a9be519c",
+    "last_assessment": null
+  },
+  "N5": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "526a731d1cda",
+    "last_assessment": null
+  },
+  "N6": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "ded353eab0c5",
+    "last_assessment": null
+  },
+  "N7": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "3472ca221db9",
+    "last_assessment": null
+  },
+  "N8": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "b363acc47c98",
+    "last_assessment": null
+  }
+}

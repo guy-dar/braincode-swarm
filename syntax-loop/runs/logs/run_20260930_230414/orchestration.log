@@ -1,0 +1,39 @@
+2026-09-30 23:04:14,905 [INFO] Logging this run to C:\projects\BrainCode\syntax-loop\runs\logs\run_20260930_230414\ (orchestration.log + transcript.log)
+2026-09-30 23:04:14,930 [INFO] Simulation pool: mind2web -> 1000 items from mind2web.jsonl
+2026-09-30 23:04:14,930 [INFO] Simulation pool: alfred -> 1000 items from alfred.jsonl
+2026-09-30 23:04:14,938 [INFO] Simulation pool: swebench -> 500 items from swebench.jsonl
+2026-09-30 23:04:14,980 [INFO] Simulation pool: prism -> 1000 items from prism.jsonl
+2026-09-30 23:04:15,054 [INFO] Simulation pool: paths -> 999 items from paths.jsonl
+2026-09-30 23:04:15,166 [INFO] Simulation pool: thoughttrace -> 1000 items from thoughttrace.jsonl
+2026-09-30 23:04:15,166 [INFO] Simulation pool: {'seed_tasks': 9, 'mind2web': 1000, 'alfred': 1000, 'swebench': 500, 'prism': 1000, 'paths': 999, 'thoughttrace': 1000}
+2026-09-30 23:04:15,167 [INFO] Budget burndown (before this run):
+  Total spent across all real runs: $18.2416 (this run's cap: $10.00)
+  By provider:
+    - anthropic: $8.4206
+    - gemini: $1.4737
+    - openai: $2.2848
+  Last 8 run(s) (oldest first):
+    - 2026-09-21T03:09:20  $0.0143  (gemini=$0.0143)
+    - 2026-09-22T19:49:46  $2.3982  (anthropic=$2.0166, gemini=$0.1239, openai=$0.2579)
+    - 2026-09-22T20:34:51  $2.1430  (anthropic=$1.5923, gemini=$0.1052, openai=$0.4455)
+    - 2026-09-23T01:55:19  $2.2629  (anthropic=$1.7043, gemini=$0.1264, openai=$0.4322)
+    - 2026-09-30T20:50:05  $0.4615  (anthropic=$0.2356, gemini=$0.0846, openai=$0.1413)
+    - 2026-09-30T20:56:00  $0.6991  (anthropic=$0.4274, gemini=$0.1522, openai=$0.1195)
+    - 2026-09-30T21:19:03  $2.7282  (anthropic=$1.6303, gemini=$0.4062, openai=$0.6917)
+    - 2026-09-30T22:57:25  $1.4717  (anthropic=$0.8141, gemini=$0.4609, openai=$0.1967)
+2026-09-30 23:04:15,167 [INFO] Starting BrainCode syntax loop: max_budget=$10.00 max_iterations=10 dry_run=False
+2026-09-30 23:04:15,174 [INFO] Fundamental notes: N1[hard]=open, N2[hard]=open, N3[hard]=open, N4[hard]=open, N5[hard]=open, N6[direction]=open, N7[hard]=open, N8[direction]=open
+2026-09-30 23:04:15,175 [INFO] Sprint 0 already bootstrapped (docs/language-spec.md has constructs) — skipping.
+2026-09-30 23:04:15,177 [INFO] Continuing sprint numbering after sprint 11.
+2026-09-30 23:04:15,177 [INFO] --- Sprint 12 (steering: N1 [hard]) --- (up to 3 attempt(s))
+2026-09-30 23:04:38,666 [INFO] Sprint 12: resuming N1's discussion (carried over from sprint 11, attempt 1 (judged under the old all-hard-notes-satisfied rule; gating is now no-regression)).
+2026-09-30 23:04:43,982 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-30 23:12:13,469 [WARNING] [shaper_steering] response wasn't valid JSON (attempt 1/3) — retrying: Could not parse JSON from model response (first/last 200 chars shown): '' ... ''
+2026-09-30 23:12:16,733 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-30 23:19:09,821 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-30 23:19:09,825 [INFO] Sprint 12 attempt 1: Shaper (anthropic/claude-sonnet-5) proposed: Types & Lexicon(revise), structural-symbol(revise), literal-form(revise), value-symbol(remove), tone-value(add), unit-value(add), currency-value(add), format-value(add), rating-value(add), register-value(add), depth-value(add), requirement-value(add), nutrient-value(add), frequency-value(add), criterion-value(add), condition-value(add), state-value(add), quality-value(add), goal-value(add), failure-value(add), entity-symbol(revise)
+2026-09-30 23:19:09,825 [INFO] Sprint 12 attempt 1: `structural-symbol` is marked revise but isn't in the docs yet — treating it as add.
+2026-09-30 23:19:09,825 [INFO] Sprint 12 attempt 1: `literal-form` is marked revise but isn't in the docs yet — treating it as add.
+2026-09-30 23:19:09,825 [INFO] Sprint 12 attempt 1: `entity-symbol` is marked revise but isn't in the docs yet — treating it as add.
+2026-09-30 23:19:09,825 [WARNING] Sprint 12 attempt 1: Doc hygiene FAILED — `value-symbol` missing an existing entry to remove (not in the glossary's Vocabulary section); `entity-symbol` missing worked_example, worked_example.nl/braincode
+2026-09-30 23:19:11,049 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"

@@ -1,0 +1,18 @@
+pyyaml>=6.0
+python-dotenv>=1.0
+
+# LLM SDKs — only required for the provider(s) you actually run (imports are lazy, guarded in
+# braincode_loop/llm/*). Safe to install all three, or just the ones you have API keys for.
+anthropic>=0.40
+openai>=1.50
+google-genai>=0.3
+
+# Optional — only for scripts/fetch_dataset_samples.py (real Mind2Web / ALFRED / SWE-bench_Verified
+# samples). The loop itself falls back to the committed datasets/samples/*.seed.jsonl without
+# these. Mind2Web and SWE-bench_Verified are sampled via duckdb's httpfs extension querying
+# Hugging Face's auto-generated Parquet conversion, projecting only the lightweight text columns —
+# not the `datasets` package (whose streaming API had to pull ~500-650 MB per shard for
+# Mind2Web's non-JSONL, HTML-embedded format) and not huggingface_hub (no single-file download
+# needed at all).
+duckdb>=1.0
+py7zr>=0.21

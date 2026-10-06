@@ -1,0 +1,2066 @@
+{
+  "N1": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "4f383af05177",
+    "last_assessment": null
+  },
+  "N2": {
+    "status": "open",
+    "sprints": [
+      14,
+      15
+    ],
+    "text_hash": "e2fc8d85d501",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "The proposal adds substantial structural-word, literal-form, operation, attribute, entity, location, relation, search, availability, role, descriptor, and generation categories. It still fails complete-lexicon status because required categories are referenced but absent, the attribute index is demonstrably incomplete, and generic IDENT admission leaves unindexed names legal."
+    },
+    "last_attempt": {
+      "changes": [
+        {
+          "op": "revise",
+          "construct_name": "Types & Lexicon",
+          "grammar": "type ::= \"NUMBER\"|\"STRING\"|\"BOOL\"|\"SYMBOL\"|\"PATH\"|\"REPO_PATH\"|\"URL\"|\"ISO_DATE\"|\"CODE_SYMBOL\"|\"LIST\"\"[\"type\"]\"|\"REF\"\"[\"type\"]\"\nvalue ::= STRING|NUMBER|IDENT|list_lit|diff|PATH_LIT|REPO_PATH_LIT|URL_LIT|ISO_DATE_LIT|CODE_SYMBOL_LIT|\"TRUE\"|\"FALSE\"\nlist_lit ::= \"[\" value (\",\" value)* \"]\"\ndiff ::= IDENT \"-\" NUMBER\nIDENT ::= [a-zA-Z_][a-zA-Z0-9_]*\nSTRING ::= \"\\\"\" ( [^\"\\\\\\n] | \"\\\\\\\"\" | \"\\\\\\\\\" | \"\\\\n\" | \"\\\\t\" | \"\\\\u\" HEXHEXHEXHEX )* \"\\\"\"\nNUMBER ::= \"-\"? [0-9]+ ( \".\" [0-9]+ )? ( (\"e\"|\"E\") (\"+\"|\"-\")? [0-9]+ )?\nUNSIGNED_INT ::= static constraint on NUMBER: [0-9]+, no sign/decimal/exponent, no leading zero except \"0\".\nISO_DATE_LIT ::= STRING matching YYYY-MM-DD.\nDRIVE ::= [A-Za-z]\nsegment ::= [^/\\\\]+ (one or more chars excluding \"/\" and \"\\\\\")\nposix_path ::= \"/\" segment (\"/\" segment)*\ndrive_path ::= DRIVE \":\" \"\\\\\" segment (\"\\\\\" segment)*\nPATH_LIT ::= STRING matching posix_path | drive_path.\nrepo_segment ::= [a-zA-Z0-9_.-]+ (not \".\" or \"..\")\nREPO_PATH_LIT ::= STRING matching repo_segment (\"/\" repo_segment)*, no leading \"/\" or drive.\nURL_LIT ::= STRING matching scheme \"://\" host path?.\nCODE_SYMBOL_LIT ::= STRING matching [a-zA-Z_][a-zA-Z0-9_.]*.\nCOMMENT_TOKEN ::= \"#\" through end of physical line; the sole source-level comment marker. (\"--\" appearing in this spec's own EBNF blocks is documentation metasyntax, never a parsed BrainCode token; all future worked examples use \"#\".)\nReserved words: TASK, ACTION, UTTER, GENERATE, IF, THEN, ELSE, FOR, EACH, IN, ANY, ALL, SATISFIES, AND, OR, NOT, LET, RETURN, TRUE, FALSE, CONVO, TURN, SPEAKER, USER, AGENT, REPLY_TO, REVISES, ENTRYPOINT, CONTEXT, DECREASES, NUMBER, STRING, BOOL, LIST, REF, SYMBOL, PATH, REPO_PATH, URL, ISO_DATE, CODE_SYMBOL.",
+          "semantics": "Nine closed value-form families as before. PATH_LIT is now fully self-contained: DRIVE and segment are defined, closing the prior dangling reference. Identifier/handle formation rule, by grammar position (disjoint namespaces): (i) TASK/CONVO names — PascalCase, unique document-wide; (ii) TURN names — lowercase+digits, unique within their CONVO only; (iii) bound variables (LET/->IDENT) — the descriptor-normalized noun per Action's naming convention, unique in their scope; (iv) operation identifiers — must be a member of the operation-vocabulary category; (v) attribute names — must be a member of the attribute-name category; (vi) glossary vocabulary symbols in value position — must be a member of their declared category, or a plain STRING/NUMBER/PATH-family literal where the attribute's category explicitly permits a literal or transitional STRING fallback. A token not resolvable under one of these six rules is a static undefined-token error. COMMENT_TOKEN (\"#\") is the only comment marker; it is listed as a structural-word member (see structural-word).",
+          "worked_example": {
+            "nl": "Fix a bug in sphinx/util/inspect.py.",
+            "braincode": "ACTION modify_code(target=\"sphinx/util/inspect.py\")"
+          },
+          "glossary_gloss": "Types & Lexicon fully defines every literal pattern (including the previously dangling PATH_LIT segment/DRIVE rules), states '#' as the sole comment marker, and gives a position-based rule for what every kind of token (names, operations, attributes, values) must resolve against.",
+          "change_type": "MAJOR",
+          "rationale": "Closes the Critic's literal/token audit gaps: PATH_LIT is now self-contained, the comment-token inconsistency is resolved, and every grammar position now has an explicit resolution rule, which the new operation-vocabulary/attribute-name categories plug into.",
+          "cites_source": null,
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "literal-form",
+          "glossary_gloss": "The exhaustive set of lexical literal patterns a token can take, each with its own exact, fully self-contained grammar.",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "NUMBER",
+              "gloss": "Signed decimal/exponent numeric literal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "STRING",
+              "gloss": "Double-quoted text with standard escapes.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "BOOL",
+              "gloss": "TRUE or FALSE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "IDENT",
+              "gloss": "Bare alphanumeric/underscore token.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "PATH",
+              "gloss": "Absolute POSIX or drive-letter path; segment and DRIVE fully defined.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REPO_PATH",
+              "gloss": "Repository-relative path (no leading slash/drive, no './..' segment).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "URL",
+              "gloss": "scheme://host/path literal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ISO_DATE",
+              "gloss": "Exact YYYY-MM-DD literal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CODE_SYMBOL",
+              "gloss": "Dotted code identifier literal, e.g. \"module.Class.method\".",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "UNSIGNED_INT",
+              "gloss": "Non-negative-integer constraint on NUMBER.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "Fix sphinx/util/inspect.py.",
+            "braincode": "ACTION modify_code(target=\"sphinx/util/inspect.py\")"
+          },
+          "change_type": "MINOR",
+          "rationale": "Syncs with the repaired PATH_LIT/REPO_PATH definitions in Types & Lexicon.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "structural-word",
+          "glossary_gloss": "The exhaustive closed inventory of every keyword, type keyword, operator, delimiter, and comment-marker token the grammar uses. Operation identifiers and attribute names live in operation-vocabulary and attribute-name respectively, not here.",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "TASK",
+              "gloss": "Declares a task.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CONTEXT",
+              "gloss": "Introduces execution_date.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ACTION",
+              "gloss": "Executes an operation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "GENERATE",
+              "gloss": "Produces an artifact.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "UTTER",
+              "gloss": "Records a speech act.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "IF",
+              "gloss": "Conditional branch.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "THEN",
+              "gloss": "True branch.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ELSE",
+              "gloss": "False branch.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "FOR",
+              "gloss": "Loop keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "EACH",
+              "gloss": "Loop keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "IN",
+              "gloss": "Loop iterable.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ANY",
+              "gloss": "Existential quantifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ALL",
+              "gloss": "Universal quantifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "SATISFIES",
+              "gloss": "Quantifier condition.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "AND",
+              "gloss": "Logical AND.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "OR",
+              "gloss": "Logical OR.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NOT",
+              "gloss": "Logical NOT.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "LET",
+              "gloss": "Binds a variable.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "RETURN",
+              "gloss": "Returns a value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TRUE",
+              "gloss": "Boolean true.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "FALSE",
+              "gloss": "Boolean false.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CONVO",
+              "gloss": "Declares a conversation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TURN",
+              "gloss": "Declares a turn.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "SPEAKER",
+              "gloss": "Turn speaker.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "USER",
+              "gloss": "Human speaker.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "AGENT",
+              "gloss": "AI speaker.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REPLY_TO",
+              "gloss": "Turn adjacency.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REVISES",
+              "gloss": "Turn correction.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ENTRYPOINT",
+              "gloss": "Execution root.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "DECREASES",
+              "gloss": "Recursion guard.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NUMBER",
+              "gloss": "Numeric type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "STRING",
+              "gloss": "String type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "BOOL",
+              "gloss": "Boolean type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "LIST",
+              "gloss": "List type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REF",
+              "gloss": "Reference type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "SYMBOL",
+              "gloss": "Glossary-symbol type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "PATH",
+              "gloss": "Absolute path type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REPO_PATH",
+              "gloss": "Repo-relative path type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "URL",
+              "gloss": "URL type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ISO_DATE",
+              "gloss": "Date type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CODE_SYMBOL",
+              "gloss": "Code-identifier type keyword.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "#",
+              "gloss": "Line-comment marker; the only comment token BrainCode source may contain.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "{",
+              "gloss": "Block open.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "}",
+              "gloss": "Block close.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "(",
+              "gloss": "Argument-list open.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": ")",
+              "gloss": "Argument-list close.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "[",
+              "gloss": "List/type-parameter open.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "]",
+              "gloss": "List/type-parameter close.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": ",",
+              "gloss": "Item separator.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": ":",
+              "gloss": "Type annotation separator.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "=",
+              "gloss": "Attribute/LET assignment.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "->",
+              "gloss": "Bind-result arrow.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "\"",
+              "gloss": "String delimiter.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "-",
+              "gloss": "Numeric sign or diff subtraction.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "==",
+              "gloss": "Equality comparison.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "!=",
+              "gloss": "Inequality comparison.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "<",
+              "gloss": "Less-than comparison.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "<=",
+              "gloss": "Less-or-equal comparison.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": ">",
+              "gloss": "Greater-than comparison.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": ">=",
+              "gloss": "Greater-or-equal comparison.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "If true, return 1.",
+            "braincode": "# returns 1\nENTRYPOINT IfTrue\n\nTASK IfTrue : NUMBER {\n  IF TRUE THEN {\n    RETURN 1\n  }\n  RETURN 0\n}"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Adds the literal '#' comment-marker entry that was missing despite the grammar defining COMMENT via '#', fixing the exhaustiveness bug the Critic identified.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Action",
+          "grammar": "action ::= \"ACTION\" IDENT \"(\" attr_list? \")\" ( \"->\" IDENT \":\" type )?\nattr_list ::= attr (\",\" attr)*\nattr ::= IDENT \"=\" value\n\n-- WEB:\nopen_page(target=SYMBOL|URL) -> NONE\nclick(target=REF[T]|SYMBOL) -> NONE\nselect_filter(target=LIST[REF[T]], content=STRING) -> LIST[REF[T]] [SAME]\napply_filters(target=LIST[REF[T]], content=STRING) -> LIST[REF[T]] [SAME]\nsort(target=LIST[REF[T]], rank_field=SYMBOL|LIST[SYMBOL], rank_direction=SYMBOL) -> LIST[REF[T]] [SAME]\nsearch_travel(origin=STRING, destination=STRING, date=ISO_DATE, return_date=ISO_DATE?, passengers=NUMBER?) -> LIST[REF[SYMBOL]] [NEW]\nsearch_transit(origin=STRING, destination=STRING, date=ISO_DATE?, near=SYMBOL?) -> LIST[REF[SYMBOL]] [NEW]\nsearch_web(target=SYMBOL|STRING, location=STRING?, distance=SYMBOL?, min_rating=NUMBER?, max_price=NUMBER?, currency=SYMBOL?, genre=SYMBOL?, category=SYMBOL?, color=SYMBOL?, size=SYMBOL?, shape=SYMBOL?, availability=SYMBOL?, audience_class=SYMBOL?) -> LIST[REF[SYMBOL]] [NEW]\nfill_field(target=REF[T]|SYMBOL, content=STRING) -> NONE\nsubmit(target=REF[T]|SYMBOL) -> NONE\nextract(target=LIST[REF[T]], limit=UNSIGNED_INT) -> REF[T] if limit==1 else LIST[REF[T]] [MEMBER]\nread_page(target=REF[T]|SYMBOL|URL, content=STRING?) -> STRING [VALUE]\nsave_favorite(target=REF[T]) -> NONE\nadd_to_cart(target=REF[T]) -> NONE\nset_store(target=REF[SYMBOL]) -> NONE\n\n-- HOUSEHOLD:\npick_up(target=SYMBOL|REF[T], source=location-provider|REF[T]?) -> REF[T] [SAME]\nplace(target=REF[T], destination=location-provider|REF[T], relation=spatial-relation?, destination_location=location-provider?, destination_relation=spatial-relation?) -> NONE\nheat(target=REF[T]|SYMBOL, destination=location-provider?) -> REF[T] [SAME]\nchill(target=REF[T]|SYMBOL, destination=location-provider?) -> REF[T] [SAME]\nrinse(target=REF[T]|SYMBOL, destination=location-provider) -> REF[T] [SAME]\nslice(target=REF[T]|SYMBOL) -> LIST[REF[T]] [NEW]\npour(target=REF[T]|SYMBOL, destination=location-provider|REF[T]) -> NONE\nopen_container(target=REF[T]|SYMBOL) -> NONE\nclose_container(target=REF[T]|SYMBOL) -> NONE\nturn_on(target=REF[T]|SYMBOL) -> NONE\nturn_off(target=REF[T]|SYMBOL) -> NONE\n\n-- CODE:\nmodify_code(target=PATH|REPO_PATH, module=SYMBOL?, class=CODE_SYMBOL?, function=CODE_SYMBOL?, call=CODE_SYMBOL?, argument=STRING?, assertion=STRING?, reproduction_step=STRING?, expected_output=STRING?, actual_output=STRING?, environment=STRING?, platform=SYMBOL?, content=STRING?) -> NONE\nrun_tests(target=PATH|REPO_PATH, test_id=CODE_SYMBOL?) -> NONE\nadd_file(target=PATH|REPO_PATH, content=STRING) -> NONE\ndelete_file(target=PATH|REPO_PATH) -> NONE\n\n-- COMMUNICATION:\nsend_email(recipient=role-recipient|STRING, content=STRING, tone=tone-value?) -> NONE\nsend_message(recipient=role-recipient|STRING, content=STRING, tone=tone-value?) -> NONE\ncall(recipient=role-recipient|STRING) -> NONE\ncheck_replied(target=role-recipient|STRING, deadline=ISO_DATE) -> BOOL [VALUE]\n\n-- FILESYSTEM:\nfile_age_days(target=PATH|REPO_PATH) -> NUMBER [VALUE]\npath_in_folder(target=PATH|REPO_PATH, destination=PATH|REPO_PATH) -> BOOL [VALUE]\n\n-- APPLICATION_LIST:\ncreate_list(target=SYMBOL|STRING) -> REF[SYMBOL] [NEW]\nadd_to_list(target=REF[T]|SYMBOL, destination=REF[SYMBOL]) -> NONE\n\n-- SUPPORT:\ncheck_support_status(target=SYMBOL|STRING, metric=SYMBOL) -> BOOL [VALUE]\noffer_discount(target=SYMBOL|STRING, discount_percent=NUMBER?, content=STRING?) -> NONE\noffer_expedited_shipping(target=SYMBOL|STRING, content=STRING?) -> NONE\n\n-- DEFAULT RULE: an operation IDENT not listed above is legal with signature target=REF[T]|SYMBOL, destination=REF[T]|SYMBOL? (optional), content=STRING?, Result NONE — but only when no listed canonical operation already covers the same concept; if one does, using the unlisted spelling is a static synonym error.",
+          "semantics": "Every attribute whose value is drawn from a glossary category is now typed against that category directly in the signature (not only in prose): pick_up's source, place's relation/destination_location/destination_relation, search_web's color/size/shape/availability/audience_class, recipient/target on communication ops, and tone on send_email/send_message all statically require membership in the named category (location-provider, spatial-relation, descriptor-modifier via color/size/shape, availability-value, role-recipient, tone-value respectively); a value violating its category is a static error. Canonical filter-precedence rule: a criterion with a dedicated typed search_web/search_travel/search_transit attribute (location, distance, min_rating, max_price, currency, genre, category, color, size, shape, availability, audience_class) must be expressed through that attribute; select_filter/apply_filters content may only carry criteria that have no dedicated attribute yet (a labeled, transitional STRING fallback per N3's build phase). Once a criterion gains a dedicated attribute, restating it inside select_filter/apply_filters content is a static duplicate-encoding error. SUPPORT gains offer_discount and offer_expedited_shipping as first-class typed operations, and the Default Rule (restored, now explicit) preserves any previously-expressible unlisted operation that has no canonical equivalent, so no prior coverage regresses. Result categories, coreference/naming rules, and duplicate-attribute error are unchanged from the prior revision.",
+          "worked_example": {
+            "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount; if a repeat buyer, offer free expedited shipping instead.",
+            "braincode": "ENTRYPOINT ResolveLateOrder\n\nTASK ResolveLateOrder {\n  ACTION check_support_status(target=\"customer_order\", metric=is_late) -> late : BOOL\n  ACTION check_support_status(target=\"customer\", metric=is_first_time_buyer) -> first_time : BOOL\n  ACTION check_support_status(target=\"customer\", metric=is_repeat_buyer) -> repeat_buyer : BOOL\n  IF late AND first_time THEN {\n    ACTION offer_discount(target=\"customer_order\", discount_percent=10)\n  } ELSE {\n    IF late AND repeat_buyer THEN {\n      ACTION offer_expedited_shipping(target=\"customer_order\")\n    }\n  }\n}"
+          },
+          "glossary_gloss": "Action's registry now explicitly keeps its default-operation fallback (so any concept without a canonical name still has a signature), adds offer_discount/offer_expedited_shipping, types every categorical attribute directly against its glossary category, and fixes one canonical way to filter: dedicated attributes beat free-text select_filter/apply_filters wherever both could apply.",
+          "change_type": "MAJOR",
+          "rationale": "Restores the regressed support task, closes the categorical-typing-in-prose-only gap, and removes the search_web/apply_filters double-encoding path the Critic's mirror example exposed.",
+          "cites_source": "HTML",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "operation-vocabulary",
+          "glossary_gloss": "The category of every Action operation identifier (verb) and every UTTER speech-act identifier: what each one means and which domain it belongs to.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "open_page",
+              "gloss": "Navigate to a page/site.",
+              "nl_synonyms": [
+                "go to",
+                "visit"
+              ]
+            },
+            {
+              "symbol": "click",
+              "gloss": "Click an element.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "select_filter",
+              "gloss": "Apply exactly one free-text filter criterion.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "apply_filters",
+              "gloss": "Apply two or more free-text filter criteria jointly.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "sort",
+              "gloss": "Reorder a list by one or more ranked fields.",
+              "nl_synonyms": [
+                "rank",
+                "order by"
+              ]
+            },
+            {
+              "symbol": "search_travel",
+              "gloss": "Search flight/travel options.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "search_transit",
+              "gloss": "Search transit/transport options.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "search_web",
+              "gloss": "Search web content/products/media.",
+              "nl_synonyms": [
+                "find",
+                "look for"
+              ]
+            },
+            {
+              "symbol": "fill_field",
+              "gloss": "Enter text into a form field.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "submit",
+              "gloss": "Submit a form.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "extract",
+              "gloss": "Select N members out of a list.",
+              "nl_synonyms": [
+                "pick",
+                "take the top"
+              ]
+            },
+            {
+              "symbol": "read_page",
+              "gloss": "Read a field/condition off a page or record.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "save_favorite",
+              "gloss": "Save/bookmark an entity.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "add_to_cart",
+              "gloss": "Add an item to a shopping cart.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "set_store",
+              "gloss": "Set the active store/location context.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "pick_up",
+              "gloss": "Physically acquire an object.",
+              "nl_synonyms": [
+                "grab",
+                "take"
+              ]
+            },
+            {
+              "symbol": "place",
+              "gloss": "Put an object at/in/on a destination.",
+              "nl_synonyms": [
+                "put"
+              ]
+            },
+            {
+              "symbol": "heat",
+              "gloss": "Warm an object.",
+              "nl_synonyms": [
+                "warm",
+                "microwave"
+              ]
+            },
+            {
+              "symbol": "chill",
+              "gloss": "Cool an object.",
+              "nl_synonyms": [
+                "cool",
+                "refrigerate"
+              ]
+            },
+            {
+              "symbol": "rinse",
+              "gloss": "Wash an object with water.",
+              "nl_synonyms": [
+                "wash"
+              ]
+            },
+            {
+              "symbol": "slice",
+              "gloss": "Cut an object into pieces.",
+              "nl_synonyms": [
+                "cut",
+                "chop"
+              ]
+            },
+            {
+              "symbol": "pour",
+              "gloss": "Pour contents into a destination.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "open_container",
+              "gloss": "Open a container/appliance.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "close_container",
+              "gloss": "Close a container/appliance.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "turn_on",
+              "gloss": "Power on a device.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "turn_off",
+              "gloss": "Power off a device.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "modify_code",
+              "gloss": "Change source code at a location.",
+              "nl_synonyms": [
+                "fix",
+                "patch"
+              ]
+            },
+            {
+              "symbol": "run_tests",
+              "gloss": "Execute a test suite/case.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "add_file",
+              "gloss": "Create a new file.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "delete_file",
+              "gloss": "Remove a file.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "send_email",
+              "gloss": "Send an email.",
+              "nl_synonyms": [
+                "email"
+              ]
+            },
+            {
+              "symbol": "send_message",
+              "gloss": "Send a chat/text message.",
+              "nl_synonyms": [
+                "text",
+                "message"
+              ]
+            },
+            {
+              "symbol": "call",
+              "gloss": "Place a phone call.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "check_replied",
+              "gloss": "Query whether a reply arrived by a deadline.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "file_age_days",
+              "gloss": "Query a file's age in days.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "path_in_folder",
+              "gloss": "Query whether a path is inside a folder.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "create_list",
+              "gloss": "Create a new named list.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "add_to_list",
+              "gloss": "Add an item to a list.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "check_support_status",
+              "gloss": "Query a support-record metric.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "offer_discount",
+              "gloss": "Offer a percentage discount.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "offer_expedited_shipping",
+              "gloss": "Offer free expedited shipping.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ask",
+              "gloss": "Speech act: pose a question.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "respond",
+              "gloss": "Speech act: answer a question.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "inform",
+              "gloss": "Speech act: state a fact/opinion.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "propose",
+              "gloss": "Speech act: suggest an option.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "correct",
+              "gloss": "Speech act: correct prior content.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "acknowledge",
+              "gloss": "Speech act: register receipt/thanks/greeting.",
+              "nl_synonyms": [
+                "hello",
+                "hi",
+                "thanks"
+              ]
+            },
+            {
+              "symbol": "confirm",
+              "gloss": "Speech act: affirm.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "decline",
+              "gloss": "Speech act: refuse/decline.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "Members are every operation identifier listed in Action's normative registry (fixed signature/result) plus every UTTER speech-act identifier, plus, under Action's Default Rule, any other single lowercase_underscore verb used as an ACTION IDENT when no canonical listed operation covers its concept.",
+          "worked_example": {
+            "nl": "Rinse the mug.",
+            "braincode": "ACTION rinse(target=\"mug\", destination=sink) -> mug : REF[SYMBOL]"
+          },
+          "change_type": "MINOR",
+          "rationale": "N2 requires operation identifiers as a separate, individually look-upable glossary category, not only embedded in Action's grammar comment block.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "attribute-name",
+          "glossary_gloss": "Every attribute IDENT usable in an Action/UTTER/GENERATE attr_list, mapped to the glossary category or literal form its value must satisfy (and, where a category doesn't exist yet, explicitly marked as a transitional STRING fallback per N3's build phase).",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "target",
+              "gloss": "Subject acted on/queried/produced.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "destination",
+              "gloss": "Where target ends up. Value: location-provider|REF[T].",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "destination_location",
+              "gloss": "Nested destination anchor. Value: location-provider.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "relation",
+              "gloss": "Spatial relation of target to destination. Value: spatial-relation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "destination_relation",
+              "gloss": "Spatial relation of destination to destination_location. Value: spatial-relation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "source",
+              "gloss": "Where target was acquired from. Value: location-provider.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "content",
+              "gloss": "Literal instruction/text payload. Value: STRING (transitional fallback; closed under N4/N1).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "recipient",
+              "gloss": "Communication destination. Value: role-recipient|STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "audience",
+              "gloss": "Intended reader of a generated artifact. Value: role-recipient|STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "tone",
+              "gloss": "Register. Value: tone-value (closed, required — no STRING alternative).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "register_note",
+              "gloss": "Non-canonical register description. Value: STRING (transitional fallback for registers with no tone-value match).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "format",
+              "gloss": "Requested output shape. Value: generation-attribute-value (format facet).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "quantity",
+              "gloss": "Exact output-size count. Value: UNSIGNED_INT.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "deadline",
+              "gloss": "Instant a condition must resolve by. Value: ISO_DATE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "metric",
+              "gloss": "Support-status query name. Value: {is_late, is_first_time_buyer, is_repeat_buyer}.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rank_field",
+              "gloss": "Field(s) to sort by. Value: search-criterion member(s).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rank_direction",
+              "gloss": "asc or desc.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "location",
+              "gloss": "Place constraint. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "distance",
+              "gloss": "Proximity ranking field. Value: search-criterion.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "min_rating",
+              "gloss": "Lowest acceptable rating. Value: NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "max_price",
+              "gloss": "Highest acceptable price. Value: NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "currency",
+              "gloss": "Currency code. Value: SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "genre",
+              "gloss": "Artistic category. Value: SYMBOL (representative).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "category",
+              "gloss": "Product/content classification. Value: SYMBOL (representative).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "color",
+              "gloss": "Requested color. Value: descriptor-modifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "size",
+              "gloss": "Requested size. Value: descriptor-modifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "shape",
+              "gloss": "Requested shape. Value: descriptor-modifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "availability",
+              "gloss": "Stock status requirement. Value: availability-value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "audience_class",
+              "gloss": "Demographic class. Value: descriptor-modifier.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "module",
+              "gloss": "Code module name. Value: SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "class",
+              "gloss": "Code class name. Value: CODE_SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "function",
+              "gloss": "Code function name. Value: CODE_SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "call",
+              "gloss": "Code call expression. Value: CODE_SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "argument",
+              "gloss": "Code argument description. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "assertion",
+              "gloss": "Required code change/assertion. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "reproduction_step",
+              "gloss": "Bug reproduction step. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "expected_output",
+              "gloss": "Expected behavior. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "actual_output",
+              "gloss": "Observed (buggy) behavior. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "environment",
+              "gloss": "Runtime environment description. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "platform",
+              "gloss": "Target platform. Value: SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "test_id",
+              "gloss": "Specific test identifier. Value: CODE_SYMBOL.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "discount_percent",
+              "gloss": "Percentage discount. Value: NUMBER.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "execution_date",
+              "gloss": "Task's translation-time calendar anchor. Value: ISO_DATE.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "style",
+              "gloss": "Requested writing style. Value: generation-attribute-value (style facet).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "locale",
+              "gloss": "Requested language/locale. Value: generation-attribute-value (locale facet).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "exclude",
+              "gloss": "Content to omit from a generated artifact. Value: STRING (transitional fallback).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "duration",
+              "gloss": "Time span. Value: NUMBER with unit.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "audience_role",
+              "gloss": "Canonical role of a generated artifact's reader. Value: role-recipient.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "Every attribute IDENT used anywhere in Action/UTTER/GENERATE's attr_list appears here exactly once, mapped to the category or literal form its value must satisfy; an attribute marked 'transitional STRING fallback' may still take free STRING content only until the corresponding category is added and N1/N4 close it.",
+          "worked_example": {
+            "nl": "Send a polite email to the manager asking for a two-day extension.",
+            "braincode": "ACTION send_email(recipient=manager, tone=polite, content=\"request a two-day extension\")"
+          },
+          "change_type": "MAJOR",
+          "rationale": "N2/N3 require every attribute to be individually look-upable with its stated value category, not left implicit in construct prose; this also satisfies the requirement that tone slots normatively require tone-value.",
+          "addresses_note": "N3"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "location-provider",
+          "glossary_gloss": "Canonical symbols for physical locations, receptacles/destinations, and service providers used as Action's destination/source attributes.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "sink",
+              "gloss": "A basin for washing.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "microwave",
+              "gloss": "An oven that cooks with microwaves.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "coffee_maker",
+              "gloss": "A machine for brewing coffee.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "table",
+              "gloss": "A flat-topped piece of furniture.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "chair",
+              "gloss": "A single seat.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "sofa",
+              "gloss": "A long upholstered seat.",
+              "nl_synonyms": [
+                "couch"
+              ]
+            },
+            {
+              "symbol": "armchair",
+              "gloss": "An upholstered chair with armrests.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "refrigerator",
+              "gloss": "A cooling storage appliance.",
+              "nl_synonyms": [
+                "fridge"
+              ]
+            },
+            {
+              "symbol": "freezer",
+              "gloss": "A sub-freezing storage appliance.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "counter",
+              "gloss": "A kitchen countertop surface.",
+              "nl_synonyms": [
+                "counter top"
+              ]
+            },
+            {
+              "symbol": "toaster",
+              "gloss": "A bread-toasting appliance.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "archive",
+              "gloss": "A designated storage folder.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "netflix",
+              "gloss": "A streaming service provider.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "store",
+              "gloss": "A retail outlet/context.",
+              "nl_synonyms": [
+                "shop"
+              ]
+            },
+            {
+              "symbol": "south_station",
+              "gloss": "A named transit station (proper name).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "city_point",
+              "gloss": "A named transit destination (proper name).",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "A lowercase_underscore common noun for a generic location/receptacle/appliance/provider (e.g. sink, refrigerator), or a Capitalized_Underscore token for a specific named venue/stop/organization (e.g. South_Station). The two forms are never mixed within one symbol.",
+          "worked_example": {
+            "nl": "Take a potato from the counter, cook it, and put it in the freezer.",
+            "braincode": "ENTRYPOINT CookPotato\n\nTASK CookPotato {\n  ACTION pick_up(target=potato, source=counter) -> potato : REF[SYMBOL]\n  ACTION heat(target=potato) -> potato : REF[SYMBOL]\n  ACTION place(target=potato, destination=freezer)\n}"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Resubmits the prior household location/receptacle category (fixing ALFRED counter/refrigerator/toaster coverage) with an explicit, consistent proper-name casing rule.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "entity-category",
+          "glossary_gloss": "Canonical symbols for object/item/media/document entity types acted on or produced by Actions (not locations/receptacles/providers — see location-provider).",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "book",
+              "gloss": "A written or printed work.",
+              "nl_synonyms": [
+                "novel"
+              ]
+            },
+            {
+              "symbol": "flight",
+              "gloss": "A scheduled airline journey.",
+              "nl_synonyms": [
+                "plane ticket"
+              ]
+            },
+            {
+              "symbol": "mug",
+              "gloss": "A large cup.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "laptop",
+              "gloss": "A portable computer.",
+              "nl_synonyms": [
+                "computer"
+              ]
+            },
+            {
+              "symbol": "pillow",
+              "gloss": "A cushion.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "tv_show",
+              "gloss": "A television program.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "apple",
+              "gloss": "A round fruit.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rag",
+              "gloss": "A cloth for cleaning.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "box",
+              "gloss": "A rigid container.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "keys",
+              "gloss": "A set of keys.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "goblet",
+              "gloss": "A stemmed drinking cup.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "potato",
+              "gloss": "A starchy tuber vegetable.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "t_shirt",
+              "gloss": "A short-sleeved casual shirt.",
+              "nl_synonyms": [
+                "tshirt"
+              ]
+            },
+            {
+              "symbol": "mirror",
+              "gloss": "A reflective surface item.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "coffee_cup",
+              "gloss": "A cup for coffee.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "knife",
+              "gloss": "A cutting utensil.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "A single lowercase_underscore entity-type word. A descriptor-modifier symbol may prefix it as [modifier]_[entity-type] (e.g. white_cup) only when the modifier is a member of descriptor-modifier; any other composition is a static error.",
+          "worked_example": {
+            "nl": "Put the goblet in the refrigerator.",
+            "braincode": "ACTION pick_up(target=goblet) -> goblet : REF[SYMBOL]\nACTION place(target=goblet, destination=refrigerator, relation=in)"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Resubmits the entity-type category (goblet, potato, t_shirt, mirror, coffee_cup, knife) needed by the ALFRED/Mind2Web items.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "spatial-relation",
+          "glossary_gloss": "The closed set of spatial relations one entity/location can hold relative to another, used as Action's relation/destination_relation values.",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "in",
+              "gloss": "Contained within.",
+              "nl_synonyms": [
+                "inside"
+              ]
+            },
+            {
+              "symbol": "on",
+              "gloss": "Resting atop.",
+              "nl_synonyms": [
+                "on top of"
+              ]
+            },
+            {
+              "symbol": "under",
+              "gloss": "Beneath.",
+              "nl_synonyms": [
+                "below",
+                "underneath"
+              ]
+            },
+            {
+              "symbol": "next_to",
+              "gloss": "Adjacent to.",
+              "nl_synonyms": [
+                "beside",
+                "next to"
+              ]
+            },
+            {
+              "symbol": "behind",
+              "gloss": "Positioned behind.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "in_front_of",
+              "gloss": "Positioned in front of.",
+              "nl_synonyms": [
+                "in front of"
+              ]
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "Put a white cup with a knife in it on the counter in front of the toaster.",
+            "braincode": "ENTRYPOINT PlaceCupWithKnife\n\nTASK PlaceCupWithKnife {\n  ACTION pick_up(target=knife, source=table) -> knife : REF[SYMBOL]\n  ACTION place(target=knife, destination=white_cup, relation=in)\n  ACTION pick_up(target=white_cup, source=sink) -> white_cup : REF[SYMBOL]\n  ACTION place(target=white_cup, destination=counter, relation=on, destination_location=toaster, destination_relation=in_front_of)\n}"
+          },
+          "change_type": "MINOR",
+          "rationale": "Resubmits the closed spatial-relation set now that Action's grammar types relation/destination_relation directly against it.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "search-criterion",
+          "glossary_gloss": "Typed names and value rules for search, filter, and ranking criteria used by search_web, search_travel, search_transit, and sort, with a fixed precedence over free-text filtering.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "location",
+              "gloss": "A place/zip/address (STRING, transitional fallback).",
+              "nl_synonyms": [
+                "near",
+                "in"
+              ]
+            },
+            {
+              "symbol": "distance",
+              "gloss": "Proximity ranking field (SYMBOL).",
+              "nl_synonyms": [
+                "nearest",
+                "closest"
+              ]
+            },
+            {
+              "symbol": "rank_field",
+              "gloss": "Field or ordered list of fields to sort by.",
+              "nl_synonyms": [
+                "sort by"
+              ]
+            },
+            {
+              "symbol": "rank_direction",
+              "gloss": "asc or desc.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "min_rating",
+              "gloss": "Lowest acceptable score (NUMBER).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "max_price",
+              "gloss": "Highest acceptable cost (NUMBER).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "currency",
+              "gloss": "Currency code (SYMBOL).",
+              "nl_synonyms": [
+                "$"
+              ]
+            },
+            {
+              "symbol": "genre",
+              "gloss": "Artistic category (SYMBOL).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "category",
+              "gloss": "General classification (SYMBOL).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "color",
+              "gloss": "Requested color (descriptor-modifier).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "size",
+              "gloss": "Requested size (descriptor-modifier).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "shape",
+              "gloss": "Requested shape (descriptor-modifier).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "availability",
+              "gloss": "Requested stock status (availability-value).",
+              "nl_synonyms": [
+                "in stock",
+                "available"
+              ]
+            },
+            {
+              "symbol": "audience_class",
+              "gloss": "Demographic class (descriptor-modifier).",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "Precedence rule: any criterion listed here as a dedicated search_web/search_travel/search_transit attribute must be encoded through that attribute; select_filter/apply_filters content may only carry criteria absent from this list (transitional fallback). Values are NUMBER, SYMBOL, or STRING per member; color/size/shape/audience_class must be descriptor-modifier members and availability must be an availability-value member, or it is a static error.",
+          "worked_example": {
+            "nl": "Find the lowest-priced gray round mirror in stock in Atlanta, under $20.",
+            "braincode": "ENTRYPOINT FindMirror\n\nTASK FindMirror : REF[SYMBOL] {\n  ACTION search_web(target=mirror, location=\"Atlanta, Georgia\", color=gray, shape=round, availability=in_stock, max_price=20, currency=usd) -> mirrors : LIST[REF[SYMBOL]]\n  ACTION sort(target=mirrors, rank_field=category(\"price\"), rank_direction=asc) -> sorted_mirrors : LIST[REF[SYMBOL]]\n  ACTION extract(target=sorted_mirrors, limit=1) -> mirror : REF[SYMBOL]\n  RETURN mirror\n}"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Adds shape/availability as dedicated criteria and states the precedence rule, fixing the mirror item's dual-encoding nondeterminism the Critic identified.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "descriptor-modifier",
+          "glossary_gloss": "The color, size, shape, material, and audience-class modifiers usable as an entity-category prefix or a search-criterion value.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "red",
+              "gloss": "Color: red.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "blue",
+              "gloss": "Color: blue.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "green",
+              "gloss": "Color: green.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "yellow",
+              "gloss": "Color: yellow.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "black",
+              "gloss": "Color: black.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "white",
+              "gloss": "Color: white.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "gray",
+              "gloss": "Color: gray.",
+              "nl_synonyms": [
+                "grey"
+              ]
+            },
+            {
+              "symbol": "wood",
+              "gloss": "Material: wood.",
+              "nl_synonyms": [
+                "wooden"
+              ]
+            },
+            {
+              "symbol": "metal",
+              "gloss": "Material: metal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "plastic",
+              "gloss": "Material: plastic.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "small",
+              "gloss": "Size: small.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "medium",
+              "gloss": "Size: medium.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "large",
+              "gloss": "Size: large.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "round",
+              "gloss": "Shape: round.",
+              "nl_synonyms": [
+                "circular"
+              ]
+            },
+            {
+              "symbol": "square",
+              "gloss": "Shape: square.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "rectangular",
+              "gloss": "Shape: rectangular.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "oval",
+              "gloss": "Shape: oval.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "women",
+              "gloss": "Audience class: women's.",
+              "nl_synonyms": [
+                "for women",
+                "womens"
+              ]
+            },
+            {
+              "symbol": "men",
+              "gloss": "Audience class: men's.",
+              "nl_synonyms": [
+                "for men",
+                "mens"
+              ]
+            },
+            {
+              "symbol": "kids",
+              "gloss": "Audience class: children's.",
+              "nl_synonyms": [
+                "for kids",
+                "childrens"
+              ]
+            },
+            {
+              "symbol": "unisex",
+              "gloss": "Audience class: unisex.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "A member is exactly one lowercase word denoting a color, material, size, shape, or audience-class, normalized to its singular canonical spelling (e.g. 'grey'->'gray'). This list is representative, not exhaustive: under N6 an unlisted color/size/shape word in the same facet (e.g. a new color) is assumed to be a valid member in the same facet, never a free phrase. Usable either as an entity-category prefix ([modifier]_[entity]) or as a search-criterion value (color/size/shape/audience_class), never as a location-provider name.",
+          "worked_example": {
+            "nl": "Move a red rag into a sink.",
+            "braincode": "ACTION pick_up(target=red_rag) -> red_rag : REF[SYMBOL]\nACTION place(target=red_rag, destination=sink)"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Adds the shape facet (round/square/rectangular/oval) and states a precise, deterministic representative-membership rule (single normalized word within an enumerated facet), closing the Critic's 'gray is undefined' ambiguity.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "availability-value",
+          "glossary_gloss": "The closed set of stock/availability statuses usable as search_web's `availability` attribute value.",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "in_stock",
+              "gloss": "Currently available for purchase.",
+              "nl_synonyms": [
+                "in stock",
+                "available"
+              ]
+            },
+            {
+              "symbol": "out_of_stock",
+              "gloss": "Currently unavailable.",
+              "nl_synonyms": [
+                "out of stock",
+                "sold out"
+              ]
+            },
+            {
+              "symbol": "backorder",
+              "gloss": "Available for delayed fulfillment.",
+              "nl_synonyms": [
+                "back order",
+                "backordered"
+              ]
+            },
+            {
+              "symbol": "preorder",
+              "gloss": "Available for advance purchase before release.",
+              "nl_synonyms": [
+                "pre-order"
+              ]
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "Find a mirror in stock.",
+            "braincode": "ACTION search_web(target=mirror, availability=in_stock) -> mirrors : LIST[REF[SYMBOL]]"
+          },
+          "change_type": "MINOR",
+          "rationale": "Gives search_web's new `availability` attribute a closed, deterministic value set, replacing the apply_filters(content=\"in stock\") prose path.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "role-recipient",
+          "glossary_gloss": "Canonical roles a communication/generation act can address (recipient, audience, audience_role), used wherever a role rather than a raw name is meant.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "user",
+              "gloss": "The requesting human.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "agent",
+              "gloss": "The assistant.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "customer",
+              "gloss": "A customer/client.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "manager",
+              "gloss": "The user's manager.",
+              "nl_synonyms": [
+                "boss"
+              ]
+            },
+            {
+              "symbol": "professor",
+              "gloss": "The user's instructor.",
+              "nl_synonyms": [
+                "teacher"
+              ]
+            },
+            {
+              "symbol": "colleague",
+              "gloss": "A coworker.",
+              "nl_synonyms": [
+                "coworker"
+              ]
+            },
+            {
+              "symbol": "family_member",
+              "gloss": "A relative.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "spouse",
+              "gloss": "A husband or wife.",
+              "nl_synonyms": [
+                "wife",
+                "husband"
+              ]
+            },
+            {
+              "symbol": "friend",
+              "gloss": "A friend.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "support_agent",
+              "gloss": "A customer-support representative.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "hr_department",
+              "gloss": "Human resources.",
+              "nl_synonyms": [
+                "hr"
+              ]
+            }
+          ],
+          "membership_rule": "A single lowercase_underscore relationship/role word naming who is addressed, independent of the person's proper name. If no listed role fits, recipient/audience/audience_role may still carry a plain STRING as a transitional fallback (per N3's build phase) until the role vocabulary is extended; a specific proper name is never placed here — it remains the STRING alternative even after this category closes.",
+          "worked_example": {
+            "nl": "Draft a friendly email to my boss explaining a week-long illness absence and asking to resume work.",
+            "braincode": "ENTRYPOINT DraftReturnEmail\n\nTASK DraftReturnEmail : STRING {\n  GENERATE(target=email_reply, audience_role=manager, tone=friendly, duration=7, content=\"explain illness absence and request to resume work\") -> email : STRING\n  RETURN email\n}"
+          },
+          "change_type": "MINOR",
+          "rationale": "Gives recipient/audience/audience_role a canonical role category as required, while explicitly retaining the STRING fallback for proper names and unlisted roles per the build-phase carve-out.",
+          "addresses_note": "N2"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Generate",
+          "grammar": "generation ::= \"GENERATE\" \"(\" gen_attr_list? \")\" \"->\" IDENT \":\" gen_type\ngen_attr_list ::= gen_attr (\",\" gen_attr)*\ngen_attr ::= \"quantity\" \"=\" UNSIGNED_INT | \"target\" \"=\" SYMBOL | \"tone\" \"=\" SYMBOL | \"format\" \"=\" SYMBOL | \"style\" \"=\" SYMBOL | \"locale\" \"=\" SYMBOL | \"audience_role\" \"=\" SYMBOL | \"duration\" \"=\" NUMBER | IDENT \"=\" value\ngen_type ::= \"NUMBER\" | \"STRING\" | \"BOOL\" | \"LIST\" \"[\" gen_type \"]\"",
+          "semantics": "GENERATE gains typed, categorical attributes alongside the prior STRING fallbacks: `target` is an artifact-type member; `tone` (if present) must be a tone-value member (no STRING alternative — mirrors Action); `format` must be a generation-attribute-value member of the format facet (e.g. bullet_points, structured_sections); `style` must be a generation-attribute-value member of the style facet; `locale` must be a generation-attribute-value member of the locale facet, or a STRING (transitional fallback for unlisted locales); `audience_role` must be a role-recipient member (STRING via `audience` remains the fallback for a named individual); `duration` is a plain NUMBER paired with a unit understood from context (a dedicated unit attribute/category is deferred to a later increment). `content`, `exclude`, `argument`-style free constraints remain STRING as an explicitly labeled transitional payload per N3/N4's build phase. All other Generate semantics (REF prohibition, quantity's exact-count rule, mandatory `-> IDENT : gen_type` bind) are unchanged.",
+          "worked_example": {
+            "nl": "Write a structured report on Q1 sales, in a formal style, for the management team, in English.",
+            "braincode": "ENTRYPOINT Q1Report\n\nTASK Q1Report : STRING {\n  GENERATE(target=structured_report, style=formal, format=structured_sections, locale=en_us, audience_role=manager, content=\"summarize Q1 sales performance\") -> report : STRING\n  RETURN report\n}"
+          },
+          "glossary_gloss": "GENERATE now has typed format/style/locale/audience_role/duration attributes drawn from glossary categories (with tone required to be a tone-value member), while content/exclude remain an explicitly labeled transitional STRING payload.",
+          "change_type": "MAJOR",
+          "rationale": "Delivers the Critic's required next increment of generation-specification vocabulary (format, style, locale, audience role, duration) while keeping the STRING fallback for what isn't yet covered, per N3's build-phase rule.",
+          "cites_source": null,
+          "addresses_note": "N2"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "generation-attribute-value",
+          "glossary_gloss": "Canonical values for GENERATE's format, style, and locale attribute facets.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "bullet_points",
+              "gloss": "Format: bullet-point list.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "paragraph",
+              "gloss": "Format: prose paragraph(s).",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "table",
+              "gloss": "Format: tabular.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "structured_sections",
+              "gloss": "Format: headed sections.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "plain_text",
+              "gloss": "Format: unstructured plain text.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "formal",
+              "gloss": "Style: formal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "concise",
+              "gloss": "Style: concise.",
+              "nl_synonyms": [
+                "brief"
+              ]
+            },
+            {
+              "symbol": "detailed",
+              "gloss": "Style: detailed.",
+              "nl_synonyms": [
+                "thorough"
+              ]
+            },
+            {
+              "symbol": "persuasive",
+              "gloss": "Style: persuasive.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "humorous",
+              "gloss": "Style: humorous.",
+              "nl_synonyms": [
+                "funny"
+              ]
+            },
+            {
+              "symbol": "en_us",
+              "gloss": "Locale: US English.",
+              "nl_synonyms": [
+                "english"
+              ]
+            },
+            {
+              "symbol": "en_gb",
+              "gloss": "Locale: UK English.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "pt_br",
+              "gloss": "Locale: Brazilian Portuguese.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "hi_in",
+              "gloss": "Locale: Hindi (India).",
+              "nl_synonyms": [
+                "hindi"
+              ]
+            }
+          ],
+          "membership_rule": "A member is a single lowercase_underscore token in exactly one of three facets: format, style, or locale, as declared by which GENERATE attribute consumes it. Representative, not exhaustive; an unlisted locale may still use STRING via `locale` as a transitional fallback per N3's build phase.",
+          "worked_example": {
+            "nl": "Write a concise, bullet-point summary in English.",
+            "braincode": "GENERATE(target=structured_report, style=concise, format=bullet_points, locale=en_us, content=\"summarize the quarter\") -> summary : STRING"
+          },
+          "change_type": "MINOR",
+          "rationale": "Backs the new Generate format/style/locale attributes with an actual glossary category instead of leaving them as unconstrained SYMBOLs.",
+          "addresses_note": "N2"
+        }
+      ],
+      "critique": {
+        "decision": "needs-rework",
+        "kpi_assessment": {
+          "coverage": {
+            "impact": "benefit",
+            "reasoning": "The new household, search, support, role, entity, code-field, and generation categories materially improve coverage, and restoring the default Action rule avoids the prior support-task regression. However, sampled household requests still need semantic categories for state/instance descriptors and directional relations, while some search, code, and generation attributes have no indexed category."
+          },
+          "expressivity": {
+            "impact": "mixed",
+            "reasoning": "Dedicated search criteria and generation facets preserve more request constraints than the prior all-STRING forms. But the language cannot distinguish the full versus empty toilet-paper rolls, cannot express left-of placement, and defines duration as a number whose unit is merely 'understood from context,' losing an explicit part of the source meaning."
+          },
+          "determinism": {
+            "impact": "mixed",
+            "reasoning": "Canonical synonyms, typed criteria, and dedicated-filter precedence are real improvements. Yet the open default-operation membership rule depends on deciding whether a listed operation 'covers the same concept,' generic IDENT attributes remain grammatically admitted, and independent translations still diverge materially on support control flow, string versus symbols, temporal deal filtering, and target identity."
+          },
+          "interpretability": {
+            "impact": "mixed",
+            "reasoning": "Separate glossary categories make many formerly implicit words look-upable. Interpretability is harmed by the false claim that attribute-name indexes every usable attribute, the undefined category(...) expression in the search example, and categories such as tone-value and artifact-type being required without an accompanying supplied glossary entry."
+          },
+          "improvement": {
+            "impact": "benefit",
+            "reasoning": "Typed availability, shape, roles, locations, operations, code fields, and generation formats give a weaker executor materially better planning information than prose-only attributes. The remaining free STRING payloads are permitted in this build phase, but unresolved units, instance state, and relation distinctions still limit planning fidelity."
+          }
+        },
+        "simulations": [
+          {
+            "item_id": "held-support-1",
+            "source": "seed_tasks",
+            "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount; if they're a repeat buyer, offer free expedited shipping instead.",
+            "braincode": "ENTRYPOINT ResolveLateOrder\n\nTASK ResolveLateOrder {\n  ACTION check_support_status(target=\"customer_order\", metric=is_late) -> late : BOOL\n  ACTION check_support_status(target=\"customer\", metric=is_first_time_buyer) -> first_time : BOOL\n  ACTION check_support_status(target=\"customer\", metric=is_repeat_buyer) -> repeat_buyer : BOOL\n  IF late AND first_time THEN {\n    ACTION offer_discount(target=\"customer_order\", discount_percent=10)\n  } ELSE {\n    IF late AND repeat_buyer THEN {\n      ACTION offer_expedited_shipping(target=\"customer_order\")\n    }\n  }\n}",
+            "coverage": "Full",
+            "notes": "The restored support operations and default-operation rule preserve this previously held-out task. The explicit ELSE correctly encodes 'instead,' although independent translations disagree about querying buyer status only after lateness is established."
+          },
+          {
+            "item_id": "dev-code-1",
+            "source": "seed_tasks",
+            "nl": "Given a list of file paths, delete every file older than 30 days unless it's in the 'archive' folder.",
+            "braincode": "ENTRYPOINT DeleteOldFiles\n\nTASK DeleteOldFiles {\n  LET paths : LIST[REPO_PATH] = [\"logs/a.txt\", \"archive/b.txt\"]\n  FOR EACH path IN paths {\n    ACTION file_age_days(target=path) -> age : NUMBER\n    ACTION path_in_folder(target=path, destination=\"archive\") -> archived : BOOL\n    IF age > 30 AND NOT archived THEN {\n      ACTION delete_file(target=path)\n    }\n  }\n}",
+            "coverage": "Full",
+            "notes": "The existing filesystem operations and the new REPO_PATH literal family support the actionable core. The universal input list is represented as a finite list value."
+          },
+          {
+            "item_id": "8c5ccffa-b88e-4928-9394-6d46cfd36e59",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "What are today's Limited Time Offers deals?",
+            "braincode": "ENTRYPOINT GetTodayDeals\n\nTASK GetTodayDeals : LIST[REF[SYMBOL]] {\n  ACTION search_web(target=deal, category=limited_time_offers) -> deals : LIST[REF[SYMBOL]]\n  ACTION select_filter(target=deals, content=\"today\") -> today_deals : LIST[REF[SYMBOL]]\n  RETURN today_deals\n}",
+            "coverage": "Full",
+            "notes": "Category is now a dedicated criterion. No dedicated temporal availability/date criterion exists, so the build-phase STRING filter fallback remains necessary."
+          },
+          {
+            "item_id": "b49f88ac-b407-41af-a9e7-f5e4cd1f970a",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "Check the rating and user reviews for the game \"Deathloop\".",
+            "braincode": "ENTRYPOINT CheckDeathloopReviews\n\nTASK CheckDeathloopReviews : STRING {\n  ACTION search_web(target=\"Deathloop\", category=game) -> games : LIST[REF[SYMBOL]]\n  ACTION extract(target=games, limit=1) -> game : REF[SYMBOL]\n  ACTION read_page(target=game, content=\"rating and user reviews\") -> reviews : STRING\n  RETURN reviews\n}",
+            "coverage": "Full",
+            "notes": "Search and page-reading operations cover the task, but rating and user reviews are still an opaque read_page STRING field rather than separately typed retrieval criteria."
+          },
+          {
+            "item_id": "trial_T20190912_052310_164968#2",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "To move a full roll of toilet paper and an empty roll to the counter.",
+            "braincode": "ENTRYPOINT MoveToiletPaperRolls\n\nTASK MoveToiletPaperRolls {\n  ACTION pick_up(target=full_toilet_paper_roll) -> full_toilet_paper_roll : REF[SYMBOL]\n  ACTION place(target=full_toilet_paper_roll, destination=counter, relation=on)\n  ACTION pick_up(target=empty_toilet_paper_roll) -> empty_toilet_paper_roll : REF[SYMBOL]\n  ACTION place(target=empty_toilet_paper_roll, destination=counter, relation=on)\n}",
+            "coverage": "Partial",
+            "notes": "N6 can supply an unlisted entity type, but the language has no state/instance-descriptor category or composition rule for full versus empty. The target symbols therefore encode distinctions the current entity-category rule does not define."
+          },
+          {
+            "item_id": "trial_T20190919_003451_692296#1",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "Move a sponge and bowl from a counter to a cupboard",
+            "braincode": "ENTRYPOINT MoveSpongeAndBowl\n\nTASK MoveSpongeAndBowl {\n  ACTION pick_up(target=sponge, source=counter) -> sponge : REF[SYMBOL]\n  ACTION pick_up(target=bowl, source=counter) -> bowl : REF[SYMBOL]\n  ACTION place(target=sponge, destination=bowl, relation=in)\n  ACTION pick_up(target=bowl) -> bowl : REF[SYMBOL]\n  ACTION place(target=bowl, destination=cupboard, relation=in)\n  ACTION close_container(target=cupboard)\n}",
+            "coverage": "Partial",
+            "notes": "Entity and location membership can be assumed under N6, but the request's bottom-left cupboard, right-of-spoon placement, and the bundled sponge-and-bowl relation require directional and instance-descriptor categories not supplied here."
+          },
+          {
+            "item_id": "sphinx-doc__sphinx-8035",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "Support defining specific `:private-members:` for autodoc.",
+            "braincode": "ENTRYPOINT SupportPrivateMembers\n\nTASK SupportPrivateMembers {\n  ACTION modify_code(target=\"sphinx/ext/autodoc/__init__.py\", module=autodoc, argument=\":private-members:\", expected_output=\"accept specific member arguments like :members:\", actual_output=\"documents all private members only\", content=\"support selecting named private members\")\n}",
+            "coverage": "Full",
+            "notes": "The new code-field attributes allow a more structured bug report, although argument, expected_output, actual_output, and content are explicitly transitional STRING payloads."
+          },
+          {
+            "item_id": "sphinx-doc__sphinx-7462",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "`IndexError: pop from empty list` for empty tuple type annotation.",
+            "braincode": "ENTRYPOINT FixEmptyTupleAnnotation\n\nTASK FixEmptyTupleAnnotation {\n  ACTION modify_code(target=\"sphinx/domains/python.py\", function=\"unparse\", reproduction_step=\"unparse Tuple[()]\", actual_output=\"IndexError: pop from empty list\", expected_output=\"valid empty tuple type annotation is rendered\", environment=\"Windows 10; Python 3.8.0; Sphinx 3.0.1\")\n  ACTION modify_code(target=\"sphinx/pycode/ast.py\", content=\"support the corresponding empty tuple annotation handling\")\n}",
+            "coverage": "Full",
+            "notes": "The added code structures improve decomposition but remain partly opaque STRING descriptions, as permitted in the current build phase."
+          },
+          {
+            "item_id": "c3312",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "All people should switch to veganism on moral and ethical grounds",
+            "braincode": "ENTRYPOINT VeganismResponse\n\nTASK VeganismResponse : STRING {\n  GENERATE(target=argument, style=persuasive, content=\"address the moral and ethical case for veganism with balanced reasoning\") -> response : STRING\n  RETURN response\n}",
+            "coverage": "Partial",
+            "notes": "The open request's response act and persuasive style are structured; its substantive philosophical proposition remains a permitted transitional STRING payload."
+          },
+          {
+            "item_id": "c4642",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "What does christianity mean?",
+            "braincode": "ENTRYPOINT ExplainChristianity\n\nTASK ExplainChristianity : STRING {\n  GENERATE(target=explanation, style=concise, content=\"define Christianity\") -> explanation : STRING\n  RETURN explanation\n}",
+            "coverage": "Partial",
+            "notes": "The requested explanatory artifact is represented, but the religious subject matter remains in the transitional content channel."
+          },
+          {
+            "item_id": "c5110",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "Boris Johnson good or bad",
+            "braincode": "ENTRYPOINT AssessBorisJohnson\n\nTASK AssessBorisJohnson : STRING {\n  GENERATE(target=assessment, style=balanced, content=\"assess Boris Johnson, including competing positive and negative perspectives\") -> assessment : STRING\n  RETURN assessment\n}",
+            "coverage": "Partial",
+            "notes": "The request is a generation task, but balanced is not a listed generation-attribute-value and must be assumed as a missing style-facet member under N6; the underlying subject and criteria remain prose."
+          },
+          {
+            "item_id": "c74",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "Should Israel exist in the land of Levant?",
+            "braincode": "ENTRYPOINT DiscussIsraelLevant\n\nTASK DiscussIsraelLevant : STRING {\n  GENERATE(target=analysis, style=balanced, content=\"discuss historical perspectives on whether Israel should exist in the Levant\") -> analysis : STRING\n  RETURN analysis\n}",
+            "coverage": "Partial",
+            "notes": "The analysis request and neutral-register intent are recoverable, while its historical and political substance remains transitional prose."
+          },
+          {
+            "item_id": "wildchat1m_en3u-149175",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Write 10 funny tweets about how I found these two quahogs on the beach this afternoon.",
+            "braincode": "ENTRYPOINT WriteQuahogTweets\n\nTASK WriteQuahogTweets : LIST[STRING] {\n  GENERATE(target=tweet, quantity=10, style=humorous, content=\"tweets about finding two quahogs on a beach this afternoon\") -> tweets : LIST[STRING]\n  RETURN tweets\n}",
+            "coverage": "Partial",
+            "notes": "Quantity, artifact target, and humorous style are captured by the generation increment; creative topic substance remains a transitional STRING."
+          },
+          {
+            "item_id": "wildchat1m_en3u-30995",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Can you give me some novel and useful ideas for my presentation script and add them into my script?",
+            "braincode": "ENTRYPOINT ReviseMentalHealthPresentation\n\nTASK ReviseMentalHealthPresentation : STRING {\n  GENERATE(target=structured_report, audience_role=user, style=detailed, format=structured_sections, content=\"revise the supplied mental-health presentation script by integrating novel and useful ideas\") -> revised_script : STRING\n  RETURN revised_script\n}",
+            "coverage": "Partial",
+            "notes": "Revision intent, artifact form, audience role, and style are represented. The supplied script and novelty/usefulness constraints still reside in content because no revision-input or constraint category exists."
+          },
+          {
+            "item_id": "wildchat1m_en3u-69869",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Make it into their personalities, dynamics, roles, appearances, and relationship with Trinidad Osborn.",
+            "braincode": "ENTRYPOINT CreateCharacterDynamics\n\nTASK CreateCharacterDynamics : STRING {\n  GENERATE(target=character_profile, style=detailed, content=\"create personalities, dynamics, roles, appearances, and relationships for the supplied fictional characters and Trinidad Osborn\") -> profile : STRING\n  RETURN profile\n}",
+            "coverage": "Partial",
+            "notes": "This is an open creative-generation request. character_profile requires an artifact-type category/member that the proposal refers to but does not actually add."
+          },
+          {
+            "item_id": "wildchat1m_en3u-65289",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns)",
+            "nl": "Write a scene as Chandler Hallow learns during filming that his wife and child have died, in great detail and as many words as possible.",
+            "braincode": "ENTRYPOINT WriteGriefScene\n\nTASK WriteGriefScene : STRING {\n  GENERATE(target=scene, style=detailed, content=\"fictional scene of a performer learning during filming of family deaths; depict grief and horror\") -> scene : STRING\n  RETURN scene\n}",
+            "coverage": "Partial",
+            "notes": "The requested artifact and detail register are represented, but the scene's content and maximum-length request cannot be captured: quantity is an exact word count, not 'as many as possible.'"
+          },
+          {
+            "item_id": "1775938591749",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "Hi, I need help organising my bookshelves",
+            "braincode": "ENTRYPOINT HelpOrganizeBookshelves\n\nTASK HelpOrganizeBookshelves : STRING {\n  GENERATE(target=plan, style=concise, content=\"give initial guidance for organizing bookshelves and ask relevant follow-up questions\") -> guidance : STRING\n  RETURN guidance\n}",
+            "coverage": "Partial",
+            "notes": "The initial help request is represented as a planning response, but the iterative follow-up structure seen in the trajectory is not encoded as a CONVO and bookshelf taxonomy is prose."
+          },
+          {
+            "item_id": "1775498956373",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "Problem solving from work",
+            "braincode": "ENTRYPOINT WorkProblemFramework\n\nTASK WorkProblemFramework : STRING {\n  GENERATE(target=structured_report, format=structured_sections, style=detailed, content=\"provide a decision framework for solving a work problem\") -> framework : STRING\n  RETURN framework\n}",
+            "coverage": "Partial",
+            "notes": "The framework format and purpose are captured. The trajectory's later refinement to difficult coworkers is a multi-turn revision not represented by this one-shot task."
+          },
+          {
+            "item_id": "1775791789755",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "hello",
+            "braincode": "ENTRYPOINT Greeting\n\nTASK Greeting : STRING {\n  GENERATE(target=response, style=concise, content=\"friendly greeting and offer of assistance\") -> response : STRING\n  RETURN response\n}",
+            "coverage": "Partial",
+            "notes": "The greeting speech purpose is represented as a response artifact, but the later time-management planning dialogue is not sequenced in this one-shot encoding."
+          },
+          {
+            "item_id": "1775940921302",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample)",
+            "nl": "planning a meal",
+            "braincode": "ENTRYPOINT PlanDinner\n\nTASK PlanDinner : STRING {\n  GENERATE(target=plan, style=concise, content=\"plan dinner for four using pork chops, rice, and baked beans within two hours\") -> dinner_plan : STRING\n  RETURN dinner_plan\n}",
+            "coverage": "Partial",
+            "notes": "The meal-planning intent, people count, ingredients, and deadline are retained only in a content STRING. No food/ingredient, serving-count, or preparation-duration-with-unit categories exist."
+          }
+        ],
+        "cross_check": {
+          "used": true,
+          "agreement": "partial",
+          "notes": "Providers agree on the broad support, deal-search, household, code-fix, opinion, and tweet-generation constructs. They disagree on quoted versus symbolic category values, whether to filter today's deals separately, support-query ordering and branch structure, support-offer target, and code-path handling; the new categories reduce some variation but do not impose one canonical encoding."
+        },
+        "required_changes": [
+          {
+            "target": "attribute-name",
+            "change": "Make the claimed exhaustive index actually exhaustive: add origin, date, return_date, passengers, near, limit, execution-related code and generation attributes, ordering if retained, and every other Action/UTTER/GENERATE attribute. For each, state its exact value category and applicability."
+          },
+          {
+            "target": "Action and Generate",
+            "change": "Replace generic `IDENT = value` acceptance with normative validation that an attribute must be in attribute-name and legal for that operation/construct. Either enumerate allowed attributes per operation or define a machine-checkable applicability table; reject unknown attributes."
+          },
+          {
+            "target": "generation-attribute-value and artifact-type",
+            "change": "Add the missing artifact-type category and its members/rule, and either add a documented `balanced` style value or remove its implied availability. Ensure every category named in Generate semantics, including tone-value, artifact-type, and generation facets, has a real glossary entry."
+          },
+          {
+            "target": "Generate duration",
+            "change": "Replace `duration=NUMBER paired with a unit understood from context` with an explicit unit attribute/category and a normative composition rule, or retain a labeled transitional STRING fallback. The present rule violates N3 because unit is neither a glossary symbol nor derived by a glossary rule."
+          },
+          {
+            "target": "instance-descriptor and spatial-relation",
+            "change": "Add a separately look-upable instance/state descriptor category and composition rule for distinctions such as full/empty and positional qualifiers, and extend spatial-relation with directional relations needed by sampled tasks (at least left_of and right_of, with canonical synonyms)."
+          },
+          {
+            "target": "search-criterion worked example",
+            "change": "Repair the invalid `category(\"price\")` expression. Define price as a canonical rank_field/search-criterion symbol and write `rank_field=price`, or add a real category-call construct with grammar and semantics."
+          },
+          {
+            "target": "operation-vocabulary default rule",
+            "change": "Make default-operation admission deterministic: provide a canonical mapping procedure or explicit extensible operation subcategories, rather than the subjective test that no listed operation covers 'the same concept.'"
+          },
+          {
+            "target": "role-recipient",
+            "change": "Resolve the contradiction that named individuals remain STRING even after the category closes. Add a glossary-defined atomic proper-name literal category or explicitly defer this claim until N5."
+          }
+        ],
+        "logic_issues": [
+          "attribute-name asserts that every Action/UTTER/GENERATE attribute appears exactly once, but omits Action attributes including origin, date, return_date, passengers, near, limit, and search-travel/search-transit fields.",
+          "Action and Generate grammars still admit arbitrary IDENT attribute names, so the new attribute-name category is not a complete normative lexical gate.",
+          "Generate duration has an unspecified unit 'understood from context,' contrary to N3's requirement that every attribute value be a glossary symbol or glossary-defined derivation.",
+          "The search-criterion worked example contains `category(\"price\")`, which has no grammar, type, glossary entry, or semantics.",
+          "Generate semantics require artifact-type and tone-value membership, but this proposal supplies no corresponding glossary categories or members.",
+          "The default operation rule remains non-deterministic because deciding conceptual equivalence with a listed operation is not mechanically defined.",
+          "The entity-category composition rule permits descriptor-modifier prefixes only, so full_toilet_paper_roll and empty_toilet_paper_roll have no defined derivation.",
+          "role-recipient says proper names remain STRING even after closure, conflicting with the stated future closed-vocabulary direction unless a proper-name literal form is added."
+        ],
+        "notes_assessment": {
+          "N2": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "The proposal adds substantial structural-word, literal-form, operation, attribute, entity, location, relation, search, availability, role, descriptor, and generation categories. It still fails complete-lexicon status because required categories are referenced but absent, the attribute index is demonstrably incomplete, and generic IDENT admission leaves unindexed names legal."
+          },
+          "N3": {
+            "status": "violated",
+            "trend": "regressed",
+            "reasoning": "Typing tone, relation, location, availability, and generation facets is progress, and retained STRING channels are properly labeled transitional in many places. However, the newly added duration attribute explicitly relies on an undefined contextual unit, introducing a new non-glossary attribute-value component; the incomplete attribute index also leaves several accepted fields without stated value categories."
+          },
+          "N7": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "Dedicated search-filter precedence and synonym inventories improve canonicalization. The default-operation conceptual-equivalence test, generic attributes, missing attribute applicability, and observed provider divergence prevent deterministic encoding."
+          },
+          "N1": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "This is correctly still in the build phase and STRING remains intentionally available. The proposal improves future traceability by adding lexical categories, but unindexed attributes and undefined referenced categories mean it is not yet ready for closure."
+          },
+          "N4": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "STRING prose payloads remain throughout Action, UTTER, and Generate as N2's build-phase instruction requires. The proposal adds some symbolic alternatives but does not remove prose, appropriately for this phase."
+          },
+          "N5": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "Literal forms and several vocabulary membership rules improve self-containment. Free strings, undefined contextual duration units, and the open conceptual default-operation test still require English understanding."
+          },
+          "N6": {
+            "status": "partial",
+            "trend": "improved",
+            "reasoning": "Several open categories explicitly support representative membership under N6, allowing unlisted entity and location members. Missing category shapes such as instance state, proper names, and directional relations remain real category gaps rather than merely missing members."
+          },
+          "N8": {
+            "status": "partial",
+            "trend": "improved",
+            "reasoning": "Availability, shape, artifact format, style, locale, role, and code fields add useful distinctions. The lack of units, state descriptors, directional relations, and structured generation constraints still collapses meaning in sampled tasks."
+          }
+        },
+        "rebuttal_rulings": [],
+        "chosen_position": null,
+        "position_comparison": null,
+        "reasoning": "This is a substantial and useful N2 increment: it restores held-out support coverage and turns many previously implicit lexical classes into separately glossed vocabulary. It cannot be accepted because it makes N3 worse through an undefined duration unit and because its central completeness claims are false: Action/Generate still permit generic attributes while the purported exhaustive index omits many of them. Repairing the exhaustive applicability/value tables, duration units, undefined categories, and invalid worked example would preserve the proposal's positive coverage and interpretability gains."
+      },
+      "origin": "carried over from sprint 15"
+    }
+  },
+  "N3": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "65dbf64468ec",
+    "last_assessment": null
+  },
+  "N4": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "cb68a9be519c",
+    "last_assessment": null
+  },
+  "N5": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "526a731d1cda",
+    "last_assessment": null
+  },
+  "N6": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "ded353eab0c5",
+    "last_assessment": null
+  },
+  "N7": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "3472ca221db9",
+    "last_assessment": null
+  },
+  "N8": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "b363acc47c98",
+    "last_assessment": null
+  }
+}

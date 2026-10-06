@@ -1,0 +1,64 @@
+{
+  "_comment": "Small hand-picked pool of candidate tasks for the Shaper (dev domains) and extra simulation items for the Critic (both splits). Distilled from the trajectory-style datasets described in ../datasets/README.md; real Mind2Web / ALFRED samples for the Critic's simulations live in ../datasets/samples/ (see scripts/fetch_dataset_samples.py).",
+  "dev_domains": {
+    "email_assistant": [
+      {
+        "id": "dev-email-1",
+        "nl": "Draft a reply to my professor asking for a two-day extension on the assignment, and keep it formal.",
+        "source": "illustrative (style: WildChat/LMSYS-Chat-1M-like request)"
+      },
+      {
+        "id": "dev-email-2",
+        "nl": "If my manager hasn't replied by Friday, send a polite follow-up; otherwise do nothing.",
+        "source": "illustrative (conditional phrasing)"
+      }
+    ],
+    "web_navigation": [
+      {
+        "id": "dev-web-1",
+        "nl": "Go to the flight booking site, search flights from Tel Aviv to Berlin next Tuesday, and list the three cheapest options.",
+        "source": "illustrative (Mind2Web-style multi-step web task)"
+      },
+      {
+        "id": "dev-web-2",
+        "nl": "On the electronics store, filter laptops to 16 GB RAM or more under $1,200, and add the best-rated one to the cart.",
+        "source": "illustrative (Mind2Web-style filter + select task)"
+      }
+    ],
+    "code_task": [
+      {
+        "id": "dev-code-1",
+        "nl": "Given a list of file paths, delete every file older than 30 days unless it's in the 'archive' folder.",
+        "source": "illustrative (conditional + iteration)"
+      }
+    ],
+    "embodied_task": [
+      {
+        "id": "dev-embodied-1",
+        "nl": "Rinse the mug in the sink, then put it in the coffee maker.",
+        "source": "illustrative (ALFRED-style pick-clean-place)"
+      },
+      {
+        "id": "dev-embodied-2",
+        "nl": "Put both pillows from the sofa onto the armchair, one at a time.",
+        "source": "illustrative (ALFRED-style two-object task, repeated action)"
+      }
+    ]
+  },
+  "heldout_domains": {
+    "trip_planning": [
+      {
+        "id": "held-trip-1",
+        "nl": "Plan a 3-day itinerary in Kyoto that includes at least one temple per day and avoids anything more than a 20-minute walk from the last stop.",
+        "source": "illustrative (multi-step + constraint satisfaction)"
+      }
+    ],
+    "customer_support": [
+      {
+        "id": "held-support-1",
+        "nl": "If the customer's order is late and they're a first-time buyer, offer a 10% discount; if they're a repeat buyer, offer free expedited shipping instead.",
+        "source": "illustrative (branching conditional, ToolBench-style decision reasoning)"
+      }
+    ]
+  }
+}

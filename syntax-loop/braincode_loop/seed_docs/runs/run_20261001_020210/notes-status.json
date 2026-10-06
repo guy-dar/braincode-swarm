@@ -1,0 +1,417 @@
+{
+  "N1": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "4f383af05177",
+    "last_assessment": null
+  },
+  "N2": {
+    "status": "stalled",
+    "sprints": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "text_hash": "e2fc8d85d501",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "The glossary moves substantially toward a complete lexicon by adding structural, action, entity, attribute, relation, search, platform, location, and descriptive categories. It remains incomplete and insufficiently categorized: several retained lexical forms are unresolved, attribute value categories are conflated, and required descriptive domains are not independently look-upable."
+    },
+    "last_attempt": null
+  },
+  "N3": {
+    "status": "stalled",
+    "sprints": [
+      18,
+      19,
+      20
+    ],
+    "text_hash": "65dbf64468ec",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "Most revised Action, Generate, and Utterance attributes now have named category or base-type signatures, and the new categories provide concrete governed values. N3 is still violated because overload ambiguity prevents reliably establishing category provenance for an attribute value, and retained transitional or un-audited constructs cannot be shown to have all been migrated."
+    },
+    "last_attempt": null
+  },
+  "N4": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "cb68a9be519c",
+    "last_assessment": null
+  },
+  "N5": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "526a731d1cda",
+    "last_assessment": null
+  },
+  "N6": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "ded353eab0c5",
+    "last_assessment": null
+  },
+  "N7": {
+    "status": "open",
+    "sprints": [
+      21,
+      22
+    ],
+    "text_hash": "3472ca221db9",
+    "last_assessment": {
+      "status": "violated",
+      "trend": "improved",
+      "reasoning": "Fixed ordering intentions, handle conventions, deterministic turn names, explicit multiplicity, and the effort to constrain custom operations are meaningful progress over the current spec. N7 remains violated because AOR contradicts its example, transform handles conflict with REF identity and no-shadowing, speech-act segmentation is not algorithmic, and custom predicate/semantic decisions are still translator-dependent."
+    },
+    "last_attempt": {
+      "changes": [],
+      "critique": {
+        "decision": "needs-rework",
+        "kpi_assessment": {
+          "coverage": {
+            "impact": "mixed",
+            "reasoning": "The added RAM, cuisine, reservation, ranking, multiplicity, and multi-question rules improve coverage for several closed samples. However, the restricted custom-operation rule rejects many previously encodable multiword, coordinated, negated, or non-imperative operations, and the revised Action signatures leave important operations such as booking without a governed signature. Transform actions also become difficult to encode consistently because they require and preserve a REF but have no canonical binding rule compatible with no-shadowing."
+          },
+          "expressivity": {
+            "impact": "mixed",
+            "reasoning": "The proposal preserves physical multiplicity and independently scoped questions better than the current language, and search/ranking criteria are materially more expressive. But it does not define containment relations such as a box already containing a card, source-specific game-review retrieval, booking details, or the complete semantic structure of several open requests; its custom-operation restriction can turn previously expressible actionable requests into translation errors."
+          },
+          "determinism": {
+            "impact": "mixed",
+            "reasoning": "Target-first attribute ordering, deterministic turn names, HNR bases, list acquisition, and explicit multi-UTTER splitting are real N7 progress. Determinism remains broken by conflicting rules: AOR requires target first but the canonical-form Pillow example puts target last; HNR requires scalar Action-result names while transforms must preserve an existing REF and no visible binding may be shadowed; and 'independently scoped speech act clause' is semantic rather than operationally defined. Different capable translators will also disagree on predicate-span boundaries, whether a request is a custom imperative, and what counts as a replacement message."
+          },
+          "interpretability": {
+            "impact": "mixed",
+            "reasoning": "Dedicated criteria vocabulary and explicit resource symbols improve readability. Conversely, custom_general_<predicate> has only a source-word-derived label and an intentionally opaque 'external general-domain action' meaning, so a reader cannot determine its effect from the glossary; the new canonical rulebook is also internally inconsistent with its own worked example."
+          },
+          "improvement": {
+            "impact": "benefit",
+            "reasoning": "For supported search, shopping, household multiplicity, and multi-question tasks, explicit filters, ranking pipelines, references, and ordered utterances give a weaker agent substantially more actionable structure than raw language. The benefit is limited by the undefined/custom operation cases and transform-reference inconsistency, which must be repaired before the core canonical rules can safely land."
+          }
+        },
+        "simulations": [
+          {
+            "item_id": "dev-embodied-1",
+            "source": "seed_tasks",
+            "nl": "Rinse the mug in the sink, then put it in the coffee maker.",
+            "braincode": "ENTRYPOINT Mug\n\nTASK Mug {\n  ACTION pick_up(target=mug) -> mug_ref : REF[STRING]\n  ACTION rinse(destination=sink, target=mug_ref)\n  ACTION place(destination=coffee_maker, target=mug_ref)\n}",
+            "coverage": "Full",
+            "notes": "Canonical target-first ordering and REF reuse help. The expression exposes the unresolved transform problem: rinse is said to return the same REF identity, while HNR would require a result name and Bind forbids rebinding mug_ref."
+          },
+          {
+            "item_id": "held-trip-1",
+            "source": "seed_tasks",
+            "nl": "Plan a 3-day itinerary in Kyoto that includes at least one temple per day and avoids anything more than a 20-minute walk from the last stop.",
+            "braincode": "ENTRYPOINT ArtItinerary\n\nTASK ArtItinerary : STRING {\n  GENERATE(target=art_itinerary, duration=3, duration_unit=unit_day, max_walk_duration=20, max_walk_duration_unit=unit_minute, stop_min_per_day=1, stop_requirement=class_temple, topic=topic_kyoto_trip) -> art_itinerary : STRING\n  RETURN art_itinerary\n}",
+            "coverage": "Full",
+            "notes": "No proposed change is essential except the general canonical target-first ordering; existing Generate attributes carry the request."
+          },
+          {
+            "item_id": "521aa0aa-e099-4fc9-bb4e-f8a593a29f81",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "Find the user reviews for the game \"Cyberpunk 2077\"",
+            "braincode": "ENTRYPOINT GameRefs\n\nTASK GameRefs {\n  ACTION search_web(target=game_cyberpunk_2077) -> game_refs : LIST[REF[STRING]]\n  ACTION custom_general_retrieve(target=game_refs)\n}",
+            "coverage": "Partial",
+            "notes": "search_web can identify the game under N6, but no governed review/user-review criterion or retrieval operation is defined. custom_general_retrieve is legal only if the source is treated as one affirmative imperative with an explicit target; translators can reasonably instead choose search_web with an unstated review filter."
+          },
+          {
+            "item_id": "b770af80-75f0-470c-8797-1466d90c35ce",
+            "source": "Mind2Web (osunlp/Mind2Web, train, Parquet column-projected sample)",
+            "nl": "Get the cheapest last-minute pet-friendly road trip hotel deal in May for a single person with a pet and book.",
+            "braincode": "UNENCODABLE: search_travel has no stated governed attributes for last-minute, pet-friendly, road-trip, May, one guest, or pet; booking is not a listed operation and a coordinated trailing 'and book' predicate is explicitly rejected by Canonical Form.",
+            "coverage": "Fail",
+            "notes": "The proposal improves ranking representation in general but regresses the former open custom-operation fallback for this coordinated request and supplies no booking signature."
+          },
+          {
+            "item_id": "trial_T20190908_153234_664631#2",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "Put a box with card on the red couch.",
+            "braincode": "ENTRYPOINT Card\n\nTASK Card {\n  ACTION pick_up(source=table, target=card) -> card_ref : REF[STRING]\n  ACTION place(destination=box, target=card_ref)\n  ACTION pick_up(source=table, target=box) -> box_ref : REF[STRING]\n  ACTION place(destination=couch_red, relation=on, target=box_ref)\n}",
+            "coverage": "Partial",
+            "notes": "Sequencing can establish the card-in-box state, but there is no canonical containment/state relation saying that the subsequently acquired box is specifically the box containing that card. The source/table details also come from trajectory context rather than the one-line request."
+          },
+          {
+            "item_id": "trial_T20190907_160520_516302#1",
+            "source": "ALFRED (json_2.1.0, train)",
+            "nl": "Put a frying pan with a scoop in the sink.",
+            "braincode": "ENTRYPOINT Scoop\n\nTASK Scoop {\n  ACTION pick_up(source=cabinet, target=scoop) -> scoop_ref : REF[STRING]\n  ACTION place(destination=frying_pan, target=scoop_ref)\n  ACTION pick_up(source=stove, target=frying_pan) -> frying_pan_ref : REF[STRING]\n  ACTION place(destination=sink, relation=in, target=frying_pan_ref)\n}",
+            "coverage": "Partial",
+            "notes": "The action sequence is representable, but the language has no first-class assertion that frying_pan is the pan containing scoop when it is acquired."
+          },
+          {
+            "item_id": "django__django-16032",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "__in doesn't clear selected fields on the RHS when QuerySet.alias() is used after annotate().",
+            "braincode": "ENTRYPOINT ModifyCode\n\nTASK ModifyCode {\n  ACTION modify_code(assertion=assert_queryset_alias_subquery_single_column, expected_output=outcome_subquery_returns_one_column, file=path_django_db_models_fields_related_lookups_py, method=sym_queryset_alias_filter_in_subquery, revision=chg_clear_rhs_selected_fields)\n  ACTION modify_code(assertion=assert_queryset_alias_subquery_single_column, expected_output=outcome_subquery_returns_one_column, file=path_django_db_models_sql_query_py, method=sym_queryset_alias_filter_in_subquery, revision=chg_clear_rhs_selected_fields)\n  ACTION run_tests(assertion=assert_queryset_alias_subquery_single_column, target=django)\n}",
+            "coverage": "Full",
+            "notes": "N6 permits the needed code-value members. Proposed AOR would require target first where present; this request otherwise relies on existing code-value categories."
+          },
+          {
+            "item_id": "sympy__sympy-11618",
+            "source": "SWE-bench_Verified (princeton-nlp/SWE-bench_Verified, test, Parquet column-projected sample)",
+            "nl": "distance calculation wrong\n``` python\n>>> Point(2,0).distance(Point(1,0,2))\n1\n```",
+            "braincode": "ENTRYPOINT ModifyCode\n\nTASK ModifyCode {\n  ACTION modify_code(actual_output=outcome_point_distance_1, expected_output=outcome_point_distance_sqrt_5, file=path_sympy_geometry_point_py, revision=chg_include_third_dimension_distance)\n  ACTION run_tests(assertion=assert_point_2d_3d_distance_sqrt_5, target=sympy)\n}",
+            "coverage": "Full",
+            "notes": "Existing code-value categories plus N6 suffice; no proposed new construct is required."
+          },
+          {
+            "item_id": "c3930",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "tell me an adult joke",
+            "braincode": "ENTRYPOINT Ask\n\nCONVO Ask {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(topic=topic_adult_joke)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The request's speech act and topic are captured with an assumed topic-value member. The full supplied trajectory contains later distinct turns and feedback, but the sampled NL field itself is one speech act."
+          },
+          {
+            "item_id": "c10",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "What is the likely cause of death of the late, great Matthew Perry?",
+            "braincode": "ENTRYPOINT Ask\n\nCONVO Ask {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(topic=topic_matthew_perry_cause_of_death)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The initial question is representable as a symbolic topic. Later correction and feedback in the trajectory would need separate turns; Canonical Form improves their ordering but does not operationally define when a conversational elaboration is a REVISES replacement."
+          },
+          {
+            "item_id": "c6709",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "how to deal with a boss is putting too much workload on you",
+            "braincode": "ENTRYPOINT Ask\n\nCONVO Ask {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(topic=topic_manage_excessive_boss_workload)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The open request is captured through ask plus a topic-value symbol. The later follow-up questions in the trajectory would benefit from the new deterministic t1/t2 naming and REPLY_TO rule."
+          },
+          {
+            "item_id": "c1150",
+            "source": "PRISM (HannahRoseKirk/prism-alignment, conversations config, Parquet column-projected sample)",
+            "nl": "If royals breed with their cousins, why is this not seen as incest and why aren't they imprisoned or arrested?",
+            "braincode": "ENTRYPOINT Ask\n\nCONVO Ask {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(topic=topic_royal_cousin_marriage_legal_status)\n    UTTER ask(topic=topic_royal_cousin_marriage_criminal_liability)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The multi-question rule helps preserve two independently scoped questions. It remains non-deterministic whether these are two speech acts or one compound explanatory question because 'independently scoped' has no mechanical test."
+          },
+          {
+            "item_id": "wildchat1m_en3u-22516",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns, model=gpt-3.5-turbo-0301)",
+            "nl": "hi",
+            "braincode": "ENTRYPOINT Inform\n\nCONVO Inform {\n  TURN t1 SPEAKER=USER {\n    UTTER inform(topic=topic_greeting)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The sampled greeting is a single speech act. The lengthy later image-prompt, marketing-copy, and cover-design transcript would require multiple turns and symbolic categories for detailed visual composition that are not established by this proposal."
+          },
+          {
+            "item_id": "wildchat1m_en3u-49918",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns, model=gpt-3.5-turbo-0301)",
+            "nl": "my phd thesis is about “Financial Risk Modelling using time series analysis and machine learning models”. i did following works in my thesis: - market risk modelling (value at risk prediction) using time series analysis and Deep Belief Network. - liquidity risk class prediction (high liquidity vs low liquidity) using different machine learning models (including SVM, RF, KNN, ANN, and LSTM) for 4 crypto currencies (BitCoin, Ethereum, LiteCoin, Cardano). - Money Laundering detection using different machine learning models (including SVM, RF, KNN, ANN, and LSTM) for bitcoin using transaction graph data provided by Elliptic company.describe the aim of this research from scientific view",
+            "braincode": "ENTRYPOINT ArtTechnicalExplanation\n\nTASK ArtTechnicalExplanation : STRING {\n  GENERATE(target=art_technical_explanation, topic=topic_scientific_aim_financial_risk_modelling_time_series_machine_learning_cryptoassets) -> art_technical_explanation : STRING\n  RETURN art_technical_explanation\n}",
+            "coverage": "Full",
+            "notes": "Under N6, the detailed research premise can be an atomic topic symbol. The later practical-view revision would need a separate turn or revised generation, but no deterministic criterion distinguishes a clarification from replacement."
+          },
+          {
+            "item_id": "wildchat1m_en3u-103814",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns, model=gpt-3.5-turbo-0613)",
+            "nl": "what do you call it when cards run out in solitaire",
+            "braincode": "ENTRYPOINT Ask\n\nCONVO Ask {\n  TURN t1 SPEAKER=USER {\n    UTTER ask(topic=topic_solitaire_cards_run_out_term)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The speech act and subject are expressible. The later requests for alternate phrasing are separate follow-ups in the trajectory and would be sequenced by the proposed TURN rule."
+          },
+          {
+            "item_id": "wildchat1m_en3u-31706",
+            "source": "PATHs (microsoft/prototypical-hai-collaborations, wildchat1m_en3u-task_utterance_wintent_anns, model=gpt-3.5-turbo-0301)",
+            "nl": "Can you write a hypothetical crossover of Ouran High School Host Club and Fruits Basket, what would the characters interactions be like?",
+            "braincode": "ENTRYPOINT ArtStory\n\nTASK ArtStory : STRING {\n  GENERATE(target=art_story, constraints=[constraint_hypothetical_crossover, constraint_describe_character_interactions], topic=topic_ouran_high_school_host_club_fruits_basket) -> art_story : STRING\n  RETURN art_story\n}",
+            "coverage": "Full",
+            "notes": "N6 permits atomic topic and constraint members. No change in this proposal specifically improves creative-artifact content representation."
+          },
+          {
+            "item_id": "1776016996729",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample, JSON-decoded messages)",
+            "nl": "Hello",
+            "braincode": "ENTRYPOINT Inform\n\nCONVO Inform {\n  TURN t1 SPEAKER=USER {\n    UTTER inform(topic=topic_greeting)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The one-line sampled greeting is representable. The later engineering-math planning and Egyptian-YouTuber request need additional turns; t1, t2 naming is deterministic but the proposed rules do not add a recommendation/search-criteria model."
+          },
+          {
+            "item_id": "1775769104830",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample, JSON-decoded messages)",
+            "nl": "Hi I need your help. I have an assignment where I need to write a report of about 20 pages. Their topic is about battery energy storage systems in South Africa, technologies and challenges.",
+            "braincode": "ENTRYPOINT ArtStructuredReport\n\nTASK ArtStructuredReport : STRING {\n  GENERATE(target=art_structured_report, format=format_structured_report, quantity=20, quantity_unit=unit_page, topic=topic_battery_energy_storage_systems_south_africa, constraints=[constraint_cover_technologies, constraint_cover_challenges]) -> art_structured_report : STRING\n  RETURN art_structured_report\n}",
+            "coverage": "Full",
+            "notes": "format_structured_report helps this item. unit_page and the topic/constraint members are assumed under existing N6 categories; later resource-age and IEEE-format constraints require additional defined symbols but fit existing category shapes."
+          },
+          {
+            "item_id": "1776011140875",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample, JSON-decoded messages)",
+            "nl": "I want to plan a weekly content and event promotion schedule for my lounge.",
+            "braincode": "ENTRYPOINT ArtPlan\n\nTASK ArtPlan : STRING {\n  GENERATE(target=art_plan, duration=1, duration_unit=unit_week, topic=topic_lounge_content_event_promotion_schedule) -> art_plan : STRING\n  RETURN art_plan\n}",
+            "coverage": "Full",
+            "notes": "The initial planning request is expressible. The later high-energy-rooftop, Sunday-buffet, posting-time, hashtag, and low-budget refinements need symbolic constraints and multi-turn revision classification that this proposal does not fully define."
+          },
+          {
+            "item_id": "1775447480498",
+            "source": "ThoughtTrace (SCAI-JHU/ThoughtTrace, Parquet column-projected sample, JSON-decoded messages)",
+            "nl": "hi i wanna help",
+            "braincode": "ENTRYPOINT Inform\n\nCONVO Inform {\n  TURN t1 SPEAKER=USER {\n    UTTER inform(topic=topic_offer_help)\n  }\n}",
+            "coverage": "Full",
+            "notes": "The greeting/offer is representable. The subsequent captopril adverse-effect question is a later independent turn and would receive a deterministic t2 name."
+          }
+        ],
+        "cross_check": {
+          "used": false,
+          "agreement": "n/a",
+          "notes": "No independent translations were supplied. Self-simulation indicates partial agreement only: canonical naming/order rules help, but translators can diverge on speech-act independence, predicate spans, custom-operation eligibility, and transform-result naming."
+        },
+        "required_changes": [
+          {
+            "target": "canonical-form",
+            "change": "Repair AOR and every worked example to one rule. If AOR is target first then alphabetical remaining attributes, change the Pillow example to `pick_up(target=pillow, quantity=2, source=sofa)`; audit all revised examples against that rule."
+          },
+          {
+            "target": "canonical-form",
+            "change": "Define a type-correct canonical transform protocol. State whether rinse/heat/chill/slice/pour are written without `->` and retain the input REF, or bind a distinct mandatory result handle derived from the operation plus target; make that choice consistent with HNR, Bind no-shadowing, and the Action signatures. Define how an unbound transform target is canonically expanded to pick_up before the transform."
+          },
+          {
+            "target": "Action",
+            "change": "Give every retained and custom operation a complete signature discipline. In particular, define custom_general_<predicate> as accepting exactly target plus an enumerated set of attributes and state its result type/effect; add governed signatures for booking and the sampled travel criteria or retain a deterministic legal fallback for coordinated requests."
+          },
+          {
+            "target": "canonical-form",
+            "change": "Replace 'independently scoped speech-act clause' with an operational segmentation algorithm over a defined parse of coordination, interrogatives, imperatives, clause boundaries, and shared arguments. Specify whether a compound question with one requested explanation is one UTTER or multiple UTTERs."
+          },
+          {
+            "target": "canonical-form",
+            "change": "Define replacement-message detection mechanically. Specify the lexical/symbolic conditions that make a later supplied message REVISES rather than REPLY_TO, and define how the lineage tip is determined when a message addresses a revised request while also asking a new follow-up."
+          },
+          {
+            "target": "operation-vocabulary",
+            "change": "Do not define custom_general_<predicate> by source spelling alone. Either enumerate a controlled custom-action category with glossary meanings, or add a glossary-defined mapping from a normalized predicate token to an action semantic class; a decoder must recover more than an opaque English-derived label."
+          },
+          {
+            "target": "Action",
+            "change": "Add governed search/retrieval criteria needed by the sampled closed tasks: review type/user reviews, travel deal type, date/month, guest count, pet-friendly, road-trip, last-minute, and booking. Add a containment/contents relation or state mechanism so 'box with card' and 'pan with scoop' can identify the required composite entity rather than relying only on an incidental prior sequence."
+          },
+          {
+            "target": "Task",
+            "change": "Clarify TASK naming for a first step with no HNR result base, such as GENERATE with target art_structured_report, and make the stated PascalCase transformation precise for acronym/numeric/underscored vocabulary symbols."
+          }
+        ],
+        "logic_issues": [
+          "Canonical Form says AOR writes target first, but its own Pillow worked example writes `pick_up(quantity=2, source=sofa, target=pillow)`.",
+          "HNR says scalar Action results use `<target>_ref`, while rinse/heat/chill/slice/pour must return the same REF identity. Binding that result either shadows the input REF, creates a new identity contrary to the semantics, or violates HNR if omitted.",
+          "The revised Action semantics says transforms require and return REF identity, but grammar makes Action results optional and supplies no canonical expansion for transforming an unbound descriptor.",
+          "The phrase 'independently scoped speech acts' is not a syntactic or semantic decision procedure; two translators can split the same compound question differently.",
+          "Custom actions have an opaque source-derived predicate label and no action-specific signature/decomposition, so their decoded effect is not glossary-recoverable.",
+          "Canonical Form rejects coordinated unmatched predicates, making requests such as 'find ... and book' translation errors although the prior custom fallback could encode an atomic domain action.",
+          "The Action revision names custom operations as legal operation-vocabulary members but does not establish their signature compatibility with Action's governed-attribute validation.",
+          "The claimed complete supplied-input transcript policy is underspecified for assistant messages, feedback, greetings, corrections that add information, and whether a later request is a new REPLY_TO or a replacement."
+        ],
+        "notes_assessment": {
+          "N2": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "The proposal adds separately look-upable capacity, cuisine, reservation, format, and search-criterion vocabulary, improving the descriptive lexicon. The glossary still is not the complete lexicon because free identifiers, STRING contents, and source-derived custom predicate labels remain."
+          },
+          "N3": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "New attributes have governed NUMBER or vocabulary-category values, and capacity/cuisine/reservation values are defined. Many existing attributes, notably content and code-related fields, still accept STRING during the build phase."
+          },
+          "N7": {
+            "status": "violated",
+            "trend": "improved",
+            "reasoning": "Fixed ordering intentions, handle conventions, deterministic turn names, explicit multiplicity, and the effort to constrain custom operations are meaningful progress over the current spec. N7 remains violated because AOR contradicts its example, transform handles conflict with REF identity and no-shadowing, speech-act segmentation is not algorithmic, and custom predicate/semantic decisions are still translator-dependent."
+          },
+          "N1": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "The language remains in the vocabulary build phase with IDENT and STRING channels, including generated task/variable names and transitional content."
+          },
+          "N4": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "Transitional STRING content remains explicitly legal in UTTER and GENERATE. The proposal does not add prose to the language beyond pre-existing channels, but it does not close them."
+          },
+          "N5": {
+            "status": "violated",
+            "trend": "unchanged",
+            "reasoning": "The source-derived custom_general_<predicate> rule still relies on an English predicate from the request, and free STRING channels remain."
+          },
+          "N6": {
+            "status": "satisfied",
+            "trend": "unchanged",
+            "reasoning": "The proposed syntax generally remains defined over vocabulary categories, and simulations use assumed members of existing categories rather than reshaping grammar around absent individual entries."
+          },
+          "N8": {
+            "status": "partial",
+            "trend": "improved",
+            "reasoning": "Fine-grained RAM, cuisine, reservation, ranking, multiplicity, and multi-question distinctions preserve more meaning. The restrictive custom rejection and opaque custom semantics unnecessarily sacrifice richness in unsupported domains."
+          }
+        },
+        "rebuttal_rulings": [
+          {
+            "target": "canonical-form OSR totality and legal custom symbols",
+            "ruling": "upheld",
+            "reasoning": "The Shaper made the predicate lexical rule ASCII-safe and rejects several invalid forms, satisfying the previous token-legality concern. The remaining semantic-domain requirement is still unresolved and is retained as a new required change."
+          },
+          {
+            "target": "operation-vocabulary OSR alignment",
+            "ruling": "upheld",
+            "reasoning": "Canonical Form and operation-vocabulary now both use the `[a-z]+` predicate restriction for custom_general_<predicate>."
+          },
+          {
+            "target": "canonical physical multiplicity",
+            "ruling": "upheld",
+            "reasoning": "The LIST[REF] plus FOR EACH rule and quantity-dependent pick_up result type now preserve multiple acquired entities and prevent repeated indistinguishable scalar acquisition."
+          },
+          {
+            "target": "coordinated independent speech acts",
+            "ruling": "overruled",
+            "reasoning": "The proposal correctly adds multiple UTTERs, but 'independently scoped speech-act clause' lacks an operational boundary rule, so it does not yet make encoding deterministic."
+          },
+          {
+            "target": "closed-task criteria for RAM, cuisine, reservation availability, ranking/filtering",
+            "ruling": "upheld",
+            "reasoning": "The proposal adds governed RAM, cuisine, reservation, rank, sort, and extract representations, though further criteria remain needed for travel and review tasks."
+          },
+          {
+            "target": "Task report format/example repair",
+            "ruling": "upheld",
+            "reasoning": "format_structured_report is added and the revised Task example uses it. The remaining task-name edge cases are a separate issue."
+          },
+          {
+            "target": "Conversation two-question worked example",
+            "ruling": "upheld",
+            "reasoning": "The revised Conversation example now represents both questions as ordered UTTERs."
+          }
+        ],
+        "accept_changes": [
+          "capacity-unit-value",
+          "cuisine-value",
+          "reservation-status-value",
+          "format-value"
+        ],
+        "chosen_position": null,
+        "position_comparison": null,
+        "reasoning": "[Forced acceptance after 3 attempt(s) without a clean accept — the required changes below are known issues carried forward for a future sprint to address, not resolved.] This is a real but incomplete N7 improvement: it adds valuable canonical ordering intentions, multiplicity, criteria vocabulary, and multi-question preservation. The core canonical rules cannot be accepted while AOR contradicts its own example and transform references have no type- and scope-consistent encoding. The four standalone value-category additions are sound, self-contained vocabulary progress and can land now without inheriting those defects."
+      },
+      "applied": [
+        "canonical-form",
+        "operation-vocabulary",
+        "attribute-name",
+        "capacity-unit-value",
+        "cuisine-value",
+        "reservation-status-value",
+        "Action",
+        "Task",
+        "format-value",
+        "Utterance",
+        "Conversation"
+      ],
+      "origin": "carried over from sprint 22"
+    }
+  },
+  "N8": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "b363acc47c98",
+    "last_assessment": null
+  }
+}

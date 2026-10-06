@@ -1,0 +1,1187 @@
+{
+  "N1": {
+    "status": "open",
+    "sprints": [
+      10
+    ],
+    "text_hash": "95b396f44c7e",
+    "last_assessment": {
+      "status": "violated",
+      "reasoning": "The hard closed-vocabulary requirement is not met: the vocabulary additions failed hygiene and therefore do not exist in the glossary, multiple lexical productions use undefined metavariables, and code-form introduces unglossed raw labels. A reader cannot trace every token in the simulations to the supplied glossary or a fully defined glossary rule."
+    },
+    "last_attempt": {
+      "changes": [
+        {
+          "op": "revise",
+          "construct_name": "Types & Lexicon",
+          "grammar": "type ::= NUMBER | BOOL | DATE | TIME | URL | PATH | NAME | CODE | PROPOSITION | ENTITY | ROLE | VALUE | LIST \"[\" type \"]\" | REF \"[\" type \"]\"\nvalue ::= literal | entity_symbol | role_symbol | value_symbol | HANDLE | list_lit | proposition | code | diff\nliteral ::= NUMBER_LITERAL | TRUE | FALSE | DATE_LITERAL | TIME_LITERAL | URL_LITERAL | PATH_LITERAL | NAME_LITERAL\nlist_lit ::= \"[\" value (\",\" value)* \"]\"\ndiff ::= HANDLE \"-\" NUMBER_LITERAL\nproposition ::= intent_symbol \"(\" proposition_arg_list? \")\"\nproposition_arg_list ::= proposition_arg (\",\" proposition_arg)*\nproposition_arg ::= attribute_symbol \"=\" value\ncode ::= code_node\nontology_symbol ::= operation_symbol | intent_symbol | entity_symbol | role_symbol | value_symbol | attribute_symbol\nHANDLE ::= \"$v\" POSITIVE_INTEGER\nNUMBER_LITERAL ::= \"-\"? (\"0\" | [1-9][0-9]*) ( \".\" [0-9]+ )?\nDATE_LITERAL ::= \"@d\" YYYY \"-\" MM \"-\" DD\nTIME_LITERAL ::= \"@t\" HH \":\" MM \":\" SS \"Z\"\nURL_LITERAL ::= \"@u\" URL_BODY\nPATH_LITERAL ::= \"@p\" PATH_BODY\nNAME_LITERAL ::= \"@n\" NAME_BODY\n-- Ontology categories are namespace-disjoint: operation symbols begin op_; intent symbols begin int_; entity symbols begin ent_; role symbols begin role_; value symbols begin val_; attribute symbols begin attr_.",
+          "semantics": "BrainCode has no STRING type and no quoted-text syntax. Every ontology symbol has one category-defined static type: entity_symbol has ENTITY, role_symbol has ROLE, value_symbol has VALUE, proposition has PROPOSITION, and CODE has CODE. operation_symbol, intent_symbol, and attribute_symbol are syntactic-position symbols only: an operation may occur only after ACTION, an intent only as a proposition head or after UTTER, and an attribute only as a schema-authorized argument label. They are never general values. DATE_LITERAL must be a valid proleptic-Gregorian calendar date. TIME_LITERAL is UTC and requires 00-23 hours, 00-59 minutes, and 00-59 seconds. URL_LITERAL is an RFC-3986 absolute URI serialized without whitespace or quotation marks. PATH_LITERAL is an absolute or relative slash-normalized path with no whitespace, dot-segment, repeated-slash, or backslash form. NAME_LITERAL is a single atomic proper-name token using NFC Unicode letters, decimal digits, underscore, or hyphen only, beginning with a letter; casing is preserved and has no grammatical meaning. Literal productions are mutually exclusive by their required prefixes. HANDLE allocation is mandatory and canonical: traverse the finalized document preorder, assigning $v1 to the ENTRYPOINT target, then each declaration name, parameter, result binding, turn name, loop binding, and LET binding at its first introduction in source order; a later reference must use its allocated handle. A handle suffix has no meaning.",
+          "worked_example": {
+            "nl": "On 10 June 2025, ask the manager for a two-day extension.",
+            "braincode": "TASK $v2 ANCHOR @d2025-06-03 {\n  ACTION op_send_email(attr_recipient=role_manager, attr_content=int_request_extension(attr_duration=2, attr_unit=val_day))\n}"
+          },
+          "glossary_gloss": "Types & Lexicon defines every legal BrainCode value, literal, ontology namespace, and local handle form. It forbids quoted prose and requires every handle to receive one predictable numbered spelling.",
+          "change_type": "MAJOR",
+          "rationale": "This replaces unrestricted identifiers and strings with complete lexical rules, typed ontology symbols, valid atomic literals, and deterministic handle allocation.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "kind": "vocabulary",
+          "construct_name": "structural-symbol",
+          "glossary_gloss": "Structural symbols are the complete finite set of BrainCode keywords, operators, delimiters, type names, and literal prefixes. They describe source structure rather than requested-world meaning.",
+          "closed": true,
+          "members": [
+            {
+              "symbol": "ENTRYPOINT",
+              "gloss": "Declares the one document execution root.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TASK",
+              "gloss": "Begins a task declaration.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ANCHOR",
+              "gloss": "Records the translation-time date anchor for relative-date resolution.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ACTION",
+              "gloss": "Begins an external operation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "UTTER",
+              "gloss": "Begins a symbolic speech act.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "GENERATE",
+              "gloss": "Begins pure symbolic generation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CONVO",
+              "gloss": "Begins a conversation declaration.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TURN",
+              "gloss": "Begins a conversation turn.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "SPEAKER",
+              "gloss": "Labels a turn speaker.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "USER",
+              "gloss": "The human conversation speaker label.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "AGENT",
+              "gloss": "The agent conversation speaker label.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REPLY_TO",
+              "gloss": "Links a turn to an earlier turn it answers.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REVISES",
+              "gloss": "Replaces an earlier turn in a correction chain.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "IF",
+              "gloss": "Begins a conditional.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "THEN",
+              "gloss": "Begins a true conditional branch.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ELSE",
+              "gloss": "Begins a false conditional branch.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "FOR",
+              "gloss": "Begins iteration.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "EACH",
+              "gloss": "Marks one-at-a-time iteration.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "IN",
+              "gloss": "Relates a bound item to a collection.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ANY",
+              "gloss": "Introduces existential list testing.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ALL",
+              "gloss": "Introduces universal list testing.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "SATISFIES",
+              "gloss": "Separates a quantifier binding from its condition.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "LET",
+              "gloss": "Binds a local value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "RETURN",
+              "gloss": "Returns a task value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "DECREASES",
+              "gloss": "Marks a numeric recursion measure.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "AND",
+              "gloss": "Boolean conjunction.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "OR",
+              "gloss": "Boolean disjunction.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NOT",
+              "gloss": "Boolean negation.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TRUE",
+              "gloss": "True boolean literal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "FALSE",
+              "gloss": "False boolean literal.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NUMBER",
+              "gloss": "Numeric value type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "BOOL",
+              "gloss": "Boolean value type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "DATE",
+              "gloss": "Atomic calendar-date type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TIME",
+              "gloss": "Atomic UTC-time type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "URL",
+              "gloss": "Atomic URI type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "PATH",
+              "gloss": "Atomic normalized file-path type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NAME",
+              "gloss": "Atomic proper-name type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "CODE",
+              "gloss": "Structured program or configuration type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "PROPOSITION",
+              "gloss": "Structured symbolic meaning type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ENTITY",
+              "gloss": "Entity-symbol value type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "ROLE",
+              "gloss": "Role-symbol value type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "VALUE",
+              "gloss": "Controlled attribute-value type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "LIST",
+              "gloss": "Finite homogeneous collection type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "REF",
+              "gloss": "Runtime entity-reference type.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "== != < <= > >=",
+              "gloss": "Typed comparison operators.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "-> = : -",
+              "gloss": "Result binding, assignment, type annotation, and numeric difference operators.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "( ) { } [ ] ,",
+              "gloss": "Call, block, list/type, and argument delimiters.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "$v @d @t @u @p @n @i @q",
+              "gloss": "Required lexical prefixes for handles and atomic literal forms.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": null,
+          "worked_example": {
+            "nl": "For every selected item, act only if its count is at least one.",
+            "braincode": "TASK $v2($v3:LIST[ENTITY]) ANCHOR @d2026-10-01 { FOR EACH $v4 IN $v3 { IF $v4 != ent_none THEN { ACTION op_add_to_cart(attr_target=$v4) } } }"
+          },
+          "change_type": "MAJOR",
+          "rationale": "The prior structural list omitted source tokens used by grammar and examples. This finite category makes every structural token independently look-upable.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "literal-form",
+          "glossary_gloss": "Literal forms define the few open-ended atomic values that may appear directly in source. They are data atoms, never phrases or sentences.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "NUMBER_LITERAL",
+              "gloss": "A base-10 signed integer or decimal number.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "DATE_LITERAL",
+              "gloss": "A calendar date written as @dYYYY-MM-DD.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "TIME_LITERAL",
+              "gloss": "A UTC time written as @tHH:MM:SSZ.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "URL_LITERAL",
+              "gloss": "A URL written with the @u prefix.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "PATH_LITERAL",
+              "gloss": "A file path written with the @p prefix.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "NAME_LITERAL",
+              "gloss": "A single-token proper name written with the @n prefix.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "HANDLE",
+              "gloss": "An opaque local handle written with the $ prefix.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "A literal is a member only when it matches exactly one lexical production in Types & Lexicon. A HANDLE must be introduced by a declaration or binding before use; its suffix is opaque and has no lexical meaning. No literal form permits whitespace, quotation marks, or natural-language phrase structure.",
+          "worked_example": {
+            "nl": "Use 10 June 2025 as a travel date.",
+            "braincode": "ACTION act_search_travel(origin=entity_tel_aviv, destination=entity_berlin, date=@d2025-06-10)"
+          },
+          "change_type": "MINOR",
+          "rationale": "Exact literal rules allow necessary open values such as dates and paths without reintroducing unrestricted text.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "kind": "vocabulary",
+          "construct_name": "operation-symbol",
+          "glossary_gloss": "Operation symbols name external operations and define their required arguments, optional arguments, result type, identity behavior, and fixed attribute order. They also define the canonical operational decomposition used for their domain.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "op_find",
+              "gloss": "Finds a requested quantity of entities. Required ordered attributes: attr_target, attr_source, attr_quantity. Returns LIST[REF[ENTITY]].",
+              "nl_synonyms": [
+                "find",
+                "get",
+                "locate"
+              ]
+            },
+            {
+              "symbol": "op_place",
+              "gloss": "Places one referenced entity at a destination. Required ordered attributes: attr_target, attr_destination. Returns no value.",
+              "nl_synonyms": [
+                "put",
+                "place"
+              ]
+            },
+            {
+              "symbol": "op_send_email",
+              "gloss": "Sends a structured email. Required ordered attributes: attr_recipient, attr_content. Returns no value.",
+              "nl_synonyms": [
+                "email",
+                "send email"
+              ]
+            },
+            {
+              "symbol": "op_check_replied",
+              "gloss": "Checks whether a target has replied by a date or time. Required ordered attributes: attr_target, attr_deadline. Returns BOOL.",
+              "nl_synonyms": [
+                "check reply",
+                "has replied"
+              ]
+            },
+            {
+              "symbol": "op_modify_code",
+              "gloss": "Applies a structured code change. Required ordered attributes: attr_path, attr_change. Returns no value.",
+              "nl_synonyms": [
+                "fix code",
+                "modify code"
+              ]
+            }
+          ],
+          "membership_rule": "A member has exact form op_[a-z0-9_]+ and is valid only if the complete glossary gives it one schema: required and optional attribute symbols, fixed attribute order, accepted types or categories, result type, effect class, and identity classification. Canonical closed-task planning uses the least operation sequence whose glossary-defined postconditions satisfy the requested final state. If multiple identical entities are requested from one source, use one plural-returning finder followed by FOR EACH; do not encode repeated equivalent find/place chains.",
+          "worked_example": {
+            "nl": "Put two pillows from the sofa onto the armchair one at a time.",
+            "braincode": "ACTION op_find(attr_target=ent_pillow, attr_source=ent_sofa, attr_quantity=2) -> $v2:LIST[REF[ENTITY]]\nFOR EACH $v3 IN $v2 { ACTION op_place(attr_target=$v3, attr_destination=ent_armchair) }"
+          },
+          "change_type": "MAJOR",
+          "rationale": "Operation schemas and canonical decomposition must be explicit rather than deferred to unspecified future entries.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "entity-symbol",
+          "glossary_gloss": "Entity symbols name objects, places, systems, documents, and domain concepts used as subjects or destinations. Their meaning comes from the glossary, not from English word formation.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "entity_mug",
+              "gloss": "A mug.",
+              "nl_synonyms": [
+                "mug",
+                "cup"
+              ]
+            },
+            {
+              "symbol": "entity_sink",
+              "gloss": "A sink.",
+              "nl_synonyms": [
+                "sink"
+              ]
+            },
+            {
+              "symbol": "entity_coffee_maker",
+              "gloss": "A coffee-making appliance.",
+              "nl_synonyms": [
+                "coffee maker",
+                "coffee machine"
+              ]
+            },
+            {
+              "symbol": "entity_tel_aviv",
+              "gloss": "Tel Aviv.",
+              "nl_synonyms": [
+                "Tel Aviv"
+              ]
+            },
+            {
+              "symbol": "entity_berlin",
+              "gloss": "Berlin.",
+              "nl_synonyms": [
+                "Berlin"
+              ]
+            }
+          ],
+          "membership_rule": "An entity symbol has exact form entity_[a-z0-9_]+ and is valid only when the complete glossary contains a corresponding entity entry with a single canonical meaning and type classification.",
+          "worked_example": {
+            "nl": "Put the mug in the coffee maker.",
+            "braincode": "ACTION act_place(target=$mug, destination=entity_coffee_maker)"
+          },
+          "change_type": "MINOR",
+          "rationale": "Entities formerly appeared as arbitrary strings. A dedicated ontology category gives them canonical symbolic forms and synonym mappings.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "role-symbol",
+          "glossary_gloss": "Role symbols name recipients, participants, and other relational positions. They distinguish a role from an arbitrary proper name or entity.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "role_manager",
+              "gloss": "The manager relevant to the request context.",
+              "nl_synonyms": [
+                "manager",
+                "my manager"
+              ]
+            },
+            {
+              "symbol": "role_user",
+              "gloss": "The human user in the current interaction.",
+              "nl_synonyms": [
+                "user",
+                "me"
+              ]
+            },
+            {
+              "symbol": "role_agent",
+              "gloss": "The agent executing or responding to the request.",
+              "nl_synonyms": [
+                "agent",
+                "assistant"
+              ]
+            }
+          ],
+          "membership_rule": "A role symbol has exact form role_[a-z0-9_]+ and is valid only when the complete glossary defines its relational meaning and permitted use sites.",
+          "worked_example": {
+            "nl": "Send the manager a message.",
+            "braincode": "ACTION act_send_email(recipient=role_manager, content=intent_follow_up())"
+          },
+          "change_type": "MINOR",
+          "rationale": "Recipients were previously arbitrary strings. Separating role symbols from entities supports canonical recipient encoding.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "kind": "vocabulary",
+          "construct_name": "intent-symbol",
+          "glossary_gloss": "Intent symbols name structured communicative, generative, and informational meanings. Each intent defines its permitted attributes, value categories, and canonical attribute order.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "int_request_extension",
+              "gloss": "Requests additional allowed time. Ordered attributes: attr_recipient ROLE, attr_duration NUMBER, attr_unit VALUE, attr_tone VALUE optional.",
+              "nl_synonyms": [
+                "ask for an extension",
+                "request more time"
+              ]
+            },
+            {
+              "symbol": "int_follow_up",
+              "gloss": "Requests or sends a reminder about an earlier matter. Ordered attribute: attr_tone VALUE optional.",
+              "nl_synonyms": [
+                "follow up",
+                "send reminder"
+              ]
+            },
+            {
+              "symbol": "int_greet",
+              "gloss": "Performs a greeting with no required attributes.",
+              "nl_synonyms": [
+                "hello",
+                "hi"
+              ]
+            },
+            {
+              "symbol": "int_bug_report",
+              "gloss": "Describes a reproducible software defect. Ordered attributes: attr_subject ENTITY, attr_reproduction CODE, attr_expected CODE, attr_actual CODE.",
+              "nl_synonyms": [
+                "bug report",
+                "wrong output"
+              ]
+            }
+          ],
+          "membership_rule": "A member has exact form int_[a-z0-9_]+ and is valid only if the complete glossary defines a unique schema with required and optional attributes, allowed value types/categories, and fixed argument order. Canonical construct selection is mandatory: encode an observed or requested dialogue sequence, correction, reply relation, or speaker identity as CONVO with TURN and UTTER; encode an executable external-state request as TASK; encode a request solely for a newly derived symbolic artifact as TASK containing GENERATE. Do not use CONVO for a one-shot artifact request and do not use GENERATE when a glossary-defined external operation is required.",
+          "worked_example": {
+            "nl": "User says hello.",
+            "braincode": "CONVO $v1 { TURN $v2 SPEAKER=USER { UTTER int_greet() } }"
+          },
+          "change_type": "MAJOR",
+          "rationale": "This supplies the missing deterministic choice between TASK, GENERATE, CONVO, and UTTER while preserving a growing ontology.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "attribute-symbol",
+          "glossary_gloss": "Attribute symbols label the named parts of an operation or proposition. Each attribute entry defines where it may occur, its value type or category, and its canonical ordering position.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "target",
+              "gloss": "The entity or subject an operation acts on.",
+              "nl_synonyms": [
+                "target",
+                "item"
+              ]
+            },
+            {
+              "symbol": "recipient",
+              "gloss": "The intended receiver of a communication or request.",
+              "nl_synonyms": [
+                "recipient",
+                "to"
+              ]
+            },
+            {
+              "symbol": "content",
+              "gloss": "A required PROPOSITION expressing symbolic message or artifact meaning.",
+              "nl_synonyms": [
+                "message",
+                "content"
+              ]
+            },
+            {
+              "symbol": "duration",
+              "gloss": "A numeric amount of time or length.",
+              "nl_synonyms": [
+                "duration",
+                "length"
+              ]
+            },
+            {
+              "symbol": "unit",
+              "gloss": "The unit associated with a quantity.",
+              "nl_synonyms": [
+                "unit"
+              ]
+            },
+            {
+              "symbol": "tone",
+              "gloss": "A controlled communicative tone value.",
+              "nl_synonyms": [
+                "tone",
+                "style"
+              ]
+            },
+            {
+              "symbol": "deadline",
+              "gloss": "A DATE or TIME by which a condition is checked.",
+              "nl_synonyms": [
+                "deadline",
+                "by"
+              ]
+            }
+          ],
+          "membership_rule": "An attribute symbol has exact form [a-z][a-z0-9_]* and is valid only when the complete glossary contains an attribute entry specifying its allowed parent symbols, accepted types or vocabulary categories, and canonical position. Attribute spelling alone does not create an attribute.",
+          "worked_example": {
+            "nl": "Request an extension for two days politely.",
+            "braincode": "intent_request_extension(duration=2, unit=value_day, tone=value_polite)"
+          },
+          "change_type": "MINOR",
+          "rationale": "The prior generic IDENT=value attribute production admitted undefined attribute names and values. This category makes both the labels and their schemas inspectable.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "attribute-value-symbol",
+          "glossary_gloss": "Attribute-value symbols are controlled values used by glossary-defined attributes. They provide canonical forms for values such as tone, time units, ordering, and format.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "value_polite",
+              "gloss": "A courteous and respectful tone.",
+              "nl_synonyms": [
+                "polite",
+                "politely",
+                "courteously"
+              ]
+            },
+            {
+              "symbol": "value_formal",
+              "gloss": "A formal tone.",
+              "nl_synonyms": [
+                "formal",
+                "formally"
+              ]
+            },
+            {
+              "symbol": "value_neutral",
+              "gloss": "A neutral tone.",
+              "nl_synonyms": [
+                "neutral",
+                "neutrally"
+              ]
+            },
+            {
+              "symbol": "value_day",
+              "gloss": "The calendar-day unit.",
+              "nl_synonyms": [
+                "day",
+                "days"
+              ]
+            },
+            {
+              "symbol": "value_price_ascending",
+              "gloss": "Order values from lower price to higher price.",
+              "nl_synonyms": [
+                "cheapest first",
+                "price ascending"
+              ]
+            }
+          ],
+          "membership_rule": "An attribute-value symbol has exact form value_[a-z0-9_]+ and is valid only when the complete glossary defines it and lists every attribute for which it is allowed. A value may not be inferred from an English adjective or phrase.",
+          "worked_example": {
+            "nl": "Write politely.",
+            "braincode": "UTTER intent_acknowledge(tone=value_polite)"
+          },
+          "change_type": "MINOR",
+          "rationale": "Controlled values eliminate formerly free tone, register, ordering, metric, and filter strings while preserving distinctions through a growing ontology.",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Action",
+          "grammar": "action ::= ACTION operation_symbol \"(\" action_attr_list? \")\" (\"->\" HANDLE \":\" type)?\naction_attr_list ::= action_attr (\",\" action_attr)*\naction_attr ::= attribute_symbol \"=\" value",
+          "semantics": "ACTION is the sole external-state construct. Its operation must be a glossary-defined operation symbol with a complete ordered schema. Required, optional, duplicate, out-of-order, extra, and type-incompatible attributes are static errors. No default operation signature exists. Content and code-change arguments must be PROPOSITION or CODE only when the operation schema permits them. Result handles use the global allocation rule.",
+          "worked_example": {
+            "nl": "Fix the file using a structured code change.",
+            "braincode": "ACTION op_modify_code(attr_path=@psympy/printing/mathematica.py, attr_change=code_assert(expected=code_text(@q4d61785b782c325d),actual=code_text(@q4d617828322c207829)))"
+          },
+          "glossary_gloss": "Action performs one glossary-defined external operation using a fixed symbolic schema. It cannot accept free text, unknown attributes, or an unregistered operation.",
+          "change_type": "MAJOR",
+          "rationale": "Action must accept structured code evidence where required while retaining fully defined operation and argument vocabularies.",
+          "cites_source": "Why Agentic Systems Need Ontologies",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Utterance",
+          "grammar": "utterance ::= UTTER intent_symbol \"(\" utterance_attr_list? \")\" (\"->\" HANDLE \":\" PROPOSITION)?\nutterance_attr_list ::= utterance_attr (\",\" utterance_attr)*\nutterance_attr ::= attribute_symbol \"=\" value",
+          "semantics": "UTTER records a non-effectful speech act and is legal only in a CONVO TURN body. Its intent symbol supplies the complete ordered schema. No content string, quoted phrase, register note, or unrestricted identifier is legal. An optional result binds the complete PROPOSITION using the canonical next handle.",
+          "worked_example": {
+            "nl": "User says hello.",
+            "braincode": "CONVO $v1 { TURN $v2 SPEAKER=USER { UTTER int_greet() } }"
+          },
+          "glossary_gloss": "Utterance records one symbolic thing said in a conversation. Its meaning comes from an intent and its defined attributes, not from embedded prose.",
+          "change_type": "MAJOR",
+          "rationale": "This revalidates UTTER against the corrected Task and Conversation grammar and preserves N1/N4 compliance.",
+          "cites_source": "Automatic Textbook Formalization",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Generate",
+          "grammar": "generation ::= GENERATE \"(\" generation_attr_list \")\" \"->\" HANDLE \":\" gen_type\ngeneration_attr_list ::= generation_attr (\",\" generation_attr)*\ngeneration_attr ::= attribute_symbol \"=\" value\ngen_type ::= NUMBER | BOOL | DATE | TIME | URL | PATH | NAME | CODE | PROPOSITION | LIST \"[\" gen_type \"]\"",
+          "semantics": "GENERATE is pure symbolic derivation. It requires a glossary-defined attr_target and attr_specification, where specification is PROPOSITION or CODE according to its generation schema. It cannot create REF values, quoted prompts, text fragments, or free-form output strings. Its use is selected only when the source asks for a derived artifact rather than a live external operation or an observed conversation turn.",
+          "worked_example": {
+            "nl": "Generate a symbolic trip plan for Italy.",
+            "braincode": "GENERATE(attr_target=role_user, attr_specification=int_plan_trip(attr_destination=ent_italy)) -> $v2:PROPOSITION"
+          },
+          "glossary_gloss": "Generate creates a typed symbolic artifact from a typed symbolic specification. It never accepts an English prompt inside BrainCode.",
+          "change_type": "MAJOR",
+          "rationale": "This aligns generation with the canonical construct-selection rule and permits structured code artifacts without prose fallback.",
+          "cites_source": "Automatic Textbook Formalization",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Task",
+          "grammar": "document ::= ENTRYPOINT HANDLE (task | conversation)*\ntask ::= TASK HANDLE param_list? (ANCHOR DATE_LITERAL)? (\":\" type)? (DECREASES HANDLE)? \"{\" step+ return_stmt? \"}\"\nparam_list ::= \"(\" param (\",\" param)* \")\"\nparam ::= HANDLE \":\" type\nreturn_stmt ::= RETURN value\nstep ::= action | utterance | flow_if | flow_for | bind | task_call | generation\ntask_call ::= HANDLE arg_list? (\"->\" HANDLE \":\" type)?\narg_list ::= \"(\" arg (\",\" arg)* \")\"\narg ::= attribute_symbol \"=\" value",
+          "semantics": "A document has one ENTRYPOINT naming a declared Task or Conversation by canonical HANDLE. TASK ANCHOR is optional only when the source request contains no relative temporal expression. When a source contains relative time, its enclosing Task must carry exactly one ANCHOR DATE_LITERAL; translation resolves the relative expression once against that anchor and emits the resulting DATE_LITERAL in the relevant schema attribute. The anchor remains auditable source data and is not read at runtime. `step` includes UTTER so Turn bodies are grammatically valid; however, UTTER is statically illegal in a TASK body and legal only in a CONVO TURN body. All declarations, parameters, results, arguments, and calls use canonical handles or schema-authorized symbols.",
+          "worked_example": {
+            "nl": "If the manager has not replied by Friday, send a polite follow-up.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 ANCHOR @d2026-09-30 {\n  ACTION op_check_replied(attr_target=role_manager, attr_deadline=@d2026-10-02) -> $v3:BOOL\n  IF NOT $v3 THEN { ACTION op_send_email(attr_recipient=role_manager, attr_content=int_follow_up(attr_tone=val_polite)) }\n}"
+          },
+          "glossary_gloss": "Task is an ordered executable procedure with canonical opaque handles. Its optional date anchor makes relative-date translation reproducible and auditable.",
+          "change_type": "MAJOR",
+          "rationale": "This restores valid Turn use of UTTER and replaces lost temporal auditability with a typed, closed translation anchor.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Bind",
+          "grammar": "bind ::= LET HANDLE \":\" type \"=\" value\n-- Additional bind sites: action_result ::= \"->\" HANDLE \":\" type ; task_call_result ::= \"->\" HANDLE \":\" type ; utterance_result ::= \"->\" HANDLE \":\" PROPOSITION ; generation_result ::= \"->\" HANDLE \":\" gen_type",
+          "semantics": "Bind gives a typed value an opaque local HANDLE. A HANDLE is not an entity name, noun, English descriptor, or ontology symbol; it is a source-local address whose spelling is generated by literal-form. Handles may be introduced only at Bind sites, task and turn declarations, parameters, and loop bind sites. Shadowing, use before binding, and incompatible types remain static errors. REF values can be copied but never manufactured from a literal or ontology symbol.",
+          "worked_example": {
+            "nl": "Remember the symbolic request for later use.",
+            "braincode": "LET $request : PROPOSITION = intent_request_extension(duration=2, unit=value_day)"
+          },
+          "glossary_gloss": "Bind stores a typed symbolic value under an opaque local handle. The handle is only a formal reference and does not hide descriptive meaning in an English variable name.",
+          "change_type": "MAJOR",
+          "rationale": "The prior naming convention required English-derived identifiers such as mug and therefore made identifier semantics dependent on natural language. Opaque handles separate local reference from ontology meaning.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Conversation",
+          "grammar": "conversation ::= CONVO HANDLE \"{\" turn+ \"}\"\nturn ::= TURN HANDLE SPEAKER \"=\" speaker_symbol (REPLY_TO HANDLE)? (REVISES HANDLE)? \"{\" step+ \"}\"\nspeaker_symbol ::= USER | AGENT",
+          "semantics": "Conversation is an ordered symbolic dialogue. TURN bodies use Task's shared step production, including UTTER, but the placement rule permits UTTER only here. TURN handles follow global preorder allocation. REPLY_TO and REVISES must name earlier turn handles in the same conversation. Revision remains whole-body replacement along a single tip-only chain. Every utterance uses an intent schema and contains no prose payload.",
+          "worked_example": {
+            "nl": "The user asks for two days, then corrects the request to three days.",
+            "braincode": "ENTRYPOINT $v1\nCONVO $v2 {\n  TURN $v3 SPEAKER=USER { UTTER int_request_extension(attr_recipient=role_manager, attr_duration=2, attr_unit=val_day) }\n  TURN $v4 SPEAKER=USER REVISES $v3 { UTTER int_request_extension(attr_recipient=role_manager, attr_duration=3, attr_unit=val_day) }\n}"
+          },
+          "glossary_gloss": "Conversation records ordered symbolic turns, replies, and corrections. What each participant says is represented by an intent schema rather than quoted dialogue.",
+          "change_type": "MAJOR",
+          "rationale": "The revised shared step grammar makes Conversation examples valid while retaining the required placement restriction on UTTER.",
+          "cites_source": "Automatic Textbook Formalization",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Flow-If",
+          "grammar": "flow_if ::= IF check THEN \"{\" step+ \"}\" (ELSE \"{\" step+ \"}\")?",
+          "semantics": "Conditional branching retains its existing evaluation, scope, and ordering rules. Every value used by its Check must be a glossary-valid value under Types & Lexicon; in particular, no check may compare or test a quoted string or undefined identifier. Deferred external checks must use a TIME_LITERAL, DATE_LITERAL, or glossary-defined temporal value accepted by their operation signature.",
+          "worked_example": {
+            "nl": "If the manager has not replied by 6 June 2025, send a polite follow-up.",
+            "braincode": "TASK $follow_up {\n  ACTION act_check_replied(target=role_manager, deadline=@d2025-06-06) -> $replied : BOOL\n  IF NOT $replied THEN {\n    ACTION act_send_email(recipient=role_manager, content=intent_follow_up(tone=value_polite))\n  }\n}"
+          },
+          "glossary_gloss": "Flow-If chooses a symbolic branch using a typed formal check. It cannot test hidden text or use an undefined value.",
+          "change_type": "MAJOR",
+          "rationale": "The construct's grammar remains useful, but its prior example and deadline semantics relied on quoted strings. This revision aligns all checked values with the closed lexical system.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Iterate",
+          "grammar": "flow_for ::= FOR EACH HANDLE IN iterable \"{\" step+ \"}\"\niterable ::= HANDLE | list_lit\nquantifier ::= (ANY | ALL) HANDLE IN iterable SATISFIES check",
+          "semantics": "FOR EACH, ANY, and ALL retain their existing finite-list, sequential evaluation, scope, and no-shadowing behavior. Loop and quantifier variables are HANDLEs, so they are opaque formal bindings rather than English-derived names. List elements must be glossary-valid values of one homogeneous static type.",
+          "worked_example": {
+            "nl": "For each city in the itinerary, search travel options.",
+            "braincode": "LET $itinerary : LIST[PROPOSITION] = [intent_location(place=entity_paris), intent_location(place=entity_lyon)]\nFOR EACH $stop IN $itinerary {\n  ACTION act_search_travel(destination=$stop)\n}"
+          },
+          "glossary_gloss": "Iterate processes each member of a formal finite list using an opaque loop handle. It does not introduce unlisted descriptive words through variable names or string lists.",
+          "change_type": "MAJOR",
+          "rationale": "Loop identifiers and prior string-list examples were unconstrained. Handle binding and symbolic list values make iteration conform to the closed vocabulary requirement.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "revise",
+          "construct_name": "Check",
+          "grammar": "check ::= disjunction\ndisjunction ::= conjunction (OR conjunction)*\nconjunction ::= negation (AND negation)*\nnegation ::= NOT negation | primary\nprimary ::= \"(\" check \")\" | quantifier | comparison\ncomparison ::= value (comp_op value)?\ncomp_op ::= \"==\" | \"!=\" | \"<\" | \"<=\" | \">\" | \">=\"",
+          "semantics": "Check remains a pure typed boolean expression with the established precedence, short-circuiting, truthiness, and comparison rules. Its operands are now restricted to Types & Lexicon values: atomic literals, glossary symbols, handles, lists, and propositions. PROPOSITION supports only equality and inequality, comparing the intent symbol and canonically ordered attribute sequence recursively. No free string, quoted phrase, or undeclared identifier can be an operand.",
+          "worked_example": {
+            "nl": "Proceed only if the total exceeds 50 and membership is true.",
+            "braincode": "LET $cart_total : NUMBER = 65\nLET $is_member : BOOL = TRUE\n$cart_total > 50 AND $is_member == TRUE"
+          },
+          "glossary_gloss": "Check combines typed formal values into a true-or-false condition. Its operands must be glossary-defined symbols, exact literals, or previously bound handles.",
+          "change_type": "MAJOR",
+          "rationale": "Check inherited free STRING and IDENT values from Types & Lexicon. Updating its semantic domain ensures a condition cannot conceal undefined lexical material.",
+          "cites_source": "Formal language theory (general)",
+          "addresses_note": "N1"
+        },
+        {
+          "op": "add",
+          "kind": "vocabulary",
+          "construct_name": "code-form",
+          "glossary_gloss": "Code-form represents source code, configuration, commands, and exact program outputs as typed symbolic trees and token sequences. It preserves executable structure without embedding quoted prose or uncontrolled code text.",
+          "closed": false,
+          "members": [
+            {
+              "symbol": "code_call",
+              "gloss": "A function or constructor call with a callee and ordered arguments.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_assign",
+              "gloss": "An assignment from a target to a value.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_list",
+              "gloss": "An ordered code-level list.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_map",
+              "gloss": "A code-level key/value mapping.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_command",
+              "gloss": "An ordered executable command token sequence.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_assert",
+              "gloss": "An expected-versus-actual assertion.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_tokens",
+              "gloss": "An ordered token sequence for syntax not otherwise represented by a dedicated code node.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_id",
+              "gloss": "An atomic code identifier encoded as @i followed by hexadecimal Unicode scalar values separated by underscores.",
+              "nl_synonyms": []
+            },
+            {
+              "symbol": "code_text",
+              "gloss": "An atomic code string encoded as @q followed by hexadecimal Unicode scalar values separated by underscores.",
+              "nl_synonyms": []
+            }
+          ],
+          "membership_rule": "CODE grammar is: code_node ::= code_call(callee=CODE,args=LIST[CODE]) | code_assign(target=CODE,value=CODE) | code_list(items=LIST[CODE]) | code_map(entries=LIST[CODE]) | code_command(tokens=LIST[CODE]) | code_assert(expected=CODE,actual=CODE) | code_tokens(tokens=LIST[CODE]) | code_id | code_text | NUMBER_LITERAL. @i and @q are atomic hexadecimal encodings, never natural-language syntax. A code tree is ordered, typed, and exact; its decoded codepoint sequence is data, not BrainCode prose.",
+          "worked_example": {
+            "nl": "Report that mathematica_code(Max(x,2)) should produce Max[x,2] but produces Max(2, x).",
+            "braincode": "int_bug_report(attr_subject=ent_mathematica_code, attr_reproduction=code_call(callee=@i6d617468656d61746963615f636f6465,args=[code_call(callee=@i4d6178,args=[@i78,2])]), attr_expected=code_text(@q4d61785b782c325d), attr_actual=code_text(@q4d617828322c207829))"
+          },
+          "change_type": "MINOR",
+          "rationale": "SWE-bench items require exact structured representations of programs, outputs, configuration, commands, and assertions. A recursive CODE category covers these without introducing prose strings.",
+          "addresses_note": "N1"
+        }
+      ],
+      "critique": {
+        "decision": "needs-rework",
+        "kpi_assessment": {
+          "coverage": {
+            "impact": "mixed",
+            "reasoning": "The proposed namespace categories, proposition form, atomic literals, and CODE trees substantially broaden symbolic coverage for household, web, conversation, and code tasks. However, the documented schemas cover only a few operations and intents, no glossary entries were successfully added for the claimed ontology categories, and the sampled SWE-bench reports still require opaque encoded prose/code payloads or unlisted schemas to preserve their full meaning."
+          },
+          "expressivity": {
+            "impact": "mixed",
+            "reasoning": "Structured requests such as finding, placing, extensions, greetings, and simple generation can now preserve recipients, quantities, and ordering symbolically. The proposal still cannot demonstrably preserve the detailed causal claims, evidence, legal provisions, creative constraints, and exact source-code behavior in several samples without `@q`-encoded text or assumed undocumented ontology entries; that is a material gap under N4."
+          },
+          "determinism": {
+            "impact": "benefit",
+            "reasoning": "Canonical handle allocation, ordered schemas, namespaces, date anchors, and construct-selection guidance improve convergence. Nonetheless, independent translations still disagree on operation decomposition and attribute selection (for example `attr_source` versus `attr_location`, separate sorting versus a sort attribute, TASK/GENERATE versus live find), while the proposed rule only chooses a least sequence when operation postconditions and schemas are already fully defined."
+          },
+          "interpretability": {
+            "impact": "mixed",
+            "reasoning": "Prefixes such as `op_`, `int_`, `ent_`, and `attr_` make token roles easier to inspect, and typed propositions are clearer than prose payloads. Interpretability is harmed by the nonexistent glossary entries, undefined lexical metavariables, external RFC references, and hexadecimal `@q`/`@i` encodings: a reader with only the supplied glossary cannot look up or meaningfully recover many source tokens."
+          },
+          "improvement": {
+            "impact": "mixed",
+            "reasoning": "The symbolic task structures would help a weaker executor plan the simple closed tasks and retain conversation correction structure. For complex reports, stories, contracts, and technical issues, the language either collapses important content into coarse invented intent labels or hides it in hexadecimal code text, which provides little actionable decomposition beyond the raw request."
+          }
+        },
+        "simulations": [
+          {
+            "item_id": "dev-embodied-2",
+            "source": "seed_tasks",
+            "nl": "Put both pillows from the sofa onto the armchair, one at a time.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_find(attr_target=ent_pillow,attr_source=ent_sofa,attr_quantity=2)->$v3:LIST[REF[ENTITY]]\nFOR EACH $v4 IN $v3 { ACTION op_place(attr_target=$v4,attr_destination=ent_armchair) }\n}",
+            "coverage": "Full",
+            "notes": "operation-symbol and the canonical plural-find-then-loop rule help. The required `op_find` and `op_place` schemas are represented by the proposed category, although only the former is concretely listed."
+          },
+          {
+            "item_id": "dev-embodied-1",
+            "source": "seed_tasks",
+            "nl": "Rinse the mug in the sink, then put it in the coffee maker.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_rinse(attr_target=ent_mug,attr_destination=ent_sink)->$v3:REF[ENTITY]\nACTION op_place(attr_target=$v3,attr_destination=ent_coffee_maker)\n}",
+            "coverage": "Full",
+            "notes": "The handles preserve coreference and ordering. `op_rinse` must be an assumed complete-glossary member because it is not among the actual proposed operation members."
+          },
+          {
+            "item_id": "86afd67c-1bff-455c-baa7-e18dcb64b0f3",
+            "source": "Mind2Web",
+            "nl": "Find comedy tv shows on netflix sorted by audience score.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:LIST[REF[ENTITY]] {\nACTION op_find(attr_target=ent_tv_show,attr_platform=ent_netflix,attr_genre=val_comedy)->$v3:LIST[REF[ENTITY]]\nACTION op_sort(attr_target=$v3,attr_ordering=val_audience_score_desc)->$v4:LIST[REF[ENTITY]]\nRETURN $v4\n}",
+            "coverage": "Full",
+            "notes": "The task is structurally expressible, but the proposed canonical planning rule does not decide whether sorting is a separate `op_sort` or an `op_find` attribute; independent translations exhibit both readings."
+          },
+          {
+            "item_id": "bf469f30-6628-4017-b963-672645d7feab",
+            "source": "Mind2Web",
+            "nl": "Find the highest rated dog collar under 10 dollar.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:REF[ENTITY] {\nACTION op_find(attr_target=ent_dog_collar,attr_max_price=10,attr_currency=val_usd,attr_ordering=val_rating_desc,attr_quantity=1)->$v3:REF[ENTITY]\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "Requires unlisted attributes and schema members under the assumed complete ontology. A rule is still needed to distinguish `highest rated` from a sort-plus-extract plan."
+          },
+          {
+            "item_id": "trial_T20190907_223758_523581#1",
+            "source": "ALFRED",
+            "nl": "Microwave a slice of apple and place it on the table.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_slice(attr_target=ent_apple)->$v3:LIST[REF[ENTITY]]\nACTION op_extract(attr_target=$v3,attr_quantity=1)->$v4:REF[ENTITY]\nACTION op_heat(attr_target=$v4,attr_destination=ent_microwave)->$v5:REF[ENTITY]\nACTION op_place(attr_target=$v5,attr_destination=ent_table)\n}",
+            "coverage": "Full",
+            "notes": "The symbolic decomposition preserves the actionable goal, but the proposed planning rule does not specify whether slicing, selecting, heating, and placing is mandatory versus a direct acquisition operation."
+          },
+          {
+            "item_id": "trial_T20190908_224836_919680#2",
+            "source": "ALFRED",
+            "nl": "Put a microwaved slice of apple on the table in the corner.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_find(attr_target=ent_apple_slice,attr_state=val_unheated)->$v3:REF[ENTITY]\nACTION op_heat(attr_target=$v3,attr_destination=ent_microwave)->$v4:REF[ENTITY]\nACTION op_place(attr_target=$v4,attr_destination=ent_corner_table)\n}",
+            "coverage": "Full",
+            "notes": "The location qualifier is retained as an entity symbol. The required `op_find` singular-result and `attr_state` schemas are not actually supplied."
+          },
+          {
+            "item_id": "scikit-learn__scikit-learn-11578",
+            "source": "SWE-bench_Verified",
+            "nl": "Fix _log_reg_scoring_path so LogisticRegression used for probabilistic scoring receives multi_class and preserves multinomial behavior.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_modify_code(attr_path=@psklearn/linear_model/logistic.py,attr_change=code_assign(target=code_id(@i6c6f675f726567),value=code_call(callee=code_id(@i4c6f67697374696352656772657373696f6e),args=[code_assign(target=code_id(@i6669745f696e74657263657074),value=code_id(@i6669745f696e74657263657074)),code_assign(target=code_id(@i6d756c74695f636c617373),value=code_id(@i6d756c74695f636c617373))])))\n}",
+            "coverage": "Partial",
+            "notes": "code-form helps encode a narrow requested constructor change, but the full issue includes a detailed reproduction, expected scoring behavior, regression scope, and test requirements that cannot be represented by the supplied intent/operation schemas. Moreover `code_call` uses raw labels such as `callee` and `args`, which are not glossary symbols, and the code grammar/example disagree."
+          },
+          {
+            "item_id": "django__django-13112",
+            "source": "SWE-bench_Verified",
+            "nl": "Fix makemigrations crashing for ForeignKey with a mixed-case app name.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2 {\nACTION op_modify_code(attr_path=@pdjango/db/models/fields/related.py,attr_change=int_fix_mixed_case_app_reference(attr_framework=ent_django,attr_subject=ent_foreign_key,attr_failure=val_makemigrations_crash))\n}",
+            "coverage": "Partial",
+            "notes": "A symbolic bug-fix intent can state the headline, but no supplied schema captures the exception, lazy-reference normalization condition, affected configuration, expected compatibility behavior, or test case."
+          },
+          {
+            "item_id": "c6516",
+            "source": "PRISM",
+            "nl": "Can you give me some great places to visit in the Netherlands?",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_place_recommendations,attr_specification=int_recommend_places(attr_destination=ent_netherlands,attr_quality=val_great))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The open request's content is represented symbolically rather than as a prose prompt, assuming the unlisted `int_recommend_places` schema exists in the complete intent category."
+          },
+          {
+            "item_id": "c3388",
+            "source": "PRISM",
+            "nl": "yeah being in pain sucks, i have been in pain for nearly 3 years, can you tell me a joke to help take my mind off the pain",
+            "braincode": "ENTRYPOINT $v1\nCONVO $v2 {\nTURN $v3 SPEAKER=USER { UTTER int_report_pain(attr_duration=3,attr_unit=val_year) }\nTURN $v4 SPEAKER=USER REPLY_TO $v3 { UTTER int_request_joke(attr_purpose=val_distraction_from_pain) }\n}",
+            "coverage": "Full",
+            "notes": "Conversation and utterance placement repair preserve the two-turn relationship. The sensitive support content requires assumed, undocumented intent and attribute schemas."
+          },
+          {
+            "item_id": "c2067",
+            "source": "PRISM",
+            "nl": "If they are appointed by the president how is that fair?",
+            "braincode": "ENTRYPOINT $v1\nCONVO $v2 {\nTURN $v3 SPEAKER=USER { UTTER int_question_fairness(attr_subject=ent_supreme_court_justice_appointment,attr_appointer=role_president) }\n}",
+            "coverage": "Full",
+            "notes": "The follow-up question's speech act and subject can be symbolic, but its antecedent depends on omitted earlier-turn propositions unless the entire supplied conversation is encoded."
+          },
+          {
+            "item_id": "c2904",
+            "source": "PRISM",
+            "nl": "But the information you provided is old news, are you aware of the current political events in Aotearoa for 2023?",
+            "braincode": "ENTRYPOINT $v1\nCONVO $v2 {\nTURN $v3 SPEAKER=USER { UTTER int_request_current_events(attr_location=ent_aotearoa,attr_topic=ent_politics,attr_year=2023) }\nTURN $v4 SPEAKER=USER REPLY_TO $v3 { UTTER int_challenge_information_currency(attr_target=$v3) }\nTURN $v5 SPEAKER=USER REVISES $v3 { UTTER int_request_current_events(attr_location=ent_aotearoa,attr_topic=ent_politics,attr_year=2023,attr_requirement=val_current) }\n}",
+            "coverage": "Full",
+            "notes": "CONVO/REVISES is relevant and preserves the correction. The source actually contains prior turns not reproduced here, so this is a compact symbolic reconstruction rather than a full transcript."
+          },
+          {
+            "item_id": "wildchat1m_en3u-73283",
+            "source": "PATHs",
+            "nl": "Introduce the topic of Impact of Dam Construction on Seasonal Precipitation Pattern, Land Use/Cover, and Socio-economic in the semi-arid Region, Eastern Sudan.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_introduction,attr_specification=int_introduce_topic(attr_subject=ent_dam_construction,attr_effects=[ent_seasonal_precipitation_pattern,ent_land_use_cover,ent_socio_economic],attr_location=ent_eastern_sudan,attr_climate=val_semi_arid))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "This is the intended symbolic generation shape, but `int_introduce_topic` and all its attribute schema are assumed rather than supplied."
+          },
+          {
+            "item_id": "wildchat1m_en3u-76731",
+            "source": "PATHs",
+            "nl": "try to squeeze some ideas of The Holy Blood and the Holy Grail-alike conspiracy from The Brothers Karamazov",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_interpretive_ideas,attr_specification=int_compare_themes(attr_work_a=ent_the_brothers_karamazov,attr_work_b=ent_the_holy_blood_and_the_holy_grail,attr_theme=val_conspiracy_like))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The comparison request is symbolically stated, but the desired interpretive substance depends entirely on an assumed rich ontology of literary themes and relations."
+          },
+          {
+            "item_id": "wildchat1m_en3u-137561",
+            "source": "PATHs",
+            "nl": "Write a story of when Gloopy and Glitter met the scientist, who is amazed they can speak.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_story,attr_specification=int_generate_story(attr_characters=[ent_gloopy,ent_glitter,ent_scientist],attr_event=int_first_meeting(attr_participants=[ent_gloopy,ent_glitter,ent_scientist]),attr_reaction=val_amazed_at_speech,attr_setting=ent_gloopiter))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The final requested story premise is encoded without prose. It exposes the need for a genuinely defined relation/event and creative-generation ontology, rather than merely the broad intent namespace."
+          },
+          {
+            "item_id": "wildchat1m_en3u-78000",
+            "source": "PATHs",
+            "nl": "Add a binding signature line.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_revised_legal_contract,attr_specification=int_revise_document(attr_document_type=val_speaking_engagement_contract,attr_change=int_add_signature_line(attr_binding=TRUE),attr_author_role=role_speaker))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The revision operation, author role, and binding-signature constraint are retained symbolically, contingent on missing legal-document intent schemas."
+          },
+          {
+            "item_id": "1776009617894",
+            "source": "ThoughtTrace",
+            "nl": "Can you suggest a posting schedule to help the channel grow quickly in its first month?",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_posting_schedule,attr_specification=int_plan_posting_schedule(attr_subject=ent_hamoudi_educational_youtube_channel,attr_audience=ent_preschool_children,attr_duration=1,attr_unit=val_month,attr_goal=val_growth))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The request's context, audience, duration, and growth objective are symbolic. No actual schedule-output schema or canonical schedule policy is supplied."
+          },
+          {
+            "item_id": "1775429344935",
+            "source": "ThoughtTrace",
+            "nl": "Help me to create a text about my decision to go to Japan to learn about SGI. Only 100 words.",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_personal_text,attr_specification=int_explain_personal_decision(attr_actor=role_user,attr_decision=int_travel(attr_destination=ent_japan,attr_purpose=int_learn_about(attr_subject=ent_sgi)),attr_length=100,attr_unit=val_word))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The exact length and causal purpose are represented. The language must define a word-count output type and prose-realization semantics if it is to execute this request rather than merely describe it."
+          },
+          {
+            "item_id": "1775752130482",
+            "source": "ThoughtTrace",
+            "nl": "hello, i want to plan a 3 day safari in eastern cape south africa",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_safari_plan,attr_specification=int_plan_trip(attr_destination=ent_eastern_cape_south_africa,attr_activity=ent_safari,attr_duration=3,attr_unit=val_day))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The task is cleanly representable by a trip-planning intent, but that intent was used in the proposal example without being added as an actual intent-symbol member."
+          },
+          {
+            "item_id": "1775479438859",
+            "source": "ThoughtTrace",
+            "nl": "Gain a short certification if it opens a stable field examples in UK context?",
+            "braincode": "ENTRYPOINT $v1\nTASK $v2:PROPOSITION {\nGENERATE(attr_target=val_certification_examples,attr_specification=int_recommend_certifications(attr_location=ent_united_kingdom,attr_duration=val_short,attr_goal=val_stable_employment,attr_context=ent_mortgage_eligibility))->$v3:PROPOSITION\nRETURN $v3\n}",
+            "coverage": "Full",
+            "notes": "The follow-up's location, request type, employment constraint, and mortgage context are explicit. Its recommendation criteria need a defined decision ontology to make the generated answer operationally useful."
+          }
+        ],
+        "cross_check": {
+          "used": true,
+          "agreement": "low",
+          "notes": "The providers agree on the broad find-then-place pattern for pillows, but Gemini uses `attr_location` where Anthropic uses `attr_source`. For Netflix, Anthropic uses find then sort whereas Gemini embeds sorting in find; for travel recommendations, Anthropic chooses GENERATE while Gemini chooses ACTION op_find; and the two PATH translations choose different intent decompositions and target categories. These are substantive encoding alternatives, not merely surface spelling differences."
+        },
+        "required_changes": [
+          {
+            "target": "basis",
+            "change": "Fix the doc-hygiene failure before resubmission: change `structural-symbol`, `operation-symbol`, and `intent-symbol` from `op: revise` to `op: add`, place them in the glossary Vocabulary section, and ensure their rendered glossary entries contain their membership rule, members, gloss, and example."
+          },
+          {
+            "target": "Types & Lexicon",
+            "change": "Close every lexical hole with glossary-defined rules: define POSITIVE_INTEGER, YYYY, MM, DD, HH, SS, URL_BODY, PATH_BODY, hexadecimal scalar sequences, whitespace/comments, newline handling, and token separation. Do not rely on an unincorporated RFC or an English-language external standard as the definition of an accepted source token."
+          },
+          {
+            "target": "structural-symbol",
+            "change": "List or rule-define every token that code-form and all grammar productions use, including `callee`, `args`, `target`, `value`, `items`, `entries`, `tokens`, `expected`, and `actual`, or change code-form to use namespace-valid attribute symbols such as `attr_callee` and give each a complete schema."
+          },
+          {
+            "target": "code-form",
+            "change": "Replace `@q` and unrestricted `code_text` with a constrained code-token/category grammar that distinguishes identifiers, operators, delimiters, numeric literals, string literals, comments, and language-specific syntax. Prohibit using hexadecimal encoding to carry natural-language reports or arbitrary prose, and reconcile the stated `code_node` grammar with examples such as `code_text(@q...)` and `code_id(@i...)`."
+          },
+          {
+            "target": "ontology vocabulary",
+            "change": "Actually add glossary categories for entity-symbol, role-symbol, value-symbol, and attribute-symbol, with member/schema rules, examples, disjointness, synonym normalization, and each attribute's admissible value types or value set. Generic `VALUE` is insufficient for N3; define the permissible values for attributes such as tone, unit, ordering, currency, state, goal, and format."
+          },
+          {
+            "target": "operation-symbol and intent-symbol",
+            "change": "Supply canonical schemas and selection rules for the sampled patterns that currently have multiple valid encodings: source/location/platform, filters versus finder attributes, sort-plus-extract versus ordered find, acquisition/slicing paths, live search versus generation, and revision of a generated document. The rule must choose one canonical plan, not merely prefer a shortest plan under unspecified postconditions."
+          },
+          {
+            "target": "Task and Conversation",
+            "change": "Correct the document-level handle example and semantics so ENTRYPOINT unambiguously references exactly one declared task/conversation handle, and state whether declarations named by handles are introductions under the allocation preorder. Then revalidate all examples against that rule."
+          },
+          {
+            "target": "code-form and SWE-bench coverage",
+            "change": "Add symbolic bug-report, reproduction, expected-behavior, actual-behavior, regression-test, and code-change schemas sufficient to represent the factual content of SWE-bench issues without opaque text. Demonstrate this with full symbolic encodings of both sampled SWE-bench items."
+          }
+        ],
+        "logic_issues": [
+          "Doc hygiene failed because three claimed vocabulary revisions target glossary entries that do not exist; therefore the categories that are supposed to establish N1 are not added at all.",
+          "The proposed grammar references undefined lexical nonterminals including POSITIVE_INTEGER, YYYY, MM, DD, HH, SS, URL_BODY, and PATH_BODY, so it does not define every token it admits.",
+          "The `code-form` grammar uses raw argument labels such as `callee`, `args`, `target`, `value`, `items`, `entries`, `tokens`, `expected`, and `actual`; none are structural symbols or namespace-valid attribute symbols.",
+          "The code-form membership rule says `code_id` and `code_text` are code nodes but the worked examples call them with parentheses, while the grammar gives neither call syntax nor a production for those forms.",
+          "`@q` can encode an arbitrary natural-language sentence exactly, only hidden as hexadecimal code points. Calling decoded text data does not prevent it from being an N4-prohibited prose payload.",
+          "The proposal relies on a hypothetical complete glossary for most symbols used in its own examples (`int_plan_trip`, `attr_destination`, `ent_italy`, and many more), but does not add the referenced entity, role, value, or attribute categories to the actual glossary.",
+          "The canonical-operation rule is underdetermined because operation postconditions, identity behavior, and schemas are absent for the many operations required by the samples; independent provider disagreement confirms this is not a cosmetic issue.",
+          "The worked Types & Lexicon example says 'On 10 June 2025' but emits ANCHOR `@d2025-06-03`; this changes stated source information and the anchor has no explained relation to the date in the request."
+        ],
+        "notes_assessment": {
+          "N1": {
+            "status": "violated",
+            "reasoning": "The hard closed-vocabulary requirement is not met: the vocabulary additions failed hygiene and therefore do not exist in the glossary, multiple lexical productions use undefined metavariables, and code-form introduces unglossed raw labels. A reader cannot trace every token in the simulations to the supplied glossary or a fully defined glossary rule."
+          },
+          "N2": {
+            "status": "violated",
+            "reasoning": "The actual glossary remains one-entry-per-construct and lacks the proposed descriptive Vocabulary section. Entity, role, value, and attribute categories are asserted in grammar but are neither added nor described with members, rules, and worked examples."
+          },
+          "N3": {
+            "status": "violated",
+            "reasoning": "Schemas broadly accept `VALUE`, but individual attributes do not list their allowed value sets or an exact derivation rule. This permits undefined values and does not make attribute-value choice traceable."
+          },
+          "N4": {
+            "status": "violated",
+            "reasoning": "`code_text(@q...)` permits arbitrary decoded natural-language text to be embedded in an expression, and the proposal supplies no symbolic schema capable of replacing detailed bug reports and other prose substance. Hexadecimal wrapping does not make a sentence non-prose for this constraint."
+          },
+          "N5": {
+            "status": "violated",
+            "reasoning": "The URL rule delegates acceptance to RFC-3986 rather than defining it in the language/glossary, and `@q` admits arbitrary codepoint sequences whose interpretation can depend on external language/code syntax. The language is therefore not self-contained in the required sense."
+          },
+          "N6": {
+            "status": "partial",
+            "reasoning": "The revised grammar is mostly phrased over categories and the simulations use category-compatible assumed symbols. However, the missing actual ontology categories and missing schemas mean this is an assertion rather than a usable complete-glossary design."
+          },
+          "N7": {
+            "status": "partial",
+            "reasoning": "Preorder handles, schema ordering, and some construct-selection rules are progress. Provider disagreement on source/location, sorting, finder versus generation, and intent decomposition shows that one canonical encoding per meaning has not been realized."
+          },
+          "N8": {
+            "status": "partial",
+            "reasoning": "Recursive propositions and code trees aim to preserve richness, but the present schemas are too sparse for detailed software, legal, and creative requests. Conversely, `@q` preserves richness only by violating the closed symbolic-content constraints."
+          }
+        },
+        "rebuttal_rulings": [],
+        "chosen_position": null,
+        "position_comparison": null,
+        "reasoning": "This is a promising attempt to replace free strings with typed symbolic categories, and it addresses several prior rework requests conceptually. It cannot be accepted because doc hygiene failed and the resulting glossary does not actually contain the vocabulary that N1 requires; additionally, undefined lexical forms and hexadecimal prose-bearing code text independently violate hard N1, N4, and N5. The Shaper should repair the concrete glossary and grammar gaps, then demonstrate full symbolic SWE-bench encodings without `@q` prose smuggling."
+      },
+      "origin": "carried over from sprint 10 (attempts 1-2; attempt 1's changes merged with attempt 2's revisions)"
+    }
+  },
+  "N2": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "c0d4f5b5b269",
+    "last_assessment": null
+  },
+  "N3": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "e97ebc71dc77",
+    "last_assessment": null
+  },
+  "N4": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "c6df1663b9f5",
+    "last_assessment": null
+  },
+  "N5": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "050e05f53682",
+    "last_assessment": null
+  },
+  "N6": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "ded353eab0c5",
+    "last_assessment": null
+  },
+  "N7": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "532ba20470b1",
+    "last_assessment": null
+  },
+  "N8": {
+    "status": "open",
+    "sprints": [],
+    "text_hash": "b363acc47c98",
+    "last_assessment": null
+  }
+}

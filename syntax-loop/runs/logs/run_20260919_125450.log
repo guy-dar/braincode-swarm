@@ -1,0 +1,46 @@
+2026-09-19 12:54:50,311 [INFO] Logging this run to C:\projects\BrainCode\syntax-loop\runs\logs\run_20260919_125450.log
+2026-09-19 12:54:50,312 [INFO] Simulation pool: mind2web -> 100 items from mind2web.jsonl
+2026-09-19 12:54:50,312 [INFO] Simulation pool: alfred -> 100 items from alfred.jsonl
+2026-09-19 12:54:50,327 [INFO] Simulation pool: swebench -> 100 items from swebench.jsonl
+2026-09-19 12:54:50,327 [INFO] Simulation pool: {'seed_tasks': 9, 'mind2web': 100, 'alfred': 100, 'swebench': 100}
+2026-09-19 12:54:50,327 [INFO] Budget burndown: $4.7961 spent across all real runs to date (before this run); this run is capped at $4.00 additional.
+2026-09-19 12:54:50,327 [INFO] Starting BrainCode syntax loop: max_budget=$4.00 max_iterations=2 dry_run=False
+2026-09-19 12:54:50,327 [INFO] --- Sprint 0 (bootstrap) --- (up to 3 attempt(s))
+2026-09-19 12:56:48,561 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:56:48,722 [INFO] Sprint 0 attempt 1: Shaper (anthropic/claude-sonnet-5) proposed: Action(add), Sequence(add), Condition(add), Conditional(add), Iteration(add), Task(add)
+2026-09-19 12:56:52,486 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:57:10,233 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:57:26,520 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:57:39,670 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:57:54,459 [WARNING] cross-check translation failed (gemini, item django__django-12304): Could not parse JSON from model response (first/last 200 chars shown): '] ")" [Binding]`\n`GetClasses(type="Choices")` matches `Action` without `Binding`.\n\nLet\'s verify `SetAttribute` action:\n`Action ::= Verb "(" [ArgList] ")" [Binding]`\n`SetAttribute(target=cls, name="do_' ... 'ction` without `Binding`.\n\nLet\'s verify `SetAttribute` action:\n`Action ::= Verb "(" [ArgList] ")" [Binding]`\n`SetAttribute(target=cls, name="do_not_call_in_templates", value=true)` matches `Action`.\n\n'
+2026-09-19 12:57:54,459 [INFO] Sprint 0 attempt 1: 4 simulation items, cross-check: run: proposal is substantive and budget allows
+2026-09-19 12:58:50,795 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-19 12:58:50,802 [INFO] Sprint 0 attempt 1: Critic (needs-rework): This is a promising core: its sequencing, branching, looping, and bindings create real planning structure and provide useful initial coverage. It cannot be accepted as a bootstr...
+2026-09-19 12:58:56,926 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 12:58:56,941 [INFO] Sprint 0 attempt 1/3 done: decision=needs-rework hygiene=pass changes=6 cost=$0.3357 cumulative=$0.3357
+2026-09-19 13:02:39,584 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:02:39,840 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-19 13:02:39,840 [INFO] Sprint 0 attempt 2: Shaper (anthropic/claude-sonnet-5) proposed: Lexicon(add)
+2026-09-19 13:02:39,840 [WARNING] Sprint 0 attempt 2: Doc hygiene FAILED — `Lexicon` missing semantics, glossary_gloss, worked_example, worked_example.nl/braincode
+2026-09-19 13:02:39,840 [INFO] Sprint 0 attempt 2: 4 simulation items, cross-check: skipped: no constructs in the spec yet and fewer than 2 proposed — nothing to translate with
+2026-09-19 13:03:10,881 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-19 13:03:10,881 [INFO] Sprint 0 attempt 2: Critic (needs-rework): This is a promising architectural direction, but the submitted proposal is not an initial language basis: it is truncated and fails mandatory document hygiene. Because no comple...
+2026-09-19 13:03:16,351 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:03:16,368 [INFO] Sprint 0 attempt 2/3 done: decision=needs-rework hygiene=FAIL changes=1 cost=$0.4082 cumulative=$0.7439
+2026-09-19 13:06:42,129 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:06:42,409 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-19 13:06:42,410 [INFO] Sprint 0 attempt 3: Shaper (anthropic/claude-sonnet-5) proposed: Lexicon(add), Program(add), Call and Binding(add), Boolean Condition and Conditional(add), Iteration(add)
+2026-09-19 13:06:42,410 [WARNING] Sprint 0 attempt 3: Doc hygiene FAILED — `Iteration` missing glossary_gloss, worked_example, worked_example.nl/braincode
+2026-09-19 13:06:46,418 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:06:59,631 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:07:13,063 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:07:32,115 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:07:48,145 [WARNING] Recovered a likely-truncated JSON response by auto-closing open strings/brackets (and possibly trimming an incomplete trailing line) — some trailing content may be missing from the result.
+2026-09-19 13:07:48,145 [INFO] Sprint 0 attempt 3: 4 simulation items, cross-check: run: proposal is substantive and budget allows
+2026-09-19 13:08:42,675 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-19 13:08:42,675 [INFO] Sprint 0 attempt 3: Critic (needs-rework): This is a promising procedural core, and every sampled request can be encoded syntactically through its general Call form. It cannot be accepted because hygiene failed, Task is ...
+2026-09-19 13:08:47,746 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-09-19 13:08:47,763 [INFO] Sprint 0 attempt 3/3 done: decision=needs-rework hygiene=FAIL changes=5 cost=$0.5226 cumulative=$1.2666
+2026-09-19 13:08:47,763 [ERROR] Sprint 0 (bootstrap) not accepted after 3 attempt(s).
+2026-09-19 13:08:47,763 [ERROR] Sprint 0 (bootstrap) was not accepted by the Critic — halting before steady-state sprints. Inspect docs/changelog.md's Sprint 0 entries (required changes are listed), adjust, run `python run.py --reset`, and rerun.
+2026-09-19 13:08:47,765 [INFO] Budget burndown: $6.0627 spent across all real runs to date (this run added $1.2666).

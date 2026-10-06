@@ -1,0 +1,205 @@
+# BrainCode syntax-loop configuration
+#
+# Role -> model assignments follow the Aug 16, 2026 meeting notes
+# (instructions/NLP Project Discussion.docx), with one deliberate change made on 2026-09-16:
+#   Documenter & document design  -> Claude
+#   Searcher                      -> Gemini
+#   Shaper                        -> (unassigned in the notes; this loop rotates it across all
+#                                      three providers each sprint, matching "small group of
+#                                      diverse agents" — see roles/shaper.py)
+#   Critic                        -> OpenAI. Merges the notes' Reviewer (logic & expressivity,
+#                                      OpenAI) and Examiner (KPIs, Claude/script) into one role:
+#                                      it simulates the proposal on sampled dataset items and judges
+#                                      benefit/harm per pre-KPI — no scripted KPI tests, no
+#                                      statistical gate. See roles/critic.py, prompts/critic_system.md.
+#
+# Adjust `model` strings to whatever is currently available under your API keys — these are
+# defaults, not guarantees the exact model ID is live on your account.
+#
+# Model IDs last verified against each provider's live docs on 2026-08-27:
+#   Anthropic: claude-sonnet-5 / claude-opus-5 / claude-haiku-4-5 / claude-fable-5 all current.
+#   Gemini:    gemini-2.5-pro is shutting down (2026-10-16) and already returns 404 for newer API
+#              keys — replaced with gemini-3.1-pro-preview below. Being a "-preview" model, Google
+#              gives only ~2 weeks' notice before it changes/retires — re-check
+#              ai.google.dev/gemini-api/docs/models if this 404s again.
+#   OpenAI:    gpt-5 / gpt-5-mini are being superseded by the GPT-5.6 family (sol/terra/luna) —
+#              replaced with gpt-5.6-terra (balanced) / gpt-5.6-luna (cheap) below.
+
+run:
+  dry_run: false          # true = use canned local responses, no API calls, $0 cost (see llm/dry_run_client.py)
+  seed_tasks_path: "braincode_loop/seed_tasks.json"
+  sources_path: "sources/previous_work.md"
+  docs_dir: "docs"
+  runs_dir: "runs"
+  baseline_dir: "../syntax-loop-favourite-products"   # `run.py --from` with no DIR imports from here
+                                                     # (relative to syntax-loop/). Holds v1/, v2/, ...
+                                                     # — the highest version is used. Read-only: the
+                                                     # loop copies from it and never writes to it.
+  random_seed: 42
+
+  bootstrap:
+    # Agile "Sprint 0": establishes an initial syntax basis before steady-state sprints begin.
+    # Runs automatically the first time the loop is invoked against an empty
+    # docs/language-spec.md (LanguageState.is_bootstrapped()) and is skipped afterwards. Does not
+    # count against budget.max_iterations but does spend $ like any sprint.
+    max_attempts: 3   # if the Critic sends the basis back, retry, feeding its required_changes
+                       # into the Shaper's next attempt. On the LAST attempt, a `needs-rework`
+                       # verdict (not `reject`, and only if doc hygiene passes) is force-accepted
+                       # with the Critic's still-open required_changes carried into the backlog as
+                       # visible known issues, instead of retrying forever or halting with nothing
+                       # documented — see orchestrator.py::_run_attempt's force_accept param.
+    inspiration_languages:
+      - python    # concise, whitespace-structured, strong composability of small operators
+      - html      # tag/attribute structure for expressing style & context, not just content
+      - english   # the natural language BrainCode must stay expressive relative to
+
+  sprint:
+    # Steady-state rework: a sprint whose proposal comes back `needs-rework` is retried within the
+    # same sprint with the Critic's required_changes fed to the Shaper. Each attempt costs about as
+    # much as a full sprint (Shaper + translations + Critic + Documenter). On the LAST attempt, the
+    # same force-accept-with-known-issues behavior as bootstrap applies (see the comment there) —
+    # `rejected` still ends the sprint immediately, force-accept never overrides an explicit reject.
+    max_attempts: 3
+
+  steering:
+    # Fundamental notes from the project lead (see steering/notes.md for the format). While any
+    # note is open, each sprint is a *steering sprint* focused on the next open note (hard notes
+    # first) instead of a sampled seed task; notes are shown to every role in every sprint, and the
+    # Critic judges each one per attempt. Status lives in docs/notes-status.json. Typical use:
+    # `python run.py --from` (start from run.baseline_dir's latest product), write notes,
+    # then run. See orchestrator.py::run_steering_sprint.
+    notes_path: "steering/notes.md"
+    max_sprints_per_note: 3     # a note still open after this many sprints is marked `stalled`
+    max_changes: 12             # per steering proposal — keeps each sprint one coherent step and
+                                 # the Shaper's answer under its output limit (a 40-change proposal
+                                 # was cut off mid-JSON on 2026-09-30)
+    positions: 1                # 1 = rotating Shaper; 2-3 = that many providers propose competing
+                                 # positions in attempt 1 and the Critic picks one (costs one extra
+                                 # Shaper call per extra position; cross-check skipped that attempt)
+    fallback_to_tasks: true     # once every note is settled: true = continue with seed-task
+                                 # sprints; false = stop the run
+
+budget:
+  max_budget_usd: 20.0    # hard stop once cumulative estimated spend reaches this
+  max_iterations: 25      # hard stop once this many sprints have run (attempts within a sprint don't count)
+  # whichever limit is hit first ends the run; both are checked before every LLM call,
+  # not just at sprint boundaries, so a run never overshoots mid-sprint.
+
+evaluation:
+  # How the Critic gets its evidence. There is no KPI script and no statistical gate: the Critic
+  # reads the proposal, simulates it on sampled items, and judges each pre-KPI (see
+  # prompts/critic_system.md). Doc hygiene (gloss + worked example per change) is the only
+  # scripted, hard requirement — braincode_loop/doc_hygiene.py.
+  simulation:
+    # Two classes (see datasets/README.md): closed = structured, single-outcome tasks; open =
+    # free-form human<->LLM conversations. Each source reads datasets/samples/<name>.jsonl (from
+    # scripts/fetch_dataset_samples.py), falling back to the committed illustrative
+    # datasets/samples/<name>.seed.jsonl.
+    closed_sources: [seed_tasks, mind2web, alfred, swebench]
+    open_sources: [prism, paths, thoughttrace]
+    items_per_dataset_closed: 2
+    items_per_dataset_open: 4    # weighted higher: open class is the newer, less-tested addition
+    # 4*2 + 3*4 = 20 items/attempt (up from 4 before this split existed) — see
+    # simulation.py::sample_items. Cost note: this roughly quintuples the Critic's prompt/response
+    # size and the cross-check translator's per-attempt cost (~$0.16 -> ~$0.80 just for
+    # translations at EST_TRANSLATOR_CALL_USD=$0.02/item/provider) — see roles.critic.max_tokens
+    # below, and expect should_cross_check's budget gate to skip cross-checks more often on a
+    # tight budget now that its cost estimate scales with 5x more items.
+  cross_check:
+    # Independent translations of the sampled items by other providers, shown to the Critic as
+    # Determinism evidence. `auto` skips them when they'd be meaningless this attempt (no
+    # constructs to translate with yet, PATCH-only changes, or budget too low) and the Critic
+    # simulates Determinism alone; see simulation.py::should_cross_check.
+    mode: auto                   # auto | always | never
+    providers: [anthropic, gemini]   # never the Critic's own provider; models from roles.shaper.models
+    max_items: 6                 # translate only this many of the attempt's sampled items (taken
+                                  # round-robin across sources); the Critic still simulates all of
+                                  # them. Set 2026-09-30: all 20 items x 2 providers measured
+                                  # ~$2.80/attempt once notes + vocabulary are in the prompt.
+    effort: low                  # anthropic translators: a translation is a short answer
+    max_tokens: 16000            # per translation. 3000 was too tight (claude-sonnet-5 spent it
+                                  # all on reasoning, empty text on 3 of 7 calls); 6000 still failed
+                                  # on hard items (code, "compatible X"). Successful calls use ~3.5k.
+
+llm:
+  anthropic:
+    # output_config.effort for every Anthropic call (roles can't override it; cross-check
+    # translations use evaluation.cross_check.effort). claude-sonnet-5 thinks adaptively by
+    # default at `high`, and thinking counts against max_tokens — at `high` a Shaper call spent its
+    # whole 48k budget thinking and was cut off (2026-09-30). `medium` keeps the answer in budget.
+    effort: medium
+  # Resilience for every LLM call in the loop (braincode_loop/llm/generate_resilient) — a
+  # transient provider outage (429/500/502/503/504) or a single retired/unavailable model (404)
+  # shouldn't kill an otherwise-fine run.
+  retry:
+    max_attempts: 3        # attempts on one model before moving to the next fallback candidate
+    backoff_seconds: 5     # base delay before retry 1; doubles each subsequent retry (5s, 10s, ...)
+  fallback_models:
+    # Tried, in order, after a role's configured model — same provider only. Fallback never
+    # crosses providers: role->provider assignments (Critic must stay OpenAI, Searcher must stay
+    # Gemini) are load-bearing, not just a default. A 429/5xx retries the current model first
+    # (see `retry` above); a 404 skips straight to the next one here.
+    anthropic: [claude-sonnet-5, claude-haiku-4-5]
+    openai: [gpt-5.6-terra, gpt-5.6-luna]
+    gemini: [gemini-3.1-pro-preview, gemini-3.5-flash-lite]
+
+roles:
+  documenter:
+    provider: anthropic
+    model: claude-sonnet-5
+    max_tokens: 20000
+    temperature: 0.3
+
+  searcher:
+    provider: gemini
+    model: gemini-3.1-pro-preview
+    max_tokens: 15000
+    temperature: 0.4
+    folder_probability: 0.7   # 70% of sprints: ground against sources/previous_work.md only.
+                               # 30%: search live via Gemini's built-in Google Search grounding
+                               # (see llm/gemini_client.py's use_search_grounding) and, if it
+                               # surfaces something durable, log it back into
+                               # sources/previous_work.md for future folder-mode sprints to use.
+
+  shaper:
+    provider: rotate                       # cycles through `rotation` list, one provider per sprint
+    rotation: [anthropic, openai, gemini]
+    models:                                # also the model map used by evaluation.cross_check
+      anthropic: claude-sonnet-5
+      openai: gpt-5.6-terra
+      gemini: gemini-3.1-pro-preview
+    max_tokens: 48000                      # bumped from 32000 (previously 20000): rework attempts
+                                            # re-emit the full construct set plus revisions
+                                            # addressing a growing required_changes list, so output
+                                            # length climbs attempt-over-attempt — run_20260923_013200
+                                            # showed 14216 -> 27505 -> 32000 (hit the cap exactly,
+                                            # truncating mid-construct) across 3 bootstrap attempts.
+    temperature: 0.6                       # higher: this is the generative/creative role
+
+  critic:
+    provider: openai
+    model: gpt-5.6-terra
+    max_tokens: 60000                      # provisional bump from 20000 (3x): it writes one
+                                            # simulation per sampled item plus five pre-KPI
+                                            # judgments, and items_per_sprint went from 4 to 20
+                                            # (see evaluation.simulation above) — the simulations
+                                            # array scales with item count, the five pre-KPI
+                                            # judgments don't. VERIFY against a real run's actual
+                                            # output_tokens in runs/budget_log.json and adjust —
+                                            # same evidence-based approach used for
+                                            # roles.shaper.max_tokens above.
+    temperature: 0.2                       # low: adversarial/judging role, not creative
+
+pricing_usd_per_1m_tokens:
+  # Rough defaults for budget estimation — check current provider pricing pages before relying
+  # on this for anything beyond a soft guardrail.
+  claude-sonnet-5:        { input: 2.00,  output: 10.00 }   # was 3/15 until 2026-09-30 — overstated Anthropic spend 1.5x
+  claude-opus-5:          { input: 5.00,  output: 25.00 }
+  claude-haiku-4-5:       { input: 1.00,  output: 5.00 }
+  claude-fable-5:         { input: 10.00, output: 50.00 }
+  gpt-5.6-sol:            { input: 4.00,  output: 20.00 }
+  gpt-5.6-terra:          { input: 2.00,  output: 12.00 }
+  gpt-5.6-luna:           { input: 0.20,  output: 1.20 }
+  gemini-3.1-pro-preview: { input: 2.00,  output: 12.00 }   # <=200k-token-prompt tier; Google doubles input/1.5x's output past 200k, not modeled here
+  gemini-3.5-flash-lite:  { input: 0.30,  output: 2.50 }
+  _default:               { input: 3.00,  output: 15.00 }   # fallback if a model isn't in this table
