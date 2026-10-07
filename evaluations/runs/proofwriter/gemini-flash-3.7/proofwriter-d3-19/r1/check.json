@@ -1,0 +1,414 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of theoretical premises",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject",
+    "conjunction",
+    "negation",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "bald eagle",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "action",
+   "text": "chase",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "the bald eagle chases the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "negation",
+   "text": "not green",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "the bald eagle is not green",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "the bald eagle is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "action",
+   "text": "like",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "the bald eagle likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "the dog is red",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "negation",
+   "text": "does not chase",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "the lion does not chase the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "negation",
+    "statement"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "the lion is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "young",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "negation",
+   "text": "not young",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "the lion is not young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "object",
+   "text": "rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "the rabbit chases the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "action",
+   "text": "eat",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "the rabbit eats the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "dog"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if something chases the dog, then it likes the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "dog"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "if something is red and chases the lion, then the lion likes the bald eagle",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "if something is big, then it chases the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "reasoning",
+   "text": "if something is round and chases the bald eagle, then the bald eagle does not like the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "negation",
+    "shape_round",
+    "possesses"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "if something likes the lion, then it is red",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "if something is red and round, then it does not chase the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "negation"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "if something is red and young, then it chases the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "possesses",
+    "negation"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "reasoning",
+   "text": "if something likes the bald eagle and the bald eagle chases the lion, then it likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "possesses"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "reasoning",
+   "text": "if something eats the bald eagle, then the bald eagle is red",
+   "status": "covered",
+   "matched_symbols": [
+    "possesses",
+    "negation"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "negation",
+   "text": "does not like",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "claim",
+   "text": "the lion does not like the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "FALSE",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "dog",
+  "negation",
+  "possesses",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "size_large",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n6"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

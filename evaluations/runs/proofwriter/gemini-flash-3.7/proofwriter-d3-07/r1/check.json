@@ -1,0 +1,374 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of logical premises",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject",
+    "conditional",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "cat",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "rabbit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "action",
+   "text": "need",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "ask"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "action",
+   "text": "chase",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "action",
+   "text": "eat",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "constraint",
+   "text": "red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "kind",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "constraint",
+   "text": "nice",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "constraint",
+   "text": "big",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "The cat needs the squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "The cow chases the squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "The cow is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "The rabbit chases the cat",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "The rabbit is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "The rabbit is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "The squirrel eats the cat",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "The squirrel is kind",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "The squirrel is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "The squirrel needs the cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "The squirrel needs the rabbit",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "If something needs the cow then it eats the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "If something is red then it is big",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "If something is blue and nice then it chases the cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "If something is nice then it chases the rabbit",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "If the cat needs the squirrel and the squirrel needs the cat then the cat is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "reasoning",
+   "text": "If something eats the cow then it is nice",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "If something chases the rabbit then it is blue",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "If something is red then it needs the squirrel",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n33",
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "constraint",
+   "text": "Evaluate based only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition",
+    "subject",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "claim",
+   "text": "The squirrel chases the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "attribute_claim",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "lexical_label",
+  "role_user",
+  "statement",
+  "subject",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n3",
+  "n4",
+  "n5",
+  "n14",
+  "n15",
+  "n20",
+  "n21",
+  "n23",
+  "n26",
+  "n27",
+  "n29",
+  "n30"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

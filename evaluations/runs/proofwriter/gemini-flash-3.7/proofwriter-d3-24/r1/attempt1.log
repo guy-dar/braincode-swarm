@@ -1,0 +1,110 @@
+    2.7s turn 1
+    8.3s   model reply: in 30473 + cached 0, out 535 (+494 reasoning)
+    8.3s   tool bash: node /kit/rag.mjs search "eats" "visits" "likes" "nice" "rough" "someone"
+    8.5s turn 2
+   12.4s   model reply: in 32638 + cached 0, out 85 (+51 reasoning)
+   12.4s   tool bash: node /kit/rag.mjs entry activity conditional conjunction has_attribute attribute_claim statement requirement ask
+   12.5s turn 3
+   17.7s   model reply: in 5921 + cached 28443, out 354 (+319 reasoning)
+   17.7s   tool bash: grep -i "proofwriter" /reference/examples.jsonl 2>/dev/null || true
+   17.8s turn 4
+   22.2s   model reply: in 2232 + cached 32489, out 42 (+16 reasoning)
+   22.2s   tool bash: head -n 20 /reference/examples.jsonl
+   22.2s turn 5
+   30.2s   model reply: in 3455 + cached 32478, out 1096 (+1047 reasoning)
+   30.2s   tool bash: node /kit/rag.mjs search "theory" "color" "property" "truth_value" "true_false_unknown" "rely on theory"
+   30.5s turn 6
+   34.5s   model reply: in 6177 + cached 32480, out 86 (+54 reasoning)
+   34.5s   tool bash: node /kit/rag.mjs entry property_question reason_for motivates motivated_by
+   34.6s turn 7
+   39.9s   model reply: in 2572 + cached 36523, out 78 (+40 reasoning)
+   39.9s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md
+   39.9s turn 8
+   48.3s   model reply: in 4450 + cached 36519, out 932 (+896 reasoning)
+   48.3s   tool bash: node /kit/rag.mjs entry character_trait has_attribute attribute_claim requirement subject property_question
+   48.4s turn 9
+   56.6s   model reply: in 2649 + cached 40576, out 84 (+59 reasoning)
+   56.6s   tool bash: node /kit/rag.mjs entry lexical_label
+   56.8s turn 10
+   66.4s   model reply: in 3218 + cached 40561, out 1122 (+1074 reasoning)
+   66.4s   tool bash: node /kit/rag.mjs search "character_trait" "trait" "rough" "nice" "color" "attribute" "state" --kind constraint
+   66.6s turn 11
+   70.1s   model reply: in 6465 + cached 40570, out 97 (+52 reasoning)
+   70.1s   tool bash: grep -i -E "constructor.*(property|attribute|trait|predicate|relation|fact|state|value)" /reference/glossary.md
+   70.2s turn 12
+   74.1s   model reply: in 4279 + cached 44623, out 67 (+15 reasoning)
+   74.1s   tool bash: grep -i -E "constructor.*(property|attribute|trait|predicate|relation|fact|state|value)" /reference/glossary.md | tail -n 15
+   74.2s turn 13
+   84.8s   model reply: in 5406 + cached 44613, out 1496 (+1468 reasoning)
+   84.8s   tool bash: node /kit/rag.mjs entry role_user role_agent
+   84.9s turn 14
+   93.0s   model reply: in 2945 + cached 48663, out 863 (+835 reasoning)
+   93.1s   tool bash: node /kit/rag.mjs entry inform propose ask confirm respond acknowledge
+   93.2s turn 15
+  109.6s   model reply: in 4178 + cached 48654, out 2603 (+2551 reasoning)
+  109.6s   tool bash: grep -E "^\| [a-z0-9_]+ \| constructor \|" /reference/glossary.md | awk -F '|' '{print $2, $4}'
+  109.7s turn 16
+  114.5s   model reply: in 4870 + cached 52733, out 80 (+26 reasoning)
+  114.5s   tool bash: grep -E "^\| [a-z0-9_]+ \| claim_relation \|" /reference/glossary.md | awk -F '|' '{print $2, $4}'
+  114.5s turn 17
+  119.2s   model reply: in 2154 + cached 56781, out 50 (+12 reasoning)
+  119.2s   tool bash: grep -E "^\| [a-z0-9_]+ \| link \|" /reference/glossary.md
+  119.3s turn 18
+  122.8s   model reply: in 2442 + cached 56762, out 54 (+14 reasoning)
+  122.8s   tool bash: grep -E "^\| [a-z0-9_]+ \| speech_act \|" /reference/glossary.md
+  122.8s turn 19
+  137.3s   model reply: in 2985 + cached 56747, out 2288 (+2258 reasoning)
+  137.3s   tool bash: grep -C 3 "character_trait" /reference/glossary.md
+  137.4s turn 20
+  161.0s   model reply: in 6798 + cached 56763, out 3527 (+1145 reasoning)
+  161.0s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN
+  161.2s turn 21
+  166.7s   model reply: in 7043 + cached 60837, out 369 (+314 reasoning)
+  166.7s   tool bash: node /kit/rag.mjs widen "the bear is rough" --kind claim
+node /kit/rag.mjs widen "answer must be True, False, or Unknown" --kind constraint
+  167.0s turn 22
+  171.1s   model reply: in 6172 + cached 64902, out 119 (+92 reasoning)
+  171.1s   tool bash: node /kit/rag.mjs entry constraint_single_choice
+  171.2s turn 23
+  196.4s   model reply: in 49720 + cached 0, out 2789 (+382 reasoning)
+  196.4s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN
+  196.6s turn 24
+  203.0s   model reply: in 4543 + cached 48758, out 636 (+603 reasoning)
+  203.0s   tool bash: node /kit/rag.mjs search "rough" "True, False, or Unknown"
+  203.2s turn 25
+  241.7s   model reply: in 5726 + cached 48747, out 6541 (+4134 reasoning)
+  241.7s   tool bash: cat << 'EOF' > /output/translation.md
+Status: success
+Mode: REQUEST
+
+## BrainCode
+
+```braincode
+MODE REQUEST
+ENTRYPOINT Conversation
+CONVO Conversation {
+  TURN
+  241.9s turn 26
+  247.7s   model reply: in 8964 + cached 52842, out 265 (+83 reasoning)
+  247.7s agent finished
+  247.7s agent finished

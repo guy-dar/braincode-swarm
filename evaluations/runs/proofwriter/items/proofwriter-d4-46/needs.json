@@ -1,0 +1,4379 @@
+{
+ "translator_id": "proofwriter-d4-46",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "introduce a theory or set of premises",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7773,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.7234,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.713,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4897,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4649,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4613,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4186,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4173,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/structural-constructs",
+     "symbol": "rule_structural_constructs",
+     "kind": "rule",
+     "score": 0.4168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4096,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.4088,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is cold",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7318,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3248,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3162,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3114,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3084,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3027,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3023,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.2996,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.2921,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2907,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.2896,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.2881,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.2726,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is green",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6867,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4606,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4212,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4183,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.414,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4027,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4023,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4007,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3959,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3958,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3903,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "color_label",
+   "id": "n4",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is red",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n5",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.6358,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4465,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4397,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4367,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4229,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4208,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4183,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4111,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4057,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.4047,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s4"
+   ],
+   "group": "color_label",
+   "id": "n6",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is round",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n7",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.6882,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3314,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3226,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3208,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3207,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3127,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3124,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.3109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3093,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.302,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3004,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is green",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n8",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6991,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4661,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4188,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4181,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4106,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4011,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.399,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3975,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.3946,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.3929,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.3906,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s6"
+   ],
+   "group": "color_label",
+   "id": "n9",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n10",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6874,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.6739,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6674,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6649,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.6534,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6508,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6477,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.6477,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6441,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.6275,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is green",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n11",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6988,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.67,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4592,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4245,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4223,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4134,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4109,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4097,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4082,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4013,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4012,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3969,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s8"
+   ],
+   "group": "color_label",
+   "id": "n12",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is red",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n13",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.7164,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6967,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6898,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.673,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6704,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6499,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6479,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6449,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6392,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.637,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_current_new_york_housing_market",
+     "symbol": "topic_current_new_york_housing_market",
+     "kind": "composite",
+     "score": 0.6351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6263,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s9"
+   ],
+   "group": "color_label",
+   "id": "n14",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Harry is green",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n15",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6653,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4168,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4156,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4075,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4071,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4063,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4014,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.3991,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3943,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3942,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.3899,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.386,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s10"
+   ],
+   "group": "color_label",
+   "id": "n16",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Harry is smart",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n17",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.7054,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.486,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4478,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.439,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4376,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.436,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4295,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4279,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4222,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4213,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "all smart people are cold",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n18",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7263,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.3816,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3286,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3236,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.2995,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.2953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.2864,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.2821,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.2776,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2734,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.2662,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if someone is red then they are rough",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n19",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.6651,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.6215,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.6168,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.4452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.4304,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4273,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4159,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4118,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4085,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.3919,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s13"
+   ],
+   "group": "color_label",
+   "id": "n20",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "all nice, red people are green",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n21",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7046,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.695,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.6378,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4275,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4222,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3883,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3733,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.3652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.3457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/united_kingdom",
+     "symbol": "united_kingdom",
+     "kind": "value",
+     "score": 0.3443,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s14"
+   ],
+   "group": "color_label",
+   "id": "n22",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s14"
+   ],
+   "group": "color_label",
+   "id": "n23",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "all red, rough people are round",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n24",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.689,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.4711,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.3255,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.315,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.3141,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3114,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3095,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3066,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3037,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/location-name/corner",
+     "symbol": "corner",
+     "kind": "value",
+     "score": 0.2993,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.2977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.2959,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2781,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s15"
+   ],
+   "group": "color_label",
+   "id": "n25",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if someone is rough and round then they are smart",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n26",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.6758,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.4856,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4287,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.3469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3248,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.3222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3215,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3205,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.2948,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.291,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.2887,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if Gary is smart and Gary is cold then Gary is nice",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n27",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.6805,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4353,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3387,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3268,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.321,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3208,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3172,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/condition_perfect",
+     "symbol": "condition_perfect",
+     "kind": "value",
+     "score": 0.3152,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.3069,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.2983,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.2944,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "green, smart people are red",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n28",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7127,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6647,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.6509,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4695,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4561,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4451,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4393,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4358,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4204,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4028,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3939,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.3895,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "green",
+   "source": [
+    "t1:s18"
+   ],
+   "group": "color_label",
+   "id": "n29",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7392,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.4761,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4665,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.454,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4283,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4171,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4001,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3949,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "red",
+   "source": [
+    "t1:s18"
+   ],
+   "group": "color_label",
+   "id": "n30",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7326,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.4338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4078,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4005,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3985,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.388,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "ask if a statement is True, False, or Unknown",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n31",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7548,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6848,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.5162,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3781,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.3479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3365,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.3309,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.3285,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.323,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.3198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.317,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.3072,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "base the answer only on the provided theory",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n32",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6987,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.5422,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4969,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4783,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4432,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4427,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4292,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4279,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4265,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4156,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/regression_case",
+     "symbol": "regression_case",
+     "kind": "constructor",
+     "score": 0.4146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4098,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n33",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.7028,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.4311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4302,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4279,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4038,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.396,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3947,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.3824,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3806,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the statement 'Gary is cold' to evaluate",
+   "source": [
+    "t1:s20"
+   ],
+   "id": "n34",
+   "context": "Theory: Bob is cold. Bob is green. Bob is red. Bob is round. Fiona is green. Fiona is smart. Gary is green. Gary is red. Harry is green. Harry is smart. All smart people are cold. If someone is red then they are rough. All nice, red people are green. All red, rough people are round. If someone is rough and round then they are smart. If Gary is smart and Gary is cold then Gary is nice. Green, smart people are red. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is cold.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7739,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4765,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.4556,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.4428,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3785,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3708,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3663,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3356,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/state-value",
+     "symbol": "rule_category_state_value",
+     "kind": "category_rule",
+     "score": 0.3296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3093,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2936,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.2856,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

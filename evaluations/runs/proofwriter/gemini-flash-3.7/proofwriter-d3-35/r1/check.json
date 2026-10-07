@@ -1,0 +1,488 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of logical premises or theory.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Bob is green.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Erin is rough.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Erin",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Gary is cold.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "constraint",
+   "text": "cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Gary is smart.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Harry is green.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "Harry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "Harry is smart.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "Harry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "Harry is white.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "Harry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "If something is white, then it is green.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "All rough things are quiet.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "If something is green and smart, then it is cold.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "constraint",
+   "text": "cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "All quiet things are blue.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "constraint",
+   "text": "quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "reasoning",
+   "text": "All quiet things are white.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "reasoning",
+   "text": "All white things are rough.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n40",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n41",
+   "kind": "constraint",
+   "text": "rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n42",
+   "kind": "reasoning",
+   "text": "Quiet, green things are smart.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n43",
+   "kind": "constraint",
+   "text": "quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n44",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n45",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n46",
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown.",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n47",
+   "kind": "constraint",
+   "text": "Base the evaluation strictly on the provided theory.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n48",
+   "kind": "constraint",
+   "text": "Restrict the answer format to True, False, or Unknown.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n49",
+   "kind": "action",
+   "text": "Evaluate the truth value of the statement 'Bob is quiet'.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "ask"
+   ]
+  },
+  {
+   "id": "n50",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n51",
+   "kind": "claim",
+   "text": "Bob is quiet.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n52",
+   "kind": "constraint",
+   "text": "quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "property_question",
+  "role_user",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n16",
+  "n22",
+  "n23",
+  "n24",
+  "n25",
+  "n30",
+  "n33",
+  "n35",
+  "n38",
+  "n39",
+  "n40",
+  "n44"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

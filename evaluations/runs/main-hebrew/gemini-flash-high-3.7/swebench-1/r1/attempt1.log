@@ -1,0 +1,20 @@
+    2.5s turn 1
+   24.3s   model reply: in 2039 + cached 0, out 3595 (+3546 reasoning)
+   24.3s   tool bash: python3 -c "
+with open('/trajectory.txt', 'r') as f:
+    text = f.read()
+print(repr(text))
+"
+   24.3s turn 2
+   49.6s   model reply: in 5657 + cached 0, out 33 (+16 reasoning)
+   49.6s   tool read: /trajectory.txt
+   49.6s turn 3
+   76.5s   model reply: in 6110 + cached 0, out 4710 (+4154 reasoning)
+   76.5s   tool write: /output/translation.md
+   76.5s turn 4
+   87.5s   model reply: in 10824 + cached 0, out 38 (+19 reasoning)
+   87.5s   tool read: /output/translation.md
+   87.5s turn 5
+  109.8s   model reply: in 3428 + cached 7965, out 82 (+62 reasoning)
+  109.8s agent finished
+  109.8s agent finished

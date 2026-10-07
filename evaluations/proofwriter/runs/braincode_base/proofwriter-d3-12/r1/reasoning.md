@@ -1,0 +1,131 @@
+Let's break down the problem step-by-step:
+
+1. **Statement in Question**: 
+   - The statement we need to evaluate is `property_question(property="truth_value", subject="theory")`, which is asking about the truth value of the entire theory.
+
+2. **Facts That Matter**:
+   - We have several assertions about various animals and their behaviors, colors, and temperaments.
+   - We also have some conditional statements linking certain activities or traits.
+
+3. **Applying Rules**:
+   - Let's go through each assertion and see what new facts we can derive.
+
+### Step-by-Step Reasoning:
+
+1. **Initial Assertions**:
+   - `attribute_claim("age", "bald_eagle", "young")`: The bald eagle is young.
+   - `statement(character_trait("age", "bald_eagle", "young"))`: The bald eagle is young.
+   - `activity("bald_eagle", "bear", "see")`: The bald eagle sees a bear.
+   - `activity("bald_eagle", "bear", "visit")`: The bald eagle visits a bear.
+   - `activity("bear", "squirrel", "eat")`: The bear eats a squirrel.
+   - `negation(character_trait("color", "bear", "blue"))`: The bear is not blue.
+   - `attribute_claim("color", "bear", "green")`: The bear is green.
+   - `activity("bear", "eagle", "visit")`: The bear visits an eagle.
+   - `activity("mouse", "squirrel", "eat")`: The mouse eats a squirrel.
+   - `attribute_claim("color", "mouse", "green")`: The mouse is green.
+   - `activity("squirrel", "eagle", "see")`: The squirrel sees an eagle.
+   - `activity("squirrel", "mouse", "visit")`: The squirrel visits a mouse.
+   - `conditional(character_trait("temperament", "squirrel", "nice"), activity("someone", "mouse", "visit"))`: If the squirrel is nice, someone visits a mouse.
+   - `conditional(character_trait("color", "bear", "green"), character_trait("temperament", "squirrel", "nice"))`: If the bear is green, the squirrel is nice.
+   - `activity("someone", "bear", "see")`: Someone sees a bear.
+   - `activity("bear", "mouse", "visit")`: The bear visits a mouse.
+   - `conjunction(activity("someone", "bear", "see"), activity("bear", "mouse", "visit"))`: Someone sees a bear and the bear visits a mouse.
+   - `conditional(conjunction(activity("someone", "bear", "see"), activity("bear", "mouse", "visit")), character_trait("temperament", "squirrel", "nice"))`: If someone sees a bear and the bear visits a mouse, the squirrel is nice.
+   - `activity("someone", "mouse", "visit")`: Someone visits a mouse.
+   - `activity("someone", "squirrel", "visit")`: Someone visits a squirrel.
+   - `conjunction(activity("someone", "mouse", "visit"), activity("someone", "squirrel", "visit"))`: Someone visits a mouse and a squirrel.
+   - `conditional(conjunction(activity("someone", "mouse", "visit"), activity("someone", "squirrel", "visit")), activity("mouse", "squirrel", "eat"))`: If someone visits a mouse and a squirrel, the mouse eats the squirrel.
+   - `negation(activity("mouse", "squirrel", "eat"))`: The mouse does not eat the squirrel.
+   - `conjunction(character_trait("color", "bear", "blue"), negation(activity("mouse", "squirrel", "eat")))`: If the bear is blue and the mouse does not eat the squirrel, the bear is blue and the mouse does not eat the squirrel.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "green"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is green and the mouse does not eat an eagle, the mouse is green and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green"))`: If someone visits a bear and the bear is green, the bear is green and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green")), activity("mouse", "visit"))`: If someone visits a bear and the bear is green, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue"))`: If someone visits a bear and the bear is blue, the bear is blue and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue")), activity("mouse", "visit"))`: If someone visits a bear and the bear is blue, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green"))`: If someone visits a bear and the bear is green, the bear is green and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green")), activity("mouse", "visit"))`: If someone visits a bear and the bear is green, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue"))`: If someone visits a bear and the bear is blue, the bear is blue and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue")), activity("mouse", "visit"))`: If someone visits a bear and the bear is blue, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green"))`: If someone visits a bear and the bear is green, the bear is green and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green")), activity("mouse", "visit"))`: If someone visits a bear and the bear is green, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue"))`: If someone visits a bear and the bear is blue, the bear is blue and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue")), activity("mouse", "visit"))`: If someone visits a bear and the bear is blue, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green"))`: If someone visits a bear and the bear is green, the bear is green and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "green")), activity("mouse", "visit"))`: If someone visits a bear and the bear is green, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see"))`: If someone eats an eagle and the bald eagle sees a bear, someone sees a mouse.
+   - `activity("mouse", "eagle", "eat")`: The mouse eats an eagle.
+   - `negation(activity("mouse", "eagle", "eat"))`: The mouse does not eat an eagle.
+   - `conjunction(character_trait("color", "mouse", "blue"), negation(activity("mouse", "eagle", "eat")))`: If the mouse is blue and the mouse does not eat an eagle, the mouse is blue and the mouse does not eat an eagle.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "bear", "visit")`: Someone visits a bear.
+   - `conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue"))`: If someone visits a bear and the bear is blue, the bear is blue and someone visits a bear.
+   - `conditional(conjunction(activity("someone", "bear", "visit"), character_trait("color", "bear", "blue")), activity("mouse", "visit"))`: If someone visits a bear and the bear is blue, the mouse visits.
+   - `negation(character_trait("temperament", "squirrel", "nice"))`: The squirrel is not nice.
+   - `activity("someone", "eagle", "eat")`: Someone eats an eagle.
+   - `conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see"))`: Someone eats an eagle and the bald eagle sees a bear.
+   - `conditional(conjunction(activity("someone", "eagle", "eat"), activity("bald_eagle", "bear", "see")), activity("someone", "mouse", "see

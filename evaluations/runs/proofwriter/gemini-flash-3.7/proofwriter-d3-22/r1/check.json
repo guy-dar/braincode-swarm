@@ -1,0 +1,409 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "bald eagle",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "action",
+   "text": "chase",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "the bald eagle chases the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "the bald eagle is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "action",
+   "text": "see",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "the bald eagle sees the squirrel",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "rabbit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "the cow chases the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "action",
+   "text": "eat",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "the cow eats the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "the cow is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "the rabbit chases the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "the rabbit eats the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "constraint",
+   "text": "nice",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "the rabbit is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "constraint",
+   "text": "rough",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "the rabbit is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "the squirrel eats the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "the squirrel eats the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "the squirrel is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "the squirrel sees the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if something chases the squirrel, then the squirrel chases the cow",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "if something chases and eats the squirrel, then the squirrel chases the cow",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "if something eats the rabbit and is rough, then it is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "if something chases the rabbit, then the rabbit is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "conditional"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "if something is kind, then it chases the squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "if something chases the cow, then it is kind",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "negation",
+   "text": "does not chase",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "reasoning",
+   "text": "if something eats the rabbit and does not chase it, then it is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "negation",
+   "text": "does not chase",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n40",
+   "kind": "claim",
+   "text": "the squirrel does not chase the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "shape_round",
+  "statement",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n3",
+  "n8",
+  "n11",
+  "n32",
+  "n33"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

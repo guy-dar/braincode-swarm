@@ -1,0 +1,251 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a logical theory",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Bob is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Dave is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Fiona is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "character_trait",
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Fiona is young",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "reasoning",
+   "text": "if Dave is cold and young, then Dave is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "reasoning",
+   "text": "if Fiona is rough and kind, then Fiona is red",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "reasoning",
+   "text": "kind and rough things are red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "reasoning",
+   "text": "young and big things are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "reasoning",
+   "text": "rough things are furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "reasoning",
+   "text": "if something is cold and rough, then it is red",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "reasoning",
+   "text": "all furry and rough things are kind",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "young and cold things are kind",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "young things are big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "speech_act",
+   "text": "ask to evaluate the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "propose"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "constraint",
+   "text": "respond with True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "the statement 'Bob is not furry'",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "negation",
+   "text": "Bob is not furry",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "character_trait"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "has_state",
+  "lexical_label",
+  "negation",
+  "propose",
+  "requirement",
+  "role_user",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n11"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

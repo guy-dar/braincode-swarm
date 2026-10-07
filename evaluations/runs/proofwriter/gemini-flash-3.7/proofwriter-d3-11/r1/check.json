@@ -1,0 +1,326 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of theoretical premises",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conjunction",
+    "inform",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "cat",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "mouse",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "The cat chases the mouse",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "The cat is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "lion",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "The lion chases the cat",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "The lion likes the cat",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "The mouse is young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "The mouse likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "tiger",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "The tiger chases the cat",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "The tiger chases the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "The tiger chases the mouse",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "The tiger likes the cat",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "If something likes the lion, it chases the tiger",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "If something is blue, it likes the lion",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "If something likes the mouse, the mouse is blue",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "If something chases the lion, it is green",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "If the tiger is green, the tiger likes the lion",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "If the mouse eats the cat and likes the tiger, it likes the lion",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "If something chases the tiger, it is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "If something eats the lion and the lion is green, the lion is big",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "All green and blue things are big",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "speech_act",
+   "text": "Ask if a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "inform",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "claim",
+   "text": "The tiger chases the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "inform",
+  "lexical_label",
+  "requirement",
+  "role_user",
+  "size_large",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n3",
+  "n6",
+  "n7",
+  "n9",
+  "n12",
+  "n16",
+  "n17",
+  "n18",
+  "n20",
+  "n22",
+  "n23",
+  "n24"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

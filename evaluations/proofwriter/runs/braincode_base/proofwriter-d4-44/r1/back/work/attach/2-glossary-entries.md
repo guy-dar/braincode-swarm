@@ -1,0 +1,18 @@
+# Glossary entries used by the conclusion
+
+- activity | constructor | TERM activity(verb: STRING, actor?: STRING, object?: STRING / TERM / ATOM[object_label] / ATOM[food_label] / ATOM[animal_label], location?: STRING / ATOM[country], instrument?: STRING / ATOM[object_label] / ATOM[platform_label], purpose?: TERM) -> TERM | Description of the action and its roles; instrument identifies means, purpose identifies an intended end | not: Does not execute or assert it  [v19/support/activity]
+    rules: rule_support_primitives_general
+    depends on: object_label::<key> | lexical_group | open label, lower_word | An explicitly supplied label of an object kind; no inferred physical properties or English sense. | e.g. object_label::thimble, object_label::pillow
+    depends on: food_label::<key> | lexical_group | open label, lower_word | A source-supplied food-kind label; denotes that labeled food kind, without inferred ingredients, preparation, nutrition or biology. | e.g. food_label::tomato, food_label::egg | key aliases: spud=potato, potatoes=potato, eggs=egg
+    depends on: animal_label::<key> | lexical_group | open label, lower_word | A source-supplied animal-kind label; denotes that labeled animal kind, without inferred taxonomy, behavior or capabilities. | e.g. animal_label::cat, animal_label::tuna
+    depends on: country::<key> | lexical_group | ISO 3166-1 alpha-2 codes (249), upper_code | A country identified by its ISO 3166-1 alpha-2 code (country::JP is Japan). The code names the country only; no language, currency or region membership is implied. | e.g. country::JP, country::DE | not: A language (use a locale value) or a currency (use currency::<ISO 4217 code>).
+    depends on: platform_label::<key> | lexical_group | open label, lower_identifier | A source-supplied name of a software platform, service, framework, library, package, build tool or operating system (platform_label::django, platform_label::windows). Denotes that named system only; no version, vendor, capability or relation between systems is implied. | e.g. platform_label::django, platform_label::windows, platform_label::pytorch_lightning | key aliases: sklearn=scikit_learn, macosx=macos, osx=macos, win=windows, gcp=gcloud | not: The project being edited when the source does not say so (a repository named platform_label::django is code_entity/software_version context), a programming-language feature, or a file format.
+- animal_label::<key> | lexical_group | open label, lower_word | A source-supplied animal-kind label; denotes that labeled animal kind, without inferred taxonomy, behavior or capabilities. | e.g. animal_label::cat, animal_label::tuna | slots: search_web.target, activity.object, lexical_label.value  [v19/lexical-group/animal_label]
+- negation | constructor | TERM negation(target: TERM) -> TERM | Constructs a descriptive semantic negation of a target descriptive proposition or condition term. | not: Check's runtime Boolean operator NOT or a speech-act decline | aliases: not, does not, negation, absence of  [v19/support/negation]
+    rules: rule_support_primitives_general
+- role_agent | value | recipient-value | The assistant. | aliases: you, the assistant  [v19/recipient-value/role_agent]
+    rules: rule_category_recipient_value
+- statement | claim_relation | CLAIM statement(fact: TERM) | Foundational claim relation converting any descriptive TERM into an attributed, truth-evaluated assertion. universal fact assertion. | aliases: assert_fact, fact_claim, claim_statement  [v19/support/statement]
+    rules: rule_trace_relations_general
+- target | attribute | attribute-name | The acted-on entity or generated artifact.  [v19/attribute-name/target]
+    rules: rule_attributes_and_generate

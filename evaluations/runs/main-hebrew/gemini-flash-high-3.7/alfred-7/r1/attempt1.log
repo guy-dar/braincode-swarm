@@ -1,0 +1,28 @@
+    6.2s turn 1
+    9.7s   model reply: in 1674 + cached 0, out 295 (+278 reasoning)
+    9.7s   tool read: /trajectory.txt
+    9.7s turn 2
+   18.5s   model reply: in 2024 + cached 0, out 1112 (+1091 reasoning)
+   18.5s   tool bash: ls -la / /attach /workspace
+   18.5s turn 3
+   65.6s   model reply: in 4030 + cached 0, out 33 (+16 reasoning)
+   65.6s   tool read: /prompt.md
+   65.6s turn 4
+  116.2s   model reply: in 4370 + cached 0, out 6257 (+6217 reasoning)
+  116.2s   tool bash: python3 -c "with open('/trajectory.txt', 'rb') as f: print(repr(f.read()))"
+  116.2s turn 5
+  121.8s   model reply: in 10650 + cached 0, out 46 (+26 reasoning)
+  121.8s   tool bash: od -c /trajectory.txt
+  121.9s turn 6
+  139.2s   model reply: in 3263 + cached 7949, out 1409 (+1387 reasoning)
+  139.2s   tool bash: ls -la /reference /session /attach
+  139.4s turn 7
+  216.9s   model reply: in 4950 + cached 7967, out 7480 (+7349 reasoning)
+  216.9s   tool write: /output/translation.md
+  216.9s turn 8
+  225.0s   model reply: in 8344 + cached 12057, out 38 (+19 reasoning)
+  225.0s   tool read: /output/translation.md
+  225.1s turn 9
+  230.3s   model reply: in 20545 + cached 0, out 301 (+284 reasoning)
+  230.3s agent finished
+  230.3s agent finished

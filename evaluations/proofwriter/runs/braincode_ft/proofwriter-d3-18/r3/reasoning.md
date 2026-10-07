@@ -1,0 +1,15 @@
+<|user|>Anne is not nice, Anne is round, Anne is not white, Anne is young, Erin is round, Fiona is blue, Gary is young, if person is nice then person is not quiet, if person is round then person is quiet, if Anne is nice then Anne is white, if person is quiet then person is blue, if Fiona is white then Fiona is blue, if person is rough then person is young, if person is nice and person is not blue then person is not rough, if person is blue then person is rough, Erin is round, Erin is young, Erin is white, is Erin rough?<|assistant|>1. Anne is not nice -> Anne is not quiet (from if person is nice then person is not quiet)
+2. Anne is round -> Anne is quiet (from if person is round then person is quiet)
+3. Anne is not white -> Anne is not blue (from if Anne is nice then Anne is white and if person is quiet then person is blue)
+4. Anne is young -> Gary is young (from if person is rough then person is young)
+5. Erin is round -> Erin is quiet (from if person is round then person is quiet)
+6. Fiona is blue -> Fiona is blue (no new information)
+7. Gary is young -> Gary is rough (from if person is rough then person is young)
+8. Anne is nice -> Anne is white (from if Anne is nice then Anne is white)
+9. Fiona is white -> Fiona is blue (from if Fiona is white then Fiona is blue)
+10. Fiona is not blue -> Fiona is not rough (from if person is blue then person is rough)
+11. Erin is round -> Erin is quiet (from if person is round then person is quiet)
+12. Erin is young -> Erin is rough (from if person is rough then person is young)
+13. Erin is white -> Erin is not rough (from if Erin is round then Erin is quiet and if person is rough then person is young)
+
+The answer is: Yes, Erin is rough.

@@ -1,0 +1,28 @@
+    4.3s turn 1
+   10.0s   model reply: in 3182 + cached 8025, out 713 (+693 reasoning)
+   10.0s   tool bash: ls -la /output /kit
+   10.8s turn 2
+   24.9s   model reply: in 4125 + cached 8024, out 53 (+34 reasoning)
+   24.9s   tool read: /kit/README.md
+   25.0s turn 3
+   27.2s   model reply: in 5338 + cached 8026, out 37 (+19 reasoning)
+   27.2s   tool bash: ls -la /reference
+   27.3s turn 4
+   29.8s   model reply: in 5589 + cached 8016, out 71 (+50 reasoning)
+   29.8s   tool bash: cat /reference/examples.jsonl
+   29.9s turn 5
+   32.3s   model reply: in 2818 + cached 12028, out 47 (+23 reasoning)
+   32.3s   tool bash: rg -i "verdict" /reference /attach
+   32.3s turn 6
+   34.7s   model reply: in 2903 + cached 12012, out 37 (+9 reasoning)
+   34.7s   tool bash: grep -ri "verdict" /reference /attach /kit || true
+   35.2s turn 7
+   46.4s   model reply: in 3026 + cached 11997, out 1922 (+1843 reasoning)
+   46.4s   tool write: /output/reconstruction.md
+   46.5s turn 8
+   48.9s   model reply: in 4939 + cached 12011, out 55 (+35 reasoning)
+   48.9s   tool read: /output/reconstruction.md
+   49.0s turn 9
+   51.2s   model reply: in 5060 + cached 11998, out 32 (+14 reasoning)
+   51.2s agent finished
+   51.2s agent finished

@@ -1,0 +1,2802 @@
+{
+ "translator_id": "proofwriter-d3-15",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "introduce a logical theory",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.728,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.6911,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6505,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.6355,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4469,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4457,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.44,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4297,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4094,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.405,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.396,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Anne is red",
+   "source": [
+    "t1:s2"
+   ],
+   "group": "color_label",
+   "id": "n2",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.694,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4772,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4646,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4362,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.4352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4325,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.4287,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.4252,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4176,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.415,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4097,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4012,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4004,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Anne is rough",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7188,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.6905,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6669,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.6666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6619,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.6578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.6475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6425,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6394,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6381,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.6374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6346,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is young",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n4",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.7187,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.6986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6909,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6839,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.6638,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6558,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.655,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6489,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.6474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6362,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6289,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.6267,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is cold",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n5",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7142,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3215,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.3213,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3111,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.2996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.2993,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.2981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.2977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.2951,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2931,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.292,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is kind",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n6",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.7216,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6916,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4766,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4365,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/similarity",
+     "symbol": "similarity",
+     "kind": "constructor",
+     "score": 0.4231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4212,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.4209,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.4085,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/mod_mixed_case",
+     "symbol": "mod_mixed_case",
+     "kind": "value",
+     "score": 0.4064,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4054,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4033,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is big",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n7",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6805,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6762,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6742,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.6639,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6619,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6553,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.6517,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6514,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6511,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6487,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.6426,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.6391,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is young",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n8",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.689,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6845,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6834,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.6791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.673,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.6626,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6578,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.6574,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.654,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.6498,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6484,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.6437,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if Dave is cold and young, then Dave is furry",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n9",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.6845,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4766,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.3569,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3416,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.3291,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.3281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.3245,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3212,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3161,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.3155,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.3112,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.3072,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.3064,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if Fiona is rough and kind, then Fiona is red",
+   "source": [
+    "t1:s10"
+   ],
+   "group": "color_label",
+   "id": "n10",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.6526,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4694,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4593,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.4573,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.4441,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/stereotype",
+     "symbol": "stereotype",
+     "kind": "claim_relation",
+     "score": 0.4408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4339,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4294,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4283,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/char_2000s_anime_style",
+     "symbol": "char_2000s_anime_style",
+     "kind": "composite",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4201,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4073,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "kind and rough things are red",
+   "source": [
+    "t1:s11"
+   ],
+   "group": "color_label",
+   "id": "n11",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.7024,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6805,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.675,
+     "reasons": [
+      "exact",
+      "group-tag"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.6732,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.6617,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.6615,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.661,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.6458,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/char_2000s_anime_style",
+     "symbol": "char_2000s_anime_style",
+     "kind": "composite",
+     "score": 0.6359,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.6338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.629,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.6285,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "young and big things are rough",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n12",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.7103,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.502,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.4871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.4684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.4666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4544,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4454,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.4373,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.4368,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4343,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "rough things are furry",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n13",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7044,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.6967,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.6458,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.6438,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.6436,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/caddy",
+     "symbol": "caddy",
+     "kind": "value",
+     "score": 0.6327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6269,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.6239,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6204,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.6191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/nutmeg",
+     "symbol": "nutmeg",
+     "kind": "value",
+     "score": 0.618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.6118,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "if something is cold and rough, then it is red",
+   "source": [
+    "t1:s14"
+   ],
+   "group": "color_label",
+   "id": "n14",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.6908,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4823,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4613,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4177,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3455,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3337,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.3332,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3197,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3125,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3041,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3041,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.2992,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.2984,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2857,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "all furry and rough things are kind",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n15",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.6896,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.648,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4975,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.482,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4277,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.4098,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.4095,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4042,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.4013,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3983,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.394,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "young and cold things are kind",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n16",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7195,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3742,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.3564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.3511,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.3303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3211,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.3129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3009,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.2964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2904,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.289,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.2888,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.2865,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "young things are big",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n17",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.7139,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.4724,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4555,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.4496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.4479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4459,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.4432,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4389,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_kids",
+     "symbol": "role_kids",
+     "kind": "value",
+     "score": 0.4326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.4309,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4266,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "ask to evaluate the truth value of a statement",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n18",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7367,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.7049,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.5406,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.4811,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3757,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3558,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3484,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.3428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3376,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3228,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.3209,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.3191,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3161,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n19",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.7349,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4657,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4587,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4512,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4495,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4421,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/regression_case",
+     "symbol": "regression_case",
+     "kind": "constructor",
+     "score": 0.4325,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4274,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4272,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/requirement",
+     "symbol": "requirement",
+     "kind": "constructor",
+     "score": 0.4241,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4187,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.417,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "respond with True, False, or Unknown",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n20",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6742,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3635,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.359,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3516,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.3509,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.3422,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.3307,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.3302,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.3263,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_respondent",
+     "symbol": "role_respondent",
+     "kind": "value",
+     "score": 0.3184,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.313,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.3089,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/entity_flowers",
+     "symbol": "entity_flowers",
+     "kind": "value",
+     "score": 0.304,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the statement 'Bob is not furry'",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n21",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6501,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.5765,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.4581,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4522,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.4506,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.4249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4241,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.416,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.4058,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4058,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4056,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "Bob is not furry",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n22",
+   "context": "Theory: Anne is red. Anne is rough. Bob is young. Dave is cold. Dave is kind. Fiona is big. Fiona is young. If Dave is cold and Dave is young then Dave is furry. If Fiona is rough and Fiona is kind then Fiona is red. Kind, rough things are red. Young, big things are rough. Rough things are furry. If something is cold and rough then it is red. All furry, rough things are kind. Young, cold things are kind. Young things are big. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not furry.",
+   "candidates": [
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.7343,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.4169,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4022,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.3953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character",
+     "symbol": "character",
+     "kind": "constructor",
+     "score": 0.394,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.3932,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.3888,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.3878,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.3854,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.3809,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.363,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

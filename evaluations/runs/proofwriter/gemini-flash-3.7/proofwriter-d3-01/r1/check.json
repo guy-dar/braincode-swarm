@@ -1,0 +1,409 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "the cow eats the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "lion",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "action",
+   "text": "eat",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "the cow is young",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "young",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "the cow likes the squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "squirrel",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "action",
+   "text": "like",
+   "status": "covered",
+   "matched_symbols": [
+    "activity"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "the lion eats the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "rabbit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "the lion eats the squirrel",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "the lion does not like the squirrel",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "negation",
+   "text": "does not like",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "the rabbit is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "the rabbit likes the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "the rabbit likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "the squirrel likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "the squirrel likes the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "if someone visits the lion, then the lion eats the cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "action",
+   "text": "visit",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "if someone visits the cow, then they are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if the squirrel visits the cow and is not young, then the cow likes the rabbit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "negation",
+   "text": "not young",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "if someone eats the squirrel and eats the cow, then they visit the rabbit",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "if someone likes the cow, then they are nice",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "nice",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "if someone eats the cow and the cow visits the rabbit, then they eat the lion",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "if someone is nice, then they visit the cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "if someone eats the squirrel and likes the cow, then they do not visit the squirrel",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "negation",
+   "text": "does not visit",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "reasoning",
+   "text": "if someone visits the cow, then the cow is nice",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "claim",
+   "text": "the rabbit is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "statement",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3",
+  "n4",
+  "n8",
+  "n9",
+  "n12",
+  "n22",
+  "n26",
+  "n32",
+  "n35"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

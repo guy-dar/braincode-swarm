@@ -1,0 +1,254 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of logical premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Erin is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Erin is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Fiona is red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Gary is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Gary is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Harry is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Harry is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Harry is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Harry is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Harry is red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "If Gary is blue then Gary is furry",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "If someone is nice then they are young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "All red people are nice",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Young, blue people are quiet",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "All nice, quiet people are red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "If someone is smart and quiet then they are red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "All red people are quiet",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "All red, young people are blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "If Harry is quiet then Harry is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "action",
+   "text": "Determine the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "Base the evaluation only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "constraint",
+   "text": "Limit the answer options to True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "object",
+   "text": "The statement to evaluate: Erin is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "color_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "role_user",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [
+  "entity_trait",
+  "evaluate_truth",
+  "variable"
+ ],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n12",
+  "n14",
+  "n15",
+  "n16",
+  "n17",
+  "n18",
+  "n19"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

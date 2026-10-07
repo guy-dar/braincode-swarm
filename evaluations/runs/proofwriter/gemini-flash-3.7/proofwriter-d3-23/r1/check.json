@@ -1,0 +1,275 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of logical premises",
+   "status": "covered",
+   "matched_symbols": [
+    "propose",
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Bob is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Bob is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Gary is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Harry is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Harry is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "reasoning",
+   "text": "all young things are red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "reasoning",
+   "text": "if Harry is young then Harry is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "reasoning",
+   "text": "if Gary is rough then Gary is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "subject"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "reasoning",
+   "text": "if Gary is cold and Gary is blue then Gary is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "if something is smart and kind then it is young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "all cold things are smart",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "if something is kind then it is rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "red, kind things are cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "propose",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "base the evaluation only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "Gary is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "negation",
+   "text": "Gary is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "negation",
+    "subject"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "negation",
+  "propose",
+  "requirement",
+  "role_user",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n8",
+  "n10",
+  "n11",
+  "n15",
+  "n20"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

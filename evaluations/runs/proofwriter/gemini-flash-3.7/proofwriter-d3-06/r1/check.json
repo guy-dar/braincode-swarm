@@ -1,0 +1,386 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Dave is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Dave is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Dave is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Dave is nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Dave is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Dave is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Fiona is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Fiona is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Gary is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Gary is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Gary is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "if something is blue and big, then it is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "if Anne is smart, then Anne is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "if something is cold and smart, then it is big",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "if something is blue and round, then it is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "if something is round and smart, then it is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "if something is round and blue, then it is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "if something is big and round, then it is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "if Gary is round and smart, then Gary is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "if Anne is furry and big, then Anne is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "speech_act",
+   "text": "ask a question about the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "action",
+   "text": "evaluate the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "claim",
+   "text": "Anne is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n30",
+   "kind": "object",
+   "text": "Anne",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n31",
+   "kind": "object",
+   "text": "Dave",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "object",
+   "text": "Fiona",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n33",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n34",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n36",
+   "kind": "constraint",
+   "text": "big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "constraint",
+   "text": "furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n39",
+   "kind": "constraint",
+   "text": "nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n40",
+   "kind": "constraint",
+   "text": "round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "property_question",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n5",
+  "n11",
+  "n34"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

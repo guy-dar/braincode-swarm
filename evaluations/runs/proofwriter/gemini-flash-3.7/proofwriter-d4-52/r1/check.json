@@ -1,0 +1,458 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Anne",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Anne is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Charlie is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Charlie",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Charlie is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Charlie is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Charlie is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "negation",
+   "text": "Charlie is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject",
+    "negation",
+    "character_trait",
+    "character"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Fiona is not kind",
+   "status": "covered",
+   "matched_symbols": [
+    "has_attribute",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "negation",
+   "text": "Fiona is not kind",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait",
+    "negation",
+    "has_attribute"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "Fiona",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Gary is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "Gary",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "Gary is green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "Gary is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "Gary is white",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "if Fiona is blue, then Fiona is green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if Fiona is smart, then Fiona is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "white things are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "all green and white things are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "green things are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "reasoning",
+   "text": "round and smart things are white",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "reasoning",
+   "text": "all cold things are blue",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "reasoning",
+   "text": "if Charlie is cold and green, then Charlie is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n40",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "conditional",
+    "negation"
+   ]
+  },
+  {
+   "id": "n41",
+   "kind": "constraint",
+   "text": "base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n42",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n43",
+   "kind": "claim",
+   "text": "Fiona is not round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n44",
+   "kind": "negation",
+   "text": "Fiona is not round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "negation"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "character",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "has_attribute",
+  "lexical_label",
+  "negation",
+  "role_user",
+  "shape_round",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n5",
+  "n7",
+  "n18",
+  "n19",
+  "n22",
+  "n23",
+  "n24",
+  "n25",
+  "n28",
+  "n30",
+  "n31",
+  "n33",
+  "n35",
+  "n37",
+  "n39"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

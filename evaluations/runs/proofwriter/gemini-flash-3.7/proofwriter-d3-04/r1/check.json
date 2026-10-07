@@ -1,0 +1,405 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a logical theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Anne is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "negation",
+   "text": "Anne is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "ask"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Bob is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Bob is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Dave is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Fiona is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Fiona is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Fiona is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Smart people are big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Blue and red people are big",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "If someone is cold and not blue then they are red",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "negation",
+   "text": "not blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "All cold people are smart",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "Blue people are cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "claim",
+   "text": "If Bob is big and Bob is cold then Bob is not red",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "negation"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "negation",
+   "text": "Bob is not red",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "claim",
+   "text": "If someone is smart and not red then they are white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "negation",
+   "text": "not red",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label",
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "object",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "action",
+   "text": "Determine if a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "test_condition",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "constraint",
+   "text": "Base the evaluation only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "test_condition",
+    "decision"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "Output must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition",
+    "decision"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "object",
+   "text": "The statement 'Bob is big'",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "size_large"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "ask",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "decision",
+  "lexical_label",
+  "negation",
+  "role_user",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n7",
+  "n10",
+  "n17",
+  "n18",
+  "n21",
+  "n22",
+  "n25",
+  "n28",
+  "n29",
+  "n31",
+  "n32"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

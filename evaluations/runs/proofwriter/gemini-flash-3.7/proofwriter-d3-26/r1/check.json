@@ -1,0 +1,304 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of facts and rules as a theory",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "subject",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Bob is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Bob is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Dave is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Fiona is big",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Fiona is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Fiona is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "has_attribute"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Fiona is young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Harry is big",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Big and smart people are red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Young and red people are big",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "If someone is smart then they are red",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "All big and kind people are rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "Red and big people are kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "If someone is young then they are cold",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "All kind people are smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "All rough and smart people are young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "All big people are smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "claim",
+   "text": "Dave is not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "negation",
+   "text": "not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "has_attribute",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n6",
+  "n14",
+  "n16",
+  "n18",
+  "n21"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

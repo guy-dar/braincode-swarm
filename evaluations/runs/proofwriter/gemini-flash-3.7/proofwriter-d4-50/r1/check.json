@@ -1,0 +1,323 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of facts and rules as a theory",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "subject",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Anne is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Anne is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Anne is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "red color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Anne is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Anne is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Bob is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Bob is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Dave is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Erin is blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Erin is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Erin is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "Erin is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "If someone is smart and red, then they are blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "If someone is cold and big, then they are red",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "size_large",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "If Dave is smart and red, then Dave is big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "If Bob is round and furry, then Bob is big",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "All round people are furry",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "All big people are red",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "Smart people are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "All big people are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "Furry people are big",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "action",
+   "text": "Determine if a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n30",
+   "kind": "negation",
+   "text": "Bob is not red",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "negation",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3",
+  "n4",
+  "n8",
+  "n14",
+  "n18"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

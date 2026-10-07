@@ -1,0 +1,372 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduces a logical theory or set of premises",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Bob is white",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Fiona is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Fiona",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Fiona is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait",
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Gary is big",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Gary is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Gary is white",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Harry is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "Harry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "reasoning",
+   "text": "rule: if something is white and cold, then it is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "rule: if Bob is nice, then Bob is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "rule: if something is big and cold, then it is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "rule: if Fiona is furry, then Fiona is white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "rule: if something is big, then it is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "rule: if Bob is blue and nice, then Bob is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "rule: if something is blue and cold, then it is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "rule: if something is white, then it is big",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "speech_act",
+   "text": "asks to evaluate the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "constraint",
+   "text": "rely only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n33",
+   "kind": "claim",
+   "text": "statement to evaluate: Bob is not blue",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "negation",
+   "text": "Bob is not blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "blue color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "character",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "role_user",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n12",
+  "n16",
+  "n17",
+  "n20",
+  "n21",
+  "n22",
+  "n25",
+  "n27",
+  "n29",
+  "n35"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

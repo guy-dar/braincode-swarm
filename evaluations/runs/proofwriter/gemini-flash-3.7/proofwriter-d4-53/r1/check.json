@@ -1,0 +1,369 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "inform",
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "the bear chases the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "bear",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "the bear is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "the dog chases the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "the dog likes the bear",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "the dog likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "the dog likes the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "the lion chases the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "the lion eats the bear",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "the lion likes the bear",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "the lion likes the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "the tiger eats the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement",
+    "dog"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "the tiger is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "the tiger is young",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "the tiger likes the bear",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "if something likes the lion, it chases the lion",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "if something chases the dog and is red, the dog is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "if something likes the tiger, it likes the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "if something chases the bear and the bear is round, the bear chases the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "dog"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "if something chases the lion, it is red",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if something eats the dog, the dog chases the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "if something is round, it likes the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "all young things are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "action",
+   "text": "determine the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "base evaluation only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "claim",
+   "text": "the tiger chases the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "negation",
+   "text": "the tiger does not chase the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "ask"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "dog",
+  "has_state",
+  "inform",
+  "lexical_label",
+  "negation",
+  "role_user",
+  "shape_round",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

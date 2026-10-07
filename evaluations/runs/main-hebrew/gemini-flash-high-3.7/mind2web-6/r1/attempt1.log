@@ -1,0 +1,31 @@
+    2.8s turn 1
+   15.4s   model reply: in 1709 + cached 0, out 1770 (+1753 reasoning)
+   15.4s   tool bash: ls -la /
+   15.4s turn 2
+   17.6s   model reply: in 4224 + cached 0, out 47 (+24 reasoning)
+   17.6s   tool read: /attach/1-format-translation.md
+   17.6s turn 3
+   27.9s   model reply: in 4447 + cached 0, out 31 (+14 reasoning)
+   27.9s   tool read: /trajectory.txt
+   28.0s turn 4
+   31.4s   model reply: in 4567 + cached 0, out 177 (+146 reasoning)
+   31.4s   tool bash: python3 -c "print(repr(open('/trajectory.txt').read()))"
+   31.6s turn 5
+   34.5s   model reply: in 4767 + cached 0, out 39 (+19 reasoning)
+   34.5s   tool bash: cat -A /trajectory.txt
+   34.9s turn 6
+   41.1s   model reply: in 4910 + cached 0, out 663 (+643 reasoning)
+   41.1s   tool bash: ls -la /attach /reference
+   41.2s turn 7
+   57.2s   model reply: in 5719 + cached 0, out 1692 (+1672 reasoning)
+   57.2s   tool bash: od -c /trajectory.txt
+   57.2s turn 8
+   68.8s   model reply: in 8149 + cached 0, out 1660 (+1536 reasoning)
+   68.8s   tool write: /output/translation.md
+   68.9s turn 9
+   71.4s   model reply: in 5883 + cached 3930, out 33 (+14 reasoning)
+   71.4s   tool read: /output/translation.md
+   71.5s turn 10
+   75.6s   model reply: in 2096 + cached 7849, out 29 (+15 reasoning)
+   75.6s agent finished
+   75.6s agent finished

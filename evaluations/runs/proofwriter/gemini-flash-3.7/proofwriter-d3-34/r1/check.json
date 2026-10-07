@@ -1,0 +1,362 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of logical premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Anne",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Anne is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "constraint",
+   "text": "cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Bob is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Bob is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Gary is not blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "negation",
+   "text": "Gary is not blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Gary is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "constraint",
+   "text": "kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "Harry is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "Harry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "all smart people are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "if someone is smart then they are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "if someone is blue and smart then they are kind",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "nice people are red",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n26",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "if someone is kind and cold then they are furry",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "claim",
+   "text": "all furry and kind people are smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "claim",
+   "text": "smart and furry people are nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n30",
+   "kind": "reasoning",
+   "text": "if Gary is kind and not blue then Gary is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "negation",
+   "text": "Gary is not blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "constraint",
+   "text": "base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n36",
+   "kind": "claim",
+   "text": "Anne is not nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n37",
+   "kind": "negation",
+   "text": "Anne is not nice",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "negation",
+  "property_question",
+  "role_user",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n9",
+  "n12",
+  "n15",
+  "n20",
+  "n23",
+  "n24",
+  "n26",
+  "n32"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

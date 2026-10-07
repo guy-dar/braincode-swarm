@@ -1,0 +1,288 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a theory or set of premises",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "Dave",
+   "status": "covered",
+   "matched_symbols": [
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Dave is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Dave is green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Dave is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Dave is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Erin",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Erin is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Erin is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "Fiona",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Fiona is green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "constraint",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Fiona is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "Gary is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "Gary is white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "constraint",
+   "text": "white",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "If something is green and smart then it is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "If Erin is smart then Erin is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "All kind, furry things are green",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "All furry things are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "If something is kind then it is rough",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "All kind, rough things are smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n26",
+   "kind": "claim",
+   "text": "If something is quiet and kind then it is white",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n27",
+   "kind": "claim",
+   "text": "If something is white and smart then it is furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n28",
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n31",
+   "kind": "claim",
+   "text": "Fiona is rough",
+   "status": "declared",
+   "matched_symbols": []
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "lexical_label",
+  "requirement",
+  "role_user",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n4",
+  "n5",
+  "n12",
+  "n13",
+  "n18",
+  "n19"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

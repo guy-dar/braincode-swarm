@@ -1,0 +1,4127 @@
+{
+ "translator_id": "proofwriter-d4-45",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Introduce a set of logical premises or a theory",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.772,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.7048,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.6941,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4748,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4622,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4513,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4231,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.4136,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is big",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.6782,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6676,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6669,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6667,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6565,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.6563,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.644,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6386,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6312,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.6306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6269,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is red",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.638,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4563,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.437,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4347,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4301,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4231,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4218,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.417,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4123,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.409,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.408,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color red",
+   "source": [
+    "t1:s3"
+   ],
+   "group": "color_label",
+   "id": "n4",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7524,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is smart",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n5",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7356,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6747,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6644,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6585,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.6568,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.654,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6496,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.6474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6444,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6441,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pencil",
+     "symbol": "pencil",
+     "kind": "value",
+     "score": 0.6328,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Erin is quiet",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n6",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.7292,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.5363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.475,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.475,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4616,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4524,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4513,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4372,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4336,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.432,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is big",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n7",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6905,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.6803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6692,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6675,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.665,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.6591,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6587,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.6363,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.6343,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is blue",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n8",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6998,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6771,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.6758,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6635,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.6491,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6428,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6416,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6412,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.6384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.6348,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6305,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color blue",
+   "source": [
+    "t1:s7"
+   ],
+   "group": "color_label",
+   "id": "n9",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7663,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5847,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3453,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.3051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_sauvignon_blanc",
+     "symbol": "grape_sauvignon_blanc",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.2932,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is cold",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n10",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7293,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3276,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3125,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3095,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3068,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.3057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3022,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3004,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.2971,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.2951,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.2932,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.2917,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n11",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.7362,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6955,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6749,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.6701,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6618,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6583,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.6551,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6533,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6445,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.642,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/code-value/path_ipython_core_magics_basic_py",
+     "symbol": "path_ipython_core_magics_basic_py",
+     "kind": "value",
+     "score": 0.6393,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6386,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is red",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n12",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7075,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6826,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.669,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6631,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6501,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6456,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6334,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6315,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6225,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.6172,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color red",
+   "source": [
+    "t1:s10"
+   ],
+   "group": "color_label",
+   "id": "n13",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7524,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is smart",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n14",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7041,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6879,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6839,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6803,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.6791,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/constitutional_ai",
+     "symbol": "constitutional_ai",
+     "kind": "value",
+     "score": 0.6742,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6693,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6612,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6524,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6436,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.6421,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6413,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If Bob is quiet, then Bob is cold",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n15",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7167,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4443,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3353,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3348,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3287,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3179,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3087,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3033,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3021,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3009,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.2977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.2967,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.292,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If someone is red, then they are quiet",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n16",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.6384,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.4729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4511,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4423,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4387,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4201,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4085,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4065,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4054,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.3957,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.3941,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.3936,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3924,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color red",
+   "source": [
+    "t1:s13"
+   ],
+   "group": "color_label",
+   "id": "n17",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7524,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If someone is red and quiet, then they are cold",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n18",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7233,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4284,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.3511,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3346,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3287,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3277,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3111,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.3095,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3076,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3055,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3017,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.2947,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2916,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color red",
+   "source": [
+    "t1:s14"
+   ],
+   "group": "color_label",
+   "id": "n19",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7524,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "All kind people are big",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n20",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.6836,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4707,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4677,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4534,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.4461,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4432,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.4331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4252,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.4249,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.4205,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If someone is red and blue, then they are kind",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n21",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7036,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.6306,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4619,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/stereotype",
+     "symbol": "stereotype",
+     "kind": "claim_relation",
+     "score": 0.4409,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4309,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4198,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.419,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.4113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4072,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.4054,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4037,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4018,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color red",
+   "source": [
+    "t1:s16"
+   ],
+   "group": "color_label",
+   "id": "n22",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7524,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.6118,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/indicator",
+     "symbol": "indicator",
+     "kind": "constructor",
+     "score": 0.4456,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3344,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.3342,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.306,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.3018,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.2947,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.2923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.2825,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lamp",
+     "symbol": "lamp",
+     "kind": "value",
+     "score": 0.2816,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color blue",
+   "source": [
+    "t1:s16"
+   ],
+   "group": "color_label",
+   "id": "n23",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7663,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5847,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3453,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.3051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_sauvignon_blanc",
+     "symbol": "grape_sauvignon_blanc",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.2932,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "All cold and quiet people are blue",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n24",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7188,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.488,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.3409,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3323,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3234,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.2918,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.2852,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2804,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.2737,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/bionic_person",
+     "symbol": "bionic_person",
+     "kind": "constructor",
+     "score": 0.2716,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.2667,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color blue",
+   "source": [
+    "t1:s17"
+   ],
+   "group": "color_label",
+   "id": "n25",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7663,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5847,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3453,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.3051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_sauvignon_blanc",
+     "symbol": "grape_sauvignon_blanc",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.2932,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Cold and big people are kind",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n26",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.6968,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.358,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.3336,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3292,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.3078,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3075,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.3012,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.2972,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2894,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/group_size",
+     "symbol": "group_size",
+     "kind": "constructor",
+     "score": 0.2883,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.2862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/foreigners",
+     "symbol": "foreigners",
+     "kind": "value",
+     "score": 0.2844,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.2759,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If Erin is big, then Erin is cold",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n27",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.71,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4362,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3394,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3277,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.3198,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.3153,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3149,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.3086,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3083,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.3017,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3007,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2957,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.2952,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If someone is cold and blue, then they are smart",
+   "source": [
+    "t1:s20"
+   ],
+   "id": "n28",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7042,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4742,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4419,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3724,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.3526,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3285,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.3235,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3214,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3095,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.3029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2968,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.2965,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.2949,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.2941,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "the color blue",
+   "source": [
+    "t1:s20"
+   ],
+   "group": "color_label",
+   "id": "n29",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7663,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.5847,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_merlot",
+     "symbol": "grape_merlot",
+     "kind": "value",
+     "score": 0.3453,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/yakuza",
+     "symbol": "yakuza",
+     "kind": "value",
+     "score": 0.3442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3165,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.3114,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.3051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3026,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dried_fruit",
+     "symbol": "dried_fruit",
+     "kind": "value",
+     "score": 0.3002,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_short_text",
+     "symbol": "art_short_text",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_sauvignon_blanc",
+     "symbol": "grape_sauvignon_blanc",
+     "kind": "value",
+     "score": 0.2986,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.2964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.2932,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown",
+   "source": [
+    "t1:s21"
+   ],
+   "id": "n30",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.7481,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.692,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.5126,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.3709,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.3623,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.3517,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.3415,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.3383,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.3241,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/controversial",
+     "symbol": "controversial",
+     "kind": "claim_relation",
+     "score": 0.3175,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/express_interest",
+     "symbol": "express_interest",
+     "kind": "speech_act",
+     "score": 0.3163,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/acknowledge",
+     "symbol": "acknowledge",
+     "kind": "speech_act",
+     "score": 0.3108,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3036,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "source": [
+    "t1:s21"
+   ],
+   "id": "n31",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.6861,
+     "reasons": [
+      "exact",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.5541,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4729,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4389,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4346,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4324,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4247,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.416,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4151,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.4143,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.4098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_include_character_attribute_list",
+     "symbol": "constraint_include_character_attribute_list",
+     "kind": "composite",
+     "score": 0.4088,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is kind",
+   "source": [
+    "t1:s22"
+   ],
+   "id": "n32",
+   "context": "Theory: Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart. Question: Based only on the theory, is the following statement True, False, or Unknown? Gary is kind.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7069,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.6907,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4452,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4169,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.413,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4104,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4103,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4094,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4043,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3981,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3926,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

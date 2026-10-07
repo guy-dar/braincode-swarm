@@ -1,0 +1,3262 @@
+{
+ "translator_id": "proofwriter-d4-63",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Introduce a set of facts and rules as a theory",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7571,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.691,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6857,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.4984,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4524,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4523,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4523,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4495,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/correct",
+     "symbol": "correct",
+     "kind": "speech_act",
+     "score": 0.4327,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/trace-relations-general",
+     "symbol": "rule_trace_relations_general",
+     "kind": "rule",
+     "score": 0.4222,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.4203,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.42,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is round",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.7147,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3353,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3352,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3224,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_oval",
+     "symbol": "shape_oval",
+     "kind": "value",
+     "score": 0.3171,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_pickup_lines",
+     "symbol": "topic_pickup_lines",
+     "kind": "value",
+     "score": 0.3156,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.3153,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.315,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3145,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3139,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.3136,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.3094,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Bob",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n3",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.662,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bread",
+     "symbol": "bread",
+     "kind": "value",
+     "score": 0.6245,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.5149,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/behind",
+     "symbol": "behind",
+     "kind": "value",
+     "score": 0.4917,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_professor",
+     "symbol": "role_professor",
+     "kind": "value",
+     "score": 0.4647,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4601,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4581,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4505,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.4365,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4346,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_spider_man_2",
+     "symbol": "topic_spider_man_2",
+     "kind": "value",
+     "score": 0.4136,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.4128,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is big",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n4",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.7194,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.4811,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4696,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4591,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.4568,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4533,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.45,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4482,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4368,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.4326,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_medium",
+     "symbol": "size_medium",
+     "kind": "value",
+     "score": 0.4302,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4236,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Dave",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n5",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.6707,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6451,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4805,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.4485,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.4379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3911,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.3884,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_jazz_piano",
+     "symbol": "topic_jazz_piano",
+     "kind": "value",
+     "score": 0.3873,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/coffee_maker",
+     "symbol": "coffee_maker",
+     "kind": "value",
+     "score": 0.3869,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_sink",
+     "symbol": "resource_sink",
+     "kind": "value",
+     "score": 0.3868,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/location-name/liberal_onsen",
+     "symbol": "liberal_onsen",
+     "kind": "value",
+     "score": 0.3867,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.3772,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is young",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n6",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.7178,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.7122,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.7027,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6964,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.6956,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6909,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6749,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6606,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6543,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.6442,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.6395,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Fiona is quiet",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n7",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.7075,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.7037,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6826,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.6777,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6767,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6765,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6557,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6515,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6502,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6378,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6213,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6211,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Fiona",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n8",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6537,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4903,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.479,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/yarn",
+     "symbol": "yarn",
+     "kind": "value",
+     "score": 0.4764,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4743,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/bowtie",
+     "symbol": "bowtie",
+     "kind": "value",
+     "score": 0.4605,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_sister",
+     "symbol": "role_sister",
+     "kind": "value",
+     "score": 0.4575,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/recipient-value/role_mother",
+     "symbol": "role_mother",
+     "kind": "value",
+     "score": 0.4487,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.4394,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4384,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4379,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_story",
+     "symbol": "art_story",
+     "kind": "value",
+     "score": 0.4246,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is cold",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n9",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7263,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3305,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.328,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3199,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3132,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3122,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.308,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.2998,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.2968,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.2956,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.2888,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "Gary",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n10",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.6413,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.5016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/on",
+     "symbol": "on",
+     "kind": "value",
+     "score": 0.4915,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4815,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/next_to",
+     "symbol": "next_to",
+     "kind": "value",
+     "score": 0.4705,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.47,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.4376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_politics",
+     "symbol": "topic_politics",
+     "kind": "value",
+     "score": 0.4303,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_greatest_cricketer_of_all_time",
+     "symbol": "topic_greatest_cricketer_of_all_time",
+     "kind": "composite",
+     "score": 0.4254,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.4231,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is red",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n11",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.703,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.689,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6838,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.6832,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.666,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6599,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6439,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6429,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.6356,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.6299,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.6278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.6259,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "red",
+   "source": [
+    "t1:s7"
+   ],
+   "group": "color_label",
+   "id": "n12",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.6872,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.4646,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4578,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_current_events",
+     "symbol": "topic_current_events",
+     "kind": "value",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/pear",
+     "symbol": "pear",
+     "kind": "value",
+     "score": 0.4057,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.4003,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3961,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_pinot_noir",
+     "symbol": "grape_pinot_noir",
+     "kind": "value",
+     "score": 0.3846,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_heater",
+     "symbol": "resource_heater",
+     "kind": "value",
+     "score": 0.3828,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/gift",
+     "symbol": "gift",
+     "kind": "value",
+     "score": 0.3823,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ginger",
+     "symbol": "ginger",
+     "kind": "value",
+     "score": 0.381,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mug",
+     "symbol": "mug",
+     "kind": "value",
+     "score": 0.3777,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is young",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n13",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.7259,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.4828,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.4697,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.4599,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4575,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.4564,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4418,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4321,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4293,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4287,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4265,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "All cold things are big",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n14",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7422,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3151,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.3119,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3088,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3075,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3047,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3005,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.299,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.2952,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.2946,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.2936,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.2929,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2858,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "If something is quiet then it is young",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n15",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.713,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.5035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.4947,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4944,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.486,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4772,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.4763,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4666,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4632,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.46,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4592,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4564,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.3859,
+     "reasons": [
+      "exact"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Round, cold things are quiet",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n16",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7421,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.6703,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/topic-value/topic_baldurs_gate_3",
+     "symbol": "topic_baldurs_gate_3",
+     "kind": "value",
+     "score": 0.3282,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.3168,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/in_front_of",
+     "symbol": "in_front_of",
+     "kind": "value",
+     "score": 0.3153,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3142,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3097,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3005,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3004,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.2988,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/nighttime",
+     "symbol": "nighttime",
+     "kind": "value",
+     "score": 0.2953,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.2941,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/time-of-day-value/daytime",
+     "symbol": "daytime",
+     "kind": "value",
+     "score": 0.2936,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Young, big things are green",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n17",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.6884,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.4579,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.4495,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4432,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4374,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4228,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4148,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4109,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4055,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.4032,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4002,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "green",
+   "source": [
+    "t1:s12"
+   ],
+   "group": "color_label",
+   "id": "n18",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.746,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.6872,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.6806,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4048,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_tannin",
+     "symbol": "grape_tannin",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3789,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "All big, green things are round",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n19",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/shape-value/shape_round",
+     "symbol": "shape_round",
+     "kind": "value",
+     "score": 0.7112,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.5052,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3307,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_rectangular",
+     "symbol": "shape_rectangular",
+     "kind": "value",
+     "score": 0.3272,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.3244,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.3237,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.3231,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.318,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3133,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_triangular",
+     "symbol": "shape_triangular",
+     "kind": "value",
+     "score": 0.312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3092,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.3091,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.3066,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "object",
+   "text": "green",
+   "source": [
+    "t1:s13"
+   ],
+   "group": "color_label",
+   "id": "n20",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/lettuce",
+     "symbol": "lettuce",
+     "kind": "value",
+     "score": 0.746,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.6872,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/apple",
+     "symbol": "apple",
+     "kind": "value",
+     "score": 0.6806,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_thompson_seedless",
+     "symbol": "grape_thompson_seedless",
+     "kind": "value",
+     "score": 0.428,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4245,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/left_of",
+     "symbol": "left_of",
+     "kind": "value",
+     "score": 0.4189,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/shape-value/shape_square",
+     "symbol": "shape_square",
+     "kind": "value",
+     "score": 0.4177,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4132,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_day",
+     "symbol": "unit_day",
+     "kind": "value",
+     "score": 0.4048,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/resource_chiller",
+     "symbol": "resource_chiller",
+     "kind": "value",
+     "score": 0.3923,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/grape_tannin",
+     "symbol": "grape_tannin",
+     "kind": "value",
+     "score": 0.3886,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.3789,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/locale-value/locale_en_gb",
+     "symbol": "locale_en_gb",
+     "kind": "value",
+     "score": 0.3749,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Young things are cold",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n21",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7279,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/constraint-value/constraint_17_plus",
+     "symbol": "constraint_17_plus",
+     "kind": "value",
+     "score": 0.338,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.3299,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.3206,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/mittens",
+     "symbol": "mittens",
+     "kind": "value",
+     "score": 0.3129,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.3116,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.3085,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.3075,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.3017,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.2993,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2979,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.2967,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.2956,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Determine the truth value of a statement",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n22",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.7568,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.589,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4084,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.3855,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3795,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.3492,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.3412,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/calculation",
+     "symbol": "calculation",
+     "kind": "constructor",
+     "score": 0.3367,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.3366,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3325,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.3137,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.311,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/example/d",
+     "symbol": "example_d_record_an_actual_test_outcome_without_asserting_overall_correctness",
+     "kind": "example",
+     "score": 0.3057,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Base the evaluation strictly on the provided theory",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n23",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.6752,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.5645,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5229,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4981,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4964,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/conjunction",
+     "symbol": "conjunction",
+     "kind": "constructor",
+     "score": 0.489,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.481,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4766,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.463,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.462,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4619,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/regression_case",
+     "symbol": "regression_case",
+     "kind": "constructor",
+     "score": 0.4541,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n24",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.7108,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4313,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4288,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/metric-value/metric_order_late",
+     "symbol": "metric_order_late",
+     "kind": "value",
+     "score": 0.4227,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4219,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4157,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.4148,
+     "reasons": [
+      "exact"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.414,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/confirm",
+     "symbol": "confirm",
+     "kind": "speech_act",
+     "score": 0.3837,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.3789,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.3762,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Bob is not big",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n25",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.7051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.6905,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6856,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.6741,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.6717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6679,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.6662,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6603,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6526,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6475,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.6382,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.6305,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "Bob is not big",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n26",
+   "context": "Theory: Bob is round. Dave is big. Dave is young. Fiona is quiet. Gary is cold. Gary is red. Gary is young. All cold things are big. If something is quiet then it is young. Round, cold things are quiet. Young, big things are green. All big, green things are round. Young things are cold. Question: Based only on the theory, is the following statement True, False, or Unknown? Bob is not big.",
+   "candidates": [
+    {
+     "id": "v19/product-attribute-value/size_small",
+     "symbol": "size_small",
+     "kind": "value",
+     "score": 0.7051,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.7036,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.6807,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/support-primitives-general",
+     "symbol": "rule_support_primitives_general",
+     "kind": "rule",
+     "score": 0.6741,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_tall",
+     "symbol": "size_tall",
+     "kind": "value",
+     "score": 0.6717,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_large",
+     "symbol": "size_large",
+     "kind": "value",
+     "score": 0.6662,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_sentence",
+     "symbol": "unit_sentence",
+     "kind": "value",
+     "score": 0.6305,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_medium",
+     "symbol": "size_medium",
+     "kind": "value",
+     "score": 0.63,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.6279,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/size_queen",
+     "symbol": "size_queen",
+     "kind": "value",
+     "score": 0.6259,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.6255,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.6253,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+<|user|>Prove or disprove: Anne is rough and young -> Dave is furry.<|assistant|>1. Anne is rough and young -> Dave is furry (proposition)
+2. Anne is rough and young -> Anne is rough (deduction from 1)
+3. Anne is rough and young -> Anne is young (deduction from 1)
+4. Anne is rough -> Anne is rough (reiteration)
+5. Anne is young -> Anne is young (reiteration)
+6. Dave is furry (from 1)
+Therefore, Anne is rough and young -> Dave is furry (reiteration of 1)

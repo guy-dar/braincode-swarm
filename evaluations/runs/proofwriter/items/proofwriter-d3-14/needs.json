@@ -1,0 +1,3525 @@
+{
+ "translator_id": "proofwriter-d3-14",
+ "needs": [
+  {
+   "kind": "speech_act",
+   "text": "Introduce a set of rules and facts as a theory",
+   "source": [
+    "t1:s1"
+   ],
+   "id": "n1",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/operation-vocabulary/respond",
+     "symbol": "respond",
+     "kind": "speech_act",
+     "score": 0.7508,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.6625,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.5146,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/ask",
+     "symbol": "ask",
+     "kind": "speech_act",
+     "score": 0.4631,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/propose",
+     "symbol": "propose",
+     "kind": "speech_act",
+     "score": 0.4612,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/structural-constructs",
+     "symbol": "rule_structural_constructs",
+     "kind": "rule",
+     "score": 0.4601,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/example_of",
+     "symbol": "example_of",
+     "kind": "claim_relation",
+     "score": 0.458,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/inform",
+     "symbol": "inform",
+     "kind": "speech_act",
+     "score": 0.4568,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.4496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/trace-relations-general",
+     "symbol": "rule_trace_relations_general",
+     "kind": "rule",
+     "score": 0.4494,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4437,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4409,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Charlie is kind",
+   "source": [
+    "t1:s2"
+   ],
+   "id": "n2",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.8003,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.476,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.461,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4482,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4402,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4347,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.4257,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4227,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4211,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.4182,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.4156,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Charlie is nice",
+   "source": [
+    "t1:s3"
+   ],
+   "id": "n3",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.8009,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4902,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4734,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/condition_perfect",
+     "symbol": "condition_perfect",
+     "kind": "value",
+     "score": 0.4721,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4648,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4646,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4548,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4464,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_character_profile",
+     "symbol": "art_character_profile",
+     "kind": "value",
+     "score": 0.4374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4337,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4334,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4301,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Charlie is quiet",
+   "source": [
+    "t1:s4"
+   ],
+   "id": "n4",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.7972,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/unaware",
+     "symbol": "unaware",
+     "kind": "claim_relation",
+     "score": 0.5172,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4757,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.4691,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4604,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4515,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4478,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4438,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4308,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4291,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.417,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/constrained_by",
+     "symbol": "constrained_by",
+     "kind": "claim_relation",
+     "score": 0.4135,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is rough",
+   "source": [
+    "t1:s5"
+   ],
+   "id": "n5",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.7107,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.6996,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.6848,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.6802,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.6769,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.6643,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6608,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.6594,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.6542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.6518,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/descriptive-value/potential_harms",
+     "symbol": "potential_harms",
+     "kind": "value",
+     "score": 0.6429,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Dave is white",
+   "source": [
+    "t1:s6"
+   ],
+   "id": "n6",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.6812,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4733,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4711,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4467,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4447,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4375,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.435,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.427,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4175,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4161,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/causes",
+     "symbol": "causes",
+     "kind": "claim_relation",
+     "score": 0.4103,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4083,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "white color",
+   "source": [
+    "t1:s6"
+   ],
+   "group": "color_label",
+   "id": "n7",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7191,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4348,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/product-attribute-value",
+     "symbol": "rule_category_product_attribute_value",
+     "kind": "category_rule",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3967,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Erin is nice",
+   "source": [
+    "t1:s7"
+   ],
+   "id": "n8",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.8008,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.5193,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.5045,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.496,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4884,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4721,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/condition_perfect",
+     "symbol": "condition_perfect",
+     "kind": "value",
+     "score": 0.4618,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4607,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.4557,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4546,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.4542,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/artifact-value/art_social_post",
+     "symbol": "art_social_post",
+     "kind": "value",
+     "score": 0.4522,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Gary is not white",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n9",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/exempt_from",
+     "symbol": "exempt_from",
+     "kind": "claim_relation",
+     "score": 0.7,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.5002,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4876,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.466,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4634,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/prohibited",
+     "symbol": "prohibited",
+     "kind": "claim_relation",
+     "score": 0.4568,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4502,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4453,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4418,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outcome",
+     "symbol": "outcome",
+     "kind": "claim_relation",
+     "score": 0.4399,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.438,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "not white",
+   "source": [
+    "t1:s8"
+   ],
+   "id": "n10",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.754,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.6136,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.4211,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4119,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.4116,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4098,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.4029,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/gender_unisex",
+     "symbol": "gender_unisex",
+     "kind": "value",
+     "score": 0.3921,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3874,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.3852,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3723,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "white color",
+   "source": [
+    "t1:s8"
+   ],
+   "group": "color_label",
+   "id": "n11",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7191,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4348,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/product-attribute-value",
+     "symbol": "rule_category_product_attribute_value",
+     "kind": "category_rule",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3967,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If something is cold then it is not furry",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n12",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7473,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.4912,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4683,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4009,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3588,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3354,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/state-value",
+     "symbol": "rule_category_state_value",
+     "kind": "category_rule",
+     "score": 0.3345,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.3312,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3159,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.3126,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.3096,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3085,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3044,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.2993,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "not furry",
+   "source": [
+    "t1:s9"
+   ],
+   "id": "n13",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.7535,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.4634,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.4432,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dog",
+     "symbol": "dog",
+     "kind": "value",
+     "score": 0.4331,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/animal_label",
+     "symbol": "animal_label",
+     "kind": "lexical_group",
+     "score": 0.4154,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4097,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.4085,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.4062,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3908,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3757,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/search-value/cat_game",
+     "symbol": "cat_game",
+     "kind": "value",
+     "score": 0.3622,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3601,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If Charlie is quiet then Charlie is nice",
+   "source": [
+    "t1:s10"
+   ],
+   "id": "n14",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.6679,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.5214,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4479,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4403,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4259,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4235,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4234,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4216,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.41,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4072,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4035,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4024,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.3931,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Kind things are white",
+   "source": [
+    "t1:s11"
+   ],
+   "id": "n15",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/entity-name/sultana",
+     "symbol": "sultana",
+     "kind": "value",
+     "score": 0.6164,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/raisin",
+     "symbol": "raisin",
+     "kind": "value",
+     "score": 0.5744,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4487,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4424,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/product-attribute-value",
+     "symbol": "rule_category_product_attribute_value",
+     "kind": "category_rule",
+     "score": 0.4308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4256,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4178,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4165,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/char_female",
+     "symbol": "char_female",
+     "kind": "composite",
+     "score": 0.4141,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4117,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4113,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.4064,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "white color",
+   "source": [
+    "t1:s11"
+   ],
+   "group": "color_label",
+   "id": "n16",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7191,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4348,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/product-attribute-value",
+     "symbol": "rule_category_product_attribute_value",
+     "kind": "category_rule",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3967,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Nice things are kind",
+   "source": [
+    "t1:s12"
+   ],
+   "id": "n17",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.6934,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.5517,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4802,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4777,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4767,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.4703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/condition_perfect",
+     "symbol": "condition_perfect",
+     "kind": "value",
+     "score": 0.4593,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4474,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4401,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.4391,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4357,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4333,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If something is rough then it is kind",
+   "source": [
+    "t1:s13"
+   ],
+   "id": "n18",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.656,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/lexical-group/object_label",
+     "symbol": "object_label",
+     "kind": "lexical_group",
+     "score": 0.623,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.5301,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.4584,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4483,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.4439,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.4376,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/has_style",
+     "symbol": "has_style",
+     "kind": "claim_relation",
+     "score": 0.4281,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_silly",
+     "symbol": "tone_silly",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_profanity",
+     "symbol": "topic_profanity",
+     "kind": "composite",
+     "score": 0.4144,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.409,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.4082,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/topic_school_work_routine",
+     "symbol": "topic_school_work_routine",
+     "kind": "composite",
+     "score": 0.4057,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "Cold and quiet things are rough",
+   "source": [
+    "t1:s14"
+   ],
+   "id": "n19",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.741,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.4935,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.368,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3433,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.3279,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3143,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3121,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.3059,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.3016,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/event_camper_in_sludge_pit",
+     "symbol": "event_camper_in_sludge_pit",
+     "kind": "composite",
+     "score": 0.301,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2977,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.2958,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.2949,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "All cold things are quiet",
+   "source": [
+    "t1:s15"
+   ],
+   "id": "n20",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7601,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.5007,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/unit-value/unit_fahrenheit",
+     "symbol": "unit_fahrenheit",
+     "kind": "value",
+     "score": 0.3962,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3473,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3243,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.3222,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3053,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/ice_cream",
+     "symbol": "ice_cream",
+     "kind": "value",
+     "score": 0.3048,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.3019,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2984,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.2912,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/chill",
+     "symbol": "chill",
+     "kind": "operation",
+     "score": 0.2862,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.2836,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If something is white and nice then it is cold",
+   "source": [
+    "t1:s16"
+   ],
+   "id": "n21",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.7398,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4519,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3538,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/state-value",
+     "symbol": "rule_category_state_value",
+     "kind": "category_rule",
+     "score": 0.3408,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.3279,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3262,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.3227,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3175,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.307,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.3038,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.3003,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/heat",
+     "symbol": "heat",
+     "kind": "operation",
+     "score": 0.2963,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/entity-name/cinnamon",
+     "symbol": "cinnamon",
+     "kind": "value",
+     "score": 0.2921,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "white color",
+   "source": [
+    "t1:s16"
+   ],
+   "group": "color_label",
+   "id": "n22",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/lexical-group/color_label",
+     "symbol": "color_label",
+     "kind": "lexical_group",
+     "score": 0.7191,
+     "reasons": [
+      "exact",
+      "group-tag",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/product-attribute-value/color_pink",
+     "symbol": "color_pink",
+     "kind": "value",
+     "score": 0.4939,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/outshines",
+     "symbol": "outshines",
+     "kind": "constructor",
+     "score": 0.4692,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4446,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4348,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/illuminates",
+     "symbol": "illuminates",
+     "kind": "constructor",
+     "score": 0.4296,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/duration-unit-value/unit_word",
+     "symbol": "unit_word",
+     "kind": "value",
+     "score": 0.4232,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/entity-name/dulce_de_leche",
+     "symbol": "dulce_de_leche",
+     "kind": "value",
+     "score": 0.4092,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/visual_contrast",
+     "symbol": "visual_contrast",
+     "kind": "constructor",
+     "score": 0.4076,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/rule/category/product-attribute-value",
+     "symbol": "rule_category_product_attribute_value",
+     "kind": "category_rule",
+     "score": 0.4061,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4033,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_liberation_theme",
+     "symbol": "constraint_exclude_liberation_theme",
+     "kind": "composite",
+     "score": 0.3967,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reasoning",
+   "text": "If Erin is cold then Erin is nice",
+   "source": [
+    "t1:s17"
+   ],
+   "id": "n23",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/state-value/state_cold",
+     "symbol": "state_cold",
+     "kind": "value",
+     "score": 0.72,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/then",
+     "symbol": "then",
+     "kind": "link",
+     "score": 0.4482,
+     "reasons": [
+      "exact",
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3536,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/event_sadie_adler_unmasking",
+     "symbol": "event_sadie_adler_unmasking",
+     "kind": "composite",
+     "score": 0.3374,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.3343,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.327,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/contrast",
+     "symbol": "contrast",
+     "kind": "link",
+     "score": 0.3165,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/associated_with",
+     "symbol": "associated_with",
+     "kind": "claim_relation",
+     "score": 0.3103,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/revises",
+     "symbol": "revises",
+     "kind": "link",
+     "score": 0.3077,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/well_wishes",
+     "symbol": "well_wishes",
+     "kind": "constructor",
+     "score": 0.2955,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/spatial-relation/right_of",
+     "symbol": "right_of",
+     "kind": "value",
+     "score": 0.2952,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.294,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_warm",
+     "symbol": "state_warm",
+     "kind": "value",
+     "score": 0.2888,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "action",
+   "text": "Determine the truth value of a statement",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n24",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/statement",
+     "symbol": "statement",
+     "kind": "claim_relation",
+     "score": 0.7435,
+     "reasons": [
+      "exact",
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.5698,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.4085,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/run_tests",
+     "symbol": "run_tests",
+     "kind": "operation",
+     "score": 0.392,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.3681,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.3606,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/considered",
+     "symbol": "considered",
+     "kind": "claim_relation",
+     "score": 0.351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.349,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.3476,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/validates_parameter",
+     "symbol": "validates_parameter",
+     "kind": "claim_relation",
+     "score": 0.3405,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/has_style",
+     "symbol": "has_style",
+     "kind": "claim_relation",
+     "score": 0.3281,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/obligation",
+     "symbol": "obligation",
+     "kind": "constructor",
+     "score": 0.3216,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/block_evaluation",
+     "symbol": "block_evaluation",
+     "kind": "constructor",
+     "score": 0.3183,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Base the determination only on the provided theory",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n25",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/extract",
+     "symbol": "extract",
+     "kind": "operation",
+     "score": 0.675,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/subject",
+     "symbol": "subject",
+     "kind": "constructor",
+     "score": 0.5652,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/distinguish",
+     "symbol": "distinguish",
+     "kind": "constructor",
+     "score": 0.5205,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.5112,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/supports",
+     "symbol": "supports",
+     "kind": "link",
+     "score": 0.4977,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.4949,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4913,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4835,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4696,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4674,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4608,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4576,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "constraint",
+   "text": "Output must be True, False, or Unknown",
+   "source": [
+    "t1:s18"
+   ],
+   "id": "n26",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/composite/constraint_realistic",
+     "symbol": "constraint_realistic",
+     "kind": "composite",
+     "score": 0.7475,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/assert_multinomial_scorer",
+     "symbol": "assert_multinomial_scorer",
+     "kind": "composite",
+     "score": 0.5266,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/test_condition",
+     "symbol": "test_condition",
+     "kind": "constructor",
+     "score": 0.5247,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_respectful",
+     "symbol": "constraint_respectful",
+     "kind": "composite",
+     "score": 0.4935,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/conditional",
+     "symbol": "conditional",
+     "kind": "constructor",
+     "score": 0.4819,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.4696,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_budget_limited",
+     "symbol": "constraint_budget_limited",
+     "kind": "composite",
+     "score": 0.4569,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/failure",
+     "symbol": "failure",
+     "kind": "claim_relation",
+     "score": 0.4543,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_comprehensive",
+     "symbol": "constraint_comprehensive",
+     "kind": "composite",
+     "score": 0.4487,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/decision",
+     "symbol": "decision",
+     "kind": "constructor",
+     "score": 0.4351,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_beginner",
+     "symbol": "constraint_beginner",
+     "kind": "composite",
+     "score": 0.4263,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_single_choice",
+     "symbol": "constraint_single_choice",
+     "kind": "composite",
+     "score": 0.4178,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "claim",
+   "text": "Charlie is not rough",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n27",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.7933,
+     "reasons": [
+      "keyword",
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/enables",
+     "symbol": "enables",
+     "kind": "claim_relation",
+     "score": 0.4742,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/recommended",
+     "symbol": "recommended",
+     "kind": "claim_relation",
+     "score": 0.4561,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/leads_to",
+     "symbol": "leads_to",
+     "kind": "claim_relation",
+     "score": 0.4469,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/character-property-value",
+     "symbol": "rule_category_character_property_value",
+     "kind": "category_rule",
+     "score": 0.4404,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/important",
+     "symbol": "important",
+     "kind": "claim_relation",
+     "score": 0.4378,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.429,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/character_trait",
+     "symbol": "character_trait",
+     "kind": "constructor",
+     "score": 0.4278,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/motivated_by",
+     "symbol": "motivated_by",
+     "kind": "claim_relation",
+     "score": 0.4248,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/descriptive-value",
+     "symbol": "rule_category_descriptive_value",
+     "kind": "category_rule",
+     "score": 0.4236,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_persuasive",
+     "symbol": "style_persuasive",
+     "kind": "value",
+     "score": 0.4224,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/occurred_recently",
+     "symbol": "occurred_recently",
+     "kind": "claim_relation",
+     "score": 0.4167,
+     "reasons": [
+      "keyword"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "negation",
+   "text": "not rough",
+   "source": [
+    "t1:s19"
+   ],
+   "id": "n28",
+   "context": "Theory: Charlie is kind. Charlie is nice. Charlie is quiet. Dave is rough. Dave is white. Erin is nice. Gary is not white. If something is cold then it is not furry. If Charlie is quiet then Charlie is nice. Kind things are white. Nice things are kind. If something is rough then it is kind. Cold, quiet things are rough. All cold things are quiet. If something is white and nice then it is cold. If Erin is cold then Erin is nice. Question: Based only on the theory, is the following statement True, False, or Unknown? Charlie is not rough.",
+   "candidates": [
+    {
+     "id": "v19/support/negation",
+     "symbol": "negation",
+     "kind": "constructor",
+     "score": 0.7284,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/support/weather_condition",
+     "symbol": "weather_condition",
+     "kind": "constructor",
+     "score": 0.6924,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/style-value/style_catchy",
+     "symbol": "style_catchy",
+     "kind": "value",
+     "score": 0.6871,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/comfortable",
+     "symbol": "comfortable",
+     "kind": "claim_relation",
+     "score": 0.684,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/state-value/state_dirty",
+     "symbol": "state_dirty",
+     "kind": "value",
+     "score": 0.6703,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/exclude",
+     "symbol": "exclude",
+     "kind": "constructor",
+     "score": 0.6604,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/operation-vocabulary/decline",
+     "symbol": "decline",
+     "kind": "speech_act",
+     "score": 0.6535,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/composite/constraint_exclude_flowery_language",
+     "symbol": "constraint_exclude_flowery_language",
+     "kind": "composite",
+     "score": 0.653,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_polite",
+     "symbol": "tone_polite",
+     "kind": "value",
+     "score": 0.6397,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/tone-value/tone_empathetic",
+     "symbol": "tone_empathetic",
+     "kind": "value",
+     "score": 0.6308,
+     "reasons": [
+      "semantic"
+     ]
+    },
+    {
+     "id": "v19/support/rejects",
+     "symbol": "rejects",
+     "kind": "link",
+     "score": 0.6263,
+     "reasons": [
+      "keyword"
+     ]
+    },
+    {
+     "id": "v19/rule/category/shape-value",
+     "symbol": "rule_category_shape_value",
+     "kind": "category_rule",
+     "score": 0.6226,
+     "reasons": [
+      "semantic"
+     ]
+    }
+   ]
+  }
+ ]
+}

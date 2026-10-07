@@ -1,0 +1,423 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "inform",
+    "subject",
+    "conjunction",
+    "activity"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "the bald eagle chases the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "bald eagle",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "the bald eagle chases the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "the bald eagle is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "constraint",
+   "text": "red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "the bald eagle is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "the bald eagle needs the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement",
+    "statement"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "lion",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "dog"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "the bald eagle sees the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "the dog does not chase the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "negation",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "negation",
+   "text": "the dog does not chase the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "dog"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "the dog is not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "negation",
+   "text": "the dog is not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "negation",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "the dog sees the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "the dog sees the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "the lion is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "the lion needs the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement",
+    "statement"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "the lion needs the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "the lion needs the tiger",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "the lion sees the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "claim",
+   "text": "the tiger is red",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "statement",
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "if the lion sees the bald eagle and the bald eagle chases the tiger, then the tiger is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "if someone sees the lion and the lion chases the dog, then the dog needs the lion",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "constraint_single_choice",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "reasoning",
+   "text": "if someone is kind and chases the bald eagle, then the bald eagle needs the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "constraint_single_choice",
+    "ask",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "if someone sees the lion and the lion is rough, then they chase the lion",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "if someone needs the dog and the dog is kind, then the dog sees the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "animal_label",
+    "constraint_single_choice",
+    "ask"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "reasoning",
+   "text": "if someone sees the bald eagle and the bald eagle chases the lion, then the lion is red",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "if someone is red and rough, then they see the lion",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "if someone needs the lion, then the lion needs the dog",
+   "status": "covered",
+   "matched_symbols": [
+    "dog",
+    "constraint_single_choice",
+    "requirement",
+    "ask"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "if someone is young, then they are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "inform",
+    "negation"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "constraint_single_choice",
+    "requirement",
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "claim",
+   "text": "the lion is red",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "attribute_claim",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "dog",
+  "inform",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n3"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

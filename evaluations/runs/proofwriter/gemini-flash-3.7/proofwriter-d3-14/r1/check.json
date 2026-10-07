@@ -1,0 +1,302 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of rules and facts as a theory",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "subject",
+    "ask",
+    "inform"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Charlie is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Charlie is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Charlie is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Dave is white",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Erin is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Gary is not white",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "negation",
+   "text": "not white",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label",
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "reasoning",
+   "text": "If something is cold then it is not furry",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "negation",
+   "text": "not furry",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "reasoning",
+   "text": "If Charlie is quiet then Charlie is nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "reasoning",
+   "text": "Kind things are white",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "Nice things are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "If something is rough then it is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "Cold and quiet things are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "All cold things are quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "If something is white and nice then it is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "white color",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "If Erin is cold then Erin is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "action",
+   "text": "Determine the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "test_condition"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "Base the determination only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "constraint",
+   "text": "Output must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition",
+    "conditional",
+    "constraint_single_choice"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "claim",
+   "text": "Charlie is not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "negation",
+   "text": "not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "constraint_single_choice",
+  "inform",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "role_user",
+  "state_cold",
+  "statement",
+  "subject",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n7",
+  "n11",
+  "n16",
+  "n22"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

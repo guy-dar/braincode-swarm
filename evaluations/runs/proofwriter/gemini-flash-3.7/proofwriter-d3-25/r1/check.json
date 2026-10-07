@@ -1,0 +1,440 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of logical premises or theory.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is not rough.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "negation",
+   "text": "Anne is not rough.",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "object",
+   "text": "Anne",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Bob is blue.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Erin is not furry.",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "negation",
+   "text": "Erin is not furry.",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "Erin",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Erin is red.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "Erin",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Gary is big.",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Gary is not cold.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "negation",
+   "text": "Gary is not cold.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "negation"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "Gary is furry.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "If something is blue, then it is rough.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "Red things are rough.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "reasoning",
+   "text": "If Gary is rough, then Gary is not blue.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "negation",
+   "text": "Gary is not blue.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "reasoning",
+   "text": "Rough things are red.",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "reasoning",
+   "text": "Big things are quiet.",
+   "status": "covered",
+   "matched_symbols": [
+    "size_large"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "All cold things are big.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "reasoning",
+   "text": "If something is red, then it is big.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n33",
+   "kind": "constraint",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "reasoning",
+   "text": "If something is blue and not rough, then it is big.",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "size_large"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "negation",
+   "text": "not rough",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "constraint",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "reasoning",
+   "text": "Quiet, big things are not cold.",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "negation",
+   "text": "not cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "negation"
+   ]
+  },
+  {
+   "id": "n39",
+   "kind": "speech_act",
+   "text": "Ask whether a statement is True, False, or Unknown.",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "negation"
+   ]
+  },
+  {
+   "id": "n40",
+   "kind": "constraint",
+   "text": "Answer must be based only on the provided theory.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n41",
+   "kind": "constraint",
+   "text": "Answer format must be True, False, or Unknown.",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n42",
+   "kind": "claim",
+   "text": "Gary is not rough.",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n43",
+   "kind": "negation",
+   "text": "Gary is not rough.",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n44",
+   "kind": "object",
+   "text": "Gary",
+   "status": "declared",
+   "matched_symbols": []
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "negation",
+  "property_question",
+  "requirement",
+  "role_user",
+  "size_large",
+  "state_cold",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n7",
+  "n13",
+  "n21",
+  "n22",
+  "n23",
+  "n24",
+  "n25",
+  "n27",
+  "n28",
+  "n29",
+  "n33",
+  "n36"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

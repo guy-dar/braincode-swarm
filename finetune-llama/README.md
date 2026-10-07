@@ -35,7 +35,7 @@ The median example is about 1.2k tokens.
 
 1. **Upload this folder to Drive** at `MyDrive/finetune-llama`. Remove `braincode_kit/rag/models/` and `runs/` first if they exist: they're local test leftovers, and the embedding model downloads itself in Colab.
 2. **Open the notebook in Colab.** Use `File → Upload notebook`, or open it from Drive.
-3. **Choose a GPU runtime:** `Runtime → Change runtime type → GPU`. An A100 is best; an L4 works. A T4 (free tier) also works: the notebook then trains and serves the pre-quantized 4-bit model with a 16k-token context and caps tool outputs, so the agent sees less of the spec and glossary at once than on an A100.
+3. **Choose a GPU runtime:** `Runtime → Change runtime type → GPU`. An A100 is best; an L4 works, with 4-bit training and a shorter context.
 4. **Run Part 1, about 10–25 minutes.** It installs Unsloth, fine-tunes a LoRA adapter, and saves it to `MyDrive/finetune-llama/outputs/braincode-llama-lora`. It also translates one held-out item and runs the checker on it.
 5. **Restart the session:** `Runtime → Restart session`.
 6. **Run Part 2.** It installs vLLM and serves your adapter on top of Llama 3.1 8B Instruct as `braincode-llama`. It then runs a 2-item smoke test, followed by the full benchmark of 50 items × 3 runs.

@@ -1,0 +1,252 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a logical theory or set of premises",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "Anne",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Anne is big",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Anne is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Anne is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Bob is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Bob is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "object",
+   "text": "Charlie",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Charlie is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "Dave",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Dave is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "reasoning",
+   "text": "all big things are quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "reasoning",
+   "text": "if Anne is young then Anne is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "if something is blue then it is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "if something is kind and nice then it is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "if Charlie is quiet then Charlie is nice",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n19",
+   "kind": "reasoning",
+   "text": "round and big things are blue",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "if something is round then it is young",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "if something is young then it is big",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "speech_act",
+   "text": "ask to evaluate the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "constraint",
+   "text": "base the evaluation only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "Charlie is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n10"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

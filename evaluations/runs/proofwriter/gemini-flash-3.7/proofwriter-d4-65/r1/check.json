@@ -1,0 +1,315 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of premises or a theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "ask"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Bob is kind",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "Bob",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Bob is red",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Bob is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "claim",
+   "text": "Charlie is kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n8",
+   "kind": "object",
+   "text": "Charlie",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Fiona is not green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "negation",
+   "text": "not green",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "object",
+   "text": "Fiona",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Fiona is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Gary is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "Gary",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "All round people are quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "reasoning",
+   "text": "All smart people are round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "If someone is furry and not green then they are smart",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "negation",
+   "text": "not green",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "Quiet people are smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n21",
+   "kind": "reasoning",
+   "text": "If someone is kind and quiet then they are not furry",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "negation",
+   "text": "not furry",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "reasoning",
+   "text": "If someone is smart then they are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "If someone is kind and not furry then they are red",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n25",
+   "kind": "negation",
+   "text": "not furry",
+   "status": "covered",
+   "matched_symbols": [
+    "negation"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "object",
+   "text": "red",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "speech_act",
+   "text": "Ask to evaluate a statement based on the theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "subject",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "constraint",
+   "text": "Evaluate based only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n30",
+   "kind": "claim",
+   "text": "Charlie is not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "negation",
+   "text": "not smart",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "ask"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "attribute_claim",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "negation",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n5",
+  "n9",
+  "n12",
+  "n18",
+  "n26"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

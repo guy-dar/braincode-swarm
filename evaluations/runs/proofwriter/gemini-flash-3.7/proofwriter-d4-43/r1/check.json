@@ -1,0 +1,321 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a logical theory or set of premises",
+   "status": "covered",
+   "matched_symbols": [
+    "inform",
+    "ask",
+    "subject",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Charlie is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "claim",
+   "text": "Charlie is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Dave is cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "Fiona is blue",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Gary is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Gary is green",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Blue people are green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Cold people are green",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "Blue and green people are not cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "color_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "negation",
+   "text": "not cold",
+   "status": "covered",
+   "matched_symbols": [
+    "state_cold",
+    "negation"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "object",
+   "text": "blue",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "If someone is round then they are quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "If Fiona is rough then Fiona is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "If Fiona is round and Fiona is quiet then Fiona is furry",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "All green people are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "action",
+   "text": "Determine if a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "test_condition",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "constraint",
+   "text": "Base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "constraint",
+   "text": "Format the answer as True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "object",
+   "text": "The statement to evaluate: Fiona is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement",
+    "test_condition",
+    "ask"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "character_trait",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "has_attribute",
+  "inform",
+  "lexical_label",
+  "negation",
+  "role_user",
+  "shape_round",
+  "state_cold",
+  "statement",
+  "subject",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n7",
+  "n10",
+  "n11",
+  "n12",
+  "n13",
+  "n15",
+  "n18",
+  "n19",
+  "n24"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

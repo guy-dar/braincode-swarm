@@ -1,0 +1,13 @@
+# Glossary entries used by the conclusion
+
+- has_attribute | claim_relation | CLAIM has_attribute(subject: STRING / TERM, attribute: STRING / TERM) | Asserts that an entity, group, or person possesses a stated characteristic or attribute. general characteristic attribution. | aliases: possesses_attribute  [v19/support/has_attribute]
+    rules: rule_trace_relations_general
+    depends on: subject | constructor | TERM subject(kind: STRING, qualifier?: STRING / TERM / ATOM[platform_label], location?: STRING / ATOM[country], time?: STRING) -> TERM | Subject matter with explicit qualifiers | not: Does not make a factual claim about it
+- role_agent | value | recipient-value | The assistant. | aliases: you, the assistant  [v19/recipient-value/role_agent]
+    rules: rule_category_recipient_value
+- statement | claim_relation | CLAIM statement(fact: TERM) | Foundational claim relation converting any descriptive TERM into an attributed, truth-evaluated assertion. universal fact assertion. | aliases: assert_fact, fact_claim, claim_statement  [v19/support/statement]
+    rules: rule_trace_relations_general
+- subject | constructor | TERM subject(kind: STRING, qualifier?: STRING / TERM / ATOM[platform_label], location?: STRING / ATOM[country], time?: STRING) -> TERM | Subject matter with explicit qualifiers | not: Does not make a factual claim about it  [v19/support/subject]
+    rules: rule_support_primitives_general
+    depends on: country::<key> | lexical_group | ISO 3166-1 alpha-2 codes (249), upper_code | A country identified by its ISO 3166-1 alpha-2 code (country::JP is Japan). The code names the country only; no language, currency or region membership is implied. | e.g. country::JP, country::DE | not: A language (use a locale value) or a currency (use currency::<ISO 4217 code>).
+    depends on: platform_label::<key> | lexical_group | open label, lower_identifier | A source-supplied name of a software platform, service, framework, library, package, build tool or operating system (platform_label::django, platform_label::windows). Denotes that named system only; no version, vendor, capability or relation between systems is implied. | e.g. platform_label::django, platform_label::windows, platform_label::pytorch_lightning | key aliases: sklearn=scikit_learn, macosx=macos, osx=macos, win=windows, gcp=gcloud | not: The project being edited when the source does not say so (a repository named platform_label::django is code_entity/software_version context), a programming-language feature, or a file format.

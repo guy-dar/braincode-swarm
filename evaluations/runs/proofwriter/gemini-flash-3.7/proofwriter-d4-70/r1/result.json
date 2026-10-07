@@ -1,0 +1,41 @@
+{
+ "model": "gemini-flash-3.7",
+ "item": "proofwriter-d4-70",
+ "dataset": "proofwriter",
+ "run": 1,
+ "status": "failed",
+ "problem": null,
+ "attempts": 1,
+ "duration_s": 1079.4,
+ "usage": {
+  "calls": 39,
+  "input": 573424,
+  "cacheRead": 1534999,
+  "cacheWrite": 0,
+  "output": 30963,
+  "reasoning": 19114,
+  "compactions": 2,
+  "truncated_tool_results": 7
+ },
+ "cost_usd": 0.6613,
+ "setup": "v2",
+ "timeout_s": 2400,
+ "failure": {
+  "add_count": 1,
+  "refine_count": 1,
+  "would_add": [
+   {
+    "term": "trait_label",
+    "dimension": "lexical-group"
+   }
+  ],
+  "would_refine": [
+   {
+    "target": "v19/support/lexical_label",
+    "dimension": "refine-entry"
+   }
+  ],
+  "documented": true,
+  "suggestions_file": "suggestions.md"
+ }
+}

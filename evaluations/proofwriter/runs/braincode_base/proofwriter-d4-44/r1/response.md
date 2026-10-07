@@ -1,0 +1,5 @@
+```braincode
+TERM  activity(actor="bald_eagle", object=animal_label::cow, verb="like") -> q : TERM
+CLAIM statement(fact=q) BY role_agent STATUS hypothesized SOURCE "theory" -> candidate : CLAIM
+CLAIM statement(fact=TERM negation(target=q)) BY role_agent STATUS hypothesized SOURCE "theory" -> candidate_negation : CLAIM
+```

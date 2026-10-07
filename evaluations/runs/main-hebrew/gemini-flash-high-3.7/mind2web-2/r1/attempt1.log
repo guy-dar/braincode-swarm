@@ -1,0 +1,41 @@
+    6.2s turn 1
+   18.4s   model reply: in 1713 + cached 0, out 1318 (+1297 reasoning)
+   18.4s   tool bash: ls -la / /output /attach
+   18.5s turn 2
+   21.6s   model reply: in 3925 + cached 0, out 37 (+17 reasoning)
+   21.6s   tool bash: ls -la /reference /session
+   21.6s turn 3
+   25.2s   model reply: in 4163 + cached 0, out 41 (+24 reasoning)
+   25.2s   tool read: /prompt.md
+   25.2s turn 4
+   42.4s   model reply: in 4512 + cached 0, out 2270 (+2215 reasoning)
+   42.4s   tool bash: python3 -c "
+with open('/trajectory.txt', 'r', encoding='utf-8') as f:
+    content = f.read()
+print(repr(content))
+"
+   42.4s turn 5
+   51.2s   model reply: in 6805 + cached 0, out 65 (+17 reasoning)
+   51.2s   tool bash: node -e '
+const fs = require("fs");
+console.log(JSON.stringify(fs.readFileSync("/trajectory.txt", "utf8")));
+'
+   51.2s turn 6
+   78.0s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   78.0s agent finished
+   80.0s turn 7
+   93.6s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+   93.6s agent finished
+   97.6s turn 8
+  124.1s   model reply: in 0 + cached 0, out 0 (+0 reasoning)
+  124.1s agent finished
+  132.0s turn 9
+  223.9s   model reply: in 6980 + cached 0, out 5852 (+5723 reasoning)
+  223.9s   tool write: /output/translation.md
+  224.0s turn 10
+  261.5s   model reply: in 8855 + cached 3981, out 33 (+14 reasoning)
+  261.5s   tool read: /output/translation.md
+  261.6s turn 11
+  264.8s   model reply: in 12973 + cached 0, out 175 (+156 reasoning)
+  264.8s agent finished
+  264.8s agent finished

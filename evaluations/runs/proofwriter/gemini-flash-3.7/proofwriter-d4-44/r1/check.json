@@ -1,0 +1,289 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "introduce a set of premises or theory",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "subject",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "object",
+   "text": "bald eagle",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n3",
+   "kind": "object",
+   "text": "cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "the bald eagle visits the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n5",
+   "kind": "object",
+   "text": "rabbit",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "claim",
+   "text": "the cow likes the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "mouse",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "the cow visits the mouse",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "constraint",
+   "text": "green",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "requirement"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "the mouse is green",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "the mouse is nice",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "the mouse is young",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "the rabbit likes the mouse",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "if something likes the rabbit, it likes the cow",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "if something visits the rabbit and needs the mouse, it needs the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "claim",
+   "text": "if something likes the rabbit and the rabbit needs the bald eagle, the bald eagle needs the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "if something likes the cow, it visits the bald eagle",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "claim",
+   "text": "if something is nice, it needs the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "if the cow is nice and likes the rabbit, the cow is green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "animal_label"
+   ]
+  },
+  {
+   "id": "n20",
+   "kind": "claim",
+   "text": "if something visits the bald eagle, the bald eagle likes the rabbit",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "if something is kind and round, it likes the mouse",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n22",
+   "kind": "claim",
+   "text": "if something visits the rabbit, it likes the bald eagle",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "speech_act",
+   "text": "ask whether a statement is True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "conditional"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "constraint",
+   "text": "base the answer only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "subject",
+    "requirement",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "constraint",
+   "text": "answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "requirement"
+   ]
+  },
+  {
+   "id": "n26",
+   "kind": "claim",
+   "text": "the bald eagle likes the cow",
+   "status": "covered",
+   "matched_symbols": [
+    "animal_label",
+    "statement"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TURN",
+  "USER",
+  "UTTER",
+  "activity",
+  "animal_label",
+  "ask",
+  "color_label",
+  "conditional",
+  "conjunction",
+  "lexical_label",
+  "property_question",
+  "requirement",
+  "role_user",
+  "shape_round",
+  "statement",
+  "subject",
+  "target"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n2",
+  "n3",
+  "n5",
+  "n7",
+  "n14",
+  "n17",
+  "n19"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}

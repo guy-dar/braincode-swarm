@@ -1,0 +1,386 @@
+{
+ "needs": [
+  {
+   "id": "n1",
+   "kind": "speech_act",
+   "text": "Introduce a set of premises or a theory",
+   "status": "covered",
+   "matched_symbols": [
+    "respond",
+    "ask",
+    "supports",
+    "inform",
+    "conjunction"
+   ]
+  },
+  {
+   "id": "n2",
+   "kind": "claim",
+   "text": "Anne is not kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n3",
+   "kind": "negation",
+   "text": "Anne is not kind",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n4",
+   "kind": "claim",
+   "text": "Anne is quiet",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n5",
+   "kind": "claim",
+   "text": "Dave is not green",
+   "status": "covered",
+   "matched_symbols": [
+    "color_label",
+    "negation"
+   ]
+  },
+  {
+   "id": "n6",
+   "kind": "negation",
+   "text": "Dave is not green",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n7",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n8",
+   "kind": "claim",
+   "text": "Dave is rough",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n9",
+   "kind": "claim",
+   "text": "Dave is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n10",
+   "kind": "claim",
+   "text": "Dave is smart",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition"
+   ]
+  },
+  {
+   "id": "n11",
+   "kind": "claim",
+   "text": "Fiona is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "statement"
+   ]
+  },
+  {
+   "id": "n12",
+   "kind": "claim",
+   "text": "Fiona is round",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n13",
+   "kind": "claim",
+   "text": "Gary is smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n14",
+   "kind": "claim",
+   "text": "Gary is young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n15",
+   "kind": "claim",
+   "text": "Round people are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n16",
+   "kind": "reasoning",
+   "text": "Being round implies being rough",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "supports"
+   ]
+  },
+  {
+   "id": "n17",
+   "kind": "claim",
+   "text": "If someone is smart then they are rough",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition"
+   ]
+  },
+  {
+   "id": "n18",
+   "kind": "reasoning",
+   "text": "Being smart implies being rough",
+   "status": "covered",
+   "matched_symbols": [
+    "supports"
+   ]
+  },
+  {
+   "id": "n19",
+   "kind": "claim",
+   "text": "All young, rough people are smart",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n20",
+   "kind": "reasoning",
+   "text": "Being young and rough implies being smart",
+   "status": "covered",
+   "matched_symbols": [
+    "supports"
+   ]
+  },
+  {
+   "id": "n21",
+   "kind": "claim",
+   "text": "If someone is rough then they are kind",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n22",
+   "kind": "reasoning",
+   "text": "Being rough implies being kind",
+   "status": "covered",
+   "matched_symbols": [
+    "supports"
+   ]
+  },
+  {
+   "id": "n23",
+   "kind": "claim",
+   "text": "Rough people are kind",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n24",
+   "kind": "reasoning",
+   "text": "Being rough implies being kind",
+   "status": "covered",
+   "matched_symbols": [
+    "supports"
+   ]
+  },
+  {
+   "id": "n25",
+   "kind": "claim",
+   "text": "If Fiona is smart and Fiona is kind then Fiona is green",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n26",
+   "kind": "reasoning",
+   "text": "Fiona being smart and kind implies Fiona is green",
+   "status": "covered",
+   "matched_symbols": [
+    "supports",
+    "color_label"
+   ]
+  },
+  {
+   "id": "n27",
+   "kind": "object",
+   "text": "green",
+   "status": "label-preserved",
+   "matched_symbols": [
+    "color_label"
+   ]
+  },
+  {
+   "id": "n28",
+   "kind": "claim",
+   "text": "If Anne is round then Anne is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n29",
+   "kind": "reasoning",
+   "text": "Anne being round implies Anne is quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "supports"
+   ]
+  },
+  {
+   "id": "n30",
+   "kind": "claim",
+   "text": "Round, rough people are quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round"
+   ]
+  },
+  {
+   "id": "n31",
+   "kind": "reasoning",
+   "text": "Being round and rough implies being quiet",
+   "status": "covered",
+   "matched_symbols": [
+    "shape_round",
+    "supports"
+   ]
+  },
+  {
+   "id": "n32",
+   "kind": "claim",
+   "text": "All kind people are young",
+   "status": "declared",
+   "matched_symbols": []
+  },
+  {
+   "id": "n33",
+   "kind": "reasoning",
+   "text": "Being kind implies being young",
+   "status": "covered",
+   "matched_symbols": [
+    "supports"
+   ]
+  },
+  {
+   "id": "n34",
+   "kind": "speech_act",
+   "text": "Ask a question about the truth value of a statement",
+   "status": "covered",
+   "matched_symbols": [
+    "ask",
+    "statement",
+    "respond",
+    "supports",
+    "inform"
+   ]
+  },
+  {
+   "id": "n35",
+   "kind": "constraint",
+   "text": "Determine truth value based only on the provided theory",
+   "status": "covered",
+   "matched_symbols": [
+    "test_condition",
+    "supports",
+    "statement"
+   ]
+  },
+  {
+   "id": "n36",
+   "kind": "constraint",
+   "text": "Answer must be True, False, or Unknown",
+   "status": "covered",
+   "matched_symbols": [
+    "respond"
+   ]
+  },
+  {
+   "id": "n37",
+   "kind": "claim",
+   "text": "Fiona is not young",
+   "status": "covered",
+   "matched_symbols": [
+    "character_trait"
+   ]
+  },
+  {
+   "id": "n38",
+   "kind": "negation",
+   "text": "Fiona is not young",
+   "status": "covered",
+   "matched_symbols": [
+    "negation",
+    "character_trait"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "used_symbols": [
+  "CONVO",
+  "ENTRYPOINT",
+  "SPEAKER",
+  "TRUE",
+  "TURN",
+  "USER",
+  "UTTER",
+  "ask",
+  "character_trait",
+  "color_label",
+  "conjunction",
+  "inform",
+  "lexical_label",
+  "negation",
+  "respond",
+  "role_user",
+  "shape_round",
+  "statement",
+  "supports",
+  "target",
+  "test_condition"
+ ],
+ "unknown_symbols_in_head_position": [],
+ "unbound_attribute_values": [],
+ "deprecated_symbols_used": [],
+ "claimed_but_absent": {},
+ "string_literals_as_operation_arguments": [],
+ "atom_errors": [],
+ "atom_warnings": [],
+ "retired_symbols_used": [],
+ "label_preserved": [
+  "n7",
+  "n27"
+ ],
+ "opaque_needs": [],
+ "sentence_literals": []
+}
